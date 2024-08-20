@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Weather</h2>
+        <p id="weather"></p>
+
+        <!-- <p><b>Hours Marched:</b> <div id="hoursMarched">0</div></p>
+        <p><b>Distance Marched:</b> <div id="distanceMarched">0</div> miles = <div id="tilesMarched"></div> tiles</p> -->
+        <p><b>Random Encounter:</b> <div id="encounter"></div></p>
+        <form>
+            <label for="forcedMarch">Forced March</label>
+            <input type="checkbox" id="forcedMarch"><br>
+            <label for="hoursMarched">Hours Marched: </label>
+            <input type="text" id="hoursMarched" value="0"><br>
+            <label for="distanceMarched">Distance Marched: </label>
+            <input type="text" id="distanceMarched" value="0"><br>
+            <label for="tilesMarched">Tiles Marched: </label>
+            <input type="text" id="tilesMarched" value="0"><br>
+        </form>
+
+
+        <form>
+            <label for="encounterChance">Chance of Encounter per hour (%)</label><br>
+            <input type="text" id="encounterChance" value="5"><br>
+            <form>
+                <input type="radio" id="paceSlow" value="slow" name="pace">
+                <label for="paceSlow">Slow</label><br>
+                <input type="radio" id="paceNormal" value="normal" name="pace">
+                <label for="paceNormal">Normal</label><br>
+                <input type="radio" id="paceFast" value="fast" name="pace">
+                <label for="paceFast">Fast</label><br>
+            </form>
+            <input type="button" value="Lost" id="lost">
+            <input type="button" value="March" id="march">
+            <input type="button" value="New Day" id="newDay">
+        </form>
+        <script src="main.js"></script>
+    </body>
+</html>
