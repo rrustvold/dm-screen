@@ -3,39 +3,129 @@
 
     </head>
     <body>
-        <h2>Weather</h2>
-        <p id="weather"></p>
+        <div>
+            <h1>Damage Severity</h1>
+            <table>
+                <tr>
+                    <th>Character Level</th>
+                    <th>Setback</th>
+                    <th>Dangerous</th>
+                    <th>Deadly</th>
+                </tr>
+                <tr>
+                    <td>1st - 4th</td>
+                    <td>1d10</td>
+                    <td>2d10</td>
+                    <td>4d10</td>
+                </tr>
+                <tr>
+                    <td>5th - 10th</td>
+                    <td>2d10</td>
+                    <td>4d10</td>
+                    <td>10d10</td>
+                </tr>
+                <tr>
+                    <td>11th - 16th</td>
+                    <td>4d10</td>
+                    <td>10d10</td>
+                    <td>18d10</td>
+                </tr>
+                <tr>
+                    <td>17th - 20th</td>
+                    <td>10d10</td>
+                    <td>18d10</td>
+                    <td>424d10</td>
+                </tr>
 
-        <!-- <p><b>Hours Marched:</b> <div id="hoursMarched">0</div></p>
-        <p><b>Distance Marched:</b> <div id="distanceMarched">0</div> miles = <div id="tilesMarched"></div> tiles</p> -->
-        <p><b>Random Encounter:</b> <div id="encounter"></div></p>
-        <form>
-            <label for="forcedMarch">Forced March</label>
-            <input type="checkbox" id="forcedMarch"><br>
-            <label for="hoursMarched">Hours Marched: </label>
-            <input type="text" id="hoursMarched" value="0"><br>
-            <label for="distanceMarched">Distance Marched: </label>
-            <input type="text" id="distanceMarched" value="0"><br>
-            <label for="tilesMarched">Tiles Marched: </label>
-            <input type="text" id="tilesMarched" value="0"><br>
-        </form>
+            </table>
+        </div>
+        <div>
+            <h1>Wilderness Exploration</h1>
+            <h2>Weather</h2>
+            <span id="weather"></span>
 
-
-        <form>
-            <label for="encounterChance">Chance of Encounter per hour (%)</label><br>
-            <input type="text" id="encounterChance" value="5"><br>
+            <h2>Marching</h2>
             <form>
-                <input type="radio" id="paceSlow" value="slow" name="pace">
-                <label for="paceSlow">Slow</label><br>
-                <input type="radio" id="paceNormal" value="normal" name="pace">
-                <label for="paceNormal">Normal</label><br>
-                <input type="radio" id="paceFast" value="fast" name="pace">
-                <label for="paceFast">Fast</label><br>
+                <label for="forcedMarch">Forced March</label>
+                <input type="checkbox" id="forcedMarch"><br>
+
+                <label for="daysMarched">Days Marched: </label>
+                <input type="text" id="daysMarched" value="-1"><br>
+                <label for="hoursMarched">Hours Marched: </label>
+                <input type="text" id="hoursMarched" value="0"><br>
+                <label for="distanceMarched">Distance Marched: </label>
+                <input type="text" id="distanceMarched" value="0"><br>
+                <label for="tilesMarched">Tiles Marched: </label>
+                <input type="text" id="tilesMarched" value="0"><br>
+                <label for="encounterChance">Chance of Encounter per hour (%)</label><br>
+                <input type="text" id="encounterChance" value="5"><br>
+
+    <!--            <form>-->
+                    <input type="radio" id="paceSlow" value="slow" name="pace">
+                    <label for="paceSlow">Slow (2 mph, can stealth, +5 navigation)</label><br>
+                    <input type="radio" id="paceNormal" value="normal" name="pace" checked>
+                    <label for="paceNormal">Normal (3 mph)</label><br>
+                    <input type="radio" id="paceFast" value="fast" name="pace">
+                    <label for="paceFast">Fast (4 mph, disadvantage on perception, -5 navigation)</label><br>
+    <!--            </form>-->
+                <label for="difficultTerrain">Difficult Terrain</label>
+                <input type="checkbox" id="difficultTerrain"><br>
+                <input type="button" value="Lost" id="lost"> or
+                <input type="button" value="March" id="march">
+                <p id="forcedMarchDC"></p>
+
+                <input type="button" value="New Day" id="newDay">
             </form>
-            <input type="button" value="Lost" id="lost">
-            <input type="button" value="March" id="march">
-            <input type="button" value="New Day" id="newDay">
-        </form>
+            <h2>Encounter</h2>
+            <span id="encounter"></span>
+        </div>
+        <div>
+            <h1>Party Composition</h1>
+            <form>
+                Player 1<br>
+                <label for="player1">Name</label>
+                <input type="text" id="player1">
+                <label for="player1AC">AC</label>
+                <input type="text" id="player1AC">
+            </form>
+            <form>
+                Player 2<br>
+                <label for="player2">Name</label>
+                <input type="text" id="player2">
+                <label for="player2AC">AC</label>
+                <input type="text" id="player2AC">
+            </form>
+            <form>
+                Player 3<br>
+                <label for="player3">Name</label>
+                <input type="text" id="player3">
+                <label for="player3AC">AC</label>
+                <input type="text" id="player3AC">
+            </form>
+            <form>
+                Player 4<br>
+                <label for="player4">Name</label>
+                <input type="text" id="player4">
+                <label for="player4AC">AC</label>
+                <input type="text" id="player4AC">
+            </form>
+        </div>
+        <div>
+            <h1>Horde Math</h1>
+            <div>
+                <form>
+                    <label for="hordeSize">Horde Size</label>
+                    <input id="hordeSize" type="text"><br>
+                    <label for="attacksPerMonster">Attacks per Monster</label>
+                    <input id="attacksPerMonster" type="text"><br>
+                    <label for="hordeAttackBonus">Horde Attack Bonus</label>
+                    <input id="hordeAttackBonus" type="text"><br>
+                    <label for="hordeDamageDice">Horde Damage</label>
+                    <input id="hordeDamageDice" type="text"><br>
+                    <input type="button" id="hordeMathSubmit" value="Calculate">
+                </form>
+            </div>
+        </div>
         <script src="main.js"></script>
     </body>
 </html>
