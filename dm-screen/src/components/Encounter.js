@@ -1,7 +1,7 @@
 import Roll from '../utils'
 import {useState} from "react";
 
-export default function RandomEncounter() {
+export default function RandomEncounter({partyLevels}) {
     let levels = [1];
 
     const [numMonsters, setNumMonsters] = useState(1);
@@ -34,14 +34,22 @@ export default function RandomEncounter() {
         </>
     ))
 
+    let flyingSpeed;
+    if (monster.speed.fly) {
+        flyingSpeed = (<>, {monster.speed.fly} flying</>);
+    }
+    let swimSpeed;
+    if (monster.speed.swim) {
+        swimSpeed = (<>, {monster.speed.swim} swim</>);
+    }
     return (
         <div>
             <h1>Random Encounter</h1>
-            <input type="button" value="Generate" onClick={() => generateMonster(setMonster)}/>
+            <input type="button" value="Generate" onClick={() => generateMonster(setMonster, partyLevels)}/>
             <h3>{numMonsters} {monster.name} {monster.xp * numMonsters} XP</h3>
             <p><b>{monster.size} {monster.type} {monster.alignment}</b></p>
             <p>AC: {monster.armor_class[0].value}, HP: {monster.hit_points}, Speed:
-                {monster.speed.walk}</p>
+                {monster.speed.walk}{flyingSpeed}{swimSpeed}</p>
             <p>Str: {monster.strength}, Dex: {monster.dexterity}, Con:
                 {monster.constitution}, Int: {monster.intelligence}, Wis:
                 {monster.wisdom}, Cha: {monster.charisma}</p>

@@ -143,8 +143,6 @@ export default function Wilderness() {
     }
 
     function changeEnviron(newEnviron) {
-        console.log('hi');
-        console.log(newEnviron);
         setEnviron(newEnviron);
         if (["Arctic", "Desert", "Farmland", "Grassland", "Badlands"].includes(newEnviron)){
             setEncounterDistance(roll(6, 6) * 10);
