@@ -10,15 +10,6 @@ function roll(sides, numDice=1) {
     return sum;
 }
 
-
-
-
-
-
-
-
-
-
 export default function Wilderness() {
     let days = 0;
     let hours = 0;

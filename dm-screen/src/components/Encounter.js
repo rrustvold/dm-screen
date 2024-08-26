@@ -1,8 +1,11 @@
 import Roll from '../utils'
 import {useState} from "react";
 
-export default function RandomEncounter({partyLevels}) {
-    let levels = [1];
+export default function RandomEncounter({party}) {
+  let partyLevels = [];
+  for (let i=0; i < party.length; i++) {
+    partyLevels.push(Number(party[i].level));
+  }
 
     const [numMonsters, setNumMonsters] = useState(1);
     const [monster, setMonster] = useState(
@@ -85,23 +88,30 @@ async function generateMonster(setMonster, levels=[1,1,1,1]) {
       } else {
         difficulty = 3;
       }
-      let xp =0;
-      levels.forEach((level) => xp += encounter_difficulty[level][difficulty]);
+    let xp =0;
+    levels.forEach((level) => xp += encounter_difficulty[level - 1][difficulty]);
 
-      let num_monsters = Math.ceil(Math.random() * 2);
-      let multiplier = 1;
-      if (num_monsters === 2){
-        multiplier = 1.5;
-      }
-      let monster_xp = xp / num_monsters;
+    let num_monsters = Math.ceil(Math.random() * 4);
+    let multiplier = 1;
+    let partySize = levels.length;
+    if (num_monsters  == 1 && partySize >= 3){
+      multiplier = 1;
+    }
+    else if ((num_monsters == 2 && partySize >= 3) || (num_monsters == 1 && partySize < 3)){
+      multiplier = 1.5;
+    } else if ((num_monsters <= 6 && partySize >= 3) || (num_monsters == 2 && partySize < 3)) {
+      multiplier = 2;
+    }
 
-      let monster_cr = monster_xp / 200;
-      if (monster_cr < 0.50){
-        monster_cr = .25;
-      } else if (monster_cr < 1) {
-        monster_cr = .5;
-      } else {
-        monster_cr = Math.floor(monster_cr);
+    let monster_xp = xp / num_monsters;
+
+    let monster_cr = monster_xp / 200;
+    if (monster_cr < 0.50){
+      monster_cr = .25;
+    } else if (monster_cr < 1) {
+      monster_cr = .5;
+    } else {
+      monster_cr = Math.floor(monster_cr);
   }
 
   let monster_key;

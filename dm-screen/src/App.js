@@ -6,45 +6,21 @@ import RandomEncounter from "./components/Encounter";
 import Party from "./components/Party";
 import {useState} from "react";
 import HordeMath from "./components/HordeMath";
+import RandomDungeon from './components/randomDungeon/RandomDungeon';
 
-class PC {
-    constructor(player, name, level, ac, hp) {
-        this.player = player;
-        this.name = name;
-        this.level = level;
-        this.ac = ac;
-        this.hp = hp;
-    }
-}
 
 function App() {
-    const characters = [
-        new PC(
-            "Rian",
-            "Biggie",
-            3,
-            15,
-            22
-        ),
-        new PC(
-            "Maria",
-            "Smalls",
-            4,
-            12,
-            28
-        )
-    ]
-    const characterNames = ["Biggie", "Smalls"];
-    const characterLevels = [2, 3];
-    const characterACs = [12, 15];
+    const [partySize, setPartySize] = useState(2);
+    const [party, setParty] = useState([]);
+
   return (
       <div>
-          <Party characterNames={characterNames} characterACs={characterACs}></Party>
-
+          <Party partySize={partySize} setPartySize={setPartySize} party={party} setParty={setParty}></Party>
+        <RandomDungeon></RandomDungeon>
         <Wilderness></Wilderness>
-          <RandomEncounter partyLevels={characterLevels}></RandomEncounter>
+          <RandomEncounter party={party}></RandomEncounter>
           {/*<DamageSeverity></DamageSeverity>*/}
-          <HordeMath characterNames={characterNames} characterACs={characterACs}></HordeMath>
+          <HordeMath party={party}></HordeMath>
       </div>
   );
 }

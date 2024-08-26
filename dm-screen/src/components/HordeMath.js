@@ -85,12 +85,23 @@ function HordeMathInput(props) {
     )
 }
 
-export default function HordeMath({characterNames, characterACs}) {
+export default function HordeMath({party}) {
+
     const [numAttackers, setNumAttackers] = useState(1);
     const [attacksPerMonster, setAttacksPerMonster] = useState(1);
     const [attackBonus, setAttackBonus] = useState(0.0);
     const [damage, setDamage] = useState("1d6");
 
+    let characterNames = [];
+    let characterACs = [];
+    console.log(party);
+    for (let i=0; i < party.length; i++) {
+        let pc = party[i];
+        characterNames.push(pc.name);
+        characterACs.push(pc.ac);
+    }
+    console.log(characterNames);
+    
     function HordeMathOutput() {
 
         let _damage = parseDamage(damage);
@@ -98,8 +109,6 @@ export default function HordeMath({characterNames, characterACs}) {
         let results = [];
         for (let i=0; i < characterACs.length; i++) {
             let ac = characterACs[i];
-            console.log(`AC = ${ac}`);
-            console.log(attackBonus);
             let oddsToHit = Math.max(
                 Math.min(
                     (attackBonus + 21 - ac) * 0.05,
@@ -107,7 +116,6 @@ export default function HordeMath({characterNames, characterACs}) {
                 ),
                 0
             );
-            console.log(oddsToHit);
             let totalDamage = new Roll(
                 _damage.numDice * numAttackers * attacksPerMonster,
                 _damage.sides,
@@ -130,7 +138,7 @@ export default function HordeMath({characterNames, characterACs}) {
 
     return (
         <>
-            <h2>Horde Math</h2>
+            <h1>Horde Math</h1>
             <HordeMathInput
                 numAttackers={numAttackers}
                 setNumAttackers={setNumAttackers}
