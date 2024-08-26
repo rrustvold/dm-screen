@@ -7,6 +7,7 @@ import Party from "./components/Party";
 import {useState} from "react";
 import HordeMath from "./components/HordeMath";
 import RandomDungeon from './components/randomDungeon/RandomDungeon';
+import RandomEncounter2 from "./components/RandomEncounter";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   return (
       <div>
           <Party partySize={partySize} setPartySize={setPartySize} party={party} setParty={setParty}></Party>
+          <RandomEncounter2 party={party}></RandomEncounter2>
         <RandomDungeon></RandomDungeon>
         <Wilderness></Wilderness>
           <RandomEncounter party={party}></RandomEncounter>
