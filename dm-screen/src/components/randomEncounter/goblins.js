@@ -42,7 +42,41 @@ export const bugbear_chief = {
     xp: 700,
     link: "https://www.dndbeyond.com/monsters/17119-bugbear-chief"
 }
-export const goblins = [
-    goblin, goblin, goblin, goblin, goblin, goblin_boss, hobgoblin, hobgoblin, hobgoblin, hobgoblin_captain,
-    bugbear, bugbear, bugbear_chief, worg
-]
+
+export const gnoll = {
+    key: "gnoll",
+    name: "Gnoll",
+    xp: 100
+}
+
+export const gnoll_packlord = {
+    key: "gnoll-pack-lord",
+    name: "Gnoll Pack Lord",
+    xp: 450
+}
+
+export const gnoll_fang_of_yeenoghu = {
+    key: "gnoll-fang-of-yeenoghu",
+    name: "Gnoll Fang of Yeenoghu",
+    xp: 1100
+}
+
+export const hyena = {
+    key: "hyena",
+    name: "Hyena",
+    xp: 10
+}
+
+export const gnolls = {
+    name: "Gnolls",
+    list: [
+        gnoll, gnoll, gnoll, gnoll_packlord, gnoll_fang_of_yeenoghu, hyena,
+    ]
+}
+export const goblins = {
+    name: "Goblins",
+    list: [
+        goblin, goblin, goblin, goblin, goblin, goblin_boss, hobgoblin, hobgoblin, hobgoblin, hobgoblin_captain,
+        bugbear, bugbear, bugbear_chief, worg, gnoll, gnoll_packlord
+    ]
+}

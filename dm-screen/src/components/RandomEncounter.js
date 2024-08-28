@@ -1,6 +1,9 @@
 import {useState} from "react";
-import {orcs} from "./randomEncounter/orcs";
-import {goblins} from "./randomEncounter/goblins";
+
+import {allLists, allOptions} from "./randomEncounter/environs";
+import {forest, forestOptions} from "./randomEncounter/environs/forest";
+import {hills, hillsOptions} from "./randomEncounter/environs/hills";
+import {grassland, grasslandOptions} from "./randomEncounter/environs/grassland";
 
 function getPartyLimits(party){
     const encounter_difficulty = [
@@ -21,15 +24,20 @@ function getPartyLimits(party){
     for (let i=0; i < party.length; i++) {
         let pc = party[i];
         for (let j=0; j < 4; j++) {
-            limits[j] += encounter_difficulty[Number(pc.level)][j];
+            limits[j] += encounter_difficulty[Number(pc.level) - 1][j];
         }
     }
     return limits
 }
 
+function randomFamily(environ) {
+    let random = Math.floor(Math.random() * Object.keys(environ).length);
+    return environ[Object.keys(environ)[random]];
+}
+
 function generate(setEncounter, party) {
     let difficulty = document.getElementById("difficulty").value;
-    let monsterType = document.getElementById("monster-type").value;
+
     let limits = getPartyLimits(party);
     let limit;
     if (difficulty === "easy"){
@@ -49,21 +57,45 @@ function generate(setEncounter, party) {
     }
 
     let monsterSelection = document.getElementById("monster-type").value;
-    let monsterList;
-    if (monsterSelection === "orcs") {
-        monsterList = orcs;
-    } else if (monsterSelection === "goblins"){
-        monsterList = goblins;
+    console.log(monsterSelection);
+    let monsterFamily = allLists()[monsterSelection];
+    if (monsterSelection === "anyForest") {
+        monsterFamily = randomFamily(forest);
+    } else if (monsterSelection === "anyHills") {
+        monsterFamily = randomFamily(hills);
+    } else if (monsterSelection === "anyGrassland") {
+        monsterFamily = randomFamily(grassland);
     }
 
+    console.log(monsterFamily);
+    let monsterList = monsterFamily.list;
     let totalXP = 0;
     let encounter = [];
     let encounterDict = {};
     let loopCount = 0;
-    while (totalXP * multiplier < limit && loopCount < 10) {
+    let randomNum = Math.floor(Math.random() * monsterList.length);
+    let draws = [];
+    let drawLimit = Number(document.getElementById("maxDiffMonsters").value);
+    let monster = monsterList[randomNum];
+    let solo = monsterFamily.type;
+    if (!solo) {
+        solo = monster.type;
+    }
+    while (totalXP * multiplier < limit && loopCount < 20) {
         loopCount++;
-        let randomNum = Math.floor(Math.random() * monsterList.length);
-        let monster = monsterList[randomNum];
+        if (!solo) {
+            if (draws.length < drawLimit) {
+                randomNum = Math.floor(Math.random() * monsterList.length);
+            } else {
+                randomNum = draws[Math.floor(Math.random() * drawLimit)];
+            }
+            monster = monsterList[randomNum];
+            if (monster.solo && encounter.length > 0){
+                continue
+            }
+            solo = monster.solo;
+        }
+
         if (encounter.length === 1){
             multiplier = 1.5;
             if (party.length < 3) {
@@ -87,7 +119,7 @@ function generate(setEncounter, party) {
         } else if (encounter.length === 14) {
             multiplier = 4;
         }
-        if (totalXP * multiplier + monster.xp <= limit * 1.25) {
+        if ((totalXP + monster.xp) * multiplier <= limit * 1.10) {
             totalXP += monster.xp;
             encounter.push(monster);
             if (monster.key in encounterDict) {
@@ -96,6 +128,7 @@ function generate(setEncounter, party) {
                 encounterDict[monster.key] = monster;
                 encounterDict[monster.key].qty = 1;
             }
+            draws.push(randomNum);
 
         }
     }
@@ -104,6 +137,25 @@ function generate(setEncounter, party) {
 }
 
 function RandomEncounterInput({setEncounter, party}){
+    const [monsterTypeOptions, setMonsterTypeOptions] = useState(
+        []
+    );
+
+    function changeEnviron(environ) {
+        if (environ === "any") {
+            setMonsterTypeOptions(
+                allOptions()
+            )
+        } else if (environ === "forest") {
+            setMonsterTypeOptions(forestOptions());
+        } else if (environ === "hills") {
+            setMonsterTypeOptions(hillsOptions());
+        } else if (environ === "grassland") {
+            setMonsterTypeOptions(grasslandOptions());
+        }
+    }
+
+
     return (
         <>
             <select name="difficulty" id="difficulty">
@@ -112,10 +164,15 @@ function RandomEncounterInput({setEncounter, party}){
                 <option value="hard">Hard</option>
                 <option value="deadly">Deadly</option>
             </select>
-            <select name="monster-type" id="monster-type">
-                <option value="orcs">Orcs</option>
-                <option value="goblins">Goblins</option>
+            <select name="environ" id="encounter-environ" onChange={(e) => changeEnviron(e.target.value)}>
+                <option value="forest">Forest</option>
+                <option value="hills">Hills</option>
+                <option value="grassland">Grassland</option>
             </select>
+            <select name="monster-type" id="monster-type">
+                {monsterTypeOptions}
+            </select>
+            <input type="text" defaultValue="3" id="maxDiffMonsters" />
             <input type="button" defaultValue="Generate" onClick={() => generate(setEncounter, party)}/>
         </>
     )
@@ -124,13 +181,20 @@ function RandomEncounterInput({setEncounter, party}){
 export default function RandomEncounter2({party}){
     const [encounter, setEncounter] = useState({});
 
+    let xp_values = [];
     let encounterBlock = [];
     for (const [key, value] of Object.entries(encounter)) {
+        for (let i=0; i < value.qty; i++) {
+            xp_values.push(value.xp);
+        }
         encounterBlock.push(
-            <>{value.qty} <a href={value.link}>{value.name}</a><br/></>
+            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name}</a><br/></>
         )
     }
 
+    if (document.getElementById("monster-xp")) {
+        document.getElementById("monster-xp").value = xp_values.join(",");
+    }
     return (
         <>
             <h1>Random Encounter</h1>

@@ -46,16 +46,42 @@ export const ogre = {
     xp: 450
 }
 
-export const orcs = [
-    orc,
-    orc,
-    orc,
-    orc_eye_of_gruumsh,
-    orc_war_chief,
-    wolf,
-    winter_wolf,
-    dire_wolf,
-    worg,
-    ogre,
-]
+export const half_ogre = {
+    key: "half-ogre",
+    name: "Half Ogre",
+    xp: 200
+}
+
+export const oni = {
+    key: "oni",
+    name: "Oni",
+    xp: 2900
+}
+
+export const wolves = {
+    name: "Wolves",
+    list: [
+        wolf, dire_wolf, winter_wolf
+    ]
+}
+
+export const orcs = {
+    name: "Orcs",
+    list: [
+        orc,
+        orc,
+        orc,
+        orc_eye_of_gruumsh,
+        orc_war_chief,
+        wolf,
+        winter_wolf,
+        dire_wolf,
+        worg,
+        ogre,
+        half_ogre,
+        oni,
+    ]
+}
+
+
 

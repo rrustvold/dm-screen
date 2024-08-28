@@ -33,26 +33,35 @@ function randomMonsterTreasure(treasure, xp) {
     }
   }
 
-function randomEncounterTreasure(xp, setTreasure){
-  console.log(xp);
+function randomEncounterTreasure(xp, setTreasure, party){
   let treasure = new Treasure(0,0,0,0,0,[],[],[]);
     let xps = xp.split(",");
     for (let i=0; i<xps.length; i++){
       let xp_num = Number(xps[i].trim());
       randomMonsterTreasure(treasure, xp_num);
     }
+
+    if (party) {
+      // Make sure the treasure is equally divisible to all party members
+      let partySize = party.length;
+      treasure.cp = Math.round(treasure.cp / partySize) * partySize;
+      treasure.sp = Math.round(treasure.sp / partySize) * partySize;
+      treasure.ep = Math.round(treasure.ep / partySize) * partySize;
+      treasure.gp = Math.round(treasure.gp / partySize) * partySize;
+      treasure.pp = Math.round(treasure.pp / partySize) * partySize;
+    }
     setTreasure(treasure);
 }
 
 
-export function RandomTreasure(){
+export function RandomTreasure({party}){
   const [treasure, setTreasure] = useState(new Treasure(0,0,0,0,0,[],[],[]));
 
   return (
     <>
     <label for="monster-xp">Monster XP Values: </label>
     <input type="text" id="monster-xp"/><br/>
-      <input type="button" defaultValue="Treasure" onClick={() => randomEncounterTreasure(document.getElementById("monster-xp").value, setTreasure)}/><br/>
+      <input type="button" defaultValue="Treasure" onClick={() => randomEncounterTreasure(document.getElementById("monster-xp").value, setTreasure, party)}/><br/>
       CP: {treasure.cp}<br/>
       SP: {treasure.sp}<br/>
       EP: {treasure.ep}<br/>

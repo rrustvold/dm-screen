@@ -94,14 +94,12 @@ export default function HordeMath({party}) {
 
     let characterNames = [];
     let characterACs = [];
-    console.log(party);
     for (let i=0; i < party.length; i++) {
         let pc = party[i];
         characterNames.push(pc.name);
         characterACs.push(pc.ac);
     }
-    console.log(characterNames);
-    
+
     function HordeMathOutput() {
 
         let _damage = parseDamage(damage);
