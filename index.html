@@ -25,6 +25,12 @@
         .alert-info {
             padding-bottom: 0;
         }
+        .anchor {
+            display: block;
+            position: relative;
+            top: -250px;
+            visibility: hidden;
+        }
 
     </style>
 
@@ -41,10 +47,20 @@
 <nav class="navbar navbar-expand navbar-dark sticky-top" style="background: #49525b">
     <div class="container-fluid">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#">Campaign Concepts</a></li>
+        <li class="nav-item"><a class="nav-link" href="#intro">Campaign Concepts</a></li>
         <li class="nav-item"><a class="nav-link" href="#campaign-background">Campaign Background</a></li>
           <li class="nav-item"><a class="nav-link" href="#character-creation">Character Creation</a></li>
-          <li class="nav-item"><a class="nav-link" href="#players-guide">Player's Guide</a></li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Player's Guide</a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="#players-guide">Food and Water</a></li>
+                  <li><a class="dropdown-item" href="#maps">Maps and Traveling</a></li>
+                  <li><a class="dropdown-item" href="#camping">Camping</a></li>
+                  <li><a class="dropdown-item" href="#dungeon-delving">Dungeon Delving</a></li>
+                  <li><a class="dropdown-item" href="#kaiju">Kaiju</a></li>
+              </ul>
+
+          </li>
       </ul>
     </div>
 </nav>
@@ -129,14 +145,14 @@
             <li>Poncho Leafwalker, a halfling and respected member of The Curators: a guild that deals in trade, messenger services, and maintaining trade routes. He can sell you most gear you may need. And if he doesn't have it in stock, he can surely source it for you.</li>
             <li>For magical and alchemical wares, you may be better off asking some of the patrons of the alchemical college known as The Society of the Tranquil Fire which holds a chapter here in Last Haven.</li>
             <li>The humble gnome Fravirbirt can assist you with any arms and armor at her workshop. She is a dues paying member to The Bronzeshapers -- a smith guild.</li>
-            <li>The cartographers club is a society of wealthy citizens interested in expanding their collection of maps and atlases of the continent. Its members seldom adventure themselves, but are known to patronize others.</li>
+            <li>The cartographers club is a society of wealthy citizens interested in expanding their collection of maps and atlases of the continent, and of knowledge of the Kaiju. Its members seldom adventure themselves, but are known to patronize others.</li>
             <li>The Scarlet Riders is a troupe of traveling performers who often visit Last Haven to provide entertainment, gambling, and other services.</li>
             <li>For religious practices, a small temple to Nouse has been constructed.</li>
             <li>Killion's army always has some soldiers stationed in Last Haven, but the town also organizes its own militia known as the Moon Guard to protect itself from outsiders.</li>
         </ul>
 
         <h2 class="display-6">Religion, Deities, and the Planes</h2>
-        <img src="images/image1.jpg" class="rounded mx-auto d-block" style="height: auto; max-width: 90%"/>
+        <img src="images/image1.jpg" class="rounded mx-auto d-block" style="height: auto; max-width: 90%" />
         <p>The civilized people of the Killion empire are largely monotheistic. They believe that Nouse is the creator of everything, and the ultimate divine entity. Other lesser divine beings (celestials, angels, archons, etc.)  exist in the higher planes. People oftentimes will pray to some of these lesser divine beings, as they are deities in their own way, but anyone who would pray or worship a lesser deity will ultimately revere Nouse. Demons, devils, and other fiends exist in the lower planes. No one openly worships fiends, but warlocks may obtain their powers from them.</p>
 
         <p>The moon, sun, and stars revolve around the world. By climbing higher in altitude one can travel to the astral plane where the moon, planets, sun, stars, comets, etc. all float around in, and then higher still to reach the outer planes. The underworld is literally beneath your feet. It can be reached by digging deep enough such as through a dungeon. The elemental planes exist in tandem with the world. If you travel far enough you might wander into the plane of elemental fire, for example.</p>
@@ -159,13 +175,14 @@
             <li>Characters can be created using only the player's handbook. No material from Xanathar's guide, Tasha's Cauldron, or any other source should be used</li>
             <li>You may multiclass and take feats</li>
             <li>See the section above on Religion and Deities if your character requires a deity, religion, or patron.</li>
-            <li>You may make and play multiple characters. However, only one character should be played at a time during a se<>sion. If you maintain multiple characters, they should stay separate from each other. (i.e. no sharing or trading equipment between them)</li>
+            <li>You may make and play multiple characters. However, only one character should be played at a time during a session. If you maintain multiple characters, they should stay separate from each other. (i.e. no sharing or trading equipment between them)</li>
             <li>Characters will level up from experience points</li>
             <li>Characters start at level 1. This may change as the average character level increases.</li>
             <li>Ability scores should be determined using any of the methods given in the player's handbook. If you roll dice, be honest, and commit to the character that comes out of it for at least one session. Don't backpedal by thinking, "well I could have point-bought better scores so I'll just do that instead now".</li>
             <li>We will use the "variant encumbrance" rule. As such, you must track the weight of all equipment, weapons, armor, and coins carried.</li>
             <li>You must track ammunition such as for bows or crossbows</li>
-            <li>When traveling outside of civilized areas you must track rations and water. When inside a civilized area, food and water needs will be met by your chosen "lifestyle"</li>
+            <li>When traveling outside civilized areas you must track rations and water. When inside a civilized area, food and water needs will be met by your chosen "lifestyle"</li>
+            <li>I will award inspiration for roleplaying in accordance with your character's bonds, ideals, and flaws (like I'm supposed to); but you have to remind me to do it when it happens, because I guarantee you I will not remember otherwise.</li>
         </ol>
 
         <div id="accordion">
@@ -215,39 +232,75 @@
         <h1 class="display-1 fw-bold" style="position: absolute; bottom: 0">PLAYER'S GUIDE TO LAST HAVEN</h1>
     </div>
     <div  class="container p-5">
-        <div class="container">
             <h2 class="display-6">Purpose</h2>
             <p>The purpose of this section is to explain how I will run the game (so that you can prepare your character appropriately), and provide you with some tips and tricks.</p>
-        </div>
-        <div class="container">
-            <h2 class="display-6">Wilderness Survival <small>- as presented by Krusk the half-orc ranger</small></h2>
+
+            <h2 class="display-6" id="food-and-water">Wilderness Survival <small>- as presented by Krusk the half-orc ranger of the Curators</small></h2>
             <img src="images/image5.jpg" class="rounded float-start m-2"  style="max-width: 400px; width:100%"/>
             <h3>Food and Water</h3>
-            <p>If you're going into the wild, you'll need to be prepared. I'm sure you have your weapons and armor polished and ready, but there's more to it than that! You're going to need to bring along enough food and water for your journey. You'll need one pound of food, and one gallon of water each day. Plan how long your party is going to be gone for, and buy the necessary rations.</p>
+            <p>
+                Listen up! If you're going into the wild, you need to be prepared.
+                I know, you have your weapons and armor polished and ready, but there's more to it than that!
+                You're going to need to bring along enough food and water for your journey.
+                Ration one pound of food, and one gallon of water each day.
+                So start by planning how long your party is going to be gone for, and buy the necessary rations.
+            <p>
+                Water is heavy though, and you probably won't be able to carry more than a few gallons with you at a time.
+                If you're heading out without any carts or wagons, that means you'll need to stay close to rivers and lakes so that you can fill your waterskins as needed.
+                Fortunately for you there are plenty of fresh drinking sources near Haven.
+                But to travel beyond, you'll likely want to invest in a cart and stock to pull it with.
+                The value of a cart is twofold. First, your whole party can load all of their rations and camping gear into the cart.
+                This will keep you unencumbered while traveling. Secondly, you can take along one or two barrels filled with fresh drinking water.
+                Then you won't be tethered to rivers and streams. As you travel you'll find plenty of opportunities to keep those barrels topped off: from streams, creaks, springs, and even rainwater.
+            </p>
+            <p>
+                Of course, if you or someone else in the party can forage for food and water, then you won't have to carry so much.
+                But relying on foraging can be a big gamble.
+                Depending on the terrain, and the time of year, you might not always come up with enough food and water for everyone.
+                Druids make a thing called a “goodberry” that they insist counts as a good meal.
+                Sure, it will keep you from starving to death, but it's a meager way to travel.
+                And you still need water at the end of the day. So if a druid says they have you covered, better ask to see the goods.
+            </p>
 
-            <p>Water is heavy though, and you probably won't be able to carry more than a few gallons with you at a time. If you're traveling without any carts or wagons, you'll need to stay close to rivers and lakes so that you can fill your waterskins as needed. Fortunately there are plenty of fresh drinking sources near Last Haven. But to travel beyond, you'll likely want to invest in a cart and stock to pull it with. The value of a cart is twofold. First, your whole party can load all of their rations and camping gear into the cart. This will keep you unencumbered while traveling. Secondly, you can take along one or two barrels filled with fresh drinking water. Then you won't be tethered to rivers and streams. As you travel you'll find plenty of opportunities to keep those barrels topped off: from streams, creaks, springs, and even rainwater.</p>
-
-            <p>Of course, if you or someone else in the party can forage for food and water, then that can lessen the amount you'll need to carry. But relying on foraging alone can be a gamble. Depending on the terrain, and the time of year, you might not always come up with enough food and water for everyone. Druids are known to magically produce a thing called a "goodberry" that they insist constitutes a good meal. Sure, it will keep you from starving to death, but it's a meager way to travel. And you still need water at the end of the day.</p>
-        </div>
-        <div class="container">
+            <a class="anchor" id="maps"></a>
             <h3>Maps and Traveling</h3>
-            <p>Now, to plan for your journey ahead, take a look at the map here. To the south is the Killion empire where you came from. To the north, east, and west are the unexplored wilds, teaming with monsters, ruins, dungeons, and who knows what else. Hobgoblins are known to come from the northwest, and wandering bands of orcs are said to be found to the east.</p>
+            <p>
+                A successful adventure starts with a good plan.
+                Take a look at the map here. To the south is the Killion empire where you came from.
+                To the north, east, and west are the unexplored wilds, overrun with monsters, ruins, dungeons, and who knows what else.
+                Hobgoblins are known to come from the northwest, and wandering bands of orcs are said to be found to the east.
+            </p>
             <img src="images/image3.png" class="float-end rounded m-2" style="max-width: 400px; width:100%;" />
-            <p>Each hexagon on this map is 6 miles wide. This means, depending on your travel pace, you can cover 3-6 tiles in one day. This can depend on the terrain. Traveling across mountain peaks or murky swamps will naturally take longer than open planes.</p>
-
-            <p>Before setting off, your party should elect one or more members to act as navigator to ensure you don't get lost. If they have a map, then this task gets easier. You can do your future selves a big favor by having another party member with cartographers tools create maps as you travel. Foragers can look for food and water. And anyone else should keep their eyes and ears open for dangers ahead, or behind.</p>
-
-            <p>Of course, if you're traveling along a road, river, or coastline, then there's no chance of becoming lost. And creating useful maps requires a good set of Cartographers tools. Be sure to buy a set if you plan on mapmaking.</p>
-
+            <p>
+                Each hexagon on this map is 6 miles wide. This means, depending on your travel pace, you should cover 3-6 tiles in a day.
+                This can depend on the terrain. Traveling across mountain peaks or murky swamps will naturally slow you down.
+            </p>
+            <p>
+                Before setting off, your party should elect one or more members to act as a navigator to ensure you don't get lost.
+                If they have a map, then this gets easier, obviously.
+                You can do your future selves a big favor by having another party member with cartographers tools create maps as you travel.
+                Foragers can look for food and water.
+                And anyone else should keep their eyes and ears open for dangers ahead, or behind.
+            </p>
+             <p>
+                Of course, if you're traveling along a road, river, or coastline, then there's no chance of becoming lost.
+                 And creating useful maps requires a good set of Cartographers tools. Be sure to buy a set if you plan on mapmaking.
+            </p>
             <div class="alert alert-info" style="overflow: hidden">
                 <p>Traveling into an adjacent hex tile will require a character in the party to succeed on a Wisdom (survival) check to avoid becoming lost. If you become lost, then you spend the next 1d6 hours of your traveling day stuck in your current tile. If you have a map of the area, then the navigator gains advantage on this check. If you move at a "slow" pace, the navigator gains a +5 on the check. A fast pace incurs a -5 penalty. These checks are not very difficult individually, but you will have to make quite a lot of them.</p>
-
-
-                <p>When you enter a new tile, I will reveal all of the adjacent tiles to it (weather permitting) so that you can see what terrain lies ahead. If you are on top of hills, then I will reveal two tiles out, or three tiles out from the tops of mountains. This won't necessarily reveal everything that exists inside those tiles, but you will at least be able to see the terrain.</p>
+                <p>When you enter a new tile, I will reveal all the adjacent tiles to it (weather permitting) so that you can see what terrain lies ahead. If you are on top of hills, then I will reveal two tiles out, or three tiles out from the tops of mountains. This won't necessarily reveal everything that exists inside those tiles, but you will at least be able to see the terrain.</p>
             </div>
-            <p>If you don't have any mounts or vehicles to carry your gear while you travel, you will likely be encumbered. This is no problem in terms of the distance you can cover in a day, but it may leave you vulnerable to attacks from monsters or wild animals. The hobgoblins and orcs out there are good with a bow, and a slow moving target is easy pickings for them. Moving stealthily is one way to cover your tracks and avoid enemies. But carrying your own ranged weapons is highly recommended.</p>
-        </div>
-        <div class="container">
+            <p>
+                If you don't have any mounts or vehicles to carry your gear while you travel, you will likely be encumbered.
+                This is no problem in terms of the distance you can cover in a day, but it may leave you slow and vulnerable to attacks from monsters or wild animals.
+                The hobgoblins and orcs out there are good with a bow, and a slow moving target is easy pickings for them.
+                Moving stealthily is one way to cover your tracks and avoid enemies. But carrying your own ranged weapons is highly recommended.
+            </p>
+
+
+
+            
+            <a class="anchor" id="camping"></a>
             <h3>Camping</h3>
             <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/DD-party-camp.jpg" class="img-fluid rounded m-2" />
             <p>At the end of the day, you'll need to set up camp. I hope you brought a blanket or bedroll to sleep on, or I wouldn't count on being able to get a good rest. I also recommend bringing tents, or at least some canvas that you can use to shelter yourself from the rain and wind. Without it, all it takes is a little bad weather, and you won't be sleeping through the night.</p>
@@ -272,29 +325,94 @@
                     <li>Only the character that was keeping watch at the time can be wearing armor. Everyone else wakes up in their jammies. (Remember that we are not using Xanathar's Guide, so its rules about sleeping in armor are not being used here.</li>
                 </ol>
              </div>
-        </div>
-        <div class="container">
-            <h2 class="display-6">Dungeon Delving - as presented by Lidda, the halfling rogue</h2>
+            <a class="anchor" id="dungeon-delving"></a>
+            <h2 class="display-6">Dungeon Delving - as presented by Lidda of the Scarlet Riders</h2>
             <img src="images/image4.jpg" class="rounded m-2 float-end" style="max-width: 400px; width: 100%"/>
-            <p>Dungeons take all kinds of forms out there: crypts, tombs, ancient ruins, abandoned keeps, haunted monasteries, shrines and temples. In my experience dungeons are always filled with treasure, monsters, and traps. High risk, high reward. Sometimes you'll find a dungeon by pure happenstance, but other times you'll know a little something about the dungeon before going in. If you have some prior knowledge, then use it to your advantage. If you're going into an old tomb, then you should make friends with a cleric, for example. Or if a cave system is filled with poisonous fungi and spores, you should bring along a few antitoxins.</p>
+            <p>
+                Before I joined the ranks of the Scarlet Riders, I used to try and strike it rich by exploring the dungeons out there in the wilds.
+                Dungeons take all kinds of forms out there: crypts, tombs, ancient ruins, abandoned keeps, haunted monasteries, shrines and temples.
+                In my experience, dungeons are always filled with treasure, monsters, and traps. High risk, high reward.
+                Sometimes you'll find a dungeon by pure happenstance, but other times you'll know a little something about the dungeon before going in.
+                If you have some prior knowledge, then use it to your advantage.
+                If you're going into an old tomb, then you should make friends with a cleric, for example.
+                Or if a cave system is filled with poisonous fungi and spores, you should bring along a few antitoxins.
+                This might seem obvious, but you'd be surprised how many foolhardy adventurers just go wandering off without a clue.
+            </p>
 
-            <p>Before heading in, I recommend setting up camp nearby. You don't want to be weighed down with a bunch of camping gear while you're inside. That way, if you need to high-tail it out of there, you'll be able to outrun slower creatures.</p>
+            <p>
+                Before heading into a dungeon, I recommend setting up camp nearby. You don't want to be weighed down with a bunch of camping gear while you're inside.
+                That way, if you need to high-tail it out of there, you'll be able to outrun slower creatures.
+            </p>
 
-            <p>Decide a marching order, and a standard operating procedure. Your party should be prepared for danger at the front, and from the back. You never know what kinds of traps or denizens might be crawling around. Keep your weapons and shields at the ready. Take a good listen at each door, and check for signs of traps before barging in. Maybe relegate any barbarians to the back of your ranks -- they love to come crashing through doors and waking up the whole dungeon. Once inside, give each room a thorough search if you can.</p>
+            <p>
+                Decide a marching order, and a standard operating procedure.
+                Your party should be prepared for danger at the front, and from the back.
+                You never know what kinds of traps or denizens might be crawling around.
+                Keep your weapons and shields at the ready. Take a good listen at each door, and check for signs of traps before barging in.
+                Maybe relegate any barbarians to the back of your ranks -- they love to come crashing through doors and waking up the whole dungeon.
+                Once inside, give each room a thorough search if you can.
+            </p>
 
-            <p>Most of the time it's pretty damn dark in a dungeon. Find someone with a free hand to hold a torch or lantern. Magical sources of light are even better. If everyone has their hands full already, then someone might have to stow a sword to carry the torch. If a battle breaks out, don't panic. Toss the torch into the room, or set down the lantern and get ready to fight.</p>
+            <p>
+                Most of the time it's pretty damn dark in a dungeon. Find someone with a free hand to hold a torch or lantern.
+                Magical sources of light are even better. If everyone has their hands full already, then someone might have to stow a sword to carry the torch.
+                If a battle breaks out, don't panic. Toss the torch into the room, or set down the lantern and get ready to fight.
+            </p>
 
-            <p>Don't think you have to destroy every creature you come across in a dungeon. Although nearly everything I've ever encountered in a dungeon is dangerous, not everything is necessarily evil. Some denizens are simply animals or other mindless things looking for their next meal. Other times, more intelligent creatures can be bribed, tricked, or negotiated with.</p>
+            <p>
+                Don't think you have to destroy every creature you come across in a dungeon.
+                Although nearly everything I've ever encountered in a dungeon is dangerous, not everything is necessarily evil.
+                Some denizens are simply animals or other mindless things looking for their next meal.
+                Other times, more intelligent creatures can be bribed, tricked, or negotiated with.
+            </p>
             <div class="alert alert-info">
                 <p>I will award experience points if you overcome monsters in nonviolent ways such as through parleying, intimidation,  tricking, sneaking past, etc. Experience points will also be awarded for disarming, bypassing, or falling victim to traps.</p>
             </div>
-            <p>If you think you'll ever need to return to the dungeon, someone in the party should create an accurate map while you explore. They will need a set of cartographers tools to produce a useful map. Don't forget to jot down some notes about what you find along the way. Between the time it takes to explore a room, quietly navigate corridors, search for traps, and draw maps, you should budget about 5-10 minutes per room.</p>
+            <p>
+                If you think you'll ever need to return to the dungeon, someone in the party should create an accurate map while you explore.
+                They will need a set of cartographers tools to produce a useful map.
+                Don't forget to jot down some notes about what you find along the way.
+                Between the time it takes to explore a room, quietly navigate corridors, search for traps, and draw maps, you should budget about 5-10 minutes per room.
+            </p>
             <div class="alert alert-info">
                 <p>I will draw out the dungeon's map for you  as you explore it, but unless your character has cartographers tools, then you won't be able to keep the map after the session is finished -- just as with the outdoor maps.</p>
             </div>
-            <p>You might need to rest inside the dungeon. Find a quiet spot to hole up for a little while, and hope nothing comes wandering by. If you need to sleep, I recommend heading back up to your campsite. Depending on the size and sparseness of the dungeon, you might be able to sleep within, but I wouldn't count on it.</p>
-        </div>
-
+            <p>
+                You might need to rest inside the dungeon. Find a quiet spot to hole up for a little while, and hope nothing comes wandering by.
+                If you need to sleep, I recommend heading back up to your campsite.
+                Depending on the size and sparseness of the dungeon, you might be able to sleep within it, but I wouldn't count on it.
+            </p>
+            <a class="anchor" id="kaiju"></a>
+            <h2 class="display-6">The Kaiju - as presented by Alred of the Cartographer's Club</h2>
+            <img src="https://www.gmbinder.com/images/qoSSATc.jpg" class="rounded m-2 float-start" style="max-width: 400px; width: 100%" />
+            <p>
+                Beyond the walls of Last Haven roam horrific monstrosities like you've never seen. Of course, I speak of the kaiju.
+                What you may not know, is that there are two kinds of kaiju. Kaiju of the first kind, I call "Wanderers".
+                These gargantuan beasts roam the wilds attacking anyone they cross paths with. Our research has gathered that there are
+                two such Wanderers that stay close to Last Haven. To the west is a colossal spider we've named Gomo. She stands at least fifty feet tall, and her legs are as thick as tree trunks.
+                And to the north, adventurers have crossed paths with Azitox the great Roc.
+                Each Wanderer is escorted by an army of smaller monsters. You'll know you are getting close to Gomo if you start to notice hoards of spiders around you.
+                Likewise, Azitox is preceded by swarms of ravens, vultures, and eagles.
+                The monsters you encounter will grow larger and more deadly the closer you get to the Wanderer.
+                My advice to you would be to keep an eye out for signs of a Wanderer and take caution before it's too late.
+                If you venture too deep into a Wanderer's path, you may not make it out alive. Many adventurers have left here never to return.
+            </p>
+            <p>
+                The second, and most powerful kind of kaiju, are what I call the "Keepers".
+                The legends say that each of the twelve forbidden temples was claimed by a kaiju. These Keepers are said to stay close to their temple
+                and guard it against intruders. I've never seen a Keeper with my own eyes, no one living has, but if the legends are true, then they are even more dangerous than the Wanderers.
+                We believe that the hobgoblins to the north may worship such a keeper, but that is mostly a hunch shared by members of the Cartographer's Club.
+            </p>
+            <div class="alert alert-info" style="overflow: hidden">
+                <p>
+                    As you explore the wild, I will periodically roll for the chance of an encounter old-school style. Depending on what region you are in, you might just stumble into the path of a Wanderer.
+                    If that happens, and depending on how you handle the situation, you may end up being subjected to multiple combat encounters in a single adventuring day. I'm telling you this because:
+                    <ol>
+                        <li>This is one way that I can throw multiple outdoor combat encounters at you in a single day and have it make "narrative sense"</li>
+                        <li>You can budget your time. If you are trying to get to somewhere specific, and start to notice signs of a Wanderer, then you can take steps to avoid having to deal with the gauntlet of creatures that will ensue.</li>
+                    </ol>
+                </p>
+            </div>
     </div>
 </div>
 
