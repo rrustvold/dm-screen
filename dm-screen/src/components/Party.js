@@ -1,3 +1,5 @@
+import { hideShow } from "../utils";
+
 function PartyInput({partySize, party, setParty}) {
 
     function change() {
@@ -26,39 +28,41 @@ function PartyInput({partySize, party, setParty}) {
             <>
                 <tr>
                     <td>
-                        <input type="text" id={name_id} onChange={(e) => change(e.target.value)}/>
+                        <input class="w3-input" type="text" id={level_id} onChange={(e) => change(e.target.value)} />
                     </td>
                     <td>
-                        <input type="text" id={ac_id} onChange={(e) => change(e.target.value)} />
+                        <input class="w3-input" type="text" id={name_id} onChange={(e) => change(e.target.value)}/>
                     </td>
                     <td>
-                        <input type="text"/>
+                        <input class="w3-input" type="text" id={ac_id} onChange={(e) => change(e.target.value)} />
                     </td>
                     <td>
-                        <input type="text"/>
+                        <input class="w3-input" type="text"/>
                     </td>
                     <td>
-                        <input type="text"/>
+                        <input class="w3-input" type="text"/>
                     </td>
                     <td>
-                        <input type="text"/>
+                        <input class="w3-input" type="text"/>
                     </td>
                     <td>
-                        <input type="text"/>
+                        <input class="w3-input" type="text"/>
                     </td>
                     <td>
-                        <input type="text" id={level_id} onChange={(e) => change(e.target.value)} />
+                        <input class="w3-input" type="text"/>
                     </td>
+                    
                 </tr>
             </>
         )
     }
 
     return (
-        <div>
-            <table>
+        <div class="w3-responsive">
+            <table class="w3-table w3-bordered w3-border">
                 <thead>
                 <tr>
+                    <td>Level</td>
                     <td>Name</td>
                     <td>AC</td>
                     <td>HP</td>
@@ -66,7 +70,7 @@ function PartyInput({partySize, party, setParty}) {
                     <td>Passive Insight</td>
                     <td>Passive Investigation</td>
                     <td>Initiative Bonus</td>
-                    <td>Level</td>
+                    
                 </tr>
                 </thead>
                 <tbody>
@@ -79,7 +83,12 @@ function PartyInput({partySize, party, setParty}) {
 
 function PartySize({setPartySize}){
     return (
-        <input type="text" onChange={(e) => setPartySize(e.target.value)} defaultValue="2" />
+        <div class="w3-container">
+            <p>
+                <label for="partySize">Party Size </label> 
+                <input type="text" id="partySize" onChange={(e) => setPartySize(e.target.value)} defaultValue="2" />
+            </p>
+        </div>
     )
 }
 
@@ -95,9 +104,12 @@ class PC {
 
 export default function Party({partySize, setPartySize, party, setParty}){
     return (
-        <>
-        <PartySize setPartySize={setPartySize}></PartySize>
-        <PartyInput partySize={partySize} party={party} setParty={setParty}></PartyInput>
-        </>
+        <div class="w3-container">
+            <h1>Party <button class="w3-btn w3-round w3-tiny" onClick={() => hideShow("party")}><i class="bi bi-arrow-down-up"></i></button></h1>
+            <div class="w3-container w3-show" id="party">
+                <PartySize setPartySize={setPartySize}></PartySize>
+                <PartyInput partySize={partySize} party={party} setParty={setParty}></PartyInput>
+            </div>
+        </div>
     )
 }

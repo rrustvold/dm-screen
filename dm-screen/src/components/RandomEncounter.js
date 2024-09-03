@@ -4,6 +4,7 @@ import {allLists, allOptions} from "./randomEncounter/environs";
 import {forest, forestOptions} from "./randomEncounter/environs/forest";
 import {hills, hillsOptions} from "./randomEncounter/environs/hills";
 import {grassland, grasslandOptions} from "./randomEncounter/environs/grassland";
+import { hideShow } from "../utils";
 
 function getPartyLimits(party){
     const encounter_difficulty = [
@@ -157,24 +158,40 @@ function RandomEncounterInput({setEncounter, party}){
 
 
     return (
-        <>
-            <select name="difficulty" id="difficulty">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-                <option value="deadly">Deadly</option>
-            </select>
-            <select name="environ" id="encounter-environ" onChange={(e) => changeEnviron(e.target.value)}>
-                <option value="forest">Forest</option>
-                <option value="hills">Hills</option>
-                <option value="grassland">Grassland</option>
-            </select>
-            <select name="monster-type" id="monster-type">
-                {monsterTypeOptions}
-            </select>
-            <input type="text" defaultValue="3" id="maxDiffMonsters" />
-            <input type="button" defaultValue="Generate" onClick={() => generate(setEncounter, party)}/>
-        </>
+        <div class="w3-container">
+            <div class="w3-row-padding">
+                <div class="w3-col s3">
+                    <label>Difficulty</label>
+                    <select name="difficulty" id="difficulty" class="w3-select">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="deadly">Deadly</option>
+                    </select>
+                </div>
+                <div class="w3-col s3">
+                    <label>Environment</label>
+                    <select name="environ" id="encounter-environ" onChange={(e) => changeEnviron(e.target.value)}  class="w3-select">
+                        <option value="forest">Forest</option>
+                        <option value="hills">Hills</option>
+                        <option value="grassland">Grassland</option>
+                    </select>
+                </div>
+                <div class="w3-col s3">
+                    <label>Monster Type</label>
+                    <select name="monster-type" id="monster-type"  class="w3-select">
+                        {monsterTypeOptions}
+                    </select>
+                </div>
+                <div class="w3-col s3">
+                    <label>Max different creatures</label>
+                    <input type="text" defaultValue="3" id="maxDiffMonsters" class="w3-input"/>
+                </div>
+            </div>
+            <p>
+            <input type="button" defaultValue="Generate" onClick={() => generate(setEncounter, party)} class="w3-block" />
+            </p>
+        </div>
     )
 }
 
@@ -196,10 +213,14 @@ export default function RandomEncounter2({party}){
         document.getElementById("monster-xp").value = xp_values.join(",");
     }
     return (
-        <>
-            <h1>Random Encounter</h1>
-        <RandomEncounterInput setEncounter={setEncounter} party={party}></RandomEncounterInput>
-            <div>{encounterBlock}</div>
-        </>
+        <div class="w3-container">
+            <h1 onClick={() => hideShow("randomencounter")}>Random Encounter</h1>
+            <div class="w3-container w3-show" id="randomencounter">
+                <RandomEncounterInput setEncounter={setEncounter} party={party}></RandomEncounterInput>
+                <p>
+                    {encounterBlock}
+                </p>
+            </div>
+        </div>
     )
 }

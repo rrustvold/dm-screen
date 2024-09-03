@@ -5,6 +5,7 @@ import {randomHazard} from "./RandomHazard.js";
 import {randomTrick} from "./RandomTrick.js";
 import {RandomTreasure} from "./RandomTreasure.js";
 import {useState} from "react";
+import { hideShow } from "../../utils.js";
 
 function Roll(sides, numDice=1) {
     let sum = 0;
@@ -155,9 +156,9 @@ class Chamber{
             let door = this.doors[i];
             doors.push(
                 <>
-                    <li>{door.type}</li>
+                    <br/>&emsp;{door.type}
                 </>
-            )
+                )
         }
         return (
             <div>
@@ -165,10 +166,7 @@ class Chamber{
                     <dt>Shape</dt>
                     <dd>{this.shape}</dd>
                     <dt>Exits</dt>
-                    <dd>{this.doors.length} doors</dd>
-                    <ul>
-                        {doors}
-                    </ul>
+                    <dd>{this.doors.length} doors:{doors}</dd>
                     <dd>{this.passages.length} passages</dd>
                     <dt>Purpose</dt>
                     <dd>{this.purpose}</dd>
@@ -191,7 +189,6 @@ function generateChamber(setRoom, dungeonPurpose){
         dungeonPurpose
     );
     setRoom(chamber);
-    console.log(chamber);
 }
 
 
@@ -205,33 +202,43 @@ export default function RandomDungeon() {
     const [hazard, setHazard] = useState("");
     const [trick, setTrick] = useState("");
     return (
-        <>
-            <h1>Random Dungeon</h1>
-            <label for="dungeonSelect">Dungeon : </label>
-            <select name="dungeonPurpose" onChange={(e) => {setDungeonPurpose(e.target.value)}}>
-                <option value="general">General</option>
-                <option value="lair">Lair</option>
-                <option value="maze">Maze</option>
-                <option value="mine">Mine</option>
-                <option value="planarGate">Planar Gate</option>
-                <option value="stronghold">Stronghold</option>
-                <option value="temple">Temple or Shrine</option>
-                <option value="tomb">Tomb</option>
-                <option value="treasureVault">Treasure Vault</option>
-            </select>
-            <h2>Current Chamber</h2>
-            <input type="button" onClick={() => {generateChamber(setRoom, dungeonPurpose)}} defaultValue="Generate Chamber" /><br/>
-            {room.markdown()}
-            <input type="button" onClick={() => {getBeyondDoor(setBeyondDoor)}} defaultValue="Beyond Door"/>: {beyondDoor}<br/>
-            <input type="button" onClick={() => {getDownPassage(setDownPassage)}}
-            defaultValue="Down Passage" />: {downPassage}<br/>
-            <input type="button" onClick={() => {setTrap(randomTrap())}}
-            defaultValue="Trap" />: {trap}<br/>
-            <input type="button" onClick={() => {setHazard(randomHazard())}}
-            defaultValue="Hazard" />: {hazard}<br/>
-            <input type="button" onClick={() => {setTrick(randomTrick())}}
-            defaultValue="Trick" />: {trick}<br/>
-            <RandomTreasure></RandomTreasure>
-        </>
+        <div class="w3-container">
+            <h1 onClick={() => hideShow("randomdungeon")}>Random Dungeon</h1>
+            <div class="w3-container w3-show" id="randomdungeon">
+                <label for="dungeonSelect">Dungeon Purpose</label>
+                <select name="dungeonPurpose" onChange={(e) => {setDungeonPurpose(e.target.value)}} class="w3-select">
+                    <option value="general">General</option>
+                    <option value="lair">Lair</option>
+                    <option value="maze">Maze</option>
+                    <option value="mine">Mine</option>
+                    <option value="planarGate">Planar Gate</option>
+                    <option value="stronghold">Stronghold</option>
+                    <option value="temple">Temple or Shrine</option>
+                    <option value="tomb">Tomb</option>
+                    <option value="treasureVault">Treasure Vault</option>
+                </select>
+                <h2>Current Chamber</h2>
+                    <p><input type="button" class="w3-button" onClick={() => {generateChamber(setRoom, dungeonPurpose)}} defaultValue="Generate Chamber" /></p>
+                <div class="w3-container w3-border">
+                    {room.markdown()}
+                </div>
+                
+                <p><input type="button" class="w3-button" onClick={() => {getBeyondDoor(setBeyondDoor)}} defaultValue="Beyond Door"/></p>
+                <div class="w3-container w3-border">{beyondDoor}</div>
+
+                <p><input type="button" class="w3-button" onClick={() => {getDownPassage(setDownPassage)}}
+                defaultValue="Down Passage" /></p>
+                <div class="w3-container w3-border">{downPassage}</div>
+
+                <p><input type="button" class="w3-button" onClick={() => {setTrap(randomTrap())}}
+                defaultValue="Trap" /></p>{trap}
+
+                <p><input type="button" class="w3-button" onClick={() => {setHazard(randomHazard())}}
+                defaultValue="Hazard" /></p><div class="w3-container w3-border">{hazard}</div>
+
+                <p><input type="button" class="w3-button" onClick={() => {setTrick(randomTrick())}}
+                defaultValue="Trick" /></p><div class="w3-container w3-border">{trick}</div>
+            </div>
+        </div>
     )
 }

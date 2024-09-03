@@ -1,4 +1,4 @@
-import Roll from "../../utils.js"
+import Roll, { hideShow } from "../../utils.js"
 import {useState} from "react";
 
 class Treasure{
@@ -58,15 +58,33 @@ export function RandomTreasure({party}){
   const [treasure, setTreasure] = useState(new Treasure(0,0,0,0,0,[],[],[]));
 
   return (
-    <>
-    <label for="monster-xp">Monster XP Values: </label>
-    <input type="text" id="monster-xp"/><br/>
-      <input type="button" defaultValue="Treasure" onClick={() => randomEncounterTreasure(document.getElementById("monster-xp").value, setTreasure, party)}/><br/>
-      CP: {treasure.cp}<br/>
-      SP: {treasure.sp}<br/>
-      EP: {treasure.ep}<br/>
-      GP: {treasure.gp}<br/>
-      PP: {treasure.pp}<br/>
-    </>
+    <div class="w3-container">
+      <h1 onClick={() => hideShow("randomtreasure")}>Random Treasure</h1>
+      <div class="w3-container w3-show" id="randomtreasure">
+        <label for="monster-xp">Monster XP Values: </label>
+        <input type="text" id="monster-xp" class="w3-input" /><br/>
+        <input type="button" defaultValue="Treasure" class="w3-bar" onClick={() => randomEncounterTreasure(document.getElementById("monster-xp").value, setTreasure, party)}/><br/>
+        <div class="w3-row-padding">
+          <div class="w3-col m2">
+            CP: {treasure.cp}
+          </div>
+          <div class="w3-col m2">
+            SP: {treasure.sp}
+          </div>
+          <div class="w3-col m2">
+            EP: {treasure.ep}
+          </div>
+          <div class="w3-col m2">
+            GP: {treasure.gp}
+          </div>
+          <div class="w3-col m2">
+            PP: {treasure.pp}
+          </div>
+          <div class="w3-col m2"></div>
+
+        </div>
+         
+      </div>
+    </div>
   )
 }

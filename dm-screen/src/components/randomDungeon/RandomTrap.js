@@ -93,12 +93,12 @@ export function randomTrap(){
     }
   
     return (
-        <>
+        <div class="w3-container w3-border">
         <p>Trigger: {trigger()}</p>
         <p>Damage: {damage()}</p>
         <p>Effects:</p>
         <p>{effects()}</p>
-        </>
+        </div>
     )
 
   }

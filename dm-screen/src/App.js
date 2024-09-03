@@ -16,14 +16,15 @@ function App() {
     const [party, setParty] = useState([]);
 
   return (
-      <div>
+      <div class="w3-container">
           <Party partySize={partySize} setPartySize={setPartySize} party={party} setParty={setParty}></Party>
+          <HordeMath party={party}></HordeMath>
           <RandomEncounter2 party={party}></RandomEncounter2>
           <RandomTreasure party={party}></RandomTreasure>
         <RandomDungeon></RandomDungeon>
         <Wilderness></Wilderness>
           {/*<DamageSeverity></DamageSeverity>*/}
-          <HordeMath party={party}></HordeMath>
+          
       </div>
   );
 }

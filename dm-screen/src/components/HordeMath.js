@@ -1,4 +1,5 @@
 import {useRef, useState} from "react";
+import { hideShow } from "../utils";
 
 function parseDamage(damage_str){
     damage_str = damage_str.trim().toLowerCase();
@@ -69,18 +70,38 @@ function roundToNearestDie(num) {
 function HordeMathInput(props) {
     return (
         <>
-            <label htmlFor="numAttackers">Number of Monsters </label>
-            <input type="text" id="numAttackers" value={props.numAttackers}
-                   onChange={(e) => props.setNumAttackers(Number(e.target.value))}/><br/>
-            <label htmlFor="attacksPerMonster">Attacks per Monster </label>
-            <input type="text" id="attacksPerMonster" value={props.attacksPerMonster}
-                   onChange={(e) => props.setAttacksPerMonster(Number(e.target.value))}/><br/>
-            <label htmlFor="attackBonus">Attack Bonus </label>
-            <input type="text" id="attackBonus" value={props.attackBonus}
-                   onChange={(e) => props.setAttackBonus(Number(e.target.value))}/><br/>
-            <label htmlFor="damage">Attack Damage </label>
-            <input type="text" id="damage" defaultValue={props.damage}
-                   onChange={(e) => props.setDamage(e.target.value)}/><br/>
+            <table class="w3-table">
+                <thead>
+                    <tr>
+                        <td>Number of Monsters</td>
+                        <td>Attacks per Monster</td>
+                        <td>Attack Bonus</td>
+                        <td>Attack Damage</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="numAttackers" class="w3-input" value={props.numAttackers}
+                                onChange={(e) => props.setNumAttackers(Number(e.target.value))}/>
+                        </td>
+                        <td>
+                            <input type="text" id="attacksPerMonster" class="w3-input" value={props.attacksPerMonster}
+                                onChange={(e) => props.setAttacksPerMonster(Number(e.target.value))}/>
+                        </td>
+                        <td>
+                            <input type="text" id="attackBonus" class="w3-input" value={props.attackBonus}
+                                onChange={(e) => props.setAttackBonus(Number(e.target.value))}/>
+                        </td>
+                        <td>
+                            <input type="text" id="damage" class="w3-input" defaultValue={props.damage}
+                                onChange={(e) => props.setDamage(e.target.value)}/>
+                        </td>
+                    </tr>
+                </tbody>
+                
+                
+            </table>
         </>
     )
 }
@@ -135,20 +156,25 @@ export default function HordeMath({party}) {
     }
 
     return (
-        <>
-            <h1>Horde Math</h1>
-            <HordeMathInput
-                numAttackers={numAttackers}
-                setNumAttackers={setNumAttackers}
-                attacksPerMonster={attacksPerMonster}
-                setAttacksPerMonster={setAttacksPerMonster}
-                attackBonus={attackBonus}
-                setAttackBonus={setAttackBonus}
-                damage={damage}
-                setDamage={setDamage}
-            ></HordeMathInput>
-            <br/>
-            <HordeMathOutput></HordeMathOutput>
-        </>
+        <div class="w3-container">
+            <h1 onClick={() => hideShow("hordemath")}>Horde Math</h1>
+            <div class="w3-container w3-show" id="hordemath">
+                <HordeMathInput
+                    numAttackers={numAttackers}
+                    setNumAttackers={setNumAttackers}
+                    attacksPerMonster={attacksPerMonster}
+                    setAttacksPerMonster={setAttacksPerMonster}
+                    attackBonus={attackBonus}
+                    setAttackBonus={setAttackBonus}
+                    damage={damage}
+                    setDamage={setDamage}
+                ></HordeMathInput>
+                <div class="w3-container">
+                    <HordeMathOutput></HordeMathOutput>
+                </div>
+                
+            </div>
+            
+        </div>
     )
 }
