@@ -139,3 +139,45 @@ export const troglodyte = {
     name: "Troglodyte",
     xp: 50
 }
+
+export const rust_monster = {
+    key: "rust-monster",
+    name: "Rust Monster",
+    xp: 0
+}
+
+export const grimlock = {
+    key: "grimlock",
+    name: "Grimlock",
+    xp: 0
+}
+
+export const hellhound = {
+    key: "hellhound",
+    name: "Hellhound",
+    xp: 0
+}
+
+export const chuul = {
+    key: "chuul",
+    name: "Chuul",
+    xp: 0
+}
+
+export const otyugh = {
+    key: "otyugh",
+    name: "Otyugh",
+    xp: 0
+}
+
+export const roper = {
+    key: "roper",
+    name: "Roper",
+    xp: 0
+}
+
+export const gibbering_mouther = {
+    key: "gibbering-mouther",
+    name: "Gibbering Mouther",
+    xp: 0
+}
