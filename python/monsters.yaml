@@ -1,0 +1,1670 @@
+- aboleth:
+    name: Aboleth
+    type: aberration
+    xp: 5900
+    api_url: /api/monsters/aboleth
+- acolyte:
+    name: Acolyte
+    type: humanoid
+    xp: 50
+    api_url: /api/monsters/acolyte
+- adult-black-dragon:
+    name: Adult Black Dragon
+    type: dragon
+    xp: 11500
+    api_url: /api/monsters/adult-black-dragon
+- adult-blue-dragon:
+    name: Adult Blue Dragon
+    type: dragon
+    xp: 15000
+    api_url: /api/monsters/adult-blue-dragon
+- adult-brass-dragon:
+    name: Adult Brass Dragon
+    type: dragon
+    xp: 10000
+    api_url: /api/monsters/adult-brass-dragon
+- adult-bronze-dragon:
+    name: Adult Bronze Dragon
+    type: dragon
+    xp: 13000
+    api_url: /api/monsters/adult-bronze-dragon
+- adult-copper-dragon:
+    name: Adult Copper Dragon
+    type: dragon
+    xp: 11500
+    api_url: /api/monsters/adult-copper-dragon
+- adult-gold-dragon:
+    name: Adult Gold Dragon
+    type: dragon
+    xp: 18000
+    api_url: /api/monsters/adult-gold-dragon
+- adult-green-dragon:
+    name: Adult Green Dragon
+    type: dragon
+    xp: 13000
+    api_url: /api/monsters/adult-green-dragon
+- adult-red-dragon:
+    name: Adult Red Dragon
+    type: dragon
+    xp: 18000
+    api_url: /api/monsters/adult-red-dragon
+- adult-silver-dragon:
+    name: Adult Silver Dragon
+    type: dragon
+    xp: 15000
+    api_url: /api/monsters/adult-silver-dragon
+- adult-white-dragon:
+    name: Adult White Dragon
+    type: dragon
+    xp: 10000
+    api_url: /api/monsters/adult-white-dragon
+- air-elemental:
+    name: Air Elemental
+    type: elemental
+    xp: 1800
+    api_url: /api/monsters/air-elemental
+- ancient-black-dragon:
+    name: Ancient Black Dragon
+    type: dragon
+    xp: 33000
+    api_url: /api/monsters/ancient-black-dragon
+- ancient-blue-dragon:
+    name: Ancient Blue Dragon
+    type: dragon
+    xp: 50000
+    api_url: /api/monsters/ancient-blue-dragon
+- ancient-brass-dragon:
+    name: Ancient Brass Dragon
+    type: dragon
+    xp: 25000
+    api_url: /api/monsters/ancient-brass-dragon
+- ancient-bronze-dragon:
+    name: Ancient Bronze Dragon
+    type: dragon
+    xp: 41000
+    api_url: /api/monsters/ancient-bronze-dragon
+- ancient-copper-dragon:
+    name: Ancient Copper Dragon
+    type: dragon
+    xp: 33000
+    api_url: /api/monsters/ancient-copper-dragon
+- ancient-gold-dragon:
+    name: Ancient Gold Dragon
+    type: dragon
+    xp: 62000
+    api_url: /api/monsters/ancient-gold-dragon
+- ancient-green-dragon:
+    name: Ancient Green Dragon
+    type: dragon
+    xp: 41000
+    api_url: /api/monsters/ancient-green-dragon
+- ancient-red-dragon:
+    name: Ancient Red Dragon
+    type: dragon
+    xp: 62000
+    api_url: /api/monsters/ancient-red-dragon
+- ancient-silver-dragon:
+    name: Ancient Silver Dragon
+    type: dragon
+    xp: 50000
+    api_url: /api/monsters/ancient-silver-dragon
+- ancient-white-dragon:
+    name: Ancient White Dragon
+    type: dragon
+    xp: 25000
+    api_url: /api/monsters/ancient-white-dragon
+- androsphinx:
+    name: Androsphinx
+    type: monstrosity
+    xp: 18000
+    api_url: /api/monsters/androsphinx
+- animated-armor:
+    name: Animated Armor
+    type: construct
+    xp: 200
+    api_url: /api/monsters/animated-armor
+- ankheg:
+    name: Ankheg
+    type: monstrosity
+    xp: 250
+    api_url: /api/monsters/ankheg
+- ape:
+    name: Ape
+    type: beast
+    xp: 100
+    api_url: /api/monsters/ape
+- archmage:
+    name: Archmage
+    type: humanoid
+    xp: 8400
+    api_url: /api/monsters/archmage
+- assassin:
+    name: Assassin
+    type: humanoid
+    xp: 3900
+    api_url: /api/monsters/assassin
+- awakened-shrub:
+    name: Awakened Shrub
+    type: plant
+    xp: 10
+    api_url: /api/monsters/awakened-shrub
+- awakened-tree:
+    name: Awakened Tree
+    type: plant
+    xp: 450
+    api_url: /api/monsters/awakened-tree
+- axe-beak:
+    name: Axe Beak
+    type: beast
+    xp: 50
+    api_url: /api/monsters/axe-beak
+- azer:
+    name: Azer
+    type: elemental
+    xp: 450
+    api_url: /api/monsters/azer
+- baboon:
+    name: Baboon
+    type: beast
+    xp: 10
+    api_url: /api/monsters/baboon
+- badger:
+    name: Badger
+    type: beast
+    xp: 10
+    api_url: /api/monsters/badger
+- balor:
+    name: Balor
+    type: fiend
+    xp: 22000
+    api_url: /api/monsters/balor
+- bandit:
+    name: Bandit
+    type: humanoid
+    xp: 25
+    api_url: /api/monsters/bandit
+- bandit-captain:
+    name: Bandit Captain
+    type: humanoid
+    xp: 450
+    api_url: /api/monsters/bandit-captain
+- barbed-devil:
+    name: Barbed Devil
+    type: fiend
+    xp: 1800
+    api_url: /api/monsters/barbed-devil
+- basilisk:
+    name: Basilisk
+    type: monstrosity
+    xp: 700
+    api_url: /api/monsters/basilisk
+- bat:
+    name: Bat
+    type: beast
+    xp: 10
+    api_url: /api/monsters/bat
+- bearded-devil:
+    name: Bearded Devil
+    type: fiend
+    xp: 700
+    api_url: /api/monsters/bearded-devil
+- behir:
+    name: Behir
+    type: monstrosity
+    xp: 7200
+    api_url: /api/monsters/behir
+- berserker:
+    name: Berserker
+    type: humanoid
+    xp: 450
+    api_url: /api/monsters/berserker
+- black-bear:
+    name: Black Bear
+    type: beast
+    xp: 100
+    api_url: /api/monsters/black-bear
+- black-dragon-wyrmling:
+    name: Black Dragon Wyrmling
+    type: dragon
+    xp: 450
+    api_url: /api/monsters/black-dragon-wyrmling
+- black-pudding:
+    name: Black Pudding
+    type: ooze
+    xp: 1100
+    api_url: /api/monsters/black-pudding
+- blink-dog:
+    name: Blink Dog
+    type: fey
+    xp: 50
+    api_url: /api/monsters/blink-dog
+- blood-hawk:
+    name: Blood Hawk
+    type: beast
+    xp: 25
+    api_url: /api/monsters/blood-hawk
+- blue-dragon-wyrmling:
+    name: Blue Dragon Wyrmling
+    type: dragon
+    xp: 700
+    api_url: /api/monsters/blue-dragon-wyrmling
+- boar:
+    name: Boar
+    type: beast
+    xp: 50
+    api_url: /api/monsters/boar
+- bone-devil:
+    name: Bone Devil
+    type: fiend
+    xp: 5000
+    api_url: /api/monsters/bone-devil
+- brass-dragon-wyrmling:
+    name: Brass Dragon Wyrmling
+    type: dragon
+    xp: 100
+    api_url: /api/monsters/brass-dragon-wyrmling
+- bronze-dragon-wyrmling:
+    name: Bronze Dragon Wyrmling
+    type: dragon
+    xp: 450
+    api_url: /api/monsters/bronze-dragon-wyrmling
+- brown-bear:
+    name: Brown Bear
+    type: beast
+    xp: 200
+    api_url: /api/monsters/brown-bear
+- bugbear:
+    name: Bugbear
+    type: humanoid
+    xp: 200
+    api_url: /api/monsters/bugbear
+- bulette:
+    name: Bulette
+    type: monstrosity
+    xp: 1800
+    api_url: /api/monsters/bulette
+- camel:
+    name: Camel
+    type: beast
+    xp: 25
+    api_url: /api/monsters/camel
+- cat:
+    name: Cat
+    type: beast
+    xp: 10
+    api_url: /api/monsters/cat
+- centaur:
+    name: Centaur
+    type: monstrosity
+    xp: 450
+    api_url: /api/monsters/centaur
+- chain-devil:
+    name: Chain Devil
+    type: fiend
+    xp: 3900
+    api_url: /api/monsters/chain-devil
+- chimera:
+    name: Chimera
+    type: monstrosity
+    xp: 2300
+    api_url: /api/monsters/chimera
+- chuul:
+    name: Chuul
+    type: aberration
+    xp: 1100
+    api_url: /api/monsters/chuul
+- clay-golem:
+    name: Clay Golem
+    type: construct
+    xp: 5000
+    api_url: /api/monsters/clay-golem
+- cloaker:
+    name: Cloaker
+    type: aberration
+    xp: 3900
+    api_url: /api/monsters/cloaker
+- cloud-giant:
+    name: Cloud Giant
+    type: giant
+    xp: 5000
+    api_url: /api/monsters/cloud-giant
+- cockatrice:
+    name: Cockatrice
+    type: monstrosity
+    xp: 100
+    api_url: /api/monsters/cockatrice
+- commoner:
+    name: Commoner
+    type: humanoid
+    xp: 10
+    api_url: /api/monsters/commoner
+- constrictor-snake:
+    name: Constrictor Snake
+    type: beast
+    xp: 50
+    api_url: /api/monsters/constrictor-snake
+- copper-dragon-wyrmling:
+    name: Copper Dragon Wyrmling
+    type: dragon
+    xp: 200
+    api_url: /api/monsters/copper-dragon-wyrmling
+- couatl:
+    name: Couatl
+    type: celestial
+    xp: 1100
+    api_url: /api/monsters/couatl
+- crab:
+    name: Crab
+    type: beast
+    xp: 10
+    api_url: /api/monsters/crab
+- crocodile:
+    name: Crocodile
+    type: beast
+    xp: 100
+    api_url: /api/monsters/crocodile
+- cult-fanatic:
+    name: Cult Fanatic
+    type: humanoid
+    xp: 450
+    api_url: /api/monsters/cult-fanatic
+- cultist:
+    name: Cultist
+    type: humanoid
+    xp: 25
+    api_url: /api/monsters/cultist
+- darkmantle:
+    name: Darkmantle
+    type: monstrosity
+    xp: 100
+    api_url: /api/monsters/darkmantle
+- death-dog:
+    name: Death Dog
+    type: monstrosity
+    xp: 200
+    api_url: /api/monsters/death-dog
+- deep-gnome-svirfneblin:
+    name: Deep Gnome (Svirfneblin)
+    type: humanoid
+    xp: 50
+    api_url: /api/monsters/deep-gnome-svirfneblin
+- deer:
+    name: Deer
+    type: beast
+    xp: 10
+    api_url: /api/monsters/deer
+- deva:
+    name: Deva
+    type: celestial
+    xp: 5900
+    api_url: /api/monsters/deva
+- dire-wolf:
+    name: Dire Wolf
+    type: beast
+    xp: 200
+    api_url: /api/monsters/dire-wolf
+- djinni:
+    name: Djinni
+    type: elemental
+    xp: 7200
+    api_url: /api/monsters/djinni
+- doppelganger:
+    name: Doppelganger
+    type: monstrosity
+    xp: 700
+    api_url: /api/monsters/doppelganger
+- draft-horse:
+    name: Draft Horse
+    type: beast
+    xp: 50
+    api_url: /api/monsters/draft-horse
+- dragon-turtle:
+    name: Dragon Turtle
+    type: dragon
+    xp: 18000
+    api_url: /api/monsters/dragon-turtle
+- dretch:
+    name: Dretch
+    type: fiend
+    xp: 25
+    api_url: /api/monsters/dretch
+- drider:
+    name: Drider
+    type: monstrosity
+    xp: 2300
+    api_url: /api/monsters/drider
+- drow:
+    name: Drow
+    type: humanoid
+    xp: 50
+    api_url: /api/monsters/drow
+- druid:
+    name: Druid
+    type: humanoid
+    xp: 450
+    api_url: /api/monsters/druid
+- dryad:
+    name: Dryad
+    type: fey
+    xp: 200
+    api_url: /api/monsters/dryad
+- duergar:
+    name: Duergar
+    type: humanoid
+    xp: 200
+    api_url: /api/monsters/duergar
+- dust-mephit:
+    name: Dust Mephit
+    type: elemental
+    xp: 100
+    api_url: /api/monsters/dust-mephit
+- eagle:
+    name: Eagle
+    type: beast
+    xp: 10
+    api_url: /api/monsters/eagle
+- earth-elemental:
+    name: Earth Elemental
+    type: elemental
+    xp: 1800
+    api_url: /api/monsters/earth-elemental
+- efreeti:
+    name: Efreeti
+    type: elemental
+    xp: 7200
+    api_url: /api/monsters/efreeti
+- elephant:
+    name: Elephant
+    type: beast
+    xp: 1100
+    api_url: /api/monsters/elephant
+- elk:
+    name: Elk
+    type: beast
+    xp: 50
+    api_url: /api/monsters/elk
+- erinyes:
+    name: Erinyes
+    type: fiend
+    xp: 8400
+    api_url: /api/monsters/erinyes
+- ettercap:
+    name: Ettercap
+    type: monstrosity
+    xp: 450
+    api_url: /api/monsters/ettercap
+- ettin:
+    name: Ettin
+    type: giant
+    xp: 1100
+    api_url: /api/monsters/ettin
+- fire-elemental:
+    name: Fire Elemental
+    type: elemental
+    xp: 1800
+    api_url: /api/monsters/fire-elemental
+- fire-giant:
+    name: Fire Giant
+    type: giant
+    xp: 5000
+    api_url: /api/monsters/fire-giant
+- flesh-golem:
+    name: Flesh Golem
+    type: construct
+    xp: 1800
+    api_url: /api/monsters/flesh-golem
+- flying-snake:
+    name: Flying Snake
+    type: beast
+    xp: 25
+    api_url: /api/monsters/flying-snake
+- flying-sword:
+    name: Flying Sword
+    type: construct
+    xp: 50
+    api_url: /api/monsters/flying-sword
+- frog:
+    name: Frog
+    type: beast
+    xp: 0
+    api_url: /api/monsters/frog
+- frost-giant:
+    name: Frost Giant
+    type: giant
+    xp: 3900
+    api_url: /api/monsters/frost-giant
+- gargoyle:
+    name: Gargoyle
+    type: elemental
+    xp: 450
+    api_url: /api/monsters/gargoyle
+- gelatinous-cube:
+    name: Gelatinous Cube
+    type: ooze
+    xp: 450
+    api_url: /api/monsters/gelatinous-cube
+- ghast:
+    name: Ghast
+    type: undead
+    xp: 450
+    api_url: /api/monsters/ghast
+- ghost:
+    name: Ghost
+    type: undead
+    xp: 1100
+    api_url: /api/monsters/ghost
+- ghoul:
+    name: Ghoul
+    type: undead
+    xp: 200
+    api_url: /api/monsters/ghoul
+- giant-ape:
+    name: Giant Ape
+    type: beast
+    xp: 2900
+    api_url: /api/monsters/giant-ape
+- giant-badger:
+    name: Giant Badger
+    type: beast
+    xp: 50
+    api_url: /api/monsters/giant-badger
+- giant-bat:
+    name: Giant Bat
+    type: beast
+    xp: 50
+    api_url: /api/monsters/giant-bat
+- giant-boar:
+    name: Giant Boar
+    type: beast
+    xp: 450
+    api_url: /api/monsters/giant-boar
+- giant-centipede:
+    name: Giant Centipede
+    type: beast
+    xp: 50
+    api_url: /api/monsters/giant-centipede
+- giant-constrictor-snake:
+    name: Giant Constrictor Snake
+    type: beast
+    xp: 450
+    api_url: /api/monsters/giant-constrictor-snake
+- giant-crab:
+    name: Giant Crab
+    type: beast
+    xp: 25
+    api_url: /api/monsters/giant-crab
+- giant-crocodile:
+    name: Giant Crocodile
+    type: beast
+    xp: 1800
+    api_url: /api/monsters/giant-crocodile
+- giant-eagle:
+    name: Giant Eagle
+    type: beast
+    xp: 200
+    api_url: /api/monsters/giant-eagle
+- giant-elk:
+    name: Giant Elk
+    type: beast
+    xp: 450
+    api_url: /api/monsters/giant-elk
+- giant-fire-beetle:
+    name: Giant Fire Beetle
+    type: beast
+    xp: 10
+    api_url: /api/monsters/giant-fire-beetle
+- giant-frog:
+    name: Giant Frog
+    type: beast
+    xp: 50
+    api_url: /api/monsters/giant-frog
+- giant-goat:
+    name: Giant Goat
+    type: beast
+    xp: 100
+    api_url: /api/monsters/giant-goat
+- giant-hyena:
+    name: Giant Hyena
+    type: beast
+    xp: 200
+    api_url: /api/monsters/giant-hyena
+- giant-lizard:
+    name: Giant Lizard
+    type: beast
+    xp: 50
+    api_url: /api/monsters/giant-lizard
+- giant-octopus:
+    name: Giant Octopus
+    type: beast
+    xp: 200
+    api_url: /api/monsters/giant-octopus
+- giant-owl:
+    name: Giant Owl
+    type: beast
+    xp: 50
+    api_url: /api/monsters/giant-owl
+- giant-poisonous-snake:
+    name: Giant Poisonous Snake
+    type: beast
+    xp: 50
+    api_url: /api/monsters/giant-poisonous-snake
+- giant-rat:
+    name: Giant Rat
+    type: beast
+    xp: 25
+    api_url: /api/monsters/giant-rat
+- giant-rat-diseased:
+    name: Giant Rat (Diseased)
+    type: beast
+    xp: 25
+    api_url: /api/monsters/giant-rat-diseased
+- giant-scorpion:
+    name: Giant Scorpion
+    type: beast
+    xp: 700
+    api_url: /api/monsters/giant-scorpion
+- giant-sea-horse:
+    name: Giant Sea Horse
+    type: beast
+    xp: 100
+    api_url: /api/monsters/giant-sea-horse
+- giant-shark:
+    name: Giant Shark
+    type: beast
+    xp: 1800
+    api_url: /api/monsters/giant-shark
+- giant-spider:
+    name: Giant Spider
+    type: beast
+    xp: 200
+    api_url: /api/monsters/giant-spider
+- giant-toad:
+    name: Giant Toad
+    type: beast
+    xp: 200
+    api_url: /api/monsters/giant-toad
+- giant-vulture:
+    name: Giant Vulture
+    type: beast
+    xp: 200
+    api_url: /api/monsters/giant-vulture
+- giant-wasp:
+    name: Giant Wasp
+    type: beast
+    xp: 100
+    api_url: /api/monsters/giant-wasp
+- giant-weasel:
+    name: Giant Weasel
+    type: beast
+    xp: 25
+    api_url: /api/monsters/giant-weasel
+- giant-wolf-spider:
+    name: Giant Wolf Spider
+    type: beast
+    xp: 50
+    api_url: /api/monsters/giant-wolf-spider
+- gibbering-mouther:
+    name: Gibbering Mouther
+    type: aberration
+    xp: 450
+    api_url: /api/monsters/gibbering-mouther
+- glabrezu:
+    name: Glabrezu
+    type: fiend
+    xp: 5000
+    api_url: /api/monsters/glabrezu
+- gladiator:
+    name: Gladiator
+    type: humanoid
+    xp: 1800
+    api_url: /api/monsters/gladiator
+- gnoll:
+    name: Gnoll
+    type: humanoid
+    xp: 100
+    api_url: /api/monsters/gnoll
+- goat:
+    name: Goat
+    type: beast
+    xp: 10
+    api_url: /api/monsters/goat
+- goblin:
+    name: Goblin
+    type: humanoid
+    xp: 50
+    api_url: /api/monsters/goblin
+- gold-dragon-wyrmling:
+    name: Gold Dragon Wyrmling
+    type: dragon
+    xp: 700
+    api_url: /api/monsters/gold-dragon-wyrmling
+- gorgon:
+    name: Gorgon
+    type: monstrosity
+    xp: 1800
+    api_url: /api/monsters/gorgon
+- gray-ooze:
+    name: Gray Ooze
+    type: ooze
+    xp: 100
+    api_url: /api/monsters/gray-ooze
+- green-dragon-wyrmling:
+    name: Green Dragon Wyrmling
+    type: dragon
+    xp: 450
+    api_url: /api/monsters/green-dragon-wyrmling
+- green-hag:
+    name: Green Hag
+    type: fey
+    xp: 700
+    api_url: /api/monsters/green-hag
+- grick:
+    name: Grick
+    type: monstrosity
+    xp: 450
+    api_url: /api/monsters/grick
+- griffon:
+    name: Griffon
+    type: monstrosity
+    xp: 450
+    api_url: /api/monsters/griffon
+- grimlock:
+    name: Grimlock
+    type: humanoid
+    xp: 50
+    api_url: /api/monsters/grimlock
+- guard:
+    name: Guard
+    type: humanoid
+    xp: 25
+    api_url: /api/monsters/guard
+- guardian-naga:
+    name: Guardian Naga
+    type: monstrosity
+    xp: 5900
+    api_url: /api/monsters/guardian-naga
+- gynosphinx:
+    name: Gynosphinx
+    type: monstrosity
+    xp: 7200
+    api_url: /api/monsters/gynosphinx
+- half-red-dragon-veteran:
+    name: Half-Red Dragon Veteran
+    type: humanoid
+    xp: 1800
+    api_url: /api/monsters/half-red-dragon-veteran
+- harpy:
+    name: Harpy
+    type: monstrosity
+    xp: 200
+    api_url: /api/monsters/harpy
+- hawk:
+    name: Hawk
+    type: beast
+    xp: 10
+    api_url: /api/monsters/hawk
+- hell-hound:
+    name: Hell Hound
+    type: fiend
+    xp: 700
+    api_url: /api/monsters/hell-hound
+- hezrou:
+    name: Hezrou
+    type: fiend
+    xp: 3900
+    api_url: /api/monsters/hezrou
+- hill-giant:
+    name: Hill Giant
+    type: giant
+    xp: 1800
+    api_url: /api/monsters/hill-giant
+- hippogriff:
+    name: Hippogriff
+    type: monstrosity
+    xp: 200
+    api_url: /api/monsters/hippogriff
+- hobgoblin:
+    name: Hobgoblin
+    type: humanoid
+    xp: 100
+    api_url: /api/monsters/hobgoblin
+- homunculus:
+    name: Homunculus
+    type: construct
+    xp: 10
+    api_url: /api/monsters/homunculus
+- horned-devil:
+    name: Horned Devil
+    type: fiend
+    xp: 7200
+    api_url: /api/monsters/horned-devil
+- hunter-shark:
+    name: Hunter Shark
+    type: beast
+    xp: 450
+    api_url: /api/monsters/hunter-shark
+- hydra:
+    name: Hydra
+    type: monstrosity
+    xp: 3900
+    api_url: /api/monsters/hydra
+- hyena:
+    name: Hyena
+    type: beast
+    xp: 10
+    api_url: /api/monsters/hyena
+- ice-devil:
+    name: Ice Devil
+    type: fiend
+    xp: 11500
+    api_url: /api/monsters/ice-devil
+- ice-mephit:
+    name: Ice Mephit
+    type: elemental
+    xp: 100
+    api_url: /api/monsters/ice-mephit
+- imp:
+    name: Imp
+    type: fiend
+    xp: 200
+    api_url: /api/monsters/imp
+- invisible-stalker:
+    name: Invisible Stalker
+    type: elemental
+    xp: 2300
+    api_url: /api/monsters/invisible-stalker
+- iron-golem:
+    name: Iron Golem
+    type: construct
+    xp: 15000
+    api_url: /api/monsters/iron-golem
+- jackal:
+    name: Jackal
+    type: beast
+    xp: 10
+    api_url: /api/monsters/jackal
+- killer-whale:
+    name: Killer Whale
+    type: beast
+    xp: 700
+    api_url: /api/monsters/killer-whale
+- knight:
+    name: Knight
+    type: humanoid
+    xp: 700
+    api_url: /api/monsters/knight
+- kobold:
+    name: Kobold
+    type: humanoid
+    xp: 25
+    api_url: /api/monsters/kobold
+- kraken:
+    name: Kraken
+    type: monstrosity
+    xp: 50000
+    api_url: /api/monsters/kraken
+- lamia:
+    name: Lamia
+    type: monstrosity
+    xp: 1100
+    api_url: /api/monsters/lamia
+- lemure:
+    name: Lemure
+    type: fiend
+    xp: 10
+    api_url: /api/monsters/lemure
+- lich:
+    name: Lich
+    type: undead
+    xp: 33000
+    api_url: /api/monsters/lich
+- lion:
+    name: Lion
+    type: beast
+    xp: 200
+    api_url: /api/monsters/lion
+- lizard:
+    name: Lizard
+    type: beast
+    xp: 10
+    api_url: /api/monsters/lizard
+- lizardfolk:
+    name: Lizardfolk
+    type: humanoid
+    xp: 100
+    api_url: /api/monsters/lizardfolk
+- mage:
+    name: Mage
+    type: humanoid
+    xp: 2300
+    api_url: /api/monsters/mage
+- magma-mephit:
+    name: Magma Mephit
+    type: elemental
+    xp: 100
+    api_url: /api/monsters/magma-mephit
+- magmin:
+    name: Magmin
+    type: elemental
+    xp: 100
+    api_url: /api/monsters/magmin
+- mammoth:
+    name: Mammoth
+    type: beast
+    xp: 2300
+    api_url: /api/monsters/mammoth
+- manticore:
+    name: Manticore
+    type: monstrosity
+    xp: 700
+    api_url: /api/monsters/manticore
+- marilith:
+    name: Marilith
+    type: fiend
+    xp: 15000
+    api_url: /api/monsters/marilith
+- mastiff:
+    name: Mastiff
+    type: beast
+    xp: 25
+    api_url: /api/monsters/mastiff
+- medusa:
+    name: Medusa
+    type: monstrosity
+    xp: 2300
+    api_url: /api/monsters/medusa
+- merfolk:
+    name: Merfolk
+    type: humanoid
+    xp: 25
+    api_url: /api/monsters/merfolk
+- merrow:
+    name: Merrow
+    type: monstrosity
+    xp: 450
+    api_url: /api/monsters/merrow
+- mimic:
+    name: Mimic
+    type: monstrosity
+    xp: 450
+    api_url: /api/monsters/mimic
+- minotaur:
+    name: Minotaur
+    type: monstrosity
+    xp: 700
+    api_url: /api/monsters/minotaur
+- minotaur-skeleton:
+    name: Minotaur Skeleton
+    type: undead
+    xp: 450
+    api_url: /api/monsters/minotaur-skeleton
+- mule:
+    name: Mule
+    type: beast
+    xp: 25
+    api_url: /api/monsters/mule
+- mummy:
+    name: Mummy
+    type: undead
+    xp: 700
+    api_url: /api/monsters/mummy
+- mummy-lord:
+    name: Mummy Lord
+    type: undead
+    xp: 13000
+    api_url: /api/monsters/mummy-lord
+- nalfeshnee:
+    name: Nalfeshnee
+    type: fiend
+    xp: 10000
+    api_url: /api/monsters/nalfeshnee
+- night-hag:
+    name: Night Hag
+    type: fiend
+    xp: 1800
+    api_url: /api/monsters/night-hag
+- nightmare:
+    name: Nightmare
+    type: fiend
+    xp: 700
+    api_url: /api/monsters/nightmare
+- noble:
+    name: Noble
+    type: humanoid
+    xp: 25
+    api_url: /api/monsters/noble
+- ochre-jelly:
+    name: Ochre Jelly
+    type: ooze
+    xp: 450
+    api_url: /api/monsters/ochre-jelly
+- octopus:
+    name: Octopus
+    type: beast
+    xp: 10
+    api_url: /api/monsters/octopus
+- ogre:
+    name: Ogre
+    type: giant
+    xp: 450
+    api_url: /api/monsters/ogre
+- ogre-zombie:
+    name: Ogre Zombie
+    type: undead
+    xp: 450
+    api_url: /api/monsters/ogre-zombie
+- oni:
+    name: Oni
+    type: giant
+    xp: 2900
+    api_url: /api/monsters/oni
+- orc:
+    name: Orc
+    type: humanoid
+    xp: 100
+    api_url: /api/monsters/orc
+- otyugh:
+    name: Otyugh
+    type: aberration
+    xp: 1800
+    api_url: /api/monsters/otyugh
+- owl:
+    name: Owl
+    type: beast
+    xp: 10
+    api_url: /api/monsters/owl
+- owlbear:
+    name: Owlbear
+    type: monstrosity
+    xp: 700
+    api_url: /api/monsters/owlbear
+- panther:
+    name: Panther
+    type: beast
+    xp: 50
+    api_url: /api/monsters/panther
+- pegasus:
+    name: Pegasus
+    type: celestial
+    xp: 450
+    api_url: /api/monsters/pegasus
+- phase-spider:
+    name: Phase Spider
+    type: monstrosity
+    xp: 700
+    api_url: /api/monsters/phase-spider
+- pit-fiend:
+    name: Pit Fiend
+    type: fiend
+    xp: 25000
+    api_url: /api/monsters/pit-fiend
+- planetar:
+    name: Planetar
+    type: celestial
+    xp: 15000
+    api_url: /api/monsters/planetar
+- plesiosaurus:
+    name: Plesiosaurus
+    type: beast
+    xp: 450
+    api_url: /api/monsters/plesiosaurus
+- poisonous-snake:
+    name: Poisonous Snake
+    type: beast
+    xp: 25
+    api_url: /api/monsters/poisonous-snake
+- polar-bear:
+    name: Polar Bear
+    type: beast
+    xp: 450
+    api_url: /api/monsters/polar-bear
+- pony:
+    name: Pony
+    type: beast
+    xp: 25
+    api_url: /api/monsters/pony
+- priest:
+    name: Priest
+    type: humanoid
+    xp: 450
+    api_url: /api/monsters/priest
+- pseudodragon:
+    name: Pseudodragon
+    type: dragon
+    xp: 50
+    api_url: /api/monsters/pseudodragon
+- purple-worm:
+    name: Purple Worm
+    type: monstrosity
+    xp: 13000
+    api_url: /api/monsters/purple-worm
+- quasit:
+    name: Quasit
+    type: fiend
+    xp: 200
+    api_url: /api/monsters/quasit
+- quipper:
+    name: Quipper
+    type: beast
+    xp: 10
+    api_url: /api/monsters/quipper
+- rakshasa:
+    name: Rakshasa
+    type: fiend
+    xp: 10000
+    api_url: /api/monsters/rakshasa
+- rat:
+    name: Rat
+    type: beast
+    xp: 10
+    api_url: /api/monsters/rat
+- raven:
+    name: Raven
+    type: beast
+    xp: 10
+    api_url: /api/monsters/raven
+- red-dragon-wyrmling:
+    name: Red Dragon Wyrmling
+    type: dragon
+    xp: 1100
+    api_url: /api/monsters/red-dragon-wyrmling
+- reef-shark:
+    name: Reef Shark
+    type: beast
+    xp: 100
+    api_url: /api/monsters/reef-shark
+- remorhaz:
+    name: Remorhaz
+    type: monstrosity
+    xp: 7200
+    api_url: /api/monsters/remorhaz
+- rhinoceros:
+    name: Rhinoceros
+    type: beast
+    xp: 450
+    api_url: /api/monsters/rhinoceros
+- riding-horse:
+    name: Riding Horse
+    type: beast
+    xp: 25
+    api_url: /api/monsters/riding-horse
+- roc:
+    name: Roc
+    type: monstrosity
+    xp: 7200
+    api_url: /api/monsters/roc
+- roper:
+    name: Roper
+    type: monstrosity
+    xp: 1800
+    api_url: /api/monsters/roper
+- rug-of-smothering:
+    name: Rug of Smothering
+    type: construct
+    xp: 450
+    api_url: /api/monsters/rug-of-smothering
+- rust-monster:
+    name: Rust Monster
+    type: monstrosity
+    xp: 100
+    api_url: /api/monsters/rust-monster
+- saber-toothed-tiger:
+    name: Saber-Toothed Tiger
+    type: beast
+    xp: 450
+    api_url: /api/monsters/saber-toothed-tiger
+- sahuagin:
+    name: Sahuagin
+    type: humanoid
+    xp: 100
+    api_url: /api/monsters/sahuagin
+- salamander:
+    name: Salamander
+    type: elemental
+    xp: 1800
+    api_url: /api/monsters/salamander
+- satyr:
+    name: Satyr
+    type: fey
+    xp: 100
+    api_url: /api/monsters/satyr
+- scorpion:
+    name: Scorpion
+    type: beast
+    xp: 10
+    api_url: /api/monsters/scorpion
+- scout:
+    name: Scout
+    type: humanoid
+    xp: 100
+    api_url: /api/monsters/scout
+- sea-hag:
+    name: Sea Hag
+    type: fey
+    xp: 450
+    api_url: /api/monsters/sea-hag
+- sea-horse:
+    name: Sea Horse
+    type: beast
+    xp: 0
+    api_url: /api/monsters/sea-horse
+- shadow:
+    name: Shadow
+    type: undead
+    xp: 100
+    api_url: /api/monsters/shadow
+- shambling-mound:
+    name: Shambling Mound
+    type: plant
+    xp: 1800
+    api_url: /api/monsters/shambling-mound
+- shield-guardian:
+    name: Shield Guardian
+    type: construct
+    xp: 2900
+    api_url: /api/monsters/shield-guardian
+- shrieker:
+    name: Shrieker
+    type: plant
+    xp: 10
+    api_url: /api/monsters/shrieker
+- silver-dragon-wyrmling:
+    name: Silver Dragon Wyrmling
+    type: dragon
+    xp: 450
+    api_url: /api/monsters/silver-dragon-wyrmling
+- skeleton:
+    name: Skeleton
+    type: undead
+    xp: 50
+    api_url: /api/monsters/skeleton
+- solar:
+    name: Solar
+    type: celestial
+    xp: 33000
+    api_url: /api/monsters/solar
+- specter:
+    name: Specter
+    type: undead
+    xp: 200
+    api_url: /api/monsters/specter
+- spider:
+    name: Spider
+    type: beast
+    xp: 10
+    api_url: /api/monsters/spider
+- spirit-naga:
+    name: Spirit Naga
+    type: monstrosity
+    xp: 3900
+    api_url: /api/monsters/spirit-naga
+- sprite:
+    name: Sprite
+    type: fey
+    xp: 50
+    api_url: /api/monsters/sprite
+- spy:
+    name: Spy
+    type: humanoid
+    xp: 200
+    api_url: /api/monsters/spy
+- steam-mephit:
+    name: Steam Mephit
+    type: elemental
+    xp: 50
+    api_url: /api/monsters/steam-mephit
+- stirge:
+    name: Stirge
+    type: beast
+    xp: 25
+    api_url: /api/monsters/stirge
+- stone-giant:
+    name: Stone Giant
+    type: giant
+    xp: 2900
+    api_url: /api/monsters/stone-giant
+- stone-golem:
+    name: Stone Golem
+    type: construct
+    xp: 5900
+    api_url: /api/monsters/stone-golem
+- storm-giant:
+    name: Storm Giant
+    type: giant
+    xp: 10000
+    api_url: /api/monsters/storm-giant
+- succubus-incubus:
+    name: Succubus/Incubus
+    type: fiend
+    xp: 1100
+    api_url: /api/monsters/succubus-incubus
+- swarm-of-bats:
+    name: Swarm of Bats
+    type: swarm of Tiny beasts
+    xp: 50
+    api_url: /api/monsters/swarm-of-bats
+- swarm-of-beetles:
+    name: Swarm of Beetles
+    type: swarm of Tiny beasts
+    xp: 100
+    api_url: /api/monsters/swarm-of-beetles
+- swarm-of-centipedes:
+    name: Swarm of Centipedes
+    type: swarm of Tiny beasts
+    xp: 100
+    api_url: /api/monsters/swarm-of-centipedes
+- swarm-of-insects:
+    name: Swarm of Insects
+    type: swarm of Tiny beasts
+    xp: 100
+    api_url: /api/monsters/swarm-of-insects
+- swarm-of-poisonous-snakes:
+    name: Swarm of Poisonous Snakes
+    type: swarm of Tiny beasts
+    xp: 450
+    api_url: /api/monsters/swarm-of-poisonous-snakes
+- swarm-of-quippers:
+    name: Swarm of Quippers
+    type: swarm of Tiny beasts
+    xp: 200
+    api_url: /api/monsters/swarm-of-quippers
+- swarm-of-rats:
+    name: Swarm of Rats
+    type: swarm of Tiny beasts
+    xp: 50
+    api_url: /api/monsters/swarm-of-rats
+- swarm-of-ravens:
+    name: Swarm of Ravens
+    type: swarm of Tiny beasts
+    xp: 50
+    api_url: /api/monsters/swarm-of-ravens
+- swarm-of-spiders:
+    name: Swarm of Spiders
+    type: swarm of Tiny beasts
+    xp: 100
+    api_url: /api/monsters/swarm-of-spiders
+- swarm-of-wasps:
+    name: Swarm of Wasps
+    type: swarm of Tiny beasts
+    xp: 100
+    api_url: /api/monsters/swarm-of-wasps
+- tarrasque:
+    name: Tarrasque
+    type: monstrosity
+    xp: 155000
+    api_url: /api/monsters/tarrasque
+- thug:
+    name: Thug
+    type: humanoid
+    xp: 100
+    api_url: /api/monsters/thug
+- tiger:
+    name: Tiger
+    type: beast
+    xp: 200
+    api_url: /api/monsters/tiger
+- treant:
+    name: Treant
+    type: plant
+    xp: 5000
+    api_url: /api/monsters/treant
+- tribal-warrior:
+    name: Tribal Warrior
+    type: humanoid
+    xp: 25
+    api_url: /api/monsters/tribal-warrior
+- triceratops:
+    name: Triceratops
+    type: beast
+    xp: 1800
+    api_url: /api/monsters/triceratops
+- troll:
+    name: Troll
+    type: giant
+    xp: 1800
+    api_url: /api/monsters/troll
+- tyrannosaurus-rex:
+    name: Tyrannosaurus Rex
+    type: beast
+    xp: 3900
+    api_url: /api/monsters/tyrannosaurus-rex
+- unicorn:
+    name: Unicorn
+    type: celestial
+    xp: 1800
+    api_url: /api/monsters/unicorn
+- vampire-bat:
+    name: Vampire, Bat Form
+    type: undead
+    xp: 10000
+    api_url: /api/monsters/vampire-bat
+- vampire-mist:
+    name: Vampire, Mist Form
+    type: undead
+    xp: 10000
+    api_url: /api/monsters/vampire-mist
+- vampire-spawn:
+    name: Vampire Spawn
+    type: undead
+    xp: 1800
+    api_url: /api/monsters/vampire-spawn
+- vampire-vampire:
+    name: Vampire, Vampire Form
+    type: undead
+    xp: 10000
+    api_url: /api/monsters/vampire-vampire
+- veteran:
+    name: Veteran
+    type: humanoid
+    xp: 700
+    api_url: /api/monsters/veteran
+- violet-fungus:
+    name: Violet Fungus
+    type: plant
+    xp: 50
+    api_url: /api/monsters/violet-fungus
+- vrock:
+    name: Vrock
+    type: fiend
+    xp: 2300
+    api_url: /api/monsters/vrock
+- vulture:
+    name: Vulture
+    type: beast
+    xp: 10
+    api_url: /api/monsters/vulture
+- warhorse:
+    name: Warhorse
+    type: beast
+    xp: 100
+    api_url: /api/monsters/warhorse
+- warhorse-skeleton:
+    name: Warhorse Skeleton
+    type: undead
+    xp: 100
+    api_url: /api/monsters/warhorse-skeleton
+- water-elemental:
+    name: Water Elemental
+    type: elemental
+    xp: 1800
+    api_url: /api/monsters/water-elemental
+- weasel:
+    name: Weasel
+    type: beast
+    xp: 10
+    api_url: /api/monsters/weasel
+- werebear-bear:
+    name: Werebear, Bear Form
+    type: humanoid
+    xp: 1800
+    api_url: /api/monsters/werebear-bear
+- werebear-human:
+    name: Werebear, Human Form
+    type: humanoid
+    xp: 1800
+    api_url: /api/monsters/werebear-human
+- werebear-hybrid:
+    name: Werebear, Hybrid Form
+    type: humanoid
+    xp: 1800
+    api_url: /api/monsters/werebear-hybrid
+- wereboar-boar:
+    name: Wereboar, Boar Form
+    type: humanoid
+    xp: 1100
+    api_url: /api/monsters/wereboar-boar
+- wereboar-human:
+    name: Wereboar, Human Form
+    type: humanoid
+    xp: 1100
+    api_url: /api/monsters/wereboar-human
+- wereboar-hybrid:
+    name: Wereboar, Hybrid Form
+    type: humanoid
+    xp: 1100
+    api_url: /api/monsters/wereboar-hybrid
+- wererat-human:
+    name: Wererat, Human Form
+    type: humanoid
+    xp: 450
+    api_url: /api/monsters/wererat-human
+- wererat-hybrid:
+    name: Wererat, Hybrid Form
+    type: humanoid
+    xp: 450
+    api_url: /api/monsters/wererat-hybrid
+- wererat-rat:
+    name: Wererat, Rat Form
+    type: humanoid
+    xp: 450
+    api_url: /api/monsters/wererat-rat
+- weretiger-human:
+    name: Weretiger, Human Form
+    type: humanoid
+    xp: 1100
+    api_url: /api/monsters/weretiger-human
+- weretiger-hybrid:
+    name: Weretiger, Hybrid Form
+    type: humanoid
+    xp: 1100
+    api_url: /api/monsters/weretiger-hybrid
+- weretiger-tiger:
+    name: Weretiger, Tiger Form
+    type: humanoid
+    xp: 1100
+    api_url: /api/monsters/weretiger-tiger
+- werewolf-human:
+    name: Werewolf, Human Form
+    type: humanoid
+    xp: 700
+    api_url: /api/monsters/werewolf-human
+- werewolf-hybrid:
+    name: Werewolf, Hybrid Form
+    type: humanoid
+    xp: 700
+    api_url: /api/monsters/werewolf-hybrid
+- werewolf-wolf:
+    name: Werewolf, Wolf Form
+    type: humanoid
+    xp: 700
+    api_url: /api/monsters/werewolf-wolf
+- white-dragon-wyrmling:
+    name: White Dragon Wyrmling
+    type: dragon
+    xp: 450
+    api_url: /api/monsters/white-dragon-wyrmling
+- wight:
+    name: Wight
+    type: undead
+    xp: 700
+    api_url: /api/monsters/wight
+- will-o-wisp:
+    name: Will-o'-Wisp
+    type: undead
+    xp: 450
+    api_url: /api/monsters/will-o-wisp
+- winter-wolf:
+    name: Winter Wolf
+    type: monstrosity
+    xp: 700
+    api_url: /api/monsters/winter-wolf
+- wolf:
+    name: Wolf
+    type: beast
+    xp: 50
+    api_url: /api/monsters/wolf
+- worg:
+    name: Worg
+    type: monstrosity
+    xp: 100
+    api_url: /api/monsters/worg
+- wraith:
+    name: Wraith
+    type: undead
+    xp: 1800
+    api_url: /api/monsters/wraith
+- wyvern:
+    name: Wyvern
+    type: dragon
+    xp: 2300
+    api_url: /api/monsters/wyvern
+- xorn:
+    name: Xorn
+    type: elemental
+    xp: 1800
+    api_url: /api/monsters/xorn
+- young-black-dragon:
+    name: Young Black Dragon
+    type: dragon
+    xp: 2900
+    api_url: /api/monsters/young-black-dragon
+- young-blue-dragon:
+    name: Young Blue Dragon
+    type: dragon
+    xp: 5000
+    api_url: /api/monsters/young-blue-dragon
+- young-brass-dragon:
+    name: Young Brass Dragon
+    type: dragon
+    xp: 2300
+    api_url: /api/monsters/young-brass-dragon
+- young-bronze-dragon:
+    name: Young Bronze Dragon
+    type: dragon
+    xp: 3900
+    api_url: /api/monsters/young-bronze-dragon
+- young-copper-dragon:
+    name: Young Copper Dragon
+    type: dragon
+    xp: 2900
+    api_url: /api/monsters/young-copper-dragon
+- young-gold-dragon:
+    name: Young Gold Dragon
+    type: dragon
+    xp: 5900
+    api_url: /api/monsters/young-gold-dragon
+- young-green-dragon:
+    name: Young Green Dragon
+    type: dragon
+    xp: 3900
+    api_url: /api/monsters/young-green-dragon
+- young-red-dragon:
+    name: Young Red Dragon
+    type: dragon
+    xp: 5900
+    api_url: /api/monsters/young-red-dragon
+- young-silver-dragon:
+    name: Young Silver Dragon
+    type: dragon
+    xp: 5000
+    api_url: /api/monsters/young-silver-dragon
+- young-white-dragon:
+    name: Young White Dragon
+    type: dragon
+    xp: 2300
+    api_url: /api/monsters/young-white-dragon
+- zombie:
+    name: Zombie
+    type: undead
+    xp: 50
+    api_url: /api/monsters/zombie

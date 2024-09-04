@@ -1,0 +1,69 @@
+- goblins:
+    - goblin
+    - goblin_boss
+    - hobgoblin
+    - hobgoblin_captain
+    - bugbear
+    - bugbear_chief
+    - worg
+    - gnoll
+    - gnoll_packlord
+
+- orcs:
+    - orc
+    - orc_eye_of_gruumsh
+    - orc_war_chief
+    - wolf
+    - winter_wolf
+    - dire_wolf
+    - worg
+    - ogre
+    - half-ogre
+    - oni
+
+- kobolds:
+  - kobold
+  - winged-kobold
+
+- spiders:
+    - giant-spider
+    - giant-wolf-spider
+    - phase-spider
+    - drider
+    - swarm-of-spiders
+
+- vultures:
+    - vulture
+    - giant-vulture
+    - swarm-of-ravens
+    - harpy
+
+- gricks:
+  - grick
+  - grick_alpha
+
+- gnolls:
+  - gnoll
+  - gnoll-packlord
+  - hyena
+  - worg
+
+- snakes:
+  - swarm-of-poisonous-snakes
+  - constrictor-snake
+  - flying-snake
+  - giant-constrictor-snake
+  - giant-poisonous-snake
+  - poisonous-snake
+
+- dryads:
+  - dryad
+  - treant
+
+- driders:
+  - drider
+  - giant-spider
+  - giant-wolf-spider
+  - phase-spider
+  - drider
+  - swarm-of-spiders
