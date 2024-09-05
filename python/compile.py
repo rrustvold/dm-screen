@@ -1,21 +1,30 @@
 import yaml
 import json
 
-with open("monsters.yaml", "r") as file:
+monster_keys = set()
+with open("api_monsters.yaml", "r") as file:
     monsters = yaml.safe_load(file)
+
+with open("my_monsters.yaml", "r") as file:
+    my_monsters = yaml.safe_load(file)
+
+for monster in monsters + my_monsters:
+    key = list(monster.keys())[0]
+    monster_keys.add(key)
+    monster_keys.add(key.replace("-", "_"))
+
 
 with open("families.yaml", "r") as file:
     families = yaml.safe_load(file)
 
 family_keys = [list(family.keys())[0] for family in families]
 
-
 with open("environs.yaml", "r") as file:
     environs = yaml.safe_load(file)
 
 # Compile all monsters into js
 with open("monsters.js", "w") as file:
-    for monster in monsters:
+    for monster in monsters + my_monsters:
         key = list(monster.keys())[0]
         try:
             name = monster[key]["name"]
@@ -23,6 +32,7 @@ with open("monsters.js", "w") as file:
             name = key.capitalize()
 
         xp = monster[key]["xp"]
+        key = key.replace("-", "_")
         file.writelines([
             "export const %s = {\n" % key,
             "\tkey: '%s',\n" % key,
@@ -40,12 +50,16 @@ with open("families.js", "w") as file:
         key = list(family.keys())[0]
         name = key.capitalize()
         file.writelines([
-            "export const %s = {\n" % key,
+            "export const %s = {\n" % key.replace("-", "_"),
             "\tname: '%s',\n" % name,
             "\tlist: [\n\t\t",
         ])
         for value in family[key]:
-            file.write(f"monsters.{value}, ")
+            if value in monster_keys:
+                file.write(f"monsters.{value.replace("-", "_")}, ")
+            else:
+                print(f"Warning: {value} not in monsters")
+
         file.writelines([
             "\n",
             "\t]\n",
@@ -68,7 +82,10 @@ for environ in environs:
         ])
         for value in values:
             if value not in family_keys:
-                file.write(f"\t\tmonsters.{value}, \n")
+                if value in monster_keys:
+                    file.write(f"\t\tmonsters.{value.replace("-", "_")}, \n")
+                else:
+                    print(f"Warning: {value} not in monsters")
 
         file.writelines([
             "\t]\n",
@@ -78,7 +95,11 @@ for environ in environs:
 
         for value in values:
             if value in family_keys:
-                file.write(f"\t{value}: families.{value}, \n")
+                file.write(f"\t{value.replace("-", "-")}: families.{value.replace("-", "_")}, \n")
+
+        file.write(
+            "\t%ssolos: %sSolos, \n" % (key, key)
+        )
 
         file.write("}\n\n")
 
@@ -94,5 +115,99 @@ for environ in environs:
             "\treturn options\n",
             "}\n"
         ])
+
+with open(f"Environs.js", "w") as file:
+    all_envs = [list(x.keys())[0] for x in environs]
+    for environ in all_envs:
+        file.write(
+            "import {%s, %sOptions} from './%s';\n" % (environ, environ, environ)
+        )
+
+    file.write(f"const all_environs = [{', '.join(all_envs)}];")
+    file.write(
+        """
+        
+        export const allLists = () => {
+            let all = {}
+            for (let i=0; i < all_environs.length; i++) {
+                for (const [key, value] of Object.entries(all_environs[i])) {
+                    all[key] = value;
+                }
+            }
+            return all
+        }
+        
+        export const allOptions = () => {
+            let options = [];
+            for (let i=0; i < all_environs; i++) {
+                for (const [key, value] of Object.entries(all_environs[i])) {
+                    options.push(
+                        <option value={key}>{value.name}</option>
+                    )
+                }
+            }
+            return options
+        }
+        
+        
+        export const allEnvirons = [
+        """
+    )
+
+    for environ in all_envs:
+        file.write(f'\t\t\t<option value="{environ}">{environ.capitalize()}</option>,\n')
+
+    file.write("\t\t]\n\n")
+
+    file.write(
+        """
+        export function changeEnviron(environ, setter) {
+            if (environ === "any") {
+                setter(
+                    allOptions()
+                )
+        """
+    )
+
+    for environ in all_envs:
+        file.writelines([
+            '\t\t\t} else if (environ === "%s") {\n' % environ,
+            '\t\t\t\tsetter(%sOptions());\n' % environ,
+        ])
+
+    file.writelines([
+        "\t\t\t}\n",
+        "\t\t}\n"
+    ])
+
+    file.write(
+        """
+        export function randomFamily(environ) {
+            let random = Math.floor(Math.random() * Object.keys(environ).length);
+            return environ[Object.keys(environ)[random]];
+        }
+        """
+    )
+
+    environ = all_envs[0]
+    file.write(
+        """
+        export function getFamily(monsterSelection) {
+            let monsterFamily = allLists()[monsterSelection];
+            if (monsterSelection === "any%s") {
+                monsterFamily = randomFamily(%s);
+        """ % (environ.capitalize(), environ)
+    )
+    for environ in all_envs[1:]:
+        file.write(
+            """
+            } else if (monsterSelection === "any%s") {
+                monsterFamily = randomFamily(%s);
+            """ %(environ.capitalize(), environ)
+        )
+
+    file.write("\t}\n")
+    file.write("return monsterFamily\n")
+    file.write("}\n")
 
 

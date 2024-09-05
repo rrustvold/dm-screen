@@ -1,9 +1,9 @@
 import {useState} from "react";
 
-import {allLists, allOptions} from "./randomEncounter/environs";
-import {forest, forestOptions} from "./randomEncounter/environs/forest";
-import {hills, hillsOptions} from "./randomEncounter/environs/hills";
-import {grassland, grasslandOptions} from "./randomEncounter/environs/grassland";
+import {
+    allEnvirons,
+    changeEnviron, getFamily, randomFamily
+} from "./randomEncounter/Environs";
 import { hideShow } from "../utils";
 
 function getPartyLimits(party){
@@ -31,11 +31,6 @@ function getPartyLimits(party){
     return limits
 }
 
-function randomFamily(environ) {
-    let random = Math.floor(Math.random() * Object.keys(environ).length);
-    return environ[Object.keys(environ)[random]];
-}
-
 function generate(setEncounter, party) {
     let difficulty = document.getElementById("difficulty").value;
 
@@ -59,15 +54,7 @@ function generate(setEncounter, party) {
 
     let monsterSelection = document.getElementById("monster-type").value;
     console.log(monsterSelection);
-    let monsterFamily = allLists()[monsterSelection];
-    if (monsterSelection === "anyForest") {
-        monsterFamily = randomFamily(forest);
-    } else if (monsterSelection === "anyHills") {
-        monsterFamily = randomFamily(hills);
-    } else if (monsterSelection === "anyGrassland") {
-        monsterFamily = randomFamily(grassland);
-    }
-
+    let monsterFamily = getFamily(monsterSelection);
     console.log(monsterFamily);
     let monsterList = monsterFamily.list;
     let totalXP = 0;
@@ -142,21 +129,6 @@ function RandomEncounterInput({setEncounter, party}){
         []
     );
 
-    function changeEnviron(environ) {
-        if (environ === "any") {
-            setMonsterTypeOptions(
-                allOptions()
-            )
-        } else if (environ === "forest") {
-            setMonsterTypeOptions(forestOptions());
-        } else if (environ === "hills") {
-            setMonsterTypeOptions(hillsOptions());
-        } else if (environ === "grassland") {
-            setMonsterTypeOptions(grasslandOptions());
-        }
-    }
-
-
     return (
         <div class="w3-container">
             <div class="w3-row-padding">
@@ -171,10 +143,16 @@ function RandomEncounterInput({setEncounter, party}){
                 </div>
                 <div class="w3-col s3">
                     <label>Environment</label>
-                    <select name="environ" id="encounter-environ" onChange={(e) => changeEnviron(e.target.value)}  class="w3-select">
-                        <option value="forest">Forest</option>
-                        <option value="hills">Hills</option>
-                        <option value="grassland">Grassland</option>
+                    <select
+                        name="environ"
+                        id="encounter-environ"
+                        onChange={
+                        (e) =>
+                            changeEnviron(e.target.value, setMonsterTypeOptions)
+                        }
+                        class="w3-select"
+                    >
+                        {allEnvirons}
                     </select>
                 </div>
                 <div class="w3-col s3">

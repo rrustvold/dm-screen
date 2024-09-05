@@ -1,0 +1,40 @@
+- carrion-crawler:
+    name: Carrion Crawler
+    xp: 450
+- cyclops:
+    xp: 2300
+- bugbear-chief:
+    name: Bugbear Chief
+    xp: 700
+- gnoll-pack-lord:
+      name: Gnoll Pack Lord
+      xp: 450
+- gnoll-fang-of-yeenoghu:
+      name: Gnoll Fang of Yeenoghu
+      xp: 1100
+- goblin-boss:
+      name: Goblin Boss
+      xp: 200
+- grick-alpha:
+      name: Grick Alpha
+      xp: 2900
+- hobgoblin-captain:
+      name: Hobgoblin Captain
+      xp: 700
+- hobgoblin-warlord:
+      name: Hobgoblin Warlord
+      xp: 2300
+- winged-kobold:
+      name: Winged Kobold
+      xp: 50
+- half-ogre:
+      name: Half Ogre
+      xp: 200
+- orc-war-chief:
+      name: Orc War Chief
+      xp: 1100
+- orc-eye-of-gruumsh:
+      name: Orc Eye of Gruumsh
+      xp: 450
+- orog:
+      xp: 450

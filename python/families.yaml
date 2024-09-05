@@ -3,16 +3,19 @@
     - goblin_boss
     - hobgoblin
     - hobgoblin_captain
+    - hobgoblin_warlord
     - bugbear
     - bugbear_chief
     - worg
     - gnoll
-    - gnoll_packlord
+    - gnoll_pack_lord
+    - gnoll_fang_of_yeenoghu
 
 - orcs:
     - orc
     - orc_eye_of_gruumsh
     - orc_war_chief
+    - orog
     - wolf
     - winter_wolf
     - dire_wolf
@@ -37,6 +40,7 @@
     - giant-vulture
     - swarm-of-ravens
     - harpy
+    - vrock
 
 - gricks:
   - grick
@@ -44,7 +48,8 @@
 
 - gnolls:
   - gnoll
-  - gnoll-packlord
+  - gnoll-pack-lord
+  - gnoll_fang_of_yeenoghu
   - hyena
   - worg
 
@@ -67,3 +72,92 @@
   - phase-spider
   - drider
   - swarm-of-spiders
+
+- rats:
+    - giant-rat
+    - giant-rat-diseased
+    - swarm-of-rats
+
+- duergar:
+    - duergar
+
+- drows:
+    - drow
+
+- ogres:
+    - ogre
+    - half-ogre
+    - oni
+
+- undead:
+    - ghast
+    - ghost
+    - ghoul
+    - lich
+    - minotaur-skeleton
+    - mummy
+    - mummy-lord
+    - ogre-zombie
+    - zombie
+    - skeleton
+    - specter
+    - vampire-bat
+    - vampire-mist
+    - vampire-spawn
+    - vampire-vampire
+    - warhorse-skeleton
+    - wight
+    - wraith
+    - will-o-wisp
+
+- wolves:
+    - wolf
+    - dire-wolf
+    - winter-wolf
+    - hell-hound
+    - worg
+
+- fiends:
+    - balor
+    - barbed-devil
+    - bearded-devil
+    - bone-devil
+    - chain-devil
+    - dretch
+    - erinyes
+    - glabrezu
+    - hezrou
+    - hell-hound
+    - horned-devil
+    - ice-devil
+    - imp
+    - lemure
+    - marilith
+    - nalfeshnee
+    - night-hag
+    - nightmare
+    - pit-fiend
+    - quasit
+    - rakshasa
+    - succubus-incubus
+    - vrock
+
+- oozes:
+    - black-pudding
+    - gelatinous-cube
+    - gray-ooze
+    - ochre-jelly
+- bats:
+  - bat
+  - swarm-of-bats
+  - giant-bat
+- golems:
+    - clay-golem
+    - flesh-golem
+    - iron-golem
+    - stone-golem
+- mephits:
+    - dust-mephit
+    - ice-mephit
+    - magma-mephit
+    - steam-mephit

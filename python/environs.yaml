@@ -8,8 +8,110 @@
   - snakes
   - brown-bear
   - carrion-crawler
-  - dryads
   - green-hag
   - owlbear
   - troll
   - driders
+  - wolves
+  - shambling-mound
+
+- hills:
+    - orcs
+    - goblins
+    - kobolds
+    - vultures
+    - hill-giant
+    - manticore
+    - brown-bear
+    - harpy
+    - carrion-crawler
+    - wolves
+
+- grassland:
+    - orcs
+    - goblins
+    - gnolls
+    - snakes
+    - manticore
+    - carrion-crawler
+    - ankheg
+    - chimera
+    - cockatrice
+    - bulette
+    - brown-bear
+    - cyclops
+    - wolves
+
+- dungeon:
+    - kobolds
+    - goblins
+    - snakes
+    - rats
+    - rust-monster
+    - roper
+    - darkmantle
+    - kuo-toa
+    - duergars
+    - drows
+    - gricks
+    - ettin
+    - ogres
+    - undead
+    - otyugh
+    - fiends
+    - azer
+    - basilisk
+    - bats
+    - swarm-of-insects
+    - cloaker
+    - chimera
+    - minotaur
+    - oozes
+    - gorgon
+    - deep-gnome-svirfneblin
+    - ettercap
+    - flying-sword
+    - golems
+    - gibbering-mouther
+    - grimlock
+    - manticore
+    - medusa
+    - mimic
+    - rug-of-smothering
+    - mephits
+
+- caves:
+    - kobolds
+    - goblins
+    - rats
+    - rust-monster
+    - roper
+    - darkmantle
+    - duergars
+    - gricks
+    - ettin
+    - ogres
+    - azer
+    - basilisk
+    - cloaker
+    - chimera
+    - oozes
+    - gorgon
+    - owlbear
+    - brown-bear
+    - wolves
+    - spiders
+    - behir
+    - boar
+    - chimera
+    - chuul
+    - deep-gnome-svirfneblin
+    - earth-elemental
+    - ettercap
+    - giant-scorpion
+    - gnolls
+    - grimlock
+    - hill-giant
+    - manticore
+    - purple-worm
+    - troll

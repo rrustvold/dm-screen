@@ -1579,7 +1579,7 @@
     xp: 700
     api_url: /api/monsters/wight
 - will-o-wisp:
-    name: Will-o'-Wisp
+    name: Will-o-Wisp
     type: undead
     xp: 450
     api_url: /api/monsters/will-o-wisp
