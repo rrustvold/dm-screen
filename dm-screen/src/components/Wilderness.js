@@ -1,7 +1,8 @@
 import {useState} from "react";
 import Foraging from "./Foraging";
 import Tracking from "./Tracking";
-import { hideShow } from "../utils";
+import { hideShow, getRandomThingFromList } from "../utils";
+import { RandomEntrance } from "./randomDungeon/RandomEntrance";
 
 function getLandmarkFeature() {
     let _roll = roll(20);
@@ -38,41 +39,6 @@ function getLandmarkFeature() {
     }
 }
 
-function describeDungeonEntrance(roll) {
-    if (roll >= 1 && roll <= 6) {
-        return "The entrance lies near the bottom of an abandoned moss-covered well. Muddy bricks protrude slightly in a spiral downward, allowing agile characters to descend sixty feet to the bottom. There, a secret door grants entry to the dungeon.";
-    } else if (roll >= 7 && roll <= 12) {
-        return "A circle of magical runes, large enough for an average wagon, encloses images of clouds and birds painted onto the floor. Speaking the correct command while in the circle causes the creature to disappear and reappear in the dungeon.";
-    } else if (roll >= 13 && roll <= 18) {
-        return "A tumbled-down two-story tower of grey stone sits atop a low mound in a foggy moor. Within, the tower is empty except for a skeleton at a simple table, an empty wine bottle, and a fine longbow. An iron key around the skeleton's neck opens a nearby trapdoor.";
-    } else if (roll >= 19 && roll <= 24) {
-        return "A worked tunnel protrudes into the side of a dirt mound. The entrance is covered in moss and vines, and putrid sludge flows out onto the wet, muddy ground. A scream—or perhaps a strange bird call—echoes from deep within.";
-    } else if (roll >= 25 && roll <= 30) {
-        return "The entrance is a broad hole on the side of a steep cliff. A rickety wood and rope elevator, sized for six man-sized creatures, provides access. Its safety remains uncertain.";
-    } else if (roll >= 31 && roll <= 36) {
-        return "Behind a locked portcullis below an abandoned arena, a set of stairs leads to the dungeon. A statue of a phoenix carved into the wall radiates faint magic.";
-    } else if (roll >= 37 && roll <= 42) {
-        return "To prevent admission, the entrance lies inside a traditional fortified keep surrounded by a crenulated wall and a water-filled moat with a raised drawbridge. From the outside, the keep appears abandoned.";
-    } else if (roll >= 43 && roll <= 49) {
-        return "At the end of a box canyon, two huge iron-bound doors of timber are ajar. The left door hangs solely by one hinge. Enemies could be lurking anywhere...";
-    } else if (roll >= 50 && roll <= 56) {
-        return "A crude, cracked brick roadway, disappearing beneath the sands, leads to a natural cave in a desert outcropping. A primitive white painting outside the cave depicts a stickman and horned creatures.";
-    } else if (roll >= 57 && roll <= 62) {
-        return "The entrance hides behind a shelf of old, dusty books in a large library. Pulling the correct book opens the way.";
-    } else if (roll >= 63 && roll <= 68) {
-        return "A line of square marble columns leads to a grand archway. Above it, a frieze depicts a bearded man with golden birds bringing him grapes.";
-    } else if (roll >= 69 && roll <= 74) {
-        return "A broad staircase of black stone rises to a bright red iron door covered in dripping blue runes. It radiates significant heat, risking nausea and fatigue for those who approach.";
-    } else if (roll >= 75 && roll <= 81) {
-        return "The dungeon entrance—a round door with a ship's wheel in the center—is in a grand hall. Walls depict stone ships sailing out towards the middle, and the room smells strangely of sea air.";
-    } else if (roll >= 82 && roll <= 87) {
-        return "A soaring narrow bridge crosses a grand chasm to a gate of golden bars. The steep grade makes it challenging to ascend.";
-    } else if (roll <=94) {
-        return "Built into the side of a hill, a low moss-­‐roofed cottage protrudes as far as a horse. A candle flickers beyond a clouded glass window, barely visible past the gnarled trees and thorny bushes. Sickly herbs grow in boxes under the windows. Rustling in the underbrush and the reflection of small eyes suggest the land is alive with fauna that are not at all disturbed by the PCs’ approach"
-    } else {
-        return "Glowing blue lichen and large mushrooms line the cavern, growing out of the soft loamy soil. A pale white vine grows along the ground, through bones of small animals. Water drips from the ceiling like a slow steady rain, making conversation difficult."
-    }
-}
 
 function roll(sides, numDice=1) {
     let sum = 0;
@@ -205,8 +171,7 @@ export default function Wilderness() {
                     if (_roll <= 40) {
                         kind = "Monster";
                     } else if (_roll <= 50) {
-                        kind = `Dungeon: ${describeDungeonEntrance(roll(100))}`;
-                        // TODO: give random dungeon entrance
+                        kind = `Dungeon: ${getRandomThingFromList(RandomEntrance)}`;
                     } else if (_roll <= 75) {
                         kind = `Monument: ${getLandmarkFeature()}`;
                     } else {

@@ -14,3 +14,9 @@ export function hideShow(id) {
         x.className = x.className.replace(" w3-show", " w3-hide");
     }
 }
+
+export function getRandomThingFromList(list) {
+    let length = list.length;
+    let _roll = Roll(length);
+    return list[_roll - 1]
+}
