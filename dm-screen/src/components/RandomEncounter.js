@@ -31,7 +31,7 @@ function getPartyLimits(party){
     return limits
 }
 
-function generate(setEncounter, party) {
+function generate(setEncounter, party, setDifficulty) {
     let difficulty = document.getElementById("difficulty").value;
 
     let limits = getPartyLimits(party);
@@ -53,9 +53,7 @@ function generate(setEncounter, party) {
     }
 
     let monsterSelection = document.getElementById("monster-type").value;
-    console.log(monsterSelection);
     let monsterFamily = getFamily(monsterSelection);
-    console.log(monsterFamily);
     let monsterList = monsterFamily.list;
     let totalXP = 0;
     let encounter = [];
@@ -119,6 +117,16 @@ function generate(setEncounter, party) {
             draws.push(randomNum);
 
         }
+    }
+    console.log("Actual Difficulty: ");
+    if (totalXP * multiplier <= limits[0]) {
+        console.log("Easy");
+    } else if (totalXP * multiplier <= limits[1]) {
+        console.log("Medium");
+    } else if (totalXP * multiplier <= limits[2]) {
+        console.log("Hard");
+    } else {
+        console.log("Deadly");
     }
     setEncounter(encounterDict);
 

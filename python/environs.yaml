@@ -14,6 +14,11 @@
   - driders
   - wolves
   - shambling-mound
+  - ankheg
+  - gricks
+  - ogres
+  - displacer-beast
+  - nagas
 
 - hills:
     - orcs
@@ -26,6 +31,18 @@
     - harpy
     - carrion-crawler
     - wolves
+    - worg
+    - gnolls
+    - ogres
+    - ettin
+    - cyclops
+    - stone-giant
+    - earth-elemental
+    - griffon
+    - wyvern
+    - stone-giant
+    - green-hag
+    - troll
 
 - grassland:
     - orcs
@@ -41,12 +58,15 @@
     - brown-bear
     - cyclops
     - wolves
+    - vultures
+    - gorgon
 
 - dungeon:
     - kobolds
     - goblins
     - snakes
     - rats
+    - spiders
     - rust-monster
     - roper
     - darkmantle
@@ -77,8 +97,11 @@
     - manticore
     - medusa
     - mimic
-    - rug-of-smothering
+    - animated-objects
     - mephits
+    - displacer-beast
+    - beholder
+    - mind-flayer
 
 - caves:
     - kobolds
@@ -115,3 +138,4 @@
     - manticore
     - purple-worm
     - troll
+    - ankheg

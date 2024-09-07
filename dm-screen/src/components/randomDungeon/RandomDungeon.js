@@ -5,7 +5,16 @@ import {randomHazard} from "./RandomHazard.js";
 import {randomTrick} from "./RandomTrick.js";
 import {RandomTreasure} from "./RandomTreasure.js";
 import {useState} from "react";
-import { hideShow } from "../../utils.js";
+import {getRandomThingFromList, hideShow} from "../../utils.js";
+import {getRandomTheme} from "./RandomTheme";
+import {
+    booksScrollsTomes,
+    containerContents, debrisList,
+    generalFurnishings,
+    mageFurnishings,
+    religiousArticles,
+    smellList
+} from "./RandomDressing";
 
 function Roll(sides, numDice=1) {
     let sum = 0;
@@ -146,6 +155,13 @@ class Chamber{
         }
         this.purpose = randomPurpose(purpose);
         this.contents = randomContents();
+
+        let roll = Roll(100);
+        if (roll <= 25){
+            this.smell = getRandomThingFromList(smellList);
+        } else {
+            this.smell = "Typical";
+        }
         this.state = randomState();
     }
 
@@ -168,12 +184,15 @@ class Chamber{
                     <dt>Exits</dt>
                     <dd>{this.doors.length} doors:{doors}</dd>
                     <dd>{this.passages.length} passages</dd>
+                    <dt>Challenge</dt>
+                    <dd>{this.contents}</dd>
                     <dt>Purpose</dt>
                     <dd>{this.purpose}</dd>
                     <dt>State</dt>
                     <dd>{this.state}</dd>
-                    <dt>Contents</dt>
-                    <dd>{this.contents}</dd>
+                    <dt>Odor</dt>
+                    <dd>{this.smell}</dd>
+
                 </dl>
             </div>
         )
@@ -194,6 +213,7 @@ function generateChamber(setRoom, dungeonPurpose){
 
 
 export default function RandomDungeon() {
+    const [theme, setTheme] = useState("");
     const [room, setRoom] = useState(startingRoom());
     const [beyondDoor, setBeyondDoor] = useState("");
     const [downPassage, setDownPassage] = useState("");
@@ -201,12 +221,15 @@ export default function RandomDungeon() {
     const [trap, setTrap] = useState("");
     const [hazard, setHazard] = useState("");
     const [trick, setTrick] = useState("");
+    const [dressing, setDressing] = useState("");
     return (
         <div class="w3-container">
             <h1 onClick={() => hideShow("randomdungeon")}>Random Dungeon</h1>
             <div class="w3-container w3-show" id="randomdungeon">
                 <label for="dungeonSelect">Dungeon Purpose</label>
-                <select name="dungeonPurpose" onChange={(e) => {setDungeonPurpose(e.target.value)}} class="w3-select">
+                <select name="dungeonPurpose" onChange={(e) => {
+                    setDungeonPurpose(e.target.value)
+                }} class="w3-select">
                     <option value="general">General</option>
                     <option value="lair">Lair</option>
                     <option value="maze">Maze</option>
@@ -217,27 +240,76 @@ export default function RandomDungeon() {
                     <option value="tomb">Tomb</option>
                     <option value="treasureVault">Treasure Vault</option>
                 </select>
+                <p><input type="button" className="w3-button" onClick={() => {
+                    setTheme(getRandomTheme())
+                }} defaultValue="Genereate"/></p>
+                <div class="w3-container" id="dungeonThemes">
+                    {theme}
+                </div>
                 <h2>Current Chamber</h2>
-                    <p><input type="button" class="w3-button" onClick={() => {generateChamber(setRoom, dungeonPurpose)}} defaultValue="Generate Chamber" /></p>
+                <p><input type="button" className="w3-button" onClick={() => {
+                    generateChamber(setRoom, dungeonPurpose)
+                }} defaultValue="Generate Chamber"/></p>
                 <div class="w3-container w3-border">
                     {room.markdown()}
                 </div>
-                
-                <p><input type="button" class="w3-button" onClick={() => {getBeyondDoor(setBeyondDoor)}} defaultValue="Beyond Door"/></p>
+                <p>
+                    <button type="button" className="w3-button"
+                            onClick={() => setDressing(getRandomThingFromList(generalFurnishings, Roll(6)))}>
+                        General Furnishings
+                    </button>
+                    <button type="button" className="w3-button"
+                            onClick={() => setDressing(getRandomThingFromList(religiousArticles, Roll(6)))}>
+                        Religious Articles
+                    </button>
+                    <button type="button" className="w3-button"
+                            onClick={() => setDressing(getRandomThingFromList(mageFurnishings, Roll(6)))}>
+                        Mage Furnishings
+                    </button>
+                    <button type="button" className="w3-button"
+                            onClick={() => setDressing(getRandomThingFromList(containerContents, Roll(6)))}>
+                        Container Contents
+                    </button>
+                    <button type="button" className="w3-button"
+                            onClick={() => setDressing(getRandomThingFromList(booksScrollsTomes, Roll(6)))}>
+                        Books, Scroll, and Tomes
+                    </button>
+                    <button type="button" className="w3-button"
+                            onClick={() => setDressing(getRandomThingFromList(debrisList, Roll(6)))}>
+                        Debris
+                    </button>
+                </p>
+                <div class="w3-container w3-border">
+                    <p>{dressing}</p>
+                </div>
+
+                <p><input type="button" className="w3-button" onClick={() => {
+                    getBeyondDoor(setBeyondDoor)
+                }} defaultValue="Beyond Door"/></p>
                 <div class="w3-container w3-border">{beyondDoor}</div>
 
-                <p><input type="button" class="w3-button" onClick={() => {getDownPassage(setDownPassage)}}
-                defaultValue="Down Passage" /></p>
+                <p><input type="button" className="w3-button" onClick={() => {
+                    getDownPassage(setDownPassage)
+                }}
+                          defaultValue="Down Passage"/></p>
                 <div class="w3-container w3-border">{downPassage}</div>
 
-                <p><input type="button" class="w3-button" onClick={() => {setTrap(randomTrap())}}
-                defaultValue="Trap" /></p>{trap}
+                <p><input type="button" className="w3-button" onClick={() => {
+                    setTrap(randomTrap())
+                }}
+                          defaultValue="Trap"/></p>{trap}
 
-                <p><input type="button" class="w3-button" onClick={() => {setHazard(randomHazard())}}
-                defaultValue="Hazard" /></p><div class="w3-container w3-border">{hazard}</div>
+                <p><input type="button" className="w3-button" onClick={() => {
+                    setHazard(randomHazard())
+                }}
+                          defaultValue="Hazard"/></p>
+                <div class="w3-container w3-border">{hazard}</div>
 
-                <p><input type="button" class="w3-button" onClick={() => {setTrick(randomTrick())}}
-                defaultValue="Trick" /></p><div class="w3-container w3-border">{trick}</div>
+                <p><input type="button" className="w3-button" onClick={() => {
+                    setTrick(randomTrick())
+                }}
+                          defaultValue="Trick"/></p>
+                <div class="w3-container w3-border">{trick}</div>
             </div>
         </div>
     )

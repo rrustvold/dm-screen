@@ -15,8 +15,12 @@ export function hideShow(id) {
     }
 }
 
-export function getRandomThingFromList(list) {
+export function getRandomThingFromList(list, n=1) {
     let length = list.length;
-    let _roll = Roll(length);
-    return list[_roll - 1]
+    let stuff = [];
+    for (let i=0; i < n; i++) {
+        let _roll = Roll(length);
+        stuff.push(list[_roll - 1])
+    }
+    return stuff.join("; ")
 }

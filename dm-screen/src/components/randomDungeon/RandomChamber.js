@@ -1,3 +1,6 @@
+import Roll, {getRandomThingFromList} from "../../utils";
+import {generalFurnishings} from "./RandomDressing";
+
 export function randomShape() {
     let roll = Math.floor(Math.random() * 20) + 1;
     if (roll >= 1 && roll <= 2) {

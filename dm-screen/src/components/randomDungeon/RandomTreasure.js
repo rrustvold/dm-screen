@@ -30,6 +30,47 @@ function randomMonsterTreasure(treasure, xp) {
       } else {
         treasure.pp += Roll(6);
       }
+    } else if (xp <= 5900) {
+      if (roll <= 30) {
+        treasure.cp += Roll(6, 4) * 100;
+        treasure.ep += Roll(6) * 10
+      } else if (roll <= 60){
+        treasure.sp += Roll(6, 6) * 10;
+        treasure.gp += Roll(6, 2) * 10;
+      } else if (roll <= 70) {
+        treasure.ep += Roll(6, 3) * 10;
+        treasure.gp += Roll(6, 2) * 10;
+      } else if (roll <=95) {
+        treasure.gp += Roll(6, 4) * 10;
+      } else {
+        treasure.gp += Roll(6, 2) * 10;
+        treasure.pp += Roll(6, 3);
+      }
+    }  else if (xp <= 15000) {
+      if (roll <= 20) {
+        treasure.sp += Roll(6, 4) * 100;
+        treasure.gp += Roll(6) * 100
+      } else if (roll <= 35){
+        treasure.ep += Roll(6, 1) * 100;
+        treasure.gp += Roll(6, 1) * 100;
+      } else if (roll <= 75) {
+        treasure.gp += Roll(6, 2) * 100;
+        treasure.pp += Roll(6, 1) * 10;
+      } else {
+        treasure.gp += Roll(6, 2) * 100;
+        treasure.pp += Roll(6, 2) * 10;
+      }
+    } else {
+      if (roll <= 15) {
+        treasure.ep += Roll(6, 2) * 1000;
+        treasure.gp += Roll(6, 8) * 100
+      } else if (roll <= 55){
+        treasure.gp += Roll(6, 1) * 1000;
+        treasure.pp += Roll(6, 1) * 100;
+      } else {
+        treasure.gp += Roll(6, 1) * 1000;
+        treasure.pp += Roll(6, 2) * 100;
+      }
     }
   }
 
