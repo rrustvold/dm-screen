@@ -147,3 +147,45 @@ export const mephits = {
 	]
 }
 
+export const animated_objects = {
+	name: 'Animated-objects',
+	list: [
+		monsters.animated_armor, monsters.flying_sword, monsters.rug_of_smothering, 
+	]
+}
+
+export const hags = {
+	name: 'Hags',
+	list: [
+		monsters.green_hag, monsters.night_hag, monsters.sea_hag, 
+	]
+}
+
+export const nagas = {
+	name: 'Nagas',
+	list: [
+		monsters.bone_naga, monsters.guardian_naga, monsters.spirit_naga, 
+	]
+}
+
+export const kuo_toas = {
+	name: 'Kuo-toas',
+	list: [
+		monsters.kuo_toa, monsters.kuo_toa_archpriest, monsters.kuo_toa_whip, 
+	]
+}
+
+export const yuan_tis = {
+	name: 'Yuan-tis',
+	list: [
+		monsters.yuan_ti_abomination, monsters.yuan_ti_pureblood, monsters.yuan_ti_malison, 
+	]
+}
+
+export const bugs = {
+	name: 'Bugs',
+	list: [
+		monsters.scorpion, monsters.giant_scorpion, monsters.swarm_of_insects, monsters.giant_centipede, monsters.giant_fire_beetle, 
+	]
+}
+

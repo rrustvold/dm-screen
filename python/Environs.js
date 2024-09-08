@@ -3,7 +3,9 @@ import {hills, hillsOptions} from './hills';
 import {grassland, grasslandOptions} from './grassland';
 import {dungeon, dungeonOptions} from './dungeon';
 import {caves, cavesOptions} from './caves';
-const all_environs = [forest, hills, grassland, dungeon, caves];
+import {swamp, swampOptions} from './swamp';
+import {desert, desertOptions} from './desert';
+const all_environs = [forest, hills, grassland, dungeon, caves, swamp, desert];
         
         export const allLists = () => {
             let all = {}
@@ -34,6 +36,8 @@ const all_environs = [forest, hills, grassland, dungeon, caves];
 			<option value="grassland">Grassland</option>,
 			<option value="dungeon">Dungeon</option>,
 			<option value="caves">Caves</option>,
+			<option value="swamp">Swamp</option>,
+			<option value="desert">Desert</option>,
 		]
 
 
@@ -52,6 +56,10 @@ const all_environs = [forest, hills, grassland, dungeon, caves];
 				setter(dungeonOptions());
 			} else if (environ === "caves") {
 				setter(cavesOptions());
+			} else if (environ === "swamp") {
+				setter(swampOptions());
+			} else if (environ === "desert") {
+				setter(desertOptions());
 			}
 		}
 
@@ -76,6 +84,12 @@ const all_environs = [forest, hills, grassland, dungeon, caves];
             
             } else if (monsterSelection === "anyCaves") {
                 monsterFamily = randomFamily(caves);
+            
+            } else if (monsterSelection === "anySwamp") {
+                monsterFamily = randomFamily(swamp);
+            
+            } else if (monsterSelection === "anyDesert") {
+                monsterFamily = randomFamily(desert);
             	}
 return monsterFamily
 }

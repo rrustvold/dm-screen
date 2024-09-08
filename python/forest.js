@@ -11,6 +11,8 @@ const forestSolos = {
 		monsters.owlbear, 
 		monsters.troll, 
 		monsters.shambling_mound, 
+		monsters.ankheg, 
+		monsters.displacer_beast, 
 	]
 }
 export const forest = {
@@ -23,6 +25,9 @@ export const forest = {
 	snakes: families.snakes, 
 	driders: families.driders, 
 	wolves: families.wolves, 
+	gricks: families.gricks, 
+	ogres: families.ogres, 
+	nagas: families.nagas, 
 	forestsolos: forestSolos, 
 }
 

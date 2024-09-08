@@ -70,8 +70,8 @@
     - rust-monster
     - roper
     - darkmantle
-    - kuo-toa
-    - duergars
+    - kuo-toas
+    - duergar
     - drows
     - gricks
     - ettin
@@ -102,6 +102,7 @@
     - displacer-beast
     - beholder
     - mind-flayer
+    - bugs
 
 - caves:
     - kobolds
@@ -110,7 +111,7 @@
     - rust-monster
     - roper
     - darkmantle
-    - duergars
+    - duergar
     - gricks
     - ettin
     - ogres
@@ -138,4 +139,52 @@
     - manticore
     - purple-worm
     - troll
+    - ankheg
+    - bugs
+
+- swamp:
+    - hags
+    - troll
+    - ettin
+    - crocodile
+    - swarm-of-insects
+    - rats
+    - snakes
+    - stirge
+    - lizardfolk
+    - yuan-tis
+    - shambling-mound
+    - water-elemental
+    - bullywug
+    - orcs
+    - undead
+    - hydra
+    - giant-crocodile
+
+- desert:
+    - vultures
+    - snakes
+    - bugs
+    - hyena
+    - gnolls
+    - goblins
+    - kobolds
+    - dust-mephit
+    - air-elemental
+    - cyclops
+    - yuan-tis
+    - ogres
+    - fire-elemental
+    - medusa
+    - nagas
+    - lamia
+    - efreeti
+    - purple-worm
+    - roc
+    - young-brass-dragon
+    - young-blue-dragon
+    - adult-brass-dragon
+    - adult-blue-dragon
+    - ancient-brass-dragon
+    - ancient-blue-dragon
     - ankheg

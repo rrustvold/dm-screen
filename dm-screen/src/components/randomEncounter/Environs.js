@@ -3,8 +3,10 @@ import {hills, hillsOptions} from './hills';
 import {grassland, grasslandOptions} from './grassland';
 import {dungeon, dungeonOptions} from './dungeon';
 import {caves, cavesOptions} from './caves';
-const all_environs = [forest, hills, grassland, dungeon, caves];
-
+import {swamp, swampOptions} from './swamp';
+import {desert, desertOptions} from './desert';
+const all_environs = [forest, hills, grassland, dungeon, caves, swamp, desert];
+        
         export const allLists = () => {
             let all = {}
             for (let i=0; i < all_environs.length; i++) {
@@ -14,7 +16,7 @@ const all_environs = [forest, hills, grassland, dungeon, caves];
             }
             return all
         }
-
+        
         export const allOptions = () => {
             let options = [];
             for (let i=0; i < all_environs; i++) {
@@ -26,14 +28,16 @@ const all_environs = [forest, hills, grassland, dungeon, caves];
             }
             return options
         }
-
-
+        
+        
         export const allEnvirons = [
         			<option value="forest">Forest</option>,
 			<option value="hills">Hills</option>,
 			<option value="grassland">Grassland</option>,
 			<option value="dungeon">Dungeon</option>,
 			<option value="caves">Caves</option>,
+			<option value="swamp">Swamp</option>,
+			<option value="desert">Desert</option>,
 		]
 
 
@@ -52,32 +56,40 @@ const all_environs = [forest, hills, grassland, dungeon, caves];
 				setter(dungeonOptions());
 			} else if (environ === "caves") {
 				setter(cavesOptions());
+			} else if (environ === "swamp") {
+				setter(swampOptions());
+			} else if (environ === "desert") {
+				setter(desertOptions());
 			}
 		}
 
         export function randomFamily(environ) {
-            console.log("hello");
-            console.log(environ);
             let random = Math.floor(Math.random() * Object.keys(environ).length);
             return environ[Object.keys(environ)[random]];
         }
-
+        
         export function getFamily(monsterSelection) {
             let monsterFamily = allLists()[monsterSelection];
             if (monsterSelection === "anyForest") {
                 monsterFamily = randomFamily(forest);
-
+        
             } else if (monsterSelection === "anyHills") {
                 monsterFamily = randomFamily(hills);
-
+            
             } else if (monsterSelection === "anyGrassland") {
                 monsterFamily = randomFamily(grassland);
-
+            
             } else if (monsterSelection === "anyDungeon") {
                 monsterFamily = randomFamily(dungeon);
-
+            
             } else if (monsterSelection === "anyCaves") {
                 monsterFamily = randomFamily(caves);
+            
+            } else if (monsterSelection === "anySwamp") {
+                monsterFamily = randomFamily(swamp);
+            
+            } else if (monsterSelection === "anyDesert") {
+                monsterFamily = randomFamily(desert);
             	}
 return monsterFamily
 }

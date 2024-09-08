@@ -166,3 +166,30 @@
     - animated-armor
     - flying-sword
     - rug-of-smothering
+
+- hags:
+    - green-hag
+    - night-hag
+    - sea-hag
+
+- nagas:
+    - bone-naga
+    - guardian-naga
+    - spirit-naga
+
+- kuo-toas:
+    - kuo-toa
+    - kuo-toa-archpriest
+    - kuo-toa-whip
+
+- yuan-tis:
+    - yuan-ti-abomination
+    - yuan-ti-pureblood
+    - yuan-ti-malison
+
+- bugs:
+    - scorpion
+    - giant-scorpion
+    - swarm-of-insects
+    - giant-centipede
+    - giant-fire-beetle

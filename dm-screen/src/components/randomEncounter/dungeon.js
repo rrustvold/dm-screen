@@ -25,7 +25,9 @@ const dungeonSolos = {
 		monsters.manticore, 
 		monsters.medusa, 
 		monsters.mimic, 
-		monsters.rug_of_smothering, 
+		monsters.displacer_beast, 
+		monsters.beholder, 
+		monsters.mind_flayer, 
 	]
 }
 export const dungeon = {
@@ -33,6 +35,9 @@ export const dungeon = {
 	goblins: families.goblins, 
 	snakes: families.snakes, 
 	rats: families.rats, 
+	spiders: families.spiders, 
+	kuo_toas: families.kuo_toas, 
+	duergar: families.duergar, 
 	drows: families.drows, 
 	gricks: families.gricks, 
 	ogres: families.ogres, 
@@ -41,7 +46,9 @@ export const dungeon = {
 	bats: families.bats, 
 	oozes: families.oozes, 
 	golems: families.golems, 
+	animated_objects: families.animated_objects, 
 	mephits: families.mephits, 
+	bugs: families.bugs, 
 	dungeonsolos: dungeonSolos, 
 }
 

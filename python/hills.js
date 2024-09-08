@@ -10,6 +10,16 @@ const hillsSolos = {
 		monsters.brown_bear, 
 		monsters.harpy, 
 		monsters.carrion_crawler, 
+		monsters.worg, 
+		monsters.ettin, 
+		monsters.cyclops, 
+		monsters.stone_giant, 
+		monsters.earth_elemental, 
+		monsters.griffon, 
+		monsters.wyvern, 
+		monsters.stone_giant, 
+		monsters.green_hag, 
+		monsters.troll, 
 	]
 }
 export const hills = {
@@ -18,6 +28,8 @@ export const hills = {
 	kobolds: families.kobolds, 
 	vultures: families.vultures, 
 	wolves: families.wolves, 
+	gnolls: families.gnolls, 
+	ogres: families.ogres, 
 	hillssolos: hillsSolos, 
 }
 

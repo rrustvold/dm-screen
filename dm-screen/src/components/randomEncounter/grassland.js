@@ -13,6 +13,7 @@ const grasslandSolos = {
 		monsters.bulette, 
 		monsters.brown_bear, 
 		monsters.cyclops, 
+		monsters.gorgon, 
 	]
 }
 export const grassland = {
@@ -21,6 +22,7 @@ export const grassland = {
 	gnolls: families.gnolls, 
 	snakes: families.snakes, 
 	wolves: families.wolves, 
+	vultures: families.vultures, 
 	grasslandsolos: grasslandSolos, 
 }
 

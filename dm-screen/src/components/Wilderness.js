@@ -3,6 +3,7 @@ import Foraging from "./Foraging";
 import Tracking from "./Tracking";
 import { hideShow, getRandomThingFromList } from "../utils";
 import { RandomEntrance } from "./randomDungeon/RandomEntrance";
+import { desert, forest, grassland, hills, monuntains, swamp } from "./WildernessDressing";
 
 function getLandmarkFeature() {
     let _roll = roll(20);
@@ -46,6 +47,32 @@ function roll(sides, numDice=1) {
         sum += Math.floor(Math.random()*sides) + 1;
     }
     return sum;
+}
+
+
+function getListFromEnviron(environ){
+    switch (environ) {
+        case "Grassland":
+            return grassland
+        case "Forest":
+            return forest
+        case "Hills":
+            return hills
+        case "Mountains":
+            return monuntains
+        case "Swamp":
+            return swamp
+        case "Farmland":
+            return grassland
+        case "Badlands":
+            return
+        case "Arctic":
+            return
+        case "Desert":
+            return desert
+        case "Underworld":
+            return
+    }
 }
 
 export default function Wilderness() {
@@ -166,6 +193,7 @@ export default function Wilderness() {
             if (roll(100) <= encounterChance) {
                 
                     let encounter = document.getElementById("encounterKind");
+                    let dressing = document.getElementById("wildernessDressing");
                     let kind = "";
                     let _roll = roll(100);
                     if (_roll <= 40) {
@@ -174,11 +202,15 @@ export default function Wilderness() {
                         kind = `Dungeon: ${getRandomThingFromList(RandomEntrance)}`;
                     } else if (_roll <= 75) {
                         kind = `Monument: ${getLandmarkFeature()}`;
-                    } else {
+                    } else if (_roll <= 95) {
                         kind = "Kaiju";
+                    } else {
+                        kind = "Muse";
                     }
                     encounter.innerText = kind;
-                
+
+                    dressing.innerText = getRandomThingFromList(getListFromEnviron(document.getElementById("environment").value));
+
                     encounterBlock.className = encounterBlock.className.replace(" w3-hide", " w3-show");
                 
                 break;
@@ -348,6 +380,7 @@ export default function Wilderness() {
                                 <h4>
                                 Random Encounter 
                                 </h4>
+                                <p id="wildernessDressing">grassy</p>
                                 <p id="encounterKind">Monster</p>
                             </span>
                         </div>

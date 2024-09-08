@@ -31,7 +31,7 @@ function getPartyLimits(party){
     return limits
 }
 
-function generate(setEncounter, party, setDifficulty) {
+function generate(setEncounter, party) {
     let difficulty = document.getElementById("difficulty").value;
 
     let limits = getPartyLimits(party);
@@ -105,7 +105,7 @@ function generate(setEncounter, party, setDifficulty) {
         } else if (encounter.length === 14) {
             multiplier = 4;
         }
-        if ((totalXP + monster.xp) * multiplier <= limit * 1.10) {
+        if ((totalXP + monster.xp) * multiplier <= limit * 1.0) {
             totalXP += monster.xp;
             encounter.push(monster);
             if (monster.key in encounterDict) {
@@ -128,6 +128,7 @@ function generate(setEncounter, party, setDifficulty) {
     } else {
         console.log("Deadly");
     }
+    console.log(`${totalXP * multiplier} / ${limit}; loops = ${loopCount}; mult = ${multiplier}`);
     setEncounter(encounterDict);
 
 }

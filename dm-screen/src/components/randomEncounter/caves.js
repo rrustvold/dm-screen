@@ -29,18 +29,21 @@ const cavesSolos = {
 		monsters.manticore, 
 		monsters.purple_worm, 
 		monsters.troll, 
+		monsters.ankheg, 
 	]
 }
 export const caves = {
 	kobolds: families.kobolds, 
 	goblins: families.goblins, 
 	rats: families.rats, 
+	duergar: families.duergar, 
 	gricks: families.gricks, 
 	ogres: families.ogres, 
 	oozes: families.oozes, 
 	wolves: families.wolves, 
 	spiders: families.spiders, 
 	gnolls: families.gnolls, 
+	bugs: families.bugs, 
 	cavessolos: cavesSolos, 
 }
 

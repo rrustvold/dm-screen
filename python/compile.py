@@ -32,12 +32,14 @@ with open("monsters.js", "w") as file:
             name = key.capitalize()
 
         xp = monster[key]["xp"]
+        link = monster[key].get("link", f"https://www.dndbeyond.com/monsters/{key}")
         key = key.replace("-", "_")
         file.writelines([
             "export const %s = {\n" % key,
             "\tkey: '%s',\n" % key,
             "\tname: '%s',\n" % name,
             "\txp: %d,\n" % xp,
+            "\tlink: '%s',\n" % link,
             "}\n\n"
         ])
 
@@ -95,7 +97,7 @@ for environ in environs:
 
         for value in values:
             if value in family_keys:
-                file.write(f"\t{value.replace("-", "-")}: families.{value.replace("-", "_")}, \n")
+                file.write(f"\t{value.replace("-", "_")}: families.{value.replace("-", "_")}, \n")
 
         file.write(
             "\t%ssolos: %sSolos, \n" % (key, key)

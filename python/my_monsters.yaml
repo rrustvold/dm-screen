@@ -38,3 +38,59 @@
       xp: 450
 - orog:
       xp: 450
+
+
+- displacer-beast:
+      name: Displacer Beast
+      xp: 700
+      link: https://www.dndbeyond.com/monsters/17130-displacer-beast
+
+- kuo-toa:
+      name: Kuo-toa
+      xp: 50
+      link: https://www.dndbeyond.com/monsters/17166-kuo-toa
+
+- kuo-toa-archpriest:
+      name: Kuo-toa Archpriest
+      xp: 2300
+      link: https://www.dndbeyond.com/monsters/17167-kuo-toa-archpriest
+
+- kuo-toa-whip:
+      name: Kuo-toa Whip
+      xp: 200
+      link: https://www.dndbeyond.com/monsters/17169-kuo-toa-whip
+
+- beholder:
+      name: Beholder
+      xp: 10000
+      link: https://www.dndbeyond.com/monsters/17099-beholder
+
+- bullywug:
+      name: Bullywug
+      xp: 50
+      link: https://www.dndbeyond.com/monsters/17120-bullywug
+
+- bone-naga:
+      name: bone-naga
+      xp: 1100
+      link: https://www.dndbeyond.com/monsters/17118-bone-naga
+
+- mind-flayer:
+      name: Mind Flayer
+      xp: 2900
+      link: https://www.dndbeyond.com/monsters/17104-mind-flayer
+
+- yuan-ti-abomination:
+      name: Yuan-ti Abomination
+      xp: 2900
+      link: https://www.dndbeyond.com/monsters/17121-yuan-ti-abomination
+
+- yuan-ti-malison:
+      name: Yuan-ti Malison
+      xp: 700
+      link: https://www.dndbeyond.com/monsters/17122-yuan-ti-malison
+
+- yuan-ti-pureblood:
+      name: Yuan-ti Pureblood
+      xp: 200
+      link: https://www.dndbeyond.com/monsters/17123-yuan-ti-pureblood
