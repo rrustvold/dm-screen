@@ -16,6 +16,7 @@ const swampSolos = {
 		monsters.bullywug, 
 		monsters.hydra, 
 		monsters.giant_crocodile, 
+		monsters.carrion_crawler, 
 	]
 }
 export const swamp = {
@@ -25,6 +26,7 @@ export const swamp = {
 	yuan_tis: families.yuan_tis, 
 	orcs: families.orcs, 
 	undead: families.undead, 
+	bugs: families.bugs, 
 	swampsolos: swampSolos, 
 }
 

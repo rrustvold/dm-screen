@@ -30,6 +30,7 @@ const cavesSolos = {
 		monsters.purple_worm, 
 		monsters.troll, 
 		monsters.ankheg, 
+		monsters.troglodyte, 
 	]
 }
 export const caves = {

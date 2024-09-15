@@ -13,6 +13,9 @@ const forestSolos = {
 		monsters.shambling_mound, 
 		monsters.ankheg, 
 		monsters.displacer_beast, 
+		monsters.displacer_beast, 
+		monsters.gorgon, 
+		monsters.treant, 
 	]
 }
 export const forest = {
@@ -28,6 +31,9 @@ export const forest = {
 	gricks: families.gricks, 
 	ogres: families.ogres, 
 	nagas: families.nagas, 
+	bugs: families.bugs, 
+	blights: families.blights, 
+	yuan_tis: families.yuan_tis, 
 	forestsolos: forestSolos, 
 }
 

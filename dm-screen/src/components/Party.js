@@ -108,6 +108,12 @@ export default function Party({partySize, setPartySize, party, setParty}){
             <h1>Party <button class="w3-btn w3-round w3-tiny" onClick={() => hideShow("party")}><i class="bi bi-arrow-down-up"></i></button></h1>
             <div class="w3-container w3-show" id="party">
                 <PartySize setPartySize={setPartySize}></PartySize>
+                <div class="w3-container">
+                    <p>
+                        Languages Known: <input type="text" class="w3-input"></input>
+                    </p>
+                </div>
+                
                 <PartyInput partySize={partySize} party={party} setParty={setParty}></PartyInput>
             </div>
         </div>

@@ -3,1668 +3,4006 @@
     type: aberration
     xp: 5900
     api_url: /api/monsters/aboleth
+    alignment: lawful evil
+    str: 21
+    dex: 9
+    con: 15
+    int: 18
+    wis: 15
+    cha: 18
 - acolyte:
     name: Acolyte
     type: humanoid
     xp: 50
     api_url: /api/monsters/acolyte
+    alignment: any alignment
+    str: 10
+    dex: 10
+    con: 10
+    int: 10
+    wis: 14
+    cha: 11
 - adult-black-dragon:
     name: Adult Black Dragon
     type: dragon
     xp: 11500
     api_url: /api/monsters/adult-black-dragon
+    alignment: chaotic evil
+    str: 23
+    dex: 14
+    con: 21
+    int: 14
+    wis: 13
+    cha: 17
 - adult-blue-dragon:
     name: Adult Blue Dragon
     type: dragon
     xp: 15000
     api_url: /api/monsters/adult-blue-dragon
+    alignment: lawful evil
+    str: 25
+    dex: 10
+    con: 23
+    int: 16
+    wis: 15
+    cha: 19
 - adult-brass-dragon:
     name: Adult Brass Dragon
     type: dragon
     xp: 10000
     api_url: /api/monsters/adult-brass-dragon
+    alignment: chaotic good
+    str: 23
+    dex: 10
+    con: 21
+    int: 14
+    wis: 13
+    cha: 17
 - adult-bronze-dragon:
     name: Adult Bronze Dragon
     type: dragon
     xp: 13000
     api_url: /api/monsters/adult-bronze-dragon
+    alignment: lawful good
+    str: 25
+    dex: 10
+    con: 23
+    int: 16
+    wis: 15
+    cha: 19
 - adult-copper-dragon:
     name: Adult Copper Dragon
     type: dragon
     xp: 11500
     api_url: /api/monsters/adult-copper-dragon
+    alignment: chaotic good
+    str: 23
+    dex: 12
+    con: 21
+    int: 18
+    wis: 15
+    cha: 17
 - adult-gold-dragon:
     name: Adult Gold Dragon
     type: dragon
     xp: 18000
     api_url: /api/monsters/adult-gold-dragon
+    alignment: lawful good
+    str: 27
+    dex: 14
+    con: 25
+    int: 16
+    wis: 15
+    cha: 24
 - adult-green-dragon:
     name: Adult Green Dragon
     type: dragon
     xp: 13000
     api_url: /api/monsters/adult-green-dragon
+    alignment: lawful evil
+    str: 23
+    dex: 12
+    con: 21
+    int: 18
+    wis: 15
+    cha: 17
 - adult-red-dragon:
     name: Adult Red Dragon
     type: dragon
     xp: 18000
     api_url: /api/monsters/adult-red-dragon
+    alignment: chaotic evil
+    str: 27
+    dex: 10
+    con: 25
+    int: 16
+    wis: 13
+    cha: 21
 - adult-silver-dragon:
     name: Adult Silver Dragon
     type: dragon
     xp: 15000
     api_url: /api/monsters/adult-silver-dragon
+    alignment: lawful good
+    str: 27
+    dex: 10
+    con: 25
+    int: 16
+    wis: 13
+    cha: 21
 - adult-white-dragon:
     name: Adult White Dragon
     type: dragon
     xp: 10000
     api_url: /api/monsters/adult-white-dragon
+    alignment: chaotic evil
+    str: 22
+    dex: 10
+    con: 22
+    int: 8
+    wis: 12
+    cha: 12
 - air-elemental:
     name: Air Elemental
     type: elemental
     xp: 1800
     api_url: /api/monsters/air-elemental
+    alignment: neutral
+    str: 14
+    dex: 20
+    con: 14
+    int: 6
+    wis: 10
+    cha: 6
 - ancient-black-dragon:
     name: Ancient Black Dragon
     type: dragon
     xp: 33000
     api_url: /api/monsters/ancient-black-dragon
+    alignment: chaotic evil
+    str: 27
+    dex: 14
+    con: 25
+    int: 16
+    wis: 15
+    cha: 19
 - ancient-blue-dragon:
     name: Ancient Blue Dragon
     type: dragon
     xp: 50000
     api_url: /api/monsters/ancient-blue-dragon
+    alignment: lawful evil
+    str: 29
+    dex: 10
+    con: 27
+    int: 18
+    wis: 17
+    cha: 21
 - ancient-brass-dragon:
     name: Ancient Brass Dragon
     type: dragon
     xp: 25000
     api_url: /api/monsters/ancient-brass-dragon
+    alignment: chaotic good
+    str: 27
+    dex: 10
+    con: 25
+    int: 16
+    wis: 15
+    cha: 19
 - ancient-bronze-dragon:
     name: Ancient Bronze Dragon
     type: dragon
     xp: 41000
     api_url: /api/monsters/ancient-bronze-dragon
+    alignment: lawful good
+    str: 29
+    dex: 10
+    con: 27
+    int: 18
+    wis: 17
+    cha: 21
 - ancient-copper-dragon:
     name: Ancient Copper Dragon
     type: dragon
     xp: 33000
     api_url: /api/monsters/ancient-copper-dragon
+    alignment: chaotic good
+    str: 27
+    dex: 12
+    con: 25
+    int: 20
+    wis: 17
+    cha: 19
 - ancient-gold-dragon:
     name: Ancient Gold Dragon
     type: dragon
     xp: 62000
     api_url: /api/monsters/ancient-gold-dragon
+    alignment: lawful good
+    str: 30
+    dex: 14
+    con: 29
+    int: 18
+    wis: 17
+    cha: 28
 - ancient-green-dragon:
     name: Ancient Green Dragon
     type: dragon
     xp: 41000
     api_url: /api/monsters/ancient-green-dragon
+    alignment: lawful evil
+    str: 27
+    dex: 12
+    con: 25
+    int: 20
+    wis: 17
+    cha: 19
 - ancient-red-dragon:
     name: Ancient Red Dragon
     type: dragon
     xp: 62000
     api_url: /api/monsters/ancient-red-dragon
+    alignment: chaotic evil
+    str: 30
+    dex: 10
+    con: 29
+    int: 18
+    wis: 15
+    cha: 23
 - ancient-silver-dragon:
     name: Ancient Silver Dragon
     type: dragon
     xp: 50000
     api_url: /api/monsters/ancient-silver-dragon
+    alignment: lawful good
+    str: 30
+    dex: 10
+    con: 29
+    int: 18
+    wis: 15
+    cha: 23
 - ancient-white-dragon:
     name: Ancient White Dragon
     type: dragon
     xp: 25000
     api_url: /api/monsters/ancient-white-dragon
+    alignment: chaotic evil
+    str: 26
+    dex: 10
+    con: 26
+    int: 10
+    wis: 13
+    cha: 14
 - androsphinx:
     name: Androsphinx
     type: monstrosity
     xp: 18000
     api_url: /api/monsters/androsphinx
+    alignment: lawful neutral
+    str: 22
+    dex: 10
+    con: 20
+    int: 16
+    wis: 18
+    cha: 23
 - animated-armor:
     name: Animated Armor
     type: construct
     xp: 200
     api_url: /api/monsters/animated-armor
+    alignment: unaligned
+    str: 14
+    dex: 11
+    con: 13
+    int: 1
+    wis: 3
+    cha: 1
 - ankheg:
     name: Ankheg
     type: monstrosity
     xp: 250
     api_url: /api/monsters/ankheg
+    alignment: unaligned
+    str: 17
+    dex: 11
+    con: 13
+    int: 1
+    wis: 13
+    cha: 6
 - ape:
     name: Ape
     type: beast
     xp: 100
     api_url: /api/monsters/ape
+    alignment: unaligned
+    str: 16
+    dex: 14
+    con: 14
+    int: 6
+    wis: 12
+    cha: 7
 - archmage:
     name: Archmage
     type: humanoid
     xp: 8400
     api_url: /api/monsters/archmage
+    alignment: any alignment
+    str: 10
+    dex: 14
+    con: 12
+    int: 20
+    wis: 15
+    cha: 16
 - assassin:
     name: Assassin
     type: humanoid
     xp: 3900
     api_url: /api/monsters/assassin
+    alignment: any non-good alignment
+    str: 11
+    dex: 16
+    con: 14
+    int: 13
+    wis: 11
+    cha: 10
 - awakened-shrub:
     name: Awakened Shrub
     type: plant
     xp: 10
     api_url: /api/monsters/awakened-shrub
+    alignment: unaligned
+    str: 3
+    dex: 8
+    con: 11
+    int: 10
+    wis: 10
+    cha: 6
 - awakened-tree:
     name: Awakened Tree
     type: plant
     xp: 450
     api_url: /api/monsters/awakened-tree
+    alignment: unaligned
+    str: 19
+    dex: 6
+    con: 15
+    int: 10
+    wis: 10
+    cha: 7
 - axe-beak:
     name: Axe Beak
     type: beast
     xp: 50
     api_url: /api/monsters/axe-beak
+    alignment: unaligned
+    str: 14
+    dex: 12
+    con: 12
+    int: 2
+    wis: 10
+    cha: 5
 - azer:
     name: Azer
     type: elemental
     xp: 450
     api_url: /api/monsters/azer
+    alignment: lawful neutral
+    str: 17
+    dex: 12
+    con: 15
+    int: 12
+    wis: 13
+    cha: 10
 - baboon:
     name: Baboon
     type: beast
     xp: 10
     api_url: /api/monsters/baboon
+    alignment: unaligned
+    str: 8
+    dex: 14
+    con: 11
+    int: 4
+    wis: 12
+    cha: 6
 - badger:
     name: Badger
     type: beast
     xp: 10
     api_url: /api/monsters/badger
+    alignment: unaligned
+    str: 4
+    dex: 11
+    con: 12
+    int: 2
+    wis: 12
+    cha: 5
 - balor:
     name: Balor
     type: fiend
     xp: 22000
     api_url: /api/monsters/balor
+    alignment: chaotic evil
+    str: 26
+    dex: 15
+    con: 22
+    int: 20
+    wis: 16
+    cha: 22
 - bandit:
     name: Bandit
     type: humanoid
     xp: 25
     api_url: /api/monsters/bandit
+    alignment: any non-lawful alignment
+    str: 11
+    dex: 12
+    con: 12
+    int: 10
+    wis: 10
+    cha: 10
 - bandit-captain:
     name: Bandit Captain
     type: humanoid
     xp: 450
     api_url: /api/monsters/bandit-captain
+    alignment: any non-lawful alignment
+    str: 15
+    dex: 16
+    con: 14
+    int: 14
+    wis: 11
+    cha: 14
 - barbed-devil:
     name: Barbed Devil
     type: fiend
     xp: 1800
     api_url: /api/monsters/barbed-devil
+    alignment: lawful evil
+    str: 16
+    dex: 17
+    con: 18
+    int: 12
+    wis: 14
+    cha: 14
 - basilisk:
     name: Basilisk
     type: monstrosity
     xp: 700
     api_url: /api/monsters/basilisk
+    alignment: unaligned
+    str: 16
+    dex: 8
+    con: 15
+    int: 2
+    wis: 8
+    cha: 7
 - bat:
     name: Bat
     type: beast
     xp: 10
     api_url: /api/monsters/bat
+    alignment: unaligned
+    str: 2
+    dex: 15
+    con: 8
+    int: 2
+    wis: 12
+    cha: 4
 - bearded-devil:
     name: Bearded Devil
     type: fiend
     xp: 700
     api_url: /api/monsters/bearded-devil
+    alignment: lawful evil
+    str: 16
+    dex: 15
+    con: 15
+    int: 9
+    wis: 11
+    cha: 11
 - behir:
     name: Behir
     type: monstrosity
     xp: 7200
     api_url: /api/monsters/behir
+    alignment: neutral evil
+    str: 23
+    dex: 16
+    con: 18
+    int: 7
+    wis: 14
+    cha: 12
 - berserker:
     name: Berserker
     type: humanoid
     xp: 450
     api_url: /api/monsters/berserker
+    alignment: any chaotic alignment
+    str: 16
+    dex: 12
+    con: 17
+    int: 9
+    wis: 11
+    cha: 9
 - black-bear:
     name: Black Bear
     type: beast
     xp: 100
     api_url: /api/monsters/black-bear
+    alignment: unaligned
+    str: 15
+    dex: 10
+    con: 14
+    int: 2
+    wis: 12
+    cha: 7
 - black-dragon-wyrmling:
     name: Black Dragon Wyrmling
     type: dragon
     xp: 450
     api_url: /api/monsters/black-dragon-wyrmling
+    alignment: chaotic evil
+    str: 15
+    dex: 14
+    con: 13
+    int: 10
+    wis: 11
+    cha: 13
 - black-pudding:
     name: Black Pudding
     type: ooze
     xp: 1100
     api_url: /api/monsters/black-pudding
+    alignment: unaligned
+    str: 16
+    dex: 5
+    con: 16
+    int: 1
+    wis: 6
+    cha: 1
 - blink-dog:
     name: Blink Dog
     type: fey
     xp: 50
     api_url: /api/monsters/blink-dog
+    alignment: lawful good
+    str: 12
+    dex: 17
+    con: 12
+    int: 10
+    wis: 13
+    cha: 11
 - blood-hawk:
     name: Blood Hawk
     type: beast
     xp: 25
     api_url: /api/monsters/blood-hawk
+    alignment: unaligned
+    str: 6
+    dex: 14
+    con: 10
+    int: 3
+    wis: 14
+    cha: 5
 - blue-dragon-wyrmling:
     name: Blue Dragon Wyrmling
     type: dragon
     xp: 700
     api_url: /api/monsters/blue-dragon-wyrmling
+    alignment: lawful evil
+    str: 17
+    dex: 10
+    con: 15
+    int: 12
+    wis: 11
+    cha: 15
 - boar:
     name: Boar
     type: beast
     xp: 50
     api_url: /api/monsters/boar
+    alignment: unaligned
+    str: 13
+    dex: 11
+    con: 12
+    int: 2
+    wis: 9
+    cha: 5
 - bone-devil:
     name: Bone Devil
     type: fiend
     xp: 5000
     api_url: /api/monsters/bone-devil
+    alignment: lawful evil
+    str: 18
+    dex: 16
+    con: 18
+    int: 13
+    wis: 14
+    cha: 16
 - brass-dragon-wyrmling:
     name: Brass Dragon Wyrmling
     type: dragon
     xp: 100
     api_url: /api/monsters/brass-dragon-wyrmling
+    alignment: chaotic good
+    str: 15
+    dex: 10
+    con: 13
+    int: 10
+    wis: 11
+    cha: 13
 - bronze-dragon-wyrmling:
     name: Bronze Dragon Wyrmling
     type: dragon
     xp: 450
     api_url: /api/monsters/bronze-dragon-wyrmling
+    alignment: lawful good
+    str: 17
+    dex: 10
+    con: 15
+    int: 12
+    wis: 11
+    cha: 15
 - brown-bear:
     name: Brown Bear
     type: beast
     xp: 200
     api_url: /api/monsters/brown-bear
+    alignment: unaligned
+    str: 19
+    dex: 10
+    con: 16
+    int: 2
+    wis: 13
+    cha: 7
 - bugbear:
     name: Bugbear
     type: humanoid
     xp: 200
     api_url: /api/monsters/bugbear
+    alignment: chaotic evil
+    str: 15
+    dex: 14
+    con: 13
+    int: 8
+    wis: 11
+    cha: 9
 - bulette:
     name: Bulette
     type: monstrosity
     xp: 1800
     api_url: /api/monsters/bulette
+    alignment: unaligned
+    str: 19
+    dex: 11
+    con: 21
+    int: 2
+    wis: 10
+    cha: 5
 - camel:
     name: Camel
     type: beast
     xp: 25
     api_url: /api/monsters/camel
+    alignment: unaligned
+    str: 16
+    dex: 8
+    con: 14
+    int: 2
+    wis: 8
+    cha: 5
 - cat:
     name: Cat
     type: beast
     xp: 10
     api_url: /api/monsters/cat
+    alignment: unaligned
+    str: 3
+    dex: 15
+    con: 10
+    int: 3
+    wis: 12
+    cha: 7
 - centaur:
     name: Centaur
     type: monstrosity
     xp: 450
     api_url: /api/monsters/centaur
+    alignment: neutral good
+    str: 18
+    dex: 14
+    con: 14
+    int: 9
+    wis: 13
+    cha: 11
 - chain-devil:
     name: Chain Devil
     type: fiend
     xp: 3900
     api_url: /api/monsters/chain-devil
+    alignment: lawful evil
+    str: 18
+    dex: 15
+    con: 18
+    int: 11
+    wis: 12
+    cha: 14
 - chimera:
     name: Chimera
     type: monstrosity
     xp: 2300
     api_url: /api/monsters/chimera
+    alignment: chaotic evil
+    str: 19
+    dex: 11
+    con: 19
+    int: 3
+    wis: 14
+    cha: 10
 - chuul:
     name: Chuul
     type: aberration
     xp: 1100
     api_url: /api/monsters/chuul
+    alignment: chaotic evil
+    str: 19
+    dex: 10
+    con: 16
+    int: 5
+    wis: 11
+    cha: 5
 - clay-golem:
     name: Clay Golem
     type: construct
     xp: 5000
     api_url: /api/monsters/clay-golem
+    alignment: unaligned
+    str: 20
+    dex: 9
+    con: 18
+    int: 3
+    wis: 8
+    cha: 1
 - cloaker:
     name: Cloaker
     type: aberration
     xp: 3900
     api_url: /api/monsters/cloaker
+    alignment: chaotic neutral
+    str: 17
+    dex: 15
+    con: 12
+    int: 13
+    wis: 12
+    cha: 14
 - cloud-giant:
     name: Cloud Giant
     type: giant
     xp: 5000
     api_url: /api/monsters/cloud-giant
+    alignment: neutral good (50%) or neutral evil (50%)
+    str: 27
+    dex: 10
+    con: 22
+    int: 12
+    wis: 16
+    cha: 16
 - cockatrice:
     name: Cockatrice
     type: monstrosity
     xp: 100
     api_url: /api/monsters/cockatrice
+    alignment: unaligned
+    str: 6
+    dex: 12
+    con: 12
+    int: 2
+    wis: 13
+    cha: 5
 - commoner:
     name: Commoner
     type: humanoid
     xp: 10
     api_url: /api/monsters/commoner
+    alignment: any alignment
+    str: 10
+    dex: 10
+    con: 10
+    int: 10
+    wis: 10
+    cha: 10
 - constrictor-snake:
     name: Constrictor Snake
     type: beast
     xp: 50
     api_url: /api/monsters/constrictor-snake
+    alignment: unaligned
+    str: 15
+    dex: 14
+    con: 12
+    int: 1
+    wis: 10
+    cha: 3
 - copper-dragon-wyrmling:
     name: Copper Dragon Wyrmling
     type: dragon
     xp: 200
     api_url: /api/monsters/copper-dragon-wyrmling
+    alignment: chaotic good
+    str: 15
+    dex: 12
+    con: 13
+    int: 14
+    wis: 11
+    cha: 13
 - couatl:
     name: Couatl
     type: celestial
     xp: 1100
     api_url: /api/monsters/couatl
+    alignment: lawful good
+    str: 16
+    dex: 20
+    con: 17
+    int: 18
+    wis: 20
+    cha: 18
 - crab:
     name: Crab
     type: beast
     xp: 10
     api_url: /api/monsters/crab
+    alignment: unaligned
+    str: 2
+    dex: 11
+    con: 10
+    int: 1
+    wis: 8
+    cha: 2
 - crocodile:
     name: Crocodile
     type: beast
     xp: 100
     api_url: /api/monsters/crocodile
+    alignment: unaligned
+    str: 15
+    dex: 10
+    con: 13
+    int: 2
+    wis: 10
+    cha: 5
 - cult-fanatic:
     name: Cult Fanatic
     type: humanoid
     xp: 450
     api_url: /api/monsters/cult-fanatic
+    alignment: any non-good alignment
+    str: 11
+    dex: 14
+    con: 12
+    int: 10
+    wis: 13
+    cha: 14
 - cultist:
     name: Cultist
     type: humanoid
     xp: 25
     api_url: /api/monsters/cultist
+    alignment: any non-good alignment
+    str: 11
+    dex: 12
+    con: 10
+    int: 10
+    wis: 11
+    cha: 10
 - darkmantle:
     name: Darkmantle
     type: monstrosity
     xp: 100
     api_url: /api/monsters/darkmantle
+    alignment: unaligned
+    str: 16
+    dex: 12
+    con: 13
+    int: 2
+    wis: 10
+    cha: 5
 - death-dog:
     name: Death Dog
     type: monstrosity
     xp: 200
     api_url: /api/monsters/death-dog
+    alignment: neutral evil
+    str: 15
+    dex: 14
+    con: 14
+    int: 3
+    wis: 13
+    cha: 6
 - deep-gnome-svirfneblin:
     name: Deep Gnome (Svirfneblin)
     type: humanoid
     xp: 50
     api_url: /api/monsters/deep-gnome-svirfneblin
+    alignment: neutral good
+    str: 15
+    dex: 14
+    con: 14
+    int: 12
+    wis: 10
+    cha: 9
 - deer:
     name: Deer
     type: beast
     xp: 10
     api_url: /api/monsters/deer
+    alignment: unaligned
+    str: 11
+    dex: 16
+    con: 11
+    int: 2
+    wis: 14
+    cha: 5
 - deva:
     name: Deva
     type: celestial
     xp: 5900
     api_url: /api/monsters/deva
+    alignment: lawful good
+    str: 18
+    dex: 18
+    con: 18
+    int: 17
+    wis: 20
+    cha: 20
 - dire-wolf:
     name: Dire Wolf
     type: beast
     xp: 200
     api_url: /api/monsters/dire-wolf
+    alignment: unaligned
+    str: 17
+    dex: 15
+    con: 15
+    int: 3
+    wis: 12
+    cha: 7
 - djinni:
     name: Djinni
     type: elemental
     xp: 7200
     api_url: /api/monsters/djinni
+    alignment: chaotic good
+    str: 21
+    dex: 15
+    con: 22
+    int: 15
+    wis: 16
+    cha: 20
 - doppelganger:
     name: Doppelganger
     type: monstrosity
     xp: 700
     api_url: /api/monsters/doppelganger
+    alignment: unaligned
+    str: 11
+    dex: 18
+    con: 14
+    int: 11
+    wis: 12
+    cha: 14
 - draft-horse:
     name: Draft Horse
     type: beast
     xp: 50
     api_url: /api/monsters/draft-horse
+    alignment: unaligned
+    str: 18
+    dex: 10
+    con: 12
+    int: 2
+    wis: 11
+    cha: 7
 - dragon-turtle:
     name: Dragon Turtle
     type: dragon
     xp: 18000
     api_url: /api/monsters/dragon-turtle
+    alignment: neutral
+    str: 25
+    dex: 10
+    con: 20
+    int: 10
+    wis: 12
+    cha: 12
 - dretch:
     name: Dretch
     type: fiend
     xp: 25
     api_url: /api/monsters/dretch
+    alignment: chaotic evil
+    str: 11
+    dex: 11
+    con: 12
+    int: 5
+    wis: 8
+    cha: 3
 - drider:
     name: Drider
     type: monstrosity
     xp: 2300
     api_url: /api/monsters/drider
+    alignment: chaotic evil
+    str: 16
+    dex: 16
+    con: 18
+    int: 13
+    wis: 14
+    cha: 12
 - drow:
     name: Drow
     type: humanoid
     xp: 50
     api_url: /api/monsters/drow
+    alignment: neutral evil
+    str: 10
+    dex: 14
+    con: 10
+    int: 11
+    wis: 11
+    cha: 12
 - druid:
     name: Druid
     type: humanoid
     xp: 450
     api_url: /api/monsters/druid
+    alignment: any alignment
+    str: 10
+    dex: 12
+    con: 13
+    int: 12
+    wis: 15
+    cha: 11
 - dryad:
     name: Dryad
     type: fey
     xp: 200
     api_url: /api/monsters/dryad
+    alignment: neutral
+    str: 10
+    dex: 12
+    con: 11
+    int: 14
+    wis: 15
+    cha: 18
 - duergar:
     name: Duergar
     type: humanoid
     xp: 200
     api_url: /api/monsters/duergar
+    alignment: lawful evil
+    str: 14
+    dex: 11
+    con: 14
+    int: 11
+    wis: 10
+    cha: 9
 - dust-mephit:
     name: Dust Mephit
     type: elemental
     xp: 100
     api_url: /api/monsters/dust-mephit
+    alignment: neutral evil
+    str: 5
+    dex: 14
+    con: 10
+    int: 9
+    wis: 11
+    cha: 10
 - eagle:
     name: Eagle
     type: beast
     xp: 10
     api_url: /api/monsters/eagle
+    alignment: unaligned
+    str: 6
+    dex: 15
+    con: 10
+    int: 2
+    wis: 14
+    cha: 7
 - earth-elemental:
     name: Earth Elemental
     type: elemental
     xp: 1800
     api_url: /api/monsters/earth-elemental
+    alignment: neutral
+    str: 20
+    dex: 8
+    con: 20
+    int: 5
+    wis: 10
+    cha: 5
 - efreeti:
     name: Efreeti
     type: elemental
     xp: 7200
     api_url: /api/monsters/efreeti
+    alignment: lawful evil
+    str: 22
+    dex: 12
+    con: 24
+    int: 16
+    wis: 15
+    cha: 16
 - elephant:
     name: Elephant
     type: beast
     xp: 1100
     api_url: /api/monsters/elephant
+    alignment: unaligned
+    str: 22
+    dex: 9
+    con: 17
+    int: 3
+    wis: 11
+    cha: 6
 - elk:
     name: Elk
     type: beast
     xp: 50
     api_url: /api/monsters/elk
+    alignment: unaligned
+    str: 16
+    dex: 10
+    con: 12
+    int: 2
+    wis: 10
+    cha: 6
 - erinyes:
     name: Erinyes
     type: fiend
     xp: 8400
     api_url: /api/monsters/erinyes
+    alignment: lawful evil
+    str: 18
+    dex: 16
+    con: 18
+    int: 14
+    wis: 14
+    cha: 18
 - ettercap:
     name: Ettercap
     type: monstrosity
     xp: 450
     api_url: /api/monsters/ettercap
+    alignment: neutral evil
+    str: 14
+    dex: 15
+    con: 13
+    int: 7
+    wis: 12
+    cha: 8
 - ettin:
     name: Ettin
     type: giant
     xp: 1100
     api_url: /api/monsters/ettin
+    alignment: chaotic evil
+    str: 21
+    dex: 8
+    con: 17
+    int: 6
+    wis: 10
+    cha: 8
 - fire-elemental:
     name: Fire Elemental
     type: elemental
     xp: 1800
     api_url: /api/monsters/fire-elemental
+    alignment: neutral
+    str: 10
+    dex: 17
+    con: 16
+    int: 6
+    wis: 10
+    cha: 7
 - fire-giant:
     name: Fire Giant
     type: giant
     xp: 5000
     api_url: /api/monsters/fire-giant
+    alignment: lawful evil
+    str: 25
+    dex: 9
+    con: 23
+    int: 10
+    wis: 14
+    cha: 13
 - flesh-golem:
     name: Flesh Golem
     type: construct
     xp: 1800
     api_url: /api/monsters/flesh-golem
+    alignment: neutral
+    str: 19
+    dex: 9
+    con: 18
+    int: 6
+    wis: 10
+    cha: 5
 - flying-snake:
     name: Flying Snake
     type: beast
     xp: 25
     api_url: /api/monsters/flying-snake
+    alignment: unaligned
+    str: 4
+    dex: 18
+    con: 11
+    int: 2
+    wis: 12
+    cha: 5
 - flying-sword:
     name: Flying Sword
     type: construct
     xp: 50
     api_url: /api/monsters/flying-sword
+    alignment: unaligned
+    str: 12
+    dex: 15
+    con: 11
+    int: 1
+    wis: 5
+    cha: 1
 - frog:
     name: Frog
     type: beast
     xp: 0
     api_url: /api/monsters/frog
+    alignment: unaligned
+    str: 1
+    dex: 13
+    con: 8
+    int: 1
+    wis: 8
+    cha: 3
 - frost-giant:
     name: Frost Giant
     type: giant
     xp: 3900
     api_url: /api/monsters/frost-giant
+    alignment: neutral evil
+    str: 23
+    dex: 9
+    con: 21
+    int: 9
+    wis: 10
+    cha: 12
 - gargoyle:
     name: Gargoyle
     type: elemental
     xp: 450
     api_url: /api/monsters/gargoyle
+    alignment: chaotic evil
+    str: 15
+    dex: 11
+    con: 16
+    int: 6
+    wis: 11
+    cha: 7
 - gelatinous-cube:
     name: Gelatinous Cube
     type: ooze
     xp: 450
     api_url: /api/monsters/gelatinous-cube
+    alignment: unaligned
+    str: 14
+    dex: 3
+    con: 20
+    int: 1
+    wis: 6
+    cha: 1
 - ghast:
     name: Ghast
     type: undead
     xp: 450
     api_url: /api/monsters/ghast
+    alignment: chaotic evil
+    str: 16
+    dex: 17
+    con: 10
+    int: 11
+    wis: 10
+    cha: 8
 - ghost:
     name: Ghost
     type: undead
     xp: 1100
     api_url: /api/monsters/ghost
+    alignment: any alignment
+    str: 7
+    dex: 13
+    con: 10
+    int: 10
+    wis: 12
+    cha: 17
 - ghoul:
     name: Ghoul
     type: undead
     xp: 200
     api_url: /api/monsters/ghoul
+    alignment: chaotic evil
+    str: 13
+    dex: 15
+    con: 10
+    int: 7
+    wis: 10
+    cha: 6
 - giant-ape:
     name: Giant Ape
     type: beast
     xp: 2900
     api_url: /api/monsters/giant-ape
+    alignment: unaligned
+    str: 23
+    dex: 14
+    con: 18
+    int: 7
+    wis: 12
+    cha: 7
 - giant-badger:
     name: Giant Badger
     type: beast
     xp: 50
     api_url: /api/monsters/giant-badger
+    alignment: unaligned
+    str: 13
+    dex: 10
+    con: 15
+    int: 2
+    wis: 12
+    cha: 5
 - giant-bat:
     name: Giant Bat
     type: beast
     xp: 50
     api_url: /api/monsters/giant-bat
+    alignment: unaligned
+    str: 15
+    dex: 16
+    con: 11
+    int: 2
+    wis: 12
+    cha: 6
 - giant-boar:
     name: Giant Boar
     type: beast
     xp: 450
     api_url: /api/monsters/giant-boar
+    alignment: unaligned
+    str: 17
+    dex: 10
+    con: 16
+    int: 2
+    wis: 7
+    cha: 5
 - giant-centipede:
     name: Giant Centipede
     type: beast
     xp: 50
     api_url: /api/monsters/giant-centipede
+    alignment: unaligned
+    str: 5
+    dex: 14
+    con: 12
+    int: 1
+    wis: 7
+    cha: 3
 - giant-constrictor-snake:
     name: Giant Constrictor Snake
     type: beast
     xp: 450
     api_url: /api/monsters/giant-constrictor-snake
+    alignment: unaligned
+    str: 19
+    dex: 14
+    con: 12
+    int: 1
+    wis: 10
+    cha: 3
 - giant-crab:
     name: Giant Crab
     type: beast
     xp: 25
     api_url: /api/monsters/giant-crab
+    alignment: unaligned
+    str: 13
+    dex: 15
+    con: 11
+    int: 1
+    wis: 9
+    cha: 3
 - giant-crocodile:
     name: Giant Crocodile
     type: beast
     xp: 1800
     api_url: /api/monsters/giant-crocodile
+    alignment: unaligned
+    str: 21
+    dex: 9
+    con: 17
+    int: 2
+    wis: 10
+    cha: 7
 - giant-eagle:
     name: Giant Eagle
     type: beast
     xp: 200
     api_url: /api/monsters/giant-eagle
+    alignment: neutral good
+    str: 16
+    dex: 17
+    con: 13
+    int: 8
+    wis: 14
+    cha: 10
 - giant-elk:
     name: Giant Elk
     type: beast
     xp: 450
     api_url: /api/monsters/giant-elk
+    alignment: unaligned
+    str: 19
+    dex: 16
+    con: 14
+    int: 7
+    wis: 14
+    cha: 10
 - giant-fire-beetle:
     name: Giant Fire Beetle
     type: beast
     xp: 10
     api_url: /api/monsters/giant-fire-beetle
+    alignment: unaligned
+    str: 8
+    dex: 10
+    con: 12
+    int: 1
+    wis: 7
+    cha: 3
 - giant-frog:
     name: Giant Frog
     type: beast
     xp: 50
     api_url: /api/monsters/giant-frog
+    alignment: unaligned
+    str: 12
+    dex: 13
+    con: 11
+    int: 2
+    wis: 10
+    cha: 3
 - giant-goat:
     name: Giant Goat
     type: beast
     xp: 100
     api_url: /api/monsters/giant-goat
+    alignment: unaligned
+    str: 17
+    dex: 11
+    con: 12
+    int: 3
+    wis: 12
+    cha: 6
 - giant-hyena:
     name: Giant Hyena
     type: beast
     xp: 200
     api_url: /api/monsters/giant-hyena
+    alignment: unaligned
+    str: 16
+    dex: 14
+    con: 14
+    int: 2
+    wis: 12
+    cha: 7
 - giant-lizard:
     name: Giant Lizard
     type: beast
     xp: 50
     api_url: /api/monsters/giant-lizard
+    alignment: unaligned
+    str: 15
+    dex: 12
+    con: 13
+    int: 2
+    wis: 10
+    cha: 5
 - giant-octopus:
     name: Giant Octopus
     type: beast
     xp: 200
     api_url: /api/monsters/giant-octopus
+    alignment: unaligned
+    str: 17
+    dex: 13
+    con: 13
+    int: 4
+    wis: 10
+    cha: 4
 - giant-owl:
     name: Giant Owl
     type: beast
     xp: 50
     api_url: /api/monsters/giant-owl
+    alignment: neutral
+    str: 13
+    dex: 15
+    con: 12
+    int: 8
+    wis: 13
+    cha: 10
 - giant-poisonous-snake:
     name: Giant Poisonous Snake
     type: beast
     xp: 50
     api_url: /api/monsters/giant-poisonous-snake
+    alignment: unaligned
+    str: 10
+    dex: 18
+    con: 13
+    int: 2
+    wis: 10
+    cha: 3
 - giant-rat:
     name: Giant Rat
     type: beast
     xp: 25
     api_url: /api/monsters/giant-rat
+    alignment: unaligned
+    str: 7
+    dex: 15
+    con: 11
+    int: 2
+    wis: 10
+    cha: 4
 - giant-rat-diseased:
     name: Giant Rat (Diseased)
     type: beast
     xp: 25
     api_url: /api/monsters/giant-rat-diseased
+    alignment: unaligned
+    str: 7
+    dex: 15
+    con: 11
+    int: 2
+    wis: 10
+    cha: 4
 - giant-scorpion:
     name: Giant Scorpion
     type: beast
     xp: 700
     api_url: /api/monsters/giant-scorpion
+    alignment: unaligned
+    str: 15
+    dex: 13
+    con: 15
+    int: 1
+    wis: 9
+    cha: 3
 - giant-sea-horse:
     name: Giant Sea Horse
     type: beast
     xp: 100
     api_url: /api/monsters/giant-sea-horse
+    alignment: unaligned
+    str: 12
+    dex: 15
+    con: 11
+    int: 2
+    wis: 12
+    cha: 5
 - giant-shark:
     name: Giant Shark
     type: beast
     xp: 1800
     api_url: /api/monsters/giant-shark
+    alignment: unaligned
+    str: 23
+    dex: 11
+    con: 21
+    int: 1
+    wis: 10
+    cha: 5
 - giant-spider:
     name: Giant Spider
     type: beast
     xp: 200
     api_url: /api/monsters/giant-spider
+    alignment: unaligned
+    str: 14
+    dex: 16
+    con: 12
+    int: 2
+    wis: 11
+    cha: 4
 - giant-toad:
     name: Giant Toad
     type: beast
     xp: 200
     api_url: /api/monsters/giant-toad
+    alignment: unaligned
+    str: 15
+    dex: 13
+    con: 13
+    int: 2
+    wis: 10
+    cha: 3
 - giant-vulture:
     name: Giant Vulture
     type: beast
     xp: 200
     api_url: /api/monsters/giant-vulture
+    alignment: neutral evil
+    str: 15
+    dex: 10
+    con: 15
+    int: 6
+    wis: 12
+    cha: 7
 - giant-wasp:
     name: Giant Wasp
     type: beast
     xp: 100
     api_url: /api/monsters/giant-wasp
+    alignment: unaligned
+    str: 10
+    dex: 14
+    con: 10
+    int: 1
+    wis: 10
+    cha: 3
 - giant-weasel:
     name: Giant Weasel
     type: beast
     xp: 25
     api_url: /api/monsters/giant-weasel
+    alignment: unaligned
+    str: 11
+    dex: 16
+    con: 10
+    int: 4
+    wis: 12
+    cha: 5
 - giant-wolf-spider:
     name: Giant Wolf Spider
     type: beast
     xp: 50
     api_url: /api/monsters/giant-wolf-spider
+    alignment: unaligned
+    str: 12
+    dex: 16
+    con: 13
+    int: 3
+    wis: 12
+    cha: 4
 - gibbering-mouther:
     name: Gibbering Mouther
     type: aberration
     xp: 450
     api_url: /api/monsters/gibbering-mouther
+    alignment: neutral
+    str: 10
+    dex: 8
+    con: 16
+    int: 3
+    wis: 10
+    cha: 6
 - glabrezu:
     name: Glabrezu
     type: fiend
     xp: 5000
     api_url: /api/monsters/glabrezu
+    alignment: chaotic evil
+    str: 20
+    dex: 15
+    con: 21
+    int: 19
+    wis: 17
+    cha: 16
 - gladiator:
     name: Gladiator
     type: humanoid
     xp: 1800
     api_url: /api/monsters/gladiator
+    alignment: any alignment
+    str: 18
+    dex: 15
+    con: 16
+    int: 10
+    wis: 12
+    cha: 15
 - gnoll:
     name: Gnoll
     type: humanoid
     xp: 100
     api_url: /api/monsters/gnoll
+    alignment: chaotic evil
+    str: 14
+    dex: 12
+    con: 11
+    int: 6
+    wis: 10
+    cha: 7
 - goat:
     name: Goat
     type: beast
     xp: 10
     api_url: /api/monsters/goat
+    alignment: unaligned
+    str: 12
+    dex: 10
+    con: 11
+    int: 2
+    wis: 10
+    cha: 5
 - goblin:
     name: Goblin
     type: humanoid
     xp: 50
     api_url: /api/monsters/goblin
+    alignment: neutral evil
+    str: 8
+    dex: 14
+    con: 10
+    int: 10
+    wis: 8
+    cha: 8
 - gold-dragon-wyrmling:
     name: Gold Dragon Wyrmling
     type: dragon
     xp: 700
     api_url: /api/monsters/gold-dragon-wyrmling
+    alignment: lawful good
+    str: 19
+    dex: 14
+    con: 17
+    int: 14
+    wis: 11
+    cha: 16
 - gorgon:
     name: Gorgon
     type: monstrosity
     xp: 1800
     api_url: /api/monsters/gorgon
+    alignment: unaligned
+    str: 20
+    dex: 11
+    con: 18
+    int: 2
+    wis: 12
+    cha: 7
 - gray-ooze:
     name: Gray Ooze
     type: ooze
     xp: 100
     api_url: /api/monsters/gray-ooze
+    alignment: unaligned
+    str: 12
+    dex: 6
+    con: 16
+    int: 1
+    wis: 6
+    cha: 2
 - green-dragon-wyrmling:
     name: Green Dragon Wyrmling
     type: dragon
     xp: 450
     api_url: /api/monsters/green-dragon-wyrmling
+    alignment: lawful evil
+    str: 15
+    dex: 12
+    con: 13
+    int: 14
+    wis: 11
+    cha: 13
 - green-hag:
     name: Green Hag
     type: fey
     xp: 700
     api_url: /api/monsters/green-hag
+    alignment: neutral evil
+    str: 18
+    dex: 12
+    con: 16
+    int: 13
+    wis: 14
+    cha: 14
 - grick:
     name: Grick
     type: monstrosity
     xp: 450
     api_url: /api/monsters/grick
+    alignment: neutral
+    str: 14
+    dex: 14
+    con: 11
+    int: 3
+    wis: 14
+    cha: 5
 - griffon:
     name: Griffon
     type: monstrosity
     xp: 450
     api_url: /api/monsters/griffon
+    alignment: unaligned
+    str: 18
+    dex: 15
+    con: 16
+    int: 2
+    wis: 13
+    cha: 8
 - grimlock:
     name: Grimlock
     type: humanoid
     xp: 50
     api_url: /api/monsters/grimlock
+    alignment: neutral evil
+    str: 16
+    dex: 12
+    con: 12
+    int: 9
+    wis: 8
+    cha: 6
 - guard:
     name: Guard
     type: humanoid
     xp: 25
     api_url: /api/monsters/guard
+    alignment: any alignment
+    str: 13
+    dex: 12
+    con: 12
+    int: 10
+    wis: 11
+    cha: 10
 - guardian-naga:
     name: Guardian Naga
     type: monstrosity
     xp: 5900
     api_url: /api/monsters/guardian-naga
+    alignment: lawful good
+    str: 19
+    dex: 18
+    con: 16
+    int: 16
+    wis: 19
+    cha: 18
 - gynosphinx:
     name: Gynosphinx
     type: monstrosity
     xp: 7200
     api_url: /api/monsters/gynosphinx
+    alignment: lawful neutral
+    str: 18
+    dex: 15
+    con: 16
+    int: 18
+    wis: 18
+    cha: 18
 - half-red-dragon-veteran:
     name: Half-Red Dragon Veteran
     type: humanoid
     xp: 1800
     api_url: /api/monsters/half-red-dragon-veteran
+    alignment: any alignment
+    str: 16
+    dex: 13
+    con: 14
+    int: 10
+    wis: 11
+    cha: 10
 - harpy:
     name: Harpy
     type: monstrosity
     xp: 200
     api_url: /api/monsters/harpy
+    alignment: chaotic evil
+    str: 12
+    dex: 13
+    con: 12
+    int: 7
+    wis: 10
+    cha: 13
 - hawk:
     name: Hawk
     type: beast
     xp: 10
     api_url: /api/monsters/hawk
+    alignment: unaligned
+    str: 5
+    dex: 16
+    con: 8
+    int: 2
+    wis: 14
+    cha: 6
 - hell-hound:
     name: Hell Hound
     type: fiend
     xp: 700
     api_url: /api/monsters/hell-hound
+    alignment: lawful evil
+    str: 17
+    dex: 12
+    con: 14
+    int: 6
+    wis: 13
+    cha: 6
 - hezrou:
     name: Hezrou
     type: fiend
     xp: 3900
     api_url: /api/monsters/hezrou
+    alignment: chaotic evil
+    str: 19
+    dex: 17
+    con: 20
+    int: 5
+    wis: 12
+    cha: 13
 - hill-giant:
     name: Hill Giant
     type: giant
     xp: 1800
     api_url: /api/monsters/hill-giant
+    alignment: chaotic evil
+    str: 21
+    dex: 8
+    con: 19
+    int: 5
+    wis: 9
+    cha: 6
 - hippogriff:
     name: Hippogriff
     type: monstrosity
     xp: 200
     api_url: /api/monsters/hippogriff
+    alignment: unaligned
+    str: 17
+    dex: 13
+    con: 13
+    int: 2
+    wis: 12
+    cha: 8
 - hobgoblin:
     name: Hobgoblin
     type: humanoid
     xp: 100
     api_url: /api/monsters/hobgoblin
+    alignment: lawful evil
+    str: 13
+    dex: 12
+    con: 12
+    int: 10
+    wis: 10
+    cha: 9
 - homunculus:
     name: Homunculus
     type: construct
     xp: 10
     api_url: /api/monsters/homunculus
+    alignment: neutral
+    str: 4
+    dex: 15
+    con: 11
+    int: 10
+    wis: 10
+    cha: 7
 - horned-devil:
     name: Horned Devil
     type: fiend
     xp: 7200
     api_url: /api/monsters/horned-devil
+    alignment: lawful evil
+    str: 22
+    dex: 17
+    con: 21
+    int: 12
+    wis: 16
+    cha: 17
 - hunter-shark:
     name: Hunter Shark
     type: beast
     xp: 450
     api_url: /api/monsters/hunter-shark
+    alignment: unaligned
+    str: 18
+    dex: 13
+    con: 15
+    int: 1
+    wis: 10
+    cha: 4
 - hydra:
     name: Hydra
     type: monstrosity
     xp: 3900
     api_url: /api/monsters/hydra
+    alignment: unaligned
+    str: 20
+    dex: 12
+    con: 20
+    int: 2
+    wis: 10
+    cha: 7
 - hyena:
     name: Hyena
     type: beast
     xp: 10
     api_url: /api/monsters/hyena
+    alignment: unaligned
+    str: 11
+    dex: 13
+    con: 12
+    int: 2
+    wis: 12
+    cha: 5
 - ice-devil:
     name: Ice Devil
     type: fiend
     xp: 11500
     api_url: /api/monsters/ice-devil
+    alignment: lawful evil
+    str: 21
+    dex: 14
+    con: 18
+    int: 18
+    wis: 15
+    cha: 18
 - ice-mephit:
     name: Ice Mephit
     type: elemental
     xp: 100
     api_url: /api/monsters/ice-mephit
+    alignment: neutral evil
+    str: 7
+    dex: 13
+    con: 10
+    int: 9
+    wis: 11
+    cha: 12
 - imp:
     name: Imp
     type: fiend
     xp: 200
     api_url: /api/monsters/imp
+    alignment: lawful evil
+    str: 6
+    dex: 17
+    con: 13
+    int: 11
+    wis: 12
+    cha: 14
 - invisible-stalker:
     name: Invisible Stalker
     type: elemental
     xp: 2300
     api_url: /api/monsters/invisible-stalker
+    alignment: neutral
+    str: 16
+    dex: 19
+    con: 14
+    int: 10
+    wis: 15
+    cha: 11
 - iron-golem:
     name: Iron Golem
     type: construct
     xp: 15000
     api_url: /api/monsters/iron-golem
+    alignment: unaligned
+    str: 24
+    dex: 9
+    con: 20
+    int: 3
+    wis: 11
+    cha: 1
 - jackal:
     name: Jackal
     type: beast
     xp: 10
     api_url: /api/monsters/jackal
+    alignment: unaligned
+    str: 8
+    dex: 15
+    con: 11
+    int: 3
+    wis: 12
+    cha: 6
 - killer-whale:
     name: Killer Whale
     type: beast
     xp: 700
     api_url: /api/monsters/killer-whale
+    alignment: unaligned
+    str: 19
+    dex: 10
+    con: 13
+    int: 3
+    wis: 12
+    cha: 7
 - knight:
     name: Knight
     type: humanoid
     xp: 700
     api_url: /api/monsters/knight
+    alignment: any alignment
+    str: 16
+    dex: 11
+    con: 14
+    int: 11
+    wis: 11
+    cha: 15
 - kobold:
     name: Kobold
     type: humanoid
     xp: 25
     api_url: /api/monsters/kobold
+    alignment: lawful evil
+    str: 7
+    dex: 15
+    con: 9
+    int: 8
+    wis: 7
+    cha: 8
 - kraken:
     name: Kraken
     type: monstrosity
     xp: 50000
     api_url: /api/monsters/kraken
+    alignment: chaotic evil
+    str: 30
+    dex: 11
+    con: 25
+    int: 22
+    wis: 18
+    cha: 20
 - lamia:
     name: Lamia
     type: monstrosity
     xp: 1100
     api_url: /api/monsters/lamia
+    alignment: chaotic evil
+    str: 16
+    dex: 13
+    con: 15
+    int: 14
+    wis: 15
+    cha: 16
 - lemure:
     name: Lemure
     type: fiend
     xp: 10
     api_url: /api/monsters/lemure
+    alignment: lawful evil
+    str: 10
+    dex: 5
+    con: 11
+    int: 1
+    wis: 11
+    cha: 3
 - lich:
     name: Lich
     type: undead
     xp: 33000
     api_url: /api/monsters/lich
+    alignment: any evil alignment
+    str: 11
+    dex: 16
+    con: 16
+    int: 20
+    wis: 14
+    cha: 16
 - lion:
     name: Lion
     type: beast
     xp: 200
     api_url: /api/monsters/lion
+    alignment: unaligned
+    str: 17
+    dex: 15
+    con: 13
+    int: 3
+    wis: 12
+    cha: 8
 - lizard:
     name: Lizard
     type: beast
     xp: 10
     api_url: /api/monsters/lizard
+    alignment: unaligned
+    str: 2
+    dex: 11
+    con: 10
+    int: 1
+    wis: 8
+    cha: 3
 - lizardfolk:
     name: Lizardfolk
     type: humanoid
     xp: 100
     api_url: /api/monsters/lizardfolk
+    alignment: neutral
+    str: 15
+    dex: 10
+    con: 13
+    int: 7
+    wis: 12
+    cha: 7
 - mage:
     name: Mage
     type: humanoid
     xp: 2300
     api_url: /api/monsters/mage
+    alignment: any alignment
+    str: 9
+    dex: 14
+    con: 11
+    int: 17
+    wis: 12
+    cha: 11
 - magma-mephit:
     name: Magma Mephit
     type: elemental
     xp: 100
     api_url: /api/monsters/magma-mephit
+    alignment: neutral evil
+    str: 8
+    dex: 12
+    con: 12
+    int: 7
+    wis: 10
+    cha: 10
 - magmin:
     name: Magmin
     type: elemental
     xp: 100
     api_url: /api/monsters/magmin
+    alignment: chaotic neutral
+    str: 7
+    dex: 15
+    con: 12
+    int: 8
+    wis: 11
+    cha: 10
 - mammoth:
     name: Mammoth
     type: beast
     xp: 2300
     api_url: /api/monsters/mammoth
+    alignment: unaligned
+    str: 24
+    dex: 9
+    con: 21
+    int: 3
+    wis: 11
+    cha: 6
 - manticore:
     name: Manticore
     type: monstrosity
     xp: 700
     api_url: /api/monsters/manticore
+    alignment: lawful evil
+    str: 17
+    dex: 16
+    con: 17
+    int: 7
+    wis: 12
+    cha: 8
 - marilith:
     name: Marilith
     type: fiend
     xp: 15000
     api_url: /api/monsters/marilith
+    alignment: chaotic evil
+    str: 18
+    dex: 20
+    con: 20
+    int: 18
+    wis: 16
+    cha: 20
 - mastiff:
     name: Mastiff
     type: beast
     xp: 25
     api_url: /api/monsters/mastiff
+    alignment: unaligned
+    str: 13
+    dex: 14
+    con: 12
+    int: 3
+    wis: 12
+    cha: 7
 - medusa:
     name: Medusa
     type: monstrosity
     xp: 2300
     api_url: /api/monsters/medusa
+    alignment: lawful evil
+    str: 10
+    dex: 15
+    con: 16
+    int: 12
+    wis: 13
+    cha: 15
 - merfolk:
     name: Merfolk
     type: humanoid
     xp: 25
     api_url: /api/monsters/merfolk
+    alignment: neutral
+    str: 10
+    dex: 13
+    con: 12
+    int: 11
+    wis: 11
+    cha: 12
 - merrow:
     name: Merrow
     type: monstrosity
     xp: 450
     api_url: /api/monsters/merrow
+    alignment: chaotic evil
+    str: 18
+    dex: 10
+    con: 15
+    int: 8
+    wis: 10
+    cha: 9
 - mimic:
     name: Mimic
     type: monstrosity
     xp: 450
     api_url: /api/monsters/mimic
+    alignment: neutral
+    str: 17
+    dex: 12
+    con: 15
+    int: 5
+    wis: 13
+    cha: 8
 - minotaur:
     name: Minotaur
     type: monstrosity
     xp: 700
     api_url: /api/monsters/minotaur
+    alignment: chaotic evil
+    str: 18
+    dex: 11
+    con: 16
+    int: 6
+    wis: 16
+    cha: 9
 - minotaur-skeleton:
     name: Minotaur Skeleton
     type: undead
     xp: 450
     api_url: /api/monsters/minotaur-skeleton
+    alignment: lawful evil
+    str: 18
+    dex: 11
+    con: 15
+    int: 6
+    wis: 8
+    cha: 5
 - mule:
     name: Mule
     type: beast
     xp: 25
     api_url: /api/monsters/mule
+    alignment: unaligned
+    str: 14
+    dex: 10
+    con: 13
+    int: 2
+    wis: 10
+    cha: 5
 - mummy:
     name: Mummy
     type: undead
     xp: 700
     api_url: /api/monsters/mummy
+    alignment: lawful evil
+    str: 16
+    dex: 8
+    con: 15
+    int: 6
+    wis: 10
+    cha: 12
 - mummy-lord:
     name: Mummy Lord
     type: undead
     xp: 13000
     api_url: /api/monsters/mummy-lord
+    alignment: lawful evil
+    str: 18
+    dex: 10
+    con: 17
+    int: 11
+    wis: 18
+    cha: 16
 - nalfeshnee:
     name: Nalfeshnee
     type: fiend
     xp: 10000
     api_url: /api/monsters/nalfeshnee
+    alignment: chaotic evil
+    str: 21
+    dex: 10
+    con: 22
+    int: 19
+    wis: 12
+    cha: 15
 - night-hag:
     name: Night Hag
     type: fiend
     xp: 1800
     api_url: /api/monsters/night-hag
+    alignment: neutral evil
+    str: 18
+    dex: 15
+    con: 16
+    int: 16
+    wis: 14
+    cha: 16
 - nightmare:
     name: Nightmare
     type: fiend
     xp: 700
     api_url: /api/monsters/nightmare
+    alignment: neutral evil
+    str: 18
+    dex: 15
+    con: 16
+    int: 10
+    wis: 13
+    cha: 15
 - noble:
     name: Noble
     type: humanoid
     xp: 25
     api_url: /api/monsters/noble
+    alignment: any alignment
+    str: 11
+    dex: 12
+    con: 11
+    int: 12
+    wis: 14
+    cha: 16
 - ochre-jelly:
     name: Ochre Jelly
     type: ooze
     xp: 450
     api_url: /api/monsters/ochre-jelly
+    alignment: unaligned
+    str: 15
+    dex: 6
+    con: 14
+    int: 2
+    wis: 6
+    cha: 1
 - octopus:
     name: Octopus
     type: beast
     xp: 10
     api_url: /api/monsters/octopus
+    alignment: unaligned
+    str: 4
+    dex: 15
+    con: 11
+    int: 3
+    wis: 10
+    cha: 4
 - ogre:
     name: Ogre
     type: giant
     xp: 450
     api_url: /api/monsters/ogre
+    alignment: chaotic evil
+    str: 19
+    dex: 8
+    con: 16
+    int: 5
+    wis: 7
+    cha: 7
 - ogre-zombie:
     name: Ogre Zombie
     type: undead
     xp: 450
     api_url: /api/monsters/ogre-zombie
+    alignment: neutral evil
+    str: 19
+    dex: 6
+    con: 18
+    int: 3
+    wis: 6
+    cha: 5
 - oni:
     name: Oni
     type: giant
     xp: 2900
     api_url: /api/monsters/oni
+    alignment: lawful evil
+    str: 19
+    dex: 11
+    con: 16
+    int: 14
+    wis: 12
+    cha: 15
 - orc:
     name: Orc
     type: humanoid
     xp: 100
     api_url: /api/monsters/orc
+    alignment: chaotic evil
+    str: 16
+    dex: 12
+    con: 16
+    int: 7
+    wis: 11
+    cha: 10
 - otyugh:
     name: Otyugh
     type: aberration
     xp: 1800
     api_url: /api/monsters/otyugh
+    alignment: neutral
+    str: 16
+    dex: 11
+    con: 19
+    int: 6
+    wis: 13
+    cha: 6
 - owl:
     name: Owl
     type: beast
     xp: 10
     api_url: /api/monsters/owl
+    alignment: unaligned
+    str: 3
+    dex: 13
+    con: 8
+    int: 2
+    wis: 12
+    cha: 7
 - owlbear:
     name: Owlbear
     type: monstrosity
     xp: 700
     api_url: /api/monsters/owlbear
+    alignment: unaligned
+    str: 20
+    dex: 12
+    con: 17
+    int: 3
+    wis: 12
+    cha: 7
 - panther:
     name: Panther
     type: beast
     xp: 50
     api_url: /api/monsters/panther
+    alignment: unaligned
+    str: 14
+    dex: 15
+    con: 10
+    int: 3
+    wis: 14
+    cha: 7
 - pegasus:
     name: Pegasus
     type: celestial
     xp: 450
     api_url: /api/monsters/pegasus
+    alignment: chaotic good
+    str: 18
+    dex: 15
+    con: 16
+    int: 10
+    wis: 15
+    cha: 13
 - phase-spider:
     name: Phase Spider
     type: monstrosity
     xp: 700
     api_url: /api/monsters/phase-spider
+    alignment: unaligned
+    str: 15
+    dex: 15
+    con: 12
+    int: 6
+    wis: 10
+    cha: 6
 - pit-fiend:
     name: Pit Fiend
     type: fiend
     xp: 25000
     api_url: /api/monsters/pit-fiend
+    alignment: lawful evil
+    str: 26
+    dex: 14
+    con: 24
+    int: 22
+    wis: 18
+    cha: 24
 - planetar:
     name: Planetar
     type: celestial
     xp: 15000
     api_url: /api/monsters/planetar
+    alignment: lawful good
+    str: 24
+    dex: 20
+    con: 24
+    int: 19
+    wis: 22
+    cha: 25
 - plesiosaurus:
     name: Plesiosaurus
     type: beast
     xp: 450
     api_url: /api/monsters/plesiosaurus
+    alignment: unaligned
+    str: 18
+    dex: 15
+    con: 16
+    int: 2
+    wis: 12
+    cha: 5
 - poisonous-snake:
     name: Poisonous Snake
     type: beast
     xp: 25
     api_url: /api/monsters/poisonous-snake
+    alignment: unaligned
+    str: 2
+    dex: 16
+    con: 11
+    int: 1
+    wis: 10
+    cha: 3
 - polar-bear:
     name: Polar Bear
     type: beast
     xp: 450
     api_url: /api/monsters/polar-bear
+    alignment: unaligned
+    str: 20
+    dex: 10
+    con: 16
+    int: 2
+    wis: 13
+    cha: 7
 - pony:
     name: Pony
     type: beast
     xp: 25
     api_url: /api/monsters/pony
+    alignment: unaligned
+    str: 15
+    dex: 10
+    con: 13
+    int: 2
+    wis: 11
+    cha: 7
 - priest:
     name: Priest
     type: humanoid
     xp: 450
     api_url: /api/monsters/priest
+    alignment: any alignment
+    str: 10
+    dex: 10
+    con: 12
+    int: 13
+    wis: 16
+    cha: 13
 - pseudodragon:
     name: Pseudodragon
     type: dragon
     xp: 50
     api_url: /api/monsters/pseudodragon
+    alignment: neutral good
+    str: 6
+    dex: 15
+    con: 13
+    int: 10
+    wis: 12
+    cha: 10
 - purple-worm:
     name: Purple Worm
     type: monstrosity
     xp: 13000
     api_url: /api/monsters/purple-worm
+    alignment: unaligned
+    str: 28
+    dex: 7
+    con: 22
+    int: 1
+    wis: 8
+    cha: 4
 - quasit:
     name: Quasit
     type: fiend
     xp: 200
     api_url: /api/monsters/quasit
+    alignment: chaotic evil
+    str: 5
+    dex: 17
+    con: 10
+    int: 7
+    wis: 10
+    cha: 10
 - quipper:
     name: Quipper
     type: beast
     xp: 10
     api_url: /api/monsters/quipper
+    alignment: unaligned
+    str: 2
+    dex: 16
+    con: 9
+    int: 1
+    wis: 7
+    cha: 2
 - rakshasa:
     name: Rakshasa
     type: fiend
     xp: 10000
     api_url: /api/monsters/rakshasa
+    alignment: lawful evil
+    str: 14
+    dex: 17
+    con: 18
+    int: 13
+    wis: 16
+    cha: 20
 - rat:
     name: Rat
     type: beast
     xp: 10
     api_url: /api/monsters/rat
+    alignment: unaligned
+    str: 2
+    dex: 11
+    con: 9
+    int: 2
+    wis: 10
+    cha: 4
 - raven:
     name: Raven
     type: beast
     xp: 10
     api_url: /api/monsters/raven
+    alignment: unaligned
+    str: 2
+    dex: 14
+    con: 8
+    int: 2
+    wis: 12
+    cha: 6
 - red-dragon-wyrmling:
     name: Red Dragon Wyrmling
     type: dragon
     xp: 1100
     api_url: /api/monsters/red-dragon-wyrmling
+    alignment: chaotic evil
+    str: 19
+    dex: 10
+    con: 17
+    int: 12
+    wis: 11
+    cha: 15
 - reef-shark:
     name: Reef Shark
     type: beast
     xp: 100
     api_url: /api/monsters/reef-shark
+    alignment: unaligned
+    str: 14
+    dex: 13
+    con: 13
+    int: 1
+    wis: 10
+    cha: 4
 - remorhaz:
     name: Remorhaz
     type: monstrosity
     xp: 7200
     api_url: /api/monsters/remorhaz
+    alignment: unaligned
+    str: 24
+    dex: 13
+    con: 21
+    int: 4
+    wis: 10
+    cha: 5
 - rhinoceros:
     name: Rhinoceros
     type: beast
     xp: 450
     api_url: /api/monsters/rhinoceros
+    alignment: unaligned
+    str: 21
+    dex: 8
+    con: 15
+    int: 2
+    wis: 12
+    cha: 6
 - riding-horse:
     name: Riding Horse
     type: beast
     xp: 25
     api_url: /api/monsters/riding-horse
+    alignment: unaligned
+    str: 16
+    dex: 10
+    con: 12
+    int: 2
+    wis: 11
+    cha: 7
 - roc:
     name: Roc
     type: monstrosity
     xp: 7200
     api_url: /api/monsters/roc
+    alignment: unaligned
+    str: 28
+    dex: 10
+    con: 20
+    int: 3
+    wis: 10
+    cha: 9
 - roper:
     name: Roper
     type: monstrosity
     xp: 1800
     api_url: /api/monsters/roper
+    alignment: neutral evil
+    str: 18
+    dex: 8
+    con: 17
+    int: 7
+    wis: 16
+    cha: 6
 - rug-of-smothering:
     name: Rug of Smothering
     type: construct
     xp: 450
     api_url: /api/monsters/rug-of-smothering
+    alignment: unaligned
+    str: 17
+    dex: 14
+    con: 10
+    int: 1
+    wis: 3
+    cha: 1
 - rust-monster:
     name: Rust Monster
     type: monstrosity
     xp: 100
     api_url: /api/monsters/rust-monster
+    alignment: unaligned
+    str: 13
+    dex: 12
+    con: 13
+    int: 2
+    wis: 13
+    cha: 6
 - saber-toothed-tiger:
     name: Saber-Toothed Tiger
     type: beast
     xp: 450
     api_url: /api/monsters/saber-toothed-tiger
+    alignment: unaligned
+    str: 18
+    dex: 14
+    con: 15
+    int: 3
+    wis: 12
+    cha: 8
 - sahuagin:
     name: Sahuagin
     type: humanoid
     xp: 100
     api_url: /api/monsters/sahuagin
+    alignment: lawful evil
+    str: 13
+    dex: 11
+    con: 12
+    int: 12
+    wis: 13
+    cha: 9
 - salamander:
     name: Salamander
     type: elemental
     xp: 1800
     api_url: /api/monsters/salamander
+    alignment: neutral evil
+    str: 18
+    dex: 14
+    con: 15
+    int: 11
+    wis: 10
+    cha: 12
 - satyr:
     name: Satyr
     type: fey
     xp: 100
     api_url: /api/monsters/satyr
+    alignment: chaotic neutral
+    str: 12
+    dex: 16
+    con: 11
+    int: 12
+    wis: 10
+    cha: 14
 - scorpion:
     name: Scorpion
     type: beast
     xp: 10
     api_url: /api/monsters/scorpion
+    alignment: unaligned
+    str: 2
+    dex: 11
+    con: 8
+    int: 1
+    wis: 8
+    cha: 2
 - scout:
     name: Scout
     type: humanoid
     xp: 100
     api_url: /api/monsters/scout
+    alignment: any alignment
+    str: 11
+    dex: 14
+    con: 12
+    int: 11
+    wis: 13
+    cha: 11
 - sea-hag:
     name: Sea Hag
     type: fey
     xp: 450
     api_url: /api/monsters/sea-hag
+    alignment: chaotic evil
+    str: 16
+    dex: 13
+    con: 16
+    int: 12
+    wis: 12
+    cha: 13
 - sea-horse:
     name: Sea Horse
     type: beast
     xp: 0
     api_url: /api/monsters/sea-horse
+    alignment: unaligned
+    str: 1
+    dex: 12
+    con: 8
+    int: 1
+    wis: 10
+    cha: 2
 - shadow:
     name: Shadow
     type: undead
     xp: 100
     api_url: /api/monsters/shadow
+    alignment: chaotic evil
+    str: 6
+    dex: 14
+    con: 13
+    int: 6
+    wis: 10
+    cha: 8
 - shambling-mound:
     name: Shambling Mound
     type: plant
     xp: 1800
     api_url: /api/monsters/shambling-mound
+    alignment: unaligned
+    str: 18
+    dex: 8
+    con: 16
+    int: 5
+    wis: 10
+    cha: 5
 - shield-guardian:
     name: Shield Guardian
     type: construct
     xp: 2900
     api_url: /api/monsters/shield-guardian
+    alignment: unaligned
+    str: 18
+    dex: 8
+    con: 18
+    int: 7
+    wis: 10
+    cha: 3
 - shrieker:
     name: Shrieker
     type: plant
     xp: 10
     api_url: /api/monsters/shrieker
+    alignment: unaligned
+    str: 1
+    dex: 1
+    con: 10
+    int: 1
+    wis: 3
+    cha: 1
 - silver-dragon-wyrmling:
     name: Silver Dragon Wyrmling
     type: dragon
     xp: 450
     api_url: /api/monsters/silver-dragon-wyrmling
+    alignment: lawful good
+    str: 19
+    dex: 10
+    con: 17
+    int: 12
+    wis: 11
+    cha: 15
 - skeleton:
     name: Skeleton
     type: undead
     xp: 50
     api_url: /api/monsters/skeleton
+    alignment: lawful evil
+    str: 10
+    dex: 14
+    con: 15
+    int: 6
+    wis: 8
+    cha: 5
 - solar:
     name: Solar
     type: celestial
     xp: 33000
     api_url: /api/monsters/solar
+    alignment: lawful good
+    str: 26
+    dex: 22
+    con: 26
+    int: 25
+    wis: 25
+    cha: 30
 - specter:
     name: Specter
     type: undead
     xp: 200
     api_url: /api/monsters/specter
+    alignment: chaotic evil
+    str: 1
+    dex: 14
+    con: 11
+    int: 10
+    wis: 10
+    cha: 11
 - spider:
     name: Spider
     type: beast
     xp: 10
     api_url: /api/monsters/spider
+    alignment: unaligned
+    str: 2
+    dex: 14
+    con: 8
+    int: 1
+    wis: 10
+    cha: 2
 - spirit-naga:
     name: Spirit Naga
     type: monstrosity
     xp: 3900
     api_url: /api/monsters/spirit-naga
+    alignment: chaotic evil
+    str: 18
+    dex: 17
+    con: 14
+    int: 16
+    wis: 15
+    cha: 16
 - sprite:
     name: Sprite
     type: fey
     xp: 50
     api_url: /api/monsters/sprite
+    alignment: neutral good
+    str: 3
+    dex: 18
+    con: 10
+    int: 14
+    wis: 13
+    cha: 11
 - spy:
     name: Spy
     type: humanoid
     xp: 200
     api_url: /api/monsters/spy
+    alignment: any alignment
+    str: 10
+    dex: 15
+    con: 10
+    int: 12
+    wis: 14
+    cha: 16
 - steam-mephit:
     name: Steam Mephit
     type: elemental
     xp: 50
     api_url: /api/monsters/steam-mephit
+    alignment: neutral evil
+    str: 5
+    dex: 11
+    con: 10
+    int: 11
+    wis: 10
+    cha: 12
 - stirge:
     name: Stirge
     type: beast
     xp: 25
     api_url: /api/monsters/stirge
+    alignment: unaligned
+    str: 4
+    dex: 16
+    con: 11
+    int: 2
+    wis: 8
+    cha: 6
 - stone-giant:
     name: Stone Giant
     type: giant
     xp: 2900
     api_url: /api/monsters/stone-giant
+    alignment: neutral
+    str: 23
+    dex: 15
+    con: 20
+    int: 10
+    wis: 12
+    cha: 9
 - stone-golem:
     name: Stone Golem
     type: construct
     xp: 5900
     api_url: /api/monsters/stone-golem
+    alignment: unaligned
+    str: 22
+    dex: 9
+    con: 20
+    int: 3
+    wis: 11
+    cha: 1
 - storm-giant:
     name: Storm Giant
     type: giant
     xp: 10000
     api_url: /api/monsters/storm-giant
+    alignment: chaotic good
+    str: 29
+    dex: 14
+    con: 20
+    int: 16
+    wis: 18
+    cha: 18
 - succubus-incubus:
     name: Succubus/Incubus
     type: fiend
     xp: 1100
     api_url: /api/monsters/succubus-incubus
+    alignment: neutral evil
+    str: 8
+    dex: 17
+    con: 13
+    int: 15
+    wis: 12
+    cha: 20
 - swarm-of-bats:
     name: Swarm of Bats
     type: swarm of Tiny beasts
     xp: 50
     api_url: /api/monsters/swarm-of-bats
+    alignment: unaligned
+    str: 5
+    dex: 15
+    con: 10
+    int: 2
+    wis: 12
+    cha: 4
 - swarm-of-beetles:
     name: Swarm of Beetles
     type: swarm of Tiny beasts
     xp: 100
     api_url: /api/monsters/swarm-of-beetles
+    alignment: unaligned
+    str: 3
+    dex: 13
+    con: 10
+    int: 1
+    wis: 7
+    cha: 1
 - swarm-of-centipedes:
     name: Swarm of Centipedes
     type: swarm of Tiny beasts
     xp: 100
     api_url: /api/monsters/swarm-of-centipedes
+    alignment: unaligned
+    str: 3
+    dex: 13
+    con: 10
+    int: 1
+    wis: 7
+    cha: 1
 - swarm-of-insects:
     name: Swarm of Insects
     type: swarm of Tiny beasts
     xp: 100
     api_url: /api/monsters/swarm-of-insects
+    alignment: unaligned
+    str: 3
+    dex: 13
+    con: 10
+    int: 1
+    wis: 7
+    cha: 1
 - swarm-of-poisonous-snakes:
     name: Swarm of Poisonous Snakes
     type: swarm of Tiny beasts
     xp: 450
     api_url: /api/monsters/swarm-of-poisonous-snakes
+    alignment: unaligned
+    str: 8
+    dex: 18
+    con: 11
+    int: 1
+    wis: 10
+    cha: 3
 - swarm-of-quippers:
     name: Swarm of Quippers
     type: swarm of Tiny beasts
     xp: 200
     api_url: /api/monsters/swarm-of-quippers
+    alignment: unaligned
+    str: 13
+    dex: 16
+    con: 9
+    int: 1
+    wis: 7
+    cha: 2
 - swarm-of-rats:
     name: Swarm of Rats
     type: swarm of Tiny beasts
     xp: 50
     api_url: /api/monsters/swarm-of-rats
+    alignment: unaligned
+    str: 9
+    dex: 11
+    con: 9
+    int: 2
+    wis: 10
+    cha: 3
 - swarm-of-ravens:
     name: Swarm of Ravens
     type: swarm of Tiny beasts
     xp: 50
     api_url: /api/monsters/swarm-of-ravens
+    alignment: unaligned
+    str: 6
+    dex: 14
+    con: 8
+    int: 3
+    wis: 12
+    cha: 6
 - swarm-of-spiders:
     name: Swarm of Spiders
     type: swarm of Tiny beasts
     xp: 100
     api_url: /api/monsters/swarm-of-spiders
+    alignment: unaligned
+    str: 3
+    dex: 13
+    con: 10
+    int: 1
+    wis: 7
+    cha: 1
 - swarm-of-wasps:
     name: Swarm of Wasps
     type: swarm of Tiny beasts
     xp: 100
     api_url: /api/monsters/swarm-of-wasps
+    alignment: unaligned
+    str: 3
+    dex: 13
+    con: 10
+    int: 1
+    wis: 7
+    cha: 1
 - tarrasque:
     name: Tarrasque
     type: monstrosity
     xp: 155000
     api_url: /api/monsters/tarrasque
+    alignment: unaligned
+    str: 30
+    dex: 11
+    con: 30
+    int: 3
+    wis: 11
+    cha: 11
 - thug:
     name: Thug
     type: humanoid
     xp: 100
     api_url: /api/monsters/thug
+    alignment: any non-good alignment
+    str: 15
+    dex: 11
+    con: 14
+    int: 10
+    wis: 10
+    cha: 11
 - tiger:
     name: Tiger
     type: beast
     xp: 200
     api_url: /api/monsters/tiger
+    alignment: unaligned
+    str: 17
+    dex: 15
+    con: 14
+    int: 3
+    wis: 12
+    cha: 8
 - treant:
     name: Treant
     type: plant
     xp: 5000
     api_url: /api/monsters/treant
+    alignment: chaotic good
+    str: 23
+    dex: 8
+    con: 21
+    int: 12
+    wis: 16
+    cha: 12
 - tribal-warrior:
     name: Tribal Warrior
     type: humanoid
     xp: 25
     api_url: /api/monsters/tribal-warrior
+    alignment: any alignment
+    str: 13
+    dex: 11
+    con: 12
+    int: 8
+    wis: 11
+    cha: 8
 - triceratops:
     name: Triceratops
     type: beast
     xp: 1800
     api_url: /api/monsters/triceratops
+    alignment: unaligned
+    str: 22
+    dex: 9
+    con: 17
+    int: 2
+    wis: 11
+    cha: 5
 - troll:
     name: Troll
     type: giant
     xp: 1800
     api_url: /api/monsters/troll
+    alignment: chaotic evil
+    str: 18
+    dex: 13
+    con: 20
+    int: 7
+    wis: 9
+    cha: 7
 - tyrannosaurus-rex:
     name: Tyrannosaurus Rex
     type: beast
     xp: 3900
     api_url: /api/monsters/tyrannosaurus-rex
+    alignment: unaligned
+    str: 25
+    dex: 10
+    con: 19
+    int: 2
+    wis: 12
+    cha: 9
 - unicorn:
     name: Unicorn
     type: celestial
     xp: 1800
     api_url: /api/monsters/unicorn
+    alignment: lawful good
+    str: 18
+    dex: 14
+    con: 15
+    int: 11
+    wis: 17
+    cha: 16
 - vampire-bat:
     name: Vampire, Bat Form
     type: undead
     xp: 10000
     api_url: /api/monsters/vampire-bat
+    alignment: lawful evil
+    str: 18
+    dex: 18
+    con: 18
+    int: 17
+    wis: 15
+    cha: 18
 - vampire-mist:
     name: Vampire, Mist Form
     type: undead
     xp: 10000
     api_url: /api/monsters/vampire-mist
+    alignment: lawful evil
+    str: 18
+    dex: 18
+    con: 18
+    int: 17
+    wis: 15
+    cha: 18
 - vampire-spawn:
     name: Vampire Spawn
     type: undead
     xp: 1800
     api_url: /api/monsters/vampire-spawn
+    alignment: neutral evil
+    str: 16
+    dex: 16
+    con: 16
+    int: 11
+    wis: 10
+    cha: 12
 - vampire-vampire:
     name: Vampire, Vampire Form
     type: undead
     xp: 10000
     api_url: /api/monsters/vampire-vampire
+    alignment: lawful evil
+    str: 18
+    dex: 18
+    con: 18
+    int: 17
+    wis: 15
+    cha: 18
 - veteran:
     name: Veteran
     type: humanoid
     xp: 700
     api_url: /api/monsters/veteran
+    alignment: any alignment
+    str: 16
+    dex: 13
+    con: 14
+    int: 10
+    wis: 11
+    cha: 10
 - violet-fungus:
     name: Violet Fungus
     type: plant
     xp: 50
     api_url: /api/monsters/violet-fungus
+    alignment: unaligned
+    str: 3
+    dex: 1
+    con: 10
+    int: 1
+    wis: 3
+    cha: 1
 - vrock:
     name: Vrock
     type: fiend
     xp: 2300
     api_url: /api/monsters/vrock
+    alignment: chaotic evil
+    str: 17
+    dex: 15
+    con: 18
+    int: 8
+    wis: 13
+    cha: 8
 - vulture:
     name: Vulture
     type: beast
     xp: 10
     api_url: /api/monsters/vulture
+    alignment: unaligned
+    str: 7
+    dex: 10
+    con: 13
+    int: 2
+    wis: 12
+    cha: 4
 - warhorse:
     name: Warhorse
     type: beast
     xp: 100
     api_url: /api/monsters/warhorse
+    alignment: unaligned
+    str: 18
+    dex: 12
+    con: 13
+    int: 2
+    wis: 12
+    cha: 7
 - warhorse-skeleton:
     name: Warhorse Skeleton
     type: undead
     xp: 100
     api_url: /api/monsters/warhorse-skeleton
+    alignment: lawful evil
+    str: 18
+    dex: 12
+    con: 15
+    int: 2
+    wis: 8
+    cha: 5
 - water-elemental:
     name: Water Elemental
     type: elemental
     xp: 1800
     api_url: /api/monsters/water-elemental
+    alignment: neutral
+    str: 18
+    dex: 14
+    con: 18
+    int: 5
+    wis: 10
+    cha: 8
 - weasel:
     name: Weasel
     type: beast
     xp: 10
     api_url: /api/monsters/weasel
+    alignment: unaligned
+    str: 3
+    dex: 16
+    con: 8
+    int: 2
+    wis: 12
+    cha: 3
 - werebear-bear:
     name: Werebear, Bear Form
     type: humanoid
     xp: 1800
     api_url: /api/monsters/werebear-bear
+    alignment: neutral good
+    str: 19
+    dex: 10
+    con: 17
+    int: 11
+    wis: 12
+    cha: 12
 - werebear-human:
     name: Werebear, Human Form
     type: humanoid
     xp: 1800
     api_url: /api/monsters/werebear-human
+    alignment: neutral good
+    str: 19
+    dex: 10
+    con: 17
+    int: 11
+    wis: 12
+    cha: 12
 - werebear-hybrid:
     name: Werebear, Hybrid Form
     type: humanoid
     xp: 1800
     api_url: /api/monsters/werebear-hybrid
+    alignment: neutral good
+    str: 19
+    dex: 10
+    con: 17
+    int: 11
+    wis: 12
+    cha: 12
 - wereboar-boar:
     name: Wereboar, Boar Form
     type: humanoid
     xp: 1100
     api_url: /api/monsters/wereboar-boar
+    alignment: neutral evil
+    str: 17
+    dex: 10
+    con: 15
+    int: 10
+    wis: 11
+    cha: 8
 - wereboar-human:
     name: Wereboar, Human Form
     type: humanoid
     xp: 1100
     api_url: /api/monsters/wereboar-human
+    alignment: neutral evil
+    str: 17
+    dex: 10
+    con: 15
+    int: 10
+    wis: 11
+    cha: 8
 - wereboar-hybrid:
     name: Wereboar, Hybrid Form
     type: humanoid
     xp: 1100
     api_url: /api/monsters/wereboar-hybrid
+    alignment: neutral evil
+    str: 17
+    dex: 10
+    con: 15
+    int: 10
+    wis: 11
+    cha: 8
 - wererat-human:
     name: Wererat, Human Form
     type: humanoid
     xp: 450
     api_url: /api/monsters/wererat-human
+    alignment: lawful evil
+    str: 10
+    dex: 15
+    con: 12
+    int: 11
+    wis: 10
+    cha: 8
 - wererat-hybrid:
     name: Wererat, Hybrid Form
     type: humanoid
     xp: 450
     api_url: /api/monsters/wererat-hybrid
+    alignment: lawful evil
+    str: 10
+    dex: 15
+    con: 12
+    int: 11
+    wis: 10
+    cha: 8
 - wererat-rat:
     name: Wererat, Rat Form
     type: humanoid
     xp: 450
     api_url: /api/monsters/wererat-rat
+    alignment: lawful evil
+    str: 10
+    dex: 15
+    con: 12
+    int: 11
+    wis: 10
+    cha: 8
 - weretiger-human:
     name: Weretiger, Human Form
     type: humanoid
     xp: 1100
     api_url: /api/monsters/weretiger-human
+    alignment: neutral
+    str: 17
+    dex: 15
+    con: 16
+    int: 10
+    wis: 13
+    cha: 11
 - weretiger-hybrid:
     name: Weretiger, Hybrid Form
     type: humanoid
     xp: 1100
     api_url: /api/monsters/weretiger-hybrid
+    alignment: neutral
+    str: 17
+    dex: 15
+    con: 16
+    int: 10
+    wis: 13
+    cha: 11
 - weretiger-tiger:
     name: Weretiger, Tiger Form
     type: humanoid
     xp: 1100
     api_url: /api/monsters/weretiger-tiger
+    alignment: neutral
+    str: 17
+    dex: 15
+    con: 16
+    int: 10
+    wis: 13
+    cha: 11
 - werewolf-human:
     name: Werewolf, Human Form
     type: humanoid
     xp: 700
     api_url: /api/monsters/werewolf-human
+    alignment: chaotic evil
+    str: 15
+    dex: 13
+    con: 14
+    int: 10
+    wis: 11
+    cha: 10
 - werewolf-hybrid:
     name: Werewolf, Hybrid Form
     type: humanoid
     xp: 700
     api_url: /api/monsters/werewolf-hybrid
+    alignment: chaotic evil
+    str: 15
+    dex: 13
+    con: 14
+    int: 10
+    wis: 11
+    cha: 10
 - werewolf-wolf:
     name: Werewolf, Wolf Form
     type: humanoid
     xp: 700
     api_url: /api/monsters/werewolf-wolf
+    alignment: chaotic evil
+    str: 15
+    dex: 13
+    con: 14
+    int: 10
+    wis: 11
+    cha: 10
 - white-dragon-wyrmling:
     name: White Dragon Wyrmling
     type: dragon
     xp: 450
     api_url: /api/monsters/white-dragon-wyrmling
+    alignment: chaotic evil
+    str: 14
+    dex: 10
+    con: 14
+    int: 5
+    wis: 10
+    cha: 11
 - wight:
     name: Wight
     type: undead
     xp: 700
     api_url: /api/monsters/wight
+    alignment: neutral evil
+    str: 15
+    dex: 14
+    con: 16
+    int: 10
+    wis: 13
+    cha: 15
 - will-o-wisp:
     name: Will-o-Wisp
     type: undead
     xp: 450
     api_url: /api/monsters/will-o-wisp
+    alignment: chaotic evil
+    str: 1
+    dex: 28
+    con: 10
+    int: 13
+    wis: 14
+    cha: 11
 - winter-wolf:
     name: Winter Wolf
     type: monstrosity
     xp: 700
     api_url: /api/monsters/winter-wolf
+    alignment: neutral evil
+    str: 18
+    dex: 13
+    con: 14
+    int: 7
+    wis: 12
+    cha: 8
 - wolf:
     name: Wolf
     type: beast
     xp: 50
     api_url: /api/monsters/wolf
+    alignment: unaligned
+    str: 12
+    dex: 15
+    con: 12
+    int: 3
+    wis: 12
+    cha: 6
 - worg:
     name: Worg
     type: monstrosity
     xp: 100
     api_url: /api/monsters/worg
+    alignment: neutral evil
+    str: 16
+    dex: 13
+    con: 13
+    int: 7
+    wis: 11
+    cha: 8
 - wraith:
     name: Wraith
     type: undead
     xp: 1800
     api_url: /api/monsters/wraith
+    alignment: neutral evil
+    str: 6
+    dex: 16
+    con: 16
+    int: 12
+    wis: 14
+    cha: 15
 - wyvern:
     name: Wyvern
     type: dragon
     xp: 2300
     api_url: /api/monsters/wyvern
+    alignment: unaligned
+    str: 19
+    dex: 10
+    con: 16
+    int: 5
+    wis: 12
+    cha: 6
 - xorn:
     name: Xorn
     type: elemental
     xp: 1800
     api_url: /api/monsters/xorn
+    alignment: neutral
+    str: 17
+    dex: 10
+    con: 22
+    int: 11
+    wis: 10
+    cha: 11
 - young-black-dragon:
     name: Young Black Dragon
     type: dragon
     xp: 2900
     api_url: /api/monsters/young-black-dragon
+    alignment: chaotic evil
+    str: 19
+    dex: 14
+    con: 17
+    int: 12
+    wis: 11
+    cha: 15
 - young-blue-dragon:
     name: Young Blue Dragon
     type: dragon
     xp: 5000
     api_url: /api/monsters/young-blue-dragon
+    alignment: lawful evil
+    str: 21
+    dex: 10
+    con: 19
+    int: 14
+    wis: 13
+    cha: 17
 - young-brass-dragon:
     name: Young Brass Dragon
     type: dragon
     xp: 2300
     api_url: /api/monsters/young-brass-dragon
+    alignment: chaotic good
+    str: 19
+    dex: 10
+    con: 17
+    int: 12
+    wis: 11
+    cha: 15
 - young-bronze-dragon:
     name: Young Bronze Dragon
     type: dragon
     xp: 3900
     api_url: /api/monsters/young-bronze-dragon
+    alignment: lawful good
+    str: 21
+    dex: 10
+    con: 19
+    int: 14
+    wis: 13
+    cha: 17
 - young-copper-dragon:
     name: Young Copper Dragon
     type: dragon
     xp: 2900
     api_url: /api/monsters/young-copper-dragon
+    alignment: chaotic good
+    str: 19
+    dex: 12
+    con: 17
+    int: 16
+    wis: 13
+    cha: 15
 - young-gold-dragon:
     name: Young Gold Dragon
     type: dragon
     xp: 5900
     api_url: /api/monsters/young-gold-dragon
+    alignment: lawful good
+    str: 23
+    dex: 14
+    con: 21
+    int: 16
+    wis: 13
+    cha: 20
 - young-green-dragon:
     name: Young Green Dragon
     type: dragon
     xp: 3900
     api_url: /api/monsters/young-green-dragon
+    alignment: lawful evil
+    str: 19
+    dex: 12
+    con: 17
+    int: 16
+    wis: 13
+    cha: 15
 - young-red-dragon:
     name: Young Red Dragon
     type: dragon
     xp: 5900
     api_url: /api/monsters/young-red-dragon
+    alignment: chaotic evil
+    str: 23
+    dex: 10
+    con: 21
+    int: 14
+    wis: 11
+    cha: 19
 - young-silver-dragon:
     name: Young Silver Dragon
     type: dragon
     xp: 5000
     api_url: /api/monsters/young-silver-dragon
+    alignment: lawful good
+    str: 23
+    dex: 10
+    con: 21
+    int: 14
+    wis: 11
+    cha: 19
 - young-white-dragon:
     name: Young White Dragon
     type: dragon
     xp: 2300
     api_url: /api/monsters/young-white-dragon
+    alignment: chaotic evil
+    str: 18
+    dex: 10
+    con: 18
+    int: 6
+    wis: 11
+    cha: 12
 - zombie:
     name: Zombie
     type: undead
     xp: 50
     api_url: /api/monsters/zombie
+    alignment: neutral evil
+    str: 13
+    dex: 6
+    con: 16
+    int: 3
+    wis: 6
+    cha: 5

@@ -1,9 +1,11 @@
 import {useState} from "react";
 import Foraging from "./Foraging";
 import Tracking from "./Tracking";
+import { generate } from "./RandomEncounter";
 import { hideShow, getRandomThingFromList } from "../utils";
 import { RandomEntrance } from "./randomDungeon/RandomEntrance";
 import { desert, forest, grassland, hills, monuntains, swamp } from "./WildernessDressing";
+import { randomActivity } from "./randomEncounter/randomMonsterActivity";
 
 function getLandmarkFeature() {
     let _roll = roll(20);
@@ -64,24 +66,25 @@ function getListFromEnviron(environ){
             return swamp
         case "Farmland":
             return grassland
-        case "Badlands":
-            return
         case "Arctic":
-            return
+            return []
         case "Desert":
             return desert
         case "Underworld":
-            return
+            return []
+        case "Coast":
+            return []
     }
 }
 
-export default function Wilderness() {
+export default function Wilderness({party}) {
     let days = 0;
     let hours = 0;
     let distance = 0;
     let tiles = 0;
     let forcedMarch = false;
     let forcedMarchDC = "";
+    let difficultTerrain = false;
     const [temperature, setTemperature] = useState("Normal for the season");
     const [wind, setWind] = useState("No wind");
     const [precip, setPrecip] = useState("No precipitation");
@@ -89,8 +92,12 @@ export default function Wilderness() {
     const [environ, setEnviron] = useState("Grassland");
     const [encounterDistance, setEncounterDistance] = useState(0);
 
-    const environs = ["Grassland", "Forest", "Hills", "Mountains", "Swamp", "Farmland", "Badlands", "Arctic", "Desert", "Underworld"];
+    const environs = ["Grassland", "Coast", "Forest", "Hills", "Mountains", "Swamp", "Arctic", "Desert", "Underworld"];
+    const environSurvivalDC = [5, 5, 15, 10, 15, 15, 10, 10, 10];
     const [navDC, setNavDC] = useState(10);
+
+    const [randomEvent, setRandomEvent] = useState({encounterDict: {}, activity: ""});
+
     function setHours(val){
         hours = val;
         document.getElementById("hoursMarched").value = val;
@@ -156,10 +163,18 @@ export default function Wilderness() {
         }
     }
 
-    function march() {
+    function getRandomEncounterDifficulty(){
+        let _roll = roll(100);
+        if (_roll <= 10){return "Easy"}
+        if (_roll <= 50){return "Medium"}
+        if (_roll <= 90){return "Hard"}
+        if (_roll <= 100){return "Deadly"}
+    }
+
+    function march(setRandomEvent, environ) {
         let pace; // miles per hour
         let rate;
-        let difficult = document.getElementById("difficultTerrain").checked;
+        let difficult = difficultTerrain;
         if (document.getElementById("paceSlow").checked){
             pace = 2;
             rate = 2;
@@ -177,8 +192,6 @@ export default function Wilderness() {
             pace /= 2;
         }
 
-        // hours += rate;
-
         setHours(getHours() + rate);
         checkForcedMarch();
 
@@ -191,13 +204,26 @@ export default function Wilderness() {
         encounterBlock.className = encounterBlock.className.replace(" w3-show", " w3-hide");
         for (let i=0; i<rate; i++) {
             if (roll(100) <= encounterChance) {
-                
+                    
                     let encounter = document.getElementById("encounterKind");
                     let dressing = document.getElementById("wildernessDressing");
                     let kind = "";
                     let _roll = roll(100);
+                    setRandomEvent({encounterDict: {}, activity: ""});
                     if (_roll <= 40) {
-                        kind = "Monster";
+                        let difficulty = getRandomEncounterDifficulty();
+                        console.log(`The environment is ${environ}`);
+                        let randomEncounter = generate(party, difficulty, `any${environ}`);
+                        randomEncounter.difficulty = difficulty;
+                        if (randomEncounter.maxInt >= 7) {
+                            // Determine monster activity
+                            randomEncounter.activity = getRandomThingFromList(randomActivity);
+                            console.log(randomEncounter.activity);
+                        } else {
+                            randomEncounter.activity = "dumb";
+                        }
+                        setRandomEvent(randomEncounter);
+                        kind = `Monster (${difficulty}) at ${getRandomEncounterDistance(environ)} feet`;
                     } else if (_roll <= 50) {
                         kind = `Dungeon: ${getRandomThingFromList(RandomEntrance)}`;
                     } else if (_roll <= 75) {
@@ -205,11 +231,14 @@ export default function Wilderness() {
                     } else if (_roll <= 95) {
                         kind = "Kaiju";
                     } else {
-                        kind = "Muse";
+                        kind = "Muse/Druid";
                     }
+
+                    
+
                     encounter.innerText = kind;
 
-                    dressing.innerText = getRandomThingFromList(getListFromEnviron(document.getElementById("environment").value));
+                    dressing.innerText = getRandomThingFromList(getListFromEnviron(environ));
 
                     encounterBlock.className = encounterBlock.className.replace(" w3-hide", " w3-show");
                 
@@ -228,17 +257,21 @@ export default function Wilderness() {
         randomWeather();
     }
 
+    function getRandomEncounterDistance(environment){
+        if (["Arctic", "Desert", "Farmland", "Grassland", "Badlands", "Coast"].includes(environment)){
+            return roll(6, 6) * 10
+        } else if (["Forest", "Swamp", "Underworld"].includes(environment)){
+            return roll(8, 2) * 10
+        } else if (["Hills"].includes(environment)) {
+            return roll(10, 2) * 10
+        } else if (["Mountains"].includes(environment)) {
+            return roll(10, 4) * 10
+        }
+    }
+
     function changeEnviron(newEnviron) {
         setEnviron(newEnviron);
-        if (["Arctic", "Desert", "Farmland", "Grassland", "Badlands"].includes(newEnviron)){
-            setEncounterDistance(roll(6, 6) * 10);
-        } else if (["Forest", "Swamp", "Underworld"].includes(newEnviron)){
-            setEncounterDistance(roll(8, 2) * 10);
-        } else if (["Hills"].includes(newEnviron)) {
-            setEncounterDistance(roll(10, 2) * 10);
-        } else if (["Mountains"].includes(newEnviron)) {
-            setEncounterDistance(roll(10, 4) * 10);
-        }
+        setEncounterDistance(getRandomEncounterDistance(newEnviron))
 
         if (["Forest", "Jungle", "Swamp", "Mountains"].includes(newEnviron)) {
             setNavDC(15);
@@ -290,23 +323,54 @@ export default function Wilderness() {
         </>
     ))
 
+    
+    let xp_values = [];
+    let randomEventBlock = [];
+    console.log(randomEvent);
+    for (const [key, value] of Object.entries(randomEvent.encounterDict)) {
+        for (let i=0; i < value.qty; i++) {
+            xp_values.push(value.xp);
+        }
+        randomEventBlock.push(
+            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name}</a><br/></>
+        )
+    }
+    if (randomEventBlock.length > 0) {
+        randomEventBlock.push(<p></p>);
+        randomEventBlock.push(<p>Monsters are: {randomEvent.activity}</p>)
+    }
 
+
+
+    if (document.getElementById("monster-xp")) {
+        document.getElementById("monster-xp").value = xp_values.join(",");
+    }
+
+    let marchButtons = [];
+    for (let i=0; i < environs.length; i++){
+        if (environs[i] == "Mountains" || environs[i] == "Swamp"){
+
+        }
+        marchButtons.push(
+            <input type="button" class="w3-button" value={environs[i] + " " + environSurvivalDC[i]} onClick={
+                () => {
+                    setEnviron(environs[i]); 
+                    if (environs[i] == "Mountains" || environs[i] == "Swamp") {
+                        difficultTerrain = true;
+                    } else {
+                        difficultTerrain = false;
+                    }
+                    march(setRandomEvent, environs[i]);
+                    
+                }
+            }/>
+        )
+    }
 
     return (
         <div class="w3-container">
             <h1 onClick={() => hideShow("wilderness")}>Wilderness Exploration</h1>
             <div class="w3-container w3-show" id="wilderness">
-                <h2>Environment</h2>
-                <p><select
-                    name="environment"
-                    class="w3-select"
-                    id="environment"
-                    value={environ}
-                    onChange={(event) => changeEnviron(event.target.value)}>
-                    {environOptions}
-                </select></p>
-                <p>Encounter Distance: {encounterDistance}</p>
-                <p>Survival (Wisdom) Navigation check: DC {navDC}</p>
                 <h3>Foraging</h3>
                 <Foraging />
                 <h3>Tracking</h3>
@@ -331,57 +395,69 @@ export default function Wilderness() {
                     <label for="daysMarched">Days Marched: </label>
                     <input type="text" id="daysMarched" class="w3-input" defaultValue="0"/><br/>
                     </p>
-                    <p>
-                    <label for="hoursMarched">Hours Marched: </label>
-                    <input type="text" class="w3-input" id="hoursMarched" defaultValue="0"/>
-                    </p>
-                    <p>
-                    <label for="distanceMarched">Distance Marched: </label>
-                    <input type="text" class="w3-input" id="distanceMarched" defaultValue="0"/>
-                    </p>
-                    <p>
-                    <label for="tilesMarched">Tiles Marched: </label>
-                    <input type="text" class="w3-input" id="tilesMarched" defaultValue="0"/>
-                    </p>
+                    <div class="w3-row-padding">
+                        <div class="w3-col l4">
+                            <p>
+                                <label for="hoursMarched">Hours Marched: </label>
+                                <input type="text" class="w3-input" id="hoursMarched" defaultValue="0"/>
+                            </p>
+                        </div>
+                        <div class="w3-col l4">
+                            <p>
+                                <label for="distanceMarched">Miles Marched: </label>
+                                <input type="text" class="w3-input" id="distanceMarched" defaultValue="0"/>
+                            </p>
+                        </div>
+                        <div class="w3-col l4">
+                            <p>
+                                <label for="tilesMarched">Tiles Marched: </label>
+                                <input type="text" class="w3-input" id="tilesMarched" defaultValue="0"/>
+                            </p>
+                        </div>
+                    </div>
+                    
                     <p>
                     <label for="encounterChance">Chance of Encounter per hour
                         (%)</label><br/>
-                    <input type="text" class="w3-input" id="encounterChance" defaultValue="5"/>
+                    <input type="text" class="w3-input" id="encounterChance" defaultValue="20"/>
                     </p>
-                    <p>
-                    <input type="radio" class="w3-radio" id="paceSlow" value="slow" name="pace"/>
-                    <label for="paceSlow">Slow (2 mph, can stealth, +5
-                        navigation)</label>
-                    </p>
-                    <p>
-                    <input type="radio" class="w3-radio" id="paceNormal" value="normal" name="pace" checked/>
-                    <label for="paceNormal">Normal (3 mph)</label><br/>
-                    </p>
-                    <p>
-                    <input type="radio" class="w3-radio" id="paceFast" value="fast" name="pace"/>
-                    <label for="paceFast">Fast (4 mph, disadvantage on perception, -5
-                        navigation)</label><br/>
-                    </p>
-                    <p>
-                    <label for="difficultTerrain">Difficult Terrain </label>
-                    <input type="checkbox" id="difficultTerrain" class="w3-check" /><br/>
-                    </p>
-                    
+                    <div class="w3-row-padding">
+                        <div class="w3-col l4">
+                            <p>
+                                <input type="radio" class="w3-radio" id="paceSlow" value="slow" name="pace"/>
+                                <label for="paceSlow">Slow (2 mph, advantage on Wisdom (perception or survival)) </label>
+                            </p>
+                        </div>
+                        <div class="w3-col l4">
+                            <p>
+                            <input type="radio" class="w3-radio" id="paceNormal" value="normal" name="pace" checked/>
+                            <label for="paceNormal">Normal (3 mph, disadvantage (stealth)) </label>
+                            </p>
+                        </div>
+                        <div class="w3-col l4">
+                            <p>
+                                <input type="radio" class="w3-radio" id="paceFast" value="fast" name="pace"/>
+                                <label for="paceFast">Fast (4 mph, disadvantage on Wisdom (perception or survival) and Dexterity (stealth)) </label>
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="w3-row">
                         <div class="w3-col s3">
                             <p>
                                 <input type="button" class="w3-button" value="Lost" id="lost" onClick={lost}/>&ensp;or &ensp;
-                                <input type="button" class="w3-button" value="March" id="march" onClick={march}/>
+                                {marchButtons}
                             </p>
                         </div>
                         <div class="w3-col s9">
-                            <span id="encounter" class="w3-panel w3-teal w3-display-container w3-animate-right w3-show">
+                            <span id="encounter" class="w3-panel w3-teal w3-display-container w3-animate-right w3-hide">
                                 <span onClick={() => hideShow("encounter")} class="w3-button w3-display-topright">&times;</span>
                                 <h4>
                                 Random Encounter 
                                 </h4>
-                                <p id="wildernessDressing">grassy</p>
-                                <p id="encounterKind">Monster</p>
+                                <p id="wildernessDressing"></p>
+                                <p id="encounterKind"></p>
+                                {randomEventBlock}
                             </span>
                         </div>
                     </div>

@@ -31,8 +31,10 @@ function getPartyLimits(party){
     return limits
 }
 
-function generate(setEncounter, party) {
-    let difficulty = document.getElementById("difficulty").value;
+export function generate(party, difficulty, monsterSelection) {
+    if (!difficulty){
+        difficulty = document.getElementById("difficulty").value;
+    }
 
     let limits = getPartyLimits(party);
     let limit;
@@ -52,7 +54,11 @@ function generate(setEncounter, party) {
         multiplier = 1.5;
     }
 
-    let monsterSelection = document.getElementById("monster-type").value;
+    if (!monsterSelection){
+        console.log("There is no selection");
+        monsterSelection = document.getElementById("monster-type").value;
+    }
+    
     let monsterFamily = getFamily(monsterSelection);
     let monsterList = monsterFamily.list;
     let totalXP = 0;
@@ -63,6 +69,7 @@ function generate(setEncounter, party) {
     let draws = [];
     let drawLimit = Number(document.getElementById("maxDiffMonsters").value);
     let monster = monsterList[randomNum];
+    let maxInt = monster.int;
     let solo = monsterFamily.type;
     if (!solo) {
         solo = monster.type;
@@ -76,6 +83,9 @@ function generate(setEncounter, party) {
                 randomNum = draws[Math.floor(Math.random() * drawLimit)];
             }
             monster = monsterList[randomNum];
+            if (!maxInt || monster.int > maxInt) {
+                maxInt = monster.int;
+            }
             if (monster.solo && encounter.length > 0){
                 continue
             }
@@ -118,6 +128,10 @@ function generate(setEncounter, party) {
 
         }
     }
+    let result = {
+        encounterDict: encounterDict,
+        maxInt: maxInt
+    }
     console.log("Actual Difficulty: ");
     if (totalXP * multiplier <= limits[0]) {
         console.log("Easy");
@@ -129,7 +143,7 @@ function generate(setEncounter, party) {
         console.log("Deadly");
     }
     console.log(`${totalXP * multiplier} / ${limit}; loops = ${loopCount}; mult = ${multiplier}`);
-    setEncounter(encounterDict);
+    return result
 
 }
 
@@ -176,18 +190,18 @@ function RandomEncounterInput({setEncounter, party}){
                 </div>
             </div>
             <p>
-            <input type="button" defaultValue="Generate" onClick={() => generate(setEncounter, party)} class="w3-block" />
+            <input type="button" defaultValue="Generate" onClick={() => setEncounter(generate(party))} class="w3-block" />
             </p>
         </div>
     )
 }
 
 export default function RandomEncounter2({party}){
-    const [encounter, setEncounter] = useState({});
+    const [encounter, setEncounter] = useState({encounterDict: {}});
 
     let xp_values = [];
     let encounterBlock = [];
-    for (const [key, value] of Object.entries(encounter)) {
+    for (const [key, value] of Object.entries(encounter.encounterDict)) {
         for (let i=0; i < value.qty; i++) {
             xp_values.push(value.xp);
         }

@@ -11,6 +11,11 @@
     - gnoll_pack_lord
     - gnoll_fang_of_yeenoghu
 
+- lesser-goblins:
+    - goblin
+    - goblin-boss
+    - worg
+
 - orcs:
     - orc
     - orc_eye_of_gruumsh
@@ -41,6 +46,12 @@
     - swarm-of-ravens
     - harpy
     - vrock
+
+- coastal-coven:
+    - harpy
+    - vrock
+    - sea-hag
+    - swarm-of-ravens
 
 - gricks:
   - grick
@@ -109,6 +120,7 @@
     - wight
     - wraith
     - will-o-wisp
+    - banshee
 
 - wolves:
     - wolf
@@ -193,3 +205,13 @@
     - swarm-of-insects
     - giant-centipede
     - giant-fire-beetle
+
+- blights:
+    - needle-blight
+    - twig-blight
+    - vine-blight
+
+- mind-flayers:
+    - mind-flayer
+    - intellect-devourer
+    - grell

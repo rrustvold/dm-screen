@@ -1,5 +1,6 @@
 import yaml
 import json
+import os
 
 monster_keys = set()
 with open("api_monsters.yaml", "r") as file:
@@ -23,7 +24,10 @@ with open("environs.yaml", "r") as file:
     environs = yaml.safe_load(file)
 
 # Compile all monsters into js
-with open("monsters.js", "w") as file:
+file_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(file_dir)
+monsters_file = os.path.join(src_dir, *"/dm-screen/src/components/randomEncounter/monsters.js".split("/"))
+with open(monsters_file, "w") as file:
     for monster in monsters + my_monsters:
         key = list(monster.keys())[0]
         try:
@@ -32,6 +36,7 @@ with open("monsters.js", "w") as file:
             name = key.capitalize()
 
         xp = monster[key]["xp"]
+        _int = monster[key].get("int", 0)
         link = monster[key].get("link", f"https://www.dndbeyond.com/monsters/{key}")
         key = key.replace("-", "_")
         file.writelines([
@@ -40,11 +45,13 @@ with open("monsters.js", "w") as file:
             "\tname: '%s',\n" % name,
             "\txp: %d,\n" % xp,
             "\tlink: '%s',\n" % link,
+            "\tint: %d,\n" % _int,
             "}\n\n"
         ])
 
 # Compile all families
-with open("families.js", "w") as file:
+families_file = os.path.join(src_dir, *"/dm-screen/src/components/randomEncounter/families.js".split("/"))
+with open(families_file, "w") as file:
     file.writelines([
         "import * as monsters from './monsters.js';\n\n"
     ])
@@ -73,7 +80,8 @@ for environ in environs:
     key = list(environ.keys())[0]
     values = environ[key]
 
-    with open(f"{key}.js", "w") as file:
+    environment_file = os.path.join(src_dir, *f"/dm-screen/src/components/randomEncounter/{key}.js".split("/"))
+    with open(environment_file, "w") as file:
         file.write("import * as monsters from './monsters.js';\n")
         file.write("import * as families from './families.js';\n\n")
         file.writelines([
@@ -118,7 +126,8 @@ for environ in environs:
             "}\n"
         ])
 
-with open(f"Environs.js", "w") as file:
+environs_file = os.path.join(src_dir, *"/dm-screen/src/components/randomEncounter/Environs.js".split("/"))
+with open(environs_file, "w") as file:
     all_envs = [list(x.keys())[0] for x in environs]
     for environ in all_envs:
         file.write(

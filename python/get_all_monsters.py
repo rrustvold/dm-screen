@@ -18,6 +18,14 @@ with open("all_monster.yaml", "w") as file:
             f"    name: {result['name']}\n",
             f"    type: {result['type']}\n",
             f"    xp: {result['xp']}\n",
-            f"    api_url: {result['url']}\n"
+            f"    api_url: {result['url']}\n",
+            f"    alignment: {result['alignment']}\n"
+            f"    str: {result['strength']}\n",
+            f"    dex: {result['dexterity']}\n",
+            f"    con: {result['constitution']}\n",
+            f"    int: {result['intelligence']}\n",
+            f"    wis: {result['wisdom']}\n",
+            f"    cha: {result['charisma']}\n",
+
         ])
 

@@ -7,6 +7,13 @@ export const goblins = {
 	]
 }
 
+export const lesser_goblins = {
+	name: 'Lesser-goblins',
+	list: [
+		monsters.goblin, monsters.goblin_boss, monsters.worg, 
+	]
+}
+
 export const orcs = {
 	name: 'Orcs',
 	list: [
@@ -32,6 +39,13 @@ export const vultures = {
 	name: 'Vultures',
 	list: [
 		monsters.vulture, monsters.giant_vulture, monsters.swarm_of_ravens, monsters.harpy, monsters.vrock, 
+	]
+}
+
+export const coastal_coven = {
+	name: 'Coastal-coven',
+	list: [
+		monsters.harpy, monsters.vrock, monsters.sea_hag, monsters.swarm_of_ravens, 
 	]
 }
 
@@ -101,7 +115,7 @@ export const ogres = {
 export const undead = {
 	name: 'Undead',
 	list: [
-		monsters.ghast, monsters.ghost, monsters.ghoul, monsters.lich, monsters.minotaur_skeleton, monsters.mummy, monsters.mummy_lord, monsters.ogre_zombie, monsters.zombie, monsters.skeleton, monsters.specter, monsters.vampire_bat, monsters.vampire_mist, monsters.vampire_spawn, monsters.vampire_vampire, monsters.warhorse_skeleton, monsters.wight, monsters.wraith, monsters.will_o_wisp, 
+		monsters.ghast, monsters.ghost, monsters.ghoul, monsters.lich, monsters.minotaur_skeleton, monsters.mummy, monsters.mummy_lord, monsters.ogre_zombie, monsters.zombie, monsters.skeleton, monsters.specter, monsters.vampire_bat, monsters.vampire_mist, monsters.vampire_spawn, monsters.vampire_vampire, monsters.warhorse_skeleton, monsters.wight, monsters.wraith, monsters.will_o_wisp, monsters.banshee, 
 	]
 }
 
@@ -186,6 +200,20 @@ export const bugs = {
 	name: 'Bugs',
 	list: [
 		monsters.scorpion, monsters.giant_scorpion, monsters.swarm_of_insects, monsters.giant_centipede, monsters.giant_fire_beetle, 
+	]
+}
+
+export const blights = {
+	name: 'Blights',
+	list: [
+		monsters.needle_blight, monsters.twig_blight, monsters.vine_blight, 
+	]
+}
+
+export const mind_flayers = {
+	name: 'Mind-flayers',
+	list: [
+		monsters.mind_flayer, monsters.intellect_devourer, monsters.grell, 
 	]
 }
 

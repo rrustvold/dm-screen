@@ -19,6 +19,12 @@
   - ogres
   - displacer-beast
   - nagas
+  - bugs
+  - blights
+  - yuan-tis
+  - displacer-beast
+  - gorgon
+  - treant  
 
 - hills:
     - orcs
@@ -141,6 +147,7 @@
     - troll
     - ankheg
     - bugs
+    - troglodyte
 
 - swamp:
     - hags
@@ -160,6 +167,8 @@
     - undead
     - hydra
     - giant-crocodile
+    - carrion-crawler
+    - bugs
 
 - desert:
     - vultures
@@ -188,3 +197,113 @@
     - ancient-brass-dragon
     - ancient-blue-dragon
     - ankheg
+
+- mountains:
+    - kobolds
+    - stirge
+    - orcs
+    - lesser-goblins
+    - ogres
+    - harpy
+    - hippogriff
+    - griffon
+    - peryton
+    - hell-hound
+    - manticore
+    - ettin
+    - air-elemental
+    - bulette
+    - troll
+    - chimera
+    - cyclops
+    - galeb-duhr
+    - wyvern
+    - stone-giant
+    - frost-giant
+    - cloud-giant
+    - fire-giant
+
+- arctic:
+    - kobolds
+    - giant-owl
+    - ice-mephit
+    - orcs
+    - brown-bear
+    - ogres
+    - griffon
+    - polar-bear
+    - manticore
+    - wolves
+    - troll
+    - werebear-hybrid
+    - remorhaz
+    - mammoth
+    - frost-giant
+
+- coast:
+    - snakes
+    - merfolk
+    - kobolds
+    - sahuagin
+    - stirge
+    - sea-hag
+    - harpy
+    - coastal-coven
+    - ogres
+    - manticore
+    - water-elemental
+    - cyclops
+    - banshee
+    - marid
+    - storm-giant
+    - giant-eagle
+    - carrion-crawler
+    - hydra
+
+- underworld:
+    - giant-fire-beetle
+    - bugs
+    - spiders
+    - kobolds
+    - kuo-toas
+    - snakes
+    - troglodyte
+    - darkmantle
+    - oozes
+    - goblins
+    - magma-mephit
+    - rust-monster
+    - undead
+    - carrion-crawler
+    - gargoyle
+    - gibbering-mouther
+    - grick
+    - intellect-devourer
+    - nothic
+    - grell
+    - hell-hound
+    - hook-horror
+    - minotaur
+    - drow
+    - phase-spider
+    - water-weird
+    - nagas
+    - chuul
+    - ettin
+    - flameskull
+    - earth-elemental
+    - otyugh
+    - roper
+    - salamander
+    - troll
+    - umber-hulk
+    - xorn
+    - chimera
+    - cyclops
+    - driders
+    - gricks
+    - mind-flayer
+    - stone-giant
+    - fire-giant
+    - behir
+    - purple-worm

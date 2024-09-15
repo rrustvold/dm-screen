@@ -22,7 +22,7 @@ function App() {
           <RandomEncounter2 party={party}></RandomEncounter2>
           <RandomTreasure party={party}></RandomTreasure>
         <RandomDungeon></RandomDungeon>
-        <Wilderness></Wilderness>
+        <Wilderness party={party}></Wilderness>
           {/*<DamageSeverity></DamageSeverity>*/}
           
       </div>

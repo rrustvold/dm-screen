@@ -5,7 +5,11 @@ import {dungeon, dungeonOptions} from './dungeon';
 import {caves, cavesOptions} from './caves';
 import {swamp, swampOptions} from './swamp';
 import {desert, desertOptions} from './desert';
-const all_environs = [forest, hills, grassland, dungeon, caves, swamp, desert];
+import {mountains, mountainsOptions} from './mountains';
+import {arctic, arcticOptions} from './arctic';
+import {coast, coastOptions} from './coast';
+import {underworld, underworldOptions} from './underworld';
+const all_environs = [forest, hills, grassland, dungeon, caves, swamp, desert, mountains, arctic, coast, underworld];
         
         export const allLists = () => {
             let all = {}
@@ -38,6 +42,10 @@ const all_environs = [forest, hills, grassland, dungeon, caves, swamp, desert];
 			<option value="caves">Caves</option>,
 			<option value="swamp">Swamp</option>,
 			<option value="desert">Desert</option>,
+			<option value="mountains">Mountains</option>,
+			<option value="arctic">Arctic</option>,
+			<option value="coast">Coast</option>,
+			<option value="underworld">Underworld</option>,
 		]
 
 
@@ -60,6 +68,14 @@ const all_environs = [forest, hills, grassland, dungeon, caves, swamp, desert];
 				setter(swampOptions());
 			} else if (environ === "desert") {
 				setter(desertOptions());
+			} else if (environ === "mountains") {
+				setter(mountainsOptions());
+			} else if (environ === "arctic") {
+				setter(arcticOptions());
+			} else if (environ === "coast") {
+				setter(coastOptions());
+			} else if (environ === "underworld") {
+				setter(underworldOptions());
 			}
 		}
 
@@ -90,6 +106,18 @@ const all_environs = [forest, hills, grassland, dungeon, caves, swamp, desert];
             
             } else if (monsterSelection === "anyDesert") {
                 monsterFamily = randomFamily(desert);
+            
+            } else if (monsterSelection === "anyMountains") {
+                monsterFamily = randomFamily(mountains);
+            
+            } else if (monsterSelection === "anyArctic") {
+                monsterFamily = randomFamily(arctic);
+            
+            } else if (monsterSelection === "anyCoast") {
+                monsterFamily = randomFamily(coast);
+            
+            } else if (monsterSelection === "anyUnderworld") {
+                monsterFamily = randomFamily(underworld);
             	}
 return monsterFamily
 }
