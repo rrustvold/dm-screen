@@ -225,11 +225,11 @@ export default function Wilderness({party}) {
                         setRandomEvent(randomEncounter);
                         kind = `Monster (${difficulty}) at ${getRandomEncounterDistance(environ)} feet`;
                     } else if (_roll <= 50) {
-                        kind = `Dungeon: ${getRandomThingFromList(RandomEntrance)}`;
+                        kind = `Dungeon: ${getRandomThingFromList(RandomEntrance(environ))}`;
                     } else if (_roll <= 75) {
                         kind = `Monument: ${getLandmarkFeature()}`;
                     } else if (_roll <= 95) {
-                        kind = "Kaiju";
+                        kind = "Keeper";
                     } else {
                         kind = "Muse/Druid";
                     }
@@ -284,36 +284,93 @@ export default function Wilderness({party}) {
     }
 
     function randomWeather() {
+        let season = document.getElementById("season").value;
+        let temp = 70
+        switch (season) {
+            case "winter":
+                temp = 30;
+                break;
+            case "spring":
+                temp = 50;
+                break;
+            case "summer":
+                temp = 80;
+                break;
+            case "fall":
+                temp = 40;
+                break;
+        }
 
         let _roll = roll(20);
         if (_roll <= 14){
-            setTemperature("Normal for the season");
         } else if (_roll <= 17){
-            setTemperature(`${roll(4) * 10} degrees F colder than normal`);
+            temp -= roll(20) * 2
         } else {
-            setTemperature(`${roll(4) * 10} degrees F hotter than normal`);
+            temp += roll(20) * 2
         }
 
+        
+        let tempPanel = document.getElementById("tempPanel");
+        if (temp >= 100) {
+            temp += " Extreme Heat. Extra water needed";
+            tempPanel.className = "w3-panel w3-red";
+        }
+        else if (temp <= 0 ) {
+            temp += " Extreme Cold. DC10 Con save each hour or exhaustion."
+            tempPanel.className = "w3-panel w3-blue";
+        }
+        else {
+            tempPanel.className = "w3-panel";
+        }
+        setTemperature(temp);
+
+        let windPanel = document.getElementById("windPanel");
         _roll = roll(20);
         if (_roll <= 12) {
             setWind("None");
+            windPanel.className = "w3-panel";
         } else if (roll <= 17) {
             setWind("Light");
+            windPanel.className = "w3-panel";
         } else {
-            setWind("Strong");
+            setWind(<>
+                Strong
+                <ul>
+                    <li>Disad. on ranged weapon attacks</li>
+                    <li>Dsiad. on Wisdom (Perception) that rely on listening</li>
+                    <li>Extinguishes open flames</li>
+                    <li>Disperses Fog</li>
+                    <li>No non-magical flying</li>
+                    <li>Possible dust or sandstorms</li>
+                </ul>
+            </>
+            );
+            windPanel.className = "w3-panel w3-blue";
         }
 
+        let precipPanel = document.getElementById("precipPanel");
         _roll = roll(20);
         if (_roll <= 12){
             setPrecip("None");
+            precipPanel.className = "w3-panel";
             setVisibility("2 miles. 40 miles from a height.");
         } else if (_roll <= 17) {
+            precipPanel.className = "w3-panel";
             setPrecip("Light rain or light snowfall");
             setVisibility("1 mile. 20 miles from a height.");
         } else {
-            setPrecip("Heavy rain or snowfall");
+            precipPanel.className = "w3-panel w3-blue";
+            setPrecip(<>
+                Heavy Rain or Snowfall
+                <ul>
+                    <li>Vision is lightly obscured</li>
+                    <li>Disad. on Wisdom (perception)</li>
+                    <li>Extinguishes open flames</li>
+                </ul>
+            </>);
             setVisibility("1/2 mile. 10 miles from a height.");
         }
+
     }
 
     let environOptions = [];
@@ -375,22 +432,35 @@ export default function Wilderness({party}) {
                 <Foraging />
                 <h3>Tracking</h3>
                 <Tracking />
-                <h2>Weather</h2>
-                <div id="weather" class="w3-container">
-                        <p>Temperature: {temperature}</p>
-                        <p>Wind: {wind}</p>
-                        <p>Precipitation: {precip}</p>
-                        <p>Visibility: {visibility}</p>
-                </div>
-                <input type="button" class="w3-button" value="Generate"
-                    onClick={() => randomWeather()}/>
+                
 
                 <h2>Marching</h2>
-                    <p>
-                    <label for="forcedMarch">Forced March </label>
-                    <input type="checkbox" class="w3-check" id="forcedMarch"/>
+                    <div class="w3-row-padded">
+                        <div class="w3-col l2">
+                            <p>
+                                <label for="forcedMarch">Forced March </label>
+                                <input type="checkbox" class="w3-check" id="forcedMarch"/>
+                            </p>
+                        </div>
+                        <div class="w3-col l10">
+                            <p>
+                            <label>Season </label>
+                            <select class="w3-select" id="season">
+                                <option value="winter">Winter</option>
+                                <option value="spring">Spring</option>
+                                <option value="summer">Summer</option>
+                                <option value="fall">Fall</option>
+                            </select>
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="w3-container">
                     <p id="forcedMarchDC" class="w3-panel w3-red w3-hide"></p>
-                    </p>
+                        </div> 
+                    
+
                     <p>
                     <label for="daysMarched">Days Marched: </label>
                     <input type="text" id="daysMarched" class="w3-input" defaultValue="0"/><br/>
@@ -441,6 +511,35 @@ export default function Wilderness({party}) {
                             </p>
                         </div>
                     </div>
+
+                    {/* <h2>Weather</h2> */}
+                <div id="weather" class="w3-panel">
+                    <div class="w3-row-padded">
+                        <div class="w3-col l3">
+                            <div class="w3-panel" id="tempPanel">
+                                Temperature: {temperature}
+                            </div>
+                        </div>
+                        <div class="w3-col l3">
+                            <div class="w3-panel" id="windPanel">
+                                Wind: {wind}
+                            </div>
+                        </div>
+                        <div class="w3-col l3">
+                            <div class="w3-panel" id="precipPanel">
+                                Precipitation: {precip}
+                            </div>
+                        </div>
+                        <div class="w3-col l3">
+                            <div class="w3-panel" id="visibPanel">
+                                Visibility: {visibility}
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <input type="button" class="w3-button" value="Generate"
+                    onClick={() => randomWeather()}/>
 
                     <div class="w3-row">
                         <div class="w3-col s3">
