@@ -1,192 +1,253 @@
 - carrion-crawler:
     name: Carrion Crawler
     xp: 450
+    int: 1
+    dex: 13
+    perception: 3
 - cyclops:
     xp: 2300
+    int: 8
+    dex: 11
 - bugbear-chief:
     name: Bugbear Chief
     xp: 700
+    int: 11
+    dex: 14
+    stealth: 6
 - gnoll-pack-lord:
       name: Gnoll Pack Lord
       xp: 450
+      int: 13
+      dex: 14
 - gnoll-fang-of-yeenoghu:
       name: Gnoll Fang of Yeenoghu
       xp: 1100
+      int: 10
+      dex: 15
 - goblin-boss:
       name: Goblin Boss
       xp: 200
+      int: 10
+      dex: 14
+      stealth: 6
 - grick-alpha:
       name: Grick Alpha
       xp: 2900
+      int: 4
+      dex: 16
+
 - hobgoblin-captain:
       name: Hobgoblin Captain
       xp: 700
+      int: 12
+      dex: 14
+
 - hobgoblin-warlord:
       name: Hobgoblin Warlord
       xp: 2300
+      int: 14
+      dex: 14
 - winged-kobold:
       name: Winged Kobold
       xp: 50
+      int: 8
+      dex: 16
 - half-ogre:
       name: Half Ogre
       xp: 200
+      int: 7
+      dex: 10
 - orc-war-chief:
       name: Orc War Chief
       xp: 1100
+      int: 11
+      dex: 12
 - orc-eye-of-gruumsh:
       name: Orc Eye of Gruumsh
       xp: 450
+      int: 9
+      dex: 12
 - orog:
       xp: 450
-
+      int: 12
+      dex: 12
 
 - displacer-beast:
       name: Displacer Beast
       xp: 700
       link: https://www.dndbeyond.com/monsters/17130-displacer-beast
-
+      int: 6
+      dex: 15
 - kuo-toa:
       name: Kuo-toa
       xp: 50
       link: https://www.dndbeyond.com/monsters/17166-kuo-toa
-
+      int: 11
+      dex: 10
 - kuo-toa-archpriest:
       name: Kuo-toa Archpriest
       xp: 2300
       link: https://www.dndbeyond.com/monsters/17167-kuo-toa-archpriest
-
+      int: 13
+      dex: 14
 - kuo-toa-whip:
       name: Kuo-toa Whip
       xp: 200
       link: https://www.dndbeyond.com/monsters/17169-kuo-toa-whip
-
+      int: 12
+      dex: 10
 - beholder:
       name: Beholder
       xp: 10000
       link: https://www.dndbeyond.com/monsters/17099-beholder
-
+      int: 17
+      dex: 14
 - bullywug:
       name: Bullywug
       xp: 50
       link: https://www.dndbeyond.com/monsters/17120-bullywug
-
+      int: 7
+      dex: 12
+      stealth: 3
 - bone-naga:
       name: bone-naga
       xp: 1100
       link: https://www.dndbeyond.com/monsters/17118-bone-naga
+      int: 15
+      dex: 16
 
 - mind-flayer:
       name: Mind Flayer
       xp: 2900
       link: https://www.dndbeyond.com/monsters/17104-mind-flayer
+      int: 19
+      dex: 12
+      stealth: 4
 
 - yuan-ti-abomination:
       name: Yuan-ti Abomination
       xp: 2900
       link: https://www.dndbeyond.com/monsters/17121-yuan-ti-abomination
-
+      int: 17
+      dex: 16
+      stealth: 6
 - yuan-ti-malison:
       name: Yuan-ti Malison
       xp: 700
       link: https://www.dndbeyond.com/monsters/17122-yuan-ti-malison
-
+      int: 14
+      dex: 14
+      stealth: 4
 - yuan-ti-pureblood:
       name: Yuan-ti Pureblood
       xp: 200
       link: https://www.dndbeyond.com/monsters/17123-yuan-ti-pureblood
-
+      int: 13
+      dex: 12
+      stealth: 3
 - needle-blight:
       name: Needle Blight
       xp: 50
       link: https://www.dndbeyond.com/monsters/17215-needle-blight
       int: 4
-
+      dex: 12
 - twig-blight:
       name: Twig Blight
       xp: 25
       link: https://www.dndbeyond.com/monsters/17095-twig-blight
       int: 4
-
+      dex: 13
+      stealth: 3
 - vine-blight:
       name: Vine Blight
       xp: 100
       link: https://www.dndbeyond.com/monsters/17216-vine-blight
       int: 5
-
+      dex: 8
+      stealth: 1
 - troglodyte:
       name: Troglodyte
       xp: 50
       link: https://www.dndbeyond.com/monsters/17204-troglodyte
       int: 6
-
+      dex: 10
+      stealth: 2
 - peryton:
       name: Peryton
       xp: 450
       link: https://www.dndbeyond.com/monsters/17190-peryton
       int: 9
-
+      dex: 12
 - galeb-duhr:
       name: Galeb Durh
       xp: 2300
       link: https://www.dndbeyond.com/monsters/17148-galeb-duhr
       int: 11
+      dex: 14
 
 - banshee:
       name: Banshee
       xp: 1100
       link: https://www.dndbeyond.com/monsters/17089-banshee
       int: 12
-
+      dex: 14
 - dao:
       name: Dao (genie)
       xp: 7200
       link: https://www.dndbeyond.com/monsters/17142-dao
       int: 12      
-
+      dex: 12
 - marid:
       name: Marid (genie)
       xp: 7200
       link: https://www.dndbeyond.com/monsters/17143-marid
       int: 18
-
+      dex:  12
 - intellect-devourer:
       name: Intellect Devourer
       xp: 450
       link: https://www.dndbeyond.com/monsters/17163-intellect-devourer
       int: 12
-
+      dex: 14
+      stealth: 4
 - nothic:
       name: Nothic
       xp: 450
       link: https://www.dndbeyond.com/monsters/17092-nothic
       int: 13
+      dex: 16
+      stealth: 5
 
 - grell:
       name: Grell
       xp: 700
       link: https://www.dndbeyond.com/monsters/17157-grell
       int: 12
+      dex: 14
+      stealth: 6
 
 - hook-horror:
       name: Hook Horrer
       xp: 700
       link: https://www.dndbeyond.com/monsters/17162-hook-horror
       int: 6
+      dex: 10
 
 - water-weird:
       name: Water Weird
       xp: 700
       link: https://www.dndbeyond.com/monsters/17208-water-weird
       int: 11
-
+      dex: 16
 - flameskull:
       name: Flameskull
       xp: 1100
       link: https://www.dndbeyond.com/monsters/17091-flameskull
       int: 16
-
+      dex: 17
 - umber-hulk:
       name: Umber Hulk
       xp: 1800
       link: https://www.dndbeyond.com/monsters/17205-umber-hulk
       int: 9
+      dex: 13
