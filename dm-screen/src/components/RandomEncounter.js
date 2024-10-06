@@ -4,7 +4,18 @@ import {
     allEnvirons,
     changeEnviron, getFamily, randomFamily
 } from "./randomEncounter/Environs";
-import { hideShow } from "../utils";
+import Roll, { hideShow } from "../utils";
+
+
+function getModifierFromScore(score) {
+    let x = (score - 10) / 2;
+    if (x >= 0){
+        return Math.floor(x);
+    } else {
+        return Math.ceil(x);
+    }
+}
+
 
 function getPartyLimits(party){
     const encounter_difficulty = [
@@ -70,6 +81,13 @@ export function generate(party, difficulty, monsterSelection) {
     let drawLimit = Number(document.getElementById("maxDiffMonsters").value);
     let monster = monsterList[randomNum];
     let maxInt = monster.int;
+
+    let minStealth = 0;
+    if (monster.stealth){
+        minStealth += monster.stealth;
+    } else {
+        minStealth += getModifierFromScore(monster.dex);
+    }
     let solo = monsterFamily.type;
     if (!solo) {
         solo = monster.type;
@@ -85,6 +103,15 @@ export function generate(party, difficulty, monsterSelection) {
             monster = monsterList[randomNum];
             if (!maxInt || monster.int > maxInt) {
                 maxInt = monster.int;
+            }
+            let stealth = 0;
+            if (monster.stealth){
+                stealth = monster.stealth;
+            } else {
+                stealth = getModifierFromScore(monster.dex);
+            }
+            if (!minStealth || stealth < minStealth) {
+                minStealth = stealth;
             }
             if (monster.solo && encounter.length > 0){
                 continue
@@ -123,6 +150,8 @@ export function generate(party, difficulty, monsterSelection) {
             } else {
                 encounterDict[monster.key] = monster;
                 encounterDict[monster.key].qty = 1;
+                encounterDict[monster.key].init = Roll(20) + getModifierFromScore(monster.dex);
+
             }
             draws.push(randomNum);
 
@@ -130,8 +159,11 @@ export function generate(party, difficulty, monsterSelection) {
     }
     let result = {
         encounterDict: encounterDict,
-        maxInt: maxInt
+        maxInt: maxInt,
+        minStealth: Roll(20) + minStealth,
     }
+
+    console.log(`Min stealth ${minStealth}`);
     console.log("Actual Difficulty: ");
     if (totalXP * multiplier <= limits[0]) {
         console.log("Easy");
@@ -201,12 +233,15 @@ export default function RandomEncounter2({party}){
 
     let xp_values = [];
     let encounterBlock = [];
+    encounterBlock.push(
+        <>Monster Stealth: {encounter.minStealth}<br/></>
+    )
     for (const [key, value] of Object.entries(encounter.encounterDict)) {
         for (let i=0; i < value.qty; i++) {
             xp_values.push(value.xp);
         }
         encounterBlock.push(
-            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name}</a><br/></>
+            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name} - Init: {value.init}</a><br/></>
         )
     }
 

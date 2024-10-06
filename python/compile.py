@@ -37,6 +37,8 @@ with open(monsters_file, "w") as file:
 
         xp = monster[key]["xp"]
         _int = monster[key].get("int", 0)
+        dex = monster[key].get("dex", 0)
+        stealth = monster[key].get("stealth", 0)
         link = monster[key].get("link", f"https://www.dndbeyond.com/monsters/{key}")
         key = key.replace("-", "_")
         file.writelines([
@@ -46,6 +48,8 @@ with open(monsters_file, "w") as file:
             "\txp: %d,\n" % xp,
             "\tlink: '%s',\n" % link,
             "\tint: %d,\n" % _int,
+            "\tdex: %d,\n" % dex,
+            "\tstealth: %d,\n" % stealth,
             "}\n\n"
         ])
 

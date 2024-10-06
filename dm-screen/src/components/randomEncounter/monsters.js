@@ -4,6 +4,8 @@ export const aboleth = {
 	xp: 5900,
 	link: 'https://www.dndbeyond.com/monsters/aboleth',
 	int: 18,
+	dex: 9,
+	stealth: 0,
 }
 
 export const acolyte = {
@@ -12,6 +14,8 @@ export const acolyte = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/acolyte',
 	int: 10,
+	dex: 10,
+	stealth: 0,
 }
 
 export const adult_black_dragon = {
@@ -20,6 +24,8 @@ export const adult_black_dragon = {
 	xp: 11500,
 	link: 'https://www.dndbeyond.com/monsters/adult-black-dragon',
 	int: 14,
+	dex: 14,
+	stealth: 7,
 }
 
 export const adult_blue_dragon = {
@@ -28,6 +34,8 @@ export const adult_blue_dragon = {
 	xp: 15000,
 	link: 'https://www.dndbeyond.com/monsters/adult-blue-dragon',
 	int: 16,
+	dex: 10,
+	stealth: 5,
 }
 
 export const adult_brass_dragon = {
@@ -36,6 +44,8 @@ export const adult_brass_dragon = {
 	xp: 10000,
 	link: 'https://www.dndbeyond.com/monsters/adult-brass-dragon',
 	int: 14,
+	dex: 10,
+	stealth: 5,
 }
 
 export const adult_bronze_dragon = {
@@ -44,6 +54,8 @@ export const adult_bronze_dragon = {
 	xp: 13000,
 	link: 'https://www.dndbeyond.com/monsters/adult-bronze-dragon',
 	int: 16,
+	dex: 10,
+	stealth: 5,
 }
 
 export const adult_copper_dragon = {
@@ -52,6 +64,8 @@ export const adult_copper_dragon = {
 	xp: 11500,
 	link: 'https://www.dndbeyond.com/monsters/adult-copper-dragon',
 	int: 18,
+	dex: 12,
+	stealth: 6,
 }
 
 export const adult_gold_dragon = {
@@ -60,6 +74,8 @@ export const adult_gold_dragon = {
 	xp: 18000,
 	link: 'https://www.dndbeyond.com/monsters/adult-gold-dragon',
 	int: 16,
+	dex: 14,
+	stealth: 8,
 }
 
 export const adult_green_dragon = {
@@ -68,6 +84,8 @@ export const adult_green_dragon = {
 	xp: 13000,
 	link: 'https://www.dndbeyond.com/monsters/adult-green-dragon',
 	int: 18,
+	dex: 12,
+	stealth: 6,
 }
 
 export const adult_red_dragon = {
@@ -76,6 +94,8 @@ export const adult_red_dragon = {
 	xp: 18000,
 	link: 'https://www.dndbeyond.com/monsters/adult-red-dragon',
 	int: 16,
+	dex: 10,
+	stealth: 6,
 }
 
 export const adult_silver_dragon = {
@@ -84,6 +104,8 @@ export const adult_silver_dragon = {
 	xp: 15000,
 	link: 'https://www.dndbeyond.com/monsters/adult-silver-dragon',
 	int: 16,
+	dex: 10,
+	stealth: 5,
 }
 
 export const adult_white_dragon = {
@@ -92,6 +114,8 @@ export const adult_white_dragon = {
 	xp: 10000,
 	link: 'https://www.dndbeyond.com/monsters/adult-white-dragon',
 	int: 8,
+	dex: 10,
+	stealth: 5,
 }
 
 export const air_elemental = {
@@ -100,6 +124,8 @@ export const air_elemental = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/air-elemental',
 	int: 6,
+	dex: 20,
+	stealth: 0,
 }
 
 export const ancient_black_dragon = {
@@ -108,6 +134,8 @@ export const ancient_black_dragon = {
 	xp: 33000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-black-dragon',
 	int: 16,
+	dex: 14,
+	stealth: 9,
 }
 
 export const ancient_blue_dragon = {
@@ -116,6 +144,8 @@ export const ancient_blue_dragon = {
 	xp: 50000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-blue-dragon',
 	int: 18,
+	dex: 10,
+	stealth: 7,
 }
 
 export const ancient_brass_dragon = {
@@ -124,6 +154,8 @@ export const ancient_brass_dragon = {
 	xp: 25000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-brass-dragon',
 	int: 16,
+	dex: 10,
+	stealth: 6,
 }
 
 export const ancient_bronze_dragon = {
@@ -132,6 +164,8 @@ export const ancient_bronze_dragon = {
 	xp: 41000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-bronze-dragon',
 	int: 18,
+	dex: 10,
+	stealth: 7,
 }
 
 export const ancient_copper_dragon = {
@@ -140,6 +174,8 @@ export const ancient_copper_dragon = {
 	xp: 33000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-copper-dragon',
 	int: 20,
+	dex: 12,
+	stealth: 8,
 }
 
 export const ancient_gold_dragon = {
@@ -148,6 +184,8 @@ export const ancient_gold_dragon = {
 	xp: 62000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-gold-dragon',
 	int: 18,
+	dex: 14,
+	stealth: 9,
 }
 
 export const ancient_green_dragon = {
@@ -156,6 +194,8 @@ export const ancient_green_dragon = {
 	xp: 41000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-green-dragon',
 	int: 20,
+	dex: 12,
+	stealth: 8,
 }
 
 export const ancient_red_dragon = {
@@ -164,6 +204,8 @@ export const ancient_red_dragon = {
 	xp: 62000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-red-dragon',
 	int: 18,
+	dex: 10,
+	stealth: 7,
 }
 
 export const ancient_silver_dragon = {
@@ -172,6 +214,8 @@ export const ancient_silver_dragon = {
 	xp: 50000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-silver-dragon',
 	int: 18,
+	dex: 10,
+	stealth: 7,
 }
 
 export const ancient_white_dragon = {
@@ -180,6 +224,8 @@ export const ancient_white_dragon = {
 	xp: 25000,
 	link: 'https://www.dndbeyond.com/monsters/ancient-white-dragon',
 	int: 10,
+	dex: 10,
+	stealth: 6,
 }
 
 export const androsphinx = {
@@ -188,6 +234,8 @@ export const androsphinx = {
 	xp: 18000,
 	link: 'https://www.dndbeyond.com/monsters/androsphinx',
 	int: 16,
+	dex: 10,
+	stealth: 0,
 }
 
 export const animated_armor = {
@@ -196,6 +244,8 @@ export const animated_armor = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/animated-armor',
 	int: 1,
+	dex: 11,
+	stealth: 0,
 }
 
 export const ankheg = {
@@ -204,6 +254,8 @@ export const ankheg = {
 	xp: 250,
 	link: 'https://www.dndbeyond.com/monsters/ankheg',
 	int: 1,
+	dex: 11,
+	stealth: 0,
 }
 
 export const ape = {
@@ -212,6 +264,8 @@ export const ape = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/ape',
 	int: 6,
+	dex: 14,
+	stealth: 0,
 }
 
 export const archmage = {
@@ -220,6 +274,8 @@ export const archmage = {
 	xp: 8400,
 	link: 'https://www.dndbeyond.com/monsters/archmage',
 	int: 20,
+	dex: 14,
+	stealth: 0,
 }
 
 export const assassin = {
@@ -228,6 +284,8 @@ export const assassin = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/assassin',
 	int: 13,
+	dex: 16,
+	stealth: 9,
 }
 
 export const awakened_shrub = {
@@ -236,6 +294,8 @@ export const awakened_shrub = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/awakened-shrub',
 	int: 10,
+	dex: 8,
+	stealth: 0,
 }
 
 export const awakened_tree = {
@@ -244,6 +304,8 @@ export const awakened_tree = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/awakened-tree',
 	int: 10,
+	dex: 6,
+	stealth: 0,
 }
 
 export const axe_beak = {
@@ -252,6 +314,8 @@ export const axe_beak = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/axe-beak',
 	int: 2,
+	dex: 12,
+	stealth: 0,
 }
 
 export const azer = {
@@ -260,6 +324,8 @@ export const azer = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/azer',
 	int: 12,
+	dex: 12,
+	stealth: 0,
 }
 
 export const baboon = {
@@ -268,6 +334,8 @@ export const baboon = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/baboon',
 	int: 4,
+	dex: 14,
+	stealth: 0,
 }
 
 export const badger = {
@@ -276,6 +344,8 @@ export const badger = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/badger',
 	int: 2,
+	dex: 11,
+	stealth: 0,
 }
 
 export const balor = {
@@ -284,6 +354,8 @@ export const balor = {
 	xp: 22000,
 	link: 'https://www.dndbeyond.com/monsters/balor',
 	int: 20,
+	dex: 15,
+	stealth: 0,
 }
 
 export const bandit = {
@@ -292,6 +364,8 @@ export const bandit = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/bandit',
 	int: 10,
+	dex: 12,
+	stealth: 0,
 }
 
 export const bandit_captain = {
@@ -300,6 +374,8 @@ export const bandit_captain = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/bandit-captain',
 	int: 14,
+	dex: 16,
+	stealth: 0,
 }
 
 export const barbed_devil = {
@@ -308,6 +384,8 @@ export const barbed_devil = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/barbed-devil',
 	int: 12,
+	dex: 17,
+	stealth: 0,
 }
 
 export const basilisk = {
@@ -316,6 +394,8 @@ export const basilisk = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/basilisk',
 	int: 2,
+	dex: 8,
+	stealth: 0,
 }
 
 export const bat = {
@@ -324,6 +404,8 @@ export const bat = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/bat',
 	int: 2,
+	dex: 15,
+	stealth: 0,
 }
 
 export const bearded_devil = {
@@ -332,6 +414,8 @@ export const bearded_devil = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/bearded-devil',
 	int: 9,
+	dex: 15,
+	stealth: 0,
 }
 
 export const behir = {
@@ -340,6 +424,8 @@ export const behir = {
 	xp: 7200,
 	link: 'https://www.dndbeyond.com/monsters/behir',
 	int: 7,
+	dex: 16,
+	stealth: 7,
 }
 
 export const berserker = {
@@ -348,6 +434,8 @@ export const berserker = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/berserker',
 	int: 9,
+	dex: 12,
+	stealth: 0,
 }
 
 export const black_bear = {
@@ -356,6 +444,8 @@ export const black_bear = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/black-bear',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const black_dragon_wyrmling = {
@@ -364,6 +454,8 @@ export const black_dragon_wyrmling = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/black-dragon-wyrmling',
 	int: 10,
+	dex: 14,
+	stealth: 4,
 }
 
 export const black_pudding = {
@@ -372,6 +464,8 @@ export const black_pudding = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/black-pudding',
 	int: 1,
+	dex: 5,
+	stealth: 0,
 }
 
 export const blink_dog = {
@@ -380,6 +474,8 @@ export const blink_dog = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/blink-dog',
 	int: 10,
+	dex: 17,
+	stealth: 5,
 }
 
 export const blood_hawk = {
@@ -388,6 +484,8 @@ export const blood_hawk = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/blood-hawk',
 	int: 3,
+	dex: 14,
+	stealth: 0,
 }
 
 export const blue_dragon_wyrmling = {
@@ -396,6 +494,8 @@ export const blue_dragon_wyrmling = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/blue-dragon-wyrmling',
 	int: 12,
+	dex: 10,
+	stealth: 2,
 }
 
 export const boar = {
@@ -404,6 +504,8 @@ export const boar = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/boar',
 	int: 2,
+	dex: 11,
+	stealth: 0,
 }
 
 export const bone_devil = {
@@ -412,6 +514,8 @@ export const bone_devil = {
 	xp: 5000,
 	link: 'https://www.dndbeyond.com/monsters/bone-devil',
 	int: 13,
+	dex: 16,
+	stealth: 0,
 }
 
 export const brass_dragon_wyrmling = {
@@ -420,6 +524,8 @@ export const brass_dragon_wyrmling = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/brass-dragon-wyrmling',
 	int: 10,
+	dex: 10,
+	stealth: 2,
 }
 
 export const bronze_dragon_wyrmling = {
@@ -428,6 +534,8 @@ export const bronze_dragon_wyrmling = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/bronze-dragon-wyrmling',
 	int: 12,
+	dex: 10,
+	stealth: 2,
 }
 
 export const brown_bear = {
@@ -436,6 +544,8 @@ export const brown_bear = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/brown-bear',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const bugbear = {
@@ -444,6 +554,8 @@ export const bugbear = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/bugbear',
 	int: 8,
+	dex: 14,
+	stealth: 6,
 }
 
 export const bulette = {
@@ -452,6 +564,8 @@ export const bulette = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/bulette',
 	int: 2,
+	dex: 11,
+	stealth: 0,
 }
 
 export const camel = {
@@ -460,6 +574,8 @@ export const camel = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/camel',
 	int: 2,
+	dex: 8,
+	stealth: 0,
 }
 
 export const cat = {
@@ -468,6 +584,8 @@ export const cat = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/cat',
 	int: 3,
+	dex: 15,
+	stealth: 4,
 }
 
 export const centaur = {
@@ -476,6 +594,8 @@ export const centaur = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/centaur',
 	int: 9,
+	dex: 14,
+	stealth: 0,
 }
 
 export const chain_devil = {
@@ -484,6 +604,8 @@ export const chain_devil = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/chain-devil',
 	int: 11,
+	dex: 15,
+	stealth: 0,
 }
 
 export const chimera = {
@@ -492,6 +614,8 @@ export const chimera = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/chimera',
 	int: 3,
+	dex: 11,
+	stealth: 0,
 }
 
 export const chuul = {
@@ -500,6 +624,8 @@ export const chuul = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/chuul',
 	int: 5,
+	dex: 10,
+	stealth: 0,
 }
 
 export const clay_golem = {
@@ -508,6 +634,8 @@ export const clay_golem = {
 	xp: 5000,
 	link: 'https://www.dndbeyond.com/monsters/clay-golem',
 	int: 3,
+	dex: 9,
+	stealth: 0,
 }
 
 export const cloaker = {
@@ -516,6 +644,8 @@ export const cloaker = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/cloaker',
 	int: 13,
+	dex: 15,
+	stealth: 5,
 }
 
 export const cloud_giant = {
@@ -524,6 +654,8 @@ export const cloud_giant = {
 	xp: 5000,
 	link: 'https://www.dndbeyond.com/monsters/cloud-giant',
 	int: 12,
+	dex: 10,
+	stealth: 0,
 }
 
 export const cockatrice = {
@@ -532,6 +664,8 @@ export const cockatrice = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/cockatrice',
 	int: 2,
+	dex: 12,
+	stealth: 0,
 }
 
 export const commoner = {
@@ -540,6 +674,8 @@ export const commoner = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/commoner',
 	int: 10,
+	dex: 10,
+	stealth: 0,
 }
 
 export const constrictor_snake = {
@@ -548,6 +684,8 @@ export const constrictor_snake = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/constrictor-snake',
 	int: 1,
+	dex: 14,
+	stealth: 0,
 }
 
 export const copper_dragon_wyrmling = {
@@ -556,6 +694,8 @@ export const copper_dragon_wyrmling = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/copper-dragon-wyrmling',
 	int: 14,
+	dex: 12,
+	stealth: 3,
 }
 
 export const couatl = {
@@ -564,6 +704,8 @@ export const couatl = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/couatl',
 	int: 18,
+	dex: 20,
+	stealth: 0,
 }
 
 export const crab = {
@@ -572,6 +714,8 @@ export const crab = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/crab',
 	int: 1,
+	dex: 11,
+	stealth: 2,
 }
 
 export const crocodile = {
@@ -580,6 +724,8 @@ export const crocodile = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/crocodile',
 	int: 2,
+	dex: 10,
+	stealth: 2,
 }
 
 export const cult_fanatic = {
@@ -588,6 +734,8 @@ export const cult_fanatic = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/cult-fanatic',
 	int: 10,
+	dex: 14,
+	stealth: 0,
 }
 
 export const cultist = {
@@ -596,6 +744,8 @@ export const cultist = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/cultist',
 	int: 10,
+	dex: 12,
+	stealth: 0,
 }
 
 export const darkmantle = {
@@ -604,6 +754,8 @@ export const darkmantle = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/darkmantle',
 	int: 2,
+	dex: 12,
+	stealth: 3,
 }
 
 export const death_dog = {
@@ -612,6 +764,8 @@ export const death_dog = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/death-dog',
 	int: 3,
+	dex: 14,
+	stealth: 4,
 }
 
 export const deep_gnome_svirfneblin = {
@@ -620,6 +774,8 @@ export const deep_gnome_svirfneblin = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/deep-gnome-svirfneblin',
 	int: 12,
+	dex: 14,
+	stealth: 4,
 }
 
 export const deer = {
@@ -628,6 +784,8 @@ export const deer = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/deer',
 	int: 2,
+	dex: 16,
+	stealth: 0,
 }
 
 export const deva = {
@@ -636,6 +794,8 @@ export const deva = {
 	xp: 5900,
 	link: 'https://www.dndbeyond.com/monsters/deva',
 	int: 17,
+	dex: 18,
+	stealth: 0,
 }
 
 export const dire_wolf = {
@@ -644,6 +804,8 @@ export const dire_wolf = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/dire-wolf',
 	int: 3,
+	dex: 15,
+	stealth: 4,
 }
 
 export const djinni = {
@@ -652,6 +814,8 @@ export const djinni = {
 	xp: 7200,
 	link: 'https://www.dndbeyond.com/monsters/djinni',
 	int: 15,
+	dex: 15,
+	stealth: 0,
 }
 
 export const doppelganger = {
@@ -660,6 +824,8 @@ export const doppelganger = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/doppelganger',
 	int: 11,
+	dex: 18,
+	stealth: 0,
 }
 
 export const draft_horse = {
@@ -668,6 +834,8 @@ export const draft_horse = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/draft-horse',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const dragon_turtle = {
@@ -676,6 +844,8 @@ export const dragon_turtle = {
 	xp: 18000,
 	link: 'https://www.dndbeyond.com/monsters/dragon-turtle',
 	int: 10,
+	dex: 10,
+	stealth: 0,
 }
 
 export const dretch = {
@@ -684,6 +854,8 @@ export const dretch = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/dretch',
 	int: 5,
+	dex: 11,
+	stealth: 0,
 }
 
 export const drider = {
@@ -692,6 +864,8 @@ export const drider = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/drider',
 	int: 13,
+	dex: 16,
+	stealth: 9,
 }
 
 export const drow = {
@@ -700,6 +874,8 @@ export const drow = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/drow',
 	int: 11,
+	dex: 14,
+	stealth: 4,
 }
 
 export const druid = {
@@ -708,6 +884,8 @@ export const druid = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/druid',
 	int: 12,
+	dex: 12,
+	stealth: 0,
 }
 
 export const dryad = {
@@ -716,6 +894,8 @@ export const dryad = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/dryad',
 	int: 14,
+	dex: 12,
+	stealth: 5,
 }
 
 export const duergar = {
@@ -724,6 +904,8 @@ export const duergar = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/duergar',
 	int: 11,
+	dex: 11,
+	stealth: 0,
 }
 
 export const dust_mephit = {
@@ -732,6 +914,8 @@ export const dust_mephit = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/dust-mephit',
 	int: 9,
+	dex: 14,
+	stealth: 4,
 }
 
 export const eagle = {
@@ -740,6 +924,8 @@ export const eagle = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/eagle',
 	int: 2,
+	dex: 15,
+	stealth: 0,
 }
 
 export const earth_elemental = {
@@ -748,6 +934,8 @@ export const earth_elemental = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/earth-elemental',
 	int: 5,
+	dex: 8,
+	stealth: 0,
 }
 
 export const efreeti = {
@@ -756,6 +944,8 @@ export const efreeti = {
 	xp: 7200,
 	link: 'https://www.dndbeyond.com/monsters/efreeti',
 	int: 16,
+	dex: 12,
+	stealth: 0,
 }
 
 export const elephant = {
@@ -764,6 +954,8 @@ export const elephant = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/elephant',
 	int: 3,
+	dex: 9,
+	stealth: 0,
 }
 
 export const elk = {
@@ -772,6 +964,8 @@ export const elk = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/elk',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const erinyes = {
@@ -780,6 +974,8 @@ export const erinyes = {
 	xp: 8400,
 	link: 'https://www.dndbeyond.com/monsters/erinyes',
 	int: 14,
+	dex: 16,
+	stealth: 0,
 }
 
 export const ettercap = {
@@ -788,6 +984,8 @@ export const ettercap = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/ettercap',
 	int: 7,
+	dex: 15,
+	stealth: 4,
 }
 
 export const ettin = {
@@ -796,6 +994,8 @@ export const ettin = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/ettin',
 	int: 6,
+	dex: 8,
+	stealth: 0,
 }
 
 export const fire_elemental = {
@@ -804,6 +1004,8 @@ export const fire_elemental = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/fire-elemental',
 	int: 6,
+	dex: 17,
+	stealth: 0,
 }
 
 export const fire_giant = {
@@ -812,6 +1014,8 @@ export const fire_giant = {
 	xp: 5000,
 	link: 'https://www.dndbeyond.com/monsters/fire-giant',
 	int: 10,
+	dex: 9,
+	stealth: 0,
 }
 
 export const flesh_golem = {
@@ -820,6 +1024,8 @@ export const flesh_golem = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/flesh-golem',
 	int: 6,
+	dex: 9,
+	stealth: 0,
 }
 
 export const flying_snake = {
@@ -828,6 +1034,8 @@ export const flying_snake = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/flying-snake',
 	int: 2,
+	dex: 18,
+	stealth: 0,
 }
 
 export const flying_sword = {
@@ -836,6 +1044,8 @@ export const flying_sword = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/flying-sword',
 	int: 1,
+	dex: 15,
+	stealth: 0,
 }
 
 export const frog = {
@@ -844,6 +1054,8 @@ export const frog = {
 	xp: 0,
 	link: 'https://www.dndbeyond.com/monsters/frog',
 	int: 1,
+	dex: 13,
+	stealth: 3,
 }
 
 export const frost_giant = {
@@ -852,6 +1064,8 @@ export const frost_giant = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/frost-giant',
 	int: 9,
+	dex: 9,
+	stealth: 0,
 }
 
 export const gargoyle = {
@@ -860,6 +1074,8 @@ export const gargoyle = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/gargoyle',
 	int: 6,
+	dex: 11,
+	stealth: 0,
 }
 
 export const gelatinous_cube = {
@@ -868,6 +1084,8 @@ export const gelatinous_cube = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/gelatinous-cube',
 	int: 1,
+	dex: 3,
+	stealth: 0,
 }
 
 export const ghast = {
@@ -876,6 +1094,8 @@ export const ghast = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/ghast',
 	int: 11,
+	dex: 17,
+	stealth: 0,
 }
 
 export const ghost = {
@@ -884,6 +1104,8 @@ export const ghost = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/ghost',
 	int: 10,
+	dex: 13,
+	stealth: 0,
 }
 
 export const ghoul = {
@@ -892,6 +1114,8 @@ export const ghoul = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/ghoul',
 	int: 7,
+	dex: 15,
+	stealth: 0,
 }
 
 export const giant_ape = {
@@ -900,6 +1124,8 @@ export const giant_ape = {
 	xp: 2900,
 	link: 'https://www.dndbeyond.com/monsters/giant-ape',
 	int: 7,
+	dex: 14,
+	stealth: 0,
 }
 
 export const giant_badger = {
@@ -908,6 +1134,8 @@ export const giant_badger = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/giant-badger',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const giant_bat = {
@@ -916,6 +1144,8 @@ export const giant_bat = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/giant-bat',
 	int: 2,
+	dex: 16,
+	stealth: 0,
 }
 
 export const giant_boar = {
@@ -924,6 +1154,8 @@ export const giant_boar = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/giant-boar',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const giant_centipede = {
@@ -932,6 +1164,8 @@ export const giant_centipede = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/giant-centipede',
 	int: 1,
+	dex: 14,
+	stealth: 0,
 }
 
 export const giant_constrictor_snake = {
@@ -940,6 +1174,8 @@ export const giant_constrictor_snake = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/giant-constrictor-snake',
 	int: 1,
+	dex: 14,
+	stealth: 0,
 }
 
 export const giant_crab = {
@@ -948,6 +1184,8 @@ export const giant_crab = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/giant-crab',
 	int: 1,
+	dex: 15,
+	stealth: 4,
 }
 
 export const giant_crocodile = {
@@ -956,6 +1194,8 @@ export const giant_crocodile = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/giant-crocodile',
 	int: 2,
+	dex: 9,
+	stealth: 5,
 }
 
 export const giant_eagle = {
@@ -964,6 +1204,8 @@ export const giant_eagle = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/giant-eagle',
 	int: 8,
+	dex: 17,
+	stealth: 0,
 }
 
 export const giant_elk = {
@@ -972,6 +1214,8 @@ export const giant_elk = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/giant-elk',
 	int: 7,
+	dex: 16,
+	stealth: 0,
 }
 
 export const giant_fire_beetle = {
@@ -980,6 +1224,8 @@ export const giant_fire_beetle = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/giant-fire-beetle',
 	int: 1,
+	dex: 10,
+	stealth: 0,
 }
 
 export const giant_frog = {
@@ -988,6 +1234,8 @@ export const giant_frog = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/giant-frog',
 	int: 2,
+	dex: 13,
+	stealth: 3,
 }
 
 export const giant_goat = {
@@ -996,6 +1244,8 @@ export const giant_goat = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/giant-goat',
 	int: 3,
+	dex: 11,
+	stealth: 0,
 }
 
 export const giant_hyena = {
@@ -1004,6 +1254,8 @@ export const giant_hyena = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/giant-hyena',
 	int: 2,
+	dex: 14,
+	stealth: 0,
 }
 
 export const giant_lizard = {
@@ -1012,6 +1264,8 @@ export const giant_lizard = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/giant-lizard',
 	int: 2,
+	dex: 12,
+	stealth: 0,
 }
 
 export const giant_octopus = {
@@ -1020,6 +1274,8 @@ export const giant_octopus = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/giant-octopus',
 	int: 4,
+	dex: 13,
+	stealth: 5,
 }
 
 export const giant_owl = {
@@ -1028,6 +1284,8 @@ export const giant_owl = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/giant-owl',
 	int: 8,
+	dex: 15,
+	stealth: 4,
 }
 
 export const giant_poisonous_snake = {
@@ -1036,6 +1294,8 @@ export const giant_poisonous_snake = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/giant-poisonous-snake',
 	int: 2,
+	dex: 18,
+	stealth: 0,
 }
 
 export const giant_rat = {
@@ -1044,6 +1304,8 @@ export const giant_rat = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/giant-rat',
 	int: 2,
+	dex: 15,
+	stealth: 0,
 }
 
 export const giant_rat_diseased = {
@@ -1052,6 +1314,8 @@ export const giant_rat_diseased = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/giant-rat-diseased',
 	int: 2,
+	dex: 15,
+	stealth: 0,
 }
 
 export const giant_scorpion = {
@@ -1060,6 +1324,8 @@ export const giant_scorpion = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/giant-scorpion',
 	int: 1,
+	dex: 13,
+	stealth: 0,
 }
 
 export const giant_sea_horse = {
@@ -1068,6 +1334,8 @@ export const giant_sea_horse = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/giant-sea-horse',
 	int: 2,
+	dex: 15,
+	stealth: 0,
 }
 
 export const giant_shark = {
@@ -1076,6 +1344,8 @@ export const giant_shark = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/giant-shark',
 	int: 1,
+	dex: 11,
+	stealth: 0,
 }
 
 export const giant_spider = {
@@ -1084,6 +1354,8 @@ export const giant_spider = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/giant-spider',
 	int: 2,
+	dex: 16,
+	stealth: 7,
 }
 
 export const giant_toad = {
@@ -1092,6 +1364,8 @@ export const giant_toad = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/giant-toad',
 	int: 2,
+	dex: 13,
+	stealth: 0,
 }
 
 export const giant_vulture = {
@@ -1100,6 +1374,8 @@ export const giant_vulture = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/giant-vulture',
 	int: 6,
+	dex: 10,
+	stealth: 0,
 }
 
 export const giant_wasp = {
@@ -1108,6 +1384,8 @@ export const giant_wasp = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/giant-wasp',
 	int: 1,
+	dex: 14,
+	stealth: 0,
 }
 
 export const giant_weasel = {
@@ -1116,6 +1394,8 @@ export const giant_weasel = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/giant-weasel',
 	int: 4,
+	dex: 16,
+	stealth: 5,
 }
 
 export const giant_wolf_spider = {
@@ -1124,6 +1404,8 @@ export const giant_wolf_spider = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/giant-wolf-spider',
 	int: 3,
+	dex: 16,
+	stealth: 7,
 }
 
 export const gibbering_mouther = {
@@ -1132,6 +1414,8 @@ export const gibbering_mouther = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/gibbering-mouther',
 	int: 3,
+	dex: 8,
+	stealth: 0,
 }
 
 export const glabrezu = {
@@ -1140,6 +1424,8 @@ export const glabrezu = {
 	xp: 5000,
 	link: 'https://www.dndbeyond.com/monsters/glabrezu',
 	int: 19,
+	dex: 15,
+	stealth: 0,
 }
 
 export const gladiator = {
@@ -1148,6 +1434,8 @@ export const gladiator = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/gladiator',
 	int: 10,
+	dex: 15,
+	stealth: 0,
 }
 
 export const gnoll = {
@@ -1156,6 +1444,8 @@ export const gnoll = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/gnoll',
 	int: 6,
+	dex: 12,
+	stealth: 0,
 }
 
 export const goat = {
@@ -1164,6 +1454,8 @@ export const goat = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/goat',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const goblin = {
@@ -1172,6 +1464,8 @@ export const goblin = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/goblin',
 	int: 10,
+	dex: 14,
+	stealth: 6,
 }
 
 export const gold_dragon_wyrmling = {
@@ -1180,6 +1474,8 @@ export const gold_dragon_wyrmling = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/gold-dragon-wyrmling',
 	int: 14,
+	dex: 14,
+	stealth: 4,
 }
 
 export const gorgon = {
@@ -1188,6 +1484,8 @@ export const gorgon = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/gorgon',
 	int: 2,
+	dex: 11,
+	stealth: 0,
 }
 
 export const gray_ooze = {
@@ -1196,6 +1494,8 @@ export const gray_ooze = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/gray-ooze',
 	int: 1,
+	dex: 6,
+	stealth: 2,
 }
 
 export const green_dragon_wyrmling = {
@@ -1204,6 +1504,8 @@ export const green_dragon_wyrmling = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/green-dragon-wyrmling',
 	int: 14,
+	dex: 12,
+	stealth: 3,
 }
 
 export const green_hag = {
@@ -1212,6 +1514,8 @@ export const green_hag = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/green-hag',
 	int: 13,
+	dex: 12,
+	stealth: 3,
 }
 
 export const grick = {
@@ -1220,6 +1524,8 @@ export const grick = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/grick',
 	int: 3,
+	dex: 14,
+	stealth: 0,
 }
 
 export const griffon = {
@@ -1228,6 +1534,8 @@ export const griffon = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/griffon',
 	int: 2,
+	dex: 15,
+	stealth: 0,
 }
 
 export const grimlock = {
@@ -1236,6 +1544,8 @@ export const grimlock = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/grimlock',
 	int: 9,
+	dex: 12,
+	stealth: 3,
 }
 
 export const guard = {
@@ -1244,6 +1554,8 @@ export const guard = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/guard',
 	int: 10,
+	dex: 12,
+	stealth: 0,
 }
 
 export const guardian_naga = {
@@ -1252,6 +1564,8 @@ export const guardian_naga = {
 	xp: 5900,
 	link: 'https://www.dndbeyond.com/monsters/guardian-naga',
 	int: 16,
+	dex: 18,
+	stealth: 0,
 }
 
 export const gynosphinx = {
@@ -1260,6 +1574,8 @@ export const gynosphinx = {
 	xp: 7200,
 	link: 'https://www.dndbeyond.com/monsters/gynosphinx',
 	int: 18,
+	dex: 15,
+	stealth: 0,
 }
 
 export const half_red_dragon_veteran = {
@@ -1268,6 +1584,8 @@ export const half_red_dragon_veteran = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/half-red-dragon-veteran',
 	int: 10,
+	dex: 13,
+	stealth: 0,
 }
 
 export const harpy = {
@@ -1276,6 +1594,8 @@ export const harpy = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/harpy',
 	int: 7,
+	dex: 13,
+	stealth: 0,
 }
 
 export const hawk = {
@@ -1284,6 +1604,8 @@ export const hawk = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/hawk',
 	int: 2,
+	dex: 16,
+	stealth: 0,
 }
 
 export const hell_hound = {
@@ -1292,6 +1614,8 @@ export const hell_hound = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/hell-hound',
 	int: 6,
+	dex: 12,
+	stealth: 0,
 }
 
 export const hezrou = {
@@ -1300,6 +1624,8 @@ export const hezrou = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/hezrou',
 	int: 5,
+	dex: 17,
+	stealth: 0,
 }
 
 export const hill_giant = {
@@ -1308,6 +1634,8 @@ export const hill_giant = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/hill-giant',
 	int: 5,
+	dex: 8,
+	stealth: 0,
 }
 
 export const hippogriff = {
@@ -1316,6 +1644,8 @@ export const hippogriff = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/hippogriff',
 	int: 2,
+	dex: 13,
+	stealth: 0,
 }
 
 export const hobgoblin = {
@@ -1324,6 +1654,8 @@ export const hobgoblin = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/hobgoblin',
 	int: 10,
+	dex: 12,
+	stealth: 0,
 }
 
 export const homunculus = {
@@ -1332,6 +1664,8 @@ export const homunculus = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/homunculus',
 	int: 10,
+	dex: 15,
+	stealth: 0,
 }
 
 export const horned_devil = {
@@ -1340,6 +1674,8 @@ export const horned_devil = {
 	xp: 7200,
 	link: 'https://www.dndbeyond.com/monsters/horned-devil',
 	int: 12,
+	dex: 17,
+	stealth: 0,
 }
 
 export const hunter_shark = {
@@ -1348,6 +1684,8 @@ export const hunter_shark = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/hunter-shark',
 	int: 1,
+	dex: 13,
+	stealth: 0,
 }
 
 export const hydra = {
@@ -1356,6 +1694,8 @@ export const hydra = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/hydra',
 	int: 2,
+	dex: 12,
+	stealth: 0,
 }
 
 export const hyena = {
@@ -1364,6 +1704,8 @@ export const hyena = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/hyena',
 	int: 2,
+	dex: 13,
+	stealth: 0,
 }
 
 export const ice_devil = {
@@ -1372,6 +1714,8 @@ export const ice_devil = {
 	xp: 11500,
 	link: 'https://www.dndbeyond.com/monsters/ice-devil',
 	int: 18,
+	dex: 14,
+	stealth: 0,
 }
 
 export const ice_mephit = {
@@ -1380,6 +1724,8 @@ export const ice_mephit = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/ice-mephit',
 	int: 9,
+	dex: 13,
+	stealth: 3,
 }
 
 export const imp = {
@@ -1388,6 +1734,8 @@ export const imp = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/imp',
 	int: 11,
+	dex: 17,
+	stealth: 5,
 }
 
 export const invisible_stalker = {
@@ -1396,6 +1744,8 @@ export const invisible_stalker = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/invisible-stalker',
 	int: 10,
+	dex: 19,
+	stealth: 10,
 }
 
 export const iron_golem = {
@@ -1404,6 +1754,8 @@ export const iron_golem = {
 	xp: 15000,
 	link: 'https://www.dndbeyond.com/monsters/iron-golem',
 	int: 3,
+	dex: 9,
+	stealth: 0,
 }
 
 export const jackal = {
@@ -1412,6 +1764,8 @@ export const jackal = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/jackal',
 	int: 3,
+	dex: 15,
+	stealth: 0,
 }
 
 export const killer_whale = {
@@ -1420,6 +1774,8 @@ export const killer_whale = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/killer-whale',
 	int: 3,
+	dex: 10,
+	stealth: 0,
 }
 
 export const knight = {
@@ -1428,6 +1784,8 @@ export const knight = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/knight',
 	int: 11,
+	dex: 11,
+	stealth: 0,
 }
 
 export const kobold = {
@@ -1436,6 +1794,8 @@ export const kobold = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/kobold',
 	int: 8,
+	dex: 15,
+	stealth: 0,
 }
 
 export const kraken = {
@@ -1444,6 +1804,8 @@ export const kraken = {
 	xp: 50000,
 	link: 'https://www.dndbeyond.com/monsters/kraken',
 	int: 22,
+	dex: 11,
+	stealth: 0,
 }
 
 export const lamia = {
@@ -1452,6 +1814,8 @@ export const lamia = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/lamia',
 	int: 14,
+	dex: 13,
+	stealth: 3,
 }
 
 export const lemure = {
@@ -1460,6 +1824,8 @@ export const lemure = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/lemure',
 	int: 1,
+	dex: 5,
+	stealth: 0,
 }
 
 export const lich = {
@@ -1468,6 +1834,8 @@ export const lich = {
 	xp: 33000,
 	link: 'https://www.dndbeyond.com/monsters/lich',
 	int: 20,
+	dex: 16,
+	stealth: 0,
 }
 
 export const lion = {
@@ -1476,6 +1844,8 @@ export const lion = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/lion',
 	int: 3,
+	dex: 15,
+	stealth: 6,
 }
 
 export const lizard = {
@@ -1484,6 +1854,8 @@ export const lizard = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/lizard',
 	int: 1,
+	dex: 11,
+	stealth: 0,
 }
 
 export const lizardfolk = {
@@ -1492,6 +1864,8 @@ export const lizardfolk = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/lizardfolk',
 	int: 7,
+	dex: 10,
+	stealth: 4,
 }
 
 export const mage = {
@@ -1500,6 +1874,8 @@ export const mage = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/mage',
 	int: 17,
+	dex: 14,
+	stealth: 0,
 }
 
 export const magma_mephit = {
@@ -1508,6 +1884,8 @@ export const magma_mephit = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/magma-mephit',
 	int: 7,
+	dex: 12,
+	stealth: 3,
 }
 
 export const magmin = {
@@ -1516,6 +1894,8 @@ export const magmin = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/magmin',
 	int: 8,
+	dex: 15,
+	stealth: 0,
 }
 
 export const mammoth = {
@@ -1524,6 +1904,8 @@ export const mammoth = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/mammoth',
 	int: 3,
+	dex: 9,
+	stealth: 0,
 }
 
 export const manticore = {
@@ -1532,6 +1914,8 @@ export const manticore = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/manticore',
 	int: 7,
+	dex: 16,
+	stealth: 0,
 }
 
 export const marilith = {
@@ -1540,6 +1924,8 @@ export const marilith = {
 	xp: 15000,
 	link: 'https://www.dndbeyond.com/monsters/marilith',
 	int: 18,
+	dex: 20,
+	stealth: 0,
 }
 
 export const mastiff = {
@@ -1548,6 +1934,8 @@ export const mastiff = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/mastiff',
 	int: 3,
+	dex: 14,
+	stealth: 0,
 }
 
 export const medusa = {
@@ -1556,6 +1944,8 @@ export const medusa = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/medusa',
 	int: 12,
+	dex: 15,
+	stealth: 5,
 }
 
 export const merfolk = {
@@ -1564,6 +1954,8 @@ export const merfolk = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/merfolk',
 	int: 11,
+	dex: 13,
+	stealth: 0,
 }
 
 export const merrow = {
@@ -1572,6 +1964,8 @@ export const merrow = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/merrow',
 	int: 8,
+	dex: 10,
+	stealth: 0,
 }
 
 export const mimic = {
@@ -1580,6 +1974,8 @@ export const mimic = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/mimic',
 	int: 5,
+	dex: 12,
+	stealth: 5,
 }
 
 export const minotaur = {
@@ -1588,6 +1984,8 @@ export const minotaur = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/minotaur',
 	int: 6,
+	dex: 11,
+	stealth: 0,
 }
 
 export const minotaur_skeleton = {
@@ -1596,6 +1994,8 @@ export const minotaur_skeleton = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/minotaur-skeleton',
 	int: 6,
+	dex: 11,
+	stealth: 0,
 }
 
 export const mule = {
@@ -1604,6 +2004,8 @@ export const mule = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/mule',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const mummy = {
@@ -1612,6 +2014,8 @@ export const mummy = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/mummy',
 	int: 6,
+	dex: 8,
+	stealth: 0,
 }
 
 export const mummy_lord = {
@@ -1620,6 +2024,8 @@ export const mummy_lord = {
 	xp: 13000,
 	link: 'https://www.dndbeyond.com/monsters/mummy-lord',
 	int: 11,
+	dex: 10,
+	stealth: 0,
 }
 
 export const nalfeshnee = {
@@ -1628,6 +2034,8 @@ export const nalfeshnee = {
 	xp: 10000,
 	link: 'https://www.dndbeyond.com/monsters/nalfeshnee',
 	int: 19,
+	dex: 10,
+	stealth: 0,
 }
 
 export const night_hag = {
@@ -1636,6 +2044,8 @@ export const night_hag = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/night-hag',
 	int: 16,
+	dex: 15,
+	stealth: 6,
 }
 
 export const nightmare = {
@@ -1644,6 +2054,8 @@ export const nightmare = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/nightmare',
 	int: 10,
+	dex: 15,
+	stealth: 0,
 }
 
 export const noble = {
@@ -1652,6 +2064,8 @@ export const noble = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/noble',
 	int: 12,
+	dex: 12,
+	stealth: 0,
 }
 
 export const ochre_jelly = {
@@ -1660,6 +2074,8 @@ export const ochre_jelly = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/ochre-jelly',
 	int: 2,
+	dex: 6,
+	stealth: 0,
 }
 
 export const octopus = {
@@ -1668,6 +2084,8 @@ export const octopus = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/octopus',
 	int: 3,
+	dex: 15,
+	stealth: 4,
 }
 
 export const ogre = {
@@ -1676,6 +2094,8 @@ export const ogre = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/ogre',
 	int: 5,
+	dex: 8,
+	stealth: 0,
 }
 
 export const ogre_zombie = {
@@ -1684,6 +2104,8 @@ export const ogre_zombie = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/ogre-zombie',
 	int: 3,
+	dex: 6,
+	stealth: 0,
 }
 
 export const oni = {
@@ -1692,6 +2114,8 @@ export const oni = {
 	xp: 2900,
 	link: 'https://www.dndbeyond.com/monsters/oni',
 	int: 14,
+	dex: 11,
+	stealth: 0,
 }
 
 export const orc = {
@@ -1700,6 +2124,8 @@ export const orc = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/orc',
 	int: 7,
+	dex: 12,
+	stealth: 0,
 }
 
 export const otyugh = {
@@ -1708,6 +2134,8 @@ export const otyugh = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/otyugh',
 	int: 6,
+	dex: 11,
+	stealth: 0,
 }
 
 export const owl = {
@@ -1716,6 +2144,8 @@ export const owl = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/owl',
 	int: 2,
+	dex: 13,
+	stealth: 3,
 }
 
 export const owlbear = {
@@ -1724,6 +2154,8 @@ export const owlbear = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/owlbear',
 	int: 3,
+	dex: 12,
+	stealth: 0,
 }
 
 export const panther = {
@@ -1732,6 +2164,8 @@ export const panther = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/panther',
 	int: 3,
+	dex: 15,
+	stealth: 6,
 }
 
 export const pegasus = {
@@ -1740,6 +2174,8 @@ export const pegasus = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/pegasus',
 	int: 10,
+	dex: 15,
+	stealth: 0,
 }
 
 export const phase_spider = {
@@ -1748,6 +2184,8 @@ export const phase_spider = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/phase-spider',
 	int: 6,
+	dex: 15,
+	stealth: 6,
 }
 
 export const pit_fiend = {
@@ -1756,6 +2194,8 @@ export const pit_fiend = {
 	xp: 25000,
 	link: 'https://www.dndbeyond.com/monsters/pit-fiend',
 	int: 22,
+	dex: 14,
+	stealth: 0,
 }
 
 export const planetar = {
@@ -1764,6 +2204,8 @@ export const planetar = {
 	xp: 15000,
 	link: 'https://www.dndbeyond.com/monsters/planetar',
 	int: 19,
+	dex: 20,
+	stealth: 0,
 }
 
 export const plesiosaurus = {
@@ -1772,6 +2214,8 @@ export const plesiosaurus = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/plesiosaurus',
 	int: 2,
+	dex: 15,
+	stealth: 4,
 }
 
 export const poisonous_snake = {
@@ -1780,6 +2224,8 @@ export const poisonous_snake = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/poisonous-snake',
 	int: 1,
+	dex: 16,
+	stealth: 0,
 }
 
 export const polar_bear = {
@@ -1788,6 +2234,8 @@ export const polar_bear = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/polar-bear',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const pony = {
@@ -1796,6 +2244,8 @@ export const pony = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/pony',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const priest = {
@@ -1804,6 +2254,8 @@ export const priest = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/priest',
 	int: 13,
+	dex: 10,
+	stealth: 0,
 }
 
 export const pseudodragon = {
@@ -1812,6 +2264,8 @@ export const pseudodragon = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/pseudodragon',
 	int: 10,
+	dex: 15,
+	stealth: 4,
 }
 
 export const purple_worm = {
@@ -1820,6 +2274,8 @@ export const purple_worm = {
 	xp: 13000,
 	link: 'https://www.dndbeyond.com/monsters/purple-worm',
 	int: 1,
+	dex: 7,
+	stealth: 0,
 }
 
 export const quasit = {
@@ -1828,6 +2284,8 @@ export const quasit = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/quasit',
 	int: 7,
+	dex: 17,
+	stealth: 5,
 }
 
 export const quipper = {
@@ -1836,6 +2294,8 @@ export const quipper = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/quipper',
 	int: 1,
+	dex: 16,
+	stealth: 0,
 }
 
 export const rakshasa = {
@@ -1844,6 +2304,8 @@ export const rakshasa = {
 	xp: 10000,
 	link: 'https://www.dndbeyond.com/monsters/rakshasa',
 	int: 13,
+	dex: 17,
+	stealth: 0,
 }
 
 export const rat = {
@@ -1852,6 +2314,8 @@ export const rat = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/rat',
 	int: 2,
+	dex: 11,
+	stealth: 0,
 }
 
 export const raven = {
@@ -1860,6 +2324,8 @@ export const raven = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/raven',
 	int: 2,
+	dex: 14,
+	stealth: 0,
 }
 
 export const red_dragon_wyrmling = {
@@ -1868,6 +2334,8 @@ export const red_dragon_wyrmling = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/red-dragon-wyrmling',
 	int: 12,
+	dex: 10,
+	stealth: 2,
 }
 
 export const reef_shark = {
@@ -1876,6 +2344,8 @@ export const reef_shark = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/reef-shark',
 	int: 1,
+	dex: 13,
+	stealth: 0,
 }
 
 export const remorhaz = {
@@ -1884,6 +2354,8 @@ export const remorhaz = {
 	xp: 7200,
 	link: 'https://www.dndbeyond.com/monsters/remorhaz',
 	int: 4,
+	dex: 13,
+	stealth: 0,
 }
 
 export const rhinoceros = {
@@ -1892,6 +2364,8 @@ export const rhinoceros = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/rhinoceros',
 	int: 2,
+	dex: 8,
+	stealth: 0,
 }
 
 export const riding_horse = {
@@ -1900,6 +2374,8 @@ export const riding_horse = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/riding-horse',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const roc = {
@@ -1908,6 +2384,8 @@ export const roc = {
 	xp: 7200,
 	link: 'https://www.dndbeyond.com/monsters/roc',
 	int: 3,
+	dex: 10,
+	stealth: 0,
 }
 
 export const roper = {
@@ -1916,6 +2394,8 @@ export const roper = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/roper',
 	int: 7,
+	dex: 8,
+	stealth: 5,
 }
 
 export const rug_of_smothering = {
@@ -1924,6 +2404,8 @@ export const rug_of_smothering = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/rug-of-smothering',
 	int: 1,
+	dex: 14,
+	stealth: 0,
 }
 
 export const rust_monster = {
@@ -1932,6 +2414,8 @@ export const rust_monster = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/rust-monster',
 	int: 2,
+	dex: 12,
+	stealth: 0,
 }
 
 export const saber_toothed_tiger = {
@@ -1940,6 +2424,8 @@ export const saber_toothed_tiger = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/saber-toothed-tiger',
 	int: 3,
+	dex: 14,
+	stealth: 6,
 }
 
 export const sahuagin = {
@@ -1948,6 +2434,8 @@ export const sahuagin = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/sahuagin',
 	int: 12,
+	dex: 11,
+	stealth: 0,
 }
 
 export const salamander = {
@@ -1956,6 +2444,8 @@ export const salamander = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/salamander',
 	int: 11,
+	dex: 14,
+	stealth: 0,
 }
 
 export const satyr = {
@@ -1964,6 +2454,8 @@ export const satyr = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/satyr',
 	int: 12,
+	dex: 16,
+	stealth: 5,
 }
 
 export const scorpion = {
@@ -1972,6 +2464,8 @@ export const scorpion = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/scorpion',
 	int: 1,
+	dex: 11,
+	stealth: 0,
 }
 
 export const scout = {
@@ -1980,6 +2474,8 @@ export const scout = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/scout',
 	int: 11,
+	dex: 14,
+	stealth: 6,
 }
 
 export const sea_hag = {
@@ -1988,6 +2484,8 @@ export const sea_hag = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/sea-hag',
 	int: 12,
+	dex: 13,
+	stealth: 0,
 }
 
 export const sea_horse = {
@@ -1996,6 +2494,8 @@ export const sea_horse = {
 	xp: 0,
 	link: 'https://www.dndbeyond.com/monsters/sea-horse',
 	int: 1,
+	dex: 12,
+	stealth: 0,
 }
 
 export const shadow = {
@@ -2004,6 +2504,8 @@ export const shadow = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/shadow',
 	int: 6,
+	dex: 14,
+	stealth: 4,
 }
 
 export const shambling_mound = {
@@ -2012,6 +2514,8 @@ export const shambling_mound = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/shambling-mound',
 	int: 5,
+	dex: 8,
+	stealth: 2,
 }
 
 export const shield_guardian = {
@@ -2020,6 +2524,8 @@ export const shield_guardian = {
 	xp: 2900,
 	link: 'https://www.dndbeyond.com/monsters/shield-guardian',
 	int: 7,
+	dex: 8,
+	stealth: 0,
 }
 
 export const shrieker = {
@@ -2028,6 +2534,8 @@ export const shrieker = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/shrieker',
 	int: 1,
+	dex: 1,
+	stealth: 0,
 }
 
 export const silver_dragon_wyrmling = {
@@ -2036,6 +2544,8 @@ export const silver_dragon_wyrmling = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/silver-dragon-wyrmling',
 	int: 12,
+	dex: 10,
+	stealth: 2,
 }
 
 export const skeleton = {
@@ -2044,6 +2554,8 @@ export const skeleton = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/skeleton',
 	int: 6,
+	dex: 14,
+	stealth: 0,
 }
 
 export const solar = {
@@ -2052,6 +2564,8 @@ export const solar = {
 	xp: 33000,
 	link: 'https://www.dndbeyond.com/monsters/solar',
 	int: 25,
+	dex: 22,
+	stealth: 0,
 }
 
 export const specter = {
@@ -2060,6 +2574,8 @@ export const specter = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/specter',
 	int: 10,
+	dex: 14,
+	stealth: 0,
 }
 
 export const spider = {
@@ -2068,6 +2584,8 @@ export const spider = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/spider',
 	int: 1,
+	dex: 14,
+	stealth: 4,
 }
 
 export const spirit_naga = {
@@ -2076,6 +2594,8 @@ export const spirit_naga = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/spirit-naga',
 	int: 16,
+	dex: 17,
+	stealth: 0,
 }
 
 export const sprite = {
@@ -2084,6 +2604,8 @@ export const sprite = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/sprite',
 	int: 14,
+	dex: 18,
+	stealth: 8,
 }
 
 export const spy = {
@@ -2092,6 +2614,8 @@ export const spy = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/spy',
 	int: 12,
+	dex: 15,
+	stealth: 4,
 }
 
 export const steam_mephit = {
@@ -2100,6 +2624,8 @@ export const steam_mephit = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/steam-mephit',
 	int: 11,
+	dex: 11,
+	stealth: 0,
 }
 
 export const stirge = {
@@ -2108,6 +2634,8 @@ export const stirge = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/stirge',
 	int: 2,
+	dex: 16,
+	stealth: 0,
 }
 
 export const stone_giant = {
@@ -2116,6 +2644,8 @@ export const stone_giant = {
 	xp: 2900,
 	link: 'https://www.dndbeyond.com/monsters/stone-giant',
 	int: 10,
+	dex: 15,
+	stealth: 0,
 }
 
 export const stone_golem = {
@@ -2124,6 +2654,8 @@ export const stone_golem = {
 	xp: 5900,
 	link: 'https://www.dndbeyond.com/monsters/stone-golem',
 	int: 3,
+	dex: 9,
+	stealth: 0,
 }
 
 export const storm_giant = {
@@ -2132,6 +2664,8 @@ export const storm_giant = {
 	xp: 10000,
 	link: 'https://www.dndbeyond.com/monsters/storm-giant',
 	int: 16,
+	dex: 14,
+	stealth: 0,
 }
 
 export const succubus_incubus = {
@@ -2140,6 +2674,8 @@ export const succubus_incubus = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/succubus-incubus',
 	int: 15,
+	dex: 17,
+	stealth: 7,
 }
 
 export const swarm_of_bats = {
@@ -2148,6 +2684,8 @@ export const swarm_of_bats = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-bats',
 	int: 2,
+	dex: 15,
+	stealth: 0,
 }
 
 export const swarm_of_beetles = {
@@ -2156,6 +2694,8 @@ export const swarm_of_beetles = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-beetles',
 	int: 1,
+	dex: 13,
+	stealth: 0,
 }
 
 export const swarm_of_centipedes = {
@@ -2164,6 +2704,8 @@ export const swarm_of_centipedes = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-centipedes',
 	int: 1,
+	dex: 13,
+	stealth: 0,
 }
 
 export const swarm_of_insects = {
@@ -2172,6 +2714,8 @@ export const swarm_of_insects = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-insects',
 	int: 1,
+	dex: 13,
+	stealth: 0,
 }
 
 export const swarm_of_poisonous_snakes = {
@@ -2180,6 +2724,8 @@ export const swarm_of_poisonous_snakes = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-poisonous-snakes',
 	int: 1,
+	dex: 18,
+	stealth: 0,
 }
 
 export const swarm_of_quippers = {
@@ -2188,6 +2734,8 @@ export const swarm_of_quippers = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-quippers',
 	int: 1,
+	dex: 16,
+	stealth: 0,
 }
 
 export const swarm_of_rats = {
@@ -2196,6 +2744,8 @@ export const swarm_of_rats = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-rats',
 	int: 2,
+	dex: 11,
+	stealth: 0,
 }
 
 export const swarm_of_ravens = {
@@ -2204,6 +2754,8 @@ export const swarm_of_ravens = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-ravens',
 	int: 3,
+	dex: 14,
+	stealth: 0,
 }
 
 export const swarm_of_spiders = {
@@ -2212,6 +2764,8 @@ export const swarm_of_spiders = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-spiders',
 	int: 1,
+	dex: 13,
+	stealth: 0,
 }
 
 export const swarm_of_wasps = {
@@ -2220,6 +2774,8 @@ export const swarm_of_wasps = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/swarm-of-wasps',
 	int: 1,
+	dex: 13,
+	stealth: 0,
 }
 
 export const tarrasque = {
@@ -2228,6 +2784,8 @@ export const tarrasque = {
 	xp: 155000,
 	link: 'https://www.dndbeyond.com/monsters/tarrasque',
 	int: 3,
+	dex: 11,
+	stealth: 0,
 }
 
 export const thug = {
@@ -2236,6 +2794,8 @@ export const thug = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/thug',
 	int: 10,
+	dex: 11,
+	stealth: 0,
 }
 
 export const tiger = {
@@ -2244,6 +2804,8 @@ export const tiger = {
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/tiger',
 	int: 3,
+	dex: 15,
+	stealth: 6,
 }
 
 export const treant = {
@@ -2252,6 +2814,8 @@ export const treant = {
 	xp: 5000,
 	link: 'https://www.dndbeyond.com/monsters/treant',
 	int: 12,
+	dex: 8,
+	stealth: 0,
 }
 
 export const tribal_warrior = {
@@ -2260,6 +2824,8 @@ export const tribal_warrior = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/tribal-warrior',
 	int: 8,
+	dex: 11,
+	stealth: 0,
 }
 
 export const triceratops = {
@@ -2268,6 +2834,8 @@ export const triceratops = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/triceratops',
 	int: 2,
+	dex: 9,
+	stealth: 0,
 }
 
 export const troll = {
@@ -2276,6 +2844,8 @@ export const troll = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/troll',
 	int: 7,
+	dex: 13,
+	stealth: 0,
 }
 
 export const tyrannosaurus_rex = {
@@ -2284,6 +2854,8 @@ export const tyrannosaurus_rex = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/tyrannosaurus-rex',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const unicorn = {
@@ -2292,6 +2864,8 @@ export const unicorn = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/unicorn',
 	int: 11,
+	dex: 14,
+	stealth: 0,
 }
 
 export const vampire_bat = {
@@ -2300,6 +2874,8 @@ export const vampire_bat = {
 	xp: 10000,
 	link: 'https://www.dndbeyond.com/monsters/vampire-bat',
 	int: 17,
+	dex: 18,
+	stealth: 9,
 }
 
 export const vampire_mist = {
@@ -2308,6 +2884,8 @@ export const vampire_mist = {
 	xp: 10000,
 	link: 'https://www.dndbeyond.com/monsters/vampire-mist',
 	int: 17,
+	dex: 18,
+	stealth: 9,
 }
 
 export const vampire_spawn = {
@@ -2316,6 +2894,8 @@ export const vampire_spawn = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/vampire-spawn',
 	int: 11,
+	dex: 16,
+	stealth: 6,
 }
 
 export const vampire_vampire = {
@@ -2324,6 +2904,8 @@ export const vampire_vampire = {
 	xp: 10000,
 	link: 'https://www.dndbeyond.com/monsters/vampire-vampire',
 	int: 17,
+	dex: 18,
+	stealth: 9,
 }
 
 export const veteran = {
@@ -2332,6 +2914,8 @@ export const veteran = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/veteran',
 	int: 10,
+	dex: 13,
+	stealth: 0,
 }
 
 export const violet_fungus = {
@@ -2340,6 +2924,8 @@ export const violet_fungus = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/violet-fungus',
 	int: 1,
+	dex: 1,
+	stealth: 0,
 }
 
 export const vrock = {
@@ -2348,6 +2934,8 @@ export const vrock = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/vrock',
 	int: 8,
+	dex: 15,
+	stealth: 0,
 }
 
 export const vulture = {
@@ -2356,6 +2944,8 @@ export const vulture = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/vulture',
 	int: 2,
+	dex: 10,
+	stealth: 0,
 }
 
 export const warhorse = {
@@ -2364,6 +2954,8 @@ export const warhorse = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/warhorse',
 	int: 2,
+	dex: 12,
+	stealth: 0,
 }
 
 export const warhorse_skeleton = {
@@ -2372,6 +2964,8 @@ export const warhorse_skeleton = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/warhorse-skeleton',
 	int: 2,
+	dex: 12,
+	stealth: 0,
 }
 
 export const water_elemental = {
@@ -2380,6 +2974,8 @@ export const water_elemental = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/water-elemental',
 	int: 5,
+	dex: 14,
+	stealth: 0,
 }
 
 export const weasel = {
@@ -2388,6 +2984,8 @@ export const weasel = {
 	xp: 10,
 	link: 'https://www.dndbeyond.com/monsters/weasel',
 	int: 2,
+	dex: 16,
+	stealth: 5,
 }
 
 export const werebear_bear = {
@@ -2396,6 +2994,8 @@ export const werebear_bear = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/werebear-bear',
 	int: 11,
+	dex: 10,
+	stealth: 0,
 }
 
 export const werebear_human = {
@@ -2404,6 +3004,8 @@ export const werebear_human = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/werebear-human',
 	int: 11,
+	dex: 10,
+	stealth: 0,
 }
 
 export const werebear_hybrid = {
@@ -2412,6 +3014,8 @@ export const werebear_hybrid = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/werebear-hybrid',
 	int: 11,
+	dex: 10,
+	stealth: 0,
 }
 
 export const wereboar_boar = {
@@ -2420,6 +3024,8 @@ export const wereboar_boar = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/wereboar-boar',
 	int: 10,
+	dex: 10,
+	stealth: 0,
 }
 
 export const wereboar_human = {
@@ -2428,6 +3034,8 @@ export const wereboar_human = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/wereboar-human',
 	int: 10,
+	dex: 10,
+	stealth: 0,
 }
 
 export const wereboar_hybrid = {
@@ -2436,6 +3044,8 @@ export const wereboar_hybrid = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/wereboar-hybrid',
 	int: 10,
+	dex: 10,
+	stealth: 0,
 }
 
 export const wererat_human = {
@@ -2444,6 +3054,8 @@ export const wererat_human = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/wererat-human',
 	int: 11,
+	dex: 15,
+	stealth: 4,
 }
 
 export const wererat_hybrid = {
@@ -2452,6 +3064,8 @@ export const wererat_hybrid = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/wererat-hybrid',
 	int: 11,
+	dex: 15,
+	stealth: 4,
 }
 
 export const wererat_rat = {
@@ -2460,6 +3074,8 @@ export const wererat_rat = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/wererat-rat',
 	int: 11,
+	dex: 15,
+	stealth: 4,
 }
 
 export const weretiger_human = {
@@ -2468,6 +3084,8 @@ export const weretiger_human = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/weretiger-human',
 	int: 10,
+	dex: 15,
+	stealth: 4,
 }
 
 export const weretiger_hybrid = {
@@ -2476,6 +3094,8 @@ export const weretiger_hybrid = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/weretiger-hybrid',
 	int: 10,
+	dex: 15,
+	stealth: 4,
 }
 
 export const weretiger_tiger = {
@@ -2484,6 +3104,8 @@ export const weretiger_tiger = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/weretiger-tiger',
 	int: 10,
+	dex: 15,
+	stealth: 4,
 }
 
 export const werewolf_human = {
@@ -2492,6 +3114,8 @@ export const werewolf_human = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/werewolf-human',
 	int: 10,
+	dex: 13,
+	stealth: 0,
 }
 
 export const werewolf_hybrid = {
@@ -2500,6 +3124,8 @@ export const werewolf_hybrid = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/werewolf-hybrid',
 	int: 10,
+	dex: 13,
+	stealth: 0,
 }
 
 export const werewolf_wolf = {
@@ -2508,6 +3134,8 @@ export const werewolf_wolf = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/werewolf-wolf',
 	int: 10,
+	dex: 13,
+	stealth: 0,
 }
 
 export const white_dragon_wyrmling = {
@@ -2516,6 +3144,8 @@ export const white_dragon_wyrmling = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/white-dragon-wyrmling',
 	int: 5,
+	dex: 10,
+	stealth: 2,
 }
 
 export const wight = {
@@ -2524,6 +3154,8 @@ export const wight = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/wight',
 	int: 10,
+	dex: 14,
+	stealth: 4,
 }
 
 export const will_o_wisp = {
@@ -2532,6 +3164,8 @@ export const will_o_wisp = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/will-o-wisp',
 	int: 13,
+	dex: 28,
+	stealth: 0,
 }
 
 export const winter_wolf = {
@@ -2540,6 +3174,8 @@ export const winter_wolf = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/winter-wolf',
 	int: 7,
+	dex: 13,
+	stealth: 3,
 }
 
 export const wolf = {
@@ -2548,6 +3184,8 @@ export const wolf = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/wolf',
 	int: 3,
+	dex: 15,
+	stealth: 4,
 }
 
 export const worg = {
@@ -2556,6 +3194,8 @@ export const worg = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/worg',
 	int: 7,
+	dex: 13,
+	stealth: 0,
 }
 
 export const wraith = {
@@ -2564,6 +3204,8 @@ export const wraith = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/wraith',
 	int: 12,
+	dex: 16,
+	stealth: 0,
 }
 
 export const wyvern = {
@@ -2572,6 +3214,8 @@ export const wyvern = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/wyvern',
 	int: 5,
+	dex: 10,
+	stealth: 0,
 }
 
 export const xorn = {
@@ -2580,6 +3224,8 @@ export const xorn = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/xorn',
 	int: 11,
+	dex: 10,
+	stealth: 3,
 }
 
 export const young_black_dragon = {
@@ -2588,6 +3234,8 @@ export const young_black_dragon = {
 	xp: 2900,
 	link: 'https://www.dndbeyond.com/monsters/young-black-dragon',
 	int: 12,
+	dex: 14,
+	stealth: 5,
 }
 
 export const young_blue_dragon = {
@@ -2596,6 +3244,8 @@ export const young_blue_dragon = {
 	xp: 5000,
 	link: 'https://www.dndbeyond.com/monsters/young-blue-dragon',
 	int: 14,
+	dex: 10,
+	stealth: 4,
 }
 
 export const young_brass_dragon = {
@@ -2604,6 +3254,8 @@ export const young_brass_dragon = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/young-brass-dragon',
 	int: 12,
+	dex: 10,
+	stealth: 3,
 }
 
 export const young_bronze_dragon = {
@@ -2612,6 +3264,8 @@ export const young_bronze_dragon = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/young-bronze-dragon',
 	int: 14,
+	dex: 10,
+	stealth: 3,
 }
 
 export const young_copper_dragon = {
@@ -2620,6 +3274,8 @@ export const young_copper_dragon = {
 	xp: 2900,
 	link: 'https://www.dndbeyond.com/monsters/young-copper-dragon',
 	int: 16,
+	dex: 12,
+	stealth: 4,
 }
 
 export const young_gold_dragon = {
@@ -2628,6 +3284,8 @@ export const young_gold_dragon = {
 	xp: 5900,
 	link: 'https://www.dndbeyond.com/monsters/young-gold-dragon',
 	int: 16,
+	dex: 14,
+	stealth: 6,
 }
 
 export const young_green_dragon = {
@@ -2636,6 +3294,8 @@ export const young_green_dragon = {
 	xp: 3900,
 	link: 'https://www.dndbeyond.com/monsters/young-green-dragon',
 	int: 16,
+	dex: 12,
+	stealth: 4,
 }
 
 export const young_red_dragon = {
@@ -2644,6 +3304,8 @@ export const young_red_dragon = {
 	xp: 5900,
 	link: 'https://www.dndbeyond.com/monsters/young-red-dragon',
 	int: 14,
+	dex: 10,
+	stealth: 4,
 }
 
 export const young_silver_dragon = {
@@ -2652,6 +3314,8 @@ export const young_silver_dragon = {
 	xp: 5000,
 	link: 'https://www.dndbeyond.com/monsters/young-silver-dragon',
 	int: 14,
+	dex: 10,
+	stealth: 4,
 }
 
 export const young_white_dragon = {
@@ -2660,6 +3324,8 @@ export const young_white_dragon = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/young-white-dragon',
 	int: 6,
+	dex: 10,
+	stealth: 3,
 }
 
 export const zombie = {
@@ -2668,6 +3334,8 @@ export const zombie = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/zombie',
 	int: 3,
+	dex: 6,
+	stealth: 0,
 }
 
 export const carrion_crawler = {
@@ -2675,7 +3343,9 @@ export const carrion_crawler = {
 	name: 'Carrion Crawler',
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/carrion-crawler',
-	int: 0,
+	int: 1,
+	dex: 13,
+	stealth: 0,
 }
 
 export const cyclops = {
@@ -2683,7 +3353,9 @@ export const cyclops = {
 	name: 'Cyclops',
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/cyclops',
-	int: 0,
+	int: 8,
+	dex: 11,
+	stealth: 0,
 }
 
 export const bugbear_chief = {
@@ -2691,7 +3363,9 @@ export const bugbear_chief = {
 	name: 'Bugbear Chief',
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/bugbear-chief',
-	int: 0,
+	int: 11,
+	dex: 14,
+	stealth: 6,
 }
 
 export const gnoll_pack_lord = {
@@ -2699,7 +3373,9 @@ export const gnoll_pack_lord = {
 	name: 'Gnoll Pack Lord',
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/gnoll-pack-lord',
-	int: 0,
+	int: 13,
+	dex: 14,
+	stealth: 0,
 }
 
 export const gnoll_fang_of_yeenoghu = {
@@ -2707,7 +3383,9 @@ export const gnoll_fang_of_yeenoghu = {
 	name: 'Gnoll Fang of Yeenoghu',
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/gnoll-fang-of-yeenoghu',
-	int: 0,
+	int: 10,
+	dex: 15,
+	stealth: 0,
 }
 
 export const goblin_boss = {
@@ -2715,7 +3393,9 @@ export const goblin_boss = {
 	name: 'Goblin Boss',
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/goblin-boss',
-	int: 0,
+	int: 10,
+	dex: 14,
+	stealth: 6,
 }
 
 export const grick_alpha = {
@@ -2723,7 +3403,9 @@ export const grick_alpha = {
 	name: 'Grick Alpha',
 	xp: 2900,
 	link: 'https://www.dndbeyond.com/monsters/grick-alpha',
-	int: 0,
+	int: 4,
+	dex: 16,
+	stealth: 0,
 }
 
 export const hobgoblin_captain = {
@@ -2731,7 +3413,9 @@ export const hobgoblin_captain = {
 	name: 'Hobgoblin Captain',
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/hobgoblin-captain',
-	int: 0,
+	int: 12,
+	dex: 14,
+	stealth: 0,
 }
 
 export const hobgoblin_warlord = {
@@ -2739,7 +3423,9 @@ export const hobgoblin_warlord = {
 	name: 'Hobgoblin Warlord',
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/hobgoblin-warlord',
-	int: 0,
+	int: 14,
+	dex: 14,
+	stealth: 0,
 }
 
 export const winged_kobold = {
@@ -2747,7 +3433,9 @@ export const winged_kobold = {
 	name: 'Winged Kobold',
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/winged-kobold',
-	int: 0,
+	int: 8,
+	dex: 16,
+	stealth: 0,
 }
 
 export const half_ogre = {
@@ -2755,7 +3443,9 @@ export const half_ogre = {
 	name: 'Half Ogre',
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/half-ogre',
-	int: 0,
+	int: 7,
+	dex: 10,
+	stealth: 0,
 }
 
 export const orc_war_chief = {
@@ -2763,7 +3453,9 @@ export const orc_war_chief = {
 	name: 'Orc War Chief',
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/orc-war-chief',
-	int: 0,
+	int: 11,
+	dex: 12,
+	stealth: 0,
 }
 
 export const orc_eye_of_gruumsh = {
@@ -2771,7 +3463,9 @@ export const orc_eye_of_gruumsh = {
 	name: 'Orc Eye of Gruumsh',
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/orc-eye-of-gruumsh',
-	int: 0,
+	int: 9,
+	dex: 12,
+	stealth: 0,
 }
 
 export const orog = {
@@ -2779,7 +3473,9 @@ export const orog = {
 	name: 'Orog',
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/orog',
-	int: 0,
+	int: 12,
+	dex: 12,
+	stealth: 0,
 }
 
 export const displacer_beast = {
@@ -2787,7 +3483,9 @@ export const displacer_beast = {
 	name: 'Displacer Beast',
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/17130-displacer-beast',
-	int: 0,
+	int: 6,
+	dex: 15,
+	stealth: 0,
 }
 
 export const kuo_toa = {
@@ -2795,7 +3493,9 @@ export const kuo_toa = {
 	name: 'Kuo-toa',
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/17166-kuo-toa',
-	int: 0,
+	int: 11,
+	dex: 10,
+	stealth: 0,
 }
 
 export const kuo_toa_archpriest = {
@@ -2803,7 +3503,9 @@ export const kuo_toa_archpriest = {
 	name: 'Kuo-toa Archpriest',
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/17167-kuo-toa-archpriest',
-	int: 0,
+	int: 13,
+	dex: 14,
+	stealth: 0,
 }
 
 export const kuo_toa_whip = {
@@ -2811,7 +3513,9 @@ export const kuo_toa_whip = {
 	name: 'Kuo-toa Whip',
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/17169-kuo-toa-whip',
-	int: 0,
+	int: 12,
+	dex: 10,
+	stealth: 0,
 }
 
 export const beholder = {
@@ -2819,7 +3523,9 @@ export const beholder = {
 	name: 'Beholder',
 	xp: 10000,
 	link: 'https://www.dndbeyond.com/monsters/17099-beholder',
-	int: 0,
+	int: 17,
+	dex: 14,
+	stealth: 0,
 }
 
 export const bullywug = {
@@ -2827,7 +3533,9 @@ export const bullywug = {
 	name: 'Bullywug',
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/17120-bullywug',
-	int: 0,
+	int: 7,
+	dex: 12,
+	stealth: 3,
 }
 
 export const bone_naga = {
@@ -2835,7 +3543,9 @@ export const bone_naga = {
 	name: 'bone-naga',
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/17118-bone-naga',
-	int: 0,
+	int: 15,
+	dex: 16,
+	stealth: 0,
 }
 
 export const mind_flayer = {
@@ -2843,7 +3553,9 @@ export const mind_flayer = {
 	name: 'Mind Flayer',
 	xp: 2900,
 	link: 'https://www.dndbeyond.com/monsters/17104-mind-flayer',
-	int: 0,
+	int: 19,
+	dex: 12,
+	stealth: 4,
 }
 
 export const yuan_ti_abomination = {
@@ -2851,7 +3563,9 @@ export const yuan_ti_abomination = {
 	name: 'Yuan-ti Abomination',
 	xp: 2900,
 	link: 'https://www.dndbeyond.com/monsters/17121-yuan-ti-abomination',
-	int: 0,
+	int: 17,
+	dex: 16,
+	stealth: 6,
 }
 
 export const yuan_ti_malison = {
@@ -2859,7 +3573,9 @@ export const yuan_ti_malison = {
 	name: 'Yuan-ti Malison',
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/17122-yuan-ti-malison',
-	int: 0,
+	int: 14,
+	dex: 14,
+	stealth: 4,
 }
 
 export const yuan_ti_pureblood = {
@@ -2867,7 +3583,9 @@ export const yuan_ti_pureblood = {
 	name: 'Yuan-ti Pureblood',
 	xp: 200,
 	link: 'https://www.dndbeyond.com/monsters/17123-yuan-ti-pureblood',
-	int: 0,
+	int: 13,
+	dex: 12,
+	stealth: 3,
 }
 
 export const needle_blight = {
@@ -2876,6 +3594,8 @@ export const needle_blight = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/17215-needle-blight',
 	int: 4,
+	dex: 12,
+	stealth: 0,
 }
 
 export const twig_blight = {
@@ -2884,6 +3604,8 @@ export const twig_blight = {
 	xp: 25,
 	link: 'https://www.dndbeyond.com/monsters/17095-twig-blight',
 	int: 4,
+	dex: 13,
+	stealth: 3,
 }
 
 export const vine_blight = {
@@ -2892,6 +3614,8 @@ export const vine_blight = {
 	xp: 100,
 	link: 'https://www.dndbeyond.com/monsters/17216-vine-blight',
 	int: 5,
+	dex: 8,
+	stealth: 1,
 }
 
 export const troglodyte = {
@@ -2900,6 +3624,8 @@ export const troglodyte = {
 	xp: 50,
 	link: 'https://www.dndbeyond.com/monsters/17204-troglodyte',
 	int: 6,
+	dex: 10,
+	stealth: 2,
 }
 
 export const peryton = {
@@ -2908,6 +3634,8 @@ export const peryton = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/17190-peryton',
 	int: 9,
+	dex: 12,
+	stealth: 0,
 }
 
 export const galeb_duhr = {
@@ -2916,6 +3644,8 @@ export const galeb_duhr = {
 	xp: 2300,
 	link: 'https://www.dndbeyond.com/monsters/17148-galeb-duhr',
 	int: 11,
+	dex: 14,
+	stealth: 0,
 }
 
 export const banshee = {
@@ -2924,6 +3654,8 @@ export const banshee = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/17089-banshee',
 	int: 12,
+	dex: 14,
+	stealth: 0,
 }
 
 export const dao = {
@@ -2932,6 +3664,8 @@ export const dao = {
 	xp: 7200,
 	link: 'https://www.dndbeyond.com/monsters/17142-dao',
 	int: 12,
+	dex: 12,
+	stealth: 0,
 }
 
 export const marid = {
@@ -2940,6 +3674,8 @@ export const marid = {
 	xp: 7200,
 	link: 'https://www.dndbeyond.com/monsters/17143-marid',
 	int: 18,
+	dex: 12,
+	stealth: 0,
 }
 
 export const intellect_devourer = {
@@ -2948,6 +3684,8 @@ export const intellect_devourer = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/17163-intellect-devourer',
 	int: 12,
+	dex: 14,
+	stealth: 4,
 }
 
 export const nothic = {
@@ -2956,6 +3694,8 @@ export const nothic = {
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/17092-nothic',
 	int: 13,
+	dex: 16,
+	stealth: 5,
 }
 
 export const grell = {
@@ -2964,6 +3704,8 @@ export const grell = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/17157-grell',
 	int: 12,
+	dex: 14,
+	stealth: 6,
 }
 
 export const hook_horror = {
@@ -2972,6 +3714,8 @@ export const hook_horror = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/17162-hook-horror',
 	int: 6,
+	dex: 10,
+	stealth: 0,
 }
 
 export const water_weird = {
@@ -2980,6 +3724,8 @@ export const water_weird = {
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/17208-water-weird',
 	int: 11,
+	dex: 16,
+	stealth: 0,
 }
 
 export const flameskull = {
@@ -2988,6 +3734,8 @@ export const flameskull = {
 	xp: 1100,
 	link: 'https://www.dndbeyond.com/monsters/17091-flameskull',
 	int: 16,
+	dex: 17,
+	stealth: 0,
 }
 
 export const umber_hulk = {
@@ -2996,5 +3744,7 @@ export const umber_hulk = {
 	xp: 1800,
 	link: 'https://www.dndbeyond.com/monsters/17205-umber-hulk',
 	int: 9,
+	dex: 13,
+	stealth: 0,
 }
 

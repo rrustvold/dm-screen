@@ -91,6 +91,7 @@ export default function Wilderness({party}) {
     const [visibility, setVisibility] = useState("2 miles. 40 miles from a height.");
     const [environ, setEnviron] = useState("Grassland");
     const [encounterDistance, setEncounterDistance] = useState(0);
+    const [forcedMarchDCValue, setForcedMarchDCValue] = useState("");
 
     const environs = ["Grassland", "Coast", "Forest", "Hills", "Mountains", "Swamp", "Arctic", "Desert", "Underworld"];
     const environSurvivalDC = [5, 5, 15, 10, 15, 15, 10, 10, 10];
@@ -135,15 +136,17 @@ export default function Wilderness({party}) {
         console.log(val);
         if (val === false) {
             let x = document.getElementById("forcedMarchDC");
-            x.className = x.className.replace(" w3-show", " w3-hide");
+            x.className = x.className.replace(" w3-red", " w3-gray");
         }
     }
 
     function setForcedMarchDC(val) {
         forcedMarchDC = val;
         let x = document.getElementById("forcedMarchDC")
-        x.innerHTML = `<p>${val}</p>`;
-        x.className = x.className.replace(" w3-hide", " w3-show");
+        setForcedMarchDCValue(val);
+        console.log("THE VALUE IS");
+        console.log(val);
+        x.className = x.className.replace(" w3-gray", " w3-red");
 
     }
 
@@ -172,6 +175,7 @@ export default function Wilderness({party}) {
     }
 
     function march(setRandomEvent, environ) {
+        console.log("March!");
         let pace; // miles per hour
         let rate;
         let difficult = difficultTerrain;
@@ -233,9 +237,6 @@ export default function Wilderness({party}) {
                     } else {
                         kind = "Muse/Druid";
                     }
-
-                    
-
                     encounter.innerText = kind;
 
                     dressing.innerText = getRandomThingFromList(getListFromEnviron(environ));
@@ -251,10 +252,12 @@ export default function Wilderness({party}) {
         setHours(0);
         setDistance(0);
         setTiles(0);
+        setForcedMarchDCValue("");
         setForcedMarch(false);
         //setForcedMarchDC("");
         setDays(getDays() + 1);
         randomWeather();
+
     }
 
     function getRandomEncounterDistance(environment){
@@ -384,12 +387,15 @@ export default function Wilderness({party}) {
     let xp_values = [];
     let randomEventBlock = [];
     console.log(randomEvent);
+    randomEventBlock.push(
+        <>Monster Stealth: {randomEvent.minStealth}<br/></>
+    )
     for (const [key, value] of Object.entries(randomEvent.encounterDict)) {
         for (let i=0; i < value.qty; i++) {
             xp_values.push(value.xp);
         }
         randomEventBlock.push(
-            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name}</a><br/></>
+            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name} - Init {value.init}</a><br/></>
         )
     }
     if (randomEventBlock.length > 0) {
@@ -427,130 +433,152 @@ export default function Wilderness({party}) {
     return (
         <div class="w3-container">
             <h1 onClick={() => hideShow("wilderness")}>Wilderness Exploration</h1>
-            <div class="w3-container w3-show" id="wilderness">
+            <div className="w3-container w3-show" id="wilderness">
                 <h3>Foraging</h3>
-                <Foraging />
+                <Foraging/>
                 <h3>Tracking</h3>
-                <Tracking />
-                
+                <Tracking/>
+
 
                 <h2>Marching</h2>
-                    <div class="w3-row-padded">
-                        <div class="w3-col l2">
-                            <p>
-                                <label for="forcedMarch">Forced March </label>
-                                <input type="checkbox" class="w3-check" id="forcedMarch"/>
-                            </p>
-                        </div>
-                        <div class="w3-col l10">
-                            <p>
-                            <label>Season </label>
-                            <select class="w3-select" id="season">
-                                <option value="winter">Winter</option>
-                                <option value="spring">Spring</option>
-                                <option value="summer">Summer</option>
-                                <option value="fall">Fall</option>
-                            </select>
-                            </p>
-                        </div>
-                    </div>
-                    
 
-                    <div class="w3-container">
-                    <p id="forcedMarchDC" class="w3-panel w3-red w3-hide"></p>
-                        </div> 
-                    
-
+                <div className="w3-container-fluid">
                     <p>
-                    <label for="daysMarched">Days Marched: </label>
-                    <input type="text" id="daysMarched" class="w3-input" defaultValue="0"/><br/>
+                        <label>Season </label>
+                        <select class="w3-select" id="season">
+                            <option value="winter">Winter</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                            <option value="fall">Fall</option>
+                        </select>
                     </p>
-                    <div class="w3-row-padding">
-                        <div class="w3-col l4">
-                            <p>
-                                <label for="hoursMarched">Hours Marched: </label>
-                                <input type="text" class="w3-input" id="hoursMarched" defaultValue="0"/>
-                            </p>
-                        </div>
-                        <div class="w3-col l4">
-                            <p>
-                                <label for="distanceMarched">Miles Marched: </label>
-                                <input type="text" class="w3-input" id="distanceMarched" defaultValue="0"/>
-                            </p>
-                        </div>
-                        <div class="w3-col l4">
-                            <p>
-                                <label for="tilesMarched">Tiles Marched: </label>
-                                <input type="text" class="w3-input" id="tilesMarched" defaultValue="0"/>
-                            </p>
-                        </div>
+                </div>
+
+
+                <p>
+                    <label htmlFor="daysMarched">Days Marched: </label>
+                    <input type="text" id="daysMarched" className="w3-input"
+                           defaultValue="0"/><br/>
+                </p>
+                {/*<div className="w3-row-padding">*/}
+                    <div className="w3-col l4">
+                        <p>
+                            <label htmlFor="hoursMarched">Hours Marched: </label>
+                            <input type="text" className="w3-input" id="hoursMarched"
+                                   defaultValue="0"/>
+                        </p>
                     </div>
-                    
-                    <p>
-                    <label for="encounterChance">Chance of Encounter per hour
+                    <div className="w3-col l4">
+                        <p>
+                            <label htmlFor="distanceMarched">Miles Marched: </label>
+                            <input type="text" className="w3-input" id="distanceMarched"
+                                   defaultValue="0"/>
+                        </p>
+                    </div>
+                    <div className="w3-col l4">
+                        <p>
+                            <label htmlFor="tilesMarched">Tiles Marched: </label>
+                            <input type="text" className="w3-input" id="tilesMarched"
+                                   defaultValue="0"/>
+                        </p>
+                    </div>
+                {/*</div>*/}
+
+                <p>
+                    <label htmlFor="encounterChance">Chance of Encounter per hour
                         (%)</label><br/>
-                    <input type="text" class="w3-input" id="encounterChance" defaultValue="20"/>
-                    </p>
-                    <div class="w3-row-padding">
-                        <div class="w3-col l4">
-                            <p>
-                                <input type="radio" class="w3-radio" id="paceSlow" value="slow" name="pace"/>
-                                <label for="paceSlow">Slow (2 mph, advantage on Wisdom (perception or survival)) </label>
-                            </p>
-                        </div>
-                        <div class="w3-col l4">
-                            <p>
-                            <input type="radio" class="w3-radio" id="paceNormal" value="normal" name="pace" checked/>
-                            <label for="paceNormal">Normal (3 mph, disadvantage (stealth)) </label>
-                            </p>
-                        </div>
-                        <div class="w3-col l4">
-                            <p>
-                                <input type="radio" class="w3-radio" id="paceFast" value="fast" name="pace"/>
-                                <label for="paceFast">Fast (4 mph, disadvantage on Wisdom (perception or survival) and Dexterity (stealth)) </label>
-                            </p>
-                        </div>
+                    <input type="text" className="w3-input" id="encounterChance"
+                           defaultValue="20"/>
+                </p>
+                <div className="w3-row-padding">
+                    <div className="w3-col l4">
+                        <p>
+                            <input type="radio" className="w3-radio" id="paceSlow"
+                                   value="slow" name="pace"/>
+                            <label htmlFor="paceSlow">Slow (2 mph, advantage on Wisdom
+                                (perception or survival)) </label>
+                        </p>
                     </div>
+                    <div className="w3-col l4">
+                        <p>
+                            <input type="radio" className="w3-radio" id="paceNormal"
+                                   value="normal" name="pace" checked/>
+                            <label htmlFor="paceNormal">Normal (3 mph, disadvantage
+                                (stealth)) </label>
+                        </p>
+                    </div>
+                    <div className="w3-col l4">
+                        <p>
+                            <input type="radio" className="w3-radio" id="paceFast"
+                                   value="fast" name="pace"/>
+                            <label htmlFor="paceFast">Fast (4 mph, disadvantage on
+                                Wisdom
+                                (perception or survival) and Dexterity
+                                (stealth)) </label>
+                        </p>
+                    </div>
+                </div>
 
-                    {/* <h2>Weather</h2> */}
-                <div id="weather" class="w3-panel">
-                    <div class="w3-row-padded">
-                        <div class="w3-col l3">
-                            <div class="w3-panel" id="tempPanel">
+                <div id="weather" className="w3-panel w3-blue-gray">
+                    <div className="w3-row-padded">
+                        <div className="w3-col l3">
+                            <div className="w3-panel" id="tempPanel">
                                 Temperature: {temperature}
                             </div>
                         </div>
-                        <div class="w3-col l3">
-                            <div class="w3-panel" id="windPanel">
+                        <div className="w3-col l3">
+                            <div className="w3-panel" id="windPanel">
                                 Wind: {wind}
                             </div>
                         </div>
-                        <div class="w3-col l3">
-                            <div class="w3-panel" id="precipPanel">
+                        <div className="w3-col l3">
+                            <div className="w3-panel" id="precipPanel">
                                 Precipitation: {precip}
                             </div>
                         </div>
-                        <div class="w3-col l3">
-                            <div class="w3-panel" id="visibPanel">
+                        <div className="w3-col l3">
+                            <div className="w3-panel" id="visibPanel">
                                 Visibility: {visibility}
                             </div>
                         </div>
                     </div>
-    
-                </div>
-                <input type="button" class="w3-button" value="Generate"
-                    onClick={() => randomWeather()}/>
 
-                    <div class="w3-row">
-                        <div class="w3-col s3">
-                            <p>
-                                <input type="button" class="w3-button" value="Lost" id="lost" onClick={lost}/>&ensp;or &ensp;
-                                {marchButtons}
-                            </p>
-                        </div>
-                        <div class="w3-col s9">
-                            <span id="encounter" class="w3-panel w3-teal w3-display-container w3-animate-right w3-hide">
-                                <span onClick={() => hideShow("encounter")} class="w3-button w3-display-topright">&times;</span>
+                </div>
+
+                <div class="w3-container w3-cell">
+                    <input type="button" className="w3-button" value="Generate Weather"
+                           onClick={() => randomWeather()}/>
+                </div>
+                <div class="w3-container w3-cell">
+                    <input type="button" id="forcedMarchDC" value={forcedMarchDCValue}
+                           className="w3-button w3-gray"></input>
+                </div>
+
+                <div className="w3-container w3-cell w3-cell-top">
+
+                        <label htmlFor="forcedMarch">Forced March </label>
+                        <input type="checkbox" className="w3-check" id="forcedMarch"/>
+
+                </div>
+
+
+                {/*<div className="w3-container">*/}
+
+                {/*</div>*/}
+
+                <div className="w3-row">
+                    <div className="w3-col s3">
+                        <p>
+                            <input type="button" className="w3-button" value="Lost"
+                                   id="lost" onClick={lost}/>&ensp;or &ensp;
+                            {marchButtons}
+                        </p>
+                    </div>
+                    <div className="w3-col s9">
+                            <span id="encounter"
+                                  class="w3-panel w3-teal w3-display-container w3-animate-right w3-hide">
+                                <span onClick={() => hideShow("encounter")}
+                                      class="w3-button w3-display-topright">&times;</span>
                                 <h4>
                                 Random Encounter 
                                 </h4>
@@ -558,17 +586,17 @@ export default function Wilderness({party}) {
                                 <p id="encounterKind"></p>
                                 {randomEventBlock}
                             </span>
-                        </div>
                     </div>
+                </div>
 
 
-                    
-                    
-                    <p>
-                    <input type="button" class="w3-button" value="New Day" id="newDay" onClick={newDay}/>
-                    </p>
-                    
-                
+                <p>
+                    <input type="button" className="w3-button" value="New Day"
+                           id="newDay"
+                           onClick={newDay}/>
+                </p>
+
+
             </div>
         </div>
     );

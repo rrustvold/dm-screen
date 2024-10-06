@@ -10,6 +10,7 @@
     int: 18
     wis: 15
     cha: 18
+    stealth: 0
 - acolyte:
     name: Acolyte
     type: humanoid
@@ -22,6 +23,7 @@
     int: 10
     wis: 14
     cha: 11
+    stealth: 0
 - adult-black-dragon:
     name: Adult Black Dragon
     type: dragon
@@ -34,6 +36,7 @@
     int: 14
     wis: 13
     cha: 17
+    stealth: 7
 - adult-blue-dragon:
     name: Adult Blue Dragon
     type: dragon
@@ -46,6 +49,7 @@
     int: 16
     wis: 15
     cha: 19
+    stealth: 5
 - adult-brass-dragon:
     name: Adult Brass Dragon
     type: dragon
@@ -58,6 +62,7 @@
     int: 14
     wis: 13
     cha: 17
+    stealth: 5
 - adult-bronze-dragon:
     name: Adult Bronze Dragon
     type: dragon
@@ -70,6 +75,7 @@
     int: 16
     wis: 15
     cha: 19
+    stealth: 5
 - adult-copper-dragon:
     name: Adult Copper Dragon
     type: dragon
@@ -82,6 +88,7 @@
     int: 18
     wis: 15
     cha: 17
+    stealth: 6
 - adult-gold-dragon:
     name: Adult Gold Dragon
     type: dragon
@@ -94,6 +101,7 @@
     int: 16
     wis: 15
     cha: 24
+    stealth: 8
 - adult-green-dragon:
     name: Adult Green Dragon
     type: dragon
@@ -106,6 +114,7 @@
     int: 18
     wis: 15
     cha: 17
+    stealth: 6
 - adult-red-dragon:
     name: Adult Red Dragon
     type: dragon
@@ -118,6 +127,7 @@
     int: 16
     wis: 13
     cha: 21
+    stealth: 6
 - adult-silver-dragon:
     name: Adult Silver Dragon
     type: dragon
@@ -130,6 +140,7 @@
     int: 16
     wis: 13
     cha: 21
+    stealth: 5
 - adult-white-dragon:
     name: Adult White Dragon
     type: dragon
@@ -142,6 +153,7 @@
     int: 8
     wis: 12
     cha: 12
+    stealth: 5
 - air-elemental:
     name: Air Elemental
     type: elemental
@@ -154,6 +166,7 @@
     int: 6
     wis: 10
     cha: 6
+    stealth: 0
 - ancient-black-dragon:
     name: Ancient Black Dragon
     type: dragon
@@ -166,6 +179,7 @@
     int: 16
     wis: 15
     cha: 19
+    stealth: 9
 - ancient-blue-dragon:
     name: Ancient Blue Dragon
     type: dragon
@@ -178,6 +192,7 @@
     int: 18
     wis: 17
     cha: 21
+    stealth: 7
 - ancient-brass-dragon:
     name: Ancient Brass Dragon
     type: dragon
@@ -190,6 +205,7 @@
     int: 16
     wis: 15
     cha: 19
+    stealth: 6
 - ancient-bronze-dragon:
     name: Ancient Bronze Dragon
     type: dragon
@@ -202,6 +218,7 @@
     int: 18
     wis: 17
     cha: 21
+    stealth: 7
 - ancient-copper-dragon:
     name: Ancient Copper Dragon
     type: dragon
@@ -214,6 +231,7 @@
     int: 20
     wis: 17
     cha: 19
+    stealth: 8
 - ancient-gold-dragon:
     name: Ancient Gold Dragon
     type: dragon
@@ -226,6 +244,7 @@
     int: 18
     wis: 17
     cha: 28
+    stealth: 9
 - ancient-green-dragon:
     name: Ancient Green Dragon
     type: dragon
@@ -238,6 +257,7 @@
     int: 20
     wis: 17
     cha: 19
+    stealth: 8
 - ancient-red-dragon:
     name: Ancient Red Dragon
     type: dragon
@@ -250,6 +270,7 @@
     int: 18
     wis: 15
     cha: 23
+    stealth: 7
 - ancient-silver-dragon:
     name: Ancient Silver Dragon
     type: dragon
@@ -262,6 +283,7 @@
     int: 18
     wis: 15
     cha: 23
+    stealth: 7
 - ancient-white-dragon:
     name: Ancient White Dragon
     type: dragon
@@ -274,6 +296,7 @@
     int: 10
     wis: 13
     cha: 14
+    stealth: 6
 - androsphinx:
     name: Androsphinx
     type: monstrosity
@@ -286,6 +309,7 @@
     int: 16
     wis: 18
     cha: 23
+    stealth: 0
 - animated-armor:
     name: Animated Armor
     type: construct
@@ -298,6 +322,7 @@
     int: 1
     wis: 3
     cha: 1
+    stealth: 0
 - ankheg:
     name: Ankheg
     type: monstrosity
@@ -310,6 +335,7 @@
     int: 1
     wis: 13
     cha: 6
+    stealth: 0
 - ape:
     name: Ape
     type: beast
@@ -322,6 +348,7 @@
     int: 6
     wis: 12
     cha: 7
+    stealth: 0
 - archmage:
     name: Archmage
     type: humanoid
@@ -334,6 +361,7 @@
     int: 20
     wis: 15
     cha: 16
+    stealth: 0
 - assassin:
     name: Assassin
     type: humanoid
@@ -346,6 +374,7 @@
     int: 13
     wis: 11
     cha: 10
+    stealth: 9
 - awakened-shrub:
     name: Awakened Shrub
     type: plant
@@ -358,6 +387,7 @@
     int: 10
     wis: 10
     cha: 6
+    stealth: 0
 - awakened-tree:
     name: Awakened Tree
     type: plant
@@ -370,6 +400,7 @@
     int: 10
     wis: 10
     cha: 7
+    stealth: 0
 - axe-beak:
     name: Axe Beak
     type: beast
@@ -382,6 +413,7 @@
     int: 2
     wis: 10
     cha: 5
+    stealth: 0
 - azer:
     name: Azer
     type: elemental
@@ -394,6 +426,7 @@
     int: 12
     wis: 13
     cha: 10
+    stealth: 0
 - baboon:
     name: Baboon
     type: beast
@@ -406,6 +439,7 @@
     int: 4
     wis: 12
     cha: 6
+    stealth: 0
 - badger:
     name: Badger
     type: beast
@@ -418,6 +452,7 @@
     int: 2
     wis: 12
     cha: 5
+    stealth: 0
 - balor:
     name: Balor
     type: fiend
@@ -430,6 +465,7 @@
     int: 20
     wis: 16
     cha: 22
+    stealth: 0
 - bandit:
     name: Bandit
     type: humanoid
@@ -442,6 +478,7 @@
     int: 10
     wis: 10
     cha: 10
+    stealth: 0
 - bandit-captain:
     name: Bandit Captain
     type: humanoid
@@ -454,6 +491,7 @@
     int: 14
     wis: 11
     cha: 14
+    stealth: 0
 - barbed-devil:
     name: Barbed Devil
     type: fiend
@@ -466,6 +504,7 @@
     int: 12
     wis: 14
     cha: 14
+    stealth: 0
 - basilisk:
     name: Basilisk
     type: monstrosity
@@ -478,6 +517,7 @@
     int: 2
     wis: 8
     cha: 7
+    stealth: 0
 - bat:
     name: Bat
     type: beast
@@ -490,6 +530,7 @@
     int: 2
     wis: 12
     cha: 4
+    stealth: 0
 - bearded-devil:
     name: Bearded Devil
     type: fiend
@@ -502,6 +543,7 @@
     int: 9
     wis: 11
     cha: 11
+    stealth: 0
 - behir:
     name: Behir
     type: monstrosity
@@ -514,6 +556,7 @@
     int: 7
     wis: 14
     cha: 12
+    stealth: 7
 - berserker:
     name: Berserker
     type: humanoid
@@ -526,6 +569,7 @@
     int: 9
     wis: 11
     cha: 9
+    stealth: 0
 - black-bear:
     name: Black Bear
     type: beast
@@ -538,6 +582,7 @@
     int: 2
     wis: 12
     cha: 7
+    stealth: 0
 - black-dragon-wyrmling:
     name: Black Dragon Wyrmling
     type: dragon
@@ -550,6 +595,7 @@
     int: 10
     wis: 11
     cha: 13
+    stealth: 4
 - black-pudding:
     name: Black Pudding
     type: ooze
@@ -562,6 +608,7 @@
     int: 1
     wis: 6
     cha: 1
+    stealth: 0
 - blink-dog:
     name: Blink Dog
     type: fey
@@ -574,6 +621,7 @@
     int: 10
     wis: 13
     cha: 11
+    stealth: 5
 - blood-hawk:
     name: Blood Hawk
     type: beast
@@ -586,6 +634,7 @@
     int: 3
     wis: 14
     cha: 5
+    stealth: 0
 - blue-dragon-wyrmling:
     name: Blue Dragon Wyrmling
     type: dragon
@@ -598,6 +647,7 @@
     int: 12
     wis: 11
     cha: 15
+    stealth: 2
 - boar:
     name: Boar
     type: beast
@@ -610,6 +660,7 @@
     int: 2
     wis: 9
     cha: 5
+    stealth: 0
 - bone-devil:
     name: Bone Devil
     type: fiend
@@ -622,6 +673,7 @@
     int: 13
     wis: 14
     cha: 16
+    stealth: 0
 - brass-dragon-wyrmling:
     name: Brass Dragon Wyrmling
     type: dragon
@@ -634,6 +686,7 @@
     int: 10
     wis: 11
     cha: 13
+    stealth: 2
 - bronze-dragon-wyrmling:
     name: Bronze Dragon Wyrmling
     type: dragon
@@ -646,6 +699,7 @@
     int: 12
     wis: 11
     cha: 15
+    stealth: 2
 - brown-bear:
     name: Brown Bear
     type: beast
@@ -658,6 +712,7 @@
     int: 2
     wis: 13
     cha: 7
+    stealth: 0
 - bugbear:
     name: Bugbear
     type: humanoid
@@ -670,6 +725,7 @@
     int: 8
     wis: 11
     cha: 9
+    stealth: 6
 - bulette:
     name: Bulette
     type: monstrosity
@@ -682,6 +738,7 @@
     int: 2
     wis: 10
     cha: 5
+    stealth: 0
 - camel:
     name: Camel
     type: beast
@@ -694,6 +751,7 @@
     int: 2
     wis: 8
     cha: 5
+    stealth: 0
 - cat:
     name: Cat
     type: beast
@@ -706,6 +764,7 @@
     int: 3
     wis: 12
     cha: 7
+    stealth: 4
 - centaur:
     name: Centaur
     type: monstrosity
@@ -718,6 +777,7 @@
     int: 9
     wis: 13
     cha: 11
+    stealth: 0
 - chain-devil:
     name: Chain Devil
     type: fiend
@@ -730,6 +790,7 @@
     int: 11
     wis: 12
     cha: 14
+    stealth: 0
 - chimera:
     name: Chimera
     type: monstrosity
@@ -742,6 +803,7 @@
     int: 3
     wis: 14
     cha: 10
+    stealth: 0
 - chuul:
     name: Chuul
     type: aberration
@@ -754,6 +816,7 @@
     int: 5
     wis: 11
     cha: 5
+    stealth: 0
 - clay-golem:
     name: Clay Golem
     type: construct
@@ -766,6 +829,7 @@
     int: 3
     wis: 8
     cha: 1
+    stealth: 0
 - cloaker:
     name: Cloaker
     type: aberration
@@ -778,6 +842,7 @@
     int: 13
     wis: 12
     cha: 14
+    stealth: 5
 - cloud-giant:
     name: Cloud Giant
     type: giant
@@ -790,6 +855,7 @@
     int: 12
     wis: 16
     cha: 16
+    stealth: 0
 - cockatrice:
     name: Cockatrice
     type: monstrosity
@@ -802,6 +868,7 @@
     int: 2
     wis: 13
     cha: 5
+    stealth: 0
 - commoner:
     name: Commoner
     type: humanoid
@@ -814,6 +881,7 @@
     int: 10
     wis: 10
     cha: 10
+    stealth: 0
 - constrictor-snake:
     name: Constrictor Snake
     type: beast
@@ -826,6 +894,7 @@
     int: 1
     wis: 10
     cha: 3
+    stealth: 0
 - copper-dragon-wyrmling:
     name: Copper Dragon Wyrmling
     type: dragon
@@ -838,6 +907,7 @@
     int: 14
     wis: 11
     cha: 13
+    stealth: 3
 - couatl:
     name: Couatl
     type: celestial
@@ -850,6 +920,7 @@
     int: 18
     wis: 20
     cha: 18
+    stealth: 0
 - crab:
     name: Crab
     type: beast
@@ -862,6 +933,7 @@
     int: 1
     wis: 8
     cha: 2
+    stealth: 2
 - crocodile:
     name: Crocodile
     type: beast
@@ -874,6 +946,7 @@
     int: 2
     wis: 10
     cha: 5
+    stealth: 2
 - cult-fanatic:
     name: Cult Fanatic
     type: humanoid
@@ -886,6 +959,7 @@
     int: 10
     wis: 13
     cha: 14
+    stealth: 0
 - cultist:
     name: Cultist
     type: humanoid
@@ -898,6 +972,7 @@
     int: 10
     wis: 11
     cha: 10
+    stealth: 0
 - darkmantle:
     name: Darkmantle
     type: monstrosity
@@ -910,6 +985,7 @@
     int: 2
     wis: 10
     cha: 5
+    stealth: 3
 - death-dog:
     name: Death Dog
     type: monstrosity
@@ -922,6 +998,7 @@
     int: 3
     wis: 13
     cha: 6
+    stealth: 4
 - deep-gnome-svirfneblin:
     name: Deep Gnome (Svirfneblin)
     type: humanoid
@@ -934,6 +1011,7 @@
     int: 12
     wis: 10
     cha: 9
+    stealth: 4
 - deer:
     name: Deer
     type: beast
@@ -946,6 +1024,7 @@
     int: 2
     wis: 14
     cha: 5
+    stealth: 0
 - deva:
     name: Deva
     type: celestial
@@ -958,6 +1037,7 @@
     int: 17
     wis: 20
     cha: 20
+    stealth: 0
 - dire-wolf:
     name: Dire Wolf
     type: beast
@@ -970,6 +1050,7 @@
     int: 3
     wis: 12
     cha: 7
+    stealth: 4
 - djinni:
     name: Djinni
     type: elemental
@@ -982,6 +1063,7 @@
     int: 15
     wis: 16
     cha: 20
+    stealth: 0
 - doppelganger:
     name: Doppelganger
     type: monstrosity
@@ -994,6 +1076,7 @@
     int: 11
     wis: 12
     cha: 14
+    stealth: 0
 - draft-horse:
     name: Draft Horse
     type: beast
@@ -1006,6 +1089,7 @@
     int: 2
     wis: 11
     cha: 7
+    stealth: 0
 - dragon-turtle:
     name: Dragon Turtle
     type: dragon
@@ -1018,6 +1102,7 @@
     int: 10
     wis: 12
     cha: 12
+    stealth: 0
 - dretch:
     name: Dretch
     type: fiend
@@ -1030,6 +1115,7 @@
     int: 5
     wis: 8
     cha: 3
+    stealth: 0
 - drider:
     name: Drider
     type: monstrosity
@@ -1042,6 +1128,7 @@
     int: 13
     wis: 14
     cha: 12
+    stealth: 9
 - drow:
     name: Drow
     type: humanoid
@@ -1054,6 +1141,7 @@
     int: 11
     wis: 11
     cha: 12
+    stealth: 4
 - druid:
     name: Druid
     type: humanoid
@@ -1066,6 +1154,7 @@
     int: 12
     wis: 15
     cha: 11
+    stealth: 0
 - dryad:
     name: Dryad
     type: fey
@@ -1078,6 +1167,7 @@
     int: 14
     wis: 15
     cha: 18
+    stealth: 5
 - duergar:
     name: Duergar
     type: humanoid
@@ -1090,6 +1180,7 @@
     int: 11
     wis: 10
     cha: 9
+    stealth: 0
 - dust-mephit:
     name: Dust Mephit
     type: elemental
@@ -1102,6 +1193,7 @@
     int: 9
     wis: 11
     cha: 10
+    stealth: 4
 - eagle:
     name: Eagle
     type: beast
@@ -1114,6 +1206,7 @@
     int: 2
     wis: 14
     cha: 7
+    stealth: 0
 - earth-elemental:
     name: Earth Elemental
     type: elemental
@@ -1126,6 +1219,7 @@
     int: 5
     wis: 10
     cha: 5
+    stealth: 0
 - efreeti:
     name: Efreeti
     type: elemental
@@ -1138,6 +1232,7 @@
     int: 16
     wis: 15
     cha: 16
+    stealth: 0
 - elephant:
     name: Elephant
     type: beast
@@ -1150,6 +1245,7 @@
     int: 3
     wis: 11
     cha: 6
+    stealth: 0
 - elk:
     name: Elk
     type: beast
@@ -1162,6 +1258,7 @@
     int: 2
     wis: 10
     cha: 6
+    stealth: 0
 - erinyes:
     name: Erinyes
     type: fiend
@@ -1174,6 +1271,7 @@
     int: 14
     wis: 14
     cha: 18
+    stealth: 0
 - ettercap:
     name: Ettercap
     type: monstrosity
@@ -1186,6 +1284,7 @@
     int: 7
     wis: 12
     cha: 8
+    stealth: 4
 - ettin:
     name: Ettin
     type: giant
@@ -1198,6 +1297,7 @@
     int: 6
     wis: 10
     cha: 8
+    stealth: 0
 - fire-elemental:
     name: Fire Elemental
     type: elemental
@@ -1210,6 +1310,7 @@
     int: 6
     wis: 10
     cha: 7
+    stealth: 0
 - fire-giant:
     name: Fire Giant
     type: giant
@@ -1222,6 +1323,7 @@
     int: 10
     wis: 14
     cha: 13
+    stealth: 0
 - flesh-golem:
     name: Flesh Golem
     type: construct
@@ -1234,6 +1336,7 @@
     int: 6
     wis: 10
     cha: 5
+    stealth: 0
 - flying-snake:
     name: Flying Snake
     type: beast
@@ -1246,6 +1349,7 @@
     int: 2
     wis: 12
     cha: 5
+    stealth: 0
 - flying-sword:
     name: Flying Sword
     type: construct
@@ -1258,6 +1362,7 @@
     int: 1
     wis: 5
     cha: 1
+    stealth: 0
 - frog:
     name: Frog
     type: beast
@@ -1270,6 +1375,7 @@
     int: 1
     wis: 8
     cha: 3
+    stealth: 3
 - frost-giant:
     name: Frost Giant
     type: giant
@@ -1282,6 +1388,7 @@
     int: 9
     wis: 10
     cha: 12
+    stealth: 0
 - gargoyle:
     name: Gargoyle
     type: elemental
@@ -1294,6 +1401,7 @@
     int: 6
     wis: 11
     cha: 7
+    stealth: 0
 - gelatinous-cube:
     name: Gelatinous Cube
     type: ooze
@@ -1306,6 +1414,7 @@
     int: 1
     wis: 6
     cha: 1
+    stealth: 0
 - ghast:
     name: Ghast
     type: undead
@@ -1318,6 +1427,7 @@
     int: 11
     wis: 10
     cha: 8
+    stealth: 0
 - ghost:
     name: Ghost
     type: undead
@@ -1330,6 +1440,7 @@
     int: 10
     wis: 12
     cha: 17
+    stealth: 0
 - ghoul:
     name: Ghoul
     type: undead
@@ -1342,6 +1453,7 @@
     int: 7
     wis: 10
     cha: 6
+    stealth: 0
 - giant-ape:
     name: Giant Ape
     type: beast
@@ -1354,6 +1466,7 @@
     int: 7
     wis: 12
     cha: 7
+    stealth: 0
 - giant-badger:
     name: Giant Badger
     type: beast
@@ -1366,6 +1479,7 @@
     int: 2
     wis: 12
     cha: 5
+    stealth: 0
 - giant-bat:
     name: Giant Bat
     type: beast
@@ -1378,6 +1492,7 @@
     int: 2
     wis: 12
     cha: 6
+    stealth: 0
 - giant-boar:
     name: Giant Boar
     type: beast
@@ -1390,6 +1505,7 @@
     int: 2
     wis: 7
     cha: 5
+    stealth: 0
 - giant-centipede:
     name: Giant Centipede
     type: beast
@@ -1402,6 +1518,7 @@
     int: 1
     wis: 7
     cha: 3
+    stealth: 0
 - giant-constrictor-snake:
     name: Giant Constrictor Snake
     type: beast
@@ -1414,6 +1531,7 @@
     int: 1
     wis: 10
     cha: 3
+    stealth: 0
 - giant-crab:
     name: Giant Crab
     type: beast
@@ -1426,6 +1544,7 @@
     int: 1
     wis: 9
     cha: 3
+    stealth: 4
 - giant-crocodile:
     name: Giant Crocodile
     type: beast
@@ -1438,6 +1557,7 @@
     int: 2
     wis: 10
     cha: 7
+    stealth: 5
 - giant-eagle:
     name: Giant Eagle
     type: beast
@@ -1450,6 +1570,7 @@
     int: 8
     wis: 14
     cha: 10
+    stealth: 0
 - giant-elk:
     name: Giant Elk
     type: beast
@@ -1462,6 +1583,7 @@
     int: 7
     wis: 14
     cha: 10
+    stealth: 0
 - giant-fire-beetle:
     name: Giant Fire Beetle
     type: beast
@@ -1474,6 +1596,7 @@
     int: 1
     wis: 7
     cha: 3
+    stealth: 0
 - giant-frog:
     name: Giant Frog
     type: beast
@@ -1486,6 +1609,7 @@
     int: 2
     wis: 10
     cha: 3
+    stealth: 3
 - giant-goat:
     name: Giant Goat
     type: beast
@@ -1498,6 +1622,7 @@
     int: 3
     wis: 12
     cha: 6
+    stealth: 0
 - giant-hyena:
     name: Giant Hyena
     type: beast
@@ -1510,6 +1635,7 @@
     int: 2
     wis: 12
     cha: 7
+    stealth: 0
 - giant-lizard:
     name: Giant Lizard
     type: beast
@@ -1522,6 +1648,7 @@
     int: 2
     wis: 10
     cha: 5
+    stealth: 0
 - giant-octopus:
     name: Giant Octopus
     type: beast
@@ -1534,6 +1661,7 @@
     int: 4
     wis: 10
     cha: 4
+    stealth: 5
 - giant-owl:
     name: Giant Owl
     type: beast
@@ -1546,6 +1674,7 @@
     int: 8
     wis: 13
     cha: 10
+    stealth: 4
 - giant-poisonous-snake:
     name: Giant Poisonous Snake
     type: beast
@@ -1558,6 +1687,7 @@
     int: 2
     wis: 10
     cha: 3
+    stealth: 0
 - giant-rat:
     name: Giant Rat
     type: beast
@@ -1570,6 +1700,7 @@
     int: 2
     wis: 10
     cha: 4
+    stealth: 0
 - giant-rat-diseased:
     name: Giant Rat (Diseased)
     type: beast
@@ -1582,6 +1713,7 @@
     int: 2
     wis: 10
     cha: 4
+    stealth: 0
 - giant-scorpion:
     name: Giant Scorpion
     type: beast
@@ -1594,6 +1726,7 @@
     int: 1
     wis: 9
     cha: 3
+    stealth: 0
 - giant-sea-horse:
     name: Giant Sea Horse
     type: beast
@@ -1606,6 +1739,7 @@
     int: 2
     wis: 12
     cha: 5
+    stealth: 0
 - giant-shark:
     name: Giant Shark
     type: beast
@@ -1618,6 +1752,7 @@
     int: 1
     wis: 10
     cha: 5
+    stealth: 0
 - giant-spider:
     name: Giant Spider
     type: beast
@@ -1630,6 +1765,7 @@
     int: 2
     wis: 11
     cha: 4
+    stealth: 7
 - giant-toad:
     name: Giant Toad
     type: beast
@@ -1642,6 +1778,7 @@
     int: 2
     wis: 10
     cha: 3
+    stealth: 0
 - giant-vulture:
     name: Giant Vulture
     type: beast
@@ -1654,6 +1791,7 @@
     int: 6
     wis: 12
     cha: 7
+    stealth: 0
 - giant-wasp:
     name: Giant Wasp
     type: beast
@@ -1666,6 +1804,7 @@
     int: 1
     wis: 10
     cha: 3
+    stealth: 0
 - giant-weasel:
     name: Giant Weasel
     type: beast
@@ -1678,6 +1817,7 @@
     int: 4
     wis: 12
     cha: 5
+    stealth: 5
 - giant-wolf-spider:
     name: Giant Wolf Spider
     type: beast
@@ -1690,6 +1830,7 @@
     int: 3
     wis: 12
     cha: 4
+    stealth: 7
 - gibbering-mouther:
     name: Gibbering Mouther
     type: aberration
@@ -1702,6 +1843,7 @@
     int: 3
     wis: 10
     cha: 6
+    stealth: 0
 - glabrezu:
     name: Glabrezu
     type: fiend
@@ -1714,6 +1856,7 @@
     int: 19
     wis: 17
     cha: 16
+    stealth: 0
 - gladiator:
     name: Gladiator
     type: humanoid
@@ -1726,6 +1869,7 @@
     int: 10
     wis: 12
     cha: 15
+    stealth: 0
 - gnoll:
     name: Gnoll
     type: humanoid
@@ -1738,6 +1882,7 @@
     int: 6
     wis: 10
     cha: 7
+    stealth: 0
 - goat:
     name: Goat
     type: beast
@@ -1750,6 +1895,7 @@
     int: 2
     wis: 10
     cha: 5
+    stealth: 0
 - goblin:
     name: Goblin
     type: humanoid
@@ -1762,6 +1908,7 @@
     int: 10
     wis: 8
     cha: 8
+    stealth: 6
 - gold-dragon-wyrmling:
     name: Gold Dragon Wyrmling
     type: dragon
@@ -1774,6 +1921,7 @@
     int: 14
     wis: 11
     cha: 16
+    stealth: 4
 - gorgon:
     name: Gorgon
     type: monstrosity
@@ -1786,6 +1934,7 @@
     int: 2
     wis: 12
     cha: 7
+    stealth: 0
 - gray-ooze:
     name: Gray Ooze
     type: ooze
@@ -1798,6 +1947,7 @@
     int: 1
     wis: 6
     cha: 2
+    stealth: 2
 - green-dragon-wyrmling:
     name: Green Dragon Wyrmling
     type: dragon
@@ -1810,6 +1960,7 @@
     int: 14
     wis: 11
     cha: 13
+    stealth: 3
 - green-hag:
     name: Green Hag
     type: fey
@@ -1822,6 +1973,7 @@
     int: 13
     wis: 14
     cha: 14
+    stealth: 3
 - grick:
     name: Grick
     type: monstrosity
@@ -1834,6 +1986,7 @@
     int: 3
     wis: 14
     cha: 5
+    stealth: 0
 - griffon:
     name: Griffon
     type: monstrosity
@@ -1846,6 +1999,7 @@
     int: 2
     wis: 13
     cha: 8
+    stealth: 0
 - grimlock:
     name: Grimlock
     type: humanoid
@@ -1858,6 +2012,7 @@
     int: 9
     wis: 8
     cha: 6
+    stealth: 3
 - guard:
     name: Guard
     type: humanoid
@@ -1870,6 +2025,7 @@
     int: 10
     wis: 11
     cha: 10
+    stealth: 0
 - guardian-naga:
     name: Guardian Naga
     type: monstrosity
@@ -1882,6 +2038,7 @@
     int: 16
     wis: 19
     cha: 18
+    stealth: 0
 - gynosphinx:
     name: Gynosphinx
     type: monstrosity
@@ -1894,6 +2051,7 @@
     int: 18
     wis: 18
     cha: 18
+    stealth: 0
 - half-red-dragon-veteran:
     name: Half-Red Dragon Veteran
     type: humanoid
@@ -1906,6 +2064,7 @@
     int: 10
     wis: 11
     cha: 10
+    stealth: 0
 - harpy:
     name: Harpy
     type: monstrosity
@@ -1918,6 +2077,7 @@
     int: 7
     wis: 10
     cha: 13
+    stealth: 0
 - hawk:
     name: Hawk
     type: beast
@@ -1930,6 +2090,7 @@
     int: 2
     wis: 14
     cha: 6
+    stealth: 0
 - hell-hound:
     name: Hell Hound
     type: fiend
@@ -1942,6 +2103,7 @@
     int: 6
     wis: 13
     cha: 6
+    stealth: 0
 - hezrou:
     name: Hezrou
     type: fiend
@@ -1954,6 +2116,7 @@
     int: 5
     wis: 12
     cha: 13
+    stealth: 0
 - hill-giant:
     name: Hill Giant
     type: giant
@@ -1966,6 +2129,7 @@
     int: 5
     wis: 9
     cha: 6
+    stealth: 0
 - hippogriff:
     name: Hippogriff
     type: monstrosity
@@ -1978,6 +2142,7 @@
     int: 2
     wis: 12
     cha: 8
+    stealth: 0
 - hobgoblin:
     name: Hobgoblin
     type: humanoid
@@ -1990,6 +2155,7 @@
     int: 10
     wis: 10
     cha: 9
+    stealth: 0
 - homunculus:
     name: Homunculus
     type: construct
@@ -2002,6 +2168,7 @@
     int: 10
     wis: 10
     cha: 7
+    stealth: 0
 - horned-devil:
     name: Horned Devil
     type: fiend
@@ -2014,6 +2181,7 @@
     int: 12
     wis: 16
     cha: 17
+    stealth: 0
 - hunter-shark:
     name: Hunter Shark
     type: beast
@@ -2026,6 +2194,7 @@
     int: 1
     wis: 10
     cha: 4
+    stealth: 0
 - hydra:
     name: Hydra
     type: monstrosity
@@ -2038,6 +2207,7 @@
     int: 2
     wis: 10
     cha: 7
+    stealth: 0
 - hyena:
     name: Hyena
     type: beast
@@ -2050,6 +2220,7 @@
     int: 2
     wis: 12
     cha: 5
+    stealth: 0
 - ice-devil:
     name: Ice Devil
     type: fiend
@@ -2062,6 +2233,7 @@
     int: 18
     wis: 15
     cha: 18
+    stealth: 0
 - ice-mephit:
     name: Ice Mephit
     type: elemental
@@ -2074,6 +2246,7 @@
     int: 9
     wis: 11
     cha: 12
+    stealth: 3
 - imp:
     name: Imp
     type: fiend
@@ -2086,6 +2259,7 @@
     int: 11
     wis: 12
     cha: 14
+    stealth: 5
 - invisible-stalker:
     name: Invisible Stalker
     type: elemental
@@ -2098,6 +2272,7 @@
     int: 10
     wis: 15
     cha: 11
+    stealth: 10
 - iron-golem:
     name: Iron Golem
     type: construct
@@ -2110,6 +2285,7 @@
     int: 3
     wis: 11
     cha: 1
+    stealth: 0
 - jackal:
     name: Jackal
     type: beast
@@ -2122,6 +2298,7 @@
     int: 3
     wis: 12
     cha: 6
+    stealth: 0
 - killer-whale:
     name: Killer Whale
     type: beast
@@ -2134,6 +2311,7 @@
     int: 3
     wis: 12
     cha: 7
+    stealth: 0
 - knight:
     name: Knight
     type: humanoid
@@ -2146,6 +2324,7 @@
     int: 11
     wis: 11
     cha: 15
+    stealth: 0
 - kobold:
     name: Kobold
     type: humanoid
@@ -2158,6 +2337,7 @@
     int: 8
     wis: 7
     cha: 8
+    stealth: 0
 - kraken:
     name: Kraken
     type: monstrosity
@@ -2170,6 +2350,7 @@
     int: 22
     wis: 18
     cha: 20
+    stealth: 0
 - lamia:
     name: Lamia
     type: monstrosity
@@ -2182,6 +2363,7 @@
     int: 14
     wis: 15
     cha: 16
+    stealth: 3
 - lemure:
     name: Lemure
     type: fiend
@@ -2194,6 +2376,7 @@
     int: 1
     wis: 11
     cha: 3
+    stealth: 0
 - lich:
     name: Lich
     type: undead
@@ -2206,6 +2389,7 @@
     int: 20
     wis: 14
     cha: 16
+    stealth: 0
 - lion:
     name: Lion
     type: beast
@@ -2218,6 +2402,7 @@
     int: 3
     wis: 12
     cha: 8
+    stealth: 6
 - lizard:
     name: Lizard
     type: beast
@@ -2230,6 +2415,7 @@
     int: 1
     wis: 8
     cha: 3
+    stealth: 0
 - lizardfolk:
     name: Lizardfolk
     type: humanoid
@@ -2242,6 +2428,7 @@
     int: 7
     wis: 12
     cha: 7
+    stealth: 4
 - mage:
     name: Mage
     type: humanoid
@@ -2254,6 +2441,7 @@
     int: 17
     wis: 12
     cha: 11
+    stealth: 0
 - magma-mephit:
     name: Magma Mephit
     type: elemental
@@ -2266,6 +2454,7 @@
     int: 7
     wis: 10
     cha: 10
+    stealth: 3
 - magmin:
     name: Magmin
     type: elemental
@@ -2278,6 +2467,7 @@
     int: 8
     wis: 11
     cha: 10
+    stealth: 0
 - mammoth:
     name: Mammoth
     type: beast
@@ -2290,6 +2480,7 @@
     int: 3
     wis: 11
     cha: 6
+    stealth: 0
 - manticore:
     name: Manticore
     type: monstrosity
@@ -2302,6 +2493,7 @@
     int: 7
     wis: 12
     cha: 8
+    stealth: 0
 - marilith:
     name: Marilith
     type: fiend
@@ -2314,6 +2506,7 @@
     int: 18
     wis: 16
     cha: 20
+    stealth: 0
 - mastiff:
     name: Mastiff
     type: beast
@@ -2326,6 +2519,7 @@
     int: 3
     wis: 12
     cha: 7
+    stealth: 0
 - medusa:
     name: Medusa
     type: monstrosity
@@ -2338,6 +2532,7 @@
     int: 12
     wis: 13
     cha: 15
+    stealth: 5
 - merfolk:
     name: Merfolk
     type: humanoid
@@ -2350,6 +2545,7 @@
     int: 11
     wis: 11
     cha: 12
+    stealth: 0
 - merrow:
     name: Merrow
     type: monstrosity
@@ -2362,6 +2558,7 @@
     int: 8
     wis: 10
     cha: 9
+    stealth: 0
 - mimic:
     name: Mimic
     type: monstrosity
@@ -2374,6 +2571,7 @@
     int: 5
     wis: 13
     cha: 8
+    stealth: 5
 - minotaur:
     name: Minotaur
     type: monstrosity
@@ -2386,6 +2584,7 @@
     int: 6
     wis: 16
     cha: 9
+    stealth: 0
 - minotaur-skeleton:
     name: Minotaur Skeleton
     type: undead
@@ -2398,6 +2597,7 @@
     int: 6
     wis: 8
     cha: 5
+    stealth: 0
 - mule:
     name: Mule
     type: beast
@@ -2410,6 +2610,7 @@
     int: 2
     wis: 10
     cha: 5
+    stealth: 0
 - mummy:
     name: Mummy
     type: undead
@@ -2422,6 +2623,7 @@
     int: 6
     wis: 10
     cha: 12
+    stealth: 0
 - mummy-lord:
     name: Mummy Lord
     type: undead
@@ -2434,6 +2636,7 @@
     int: 11
     wis: 18
     cha: 16
+    stealth: 0
 - nalfeshnee:
     name: Nalfeshnee
     type: fiend
@@ -2446,6 +2649,7 @@
     int: 19
     wis: 12
     cha: 15
+    stealth: 0
 - night-hag:
     name: Night Hag
     type: fiend
@@ -2458,6 +2662,7 @@
     int: 16
     wis: 14
     cha: 16
+    stealth: 6
 - nightmare:
     name: Nightmare
     type: fiend
@@ -2470,6 +2675,7 @@
     int: 10
     wis: 13
     cha: 15
+    stealth: 0
 - noble:
     name: Noble
     type: humanoid
@@ -2482,6 +2688,7 @@
     int: 12
     wis: 14
     cha: 16
+    stealth: 0
 - ochre-jelly:
     name: Ochre Jelly
     type: ooze
@@ -2494,6 +2701,7 @@
     int: 2
     wis: 6
     cha: 1
+    stealth: 0
 - octopus:
     name: Octopus
     type: beast
@@ -2506,6 +2714,7 @@
     int: 3
     wis: 10
     cha: 4
+    stealth: 4
 - ogre:
     name: Ogre
     type: giant
@@ -2518,6 +2727,7 @@
     int: 5
     wis: 7
     cha: 7
+    stealth: 0
 - ogre-zombie:
     name: Ogre Zombie
     type: undead
@@ -2530,6 +2740,7 @@
     int: 3
     wis: 6
     cha: 5
+    stealth: 0
 - oni:
     name: Oni
     type: giant
@@ -2542,6 +2753,7 @@
     int: 14
     wis: 12
     cha: 15
+    stealth: 0
 - orc:
     name: Orc
     type: humanoid
@@ -2554,6 +2766,7 @@
     int: 7
     wis: 11
     cha: 10
+    stealth: 0
 - otyugh:
     name: Otyugh
     type: aberration
@@ -2566,6 +2779,7 @@
     int: 6
     wis: 13
     cha: 6
+    stealth: 0
 - owl:
     name: Owl
     type: beast
@@ -2578,6 +2792,7 @@
     int: 2
     wis: 12
     cha: 7
+    stealth: 3
 - owlbear:
     name: Owlbear
     type: monstrosity
@@ -2590,6 +2805,7 @@
     int: 3
     wis: 12
     cha: 7
+    stealth: 0
 - panther:
     name: Panther
     type: beast
@@ -2602,6 +2818,7 @@
     int: 3
     wis: 14
     cha: 7
+    stealth: 6
 - pegasus:
     name: Pegasus
     type: celestial
@@ -2614,6 +2831,7 @@
     int: 10
     wis: 15
     cha: 13
+    stealth: 0
 - phase-spider:
     name: Phase Spider
     type: monstrosity
@@ -2626,6 +2844,7 @@
     int: 6
     wis: 10
     cha: 6
+    stealth: 6
 - pit-fiend:
     name: Pit Fiend
     type: fiend
@@ -2638,6 +2857,7 @@
     int: 22
     wis: 18
     cha: 24
+    stealth: 0
 - planetar:
     name: Planetar
     type: celestial
@@ -2650,6 +2870,7 @@
     int: 19
     wis: 22
     cha: 25
+    stealth: 0
 - plesiosaurus:
     name: Plesiosaurus
     type: beast
@@ -2662,6 +2883,7 @@
     int: 2
     wis: 12
     cha: 5
+    stealth: 4
 - poisonous-snake:
     name: Poisonous Snake
     type: beast
@@ -2674,6 +2896,7 @@
     int: 1
     wis: 10
     cha: 3
+    stealth: 0
 - polar-bear:
     name: Polar Bear
     type: beast
@@ -2686,6 +2909,7 @@
     int: 2
     wis: 13
     cha: 7
+    stealth: 0
 - pony:
     name: Pony
     type: beast
@@ -2698,6 +2922,7 @@
     int: 2
     wis: 11
     cha: 7
+    stealth: 0
 - priest:
     name: Priest
     type: humanoid
@@ -2710,6 +2935,7 @@
     int: 13
     wis: 16
     cha: 13
+    stealth: 0
 - pseudodragon:
     name: Pseudodragon
     type: dragon
@@ -2722,6 +2948,7 @@
     int: 10
     wis: 12
     cha: 10
+    stealth: 4
 - purple-worm:
     name: Purple Worm
     type: monstrosity
@@ -2734,6 +2961,7 @@
     int: 1
     wis: 8
     cha: 4
+    stealth: 0
 - quasit:
     name: Quasit
     type: fiend
@@ -2746,6 +2974,7 @@
     int: 7
     wis: 10
     cha: 10
+    stealth: 5
 - quipper:
     name: Quipper
     type: beast
@@ -2758,6 +2987,7 @@
     int: 1
     wis: 7
     cha: 2
+    stealth: 0
 - rakshasa:
     name: Rakshasa
     type: fiend
@@ -2770,6 +3000,7 @@
     int: 13
     wis: 16
     cha: 20
+    stealth: 0
 - rat:
     name: Rat
     type: beast
@@ -2782,6 +3013,7 @@
     int: 2
     wis: 10
     cha: 4
+    stealth: 0
 - raven:
     name: Raven
     type: beast
@@ -2794,6 +3026,7 @@
     int: 2
     wis: 12
     cha: 6
+    stealth: 0
 - red-dragon-wyrmling:
     name: Red Dragon Wyrmling
     type: dragon
@@ -2806,6 +3039,7 @@
     int: 12
     wis: 11
     cha: 15
+    stealth: 2
 - reef-shark:
     name: Reef Shark
     type: beast
@@ -2818,6 +3052,7 @@
     int: 1
     wis: 10
     cha: 4
+    stealth: 0
 - remorhaz:
     name: Remorhaz
     type: monstrosity
@@ -2830,6 +3065,7 @@
     int: 4
     wis: 10
     cha: 5
+    stealth: 0
 - rhinoceros:
     name: Rhinoceros
     type: beast
@@ -2842,6 +3078,7 @@
     int: 2
     wis: 12
     cha: 6
+    stealth: 0
 - riding-horse:
     name: Riding Horse
     type: beast
@@ -2854,6 +3091,7 @@
     int: 2
     wis: 11
     cha: 7
+    stealth: 0
 - roc:
     name: Roc
     type: monstrosity
@@ -2866,6 +3104,7 @@
     int: 3
     wis: 10
     cha: 9
+    stealth: 0
 - roper:
     name: Roper
     type: monstrosity
@@ -2878,6 +3117,7 @@
     int: 7
     wis: 16
     cha: 6
+    stealth: 5
 - rug-of-smothering:
     name: Rug of Smothering
     type: construct
@@ -2890,6 +3130,7 @@
     int: 1
     wis: 3
     cha: 1
+    stealth: 0
 - rust-monster:
     name: Rust Monster
     type: monstrosity
@@ -2902,6 +3143,7 @@
     int: 2
     wis: 13
     cha: 6
+    stealth: 0
 - saber-toothed-tiger:
     name: Saber-Toothed Tiger
     type: beast
@@ -2914,6 +3156,7 @@
     int: 3
     wis: 12
     cha: 8
+    stealth: 6
 - sahuagin:
     name: Sahuagin
     type: humanoid
@@ -2926,6 +3169,7 @@
     int: 12
     wis: 13
     cha: 9
+    stealth: 0
 - salamander:
     name: Salamander
     type: elemental
@@ -2938,6 +3182,7 @@
     int: 11
     wis: 10
     cha: 12
+    stealth: 0
 - satyr:
     name: Satyr
     type: fey
@@ -2950,6 +3195,7 @@
     int: 12
     wis: 10
     cha: 14
+    stealth: 5
 - scorpion:
     name: Scorpion
     type: beast
@@ -2962,6 +3208,7 @@
     int: 1
     wis: 8
     cha: 2
+    stealth: 0
 - scout:
     name: Scout
     type: humanoid
@@ -2974,6 +3221,7 @@
     int: 11
     wis: 13
     cha: 11
+    stealth: 6
 - sea-hag:
     name: Sea Hag
     type: fey
@@ -2986,6 +3234,7 @@
     int: 12
     wis: 12
     cha: 13
+    stealth: 0
 - sea-horse:
     name: Sea Horse
     type: beast
@@ -2998,6 +3247,7 @@
     int: 1
     wis: 10
     cha: 2
+    stealth: 0
 - shadow:
     name: Shadow
     type: undead
@@ -3010,6 +3260,7 @@
     int: 6
     wis: 10
     cha: 8
+    stealth: 4
 - shambling-mound:
     name: Shambling Mound
     type: plant
@@ -3022,6 +3273,7 @@
     int: 5
     wis: 10
     cha: 5
+    stealth: 2
 - shield-guardian:
     name: Shield Guardian
     type: construct
@@ -3034,6 +3286,7 @@
     int: 7
     wis: 10
     cha: 3
+    stealth: 0
 - shrieker:
     name: Shrieker
     type: plant
@@ -3046,6 +3299,7 @@
     int: 1
     wis: 3
     cha: 1
+    stealth: 0
 - silver-dragon-wyrmling:
     name: Silver Dragon Wyrmling
     type: dragon
@@ -3058,6 +3312,7 @@
     int: 12
     wis: 11
     cha: 15
+    stealth: 2
 - skeleton:
     name: Skeleton
     type: undead
@@ -3070,6 +3325,7 @@
     int: 6
     wis: 8
     cha: 5
+    stealth: 0
 - solar:
     name: Solar
     type: celestial
@@ -3082,6 +3338,7 @@
     int: 25
     wis: 25
     cha: 30
+    stealth: 0
 - specter:
     name: Specter
     type: undead
@@ -3094,6 +3351,7 @@
     int: 10
     wis: 10
     cha: 11
+    stealth: 0
 - spider:
     name: Spider
     type: beast
@@ -3106,6 +3364,7 @@
     int: 1
     wis: 10
     cha: 2
+    stealth: 4
 - spirit-naga:
     name: Spirit Naga
     type: monstrosity
@@ -3118,6 +3377,7 @@
     int: 16
     wis: 15
     cha: 16
+    stealth: 0
 - sprite:
     name: Sprite
     type: fey
@@ -3130,6 +3390,7 @@
     int: 14
     wis: 13
     cha: 11
+    stealth: 8
 - spy:
     name: Spy
     type: humanoid
@@ -3142,6 +3403,7 @@
     int: 12
     wis: 14
     cha: 16
+    stealth: 4
 - steam-mephit:
     name: Steam Mephit
     type: elemental
@@ -3154,6 +3416,7 @@
     int: 11
     wis: 10
     cha: 12
+    stealth: 0
 - stirge:
     name: Stirge
     type: beast
@@ -3166,6 +3429,7 @@
     int: 2
     wis: 8
     cha: 6
+    stealth: 0
 - stone-giant:
     name: Stone Giant
     type: giant
@@ -3178,6 +3442,7 @@
     int: 10
     wis: 12
     cha: 9
+    stealth: 0
 - stone-golem:
     name: Stone Golem
     type: construct
@@ -3190,6 +3455,7 @@
     int: 3
     wis: 11
     cha: 1
+    stealth: 0
 - storm-giant:
     name: Storm Giant
     type: giant
@@ -3202,6 +3468,7 @@
     int: 16
     wis: 18
     cha: 18
+    stealth: 0
 - succubus-incubus:
     name: Succubus/Incubus
     type: fiend
@@ -3214,6 +3481,7 @@
     int: 15
     wis: 12
     cha: 20
+    stealth: 7
 - swarm-of-bats:
     name: Swarm of Bats
     type: swarm of Tiny beasts
@@ -3226,6 +3494,7 @@
     int: 2
     wis: 12
     cha: 4
+    stealth: 0
 - swarm-of-beetles:
     name: Swarm of Beetles
     type: swarm of Tiny beasts
@@ -3238,6 +3507,7 @@
     int: 1
     wis: 7
     cha: 1
+    stealth: 0
 - swarm-of-centipedes:
     name: Swarm of Centipedes
     type: swarm of Tiny beasts
@@ -3250,6 +3520,7 @@
     int: 1
     wis: 7
     cha: 1
+    stealth: 0
 - swarm-of-insects:
     name: Swarm of Insects
     type: swarm of Tiny beasts
@@ -3262,6 +3533,7 @@
     int: 1
     wis: 7
     cha: 1
+    stealth: 0
 - swarm-of-poisonous-snakes:
     name: Swarm of Poisonous Snakes
     type: swarm of Tiny beasts
@@ -3274,6 +3546,7 @@
     int: 1
     wis: 10
     cha: 3
+    stealth: 0
 - swarm-of-quippers:
     name: Swarm of Quippers
     type: swarm of Tiny beasts
@@ -3286,6 +3559,7 @@
     int: 1
     wis: 7
     cha: 2
+    stealth: 0
 - swarm-of-rats:
     name: Swarm of Rats
     type: swarm of Tiny beasts
@@ -3298,6 +3572,7 @@
     int: 2
     wis: 10
     cha: 3
+    stealth: 0
 - swarm-of-ravens:
     name: Swarm of Ravens
     type: swarm of Tiny beasts
@@ -3310,6 +3585,7 @@
     int: 3
     wis: 12
     cha: 6
+    stealth: 0
 - swarm-of-spiders:
     name: Swarm of Spiders
     type: swarm of Tiny beasts
@@ -3322,6 +3598,7 @@
     int: 1
     wis: 7
     cha: 1
+    stealth: 0
 - swarm-of-wasps:
     name: Swarm of Wasps
     type: swarm of Tiny beasts
@@ -3334,6 +3611,7 @@
     int: 1
     wis: 7
     cha: 1
+    stealth: 0
 - tarrasque:
     name: Tarrasque
     type: monstrosity
@@ -3346,6 +3624,7 @@
     int: 3
     wis: 11
     cha: 11
+    stealth: 0
 - thug:
     name: Thug
     type: humanoid
@@ -3358,6 +3637,7 @@
     int: 10
     wis: 10
     cha: 11
+    stealth: 0
 - tiger:
     name: Tiger
     type: beast
@@ -3370,6 +3650,7 @@
     int: 3
     wis: 12
     cha: 8
+    stealth: 6
 - treant:
     name: Treant
     type: plant
@@ -3382,6 +3663,7 @@
     int: 12
     wis: 16
     cha: 12
+    stealth: 0
 - tribal-warrior:
     name: Tribal Warrior
     type: humanoid
@@ -3394,6 +3676,7 @@
     int: 8
     wis: 11
     cha: 8
+    stealth: 0
 - triceratops:
     name: Triceratops
     type: beast
@@ -3406,6 +3689,7 @@
     int: 2
     wis: 11
     cha: 5
+    stealth: 0
 - troll:
     name: Troll
     type: giant
@@ -3418,6 +3702,7 @@
     int: 7
     wis: 9
     cha: 7
+    stealth: 0
 - tyrannosaurus-rex:
     name: Tyrannosaurus Rex
     type: beast
@@ -3430,6 +3715,7 @@
     int: 2
     wis: 12
     cha: 9
+    stealth: 0
 - unicorn:
     name: Unicorn
     type: celestial
@@ -3442,6 +3728,7 @@
     int: 11
     wis: 17
     cha: 16
+    stealth: 0
 - vampire-bat:
     name: Vampire, Bat Form
     type: undead
@@ -3454,6 +3741,7 @@
     int: 17
     wis: 15
     cha: 18
+    stealth: 9
 - vampire-mist:
     name: Vampire, Mist Form
     type: undead
@@ -3466,6 +3754,7 @@
     int: 17
     wis: 15
     cha: 18
+    stealth: 9
 - vampire-spawn:
     name: Vampire Spawn
     type: undead
@@ -3478,6 +3767,7 @@
     int: 11
     wis: 10
     cha: 12
+    stealth: 6
 - vampire-vampire:
     name: Vampire, Vampire Form
     type: undead
@@ -3490,6 +3780,7 @@
     int: 17
     wis: 15
     cha: 18
+    stealth: 9
 - veteran:
     name: Veteran
     type: humanoid
@@ -3502,6 +3793,7 @@
     int: 10
     wis: 11
     cha: 10
+    stealth: 0
 - violet-fungus:
     name: Violet Fungus
     type: plant
@@ -3514,6 +3806,7 @@
     int: 1
     wis: 3
     cha: 1
+    stealth: 0
 - vrock:
     name: Vrock
     type: fiend
@@ -3526,6 +3819,7 @@
     int: 8
     wis: 13
     cha: 8
+    stealth: 0
 - vulture:
     name: Vulture
     type: beast
@@ -3538,6 +3832,7 @@
     int: 2
     wis: 12
     cha: 4
+    stealth: 0
 - warhorse:
     name: Warhorse
     type: beast
@@ -3550,6 +3845,7 @@
     int: 2
     wis: 12
     cha: 7
+    stealth: 0
 - warhorse-skeleton:
     name: Warhorse Skeleton
     type: undead
@@ -3562,6 +3858,7 @@
     int: 2
     wis: 8
     cha: 5
+    stealth: 0
 - water-elemental:
     name: Water Elemental
     type: elemental
@@ -3574,6 +3871,7 @@
     int: 5
     wis: 10
     cha: 8
+    stealth: 0
 - weasel:
     name: Weasel
     type: beast
@@ -3586,6 +3884,7 @@
     int: 2
     wis: 12
     cha: 3
+    stealth: 5
 - werebear-bear:
     name: Werebear, Bear Form
     type: humanoid
@@ -3598,6 +3897,7 @@
     int: 11
     wis: 12
     cha: 12
+    stealth: 0
 - werebear-human:
     name: Werebear, Human Form
     type: humanoid
@@ -3610,6 +3910,7 @@
     int: 11
     wis: 12
     cha: 12
+    stealth: 0
 - werebear-hybrid:
     name: Werebear, Hybrid Form
     type: humanoid
@@ -3622,6 +3923,7 @@
     int: 11
     wis: 12
     cha: 12
+    stealth: 0
 - wereboar-boar:
     name: Wereboar, Boar Form
     type: humanoid
@@ -3634,6 +3936,7 @@
     int: 10
     wis: 11
     cha: 8
+    stealth: 0
 - wereboar-human:
     name: Wereboar, Human Form
     type: humanoid
@@ -3646,6 +3949,7 @@
     int: 10
     wis: 11
     cha: 8
+    stealth: 0
 - wereboar-hybrid:
     name: Wereboar, Hybrid Form
     type: humanoid
@@ -3658,6 +3962,7 @@
     int: 10
     wis: 11
     cha: 8
+    stealth: 0
 - wererat-human:
     name: Wererat, Human Form
     type: humanoid
@@ -3670,6 +3975,7 @@
     int: 11
     wis: 10
     cha: 8
+    stealth: 4
 - wererat-hybrid:
     name: Wererat, Hybrid Form
     type: humanoid
@@ -3682,6 +3988,7 @@
     int: 11
     wis: 10
     cha: 8
+    stealth: 4
 - wererat-rat:
     name: Wererat, Rat Form
     type: humanoid
@@ -3694,6 +4001,7 @@
     int: 11
     wis: 10
     cha: 8
+    stealth: 4
 - weretiger-human:
     name: Weretiger, Human Form
     type: humanoid
@@ -3706,6 +4014,7 @@
     int: 10
     wis: 13
     cha: 11
+    stealth: 4
 - weretiger-hybrid:
     name: Weretiger, Hybrid Form
     type: humanoid
@@ -3718,6 +4027,7 @@
     int: 10
     wis: 13
     cha: 11
+    stealth: 4
 - weretiger-tiger:
     name: Weretiger, Tiger Form
     type: humanoid
@@ -3730,6 +4040,7 @@
     int: 10
     wis: 13
     cha: 11
+    stealth: 4
 - werewolf-human:
     name: Werewolf, Human Form
     type: humanoid
@@ -3742,6 +4053,7 @@
     int: 10
     wis: 11
     cha: 10
+    stealth: 0
 - werewolf-hybrid:
     name: Werewolf, Hybrid Form
     type: humanoid
@@ -3754,6 +4066,7 @@
     int: 10
     wis: 11
     cha: 10
+    stealth: 0
 - werewolf-wolf:
     name: Werewolf, Wolf Form
     type: humanoid
@@ -3766,6 +4079,7 @@
     int: 10
     wis: 11
     cha: 10
+    stealth: 0
 - white-dragon-wyrmling:
     name: White Dragon Wyrmling
     type: dragon
@@ -3778,6 +4092,7 @@
     int: 5
     wis: 10
     cha: 11
+    stealth: 2
 - wight:
     name: Wight
     type: undead
@@ -3790,6 +4105,7 @@
     int: 10
     wis: 13
     cha: 15
+    stealth: 4
 - will-o-wisp:
     name: Will-o-Wisp
     type: undead
@@ -3802,6 +4118,7 @@
     int: 13
     wis: 14
     cha: 11
+    stealth: 0
 - winter-wolf:
     name: Winter Wolf
     type: monstrosity
@@ -3814,6 +4131,7 @@
     int: 7
     wis: 12
     cha: 8
+    stealth: 3
 - wolf:
     name: Wolf
     type: beast
@@ -3826,6 +4144,7 @@
     int: 3
     wis: 12
     cha: 6
+    stealth: 4
 - worg:
     name: Worg
     type: monstrosity
@@ -3838,6 +4157,7 @@
     int: 7
     wis: 11
     cha: 8
+    stealth: 0
 - wraith:
     name: Wraith
     type: undead
@@ -3850,6 +4170,7 @@
     int: 12
     wis: 14
     cha: 15
+    stealth: 0
 - wyvern:
     name: Wyvern
     type: dragon
@@ -3862,6 +4183,7 @@
     int: 5
     wis: 12
     cha: 6
+    stealth: 0
 - xorn:
     name: Xorn
     type: elemental
@@ -3874,6 +4196,7 @@
     int: 11
     wis: 10
     cha: 11
+    stealth: 3
 - young-black-dragon:
     name: Young Black Dragon
     type: dragon
@@ -3886,6 +4209,7 @@
     int: 12
     wis: 11
     cha: 15
+    stealth: 5
 - young-blue-dragon:
     name: Young Blue Dragon
     type: dragon
@@ -3898,6 +4222,7 @@
     int: 14
     wis: 13
     cha: 17
+    stealth: 4
 - young-brass-dragon:
     name: Young Brass Dragon
     type: dragon
@@ -3910,6 +4235,7 @@
     int: 12
     wis: 11
     cha: 15
+    stealth: 3
 - young-bronze-dragon:
     name: Young Bronze Dragon
     type: dragon
@@ -3922,6 +4248,7 @@
     int: 14
     wis: 13
     cha: 17
+    stealth: 3
 - young-copper-dragon:
     name: Young Copper Dragon
     type: dragon
@@ -3934,6 +4261,7 @@
     int: 16
     wis: 13
     cha: 15
+    stealth: 4
 - young-gold-dragon:
     name: Young Gold Dragon
     type: dragon
@@ -3946,6 +4274,7 @@
     int: 16
     wis: 13
     cha: 20
+    stealth: 6
 - young-green-dragon:
     name: Young Green Dragon
     type: dragon
@@ -3958,6 +4287,7 @@
     int: 16
     wis: 13
     cha: 15
+    stealth: 4
 - young-red-dragon:
     name: Young Red Dragon
     type: dragon
@@ -3970,6 +4300,7 @@
     int: 14
     wis: 11
     cha: 19
+    stealth: 4
 - young-silver-dragon:
     name: Young Silver Dragon
     type: dragon
@@ -3982,6 +4313,7 @@
     int: 14
     wis: 11
     cha: 19
+    stealth: 4
 - young-white-dragon:
     name: Young White Dragon
     type: dragon
@@ -3994,6 +4326,7 @@
     int: 6
     wis: 11
     cha: 12
+    stealth: 3
 - zombie:
     name: Zombie
     type: undead
@@ -4006,3 +4339,4 @@
     int: 3
     wis: 6
     cha: 5
+    stealth: 0
