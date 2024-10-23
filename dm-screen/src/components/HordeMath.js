@@ -68,36 +68,70 @@ function roundToNearestDie(num) {
 
 
 function HordeMathInput(props) {
+    let rows = [];
+    let numRows = 3;
+    for (let i=0; i<numRows; i++){
+        rows.push(
+            <tr>
+                <td>
+                    <input type="text" class="w3-input" id={"monster-name-" + i}></input>
+                </td>
+                <td>
+                    <input type="text" id={"numAttackers-" + i} class="w3-input" value={props.numAttackers}
+                        onChange={(e) => props.setNumAttackers(Number(e.target.value))}/>
+                </td>
+                <td>
+                    <input type="text" id="attacksPerMonster" class="w3-input" value={props.attacksPerMonster}
+                        onChange={(e) => props.setAttacksPerMonster(Number(e.target.value))}/>
+                </td>
+                <td>
+                    <input type="text" id="attackBonus" class="w3-input" value={props.attackBonus}
+                        onChange={(e) => props.setAttackBonus(Number(e.target.value))}/>
+                </td>
+                <td>
+                    <input type="text" id="damage" class="w3-input" defaultValue={props.damage}
+                        onChange={(e) => props.setDamage(e.target.value)}/>
+                </td>
+                <td>
+                    <input type='text' id='armor-class' class='w3-input' defaultValue={props.armorClass}
+                        onChange={(e) => props.setArmorClass(e.target.value)}/>
+                </td>
+                <td>
+                    <input type='text' id={"hit-points-" + i} class='w3-input' defaultValue={props.hitPoints}
+                        onChange={(e) => props.setHitPoints(e.target.value)}/>
+                </td>
+                <td>
+                    <input type='text' id={"hit-point-maximum-" + i} class='w3-input' defaultValue={props.hitPointMaximum}
+                        onChange={(e) => props.setHitPointMaximum(e.target.value)}/>
+                </td>
+                <td>
+                    <input type='text' id={"initiative-" + i} class='w3-input' defaultValue={props.initiative}
+                        onChange={(e) => {
+                            props.setInitiative(e.target.value);
+                            props.setTableState(e.target.value);
+                        }}/>
+                </td>
+            </tr>
+        )
+    }
     return (
         <>
             <table class="w3-table">
                 <thead>
                     <tr>
+                        <td>Name</td>
                         <td>Number of Monsters</td>
                         <td>Attacks per Monster</td>
                         <td>Attack Bonus</td>
                         <td>Attack Damage</td>
+                        <td>AC</td>
+                        <td>HP</td>
+                        <td>Total HP (all monsters summed)</td>
+                        <td>Initiative</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <input type="text" id="numAttackers" class="w3-input" value={props.numAttackers}
-                                onChange={(e) => props.setNumAttackers(Number(e.target.value))}/>
-                        </td>
-                        <td>
-                            <input type="text" id="attacksPerMonster" class="w3-input" value={props.attacksPerMonster}
-                                onChange={(e) => props.setAttacksPerMonster(Number(e.target.value))}/>
-                        </td>
-                        <td>
-                            <input type="text" id="attackBonus" class="w3-input" value={props.attackBonus}
-                                onChange={(e) => props.setAttackBonus(Number(e.target.value))}/>
-                        </td>
-                        <td>
-                            <input type="text" id="damage" class="w3-input" defaultValue={props.damage}
-                                onChange={(e) => props.setDamage(e.target.value)}/>
-                        </td>
-                    </tr>
+                    {rows}
                 </tbody>
                 
                 
@@ -106,12 +140,16 @@ function HordeMathInput(props) {
     )
 }
 
-export default function HordeMath({party}) {
+export default function HordeMath({party, tableState, setTableState}) {
 
     const [numAttackers, setNumAttackers] = useState(1);
     const [attacksPerMonster, setAttacksPerMonster] = useState(1);
     const [attackBonus, setAttackBonus] = useState(0.0);
     const [damage, setDamage] = useState("1d6");
+    const [armorClass, setArmorClass] = useState(10);
+    const [hitPoints, setHitPoints] = useState(10);
+    const [hitPointMaximum, setHitPointMaximum] = useState(10);
+    const [initiative, setInitiative] = useState(10);
 
     let characterNames = [];
     let characterACs = [];
@@ -168,6 +206,12 @@ export default function HordeMath({party}) {
                     setAttackBonus={setAttackBonus}
                     damage={damage}
                     setDamage={setDamage}
+                    setArmorClass={setArmorClass}
+                    setHitPoints={setHitPoints}
+                    setHitPointMaximum={setHitPointMaximum}
+                    setInitiative={setInitiative}
+                    tableState={tableState}
+                    setTableState={setTableState}
                 ></HordeMathInput>
                 <div class="w3-container">
                     <HordeMathOutput></HordeMathOutput>

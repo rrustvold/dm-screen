@@ -568,6 +568,7 @@ export default function Wilderness({party}) {
 
                 <div className="w3-row">
                     <div className="w3-col s3">
+                        <p>The march terrain is whatever terrain the characters are currently in.</p>
                         <p>
                             <input type="button" className="w3-button" value="Lost"
                                    id="lost" onClick={lost}/>&ensp;or &ensp;

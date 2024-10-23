@@ -9,16 +9,18 @@ import HordeMath from "./components/HordeMath";
 import RandomDungeon from './components/randomDungeon/RandomDungeon';
 import RandomEncounter2 from "./components/RandomEncounter";
 import {RandomTreasure} from "./components/randomDungeon/RandomTreasure";
-
+import Table from "./components/Table";
 
 function App() {
     const [partySize, setPartySize] = useState(2);
     const [party, setParty] = useState([]);
+    const [tableState, setTableState] = useState(1);
 
   return (
       <div class="w3-container">
           <Party partySize={partySize} setPartySize={setPartySize} party={party} setParty={setParty}></Party>
-          <HordeMath party={party}></HordeMath>
+          <Table tableState={tableState}></Table>
+          <HordeMath party={party} tableState={tableState} setTableState={setTableState}></HordeMath>
           <RandomEncounter2 party={party}></RandomEncounter2>
           <RandomTreasure party={party}></RandomTreasure>
         <RandomDungeon></RandomDungeon>

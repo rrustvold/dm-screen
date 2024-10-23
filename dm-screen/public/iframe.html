@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Window</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    iframe {
+      width: 1080px;
+      height: 1920px;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080;
+      height: 1920;
+      background: rgba(0, 0, 0, 0.1);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      display: flex; /* Initially hidden */
+      pointer-events: none;
+    }
+
+    .hide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080;
+      height: 1920;
+      /* background: rgba(0, 0, 0, 0.1); */
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      display: flex; /* Initially hidden */
+      pointer-events: none;
+    }
+
+
+    .hidden {
+      display: none;
+    }
+
+    canvas {
+      width: 1080px;
+      height: 1920px;
+      z-index: 3;
+      pointer-events: auto;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <iframe src="#" id="iframe"></iframe>
+  <div class="overlay" id="overlay">
+    <canvas id="canvas" class="canvas" width="1080" height="1920"></canvas>
+  </div>
+
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Extract specific parameters
+    const url = urlParams.get('url');
+    if (url){
+      document.getElementById("iframe").src = url;
+      
+    }
+    
+    // Function to toggle the overlay visibility
+    function toggleOverlay() {
+      const overlay = document.getElementById('overlay');
+      overlay.style.display = overlay.style.display === 'none' ? 'flex' : 'none';
+
+    }
+    window.toggleOverlay = toggleOverlay;
+
+    function hide() {
+      let overlay = document.getElementById('overlay');
+      overlay.style.visibility = 'hidden';
+      document.getElementById("iframe").classList.add('hidden');
+    }
+
+    function wilderness() {
+      let overlay = document.getElementById('overlay');
+      overlay.style.visibility = 'visible';
+      overlay.style.backgroundImage = null;
+      document.getElementById("iframe").classList.remove('hidden');
+
+      let url = window.opener.document.getElementById("hex-address").value;
+      if (url) {
+        document.getElementById("iframe").src = url;
+      }
+
+      wildernessOverlay();
+    }
+
+    function battle() {
+
+      let overlay = document.getElementById('overlay');
+      overlay.style.visibility = 'visible';
+      let style = opener.document.getElementById('battle-style').value;
+      overlay.style.backgroundImage = `url("/${style}.jpg")`;
+
+      document.getElementById("iframe").classList.add('hidden');
+
+      battleOverlay();
+    }
+    window.battle = battle;
+
+    // step 1: clear everything
+    // step 2: draw initiative track
+    // step 3: draw grid lines
+    // step 4: style zones
+    // step 5: draw circles
+    // step 6: listen for clicks
+
+    let zoneContents = [];
+    zoneContents = [];
+      for (let i=0; i < 6; i++){
+        let row = []
+        for (let j=0; j<3; j++){
+          row.push([]);
+        }
+        zoneContents.push(row);
+      }
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.addEventListener('click', handleClick);
+    const squareSize = 108;
+
+    function circle(num, currentHp, maxHp){
+      let x = squareSize / 2;
+      let y = squareSize / 2;
+
+      if (num <= 11){
+        x = 1080 - squareSize/2;
+        y = (11 - num) * squareSize + squareSize/2;
+      } else if (num < 20) {
+        y = squareSize / 2;
+        x = (20 - num) * squareSize + squareSize/2;
+      } else {
+        x = squareSize / 2;
+        y = (num - 20) * squareSize + squareSize/2;
+      }
+
+      const grad=ctx.createRadialGradient(x,y,40,x,y,80);
+      grad.addColorStop(0,"rgba(0, 50, 100, .25)");
+      grad.addColorStop(0.3,"pink");
+      grad.addColorStop(1,"darkblue"); 
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x + 75, y);
+      ctx.arc(x, y, 75, 0, Math.PI * 2 * currentHp / maxHp);
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+
+    function wildernessOverlay() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // NAVIGATE CIRCLE
+      ctx.beginPath();
+      ctx.arc(0, 0, 400, 0, 2 * Math.PI);
+      ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+      ctx.fill();
+
+      ctx.font = '40px Arial';
+      ctx.fillStyle = 'white'; // Text color
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText("Navigate", 100, 100);
+
+      // FORAGE CIRCLE
+      ctx.beginPath();
+      ctx.arc(1080, 0, 400, 0, 2 * Math.PI);
+      ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+      ctx.fill();
+
+      ctx.font = '40px Arial';
+      ctx.fillStyle = 'white'; // Text color
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText("Forage", 900, 100);
+
+      // LOOKOUT CIRCLE
+      ctx.beginPath();
+      ctx.arc(0, 1920, 400, 0, 2 * Math.PI);
+      ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+      ctx.fill();
+
+      ctx.font = '40px Arial';
+      ctx.fillStyle = 'white'; // Text color
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText("Lookout", 100, 1820);
+
+      // MAPPING CIRCLE
+      ctx.beginPath();
+      ctx.arc(1080, 1920, 400, 0, 2 * Math.PI);
+      ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+      ctx.fill();
+
+      ctx.font = '40px Arial';
+      ctx.fillStyle = 'white'; // Text color
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText("Mapping", 900, 1820);
+
+      // ctx.lineWidth = 4;
+      // ctx.strokeStyle = "blue";
+      // ctx.stroke();
+    }
+    
+    function drawZones() {
+      const numZones = window.opener.document.getElementById("zoneRows").value;
+      const zoneWidth = window.opener.document.getElementById("zoneCols").value;
+      const initiativeDepth = squareSize * 11;
+      const width = 1080 - 2 * squareSize;
+      const height = 1920 - squareSize;
+      const left = squareSize;
+      const right = 1080 - squareSize;
+
+      const tileWidth = width / 12;
+      const tileHeight = height / 12;
+
+      const zoneHeight = (1920 - squareSize) / numZones;
+      ctx.lineWidth = 10;
+      ctx.strokeStyle = "rgba(255, 255, 255, .5)";
+
+
+      for (let i=0; i < numZones; i++) {
+        ctx.beginPath();
+        let elevation = zoneHeight * (i + 1) + squareSize;
+        let leftEnd = left;
+        let rightEnd = right;
+        if (elevation >= initiativeDepth) {
+          leftEnd = 0;
+          rightEnd = 1080;
+        }
+        if (i < numZones - 1) {
+          ctx.moveTo(leftEnd, elevation);
+          ctx.lineTo(rightEnd, elevation);
+          ctx.stroke();
+        }
+      }
+
+      for (let j=0; j < zoneWidth - 1; j++){
+        let x = (j + 1) * 1080 / zoneWidth;
+        ctx.beginPath()
+        ctx.moveTo(x, squareSize);
+        ctx.lineTo(x, 1920);
+        ctx.stroke();
+      }
+      
+    }
+
+    function handleClick(event) {
+      const numRows = window.opener.document.getElementById("zoneRows").value;
+      const numCols = window.opener.document.getElementById("zoneCols").value;
+      
+      // Get the click coordinates relative to the canvas
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+
+      const colWidth = 1080 / numCols;
+      const rowHeight = (1920 - squareSize) / numRows;
+      let rowClicked;
+      let colClicked;
+      for (let i=0; i < numRows + 1; i++){
+        if (y <= rowHeight * i + squareSize) {
+          rowClicked = i - 1;
+          break;
+        }
+      }
+      for (let i=0; i < numCols + 1; i++){
+        if (x <= colWidth * i) {
+          colClicked = i - 1;
+          break;
+        }
+      }
+
+
+      let fillTool = window.opener.document.getElementById("effect").value;
+      if (fillTool !== "remove"){
+        zoneContents[rowClicked][colClicked].push(fillTool);
+      } else {
+        zoneContents[rowClicked][colClicked] = [];
+      }
+      battleOverlay();
+    }
+
+    function fillZones(){  
+      const numRows = window.opener.document.getElementById("zoneRows").value;
+      const numCols = window.opener.document.getElementById("zoneCols").value;
+      const colWidth = 1080 / numCols;
+      const rowHeight = (1920 - squareSize) / numRows;
+      for (let i=0; i < zoneContents.length; i++) {
+        let row = zoneContents[i];
+        for (let j=0; j < row.length; j++){
+          let fillTools = row[j];
+          for (let k=0; k < fillTools.length; k++) {
+            let fillTool = fillTools[k];
+            if (fillTool === "difficult-terrain"){
+              ctx.fillStyle = "rgba(100, 100, 0, .75)";
+            } else if (fillTool === "dark") {
+              ctx.fillStyle = "rgba(0, 0, 0, .75)";
+            } else if (fillTool === "light") {
+              ctx.fillStyle = "rgba(255, 255, 255, .25)";
+            } else if (fillTool === "water") {
+              ctx.fillStyle = "rgba(20, 20, 240, .75)";
+            }
+            if (fillTool === "add-cover"){
+              // const grad=ctx.createRadialGradient(x,y,40,x,y,80);
+              // grad.addColorStop(0,"lightblue");
+              // grad.addColorStop(0.3,"pink");
+              // grad.addColorStop(1,"darkblue"); 
+              // ctx.beginPath();
+              // ctx.arc(x, y, 75, 0, Math.PI * 2);
+              // ctx.fillStyle = grad;
+              // ctx.fill();
+            } else if (fillTool === "remove") {
+              ctx.clearRect(colClicked * colWidth + 5, rowClicked * rowHeight + squareSize + 5, colWidth - 10, rowHeight - 10);
+            } else{
+              ctx.fillRect(j * colWidth + 5, i * rowHeight + squareSize + 5, colWidth - 10, rowHeight - 10);
+            }
+          }
+        }
+      }
+    }
+
+    function battleOverlay() { 
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawZones();
+      fillZones();
+      drawInitiativeTrack();
+      drawInitiativeTokens();
+      drawMonsterBlocks();
+      window.requestAnimationFrame(battleOverlay);
+    }
+    
+    function drawInitiativeTrack(){ 
+      let color = "black";
+      let style = opener.document.getElementById('battle-style').value;
+      if (style === "forest") {
+        color = 'rgba(100, 200, 50, .45)';
+      } else if (style === "dungeon"){
+        color = 'rgba(240, 50, 50, .45)';
+      } 
+      // Draw the left
+      for (let i=0; i<11; i++){
+        ctx.fillStyle = color;
+        ctx.fillRect(0, i * squareSize, squareSize, squareSize);
+        ctx.font = '40px Arial';
+        ctx.fillStyle = 'white'; // Text color
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        // Save the current state before rotation
+        ctx.save();
+
+        // Move the origin to the center (to rotate around the center)
+        let x = squareSize/2
+        let y = i*squareSize + squareSize/2;
+        ctx.translate(x, y);
+
+        // Rotate 45 degrees (in radians)
+        const angle = 90 * (Math.PI / 180); // Convert degrees to radians
+        ctx.rotate(angle);
+        ctx.fillText(`${20 + i}`, 0, 0);
+        ctx.restore();
+      }
+
+      for (let i=0; i<8; i++) {
+        ctx.fillStyle = color;
+        ctx.fillRect((i+1) * squareSize, 0, squareSize, squareSize);
+        ctx.font = '40px Arial';
+        ctx.fillStyle = 'white'; // Text color
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.save();
+        let x = (i+1)*squareSize + squareSize/2;
+        let y = squareSize/2;
+        ctx.translate(x, y);
+        const angle = 180 * (Math.PI / 180);
+        ctx.rotate(angle);
+        ctx.fillText(`${19 - i}`, 0, 0);
+        ctx.restore();
+      }
+      
+      for (let i=0; i<11; i++){
+        ctx.fillStyle = color;
+        ctx.fillRect(squareSize*10 - squareSize, i * squareSize, squareSize, squareSize);
+        ctx.font = '40px Arial';
+        ctx.fillStyle = 'white'; // Text color
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.save();
+        let x = squareSize*10 - squareSize/2;
+        let y = i*squareSize + squareSize/2
+        ctx.translate(x, y);
+        const angle = 270 * (Math.PI / 180);
+        ctx.rotate(angle);
+        ctx.fillText(`${11 - i}`, 0, 0);
+        ctx.restore();
+      }
+
+    }
+
+    function drawInitiativeTokens(){
+      for (let i=0; i < 10; i++){
+        let initiative = opener.document.getElementById(`initiative-${i}`);
+
+        let maxHp = opener.document.getElementById(`hit-point-maximum-${i}`);
+        if (maxHp !== null){
+          maxHp = maxHp.value;
+        } else {
+          maxHp = 1;
+        }
+
+        let currentHp = opener.document.getElementById(`hit-points-${i}`);
+        if (currentHp !== null) {
+          currentHp = currentHp.value;
+        } else {
+          currentHp = 1;
+        }
+        
+        if (initiative !== null){
+          if (initiative.value !== null && initiative.value > 0 && initiative.value < 31){
+            circle(initiative.value, currentHp, maxHp);
+          }
+        } else {
+          break;
+        }
+      }
+    }
+
+    function drawMonsterBlocks(){
+      for (let i=0; i<10; i++){
+        let initiative = opener.document.getElementById(`initiative-${i}`);
+        if (initiative !== null) { 
+          initiative = initiative.value
+        } else {
+          continue
+        }
+
+        let monsterName = opener.document.getElementById(`monster-name-${i}`);
+        if (monsterName !== null) {
+          monsterName = monsterName.value
+        } else {
+          monsterName = "";
+        }
+
+        let maxHp = opener.document.getElementById(`hit-point-maximum-${i}`);
+        if (maxHp !== null){
+          maxHp = maxHp.value;
+        } else {
+          maxHp = 1;
+        }
+        let currentHp = opener.document.getElementById(`hit-points-${i}`);
+        if (currentHp !== null) {
+          currentHp = currentHp.value;
+        } else {
+          currentHp = 1;
+        }
+
+        ctx.save();
+        ctx.translate(1080, 1920)
+        ctx.fillStyle = "rgba(100, 10, 10, .7)";
+        ctx.fillRect(-5 - i * 10, 0, -squareSize, -4*squareSize);
+        ctx.fillStyle = "black";
+        ctx.fillText(monsterName, -10 - i * 10, -10);
+        ctx.restore();
+      }
+    }
+  
+    
+  </script>
+</body>
+</html>

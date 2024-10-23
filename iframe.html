@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Window</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    iframe {
+      width: 1080px;
+      height: 1920px;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080;
+      height: 1920;
+      /* background: rgba(0, 0, 0, 0.1); */
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      display: flex; /* Initially hidden */
+      pointer-events: none;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <iframe src="https://hextml.playest.net/#&togetherjs=up1diDkors"></iframe>
+    <div class="overlay" id="overlay">
+      <canvas id="canvas" width="1080" height="1920"></canvas>
+    </div>
+  </div>
+
+  <script>
+    // Function to toggle the overlay visibility
+    function toggleOverlay() {
+      const overlay = document.getElementById('overlay');
+      overlay.style.display = overlay.style.display === 'none' ? 'flex' : 'none';
+
+      const topRow = document.getElementById('topRow');
+      topRow.style.display = topRow.style.display === 'none' ? 'flex' : 'none';
+    }
+
+    // Make the function accessible from the parent window
+    window.toggleOverlay = toggleOverlay;
+  </script>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // NAVIGATE CIRCLE
+    ctx.beginPath();
+    ctx.arc(0, 0, 400, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+    ctx.fill();
+
+    ctx.font = '40px Arial';
+    ctx.fillStyle = 'white'; // Text color
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText("Navigate", 100, 100);
+
+    // FORAGE CIRCLE
+    ctx.beginPath();
+    ctx.arc(1080, 0, 400, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+    ctx.fill();
+
+    ctx.font = '40px Arial';
+    ctx.fillStyle = 'white'; // Text color
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText("Forage", 900, 100);
+
+    // LOOKOUT CIRCLE
+    ctx.beginPath();
+    ctx.arc(0, 1920, 400, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+    ctx.fill();
+
+    ctx.font = '40px Arial';
+    ctx.fillStyle = 'white'; // Text color
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText("Lookout", 100, 1820);
+
+    // MAPPING CIRCLE
+    ctx.beginPath();
+    ctx.arc(1080, 1920, 400, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+    ctx.fill();
+
+    ctx.font = '40px Arial';
+    ctx.fillStyle = 'white'; // Text color
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText("Mapping", 900, 1820);
+
+    // ctx.lineWidth = 4;
+    // ctx.strokeStyle = "blue";
+    // ctx.stroke();
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Window</title>
+</head>
+<body>
+  <h1>Main Window - Controls</h1>
+  <button id="openWindow">Open Iframe Window</button>
+  <button id="toggleOverlay">Toggle Overlay</button>
+
+  <script>
+    let iframeWindow;
+
+    // Open a new window with the iframe content
+    document.getElementById('openWindow').addEventListener('click', () => {
+      iframeWindow = window.open(
+        'iframe.html', // This is the other HTML file we'll create.
+        'iframeWindow',
+        'width=800,height=600'
+      );
+    });
+
+    // Toggle overlay visibility in the iframe window
+    document.getElementById('toggleOverlay').addEventListener('click', () => {
+      if (iframeWindow) {
+        iframeWindow.toggleOverlay();
+      } else {
+        alert('Please open the iframe window first!');
+      }
+    });
+  </script>
+</body>
+</html>
