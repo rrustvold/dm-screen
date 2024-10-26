@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iframe Window</title>
+<!--  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
   <style>
+    @font-face {
+  font-family: 'myFont';
+      src: url('/itc-benguiat-std/ITCBenguiatStdBoldCn.OTF') format('opentype');
+    }
+
     body, html {
       margin: 0;
       padding: 0;
@@ -29,6 +37,11 @@
       top: 0;
       left: 0;
       z-index: 1;
+      pointer-events: auto;
+      /* Rotate the iframe by 180 degrees */
+      transform: rotate(180deg);
+      /* Optional: maintain the iframe's appearance even after rotation */
+      transform-origin: center;
     }
 
     .overlay {
@@ -73,6 +86,10 @@
       height: 1920px;
       z-index: 3;
       pointer-events: auto;
+      /* Rotate the iframe by 180 degrees */
+      /*transform: rotate(180deg);*/
+      /*!* Optional: maintain the iframe's appearance even after rotation *!*/
+      /*transform-origin: center;*/
     }
 
 
@@ -80,23 +97,124 @@
 </head>
 <body>
 
-  <iframe src="#" id="iframe"></iframe>
+  <iframe src="https://hextml.playest.net/#&togetherjs=52ErIPj2jj" id="iframe"></iframe>
   <div class="overlay" id="overlay">
     <canvas id="canvas" class="canvas" width="1080" height="1920"></canvas>
   </div>
 
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-
-    // Extract specific parameters
-    const url = urlParams.get('url');
-    if (url){
-      document.getElementById("iframe").src = url;
-      
-    }
-    
+    document.getElementById("iframe").src = opener.document.getElementById("hex-address").value;
     // Function to toggle the overlay visibility
+
+
+    // step 1: clear everything
+    // step 2: draw initiative track
+    // step 3: draw grid lines
+    // step 4: style zones
+    // step 5: draw circles
+    // step 6: listen for clicks
+    function HexTile(i, j, x , y) {
+      this.i = i;
+      this.j = j;
+      this.x = x;
+      this.y = y;
+      this.state = "hidden";
+      this.terrain = "grass";
+      this.assets = [];
+      this.effects = [];
+
+      this.draw = () => {
+        if (this.state !== "hidden"){
+          drawHex(this.x, this.y);
+          ctx.fillStyle = get_fill_style(this.terrain);
+          ctx.fill();
+        }
+
+      }
+    }
+
+    let zoneContents = [];
+    zoneContents = [];
+      for (let i=0; i < 6; i++){
+        let row = []
+        for (let j=0; j<3; j++){
+          row.push([]);
+        }
+        zoneContents.push(row);
+      }
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.font = "40px myFont";
+    ctx.shadowBlur = 50;
+    ctx.shadowColor = "#d08069";
+    canvas.addEventListener('click', handleClick);
+    const squareSize = 108;
+    // multiply by 1.78 to get r=6in
+    const r_hex = 1080 / 7;
+    const hex_row_size = 5;
+    const hex_col_size = 8;
+    const deg_60 = 2 * Math.PI / 6;
+    let hex_tiles = [];
+    // initialize all the hex tiles
+    for (let j=0; j < hex_col_size; j++){
+        let row = [];
+        let x = .5 * r_hex;
+        let y = r_hex * Math.sin(deg_60) + j * 2*r_hex*Math.sin(deg_60) + squareSize;
+        row.push(new HexTile(j + 1, 1, x, y));
+        for (let i=1; i < hex_row_size; i++) {
+          x += r_hex * (1 + Math.cos(deg_60));
+          y += (-1) ** i * r_hex * Math.sin(deg_60);
+          row.push(new HexTile(j+ 1, i + 1, x, y));
+        }
+        hex_tiles.push(row);
+      }
+
+    function loop() {
+      let table_type = opener.document.getElementById('table-type').value;
+
+      if (table_type === "battle"){
+        canvas.style.pointerEvents = "auto";
+        lastType = table_type;
+        let overlay = document.getElementById('overlay');
+        overlay.style.visibility = 'visible';
+        let style = opener.document.getElementById('battle-style').value;
+        overlay.style.backgroundColor = "rgb(24,29,51)"
+        // overlay.style.backgroundImage = `url("/${style}.jpg")`;
+        // summer grass
+        // overlay.style.backgroundColor = "#6ae457";
+
+        // fall grass
+        // overlay.style.backgroundColor = "#f9d401";
+
+        document.getElementById("iframe").classList.add('hidden');
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // drawZones();
+
+        drawHexTiles();
+
+        // fillZones();
+        drawInitiativeTrack();
+        drawInitiativeTokens();
+        drawChyron();
+        // weather and clouds
+        // clouds.forEach(cloud => cloud.draw());
+        // ctx.fillStyle = "rgba(30,28,189,0.19)";
+        // ctx.fillRect(0, 0, 1080, 1920);
+
+
+        window.requestAnimationFrame(loop);
+      } else {
+        canvas.style.pointerEvents = "none";
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        wilderness();
+        drawChyron();
+        window.requestAnimationFrame(loop);
+      }
+    }
+
     function toggleOverlay() {
       const overlay = document.getElementById('overlay');
       overlay.style.display = overlay.style.display === 'none' ? 'flex' : 'none';
@@ -114,52 +232,39 @@
       let overlay = document.getElementById('overlay');
       overlay.style.visibility = 'visible';
       overlay.style.backgroundImage = null;
+      overlay.style.backgroundColor = null;
       document.getElementById("iframe").classList.remove('hidden');
-
-      let url = window.opener.document.getElementById("hex-address").value;
-      if (url) {
-        document.getElementById("iframe").src = url;
-      }
 
       wildernessOverlay();
     }
 
+    function get_fill_style(terrain){
+      switch (terrain) {
+        case "grass":
+          // return "#37592b";
+          return "#f9d401";
+      }
+    }
     function battle() {
 
       let overlay = document.getElementById('overlay');
       overlay.style.visibility = 'visible';
       let style = opener.document.getElementById('battle-style').value;
-      overlay.style.backgroundImage = `url("/${style}.jpg")`;
+      // overlay.style.backgroundImage = `url("/${style}.jpg")`;
 
       document.getElementById("iframe").classList.add('hidden');
 
-      battleOverlay();
+      loop();
     }
     window.battle = battle;
 
-    // step 1: clear everything
-    // step 2: draw initiative track
-    // step 3: draw grid lines
-    // step 4: style zones
-    // step 5: draw circles
-    // step 6: listen for clicks
+    let clouds = [];
+    // for (let i=0; i<5; i++){
+    //   clouds.push(new Cloud());
+    // }
 
-    let zoneContents = [];
-    zoneContents = [];
-      for (let i=0; i < 6; i++){
-        let row = []
-        for (let j=0; j<3; j++){
-          row.push([]);
-        }
-        zoneContents.push(row);
-      }
 
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.addEventListener('click', handleClick);
-    const squareSize = 108;
-
-    function circle(num, currentHp, maxHp){
+    function circle(num, currentHp, maxHp, name){
       let x = squareSize / 2;
       let y = squareSize / 2;
 
@@ -173,72 +278,139 @@
         x = squareSize / 2;
         y = (num - 20) * squareSize + squareSize/2;
       }
-
+      ctx.save();
       const grad=ctx.createRadialGradient(x,y,40,x,y,80);
-      grad.addColorStop(0,"rgba(0, 50, 100, .25)");
+      grad.addColorStop(0,"rgba(255,219,219,0.25)");
       grad.addColorStop(0.3,"pink");
-      grad.addColorStop(1,"darkblue"); 
+      grad.addColorStop(1,"#7e0000");
       ctx.beginPath();
       ctx.moveTo(x, y);
       ctx.lineTo(x + 75, y);
       ctx.arc(x, y, 75, 0, Math.PI * 2 * currentHp / maxHp);
       ctx.fillStyle = grad;
       ctx.fill();
+      ctx.textAlign = 'center';
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = "red";
+      if (name === null){
+        ctx.font = '48px "Material Symbols Outlined"';
+        ctx.fillText("skull", x, y);
+      } else {
+        ctx.fillText(name, x, y);
+      }
+
+
+
+      ctx.restore();
     }
 
+    let fancyHue = 0;
     function wildernessOverlay() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      // NAVIGATE CIRCLE
-      ctx.beginPath();
-      ctx.arc(0, 0, 400, 0, 2 * Math.PI);
-      ctx.fillStyle = 'rgba(200, 0, 0, .5)';
-      ctx.fill();
+      fancyHue += 1;
+      fancyHue = 180;
 
-      ctx.font = '40px Arial';
-      ctx.fillStyle = 'white'; // Text color
+      if (fancyHue >= 360) fancyHue = 0;
+      const gradient = ctx.createLinearGradient(0, canvas.height / 2, canvas.width, canvas.height / 2);
+      gradient.addColorStop(0, `hsl(${fancyHue}, 100%, 50%)`);
+      gradient.addColorStop(1, `hsl(${(fancyHue + 120) % 360}, 100%, 50%)`);
+
+
+
+      // ctx.globalCompositeOperation = "overlay";
+      // let textFillStyle = "rgb(237,237,255)";
+      // Apply glow effect with shadow
+      // ctx.shadowColor = `hsl(${fancyHue}, 100%, 60%)`;
+      // ctx.shadowBlur = 20;
+      // ctx.shadowOffsetY = 20;
+      // ctx.shadowOffsetX = 10;
+
+      let lineStrokeStyle = gradient;
+      let fillStyle = "rgb(70,3,3)";
+      let textFillStyle = "white";
+      let strokeWidth = 5;
+      // Draw Sentry / Nav Tile
+      ctx.save();
+      ctx.fillStyle = fillStyle;
+      ctx.strokeStyle = lineStrokeStyle;
+      ctx.lineWidth = 10;
       ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText("Navigate", 100, 100);
 
-      // FORAGE CIRCLE
-      ctx.beginPath();
-      ctx.arc(1080, 0, 400, 0, 2 * Math.PI);
-      ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+
+      ctx.save();
+      let sentry_tile = hex_tiles[1][2];
+      drawHex(sentry_tile.x, sentry_tile.y);
       ctx.fill();
-
-      ctx.font = '40px Arial';
-      ctx.fillStyle = 'white'; // Text color
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText("Forage", 900, 100);
-
-      // LOOKOUT CIRCLE
+      ctx.save();
+      ctx.fillStyle = textFillStyle;
+      ctx.lineWidth = strokeWidth;
       ctx.beginPath();
-      ctx.arc(0, 1920, 400, 0, 2 * Math.PI);
-      ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+      ctx.moveTo(sentry_tile.x - r_hex, sentry_tile.y);
+      ctx.lineTo(sentry_tile.x + r_hex, sentry_tile.y);
+      ctx.stroke();
+      ctx.translate(sentry_tile.x, sentry_tile.y + r_hex/2);
+      ctx.rotate(Math.PI);
+      ctx.fillText("Sentry", 0, 0);
+      ctx.translate(0, r_hex);
+      ctx.fillText("Navigator", 0, 0);
+      ctx.restore();
+
+      // Draw mapper
+      ctx.save();
+      let mapper_tile = hex_tiles[0][2];
+      drawHex(mapper_tile.x, mapper_tile.y);
       ctx.fill();
-
-      ctx.font = '40px Arial';
-      ctx.fillStyle = 'white'; // Text color
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText("Lookout", 100, 1820);
-
-      // MAPPING CIRCLE
+      ctx.fillStyle = textFillStyle;
+      ctx.lineWidth = strokeWidth;
       ctx.beginPath();
-      ctx.arc(1080, 1920, 400, 0, 2 * Math.PI);
-      ctx.fillStyle = 'rgba(200, 0, 0, .5)';
+      ctx.moveTo(mapper_tile.x - r_hex, mapper_tile.y);
+      ctx.lineTo(mapper_tile.x + r_hex, mapper_tile.y);
+      ctx.stroke();
+      ctx.translate(mapper_tile.x, mapper_tile.y - r_hex/2);
+      ctx.rotate(Math.PI);
+      ctx.fillText("Sentry", 0, 0);
+      ctx.translate(0, -r_hex);
+      ctx.fillText("Mapper", 0, 0);
+      ctx.restore();
+
+      // Draw Forager
+      ctx.save();
+      let forager_tile = hex_tiles[1][1];
+      drawHex(forager_tile.x, forager_tile.y);
       ctx.fill();
+      ctx.fillStyle = textFillStyle;
+      ctx.lineWidth = strokeWidth;
+      ctx.beginPath();
+      ctx.moveTo(forager_tile.x + r_hex * Math.cos(deg_60), forager_tile.y - r_hex*Math.sin(deg_60));
+      ctx.lineTo(forager_tile.x, forager_tile.y);
+      ctx.lineTo(forager_tile.x + r_hex * Math.cos(deg_60), forager_tile.y + r_hex*Math.sin(deg_60));
+      ctx.stroke();
+      ctx.translate(forager_tile.x + r_hex/2, forager_tile.y);
+      ctx.rotate(Math.PI/2);
+      ctx.fillText("Forage", 0, 0);
+      ctx.translate(0, r_hex);
+      ctx.fillText("Sentry", 0, 0);
+      ctx.restore();
 
-      ctx.font = '40px Arial';
-      ctx.fillStyle = 'white'; // Text color
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText("Mapping", 900, 1820);
+      // Draw 2ndForager
+      ctx.save();
+      forager_tile = hex_tiles[1][3];
+      drawHex(forager_tile.x, forager_tile.y);
+      ctx.fill();
+      ctx.fillStyle = textFillStyle;
+      ctx.lineWidth = strokeWidth;
+      ctx.beginPath();
+      ctx.moveTo(forager_tile.x - r_hex * Math.cos(deg_60), forager_tile.y - r_hex*Math.sin(deg_60));
+      ctx.lineTo(forager_tile.x, forager_tile.y);
+      ctx.lineTo(forager_tile.x - r_hex * Math.cos(deg_60), forager_tile.y + r_hex*Math.sin(deg_60));
+      ctx.stroke();
+      ctx.translate(forager_tile.x - r_hex/2, forager_tile.y);
+      ctx.rotate(-1 * Math.PI/2);
+      ctx.fillText("Forage", 0, 0);
+      ctx.translate(0, r_hex);
+      ctx.fillText("Sentry", 0, 0);
+      ctx.restore();
 
-      // ctx.lineWidth = 4;
-      // ctx.strokeStyle = "blue";
-      // ctx.stroke();
+      ctx.restore();
     }
     
     function drawZones() {
@@ -285,40 +457,33 @@
     }
 
     function handleClick(event) {
-      const numRows = window.opener.document.getElementById("zoneRows").value;
-      const numCols = window.opener.document.getElementById("zoneCols").value;
-      
+      if (opener.document.getElementById('table-type').value === "wilderness") {
+        return
+      }
       // Get the click coordinates relative to the canvas
       const rect = canvas.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
 
-
-      const colWidth = 1080 / numCols;
-      const rowHeight = (1920 - squareSize) / numRows;
-      let rowClicked;
-      let colClicked;
-      for (let i=0; i < numRows + 1; i++){
-        if (y <= rowHeight * i + squareSize) {
-          rowClicked = i - 1;
-          break;
-        }
-      }
-      for (let i=0; i < numCols + 1; i++){
-        if (x <= colWidth * i) {
-          colClicked = i - 1;
-          break;
-        }
-      }
-
-
+      // figure out which tile the click is closest to
+      let closest_tile = null;
+      let distance = 10000;
+      hex_tiles.forEach(row => row.forEach(
+              tile => {
+                let manhattan = Math.abs(tile.x - x) + Math.abs(tile.y - y);
+                console.log(`manhattan = ${manhattan}`);
+                if (manhattan < distance){
+                  distance = manhattan;
+                  closest_tile = tile;
+                }
+              }
+      ));
       let fillTool = window.opener.document.getElementById("effect").value;
-      if (fillTool !== "remove"){
-        zoneContents[rowClicked][colClicked].push(fillTool);
+      if (fillTool === "hide") {
+        closest_tile.state = "hidden";
       } else {
-        zoneContents[rowClicked][colClicked] = [];
+        closest_tile.state = "visible";
       }
-      battleOverlay();
     }
 
     function fillZones(){  
@@ -360,35 +525,52 @@
       }
     }
 
-    function battleOverlay() { 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      drawZones();
-      fillZones();
-      drawInitiativeTrack();
-      drawInitiativeTokens();
-      drawMonsterBlocks();
-      window.requestAnimationFrame(battleOverlay);
-    }
+
     
     function drawInitiativeTrack(){ 
       let color = "black";
       let style = opener.document.getElementById('battle-style').value;
+      // ctx.save();
+      // ctx.shadowBlur = 0;
+      //   ctx.shadowColor = null;
       if (style === "forest") {
-        color = 'rgba(100, 200, 50, .45)';
+        // gold
+        // color = '#f9c366';
+        // sky
+        color = 'rgba(164,240,255,0.75)';
+
+        // ctx.shadowOffsetX = 10;
+        // ctx.shadowOffsetY = 15;
+
       } else if (style === "dungeon"){
         color = 'rgba(240, 50, 50, .45)';
-      } 
+      }
+      ctx.save();
+
+      ctx.fillStyle = color;
+      let radius = 50;
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(1080, 0);
+      ctx.lineTo(1080, squareSize*11);
+      ctx.lineTo(1080 - squareSize + radius, squareSize*11);
+      ctx.arc(1080 - squareSize + radius, squareSize*11 - radius, radius,-1*Math.PI/2, -1*Math.PI);
+      ctx.lineTo(1080 - squareSize, squareSize + radius);
+      // ctx.arcTo(1080 - squareSize, squareSize + radius, 1080 - squareSize - radius, squareSize, radius);
+      ctx.arc(1080 - squareSize - radius, squareSize + radius, radius, 0, -1*Math.PI/2, true);
+      ctx.lineTo(squareSize, squareSize);
+      ctx.lineTo(squareSize, squareSize*11);
+      ctx.lineTo(0, squareSize*11);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = 'white'; // Text color
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
       // Draw the left
       for (let i=0; i<11; i++){
-        ctx.fillStyle = color;
-        ctx.fillRect(0, i * squareSize, squareSize, squareSize);
-        ctx.font = '40px Arial';
-        ctx.fillStyle = 'white'; // Text color
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
         // Save the current state before rotation
         ctx.save();
-
         // Move the origin to the center (to rotate around the center)
         let x = squareSize/2
         let y = i*squareSize + squareSize/2;
@@ -402,12 +584,6 @@
       }
 
       for (let i=0; i<8; i++) {
-        ctx.fillStyle = color;
-        ctx.fillRect((i+1) * squareSize, 0, squareSize, squareSize);
-        ctx.font = '40px Arial';
-        ctx.fillStyle = 'white'; // Text color
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
         ctx.save();
         let x = (i+1)*squareSize + squareSize/2;
         let y = squareSize/2;
@@ -419,12 +595,6 @@
       }
       
       for (let i=0; i<11; i++){
-        ctx.fillStyle = color;
-        ctx.fillRect(squareSize*10 - squareSize, i * squareSize, squareSize, squareSize);
-        ctx.font = '40px Arial';
-        ctx.fillStyle = 'white'; // Text color
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
         ctx.save();
         let x = squareSize*10 - squareSize/2;
         let y = i*squareSize + squareSize/2
@@ -434,12 +604,14 @@
         ctx.fillText(`${11 - i}`, 0, 0);
         ctx.restore();
       }
-
+      ctx.restore();
     }
 
     function drawInitiativeTokens(){
       for (let i=0; i < 10; i++){
         let initiative = opener.document.getElementById(`initiative-${i}`);
+        let name = opener.document.getElementById(`monster-name-${i}`);
+        name = name ? name.value : null;
 
         let maxHp = opener.document.getElementById(`hit-point-maximum-${i}`);
         if (maxHp !== null){
@@ -457,7 +629,7 @@
         
         if (initiative !== null){
           if (initiative.value !== null && initiative.value > 0 && initiative.value < 31){
-            circle(initiative.value, currentHp, maxHp);
+            circle(initiative.value, currentHp, maxHp, name);
           }
         } else {
           break;
@@ -465,46 +637,197 @@
       }
     }
 
-    function drawMonsterBlocks(){
-      for (let i=0; i<10; i++){
-        let initiative = opener.document.getElementById(`initiative-${i}`);
-        if (initiative !== null) { 
-          initiative = initiative.value
-        } else {
-          continue
+    function drawHex(x, y){
+        ctx.beginPath();
+        for (let i = 0; i < 6; i++) {
+          ctx.lineTo(x + r_hex * Math.cos(deg_60 * i), y + r_hex * Math.sin(deg_60 * i));
         }
+        ctx.closePath();
+        ctx.stroke();
 
-        let monsterName = opener.document.getElementById(`monster-name-${i}`);
-        if (monsterName !== null) {
-          monsterName = monsterName.value
-        } else {
-          monsterName = "";
-        }
 
-        let maxHp = opener.document.getElementById(`hit-point-maximum-${i}`);
-        if (maxHp !== null){
-          maxHp = maxHp.value;
-        } else {
-          maxHp = 1;
-        }
-        let currentHp = opener.document.getElementById(`hit-points-${i}`);
-        if (currentHp !== null) {
-          currentHp = currentHp.value;
-        } else {
-          currentHp = 1;
-        }
+    }
 
+    function drawHexTiles() {
+      ctx.save()
+      ctx.strokeStyle = "#f9c366";
+      ctx.lineWidth = 6;
+      hex_tiles.forEach(row => {
+        row.forEach(tile => {
+          tile.draw();
+        })
+      })
+      ctx.restore();
+    }
+
+    function hideAll(){
+      hex_tiles.forEach(row => row.forEach(tile => tile.state = "hidden"));
+    }
+    window.hideAll = hideAll;
+
+    function showAll() {
+      hex_tiles.forEach(row => row.forEach(tile => tile.state = "visible"));
+    }
+    window.showAll = showAll;
+
+
+    function Cloud() {
+      this.x = Math.random() * 1080;
+      this.y = Math.random() * 1920;
+      this.v_x = .005;
+      this.v_y = 0;
+      this.last_time = Date.now();
+
+
+      this.circles = [];
+      for (let i =0; i < 30; i++){
+        this.circles.push(
+          {
+            x: Math.random()*50,
+            y: Math.random()*50,
+            r: Math.random()*200 + 100,
+            color: "rgba(200,200,200,.1)",
+          }
+        )
+      }
+
+      this.draw = () => {
         ctx.save();
-        ctx.translate(1080, 1920)
-        ctx.fillStyle = "rgba(100, 10, 10, .7)";
-        ctx.fillRect(-5 - i * 10, 0, -squareSize, -4*squareSize);
-        ctx.fillStyle = "black";
-        ctx.fillText(monsterName, -10 - i * 10, -10);
+        this.circles.forEach(circle => {
+          ctx.fillStyle = circle.color;
+          ctx.beginPath();
+          ctx.arc(circle.x + this.x, circle.y + this.y, circle.r, 0, 2*Math.PI);
+          ctx.fill();
+        });
+        let now = Date.now();
+        let dt = now - this.last_time;
+        this.x += this.v_x * dt;
+        if (this.x > 1080 + 500) this.x = -500;
+        this.y += this.v_y * dt;
+        if (this.y > 1920 + 500) this.y = -500;
+        this.last_time = now;
         ctx.restore();
       }
+
     }
-  
-    
+
+    function createFrostedGlassEffect(x, y, width, height, radii) {
+      // Step 1: Extract the background image portion that will be "behind the glass"
+      ctx.save();
+      const backgroundPortion = ctx.getImageData(x, y, width, height);
+
+      // Step 2: Create a new offscreen canvas to blur the portion of the background
+      const offscreenCanvas = document.createElement('canvas');
+      const offscreenCtx = offscreenCanvas.getContext('2d');
+      offscreenCanvas.width = width;
+      offscreenCanvas.height = height;
+
+      // Step 3: Draw the background portion to the offscreen canvas
+      offscreenCtx.putImageData(backgroundPortion, 0, 0);
+
+      // Step 4: Apply blur filter to the offscreen canvas
+      offscreenCtx.filter = 'blur(5px)';
+      offscreenCtx.drawImage(offscreenCanvas, 0, 0);  // Redraw the blurred image
+
+      // Step 5: Draw the blurred portion back to the main canvas
+      ctx.drawImage(offscreenCanvas, x, y);
+
+      // Step 6: Overlay a semi-transparent white rectangle (for the frosted glass effect)
+      ctx.globalAlpha = 0.5;  // Set transparency (adjust as needed)
+      ctx.fillStyle = 'white';
+      ctx.fillRect(x, y, width, height);
+
+      // Reset alpha
+      ctx.globalAlpha = 1.0;
+
+      // Step 7: Optionally, add a border or highlight to the frosted glass effect
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';  // Light border
+      ctx.lineWidth = 2;
+      ctx.strokeRect(x, y, width, height);
+      ctx.restore();
+    }
+
+    function drawChyron(){
+      // createFrostedGlassEffect(
+      //   .5 * squareSize,
+      //   1920 - 4.5*squareSize,
+      //   1080 - squareSize,
+      //   4 * squareSize,
+      // );
+      ctx.save();
+      ctx.fillStyle = 'rgba(164,240,255,0.75)';
+      ctx.beginPath();
+      ctx.roundRect(1080, 1920, -2.5*squareSize, -squareSize, [0, 0, 50, 0]);
+      ctx.fill();
+      ctx.restore();
+
+      ctx.save();
+      ctx.translate(1080 / 2, 1920/2);
+      ctx.rotate(Math.PI);
+      ctx.translate(-1080/2, -1920/2);
+
+
+      ctx.fillStyle = 'white';
+      ctx.textAlign = "left";
+      let text_x = squareSize / 3;
+      let text_y = squareSize / 2;
+      let temperature = opener.document.getElementById("tempPanel").innerText;
+      ctx.fillText(`${temperature} °F`, text_x, text_y);
+      temperature = Number(temperature);
+      text_x += 90;
+      ctx.font = '48px "Material Symbols Outlined"';
+      let tempIcon;
+      if (temperature >= 100) {
+        tempIcon = 'sunny';
+      } else if (temperature <= 0) {
+        tempIcon = 'ac_unit'
+      }
+      if (tempIcon) {
+        ctx.fillText(tempIcon, text_x, text_y);
+        text_x += 50;
+      }
+
+      let wind = opener.document.getElementById("windPanel").innerText;
+      let windIcon;
+      if (wind === 'Light'){
+
+      } else if (wind.startsWith('Strong')){
+        windIcon = 'air';
+      }
+      if (windIcon) {
+        ctx.fillText(windIcon, text_x, text_y);
+        text_x += 50;
+      }
+
+      let precip = opener.document.getElementById("precipPanel").innerText;
+      let precipIcon;
+      if (precip.startsWith("Light")){
+        if (temperature <= 35) {
+          precipIcon = "cloudy_snowing";
+        } else {
+          precipIcon = "rainy_light";
+        }
+      } else if (precip.startsWith("Heavy")){
+        if (temperature <= 35){
+          precipIcon = "weather_snowy";
+        } else {
+          precipIcon = "rainy_light";
+        }
+      }
+      if (precipIcon) {ctx.fillText(precipIcon, text_x, text_y)}
+
+
+      // ctx.textAlign = "left";
+      // ctx.font = "30px myFont";
+      // ctx.fillText(`${temperature}, ${wind} wind, ${precip}`, squareSize, squareSize);
+      // for (let i=0; i < 3; i++){
+      //
+      // }
+      ctx.restore();
+    }
+
+
+
   </script>
 </body>
 </html>

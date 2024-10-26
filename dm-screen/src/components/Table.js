@@ -5,6 +5,14 @@ export default function Table({tableState}) {
         iframeWindow.hide();
     }
 
+    function showAll() {
+        iframeWindow.showAll();
+    }
+
+    function hideAll() {
+        iframeWindow.hideAll();
+    }
+
     function wilderness() {
         let url = document.getElementById("hex-address").value;
         if (!iframeWindow || iframeWindow.closed) {
@@ -42,12 +50,17 @@ export default function Table({tableState}) {
 
     return (
         <>
-            <div class="w3-container">
+            <div className="w3-container">
                 <h1>Tabletop Screen</h1>
-                <input type="text" class="w3-text" id="hex-address"></input>
+                <input type="text" className="w3-text" id="hex-address"></input>
                 <input type="button" class="w3-button" value="All off" onClick={() => allOff()}></input>
-                <input type="button" class="w3-button" value="Wilderness" onClick={() => wilderness()}></input>
-                <input type="button" class="w3-button" value="Battle" onClick={() => battle()}></input>
+                <input type="button" class="w3-button" value="Open" onClick={() => battle()}></input>
+                <input type="button" class="w3-button" value="Show All" onClick={() => showAll()}></input>
+                <input type="button" className="w3-button" value="Hide All" onClick={() => hideAll()}></input>
+                <select class="w3-select" id="table-type">
+                    <option value="battle">Battle</option>
+                    <option value="wilderness">Wilderness</option>
+                </select>
                 <select class="w3-select" id="battle-style">
                     <option value="forest">Forest</option>
                     <option value="dungeon">Dungeon</option>
@@ -66,12 +79,12 @@ export default function Table({tableState}) {
                     <option value="3">3</option>
                 </select>
                 <select class="w3-select" id="effect">
+
                     <option value="difficult-terrain">Difficult Terrain</option>
                     <option value="dark">Dark</option>
                     <option value="light">Light</option>
                     <option value="water">Water</option>
-                    <option value="add-cover">Add Cover</option>
-                    <option value="remove">Remove</option>
+                    <option value="hide">Hide</option>
                 </select>
             </div>
         </>

@@ -315,11 +315,11 @@ export default function Wilderness({party}) {
         
         let tempPanel = document.getElementById("tempPanel");
         if (temp >= 100) {
-            temp += " Extreme Heat. Extra water needed";
+            // temp += " Extreme Heat. Extra water needed";
             tempPanel.className = "w3-panel w3-red";
         }
         else if (temp <= 0 ) {
-            temp += " Extreme Cold. DC10 Con save each hour or exhaustion."
+            // temp += " Extreme Cold. DC10 Con save each hour or exhaustion."
             tempPanel.className = "w3-panel w3-blue";
         }
         else {
@@ -523,22 +523,22 @@ export default function Wilderness({party}) {
                     <div className="w3-row-padded">
                         <div className="w3-col l3">
                             <div className="w3-panel" id="tempPanel">
-                                Temperature: {temperature}
+                                {temperature}
                             </div>
                         </div>
                         <div className="w3-col l3">
                             <div className="w3-panel" id="windPanel">
-                                Wind: {wind}
+                                {wind}
                             </div>
                         </div>
                         <div className="w3-col l3">
                             <div className="w3-panel" id="precipPanel">
-                                Precipitation: {precip}
+                                {precip}
                             </div>
                         </div>
                         <div className="w3-col l3">
                             <div className="w3-panel" id="visibPanel">
-                                Visibility: {visibility}
+                                {visibility}
                             </div>
                         </div>
                     </div>
