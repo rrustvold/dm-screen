@@ -107,6 +107,9 @@
     document.getElementById("iframe").src = opener.document.getElementById("hex-address").value;
     // Function to toggle the overlay visibility
 
+    
+    
+    
 
     // step 1: clear everything
     // step 2: draw initiative track
@@ -121,16 +124,125 @@
       this.y = y;
       this.state = "hidden";
       this.terrain = "grass";
+      this.elevation = 0;
+      this.elevationDirection = "up";
       this.assets = [];
       this.effects = [];
 
-      this.draw = () => {
-        if (this.state !== "hidden"){
-          drawHex(this.x, this.y);
-          ctx.fillStyle = get_fill_style(this.terrain);
-          ctx.fill();
+      this.drawGround = () => {
+        if (this.state === "hidden"){
+          return;
+        }
+        ctx.save();
+        ctx.shadowColor = "#152213";
+        ctx.shadowBlur = 50;
+        ctx.strokeStyle = "#152213";
+        drawHex(this.x, this.y);
+        ctx.fillStyle = get_fill_style(this.terrain);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      this.drawElevation = (elevationOffset=0) => {
+        if (this.state === "hidden" || this.elevation < 1){
+          return;
         }
 
+          ctx.save();
+          ctx.shadowColor = "#152213";
+          ctx.shadowBlur = 50;
+          ctx.strokeStyle = "#152213";
+          ctx.lineCap = "round";
+          
+
+          let h = r_hex * Math.sin(Math.PI / 3);
+          let w = r_hex * Math.cos(Math.PI / 3);
+
+          let pt0;
+          let pt1;
+          let pt2;
+          let pt3;
+          let pt4;
+          let pt5;
+          let pt6;
+          let pt7;
+
+          if (this.elevationDirection === "up"){
+            pt0 = [this.x - r_hex, this.y];
+            pt1 = [this.x - r_hex, this.y - (this.elevation - elevationOffset)*h];
+            pt2 = [this.x - w, this.y -  (this.elevation - elevationOffset)*h - h];
+            pt3 = [this.x + w, this.y -  (this.elevation - elevationOffset)*h - h];
+            pt4 = [this.x + r_hex, this.y -  (this.elevation - elevationOffset)*h];
+            pt5 = [this.x + r_hex, this.y];
+            pt6 = [this.x + w, this.y - h];
+            pt7 = [this.x - w, this.y - h];
+          } else if (this.elevationDirection === "down"){
+            pt0 = [this.x - r_hex, this.y];
+            pt1 = [this.x - r_hex, this.y + (this.elevation - elevationOffset)*h];
+            pt2 = [this.x - w, this.y +  (this.elevation - elevationOffset)*h + h];
+            pt3 = [this.x + w, this.y +  (this.elevation - elevationOffset)*h + h];
+            pt4 = [this.x + r_hex, this.y +  (this.elevation - elevationOffset)*h];
+            pt5 = [this.x + r_hex, this.y];
+            pt6 = [this.x + w, this.y + h];
+            pt7 = [this.x - w, this.y + h];
+          }
+          
+
+          ctx.fillStyle = cliffPattern;  
+          ctx.beginPath();
+          
+          // hilight
+          ctx.fillStyle = cliffHilightPattern;
+          ctx.moveTo(pt0[0], pt0[1]);
+          ctx.lineTo(pt1[0], pt1[1]);  
+          ctx.lineTo(pt2[0], pt2[1]);
+          ctx.lineTo(pt7[0], pt7[1]);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          // middle
+          ctx.fillStyle = cliffPattern;  
+          ctx.beginPath();
+          ctx.moveTo(pt7[0], pt7[1]);
+          ctx.lineTo(pt2[0], pt2[1]);
+          ctx.lineTo(pt3[0], pt3[1]);
+          ctx.lineTo(pt6[0], pt6[1]);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+
+          //shadow
+          ctx.fillStyle = cliffShadowPattern;  
+          ctx.beginPath();
+          ctx.moveTo(pt6[0], pt6[1]);
+          ctx.lineTo(pt3[0], pt3[1]);
+          ctx.lineTo(pt4[0], pt4[1]);
+          ctx.lineTo(pt5[0], pt5[1]);
+          ctx.closePath();
+          ctx.fill();
+          ctx.stroke();
+          
+          ctx.restore();
+        
+      }
+
+      this.drawAssets = () => {
+        if (this.state === "hidden"){
+          return;
+        }
+        ctx.save();
+        ctx.shadowBlur = 0;
+        this.assets.forEach(asset => {
+          ctx.save();
+          let width = asset.img.width;
+          let height = asset.img.height;
+          ctx.translate(asset.x + width/2, asset.y + height/2);
+          ctx.scale(1, -1);
+          ctx.drawImage(asset.img, -width/2, -height/2);
+          ctx.restore();
+        })
+        ctx.restore();
       }
     }
 
@@ -146,10 +258,48 @@
 
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
+
+    let tree_img = new Image();
+    tree_img.src = "/pixel-art/PNG/assets/Trees_shadow/Autumn_tree1.png";
+   
+    let treeStump = new Image();
+    treeStump.src = "/pixel-art/PNG/assets/Trees_texture_shadow/Broken_tree3.png"
+   
+    let myGrass = new Image();
+    myGrass.src = "/mygrass2.png";
+    let grassPattern;
+    myGrass.onload = () => {grassPattern = ctx.createPattern(myGrass, "no-repeat")};
+    
+
+    let cliff = new Image();
+    cliff.src = "/cliff.png";
+    let cliffPattern;
+    cliff.onload = () => {cliffPattern = ctx.createPattern(cliff, "repeat")};
+
+    let cliffHilight = new Image();
+    cliffHilight.src = "/cliff-hilight.png";
+    let cliffHilightPattern;
+    cliffHilight.onload = () => {cliffHilightPattern = ctx.createPattern(cliffHilight, "repeat")};
+
+    let cliffShadow = new Image();
+    cliffShadow.src = "/cliff-shadow.png";
+    let cliffShadowPattern;
+    cliffShadow.onload = () => {cliffShadowPattern = ctx.createPattern(cliffShadow, "repeat")};
+    
+
+
     ctx.font = "40px myFont";
     ctx.shadowBlur = 50;
     ctx.shadowColor = "#d08069";
-    canvas.addEventListener('click', handleClick);
+    
+    let keyPressed = {};
+    window.addEventListener('keydown', (event) => {keyPressed[event.key] = true});
+    window.addEventListener('keyup', (event) => {delete keyPressed[event.key]});
+
+    canvas.addEventListener('mousedown', handleClick);
+    canvas.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
     const squareSize = 108;
     // multiply by 1.78 to get r=6in
     const r_hex = 1080 / 7;
@@ -171,7 +321,14 @@
         hex_tiles.push(row);
       }
 
+    // A global time tracker for animations
+    let lastTime = Date.now();
+    let now = Date.now();
+    let dt = now - lastTime;
     function loop() {
+      now = Date.now();
+      dt = now - lastTime;
+      lastTime = now;
       let table_type = opener.document.getElementById('table-type').value;
 
       if (table_type === "battle"){
@@ -195,15 +352,22 @@
 
         drawHexTiles();
 
+        hex_tiles.forEach(row => {
+          row.forEach(tile => tile.drawAssets())
+        })
+
+        // weather and clouds
+        // clouds.forEach(cloud => cloud.draw());
+        // ctx.save();
+        // ctx.fillStyle = "rgba(30,28,189,0.19)";
+        // ctx.fillRect(0, 0, 1080, 1920);
+        // ctx.restore();
+
         // fillZones();
         drawInitiativeTrack();
         drawInitiativeTokens();
         drawChyron();
-        // weather and clouds
-        // clouds.forEach(cloud => cloud.draw());
-        // ctx.fillStyle = "rgba(30,28,189,0.19)";
-        // ctx.fillRect(0, 0, 1080, 1920);
-
+        
 
         window.requestAnimationFrame(loop);
       } else {
@@ -227,6 +391,18 @@
       overlay.style.visibility = 'hidden';
       document.getElementById("iframe").classList.add('hidden');
     }
+    // window.hide = hide;
+
+    function clear() {
+      hex_tiles.forEach(row => {
+        row.forEach(tile => {
+          tile.elevation = 0;
+          tile.state = "hidden";
+          tile.assets = [];
+          tile.elevationDirection = "up";
+        })
+      })
+    }
 
     function wilderness() {
       let overlay = document.getElementById('overlay');
@@ -239,8 +415,11 @@
     }
 
     function get_fill_style(terrain){
+      return grassPattern;
       switch (terrain) {
         case "grass":
+          let color = opener.document.getElementById("color").value;
+          return color;
           // return "#37592b";
           return "#f9d401";
       }
@@ -259,9 +438,9 @@
     window.battle = battle;
 
     let clouds = [];
-    // for (let i=0; i<5; i++){
-    //   clouds.push(new Cloud());
-    // }
+    for (let i=0; i<5; i++){
+      clouds.push(new Cloud());
+    }
 
 
     function circle(num, currentHp, maxHp, name){
@@ -305,9 +484,10 @@
     }
 
     let fancyHue = 0;
+    
     function wildernessOverlay() {
-      fancyHue += 1;
-      fancyHue = 180;
+      fancyHue += 10*dt/1000;
+      // fancyHue = 180;
 
       if (fancyHue >= 360) fancyHue = 0;
       const gradient = ctx.createLinearGradient(0, canvas.height / 2, canvas.width, canvas.height / 2);
@@ -410,6 +590,10 @@
       ctx.fillText("Sentry", 0, 0);
       ctx.restore();
 
+      ctx.beginPath();
+      ctx.arc(sentry_tile.x, sentry_tile.y - r_hex, 3*r_hex, 0, 2*Math.PI);
+      ctx.stroke();
+
       ctx.restore();
     }
     
@@ -471,19 +655,67 @@
       hex_tiles.forEach(row => row.forEach(
               tile => {
                 let manhattan = Math.abs(tile.x - x) + Math.abs(tile.y - y);
-                console.log(`manhattan = ${manhattan}`);
                 if (manhattan < distance){
                   distance = manhattan;
                   closest_tile = tile;
                 }
               }
       ));
-      let fillTool = window.opener.document.getElementById("effect").value;
-      if (fillTool === "hide") {
-        closest_tile.state = "hidden";
-      } else {
-        closest_tile.state = "visible";
+
+      const radios = opener.document.querySelectorAll('input[name="func"]');
+      
+      // Find the selected radio button
+      let selectedValue;
+      radios.forEach((radio) => {
+        if (radio.checked) {
+          selectedValue = radio.id;
+        }
+      });
+      console.log(selectedValue);
+      switch (selectedValue) {
+        case "hide":
+          closest_tile.state = closest_tile.state === "hidden" ? "visible" : "hidden";
+          break;
+
+        case "tree":
+          closest_tile.assets.push(
+            {
+              img: tree_img,
+              x: x,
+              y: y,
+            }
+          );
+          break;
+        case "tree-stump":
+          closest_tile.assets.push(
+            {
+              img: treeStump,
+              x: x,
+              y: y,
+            }
+          );
+          break;
+        case "elevate":
+          if (event.button === 2){
+            closest_tile.elevation -= 1;
+          } else {
+            closest_tile.elevation += 1;
+          }
+
+          if (keyPressed["ArrowUp"]) {
+            closest_tile.elevationDirection = "up";
+          } else if (keyPressed["ArrowLeft"]) {
+            closest_tile.elevationDirection = "left";
+          } else if (keyPressed["ArrowRight"]) {
+            closest_tile.elevationDirection = "right";
+          } else if (keyPressed["ArrowDown"]) {
+            closest_tile.elevationDirection = "down";
+          }
+          
+          break;
+
       }
+
     }
 
     function fillZones(){  
@@ -652,11 +884,34 @@
       ctx.save()
       ctx.strokeStyle = "#f9c366";
       ctx.lineWidth = 6;
+      let maxElevation = 0;
       hex_tiles.forEach(row => {
         row.forEach(tile => {
-          tile.draw();
+          if (tile.elevation > maxElevation){
+            maxElevation = tile.elevation;
+          }
         })
       })
+
+      for (let i=0; i <= maxElevation; i++){
+        if (i > 0){
+          
+        }
+        hex_tiles.forEach(row => {
+          row.forEach(tile => {
+            if (tile.elevation >= i){
+              tile.drawElevation(elevationOffset=i > 1 ? i-1: 0);
+            }
+          })
+          row.forEach(tile => {
+            if (tile.elevation === i){
+              tile.drawGround();
+            }
+          })
+        })
+      }
+
+      
       ctx.restore();
     }
 
@@ -680,7 +935,7 @@
 
 
       this.circles = [];
-      for (let i =0; i < 30; i++){
+      for (let i =0; i < 5; i++){
         this.circles.push(
           {
             x: Math.random()*50,

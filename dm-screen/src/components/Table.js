@@ -38,14 +38,14 @@ export default function Table({tableState}) {
             );
             iframeWindow.addEventListener('load', function () {
                 iframeWindow.battle();
-                iframeWindow.circle(tableState);
             });
         } else {
             iframeWindow.battle();
-            iframeWindow.circle(tableState);
         }
-        
-        
+    }
+
+    function clear() {
+        iframeWindow.clear();
     }
 
     return (
@@ -57,6 +57,10 @@ export default function Table({tableState}) {
                 <input type="button" class="w3-button" value="Open" onClick={() => battle()}></input>
                 <input type="button" class="w3-button" value="Show All" onClick={() => showAll()}></input>
                 <input type="button" className="w3-button" value="Hide All" onClick={() => hideAll()}></input>
+                <input type="button" className="w3-button" value="clear" onClick={() => clear()}></input>
+
+                <input type="color" id="color"></input>
+                
                 <select class="w3-select" id="table-type">
                     <option value="battle">Battle</option>
                     <option value="wilderness">Wilderness</option>
@@ -78,9 +82,14 @@ export default function Table({tableState}) {
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
+                <input className="w3-radio" type="radio" id="hide" name="func" value="hide"></input> Hide/Show
+                <input className="w3-radio" type="radio" id="elevate" name="func" value="elevate"></input> Elevate
+                <input className="w3-radio" type="radio" id="tree" name="func" value="tree"></input> Tree
+                <input className="w3-radio" type="radio" id="tree-stump" name="func" value="tree-stump"></input>Tree Stump
                 <select class="w3-select" id="effect">
 
                     <option value="difficult-terrain">Difficult Terrain</option>
+                    <option value="tree">Tree</option>
                     <option value="dark">Dark</option>
                     <option value="light">Light</option>
                     <option value="water">Water</option>
