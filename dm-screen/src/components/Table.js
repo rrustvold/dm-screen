@@ -85,7 +85,8 @@ export default function Table({tableState}) {
                 <input className="w3-radio" type="radio" id="hide" name="func" value="hide"></input> Hide/Show
                 <input className="w3-radio" type="radio" id="elevate" name="func" value="elevate"></input> Elevate
                 <input className="w3-radio" type="radio" id="tree" name="func" value="tree"></input> Tree
-                <input className="w3-radio" type="radio" id="tree-stump" name="func" value="tree-stump"></input>Tree Stump
+                <input className="w3-radio" type="radio" id="tree-stump" name="func" value="tree-stump"></input> Tree Stump
+                <input className="w3-radio" type="radio" id="water" name="func" value="water"></input> Water
                 <select class="w3-select" id="effect">
 
                     <option value="difficult-terrain">Difficult Terrain</option>

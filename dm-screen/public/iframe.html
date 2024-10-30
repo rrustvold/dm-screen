@@ -318,8 +318,31 @@
     cliffShadow.src = "/cliff-shadow.png";
     let cliffShadowPattern;
     cliffShadow.onload = () => {cliffShadowPattern = ctx.createPattern(cliffShadow, "repeat")};
-    
 
+    let waterImg = new Image();
+    waterImg.src = "/water.png";
+    let waterPattern;
+    waterImg.onload = () => {waterPattern = ctx.createPattern(waterImg, "repeat")};
+    
+    let northWallImg = new Image();
+    northWallImg.src = "/north-wall.png";
+    let northWallPattern;
+    northWallImg.onload = () => {northWallPattern = ctx.createPattern(northWallImg, "repeat")};
+
+    let eastWallImg = new Image();
+    eastWallImg.src = "/east-wall.png";
+    let eastWallPattern;
+    eastWallImg.onload = () => {eastWallPattern = ctx.createPattern(eastWallImg, "repeat")};
+
+    let southWallImg = new Image();
+    southWallImg.src = "/south-wall.png";
+    let southWallPattern;
+    southWallImg.onload = () => {southWallPattern = ctx.createPattern(southWallImg, "repeat")};
+
+    let westWallImg = new Image();
+    westWallImg.src = "/west-wall.png";
+    let westWallPattern;
+    westWallImg.onload = () => {westWallPattern = ctx.createPattern(westWallImg, "repeat")};
 
     ctx.font = "40px myFont";
     ctx.shadowBlur = 50;
@@ -395,7 +418,7 @@
         let overlay = document.getElementById('overlay');
         overlay.style.visibility = 'visible';
         let style = opener.document.getElementById('battle-style').value;
-        overlay.style.backgroundColor = "rgb(24,29,51)"
+        overlay.style.backgroundColor = "#273d52"
         // overlay.style.backgroundImage = `url("/${style}.jpg")`;
         // summer grass
         // overlay.style.backgroundColor = "#6ae457";
@@ -407,9 +430,10 @@
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         // drawZones();
-
+        ctx.save();
+        drawWalls();
         drawHexTiles();
-
+        ctx.restore();
         hex_tiles.forEach(row => {
           row.forEach(tile => tile.drawAssets())
         })
@@ -422,7 +446,7 @@
         // ctx.restore();
 
         // fillZones();
-        drawWalls();
+        
         drawInitiativeTrack();
         drawInitiativeTokens();
         drawChyron();
@@ -451,18 +475,21 @@
     }
 
     function drawWalls() {
-      ctx.save();
+      let corners = [];
       ctx.shadowBlur = 0;
       ctx.fillStyle = "rgba(100,100,100, 1)";
       all_walls.forEach(wall => {
+        
         wall.forEach(section => {
           let segment = section.segments;
           if (section.direction === 1){
-            ctx.fillStyle = "rgb(185,185,185)";
-          } else if (section.direction === 2 || section.direction === 4){
-            ctx.fillStyle = "rgba(100,100,100, 1)";
+            ctx.fillStyle = northWallPattern;
+          } else if (section.direction === 2){
+            ctx.fillStyle = eastWallPattern;
+          } else if (section.direction === 4) {
+            ctx.fillStyle = westWallPattern;
           } else {
-            ctx.fillStyle = "rgb(49,49,49)";
+            ctx.fillStyle = southWallPattern;
           }
           ctx.beginPath();
           ctx.moveTo(segment[0][0], segment[0][1]);
@@ -471,12 +498,24 @@
           ctx.lineTo(segment[3][0], segment[3][1]);
           ctx.closePath();
           ctx.stroke();
+          ctx.save();
+          ctx.translate(segment[2][0], segment[2][1]);
           ctx.fill();
-        })
-
-
+          ctx.restore();
+          corners.push(segment[0]);
+          corners.push(segment[1]);
+        });
       });
-      ctx.restore();
+      if (corners.length >= 3){
+        ctx.beginPath();
+        ctx.moveTo(corners[0][0], corners[0][1]);
+        for (let i=1; i < corners.length - 1; i++){
+          ctx.lineTo(corners[i][0], corners[i][1]);
+        }
+        ctx.clip();
+      }
+      
+      // ctx.restore();
     }
 
     function toggleOverlay() {
@@ -521,17 +560,15 @@
       if (domterrain === "dungeon") {
         return dungeonFloorPattern;
       } else {
-        return grassPattern;
-      }
-      return grassPattern;
-      switch (terrain) {
-        case "grass":
-          let color = opener.document.getElementById("color").value;
-          return color;
-          // return "#37592b";
-          return "#f9d401";
+        switch (terrain) {
+          case "water":
+            return waterPattern;
+          default:
+            return grassPattern;
+        }
       }
     }
+
     function battle() {
 
       let overlay = document.getElementById('overlay');
@@ -931,6 +968,9 @@
             }
           );
           break;
+        case "water":
+          closest_tile.terrain = closest_tile.terrain === "water" ? "grass" : "water";
+          break;
         case "elevate":
           if (event.button === 2){
             closest_tile.elevation -= 1;
@@ -997,6 +1037,8 @@
     
     function drawInitiativeTrack(){ 
       let color = "black";
+
+      // TODO: Move this to its own function
       let style = opener.document.getElementById('battle-style').value;
       // ctx.save();
       // ctx.shadowBlur = 0;
@@ -1026,8 +1068,10 @@
       ctx.lineTo(1080 - squareSize, squareSize + radius);
       // ctx.arcTo(1080 - squareSize, squareSize + radius, 1080 - squareSize - radius, squareSize, radius);
       ctx.arc(1080 - squareSize - radius, squareSize + radius, radius, 0, -1*Math.PI/2, true);
-      ctx.lineTo(squareSize, squareSize);
-      ctx.lineTo(squareSize, squareSize*11);
+      ctx.lineTo(squareSize + radius, squareSize);
+      ctx.arc(squareSize + radius, squareSize + radius, radius, -1*Math.PI / 2, Math.PI, true);
+      ctx.lineTo(squareSize, squareSize*11 - radius);
+      ctx.arc(squareSize - radius, squareSize*11 - radius, radius, 0, Math.PI / 2);
       ctx.lineTo(0, squareSize*11);
       ctx.closePath();
       ctx.fill();
