@@ -107,6 +107,8 @@
     document.getElementById("iframe").src = opener.document.getElementById("hex-address").value;
     // Function to toggle the overlay visibility
 
+    // Replace cursor
+    // document.getElementsByTagName("body")[0].style.cursor = "url('http://wiki-devel.sugarlabs.org/images/e/e2/Arrow.cur'), auto";
     
     
     
@@ -128,6 +130,32 @@
       this.elevationDirection = "up";
       this.assets = [];
       this.effects = [];
+
+      let h = r_hex * Math.sin(Math.PI / 3);
+      this.controlPoints = [
+              [x - .5*r_hex, y - h],
+              [x + .5*r_hex, y - h],
+              [x + r_hex, y],
+              [x + .5*r_hex, y + h],
+              [x - .5*r_hex, y + h],
+              [x - r_hex, y],
+              [x - .5*r_hex, y],
+              [x + .5*r_hex, y],
+      ];
+
+      this.drawControlPoints = () => {
+        let r = .0625 * r_hex;
+        ctx.save();
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = "rgba(0, 0, 0, .5)";
+        this.controlPoints.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
+          ctx.fill();
+
+        });
+        ctx.restore();
+      }
 
       this.drawGround = () => {
         if (this.state === "hidden"){
@@ -269,6 +297,11 @@
     myGrass.src = "/mygrass2.png";
     let grassPattern;
     myGrass.onload = () => {grassPattern = ctx.createPattern(myGrass, "no-repeat")};
+
+    let dungeonFloor = new Image();
+    dungeonFloor.src = "/dungeon.jpg";
+    let dungeonFloorPattern;
+    dungeonFloor.onload = () => {dungeonFloorPattern = ctx.createPattern(dungeonFloor, "repeat")};
     
 
     let cliff = new Image();
@@ -291,10 +324,20 @@
     ctx.font = "40px myFont";
     ctx.shadowBlur = 50;
     ctx.shadowColor = "#d08069";
+
+
+
     
     let keyPressed = {};
     window.addEventListener('keydown', (event) => {keyPressed[event.key] = true});
-    window.addEventListener('keyup', (event) => {delete keyPressed[event.key]});
+    window.addEventListener('keyup', (event) => {
+      if (event.key === "Control" && wallPath.length > 0) {
+        createWallFromPath();
+        console.log(wallPath);
+        wallPath = [];
+      }
+      delete keyPressed[event.key]
+    });
 
     canvas.addEventListener('mousedown', handleClick);
     canvas.addEventListener('contextmenu', function(event) {
@@ -303,8 +346,10 @@
     const squareSize = 108;
     // multiply by 1.78 to get r=6in
     const r_hex = 1080 / 7;
-    const hex_row_size = 5;
-    const hex_col_size = 8;
+    const hex_row_size = 5; // length of row or Number of cols
+    const hex_col_size = 8; // length of col or Number of rows
+    let control_point_x_values_set = new Set();
+    let control_point_y_values_set = new Set();
     const deg_60 = 2 * Math.PI / 6;
     let hex_tiles = [];
     // initialize all the hex tiles
@@ -321,6 +366,19 @@
         hex_tiles.push(row);
       }
 
+    hex_tiles.forEach(row => {
+      row.forEach(tile => {
+        tile.controlPoints.forEach(point => {
+          control_point_x_values_set.add(point[0]);
+          control_point_y_values_set.add(point[1]);
+        })
+      })
+    })
+    let control_point_x_values = Array.from(control_point_x_values_set).sort();
+    let control_point_y_values = Array.from(control_point_y_values_set).sort();
+
+    let wallPath = [];
+    let all_walls = [];
     // A global time tracker for animations
     let lastTime = Date.now();
     let now = Date.now();
@@ -364,10 +422,12 @@
         // ctx.restore();
 
         // fillZones();
+        drawWalls();
         drawInitiativeTrack();
         drawInitiativeTokens();
         drawChyron();
-        
+        drawControlPoints();
+
 
         window.requestAnimationFrame(loop);
       } else {
@@ -377,6 +437,46 @@
         drawChyron();
         window.requestAnimationFrame(loop);
       }
+    }
+
+    function drawControlPoints() {
+      if (!keyPressed["Control"]){
+        return
+      }
+      hex_tiles.forEach(row => {
+        row.forEach(tile => {
+          tile.drawControlPoints();
+        })
+      })
+    }
+
+    function drawWalls() {
+      ctx.save();
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = "rgba(100,100,100, 1)";
+      all_walls.forEach(wall => {
+        wall.forEach(section => {
+          let segment = section.segments;
+          if (section.direction === 1){
+            ctx.fillStyle = "rgb(185,185,185)";
+          } else if (section.direction === 2 || section.direction === 4){
+            ctx.fillStyle = "rgba(100,100,100, 1)";
+          } else {
+            ctx.fillStyle = "rgb(49,49,49)";
+          }
+          ctx.beginPath();
+          ctx.moveTo(segment[0][0], segment[0][1]);
+          ctx.lineTo(segment[1][0], segment[1][1]);
+          ctx.lineTo(segment[2][0], segment[2][1]);
+          ctx.lineTo(segment[3][0], segment[3][1]);
+          ctx.closePath();
+          ctx.stroke();
+          ctx.fill();
+        })
+
+
+      });
+      ctx.restore();
     }
 
     function toggleOverlay() {
@@ -401,7 +501,9 @@
           tile.assets = [];
           tile.elevationDirection = "up";
         })
-      })
+      });
+
+      all_walls = [];
     }
 
     function wilderness() {
@@ -415,6 +517,12 @@
     }
 
     function get_fill_style(terrain){
+      let domterrain = opener.document.getElementById('battle-style').value;
+      if (domterrain === "dungeon") {
+        return dungeonFloorPattern;
+      } else {
+        return grassPattern;
+      }
       return grassPattern;
       switch (terrain) {
         case "grass":
@@ -640,6 +748,131 @@
       
     }
 
+
+    function magnitude(x, y) {
+      return Math.sqrt(x**2 + y**2)
+    }
+
+    function cross(x1, y1, x2, y2){
+      return x1*y2 - y1*x2
+    }
+
+    function rotate(x, y , theta) {
+      return [
+              x*Math.cos(theta) - y*Math.sin(theta),
+              x*Math.sin(theta) + y*Math.cos(theta)
+      ]
+    }
+
+    function createWallFromPath() {
+      const wall_height = 200;
+      // determine winding
+      let x;
+      let y;
+      let dx;
+      let dy;
+      let theta = 0;
+
+      for (let i=0; i < wallPath.length - 2; i++){
+        dx = wallPath[i + 1][0] - wallPath[i][0];
+        dy = wallPath[i + 1][1] - wallPath[i][1];
+        theta += Math.atan2(-dy, dx);
+      }
+
+      let winding = -1;
+      // if (theta > 0){
+      //   //counter clockwise, interior to your left
+      //   winding = -1;
+      // } else {
+      //   //clockwise, interior to your right
+      //   winding = 1;
+      // }
+
+      let walls = [];
+      let wallPoints = [];
+      let tail = wallPath[0];
+      let head = wallPath[1];
+      let v1 = [head[0] - tail[0], head[1] - tail[1]];
+      let v2;
+      wallPoints.push(wallPath[0]);
+      for (let i=1; i < wallPath.length; i++){
+        let j = i % wallPath.length;
+        tail = head;
+
+        if (i + 1 >= wallPath.length){
+          head = wallPath[1];
+        } else {
+          // since the last point is the same as the first point, we have to go one further
+          head = wallPath[i + 1];
+        }
+
+        v2 = [head[0] - tail[0], head[1] - tail[1]];
+
+        wallPoints.push(wallPath[j]);
+
+        // find the angle between v1 and v2
+        let phi;
+        let sin_phi = cross(v1[0], v1[1], v2[0], v2[1]) / (magnitude(v1[0], v1[1]) * magnitude(v2[0], v2[1]));
+        phi = Math.asin(sin_phi);
+        let v3;
+        if (phi < 0){
+          v3 = rotate(v1[0], v1[1], (Math.PI - phi)/2);
+        } else {
+          v3 = rotate(v1[0], v1[1], -1*(Math.PI - phi) / 2);
+        }
+
+        // correct the magnitude of v3
+        let mag_v3 = magnitude(v3[0], v3[1])
+        v3[0] = v3[0] * wall_height / mag_v3;
+        v3[1] = v3[1] * wall_height / mag_v3;
+
+
+        wallPoints.push([wallPath[j][0] + v3[0], wallPath[j][1] + v3[1]]);
+
+        let num_walls = walls.length;
+        if (num_walls > 0){
+          wallPoints.push(walls[num_walls - 1].segments[2]);
+        }
+
+        walls.push({segments: wallPoints, direction: i});
+        wallPoints = [wallPath[j]];
+
+        v1 = v2;
+      }
+
+      // finish the first one
+      walls[0].segments.push(walls[walls.length - 1].segments[2]);
+      all_walls.push(walls);
+    }
+
+
+    function clickControlPoint(x, y) {
+      // figure out the closest x-coord
+      let dx = 10000;
+      let i_x;
+      for (let i=0; i<control_point_x_values.length; i++){
+        let cx = control_point_x_values[i];
+        let distance = Math.abs(cx - x);
+        if (distance < dx){
+          dx = distance;
+          i_x = i;
+        }
+      }
+      // figure out the closest y-coord
+      let dy = 10000;
+      let i_y;
+      for (let i=0; i<control_point_y_values.length; i++){
+        let cy = control_point_y_values[i];
+        let distance = Math.abs(cy - y);
+        if (distance < dy){
+          dy = distance;
+          i_y = i;
+        }
+      }
+
+      wallPath.push([control_point_x_values[i_x], control_point_y_values[i_y]]);
+
+    }
     function handleClick(event) {
       if (opener.document.getElementById('table-type').value === "wilderness") {
         return
@@ -649,6 +882,9 @@
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
 
+      if (keyPressed["Control"]){
+        return clickControlPoint(x, y);
+      }
       // figure out which tile the click is closest to
       let closest_tile = null;
       let distance = 10000;
