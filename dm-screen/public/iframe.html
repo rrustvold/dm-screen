@@ -447,7 +447,7 @@
 
         // fillZones();
         
-        drawInitiativeTrack();
+        drawInitiativeTrack2();
         drawInitiativeTokens();
         drawChyron();
         drawControlPoints();
@@ -589,41 +589,71 @@
 
 
     function circle(num, currentHp, maxHp, name){
-      let x = squareSize / 2;
-      let y = squareSize / 2;
-
-      if (num <= 11){
-        x = 1080 - squareSize/2;
-        y = (11 - num) * squareSize + squareSize/2;
-      } else if (num < 20) {
-        y = squareSize / 2;
-        x = (20 - num) * squareSize + squareSize/2;
+      let x;
+      let y;
+      let radius = squareSize / 2;
+      // let healthBarLength = 400;
+      // let shortLength = healthBarLength - radius * 0.57735; // Gives 60 degree angle
+      let shortLength = squareSize;
+      let healthBarLength = shortLength + radius * 0.57735;
+      if (num <= 14){
+        x = squareSize / 2 + (14 - num) * squareSize
+        y = squareSize/2;
       } else {
-        x = squareSize / 2;
-        y = (num - 20) * squareSize + squareSize/2;
+        x = squareSize / 2 + (num - 15) * squareSize
+        y = 1920 - squareSize / 2;
       }
       ctx.save();
-      const grad=ctx.createRadialGradient(x,y,40,x,y,80);
-      grad.addColorStop(0,"rgba(255,219,219,0.25)");
-      grad.addColorStop(0.3,"pink");
-      grad.addColorStop(1,"#7e0000");
+      ctx.strokeStyle = "red";
+      ctx.fillStyle = "rgba(255,0,0,0.24)";
+      // Draw the health bar
       ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.lineTo(x + 75, y);
-      ctx.arc(x, y, 75, 0, Math.PI * 2 * currentHp / maxHp);
-      ctx.fillStyle = grad;
-      ctx.fill();
+
+      // Flag
+      if (num < 15) {
+        ctx.moveTo(x - squareSize / 2, y - squareSize / 2);
+        ctx.lineTo(x - squareSize / 2, y - squareSize / 2 + shortLength);
+        ctx.lineTo(x, y - squareSize / 2 + healthBarLength);
+        ctx.lineTo(x + squareSize / 2, y - squareSize / 2 + shortLength);
+        ctx.lineTo(x + squareSize / 2, y - squareSize / 2);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+
+        // fill the health
+        ctx.save();
+        ctx.clip();
+        ctx.fillStyle = "red";
+        ctx.fillRect(x - squareSize / 2, y - squareSize / 2, squareSize, healthBarLength * currentHp / maxHp);
+        ctx.restore();
+      } else {
+        ctx.moveTo(x - squareSize / 2, y + squareSize / 2);
+        ctx.lineTo(x - squareSize / 2, y + squareSize / 2 - shortLength);
+        ctx.lineTo(x, y + squareSize/2 - healthBarLength);
+        ctx.lineTo(x + squareSize / 2, y + squareSize / 2 - shortLength);
+        ctx.lineTo(x + squareSize / 2, y + squareSize / 2);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+
+        // fill the health
+        ctx.save();
+        ctx.clip();
+        ctx.fillStyle = "red";
+        ctx.fillRect(x - squareSize / 2, y + squareSize / 2, squareSize, -1*(healthBarLength * currentHp / maxHp));
+        ctx.restore();
+      }
       ctx.textAlign = 'center';
       ctx.textBaseline = "middle";
-      ctx.fillStyle = "red";
-      if (name === null){
+      ctx.fillStyle = "white";
+      ctx.translate(x, y);
+      ctx.rotate(Math.PI);
+      if (name === null) {
         ctx.font = '48px "Material Symbols Outlined"';
-        ctx.fillText("skull", x, y);
+        ctx.fillText("skull", 0, 0);
       } else {
-        ctx.fillText(name, x, y);
+        ctx.fillText(name, 0, 0);
       }
-
-
 
       ctx.restore();
     }
@@ -1033,11 +1063,54 @@
       }
     }
 
+    function drawInitiativeTrack2() {
+      let color = 'rgba(164,240,255,0.45)';
+      ctx.save();
+      ctx.fillStyle = color;
+      ctx.fillRect(0, 0, 1080, squareSize);
+      ctx.fillRect(0, 1920 - squareSize, 1080, squareSize);
 
+      ctx.fillStyle = 'white'; // Text color
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      // Draw the top
+      for (let i=0; i<10; i++){
+        // Save the current state before rotation
+        ctx.save();
+        // Move the origin to the center (to rotate around the center)
+        let x = squareSize/2 + (i * squareSize);
+        let y = squareSize/2;
+        ctx.translate(x, y);
+
+        // Rotate 45 degrees (in radians)
+        const angle = 180 * (Math.PI / 180); // Convert degrees to radians
+        ctx.rotate(angle);
+        ctx.fillText(`${14 - i}`, 0, 0);
+        ctx.restore();
+      }
+
+      // Draw the bottom
+      for (let i=0; i<10; i++){
+        // Save the current state before rotation
+        ctx.save();
+        // Move the origin to the center (to rotate around the center)
+        let x = squareSize/2 + (i * squareSize);
+        let y = 1920 - squareSize/2;
+        ctx.translate(x, y);
+
+        // Rotate 45 degrees (in radians)
+        const angle = 180 * (Math.PI / 180); // Convert degrees to radians
+        ctx.rotate(angle);
+        ctx.fillText(`${15 + i}`, 0, 0);
+        ctx.restore();
+      }
+
+      ctx.restore();
+    }
     
     function drawInitiativeTrack(){ 
       let color = "black";
-
+      let tan30 = 0.57735;
       // TODO: Move this to its own function
       let style = opener.document.getElementById('battle-style').value;
       // ctx.save();
@@ -1047,7 +1120,7 @@
         // gold
         // color = '#f9c366';
         // sky
-        color = 'rgba(164,240,255,0.75)';
+        color = 'rgba(164,240,255,0.45)';
 
         // ctx.shadowOffsetX = 10;
         // ctx.shadowOffsetY = 15;
@@ -1063,6 +1136,11 @@
       ctx.moveTo(0, 0);
       ctx.lineTo(1080, 0);
       ctx.lineTo(1080, squareSize*11);
+      ctx.lineTo(1080 - squareSize/2, squareSize*11 + squareSize*tan30);
+      ctx.lineTo(1080 - squareSize, squareSize*11);
+
+
+
       ctx.lineTo(1080 - squareSize + radius, squareSize*11);
       ctx.arc(1080 - squareSize + radius, squareSize*11 - radius, radius,-1*Math.PI/2, -1*Math.PI);
       ctx.lineTo(1080 - squareSize, squareSize + radius);
@@ -1292,7 +1370,7 @@
       ctx.save();
       ctx.fillStyle = 'rgba(164,240,255,0.75)';
       ctx.beginPath();
-      ctx.roundRect(1080, 1920, -2.5*squareSize, -squareSize, [0, 0, 50, 0]);
+      ctx.roundRect(1080, 1920 - squareSize, -2.5*squareSize, -squareSize, [0, 0, 50, 0]);
       ctx.fill();
       ctx.restore();
 
@@ -1305,7 +1383,7 @@
       ctx.fillStyle = 'white';
       ctx.textAlign = "left";
       let text_x = squareSize / 3;
-      let text_y = squareSize / 2;
+      let text_y = squareSize + squareSize / 2;
       let temperature = opener.document.getElementById("tempPanel").innerText;
       ctx.fillText(`${temperature} °F`, text_x, text_y);
       temperature = Number(temperature);
