@@ -48,6 +48,23 @@ export default function Table({tableState}) {
         iframeWindow.clear();
     }
 
+    function save() {
+        iframeWindow.saveState();
+    }
+
+    function load(file) {
+        console.log("got a file");
+        if (file){
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const jsonData = JSON.parse(e.target.result);
+                iframeWindow.load(jsonData);
+                console.log(jsonData);
+            };
+            reader.readAsText(file);
+        }
+    }
+
     return (
         <>
             <div className="w3-container">
@@ -58,44 +75,33 @@ export default function Table({tableState}) {
                 <input type="button" class="w3-button" value="Show All" onClick={() => showAll()}></input>
                 <input type="button" className="w3-button" value="Hide All" onClick={() => hideAll()}></input>
                 <input type="button" className="w3-button" value="clear" onClick={() => clear()}></input>
+                
 
                 <input type="color" id="color"></input>
+                <input type="button" className="w3-button" value="save" onClick={() => save()}></input>
+                <input type="file" accept=".json" onChange={(event) => {console.log("loading"); load(event.target.files[0])}}></input>
                 
                 <select class="w3-select" id="table-type">
                     <option value="battle">Battle</option>
                     <option value="wilderness">Wilderness</option>
                 </select>
                 <select class="w3-select" id="battle-style">
+                    <option value="grassland">Grassland</option>
                     <option value="forest">Forest</option>
                     <option value="dungeon">Dungeon</option>
+                    <option value="badlands">Badlands</option>
+                    <option value="swamp">Swamp</option>
+                    <option value="snowy-planes">Snowy Planes</option>
+                    <option value="arctic">Arctic</option>
                 </select>
-                <select class="w3-select" id="zoneRows">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
-                <select class="w3-select" id="zoneCols">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
+                <input className="w3-text" type="text" id="scale"></input>
                 <input className="w3-radio" type="radio" id="hide" name="func" value="hide"></input> Hide/Show
                 <input className="w3-radio" type="radio" id="elevate" name="func" value="elevate"></input> Elevate
                 <input className="w3-radio" type="radio" id="tree" name="func" value="tree"></input> Tree
                 <input className="w3-radio" type="radio" id="tree-stump" name="func" value="tree-stump"></input> Tree Stump
                 <input className="w3-radio" type="radio" id="water" name="func" value="water"></input> Water
-                <select class="w3-select" id="effect">
+                <input className="w3-radio" type="radio" id="half-cover" name="func" value="half-cover"></input> Half Cover
 
-                    <option value="difficult-terrain">Difficult Terrain</option>
-                    <option value="tree">Tree</option>
-                    <option value="dark">Dark</option>
-                    <option value="light">Light</option>
-                    <option value="water">Water</option>
-                    <option value="hide">Hide</option>
-                </select>
             </div>
         </>
     )

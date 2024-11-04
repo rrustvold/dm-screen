@@ -120,12 +120,26 @@
     // step 5: draw circles
     // step 6: listen for clicks
     function HexTile(i, j, x , y) {
+
+      this.recreate = (record) => {
+        this.i = record.i;
+        this.j = record.j;
+        this.x = record.x;
+        this.y = record.y;
+        this.state = record.state;
+        this.terrain = record.terrain;
+        this.elevation = record.elevation;
+        this.elevationDirection = record.elevationDirection;
+        this.assets = record.assets;
+        this.effects = record.effects;
+        this.controlPoints = record.controlPoints;
+      }
       this.i = i;
       this.j = j;
       this.x = x;
       this.y = y;
       this.state = "hidden";
-      this.terrain = "grass";
+      this.terrain = "default";
       this.elevation = 0;
       this.elevationDirection = "up";
       this.assets = [];
@@ -302,6 +316,31 @@
     dungeonFloor.src = "/dungeon.jpg";
     let dungeonFloorPattern;
     dungeonFloor.onload = () => {dungeonFloorPattern = ctx.createPattern(dungeonFloor, "repeat")};
+
+    let badlandsImg = new Image();
+    badlandsImg.src = "/badlands.png";
+    let badlandsPattern;
+    badlandsImg.onload = () => {badlandsPattern = ctx.createPattern(badlandsImg, "repeat")};  
+
+    let swampImg = new Image();
+    swampImg.src = "/swamp.png";
+    let swampPattern;
+    swampImg.onload = () => {swampPattern = ctx.createPattern(swampImg, "repeat")}; 
+
+    let snowyPlanesImg = new Image();
+    snowyPlanesImg.src = "/snowy-planes.png";
+    let snowyPlanesPattern;
+    snowyPlanesImg.onload = () => {snowyPlanesPattern = ctx.createPattern(snowyPlanesImg, "repeat")}; 
+
+    let arcticImg = new Image();
+    arcticImg.src = "/arctic.png";
+    let arcticPattern;
+    arcticImg.onload = () => {arcticPattern = ctx.createPattern(arcticImg, "repeat")};
+
+    let forestImg = new Image();
+    forestImg.src = "/forest.png";
+    let forestPattern;
+    forestImg.onload = () => {forestPattern = ctx.createPattern(forestImg, "repeat")};
     
 
     let cliff = new Image();
@@ -406,6 +445,10 @@
     let lastTime = Date.now();
     let now = Date.now();
     let dt = now - lastTime;
+    let scaleFactor = 1.0;
+    let scale_x = 1080/2;
+    let scale_y = 1920/2;
+    let scaleStep = .25;
     function loop() {
       now = Date.now();
       dt = now - lastTime;
@@ -432,8 +475,14 @@
         // drawZones();
         ctx.save();
         drawWalls();
+        
+        ctx.translate(scale_x, scale_y);
+        ctx.scale(scaleFactor, scaleFactor);
+        ctx.translate(-scale_x, -scale_y);
         drawHexTiles();
         ctx.restore();
+        
+        
         hex_tiles.forEach(row => {
           row.forEach(tile => tile.drawAssets())
         })
@@ -449,8 +498,9 @@
         
         drawInitiativeTrack2();
         drawInitiativeTokens();
-        drawChyron();
+        // drawChyron();
         drawControlPoints();
+        drawScalePoint();
 
 
         window.requestAnimationFrame(loop);
@@ -458,7 +508,7 @@
         canvas.style.pointerEvents = "none";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         wilderness();
-        drawChyron();
+        // drawChyron();
         window.requestAnimationFrame(loop);
       }
     }
@@ -472,6 +522,13 @@
           tile.drawControlPoints();
         })
       })
+    }
+
+    function drawScalePoint() {
+      if (!keyPressed["z"]) {
+        return
+      }
+      ctx.fillRect(scale_x, scale_y, 20, 20);
     }
 
     function drawWalls() {
@@ -536,6 +593,7 @@
       hex_tiles.forEach(row => {
         row.forEach(tile => {
           tile.elevation = 0;
+          tile.terrain = "default";
           tile.state = "hidden";
           tile.assets = [];
           tile.elevationDirection = "up";
@@ -557,16 +615,33 @@
 
     function get_fill_style(terrain){
       let domterrain = opener.document.getElementById('battle-style').value;
-      if (domterrain === "dungeon") {
-        return dungeonFloorPattern;
-      } else {
-        switch (terrain) {
-          case "water":
-            return waterPattern;
-          default:
-            return grassPattern;
-        }
+      switch (terrain) {
+        case "water":
+          return waterPattern;
+        
+        default:
+          switch (domterrain) {
+            case "badlands":
+              return badlandsPattern;
+            case "swamp":
+              return swampPattern;
+            case "snowy-planes":
+              return snowyPlanesPattern;
+            case "arctic":
+              return arcticPattern;
+            case "forest":
+              return forestPattern;
+            default:
+              if (domterrain === "dungeon") {
+                return dungeonFloorPattern;
+              } else {
+                return grassPattern;
+              }
+              
+          }
+          
       }
+      
     }
 
     function battle() {
@@ -623,9 +698,17 @@
         // fill the health
         ctx.save();
         ctx.clip();
-        ctx.fillStyle = "red";
+        ctx.fillStyle = "#800f0f";
         ctx.fillRect(x - squareSize / 2, y - squareSize / 2, squareSize, healthBarLength * currentHp / maxHp);
         ctx.restore();
+
+        ctx.textAlign = 'left';
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "white";
+        ctx.translate(x, y - squareSize/3);
+        ctx.rotate(Math.PI / 2);
+
+        ctx.fillText(name, 0, 0);
       } else {
         ctx.moveTo(x - squareSize / 2, y + squareSize / 2);
         ctx.lineTo(x - squareSize / 2, y + squareSize / 2 - shortLength);
@@ -639,27 +722,26 @@
         // fill the health
         ctx.save();
         ctx.clip();
-        ctx.fillStyle = "red";
+        ctx.fillStyle = "#800f0f";
         ctx.fillRect(x - squareSize / 2, y + squareSize / 2, squareSize, -1*(healthBarLength * currentHp / maxHp));
         ctx.restore();
-      }
-      ctx.textAlign = 'center';
-      ctx.textBaseline = "middle";
-      ctx.fillStyle = "white";
-      ctx.translate(x, y);
-      ctx.rotate(Math.PI);
-      if (name === null) {
-        ctx.font = '48px "Material Symbols Outlined"';
-        ctx.fillText("skull", 0, 0);
-      } else {
+
+        ctx.textAlign = 'left';
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "white";
+        ctx.translate(x, y+squareSize/3);
+        ctx.rotate(-1* Math.PI / 2);
+
         ctx.fillText(name, 0, 0);
       }
+      
+      
 
       ctx.restore();
     }
 
     let fancyHue = 0;
-    
+    let sun = 0;
     function wildernessOverlay() {
       fancyHue += 10*dt/1000;
       // fancyHue = 180;
@@ -706,7 +788,7 @@
       ctx.rotate(Math.PI);
       ctx.fillText("Sentry", 0, 0);
       ctx.translate(0, r_hex);
-      ctx.fillText("Navigator", 0, 0);
+      ctx.fillText("Navigate", 0, 0);
       ctx.restore();
 
       // Draw mapper
@@ -724,7 +806,7 @@
       ctx.rotate(Math.PI);
       ctx.fillText("Sentry", 0, 0);
       ctx.translate(0, -r_hex);
-      ctx.fillText("Mapper", 0, 0);
+      ctx.fillText("Map", 0, 0);
       ctx.restore();
 
       // Draw Forager
@@ -765,9 +847,104 @@
       ctx.fillText("Sentry", 0, 0);
       ctx.restore();
 
+      // Draw ring
+      let sunRadius = r_hex * 2.5;
+      ctx.translate(sentry_tile.x, sentry_tile.y - r_hex * Math.sin(deg_60));
       ctx.beginPath();
-      ctx.arc(sentry_tile.x, sentry_tile.y - r_hex, 3*r_hex, 0, 2*Math.PI);
+      ctx.arc(0,0, 2.5*r_hex, 0, 2*Math.PI);
       ctx.stroke();
+
+      // Draw direction markers
+      
+      ctx.save();
+      ctx.translate(0, sunRadius);
+      ctx.rotate(Math.PI);
+      ctx.fillStyle = textFillStyle;
+      ctx.fillText("N", 0, 0);
+      ctx.restore();
+
+      ctx.save();
+      ctx.translate(-1*sunRadius, 0);
+      ctx.rotate(Math.PI);
+      ctx.fillStyle = textFillStyle;
+      ctx.fillText("E", 0, 0);
+      ctx.restore();
+
+      ctx.save();
+      ctx.translate(0, -sunRadius);
+      ctx.rotate(Math.PI);
+      ctx.fillStyle = textFillStyle;
+      ctx.fillText("S", 0, 0);
+      ctx.restore();
+
+      ctx.save();
+      ctx.translate(sunRadius, 0);
+      ctx.rotate(Math.PI);
+      ctx.fillStyle = textFillStyle;
+      ctx.fillText("W", 0, 0);
+      ctx.restore();
+
+      // get travel duration
+      let hoursMarched = opener.document.getElementById("hoursMarched").value;
+      // where should the sun be?
+      let sunLocation = Math.PI - 2*Math.PI*(hoursMarched*1.5)/24 ;
+      
+      // where is the sun?
+      let error = sunLocation - sun;
+      if (error > Math.PI / 12){
+        error -= 2 * Math.PI;
+      }
+      if (Math.abs(error) <= Math.PI / 24) {
+      error = 0;
+      }
+      let correction = (-1 * Math.PI * dt / 5000);
+
+      if (sun + correction <= sunLocation){
+        sun = sunLocation;
+      } else {
+        sun += correction;
+      }
+      
+
+      let sunX = sunRadius * Math.cos(sun);
+      let sunY = -1 * sunRadius * Math.sin(sun);
+      // Draw the sun
+      
+      ctx.beginPath();
+      ctx.arc(
+        sunX, 
+        sunY, 
+        50, 
+        0, 
+        Math.PI * 2
+      );
+      ctx.fillStyle = "white";
+      ctx.fill();
+
+      // Draw the sun dial
+      ctx.beginPath();
+      ctx.arc(
+        0,
+        0,
+        20,
+        0,
+        Math.PI * 2
+      );
+      ctx.fillStyle = "black";
+      ctx.fill();
+
+      // Draw the shadow
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(-1 * sunX, -1 * sunY)
+      ctx.lineCap = "round";
+      ctx.lineWidth = 40;
+      ctx.strokeStyle = "rgba(0, 0, 0, .50)";
+      ctx.shadowBlur = 200;
+      ctx.shadowColor = "black";
+      ctx.stroke();
+
+
 
       ctx.restore();
     }
@@ -952,6 +1129,7 @@
       if (keyPressed["Control"]){
         return clickControlPoint(x, y);
       }
+
       // figure out which tile the click is closest to
       let closest_tile = null;
       let distance = 10000;
@@ -965,6 +1143,19 @@
               }
       ));
 
+      if (keyPressed["z"]) {
+        scale_x = closest_tile.x;
+        scale_y = closest_tile.y;
+        if (event.button === 2){
+          scaleFactor -= scaleStep;
+        } else {
+          scaleFactor += scaleStep
+        }
+        return
+      }
+
+
+
       const radios = opener.document.querySelectorAll('input[name="func"]');
       
       // Find the selected radio button
@@ -974,7 +1165,7 @@
           selectedValue = radio.id;
         }
       });
-      console.log(selectedValue);
+
       switch (selectedValue) {
         case "hide":
           closest_tile.state = closest_tile.state === "hidden" ? "visible" : "hidden";
@@ -1019,6 +1210,12 @@
           }
           
           break;
+        case "half-cover":
+          if (event.button === 2){
+            closest_tile;
+          } else {
+            closest_tile.assets.push()
+          }
 
       }
 
@@ -1439,7 +1636,43 @@
       ctx.restore();
     }
 
+    function saveState() {
+      const state = {
+        hex_tiles: hex_tiles,
+        scaleFactor: scaleFactor,
+        scale_x: scale_x,
+        scale_y: scale_y,
+        all_walls: all_walls
+      }
+      let stateString = JSON.stringify(state);
+      const blob = new Blob([stateString], { type: "application/json" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "data.json"; // Specify the filename
+      // Programmatically click the link to trigger the download
+      link.click();
 
+      // Clean up by revoking the object URL
+      URL.revokeObjectURL(link.href);
+
+    }
+    function load(state) {
+      scaleFactor = state.scaleFactor;
+      scale_x = state.scale_x;
+      scale_y = state.scale_y;
+      all_walls = state.all_walls;
+      new_hex_tiles = [];
+      state.hex_tiles.forEach(row => {
+        new_row = [];
+        row.forEach(tile => {
+          let clone = new HexTile();
+          clone.recreate(tile);
+          new_row.push(clone);
+        });
+        new_hex_tiles.push(new_row);
+      })
+      hex_tiles = new_hex_tiles;
+    }
 
   </script>
 </body>

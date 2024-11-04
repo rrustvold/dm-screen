@@ -5,7 +5,7 @@ import Wilderness from "./components/Wilderness";
 import RandomEncounter from "./components/Encounter";
 import Party from "./components/Party";
 import {useState} from "react";
-import HordeMath from "./components/HordeMath";
+import HordeMathContainer from "./components/HordeMath";
 import RandomDungeon from './components/randomDungeon/RandomDungeon';
 import RandomEncounter2 from "./components/RandomEncounter";
 import {RandomTreasure} from "./components/randomDungeon/RandomTreasure";
@@ -18,13 +18,15 @@ function App() {
 
   return (
       <div class="w3-container">
+        <Wilderness party={party}></Wilderness>
           <Party partySize={partySize} setPartySize={setPartySize} party={party} setParty={setParty}></Party>
+          <HordeMathContainer party={party} tableState={tableState} setTableState={setTableState}></HordeMathContainer>
           <Table tableState={tableState}></Table>
-          <HordeMath party={party} tableState={tableState} setTableState={setTableState}></HordeMath>
+        
           <RandomEncounter2 party={party}></RandomEncounter2>
           <RandomTreasure party={party}></RandomTreasure>
         <RandomDungeon></RandomDungeon>
-        <Wilderness party={party}></Wilderness>
+        
           <DamageSeverity></DamageSeverity>
           
       </div>

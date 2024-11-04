@@ -502,7 +502,7 @@ export default function Wilderness({party}) {
                     <div className="w3-col l4">
                         <p>
                             <input type="radio" className="w3-radio" id="paceNormal"
-                                   value="normal" name="pace" checked/>
+                                   value="normal" name="pace"/>
                             <label htmlFor="paceNormal">Normal (3 mph, disadvantage
                                 (stealth)) </label>
                         </p>
