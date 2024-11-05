@@ -94,6 +94,10 @@ export default function Table({tableState}) {
                     <option value="snowy-planes">Snowy Planes</option>
                     <option value="arctic">Arctic</option>
                 </select>
+                <select class="w3-select" id="elevation-style">
+                    <option value="ground-up">Ground Up</option>
+                    <option value="cliff-down">Cliff Down</option>
+                </select>
                 <input className="w3-text" type="text" id="scale"></input>
                 <input className="w3-radio" type="radio" id="hide" name="func" value="hide"></input> Hide/Show
                 <input className="w3-radio" type="radio" id="elevate" name="func" value="elevate"></input> Elevate

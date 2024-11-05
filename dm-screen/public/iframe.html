@@ -121,6 +121,8 @@
     // step 6: listen for clicks
     function HexTile(i, j, x , y) {
 
+      const elevationStep = .25;
+
       this.recreate = (record) => {
         this.i = record.i;
         this.j = record.j;
@@ -140,7 +142,7 @@
       this.y = y;
       this.state = "hidden";
       this.terrain = "default";
-      this.elevation = 0;
+      this.elevation = 1;
       this.elevationDirection = "up";
       this.assets = [];
       this.effects = [];
@@ -171,7 +173,7 @@
         ctx.restore();
       }
 
-      this.drawGround = () => {
+      this.drawGround = (maxElevation=0, elevationStyle = "ground-up") => {
         if (this.state === "hidden"){
           return;
         }
@@ -179,14 +181,27 @@
         ctx.shadowColor = "#152213";
         ctx.shadowBlur = 50;
         ctx.strokeStyle = "#152213";
-        drawHex(this.x, this.y);
-        ctx.fillStyle = get_fill_style(this.terrain);
-        ctx.fill();
+
+        if (elevationStyle === "ground-up"){
+          let h = elevationStep*r_hex * Math.sin(Math.PI / 3) * this.elevation;
+          drawHex(this.x, this.y + h);
+          ctx.fillStyle = get_fill_style(this.terrain);
+          ctx.fill();
+          if (this.elevation < maxElevation){
+            ctx.fillStyle = `rgba(255,255,255,${.05 * (maxElevation - this.elevation)})`;
+            ctx.fill();
+          }
+        } else {
+          drawHex(this.x, this.y);
+          ctx.fillStyle = get_fill_style(this.terrain);
+          ctx.fill();
+        }
+
         ctx.restore();
       }
 
-      this.drawElevation = (elevationOffset=0) => {
-        if (this.state === "hidden" || this.elevation < 1){
+      this.drawElevation = (elevationOffset=0, elevationStyle="ground-up") => {
+        if (this.state === "hidden" || this.elevation < 0){
           return;
         }
 
@@ -196,9 +211,10 @@
           ctx.strokeStyle = "#152213";
           ctx.lineCap = "round";
           
-
-          let h = r_hex * Math.sin(Math.PI / 3);
+          let h0 = r_hex * Math.sin(Math.PI / 3);
+          let h = h0 * (this.elevation - elevationOffset) * elevationStep;
           let w = r_hex * Math.cos(Math.PI / 3);
+          let z = r_hex * Math.sin(Math.PI / 3);
 
           let pt0;
           let pt1;
@@ -209,25 +225,39 @@
           let pt6;
           let pt7;
 
-          if (this.elevationDirection === "up"){
+          if (elevationStyle === "ground-up"){
+            pt0 = [this.x - r_hex, this.y + h];
+            pt1 = [this.x - r_hex, this.y];
+            pt2 = [this.x - w, this.y - z];
+            pt3 = [this.x + w, this.y - z];
+            pt4 = [this.x + r_hex, this.y];
+            pt5 = [this.x + r_hex, this.y + h];
+            pt6 = [this.x + w, this.y + h - z];
+            pt7 = [this.x - w, this.y + h - z];
+          }
+
+          else if (this.elevationDirection === "up"){
             pt0 = [this.x - r_hex, this.y];
-            pt1 = [this.x - r_hex, this.y - (this.elevation - elevationOffset)*h];
-            pt2 = [this.x - w, this.y -  (this.elevation - elevationOffset)*h - h];
-            pt3 = [this.x + w, this.y -  (this.elevation - elevationOffset)*h - h];
-            pt4 = [this.x + r_hex, this.y -  (this.elevation - elevationOffset)*h];
+            pt1 = [this.x - r_hex, this.y - h];
+            pt2 = [this.x - w, this.y -  h - h0];
+            pt3 = [this.x + w, this.y - h - h0];
+            pt4 = [this.x + r_hex, this.y - h];
             pt5 = [this.x + r_hex, this.y];
-            pt6 = [this.x + w, this.y - h];
-            pt7 = [this.x - w, this.y - h];
+            pt6 = [this.x + w, this.y - h0];
+            pt7 = [this.x - w, this.y - h0];
           } else if (this.elevationDirection === "down"){
             pt0 = [this.x - r_hex, this.y];
-            pt1 = [this.x - r_hex, this.y + (this.elevation - elevationOffset)*h];
-            pt2 = [this.x - w, this.y +  (this.elevation - elevationOffset)*h + h];
-            pt3 = [this.x + w, this.y +  (this.elevation - elevationOffset)*h + h];
-            pt4 = [this.x + r_hex, this.y +  (this.elevation - elevationOffset)*h];
+            pt1 = [this.x - r_hex, this.y + h];
+            pt2 = [this.x - w, this.y + h + h0];
+            pt3 = [this.x + w, this.y +  h + h0];
+            pt4 = [this.x + r_hex, this.y +  h];
             pt5 = [this.x + r_hex, this.y];
-            pt6 = [this.x + w, this.y + h];
-            pt7 = [this.x - w, this.y + h];
+            pt6 = [this.x + w, this.y + h0];
+            pt7 = [this.x - w, this.y + h0];
           }
+
+          // shift up
+
           
 
           ctx.fillStyle = cliffPattern;  
@@ -461,7 +491,8 @@
         let overlay = document.getElementById('overlay');
         overlay.style.visibility = 'visible';
         let style = opener.document.getElementById('battle-style').value;
-        overlay.style.backgroundColor = "#273d52"
+        overlay.style.backgroundColor = "#273d52";
+        overlay.style.backgroundImage = 'url("forest.png")';
         // overlay.style.backgroundImage = `url("/${style}.jpg")`;
         // summer grass
         // overlay.style.backgroundColor = "#6ae457";
@@ -1448,24 +1479,45 @@
         })
       })
 
-      for (let i=0; i <= maxElevation; i++){
-        if (i > 0){
-          
-        }
-        hex_tiles.forEach(row => {
-          row.forEach(tile => {
-            if (tile.elevation >= i){
-              tile.drawElevation(elevationOffset=i > 1 ? i-1: 0);
-            }
-          })
-          row.forEach(tile => {
-            if (tile.elevation === i){
-              tile.drawGround();
-            }
-          })
-        })
-      }
+      let elevationStyle = opener.document.getElementById('elevation-style').value;
 
+      if (elevationStyle === "ground-up"){
+        for (let i=hex_tiles.length; i > 0; i--){
+          let row = hex_tiles[i - 1];
+          for (let j=0; j < row.length; j++) {
+            if (j % 2 !== 0) {
+              continue;
+            }
+            let tile = row[j];
+            tile.drawElevation();
+            tile.drawGround(maxElevation);
+          }
+          for (let j=0; j < row.length; j++) {
+            if (j % 2 === 0) {
+              continue;
+            }
+            let tile = row[j];
+            tile.drawElevation();
+            tile.drawGround(maxElevation);
+          }
+        }
+      } else {
+        // cliff down
+        for (let i=0; i <= maxElevation; i++) {
+          hex_tiles.forEach(row => {
+            row.forEach(tile => {
+              if (tile.elevation >= i){
+                tile.drawElevation(elevationOffset=i > 1 ? i-1: 0, elevationStyle=elevationStyle);
+              }
+            })
+            row.forEach(tile => {
+              if (tile.elevation === i){
+                tile.drawGround(maxElevation=maxElevation, elevationStyle=elevationStyle);
+              }
+            })
+          })
+        }
+      }
       
       ctx.restore();
     }
