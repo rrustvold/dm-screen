@@ -299,6 +299,23 @@
         
       }
 
+      this.drawFog = () => {
+        if (this.state === "hidden"){
+          return;
+        }
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.fillStyle = "rgba(200,200,200, 1)";
+        ctx.shadowColor = "red";
+        ctx.shadowBlur = 100;
+        
+        ctx.beginPath();
+        ctx.strokeStyle = "rgba(255,255,255,1)";
+        ctx.arc(0, 0, .9 * r_hex, 0, Math.PI, true);
+        ctx.stroke();
+        ctx.restore();
+      }
+
       this.drawAssets = () => {
         if (this.state === "hidden"){
           return;
@@ -413,6 +430,11 @@
     let westWallPattern;
     westWallImg.onload = () => {westWallPattern = ctx.createPattern(westWallImg, "repeat")};
 
+    let treeEdgesImg = new Image();
+    treeEdgesImg.src = "/tree-sides.png";
+    let treeEdgesPattern;
+    treeEdgesImg.onload = () => {treeEdgesPattern = ctx.createPattern(treeEdgesImg, "repeat")};
+
     ctx.font = "40px myFont";
     ctx.shadowBlur = 50;
     ctx.shadowColor = "#d08069";
@@ -517,15 +539,6 @@
         hex_tiles.forEach(row => {
           row.forEach(tile => tile.drawAssets())
         })
-
-        // weather and clouds
-        // clouds.forEach(cloud => cloud.draw());
-        // ctx.save();
-        // ctx.fillStyle = "rgba(30,28,189,0.19)";
-        // ctx.fillRect(0, 0, 1080, 1920);
-        // ctx.restore();
-
-        // fillZones();
         
         drawInitiativeTrack2();
         drawInitiativeTokens();
@@ -1489,8 +1502,10 @@
               continue;
             }
             let tile = row[j];
+            
             tile.drawElevation();
             tile.drawGround(maxElevation);
+            // tile.drawFog();
           }
           for (let j=0; j < row.length; j++) {
             if (j % 2 === 0) {
@@ -1499,6 +1514,7 @@
             let tile = row[j];
             tile.drawElevation();
             tile.drawGround(maxElevation);
+            // tile.drawFog();
           }
         }
       } else {
