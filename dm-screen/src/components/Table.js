@@ -70,22 +70,31 @@ export default function Table({tableState}) {
             <div className="w3-container">
                 <h1>Tabletop Screen</h1>
                 <input type="text" className="w3-text" id="hex-address"></input>
-                <input type="button" class="w3-button" value="All off" onClick={() => allOff()}></input>
-                <input type="button" class="w3-button" value="Open" onClick={() => battle()}></input>
-                <input type="button" class="w3-button" value="Show All" onClick={() => showAll()}></input>
-                <input type="button" className="w3-button" value="Hide All" onClick={() => hideAll()}></input>
-                <input type="button" className="w3-button" value="clear" onClick={() => clear()}></input>
-                
+                <input type="button" class="w3-button" value="All off"
+                       onClick={() => allOff()}></input>
+                <input type="button" class="w3-button" value="Open"
+                       onClick={() => battle()}></input>
+                <input type="button" class="w3-button" value="Show All"
+                       onClick={() => showAll()}></input>
+                <input type="button" className="w3-button" value="Hide All"
+                       onClick={() => hideAll()}></input>
+                <input type="button" className="w3-button" value="clear"
+                       onClick={() => clear()}></input>
+
 
                 <input type="color" id="color"></input>
-                <input type="button" className="w3-button" value="save" onClick={() => save()}></input>
-                <input type="file" accept=".json" onChange={(event) => {console.log("loading"); load(event.target.files[0])}}></input>
-                
-                <select class="w3-select" id="table-type">
+                <input type="button" className="w3-button" value="save"
+                       onClick={() => save()}></input>
+                <input type="file" accept=".json" onChange={(event) => {
+                    console.log("loading");
+                    load(event.target.files[0])
+                }}></input>
+
+                <select className="w3-select" id="table-type">
                     <option value="battle">Battle</option>
                     <option value="wilderness">Wilderness</option>
                 </select>
-                <select class="w3-select" id="battle-style">
+                <select className="w3-select" id="battle-style">
                     <option value="grassland">Grassland</option>
                     <option value="forest">Forest</option>
                     <option value="dungeon">Dungeon</option>
@@ -94,17 +103,28 @@ export default function Table({tableState}) {
                     <option value="snowy-planes">Snowy Planes</option>
                     <option value="arctic">Arctic</option>
                 </select>
-                <select class="w3-select" id="elevation-style">
+                <select className="w3-select" id="background">
+                    <option value="forest">Forest</option>
+                    <option value="hills">Hills</option>
+                    <option value="dungeon">Dungeon</option>
+                </select>
+                <select className="w3-select" id="elevation-style">
                     <option value="ground-up">Ground Up</option>
                     <option value="cliff-down">Cliff Down</option>
                 </select>
                 <input className="w3-text" type="text" id="scale"></input>
-                <input className="w3-radio" type="radio" id="hide" name="func" value="hide"></input> Hide/Show
-                <input className="w3-radio" type="radio" id="elevate" name="func" value="elevate"></input> Elevate
-                <input className="w3-radio" type="radio" id="tree" name="func" value="tree"></input> Tree
-                <input className="w3-radio" type="radio" id="tree-stump" name="func" value="tree-stump"></input> Tree Stump
-                <input className="w3-radio" type="radio" id="water" name="func" value="water"></input> Water
-                <input className="w3-radio" type="radio" id="half-cover" name="func" value="half-cover"></input> Half Cover
+                <input className="w3-radio" type="radio" id="hide" name="func"
+                       value="hide"></input> Hide/Show
+                <input className="w3-radio" type="radio" id="elevate" name="func"
+                       value="elevate"></input> Elevate
+                <input className="w3-radio" type="radio" id="tree" name="func"
+                       value="tree"></input> Tree
+                <input className="w3-radio" type="radio" id="tree-stump" name="func"
+                       value="tree-stump"></input> Tree Stump
+                <input className="w3-radio" type="radio" id="water" name="func"
+                       value="water"></input> Water
+                <input className="w3-radio" type="radio" id="half-cover" name="func"
+                       value="half-cover"></input> Half Cover
 
             </div>
         </>

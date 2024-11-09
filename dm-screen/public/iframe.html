@@ -97,11 +97,10 @@
 </head>
 <body>
 
-  <iframe src="https://hextml.playest.net/#&togetherjs=52ErIPj2jj" id="iframe"></iframe>
+  <iframe src="" id="iframe"></iframe>
   <div class="overlay" id="overlay">
     <canvas id="canvas" class="canvas" width="1080" height="1920"></canvas>
   </div>
-
 
   <script>
     document.getElementById("iframe").src = opener.document.getElementById("hex-address").value;
@@ -333,6 +332,13 @@
         })
         ctx.restore();
       }
+
+      this.drawFire = () => {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+
+        ctx.restore();
+      }
     }
 
     let zoneContents = [];
@@ -509,12 +515,36 @@
 
       if (table_type === "battle"){
         canvas.style.pointerEvents = "auto";
-        lastType = table_type;
+        // lastType = table_type;
         let overlay = document.getElementById('overlay');
         overlay.style.visibility = 'visible';
         let style = opener.document.getElementById('battle-style').value;
-        overlay.style.backgroundColor = "#273d52";
-        overlay.style.backgroundImage = 'url("forest.png")';
+
+        let bg = opener.document.getElementById('background').value;
+        switch (bg) {
+          case "forest":
+            overlay.style.backgroundImage = 'url("forest.png")';
+            overlay.style.backgroundSize = "cover";
+            overlay.style.backgroundPosition = "center";
+            overlay.style.backgroundRepeat = "no-repeat";
+            break;
+          case "hills":
+            overlay.style.backgroundImage = 'url("hills.jpg")';
+            overlay.style.backgroundSize = "cover";
+            overlay.style.backgroundPosition = "center";
+            overlay.style.backgroundRepeat = "no-repeat";
+            break;
+          case "dungeon":
+            overlay.style.backgroundImage = null;
+            overlay.style.backgroundColor = "#273d52";
+            break;
+          default:
+            overlay.style.backgroundImage = null;
+            overlay.style.backgroundColor = "#273d52";
+            break;
+        }
+
+
         // overlay.style.backgroundImage = `url("/${style}.jpg")`;
         // summer grass
         // overlay.style.backgroundColor = "#6ae457";
@@ -545,7 +575,6 @@
         // drawChyron();
         drawControlPoints();
         drawScalePoint();
-
 
         window.requestAnimationFrame(loop);
       } else {
@@ -1203,12 +1232,25 @@
       const radios = opener.document.querySelectorAll('input[name="func"]');
       
       // Find the selected radio button
+      // let selectedValue;
+      // radios.forEach((radio) => {
+      //   if (radio.checked) {
+      //     selectedValue = radio.id;
+      //   }
+      // });
+
       let selectedValue;
-      radios.forEach((radio) => {
-        if (radio.checked) {
-          selectedValue = radio.id;
-        }
-      });
+      if (keyPressed["w"]) {
+        selectedValue = "water";
+      } else if (keyPressed["h"]) {
+        selectedValue = "hide";
+      } else if (keyPressed["t"]) {
+        selectedValue = "tree";
+      } else if (keyPressed["f"]) {
+        selectedValue = "fire";
+      } else {
+        selectedValue = "elevate";
+      }
 
       switch (selectedValue) {
         case "hide":
@@ -1233,6 +1275,9 @@
             }
           );
           break;
+        case "fire":
+          closest_tile
+          break;
         case "water":
           closest_tile.terrain = closest_tile.terrain === "water" ? "grass" : "water";
           break;
@@ -1243,6 +1288,7 @@
             closest_tile.elevation += 1;
           }
 
+          // Up is default too
           if (keyPressed["ArrowUp"]) {
             closest_tile.elevationDirection = "up";
           } else if (keyPressed["ArrowLeft"]) {
