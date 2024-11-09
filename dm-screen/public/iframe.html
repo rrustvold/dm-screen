@@ -102,350 +102,16 @@
     <canvas id="canvas" class="canvas" width="1080" height="1920"></canvas>
   </div>
 
-  <script>
+  <script type="module">
     document.getElementById("iframe").src = opener.document.getElementById("hex-address").value;
-    // Function to toggle the overlay visibility
 
-    // Replace cursor
-    // document.getElementsByTagName("body")[0].style.cursor = "url('http://wiki-devel.sugarlabs.org/images/e/e2/Arrow.cur'), auto";
-    
-    
-    
-
-    // step 1: clear everything
-    // step 2: draw initiative track
-    // step 3: draw grid lines
-    // step 4: style zones
-    // step 5: draw circles
-    // step 6: listen for clicks
-    function HexTile(i, j, x , y) {
-
-      const elevationStep = .25;
-
-      this.recreate = (record) => {
-        this.i = record.i;
-        this.j = record.j;
-        this.x = record.x;
-        this.y = record.y;
-        this.state = record.state;
-        this.terrain = record.terrain;
-        this.elevation = record.elevation;
-        this.elevationDirection = record.elevationDirection;
-        this.assets = record.assets;
-        this.effects = record.effects;
-        this.controlPoints = record.controlPoints;
-      }
-      this.i = i;
-      this.j = j;
-      this.x = x;
-      this.y = y;
-      this.state = "hidden";
-      this.terrain = "default";
-      this.elevation = 1;
-      this.elevationDirection = "up";
-      this.assets = [];
-      this.effects = [];
-
-      let h = r_hex * Math.sin(Math.PI / 3);
-      this.controlPoints = [
-              [x - .5*r_hex, y - h],
-              [x + .5*r_hex, y - h],
-              [x + r_hex, y],
-              [x + .5*r_hex, y + h],
-              [x - .5*r_hex, y + h],
-              [x - r_hex, y],
-              [x - .5*r_hex, y],
-              [x + .5*r_hex, y],
-      ];
-
-      this.drawControlPoints = () => {
-        let r = .0625 * r_hex;
-        ctx.save();
-        ctx.shadowBlur = 0;
-        ctx.fillStyle = "rgba(0, 0, 0, .5)";
-        this.controlPoints.forEach(p => {
-          ctx.beginPath();
-          ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
-          ctx.fill();
-
-        });
-        ctx.restore();
-      }
-
-      this.drawGround = (maxElevation=0, elevationStyle = "ground-up") => {
-        if (this.state === "hidden"){
-          return;
-        }
-        ctx.save();
-        ctx.shadowColor = "#152213";
-        ctx.shadowBlur = 50;
-        ctx.strokeStyle = "#152213";
-
-        if (elevationStyle === "ground-up"){
-          let h = elevationStep*r_hex * Math.sin(Math.PI / 3) * this.elevation;
-          drawHex(this.x, this.y + h);
-          ctx.fillStyle = get_fill_style(this.terrain);
-          ctx.fill();
-          if (this.elevation < maxElevation){
-            ctx.fillStyle = `rgba(255,255,255,${.05 * (maxElevation - this.elevation)})`;
-            ctx.fill();
-          }
-        } else {
-          drawHex(this.x, this.y);
-          ctx.fillStyle = get_fill_style(this.terrain);
-          ctx.fill();
-        }
-
-        ctx.restore();
-      }
-
-      this.drawElevation = (elevationOffset=0, elevationStyle="ground-up") => {
-        if (this.state === "hidden" || this.elevation < 0){
-          return;
-        }
-
-          ctx.save();
-          ctx.shadowColor = "#152213";
-          ctx.shadowBlur = 50;
-          ctx.strokeStyle = "#152213";
-          ctx.lineCap = "round";
-          
-          let h0 = r_hex * Math.sin(Math.PI / 3);
-          let h = h0 * (this.elevation - elevationOffset) * elevationStep;
-          let w = r_hex * Math.cos(Math.PI / 3);
-          let z = r_hex * Math.sin(Math.PI / 3);
-
-          let pt0;
-          let pt1;
-          let pt2;
-          let pt3;
-          let pt4;
-          let pt5;
-          let pt6;
-          let pt7;
-
-          if (elevationStyle === "ground-up"){
-            pt0 = [this.x - r_hex, this.y + h];
-            pt1 = [this.x - r_hex, this.y];
-            pt2 = [this.x - w, this.y - z];
-            pt3 = [this.x + w, this.y - z];
-            pt4 = [this.x + r_hex, this.y];
-            pt5 = [this.x + r_hex, this.y + h];
-            pt6 = [this.x + w, this.y + h - z];
-            pt7 = [this.x - w, this.y + h - z];
-          }
-
-          else if (this.elevationDirection === "up"){
-            pt0 = [this.x - r_hex, this.y];
-            pt1 = [this.x - r_hex, this.y - h];
-            pt2 = [this.x - w, this.y -  h - h0];
-            pt3 = [this.x + w, this.y - h - h0];
-            pt4 = [this.x + r_hex, this.y - h];
-            pt5 = [this.x + r_hex, this.y];
-            pt6 = [this.x + w, this.y - h0];
-            pt7 = [this.x - w, this.y - h0];
-          } else if (this.elevationDirection === "down"){
-            pt0 = [this.x - r_hex, this.y];
-            pt1 = [this.x - r_hex, this.y + h];
-            pt2 = [this.x - w, this.y + h + h0];
-            pt3 = [this.x + w, this.y +  h + h0];
-            pt4 = [this.x + r_hex, this.y +  h];
-            pt5 = [this.x + r_hex, this.y];
-            pt6 = [this.x + w, this.y + h0];
-            pt7 = [this.x - w, this.y + h0];
-          }
-
-          // shift up
-
-          
-
-          ctx.fillStyle = cliffPattern;  
-          ctx.beginPath();
-          
-          // hilight
-          ctx.fillStyle = cliffHilightPattern;
-          ctx.moveTo(pt0[0], pt0[1]);
-          ctx.lineTo(pt1[0], pt1[1]);  
-          ctx.lineTo(pt2[0], pt2[1]);
-          ctx.lineTo(pt7[0], pt7[1]);
-          ctx.closePath();
-          ctx.fill();
-          ctx.stroke();
-
-          // middle
-          ctx.fillStyle = cliffPattern;  
-          ctx.beginPath();
-          ctx.moveTo(pt7[0], pt7[1]);
-          ctx.lineTo(pt2[0], pt2[1]);
-          ctx.lineTo(pt3[0], pt3[1]);
-          ctx.lineTo(pt6[0], pt6[1]);
-          ctx.closePath();
-          ctx.fill();
-          ctx.stroke();
-
-          //shadow
-          ctx.fillStyle = cliffShadowPattern;  
-          ctx.beginPath();
-          ctx.moveTo(pt6[0], pt6[1]);
-          ctx.lineTo(pt3[0], pt3[1]);
-          ctx.lineTo(pt4[0], pt4[1]);
-          ctx.lineTo(pt5[0], pt5[1]);
-          ctx.closePath();
-          ctx.fill();
-          ctx.stroke();
-          
-          ctx.restore();
-        
-      }
-
-      this.drawFog = () => {
-        if (this.state === "hidden"){
-          return;
-        }
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.fillStyle = "rgba(200,200,200, 1)";
-        ctx.shadowColor = "red";
-        ctx.shadowBlur = 100;
-        
-        ctx.beginPath();
-        ctx.strokeStyle = "rgba(255,255,255,1)";
-        ctx.arc(0, 0, .9 * r_hex, 0, Math.PI, true);
-        ctx.stroke();
-        ctx.restore();
-      }
-
-      this.drawAssets = () => {
-        if (this.state === "hidden"){
-          return;
-        }
-        ctx.save();
-        ctx.shadowBlur = 0;
-        this.assets.forEach(asset => {
-          ctx.save();
-          let width = asset.img.width;
-          let height = asset.img.height;
-          ctx.translate(asset.x + width/2, asset.y + height/2);
-          ctx.scale(1, -1);
-          ctx.drawImage(asset.img, -width/2, -height/2);
-          ctx.restore();
-        })
-        ctx.restore();
-      }
-
-      this.drawFire = () => {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-
-        ctx.restore();
-      }
-    }
-
-    let zoneContents = [];
-    zoneContents = [];
-      for (let i=0; i < 6; i++){
-        let row = []
-        for (let j=0; j<3; j++){
-          row.push([]);
-        }
-        zoneContents.push(row);
-      }
-
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-
-    let tree_img = new Image();
-    tree_img.src = "/pixel-art/PNG/assets/Trees_shadow/Autumn_tree1.png";
-   
-    let treeStump = new Image();
-    treeStump.src = "/pixel-art/PNG/assets/Trees_texture_shadow/Broken_tree3.png"
-   
-    let myGrass = new Image();
-    myGrass.src = "/mygrass2.png";
-    let grassPattern;
-    myGrass.onload = () => {grassPattern = ctx.createPattern(myGrass, "no-repeat")};
-
-    let dungeonFloor = new Image();
-    dungeonFloor.src = "/dungeon.jpg";
-    let dungeonFloorPattern;
-    dungeonFloor.onload = () => {dungeonFloorPattern = ctx.createPattern(dungeonFloor, "repeat")};
-
-    let badlandsImg = new Image();
-    badlandsImg.src = "/badlands.png";
-    let badlandsPattern;
-    badlandsImg.onload = () => {badlandsPattern = ctx.createPattern(badlandsImg, "repeat")};  
-
-    let swampImg = new Image();
-    swampImg.src = "/swamp.png";
-    let swampPattern;
-    swampImg.onload = () => {swampPattern = ctx.createPattern(swampImg, "repeat")}; 
-
-    let snowyPlanesImg = new Image();
-    snowyPlanesImg.src = "/snowy-planes.png";
-    let snowyPlanesPattern;
-    snowyPlanesImg.onload = () => {snowyPlanesPattern = ctx.createPattern(snowyPlanesImg, "repeat")}; 
-
-    let arcticImg = new Image();
-    arcticImg.src = "/arctic.png";
-    let arcticPattern;
-    arcticImg.onload = () => {arcticPattern = ctx.createPattern(arcticImg, "repeat")};
-
-    let forestImg = new Image();
-    forestImg.src = "/forest.png";
-    let forestPattern;
-    forestImg.onload = () => {forestPattern = ctx.createPattern(forestImg, "repeat")};
-    
-
-    let cliff = new Image();
-    cliff.src = "/cliff.png";
-    let cliffPattern;
-    cliff.onload = () => {cliffPattern = ctx.createPattern(cliff, "repeat")};
-
-    let cliffHilight = new Image();
-    cliffHilight.src = "/cliff-hilight.png";
-    let cliffHilightPattern;
-    cliffHilight.onload = () => {cliffHilightPattern = ctx.createPattern(cliffHilight, "repeat")};
-
-    let cliffShadow = new Image();
-    cliffShadow.src = "/cliff-shadow.png";
-    let cliffShadowPattern;
-    cliffShadow.onload = () => {cliffShadowPattern = ctx.createPattern(cliffShadow, "repeat")};
-
-    let waterImg = new Image();
-    waterImg.src = "/water.png";
-    let waterPattern;
-    waterImg.onload = () => {waterPattern = ctx.createPattern(waterImg, "repeat")};
-    
-    let northWallImg = new Image();
-    northWallImg.src = "/north-wall.png";
-    let northWallPattern;
-    northWallImg.onload = () => {northWallPattern = ctx.createPattern(northWallImg, "repeat")};
-
-    let eastWallImg = new Image();
-    eastWallImg.src = "/east-wall.png";
-    let eastWallPattern;
-    eastWallImg.onload = () => {eastWallPattern = ctx.createPattern(eastWallImg, "repeat")};
-
-    let southWallImg = new Image();
-    southWallImg.src = "/south-wall.png";
-    let southWallPattern;
-    southWallImg.onload = () => {southWallPattern = ctx.createPattern(southWallImg, "repeat")};
-
-    let westWallImg = new Image();
-    westWallImg.src = "/west-wall.png";
-    let westWallPattern;
-    westWallImg.onload = () => {westWallPattern = ctx.createPattern(westWallImg, "repeat")};
-
-    let treeEdgesImg = new Image();
-    treeEdgesImg.src = "/tree-sides.png";
-    let treeEdgesPattern;
-    treeEdgesImg.onload = () => {treeEdgesPattern = ctx.createPattern(treeEdgesImg, "repeat")};
+    import {canvas, ctx, deg_60, hex_col_size, hex_row_size, r_hex, squareSize} from "./config.js";
+    import {HexTile, drawHexTiles, drawHex} from "./hex-tiles.js";
+    import {drawInitiativeTrack, drawInitiativeTokens} from "./interface.js";
 
     ctx.font = "40px myFont";
     ctx.shadowBlur = 50;
     ctx.shadowColor = "#d08069";
-
-
 
     
     let keyPressed = {};
@@ -463,14 +129,10 @@
     canvas.addEventListener('contextmenu', function(event) {
       event.preventDefault();
     });
-    const squareSize = 108;
-    // multiply by 1.78 to get r=6in
-    const r_hex = 1080 / 7;
-    const hex_row_size = 5; // length of row or Number of cols
-    const hex_col_size = 8; // length of col or Number of rows
+
     let control_point_x_values_set = new Set();
     let control_point_y_values_set = new Set();
-    const deg_60 = 2 * Math.PI / 6;
+
     let hex_tiles = [];
     // initialize all the hex tiles
     for (let j=0; j < hex_col_size; j++){
@@ -562,7 +224,11 @@
         ctx.translate(scale_x, scale_y);
         ctx.scale(scaleFactor, scaleFactor);
         ctx.translate(-scale_x, -scale_y);
-        drawHexTiles();
+        drawHexTiles(
+          hex_tiles,
+          opener.document.getElementById('elevation-style').value,
+          opener.document.getElementById('battle-style').value
+        );
         ctx.restore();
         
         
@@ -570,9 +236,8 @@
           row.forEach(tile => tile.drawAssets())
         })
         
-        drawInitiativeTrack2();
-        drawInitiativeTokens();
-        // drawChyron();
+        drawInitiativeTrack();
+        drawInitiativeTokens(opener);
         drawControlPoints();
         drawScalePoint();
 
@@ -655,14 +320,13 @@
     }
     window.toggleOverlay = toggleOverlay;
 
-    function hide() {
+    window.hide = function hide() {
       let overlay = document.getElementById('overlay');
       overlay.style.visibility = 'hidden';
       document.getElementById("iframe").classList.add('hidden');
     }
-    // window.hide = hide;
 
-    function clear() {
+    window.clear = function clear() {
       hex_tiles.forEach(row => {
         row.forEach(tile => {
           tile.elevation = 0;
@@ -686,36 +350,7 @@
       wildernessOverlay();
     }
 
-    function get_fill_style(terrain){
-      let domterrain = opener.document.getElementById('battle-style').value;
-      switch (terrain) {
-        case "water":
-          return waterPattern;
-        
-        default:
-          switch (domterrain) {
-            case "badlands":
-              return badlandsPattern;
-            case "swamp":
-              return swampPattern;
-            case "snowy-planes":
-              return snowyPlanesPattern;
-            case "arctic":
-              return arcticPattern;
-            case "forest":
-              return forestPattern;
-            default:
-              if (domterrain === "dungeon") {
-                return dungeonFloorPattern;
-              } else {
-                return grassPattern;
-              }
-              
-          }
-          
-      }
-      
-    }
+
 
     function battle() {
 
@@ -736,82 +371,7 @@
     }
 
 
-    function circle(num, currentHp, maxHp, name){
-      let x;
-      let y;
-      let radius = squareSize / 2;
-      // let healthBarLength = 400;
-      // let shortLength = healthBarLength - radius * 0.57735; // Gives 60 degree angle
-      let shortLength = squareSize;
-      let healthBarLength = shortLength + radius * 0.57735;
-      if (num <= 14){
-        x = squareSize / 2 + (14 - num) * squareSize
-        y = squareSize/2;
-      } else {
-        x = squareSize / 2 + (num - 15) * squareSize
-        y = 1920 - squareSize / 2;
-      }
-      ctx.save();
-      ctx.strokeStyle = "red";
-      ctx.fillStyle = "rgba(255,0,0,0.24)";
-      // Draw the health bar
-      ctx.beginPath();
 
-      // Flag
-      if (num < 15) {
-        ctx.moveTo(x - squareSize / 2, y - squareSize / 2);
-        ctx.lineTo(x - squareSize / 2, y - squareSize / 2 + shortLength);
-        ctx.lineTo(x, y - squareSize / 2 + healthBarLength);
-        ctx.lineTo(x + squareSize / 2, y - squareSize / 2 + shortLength);
-        ctx.lineTo(x + squareSize / 2, y - squareSize / 2);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
-
-        // fill the health
-        ctx.save();
-        ctx.clip();
-        ctx.fillStyle = "#800f0f";
-        ctx.fillRect(x - squareSize / 2, y - squareSize / 2, squareSize, healthBarLength * currentHp / maxHp);
-        ctx.restore();
-
-        ctx.textAlign = 'left';
-        ctx.textBaseline = "middle";
-        ctx.fillStyle = "white";
-        ctx.translate(x, y - squareSize/3);
-        ctx.rotate(Math.PI / 2);
-
-        ctx.fillText(name, 0, 0);
-      } else {
-        ctx.moveTo(x - squareSize / 2, y + squareSize / 2);
-        ctx.lineTo(x - squareSize / 2, y + squareSize / 2 - shortLength);
-        ctx.lineTo(x, y + squareSize/2 - healthBarLength);
-        ctx.lineTo(x + squareSize / 2, y + squareSize / 2 - shortLength);
-        ctx.lineTo(x + squareSize / 2, y + squareSize / 2);
-        ctx.closePath();
-        ctx.stroke();
-        ctx.fill();
-
-        // fill the health
-        ctx.save();
-        ctx.clip();
-        ctx.fillStyle = "#800f0f";
-        ctx.fillRect(x - squareSize / 2, y + squareSize / 2, squareSize, -1*(healthBarLength * currentHp / maxHp));
-        ctx.restore();
-
-        ctx.textAlign = 'left';
-        ctx.textBaseline = "middle";
-        ctx.fillStyle = "white";
-        ctx.translate(x, y+squareSize/3);
-        ctx.rotate(-1* Math.PI / 2);
-
-        ctx.fillText(name, 0, 0);
-      }
-      
-      
-
-      ctx.restore();
-    }
 
     let fancyHue = 0;
     let sun = 0;
@@ -1020,49 +580,6 @@
 
 
       ctx.restore();
-    }
-    
-    function drawZones() {
-      const numZones = window.opener.document.getElementById("zoneRows").value;
-      const zoneWidth = window.opener.document.getElementById("zoneCols").value;
-      const initiativeDepth = squareSize * 11;
-      const width = 1080 - 2 * squareSize;
-      const height = 1920 - squareSize;
-      const left = squareSize;
-      const right = 1080 - squareSize;
-
-      const tileWidth = width / 12;
-      const tileHeight = height / 12;
-
-      const zoneHeight = (1920 - squareSize) / numZones;
-      ctx.lineWidth = 10;
-      ctx.strokeStyle = "rgba(255, 255, 255, .5)";
-
-
-      for (let i=0; i < numZones; i++) {
-        ctx.beginPath();
-        let elevation = zoneHeight * (i + 1) + squareSize;
-        let leftEnd = left;
-        let rightEnd = right;
-        if (elevation >= initiativeDepth) {
-          leftEnd = 0;
-          rightEnd = 1080;
-        }
-        if (i < numZones - 1) {
-          ctx.moveTo(leftEnd, elevation);
-          ctx.lineTo(rightEnd, elevation);
-          ctx.stroke();
-        }
-      }
-
-      for (let j=0; j < zoneWidth - 1; j++){
-        let x = (j + 1) * 1080 / zoneWidth;
-        ctx.beginPath()
-        ctx.moveTo(x, squareSize);
-        ctx.lineTo(x, 1920);
-        ctx.stroke();
-      }
-      
     }
 
 
@@ -1311,278 +828,8 @@
 
     }
 
-    function fillZones(){  
-      const numRows = window.opener.document.getElementById("zoneRows").value;
-      const numCols = window.opener.document.getElementById("zoneCols").value;
-      const colWidth = 1080 / numCols;
-      const rowHeight = (1920 - squareSize) / numRows;
-      for (let i=0; i < zoneContents.length; i++) {
-        let row = zoneContents[i];
-        for (let j=0; j < row.length; j++){
-          let fillTools = row[j];
-          for (let k=0; k < fillTools.length; k++) {
-            let fillTool = fillTools[k];
-            if (fillTool === "difficult-terrain"){
-              ctx.fillStyle = "rgba(100, 100, 0, .75)";
-            } else if (fillTool === "dark") {
-              ctx.fillStyle = "rgba(0, 0, 0, .75)";
-            } else if (fillTool === "light") {
-              ctx.fillStyle = "rgba(255, 255, 255, .25)";
-            } else if (fillTool === "water") {
-              ctx.fillStyle = "rgba(20, 20, 240, .75)";
-            }
-            if (fillTool === "add-cover"){
-              // const grad=ctx.createRadialGradient(x,y,40,x,y,80);
-              // grad.addColorStop(0,"lightblue");
-              // grad.addColorStop(0.3,"pink");
-              // grad.addColorStop(1,"darkblue"); 
-              // ctx.beginPath();
-              // ctx.arc(x, y, 75, 0, Math.PI * 2);
-              // ctx.fillStyle = grad;
-              // ctx.fill();
-            } else if (fillTool === "remove") {
-              ctx.clearRect(colClicked * colWidth + 5, rowClicked * rowHeight + squareSize + 5, colWidth - 10, rowHeight - 10);
-            } else{
-              ctx.fillRect(j * colWidth + 5, i * rowHeight + squareSize + 5, colWidth - 10, rowHeight - 10);
-            }
-          }
-        }
-      }
-    }
-
-    function drawInitiativeTrack2() {
-      let color = 'rgba(164,240,255,0.45)';
-      ctx.save();
-      ctx.fillStyle = color;
-      ctx.fillRect(0, 0, 1080, squareSize);
-      ctx.fillRect(0, 1920 - squareSize, 1080, squareSize);
-
-      ctx.fillStyle = 'white'; // Text color
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      // Draw the top
-      for (let i=0; i<10; i++){
-        // Save the current state before rotation
-        ctx.save();
-        // Move the origin to the center (to rotate around the center)
-        let x = squareSize/2 + (i * squareSize);
-        let y = squareSize/2;
-        ctx.translate(x, y);
-
-        // Rotate 45 degrees (in radians)
-        const angle = 180 * (Math.PI / 180); // Convert degrees to radians
-        ctx.rotate(angle);
-        ctx.fillText(`${14 - i}`, 0, 0);
-        ctx.restore();
-      }
-
-      // Draw the bottom
-      for (let i=0; i<10; i++){
-        // Save the current state before rotation
-        ctx.save();
-        // Move the origin to the center (to rotate around the center)
-        let x = squareSize/2 + (i * squareSize);
-        let y = 1920 - squareSize/2;
-        ctx.translate(x, y);
-
-        // Rotate 45 degrees (in radians)
-        const angle = 180 * (Math.PI / 180); // Convert degrees to radians
-        ctx.rotate(angle);
-        ctx.fillText(`${15 + i}`, 0, 0);
-        ctx.restore();
-      }
-
-      ctx.restore();
-    }
-    
-    function drawInitiativeTrack(){ 
-      let color = "black";
-      let tan30 = 0.57735;
-      // TODO: Move this to its own function
-      let style = opener.document.getElementById('battle-style').value;
-      // ctx.save();
-      // ctx.shadowBlur = 0;
-      //   ctx.shadowColor = null;
-      if (style === "forest") {
-        // gold
-        // color = '#f9c366';
-        // sky
-        color = 'rgba(164,240,255,0.45)';
-
-        // ctx.shadowOffsetX = 10;
-        // ctx.shadowOffsetY = 15;
-
-      } else if (style === "dungeon"){
-        color = 'rgba(240, 50, 50, .45)';
-      }
-      ctx.save();
-
-      ctx.fillStyle = color;
-      let radius = 50;
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.lineTo(1080, 0);
-      ctx.lineTo(1080, squareSize*11);
-      ctx.lineTo(1080 - squareSize/2, squareSize*11 + squareSize*tan30);
-      ctx.lineTo(1080 - squareSize, squareSize*11);
 
 
-
-      ctx.lineTo(1080 - squareSize + radius, squareSize*11);
-      ctx.arc(1080 - squareSize + radius, squareSize*11 - radius, radius,-1*Math.PI/2, -1*Math.PI);
-      ctx.lineTo(1080 - squareSize, squareSize + radius);
-      // ctx.arcTo(1080 - squareSize, squareSize + radius, 1080 - squareSize - radius, squareSize, radius);
-      ctx.arc(1080 - squareSize - radius, squareSize + radius, radius, 0, -1*Math.PI/2, true);
-      ctx.lineTo(squareSize + radius, squareSize);
-      ctx.arc(squareSize + radius, squareSize + radius, radius, -1*Math.PI / 2, Math.PI, true);
-      ctx.lineTo(squareSize, squareSize*11 - radius);
-      ctx.arc(squareSize - radius, squareSize*11 - radius, radius, 0, Math.PI / 2);
-      ctx.lineTo(0, squareSize*11);
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = 'white'; // Text color
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      // Draw the left
-      for (let i=0; i<11; i++){
-        // Save the current state before rotation
-        ctx.save();
-        // Move the origin to the center (to rotate around the center)
-        let x = squareSize/2
-        let y = i*squareSize + squareSize/2;
-        ctx.translate(x, y);
-
-        // Rotate 45 degrees (in radians)
-        const angle = 90 * (Math.PI / 180); // Convert degrees to radians
-        ctx.rotate(angle);
-        ctx.fillText(`${20 + i}`, 0, 0);
-        ctx.restore();
-      }
-
-      for (let i=0; i<8; i++) {
-        ctx.save();
-        let x = (i+1)*squareSize + squareSize/2;
-        let y = squareSize/2;
-        ctx.translate(x, y);
-        const angle = 180 * (Math.PI / 180);
-        ctx.rotate(angle);
-        ctx.fillText(`${19 - i}`, 0, 0);
-        ctx.restore();
-      }
-      
-      for (let i=0; i<11; i++){
-        ctx.save();
-        let x = squareSize*10 - squareSize/2;
-        let y = i*squareSize + squareSize/2
-        ctx.translate(x, y);
-        const angle = 270 * (Math.PI / 180);
-        ctx.rotate(angle);
-        ctx.fillText(`${11 - i}`, 0, 0);
-        ctx.restore();
-      }
-      ctx.restore();
-    }
-
-    function drawInitiativeTokens(){
-      for (let i=0; i < 10; i++){
-        let initiative = opener.document.getElementById(`initiative-${i}`);
-        let name = opener.document.getElementById(`monster-name-${i}`);
-        name = name ? name.value : null;
-
-        let maxHp = opener.document.getElementById(`hit-point-maximum-${i}`);
-        if (maxHp !== null){
-          maxHp = maxHp.value;
-        } else {
-          maxHp = 1;
-        }
-
-        let currentHp = opener.document.getElementById(`hit-points-${i}`);
-        if (currentHp !== null) {
-          currentHp = currentHp.value;
-        } else {
-          currentHp = 1;
-        }
-        
-        if (initiative !== null){
-          if (initiative.value !== null && initiative.value > 0 && initiative.value < 31){
-            circle(initiative.value, currentHp, maxHp, name);
-          }
-        } else {
-          break;
-        }
-      }
-    }
-
-    function drawHex(x, y){
-        ctx.beginPath();
-        for (let i = 0; i < 6; i++) {
-          ctx.lineTo(x + r_hex * Math.cos(deg_60 * i), y + r_hex * Math.sin(deg_60 * i));
-        }
-        ctx.closePath();
-        ctx.stroke();
-
-
-    }
-
-    function drawHexTiles() {
-      ctx.save()
-      ctx.strokeStyle = "#f9c366";
-      ctx.lineWidth = 6;
-      let maxElevation = 0;
-      hex_tiles.forEach(row => {
-        row.forEach(tile => {
-          if (tile.elevation > maxElevation){
-            maxElevation = tile.elevation;
-          }
-        })
-      })
-
-      let elevationStyle = opener.document.getElementById('elevation-style').value;
-
-      if (elevationStyle === "ground-up"){
-        for (let i=hex_tiles.length; i > 0; i--){
-          let row = hex_tiles[i - 1];
-          for (let j=0; j < row.length; j++) {
-            if (j % 2 !== 0) {
-              continue;
-            }
-            let tile = row[j];
-            
-            tile.drawElevation();
-            tile.drawGround(maxElevation);
-            // tile.drawFog();
-          }
-          for (let j=0; j < row.length; j++) {
-            if (j % 2 === 0) {
-              continue;
-            }
-            let tile = row[j];
-            tile.drawElevation();
-            tile.drawGround(maxElevation);
-            // tile.drawFog();
-          }
-        }
-      } else {
-        // cliff down
-        for (let i=0; i <= maxElevation; i++) {
-          hex_tiles.forEach(row => {
-            row.forEach(tile => {
-              if (tile.elevation >= i){
-                tile.drawElevation(elevationOffset=i > 1 ? i-1: 0, elevationStyle=elevationStyle);
-              }
-            })
-            row.forEach(tile => {
-              if (tile.elevation === i){
-                tile.drawGround(maxElevation=maxElevation, elevationStyle=elevationStyle);
-              }
-            })
-          })
-        }
-      }
-      
-      ctx.restore();
-    }
 
     function hideAll(){
       hex_tiles.forEach(row => row.forEach(tile => tile.state = "hidden"));
@@ -1750,7 +997,7 @@
       ctx.restore();
     }
 
-    function saveState() {
+    window.saveState = function saveState() {
       const state = {
         hex_tiles: hex_tiles,
         scaleFactor: scaleFactor,
@@ -1770,14 +1017,14 @@
       URL.revokeObjectURL(link.href);
 
     }
-    function load(state) {
+    window.load = function load(state) {
       scaleFactor = state.scaleFactor;
       scale_x = state.scale_x;
       scale_y = state.scale_y;
       all_walls = state.all_walls;
-      new_hex_tiles = [];
+      let new_hex_tiles = [];
       state.hex_tiles.forEach(row => {
-        new_row = [];
+        let new_row = [];
         row.forEach(tile => {
           let clone = new HexTile();
           clone.recreate(tile);

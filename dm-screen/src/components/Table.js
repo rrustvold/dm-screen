@@ -82,7 +82,6 @@ export default function Table({tableState}) {
                        onClick={() => clear()}></input>
 
 
-                <input type="color" id="color"></input>
                 <input type="button" className="w3-button" value="save"
                        onClick={() => save()}></input>
                 <input type="file" accept=".json" onChange={(event) => {
@@ -112,7 +111,6 @@ export default function Table({tableState}) {
                     <option value="ground-up">Ground Up</option>
                     <option value="cliff-down">Cliff Down</option>
                 </select>
-                <input className="w3-text" type="text" id="scale"></input>
                 <input className="w3-radio" type="radio" id="hide" name="func"
                        value="hide"></input> Hide/Show
                 <input className="w3-radio" type="radio" id="elevate" name="func"
