@@ -362,12 +362,24 @@ export function HexTile(i, j, x , y) {
     ctx.restore();
   }
 
+  this.drawWeb = () => {
+    ctx.drawImage(
+      patterns.webImg, 
+      this.x - patterns.webImg.naturalWidth/2, 
+      this.y - patterns.webImg.naturalHeight/2 + this.height,
+    );
+  }
+
   this.drawEffects = () => {
+    if (this.effects.has("web")) {
+      this.drawWeb();
+    }
     if (this.effects.has("fire")) {
       this.drawFire();
     }
     if (this.effects.has("darkness")) {
       this.drawDarkness();
     }
+    
   }
 }

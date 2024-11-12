@@ -112,6 +112,13 @@ export default function Table({tableState}) {
                 <select className="w3-select" id="background" onChange={refresh}>
                     <option value="fall-forest">Fall Forest</option>
                     <option value="forest">Forest</option>
+                    <option value="forest-river">Forest River</option>
+                    <option value="dark-forest">Dark Forest</option>
+                    <option value="dark-forest2">Dark Forest 2</option>
+                    <option value="coast">Coast</option>
+                    <option value="coast2">Coast 2</option>
+                    <option value="desert">Desert</option>
+                    <option value="desert-winter">Winter Desert</option>
                     <option value="hills">Hills</option>
                     <option value="mountains">Mountains</option>
                     <option value="dungeon">Dungeon</option>

@@ -193,30 +193,44 @@
       let overlay = document.getElementById('overlay');
       overlay.style.visibility = 'visible';
       let bg = opener.document.getElementById('background').value;
+      overlay.style.backgroundSize = "cover";
+      overlay.style.backgroundPosition = "center";
+      overlay.style.backgroundRepeat = "no-repeat";
         switch (bg) {
           case "forest":
             overlay.style.backgroundImage = 'url("forest.png")';
-            overlay.style.backgroundSize = "cover";
-            overlay.style.backgroundPosition = "center";
-            overlay.style.backgroundRepeat = "no-repeat";
+            
             break;
           case "fall-forest":
             overlay.style.backgroundImage = 'url("fall-forest.jpg")';
-            overlay.style.backgroundSize = "cover";
-            overlay.style.backgroundPosition = "center";
-            overlay.style.backgroundRepeat = "no-repeat";
             break;
+          case "forest-river":
+            overlay.style.backgroundImage = 'url("forest-river.jpg")';
+            break;
+          case "dark-forest":
+            overlay.style.backgroundImage = 'url("dark-forest.jpg")';
+            break;
+          case "dark-forest2":
+            overlay.style.backgroundImage = 'url("dark-forest2.jpg")';
+            break;
+          case "coast":
+            overlay.style.backgroundImage = 'url("coast.jpg")';
+            break;
+          case "coast2":
+            overlay.style.backgroundImage = 'url("coast2.jpg")';
+            break;
+          case "desert":
+            overlay.style.backgroundImage = 'url("desert.jpg")';
+            break;
+          case "desert-winter":
+            overlay.style.backgroundImage = 'url("desert-winter.jpg")';
+            break;  
           case "hills":
             overlay.style.backgroundImage = 'url("hills.jpg")';
-            overlay.style.backgroundSize = "cover";
-            overlay.style.backgroundPosition = "center";
-            overlay.style.backgroundRepeat = "no-repeat";
             break;
+
           case "mountains":
             overlay.style.backgroundImage = 'url("mountains.jpg")';
-            overlay.style.backgroundSize = "cover";
-            overlay.style.backgroundPosition = "center";
-            overlay.style.backgroundRepeat = "no-repeat";
             break;
           case "dungeon":
             overlay.style.backgroundImage = null;
@@ -825,6 +839,8 @@
         selectedValue = "fire";
       } else if (keyPressed["d"]) {
         selectedValue = "darkness";
+      } else if (keyPressed["W"]) {
+        selectedValue = "web";
       } else {
         selectedValue = "elevate";
       }
@@ -861,13 +877,20 @@
           }
 
           break;
+        case "web":
+        if (closest_tile.effects.has("web")) {
+            closest_tile.effects.delete("web");
+          } else {
+            closest_tile.effects.add("web");
+          }
+          break;
         case "darkness":
           if (closest_tile.effects.has("darkness")){
             closest_tile.effects.delete("darkness");
           } else {
             closest_tile.effects.add("darkness");
           }
-          break;d
+          break;
         case "water":
           closest_tile.terrain = closest_tile.terrain === "water" ? "grass" : "water";
           break;
