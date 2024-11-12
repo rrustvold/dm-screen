@@ -86,3 +86,4 @@ let treeEdgesImg = new Image();
 treeEdgesImg.src = "/tree-sides.png";
 export let treeEdgesPattern;
 treeEdgesImg.onload = () => {treeEdgesPattern = ctx.createPattern(treeEdgesImg, "repeat")};
+

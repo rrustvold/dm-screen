@@ -48,8 +48,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 1080;
-      height: 1920;
+      width: 1080px;
+      height: 1920px;
       background: rgba(0, 0, 0, 0.1);
       color: white;
       display: flex;
@@ -64,8 +64,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 1080;
-      height: 1920;
+      width: 1080px;
+      height: 1920px;
       /* background: rgba(0, 0, 0, 0.1); */
       color: black;
       display: flex;
@@ -81,10 +81,13 @@
       display: none;
     }
 
-    canvas {
+    #canvas {
       width: 1080px;
       height: 1920px;
       z-index: 3;
+      position: absolute;
+      top: 0;
+      left: 0;
       pointer-events: auto;
       /* Rotate the iframe by 180 degrees */
       /*transform: rotate(180deg);*/
@@ -92,22 +95,32 @@
       /*transform-origin: center;*/
     }
 
+    #canvas2 {
+      width: 1080px;
+      height: 1920px;
+      z-index: 4;
+      pointer-events: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
 
   </style>
 </head>
 <body>
-
-  <iframe src="" id="iframe"></iframe>
   <div class="overlay" id="overlay">
     <canvas id="canvas" class="canvas" width="1080" height="1920"></canvas>
+<!--    <canvas id="canvas2" class="canvas2" width="1080" height="1920"></canvas>-->
   </div>
 
   <script type="module">
-    document.getElementById("iframe").src = opener.document.getElementById("hex-address").value;
 
-    import {canvas, ctx, deg_60, hex_col_size, hex_row_size, r_hex, squareSize} from "./config.js";
-    import {HexTile, drawHexTiles, drawHex} from "./hex-tiles.js";
+    import {canvas, ctx, deg_60, hex_col_size, hex_row_size, r_hex, squareSize, bufferCanvas, bufferCtx} from "./config.js";
+    import {HexTile, drawHexTiles, drawHex, drawTileEffect} from "./hex-tiles.js";
     import {drawInitiativeTrack, drawInitiativeTokens} from "./interface.js";
+    import {drawWeather} from "./weather.js";
+
 
     ctx.font = "40px myFont";
     ctx.shadowBlur = 50;
@@ -169,20 +182,17 @@
     let scale_x = 1080/2;
     let scale_y = 1920/2;
     let scaleStep = .25;
+    let needsRefresh = true;
+    window.refresh = () => {needsRefresh = true};
     function loop() {
       now = Date.now();
       dt = now - lastTime;
       lastTime = now;
       let table_type = opener.document.getElementById('table-type').value;
 
-      if (table_type === "battle"){
-        canvas.style.pointerEvents = "auto";
-        // lastType = table_type;
-        let overlay = document.getElementById('overlay');
-        overlay.style.visibility = 'visible';
-        let style = opener.document.getElementById('battle-style').value;
-
-        let bg = opener.document.getElementById('background').value;
+      let overlay = document.getElementById('overlay');
+      overlay.style.visibility = 'visible';
+      let bg = opener.document.getElementById('background').value;
         switch (bg) {
           case "forest":
             overlay.style.backgroundImage = 'url("forest.png")';
@@ -190,8 +200,20 @@
             overlay.style.backgroundPosition = "center";
             overlay.style.backgroundRepeat = "no-repeat";
             break;
+          case "fall-forest":
+            overlay.style.backgroundImage = 'url("fall-forest.jpg")';
+            overlay.style.backgroundSize = "cover";
+            overlay.style.backgroundPosition = "center";
+            overlay.style.backgroundRepeat = "no-repeat";
+            break;
           case "hills":
             overlay.style.backgroundImage = 'url("hills.jpg")';
+            overlay.style.backgroundSize = "cover";
+            overlay.style.backgroundPosition = "center";
+            overlay.style.backgroundRepeat = "no-repeat";
+            break;
+          case "mountains":
+            overlay.style.backgroundImage = 'url("mountains.jpg")';
             overlay.style.backgroundSize = "cover";
             overlay.style.backgroundPosition = "center";
             overlay.style.backgroundRepeat = "no-repeat";
@@ -206,47 +228,52 @@
             break;
         }
 
+      let weather = opener.document.getElementById("table-weather").value;
 
-        // overlay.style.backgroundImage = `url("/${style}.jpg")`;
-        // summer grass
-        // overlay.style.backgroundColor = "#6ae457";
-
-        // fall grass
-        // overlay.style.backgroundColor = "#f9d401";
-
-        document.getElementById("iframe").classList.add('hidden');
-
+      if (table_type === "battle"){
+        canvas.style.pointerEvents = "auto";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        // drawZones();
-        ctx.save();
-        drawWalls();
-        
-        ctx.translate(scale_x, scale_y);
-        ctx.scale(scaleFactor, scaleFactor);
-        ctx.translate(-scale_x, -scale_y);
-        drawHexTiles(
-          hex_tiles,
-          opener.document.getElementById('elevation-style').value,
-          opener.document.getElementById('battle-style').value
-        );
-        ctx.restore();
+
+        if (needsRefresh){
+          bufferCtx.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
+          bufferCtx.save();
+          drawWalls(bufferCtx);
+
+          bufferCtx.translate(scale_x, scale_y);
+          bufferCtx.scale(scaleFactor, scaleFactor);
+          bufferCtx.translate(-scale_x, -scale_y);
+          drawHexTiles(
+            bufferCtx,
+            hex_tiles,
+            opener.document.getElementById('elevation-style').value,
+            opener.document.getElementById('battle-style').value
+          );
+          bufferCtx.restore();
+          needsRefresh = false;
+        }
+        ctx.drawImage(bufferCanvas, 0, 0);
+        drawTileEffect(hex_tiles);
         
         
         hex_tiles.forEach(row => {
           row.forEach(tile => tile.drawAssets())
         })
-        
+
+        drawWeather(weather);
+
         drawInitiativeTrack();
         drawInitiativeTokens(opener);
         drawControlPoints();
         drawScalePoint();
 
+
         window.requestAnimationFrame(loop);
+
       } else {
         canvas.style.pointerEvents = "none";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         wilderness();
-        // drawChyron();
+        drawWeather(weather);
         window.requestAnimationFrame(loop);
       }
     }
@@ -269,7 +296,7 @@
       ctx.fillRect(scale_x, scale_y, 20, 20);
     }
 
-    function drawWalls() {
+    function drawWalls(ctx) {
       let corners = [];
       ctx.shadowBlur = 0;
       ctx.fillStyle = "rgba(100,100,100, 1)";
@@ -320,12 +347,6 @@
     }
     window.toggleOverlay = toggleOverlay;
 
-    window.hide = function hide() {
-      let overlay = document.getElementById('overlay');
-      overlay.style.visibility = 'hidden';
-      document.getElementById("iframe").classList.add('hidden');
-    }
-
     window.clear = function clear() {
       hex_tiles.forEach(row => {
         row.forEach(tile => {
@@ -343,23 +364,15 @@
     function wilderness() {
       let overlay = document.getElementById('overlay');
       overlay.style.visibility = 'visible';
-      overlay.style.backgroundImage = null;
-      overlay.style.backgroundColor = null;
-      document.getElementById("iframe").classList.remove('hidden');
-
       wildernessOverlay();
     }
 
 
 
     function battle() {
-
       let overlay = document.getElementById('overlay');
       overlay.style.visibility = 'visible';
       let style = opener.document.getElementById('battle-style').value;
-      // overlay.style.backgroundImage = `url("/${style}.jpg")`;
-
-      document.getElementById("iframe").classList.add('hidden');
 
       loop();
     }
@@ -408,7 +421,7 @@
 
       ctx.save();
       let sentry_tile = hex_tiles[1][2];
-      drawHex(sentry_tile.x, sentry_tile.y);
+      drawHex(ctx, sentry_tile.x, sentry_tile.y);
       ctx.fill();
       ctx.save();
       ctx.fillStyle = textFillStyle;
@@ -419,7 +432,7 @@
       ctx.stroke();
       ctx.translate(sentry_tile.x, sentry_tile.y + r_hex/2);
       ctx.rotate(Math.PI);
-      ctx.fillText("Sentry", 0, 0);
+      ctx.fillText("Scout", 0, 0);
       ctx.translate(0, r_hex);
       ctx.fillText("Navigate", 0, 0);
       ctx.restore();
@@ -427,7 +440,7 @@
       // Draw mapper
       ctx.save();
       let mapper_tile = hex_tiles[0][2];
-      drawHex(mapper_tile.x, mapper_tile.y);
+      drawHex(ctx, mapper_tile.x, mapper_tile.y);
       ctx.fill();
       ctx.fillStyle = textFillStyle;
       ctx.lineWidth = strokeWidth;
@@ -437,7 +450,7 @@
       ctx.stroke();
       ctx.translate(mapper_tile.x, mapper_tile.y - r_hex/2);
       ctx.rotate(Math.PI);
-      ctx.fillText("Sentry", 0, 0);
+      ctx.fillText("Scout", 0, 0);
       ctx.translate(0, -r_hex);
       ctx.fillText("Map", 0, 0);
       ctx.restore();
@@ -445,7 +458,7 @@
       // Draw Forager
       ctx.save();
       let forager_tile = hex_tiles[1][1];
-      drawHex(forager_tile.x, forager_tile.y);
+      drawHex(ctx, forager_tile.x, forager_tile.y);
       ctx.fill();
       ctx.fillStyle = textFillStyle;
       ctx.lineWidth = strokeWidth;
@@ -458,13 +471,13 @@
       ctx.rotate(Math.PI/2);
       ctx.fillText("Forage", 0, 0);
       ctx.translate(0, r_hex);
-      ctx.fillText("Sentry", 0, 0);
+      ctx.fillText("Scout", 0, 0);
       ctx.restore();
 
       // Draw 2ndForager
       ctx.save();
       forager_tile = hex_tiles[1][3];
-      drawHex(forager_tile.x, forager_tile.y);
+      drawHex(ctx, forager_tile.x, forager_tile.y);
       ctx.fill();
       ctx.fillStyle = textFillStyle;
       ctx.lineWidth = strokeWidth;
@@ -477,7 +490,7 @@
       ctx.rotate(-1 * Math.PI/2);
       ctx.fillText("Forage", 0, 0);
       ctx.translate(0, r_hex);
-      ctx.fillText("Sentry", 0, 0);
+      ctx.fillText("Scout", 0, 0);
       ctx.restore();
 
       // Draw ring
@@ -487,20 +500,55 @@
       ctx.arc(0,0, 2.5*r_hex, 0, 2*Math.PI);
       ctx.stroke();
 
+
+      let heading = opener.document.getElementById("heading").value;
+      let heading_rotation = 0;
+      switch (heading) {
+        case "north-west":
+          heading_rotation = 2*Math.PI / 6;
+          break
+        case "north-east":
+          heading_rotation = -2*Math.PI / 6;
+          break
+        case "south-east":
+          heading_rotation = -4*Math.PI / 6;
+          break
+        case "south-west":
+          heading_rotation = 4*Math.PI / 6;
+          break
+        case "south":
+          heading_rotation = Math.PI;
+          break
+        default:
+          heading_rotation = 0;
+          break
+      }
+
+      let deg_45 = Math.PI / 6;
       // Draw direction markers
-      
+      ctx.save();
+      ctx.rotate(heading_rotation);
       ctx.save();
       ctx.translate(0, sunRadius);
       ctx.rotate(Math.PI);
-      ctx.fillStyle = textFillStyle;
+      ctx.fillStyle = textFillStyle
       ctx.fillText("N", 0, 0);
+      ctx.font = "40px Material Symbols Outlined";
+      ctx.fillText("arrow_upward", 0, -50);
       ctx.restore();
 
       ctx.save();
-      ctx.translate(-1*sunRadius, 0);
+      ctx.translate(-1*sunRadius*Math.cos(deg_45), sunRadius*Math.sin(deg_45));
       ctx.rotate(Math.PI);
       ctx.fillStyle = textFillStyle;
-      ctx.fillText("E", 0, 0);
+      ctx.fillText("NE", 0, 0);
+      ctx.restore();
+
+      ctx.save();
+      ctx.translate(sunRadius*Math.cos(deg_45), sunRadius*Math.sin(deg_45));
+      ctx.rotate(Math.PI);
+      ctx.fillStyle = textFillStyle;
+      ctx.fillText("NW", 0, 0);
       ctx.restore();
 
       ctx.save();
@@ -511,73 +559,82 @@
       ctx.restore();
 
       ctx.save();
-      ctx.translate(sunRadius, 0);
+      ctx.translate(sunRadius*Math.cos(deg_45), -sunRadius*Math.sin(deg_45));
       ctx.rotate(Math.PI);
       ctx.fillStyle = textFillStyle;
-      ctx.fillText("W", 0, 0);
+      ctx.fillText("SW", 0, 0);
       ctx.restore();
 
-      // get travel duration
-      let hoursMarched = opener.document.getElementById("hoursMarched").value;
-      // where should the sun be?
-      let sunLocation = Math.PI - 2*Math.PI*(hoursMarched*1.5)/24 ;
-      
-      // where is the sun?
-      let error = sunLocation - sun;
-      if (error > Math.PI / 12){
-        error -= 2 * Math.PI;
-      }
-      if (Math.abs(error) <= Math.PI / 24) {
-      error = 0;
-      }
-      let correction = (-1 * Math.PI * dt / 5000);
+      ctx.save();
+      ctx.translate(-sunRadius*Math.cos(deg_45), -sunRadius*Math.sin(deg_45));
+      ctx.rotate(Math.PI);
+      ctx.fillStyle = textFillStyle;
+      ctx.fillText("SE", 0, 0);
+      ctx.restore();
 
-      if (sun + correction <= sunLocation){
-        sun = sunLocation;
-      } else {
-        sun += correction;
-      }
-      
-
-      let sunX = sunRadius * Math.cos(sun);
-      let sunY = -1 * sunRadius * Math.sin(sun);
-      // Draw the sun
-      
-      ctx.beginPath();
-      ctx.arc(
-        sunX, 
-        sunY, 
-        50, 
-        0, 
-        Math.PI * 2
-      );
-      ctx.fillStyle = "white";
-      ctx.fill();
-
-      // Draw the sun dial
-      ctx.beginPath();
-      ctx.arc(
-        0,
-        0,
-        20,
-        0,
-        Math.PI * 2
-      );
-      ctx.fillStyle = "black";
-      ctx.fill();
-
-      // Draw the shadow
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.lineTo(-1 * sunX, -1 * sunY)
-      ctx.lineCap = "round";
-      ctx.lineWidth = 40;
-      ctx.strokeStyle = "rgba(0, 0, 0, .50)";
-      ctx.shadowBlur = 200;
-      ctx.shadowColor = "black";
-      ctx.stroke();
-
-
+      ctx.restore();
+      //
+      // // get travel duration
+      // let hoursMarched = opener.document.getElementById("hoursMarched").value;
+      // // where should the sun be?
+      // let sunLocation = Math.PI - 2*Math.PI*(hoursMarched*1.5)/24 ;
+      //
+      // // where is the sun?
+      // let error = sunLocation - sun;
+      // if (error > Math.PI / 12){
+      //   error -= 2 * Math.PI;
+      // }
+      // if (Math.abs(error) <= Math.PI / 24) {
+      // error = 0;
+      // }
+      // let correction = (-1 * Math.PI * dt / 5000);
+      //
+      // if (sun + correction <= sunLocation){
+      //   sun = sunLocation;
+      // } else {
+      //   sun += correction;
+      // }
+      //
+      //
+      // let sunX = sunRadius * Math.cos(sun);
+      // let sunY = -1 * sunRadius * Math.sin(sun);
+      // // Draw the sun
+      //
+      // ctx.beginPath();
+      // ctx.arc(
+      //   sunX,
+      //   sunY,
+      //   50,
+      //   0,
+      //   Math.PI * 2
+      // );
+      // ctx.fillStyle = "white";
+      // ctx.fill();
+      //
+      // // Draw the sun dial
+      // ctx.beginPath();
+      // ctx.arc(
+      //   0,
+      //   0,
+      //   20,
+      //   0,
+      //   Math.PI * 2
+      // );
+      // ctx.fillStyle = "black";
+      // ctx.fill();
+      //
+      // // Draw the shadow
+      // ctx.beginPath();
+      // ctx.moveTo(0, 0);
+      // ctx.lineTo(-1 * sunX, -1 * sunY)
+      // ctx.lineCap = "round";
+      // ctx.lineWidth = 40;
+      // ctx.strokeStyle = "rgba(0, 0, 0, .50)";
+      // ctx.shadowBlur = 200;
+      // ctx.shadowColor = "black";
+      // ctx.stroke();
+      //
+      //
 
       ctx.restore();
     }
@@ -711,6 +768,7 @@
       if (opener.document.getElementById('table-type').value === "wilderness") {
         return
       }
+      needsRefresh = true;
       // Get the click coordinates relative to the canvas
       const rect = canvas.getBoundingClientRect();
       const x = event.clientX - rect.left;
@@ -765,6 +823,8 @@
         selectedValue = "tree";
       } else if (keyPressed["f"]) {
         selectedValue = "fire";
+      } else if (keyPressed["d"]) {
+        selectedValue = "darkness";
       } else {
         selectedValue = "elevate";
       }
@@ -793,8 +853,21 @@
           );
           break;
         case "fire":
-          closest_tile
+
+          if (closest_tile.effects.has("fire")) {
+            closest_tile.effects.delete("fire");
+          } else {
+            closest_tile.effects.add("fire");
+          }
+
           break;
+        case "darkness":
+          if (closest_tile.effects.has("darkness")){
+            closest_tile.effects.delete("darkness");
+          } else {
+            closest_tile.effects.add("darkness");
+          }
+          break;d
         case "water":
           closest_tile.terrain = closest_tile.terrain === "water" ? "grass" : "water";
           break;
@@ -833,11 +906,13 @@
 
     function hideAll(){
       hex_tiles.forEach(row => row.forEach(tile => tile.state = "hidden"));
+      needsRefresh = true;
     }
     window.hideAll = hideAll;
 
     function showAll() {
       hex_tiles.forEach(row => row.forEach(tile => tile.state = "visible"));
+      needsRefresh = true;
     }
     window.showAll = showAll;
 
@@ -880,121 +955,6 @@
         ctx.restore();
       }
 
-    }
-
-    function createFrostedGlassEffect(x, y, width, height, radii) {
-      // Step 1: Extract the background image portion that will be "behind the glass"
-      ctx.save();
-      const backgroundPortion = ctx.getImageData(x, y, width, height);
-
-      // Step 2: Create a new offscreen canvas to blur the portion of the background
-      const offscreenCanvas = document.createElement('canvas');
-      const offscreenCtx = offscreenCanvas.getContext('2d');
-      offscreenCanvas.width = width;
-      offscreenCanvas.height = height;
-
-      // Step 3: Draw the background portion to the offscreen canvas
-      offscreenCtx.putImageData(backgroundPortion, 0, 0);
-
-      // Step 4: Apply blur filter to the offscreen canvas
-      offscreenCtx.filter = 'blur(5px)';
-      offscreenCtx.drawImage(offscreenCanvas, 0, 0);  // Redraw the blurred image
-
-      // Step 5: Draw the blurred portion back to the main canvas
-      ctx.drawImage(offscreenCanvas, x, y);
-
-      // Step 6: Overlay a semi-transparent white rectangle (for the frosted glass effect)
-      ctx.globalAlpha = 0.5;  // Set transparency (adjust as needed)
-      ctx.fillStyle = 'white';
-      ctx.fillRect(x, y, width, height);
-
-      // Reset alpha
-      ctx.globalAlpha = 1.0;
-
-      // Step 7: Optionally, add a border or highlight to the frosted glass effect
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';  // Light border
-      ctx.lineWidth = 2;
-      ctx.strokeRect(x, y, width, height);
-      ctx.restore();
-    }
-
-    function drawChyron(){
-      // createFrostedGlassEffect(
-      //   .5 * squareSize,
-      //   1920 - 4.5*squareSize,
-      //   1080 - squareSize,
-      //   4 * squareSize,
-      // );
-      ctx.save();
-      ctx.fillStyle = 'rgba(164,240,255,0.75)';
-      ctx.beginPath();
-      ctx.roundRect(1080, 1920 - squareSize, -2.5*squareSize, -squareSize, [0, 0, 50, 0]);
-      ctx.fill();
-      ctx.restore();
-
-      ctx.save();
-      ctx.translate(1080 / 2, 1920/2);
-      ctx.rotate(Math.PI);
-      ctx.translate(-1080/2, -1920/2);
-
-
-      ctx.fillStyle = 'white';
-      ctx.textAlign = "left";
-      let text_x = squareSize / 3;
-      let text_y = squareSize + squareSize / 2;
-      let temperature = opener.document.getElementById("tempPanel").innerText;
-      ctx.fillText(`${temperature} °F`, text_x, text_y);
-      temperature = Number(temperature);
-      text_x += 90;
-      ctx.font = '48px "Material Symbols Outlined"';
-      let tempIcon;
-      if (temperature >= 100) {
-        tempIcon = 'sunny';
-      } else if (temperature <= 0) {
-        tempIcon = 'ac_unit'
-      }
-      if (tempIcon) {
-        ctx.fillText(tempIcon, text_x, text_y);
-        text_x += 50;
-      }
-
-      let wind = opener.document.getElementById("windPanel").innerText;
-      let windIcon;
-      if (wind === 'Light'){
-
-      } else if (wind.startsWith('Strong')){
-        windIcon = 'air';
-      }
-      if (windIcon) {
-        ctx.fillText(windIcon, text_x, text_y);
-        text_x += 50;
-      }
-
-      let precip = opener.document.getElementById("precipPanel").innerText;
-      let precipIcon;
-      if (precip.startsWith("Light")){
-        if (temperature <= 35) {
-          precipIcon = "cloudy_snowing";
-        } else {
-          precipIcon = "rainy_light";
-        }
-      } else if (precip.startsWith("Heavy")){
-        if (temperature <= 35){
-          precipIcon = "weather_snowy";
-        } else {
-          precipIcon = "rainy_light";
-        }
-      }
-      if (precipIcon) {ctx.fillText(precipIcon, text_x, text_y)}
-
-
-      // ctx.textAlign = "left";
-      // ctx.font = "30px myFont";
-      // ctx.fillText(`${temperature}, ${wind} wind, ${precip}`, squareSize, squareSize);
-      // for (let i=0; i < 3; i++){
-      //
-      // }
-      ctx.restore();
     }
 
     window.saveState = function saveState() {

@@ -1,5 +1,6 @@
 import {canvas, ctx, r_hex, deg_60} from "./config.js";
 import * as patterns from "./images.js";
+import {updateFire} from "./fire.js";
 
 export function get_fill_style(terrain, domTerrain){
   // let domterrain = opener.document.getElementById('battle-style').value;
@@ -30,7 +31,7 @@ export function get_fill_style(terrain, domTerrain){
   }
 }
 
-export function drawHex(x, y){
+export function drawHex(ctx, x, y){
     ctx.beginPath();
     for (let i = 0; i < 6; i++) {
       ctx.lineTo(x + r_hex * Math.cos(deg_60 * i), y + r_hex * Math.sin(deg_60 * i));
@@ -39,18 +40,43 @@ export function drawHex(x, y){
     ctx.stroke();
 }
 
-export function drawHexTiles(hex_tiles, elevationStyle, domTerrain) {
-  ctx.save()
-  ctx.strokeStyle = "#f9c366";
-  ctx.lineWidth = 6;
-  let maxElevation = 0;
-  hex_tiles.forEach(row => {
-    row.forEach(tile => {
-      if (tile.elevation > maxElevation){
-        maxElevation = tile.elevation;
+export function drawTileEffect(hex_tiles){
+  for (let i=hex_tiles.length; i > 0; i--) {
+    let row = hex_tiles[i - 1];
+
+    for (let j = 0; j < row.length; j++) {
+      if (j % 2 !== 0) {
+        continue;
       }
+      let tile = row[j];
+      tile.drawEffects();
+    }
+    for (let j = 0; j < row.length; j++) {
+      if (j % 2 === 0) {
+        continue;
+      }
+      let tile = row[j];
+      tile.drawEffects();
+    }
+  }
+}
+
+export function drawHexTiles(ctx, hex_tiles, elevationStyle, domTerrain) {
+  let maxElevation = 0;
+  if (ctx) {
+    ctx.save()
+    ctx.strokeStyle = "#f9c366";
+    ctx.lineWidth = 6;
+
+    maxElevation = 0;
+    hex_tiles.forEach(row => {
+      row.forEach(tile => {
+        if (tile.elevation > maxElevation){
+          maxElevation = tile.elevation;
+        }
+      })
     })
-  })
+  }
 
   if (elevationStyle === "ground-up"){
     for (let i=hex_tiles.length; i > 0; i--){
@@ -60,19 +86,18 @@ export function drawHexTiles(hex_tiles, elevationStyle, domTerrain) {
           continue;
         }
         let tile = row[j];
-
-        tile.drawElevation();
-        tile.drawGround(maxElevation, elevationStyle, domTerrain);
-        // tile.drawFog();
+        tile.drawElevation(ctx);
+        tile.drawGround(ctx, maxElevation, elevationStyle, domTerrain);
+        // tile.drawEffects();
       }
       for (let j=0; j < row.length; j++) {
         if (j % 2 === 0) {
           continue;
         }
         let tile = row[j];
-        tile.drawElevation();
-        tile.drawGround(maxElevation, elevationStyle, domTerrain);
-        // tile.drawFog();
+        tile.drawElevation(ctx);
+        tile.drawGround(ctx, maxElevation, elevationStyle, domTerrain);
+        // tile.drawEffects();
       }
     }
   } else {
@@ -81,19 +106,23 @@ export function drawHexTiles(hex_tiles, elevationStyle, domTerrain) {
       hex_tiles.forEach(row => {
         row.forEach(tile => {
           if (tile.elevation >= i){
-            tile.drawElevation(i > 1 ? i-1: 0, elevationStyle);
+            tile.drawElevation(ctx,i > 1 ? i-1: 0, elevationStyle);
           }
         })
         row.forEach(tile => {
           if (tile.elevation === i){
-            tile.drawGround(maxElevation, elevationStyle, domTerrain);
+            tile.drawGround(ctx, maxElevation, elevationStyle, domTerrain);
           }
         })
       })
     }
   }
 
-  ctx.restore();
+
+  if (ctx) {
+    ctx.restore();
+  }
+
 }
 
 export function HexTile(i, j, x , y) {
@@ -118,12 +147,13 @@ export function HexTile(i, j, x , y) {
   this.j = j;
   this.x = x;
   this.y = y;
+  this.height = 0;
   this.state = "hidden";
   this.terrain = "default";
   this.elevation = 1;
   this.elevationDirection = "up";
   this.assets = [];
-  this.effects = [];
+  this.effects = new Set();
 
   let h = r_hex * Math.sin(Math.PI / 3);
   this.controlPoints = [
@@ -151,8 +181,8 @@ export function HexTile(i, j, x , y) {
     ctx.restore();
   }
 
-  this.drawGround = (maxElevation=0, elevationStyle = "ground-up", domTerrain) => {
-    if (this.state === "hidden"){
+  this.drawGround = (ctx, maxElevation=0, elevationStyle = "ground-up", domTerrain) => {
+    if (this.state === "hidden" || ctx === null){
       return;
     }
     ctx.save();
@@ -162,7 +192,7 @@ export function HexTile(i, j, x , y) {
 
     if (elevationStyle === "ground-up"){
       let h = elevationStep*r_hex * Math.sin(Math.PI / 3) * this.elevation;
-      drawHex(this.x, this.y + h);
+      drawHex(ctx, this.x, this.y + h);
       ctx.fillStyle = get_fill_style(this.terrain, domTerrain);
       ctx.fill();
       if (this.elevation < maxElevation){
@@ -170,7 +200,7 @@ export function HexTile(i, j, x , y) {
         ctx.fill();
       }
     } else {
-      drawHex(this.x, this.y);
+      drawHex(ctx, this.x, this.y);
       ctx.fillStyle = get_fill_style(this.terrain, domTerrain);
       ctx.fill();
     }
@@ -178,8 +208,8 @@ export function HexTile(i, j, x , y) {
     ctx.restore();
   }
 
-  this.drawElevation = (elevationOffset=0, elevationStyle="ground-up") => {
-    if (this.state === "hidden" || this.elevation < 0){
+  this.drawElevation = (ctx, elevationOffset=0, elevationStyle="ground-up") => {
+    if (this.state === "hidden" || this.elevation < 0 || ctx === null){
       return;
     }
 
@@ -191,6 +221,7 @@ export function HexTile(i, j, x , y) {
 
       let h0 = r_hex * Math.sin(Math.PI / 3);
       let h = h0 * (this.elevation - elevationOffset) * elevationStep;
+      this.height = h;
       let w = r_hex * Math.cos(Math.PI / 3);
       let z = r_hex * Math.sin(Math.PI / 3);
 
@@ -312,10 +343,31 @@ export function HexTile(i, j, x , y) {
     ctx.restore();
   }
 
+  this.fireParticles = [];
   this.drawFire = () => {
-    ctx.save();
-    ctx.translate(this.x, this.y);
+    updateFire(this.x, this.y + this.height, this.fireParticles);
+  }
 
+  this.darknessIter = 0;
+  this.drawDarkness = () => {
+    this.darknessIter++;
+
+    ctx.save();
+    ctx.fillStyle = "rgba(0,0,0,.5)";
+    ctx.shadowBlur = 20;
+    ctx.shadowColor = "black";
+    ctx.beginPath();
+    ctx.arc(this.x, this.y + this.height, r_hex + 10*Math.sin(this.darknessIter * 2*Math.PI / 25), 0, 2*Math.PI);
+    ctx.fill();
     ctx.restore();
+  }
+
+  this.drawEffects = () => {
+    if (this.effects.has("fire")) {
+      this.drawFire();
+    }
+    if (this.effects.has("darkness")) {
+      this.drawDarkness();
+    }
   }
 }

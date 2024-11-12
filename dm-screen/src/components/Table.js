@@ -7,10 +7,15 @@ export default function Table({tableState}) {
 
     function showAll() {
         iframeWindow.showAll();
+
     }
 
     function hideAll() {
         iframeWindow.hideAll();
+    }
+
+    function refresh() {
+        iframeWindow.refresh();
     }
 
     function wilderness() {
@@ -89,11 +94,12 @@ export default function Table({tableState}) {
                     load(event.target.files[0])
                 }}></input>
 
-                <select className="w3-select" id="table-type">
+                <select className="w3-select" id="table-type" onChange={refresh}>
                     <option value="battle">Battle</option>
                     <option value="wilderness">Wilderness</option>
                 </select>
-                <select className="w3-select" id="battle-style">
+                <label>Tile Style</label>
+                <select className="w3-select" id="battle-style" onChange={refresh}>
                     <option value="grassland">Grassland</option>
                     <option value="forest">Forest</option>
                     <option value="dungeon">Dungeon</option>
@@ -102,14 +108,31 @@ export default function Table({tableState}) {
                     <option value="snowy-planes">Snowy Planes</option>
                     <option value="arctic">Arctic</option>
                 </select>
-                <select className="w3-select" id="background">
+                <label>Background</label>
+                <select className="w3-select" id="background" onChange={refresh}>
+                    <option value="fall-forest">Fall Forest</option>
                     <option value="forest">Forest</option>
                     <option value="hills">Hills</option>
+                    <option value="mountains">Mountains</option>
                     <option value="dungeon">Dungeon</option>
                 </select>
-                <select className="w3-select" id="elevation-style">
+                <select className="w3-select" id="elevation-style" onChange={refresh}>
                     <option value="ground-up">Ground Up</option>
                     <option value="cliff-down">Cliff Down</option>
+                </select>
+                <select className={"w3-select"} id={"table-weather"}>
+                    <option value={"clear"}>Clear</option>
+                    <option value={"rain"}>Rain</option>
+                    <option value={"heavy-rain"}>Heavy Rain</option>
+                    <option value={"snow"}>Snow</option>
+                </select>
+                <select className={"w3-select"} id={"heading"}>
+                    <option value={"north"}>North</option>
+                    <option value={"north-west"}>North West</option>
+                    <option value={"north-east"}>North East</option>
+                    <option value={"south-east"}>South East</option>
+                    <option value={"south"}>South</option>
+                    <option value={"south-west"}>South West</option>
                 </select>
                 <input className="w3-radio" type="radio" id="hide" name="func"
                        value="hide"></input> Hide/Show
