@@ -120,6 +120,7 @@
     import {HexTile, drawHexTiles, drawHex, drawTileEffect} from "./hex-tiles.js";
     import {drawInitiativeTrack, drawInitiativeTokens} from "./interface.js";
     import {drawWeather} from "./weather.js";
+    import * as patterns from "./images.js";
 
 
     ctx.font = "40px myFont";
@@ -184,6 +185,8 @@
     let scaleStep = .25;
     let needsRefresh = true;
     window.refresh = () => {needsRefresh = true};
+    let fadeCounter = 50;
+    const fadeSteps = 50;
     function loop() {
       now = Date.now();
       dt = now - lastTime;
@@ -244,9 +247,12 @@
 
       let weather = opener.document.getElementById("table-weather").value;
 
-      if (table_type === "battle"){
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (table_type === "battle" || fadeCounter > 0){
+        if (fadeCounter < fadeSteps - 1 && table_type === "battle"){ fadeCounter++ }
+        ctx.save();
+        ctx.filter = `opacity(${fadeCounter / fadeSteps})`;
         canvas.style.pointerEvents = "auto";
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         if (needsRefresh){
           bufferCtx.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
@@ -279,17 +285,19 @@
         drawInitiativeTokens(opener);
         drawControlPoints();
         drawScalePoint();
+        ctx.restore();
+      }
 
-
-        window.requestAnimationFrame(loop);
-
-      } else {
+      if (table_type === "wilderness" || fadeCounter < fadeSteps - 1) {
+        if (fadeCounter > 0 && table_type === "wilderness") { fadeCounter-- }
         canvas.style.pointerEvents = "none";
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.save();
+        ctx.filter = `opacity(${(fadeSteps - fadeCounter) / fadeSteps})`;
         wilderness();
         drawWeather(weather);
-        window.requestAnimationFrame(loop);
+        ctx.restore();
       }
+      window.requestAnimationFrame(loop);
     }
 
     function drawControlPoints() {
@@ -319,13 +327,13 @@
         wall.forEach(section => {
           let segment = section.segments;
           if (section.direction === 1){
-            ctx.fillStyle = northWallPattern;
+            ctx.fillStyle = patterns.northWallPattern;
           } else if (section.direction === 2){
-            ctx.fillStyle = eastWallPattern;
+            ctx.fillStyle = patterns.eastWallPattern;
           } else if (section.direction === 4) {
-            ctx.fillStyle = westWallPattern;
+            ctx.fillStyle = patterns.westWallPattern;
           } else {
-            ctx.fillStyle = southWallPattern;
+            ctx.fillStyle = patterns.southWallPattern;
           }
           ctx.beginPath();
           ctx.moveTo(segment[0][0], segment[0][1]);
@@ -373,6 +381,7 @@
       });
 
       all_walls = [];
+      needsRefresh = true;
     }
 
     function wilderness() {
@@ -435,16 +444,16 @@
 
       ctx.save();
       let sentry_tile = hex_tiles[1][2];
-      drawHex(ctx, sentry_tile.x, sentry_tile.y);
+      drawHex(ctx, sentry_tile.x, sentry_tile.y + sentry_tile.height);
       ctx.fill();
       ctx.save();
       ctx.fillStyle = textFillStyle;
       ctx.lineWidth = strokeWidth;
       ctx.beginPath();
-      ctx.moveTo(sentry_tile.x - r_hex, sentry_tile.y);
-      ctx.lineTo(sentry_tile.x + r_hex, sentry_tile.y);
+      ctx.moveTo(sentry_tile.x - r_hex, sentry_tile.y + sentry_tile.height);
+      ctx.lineTo(sentry_tile.x + r_hex, sentry_tile.y + sentry_tile.height);
       ctx.stroke();
-      ctx.translate(sentry_tile.x, sentry_tile.y + r_hex/2);
+      ctx.translate(sentry_tile.x, sentry_tile.y + r_hex/2 + sentry_tile.height);
       ctx.rotate(Math.PI);
       ctx.fillText("Scout", 0, 0);
       ctx.translate(0, r_hex);
@@ -454,15 +463,15 @@
       // Draw mapper
       ctx.save();
       let mapper_tile = hex_tiles[0][2];
-      drawHex(ctx, mapper_tile.x, mapper_tile.y);
+      drawHex(ctx, mapper_tile.x, mapper_tile.y + mapper_tile.height);
       ctx.fill();
       ctx.fillStyle = textFillStyle;
       ctx.lineWidth = strokeWidth;
       ctx.beginPath();
-      ctx.moveTo(mapper_tile.x - r_hex, mapper_tile.y);
-      ctx.lineTo(mapper_tile.x + r_hex, mapper_tile.y);
+      ctx.moveTo(mapper_tile.x - r_hex, mapper_tile.y + mapper_tile.height);
+      ctx.lineTo(mapper_tile.x + r_hex, mapper_tile.y + mapper_tile.height);
       ctx.stroke();
-      ctx.translate(mapper_tile.x, mapper_tile.y - r_hex/2);
+      ctx.translate(mapper_tile.x, mapper_tile.y - r_hex/2 + mapper_tile.height);
       ctx.rotate(Math.PI);
       ctx.fillText("Scout", 0, 0);
       ctx.translate(0, -r_hex);
@@ -472,16 +481,16 @@
       // Draw Forager
       ctx.save();
       let forager_tile = hex_tiles[1][1];
-      drawHex(ctx, forager_tile.x, forager_tile.y);
+      drawHex(ctx, forager_tile.x, forager_tile.y + forager_tile.height);
       ctx.fill();
       ctx.fillStyle = textFillStyle;
       ctx.lineWidth = strokeWidth;
       ctx.beginPath();
-      ctx.moveTo(forager_tile.x + r_hex * Math.cos(deg_60), forager_tile.y - r_hex*Math.sin(deg_60));
-      ctx.lineTo(forager_tile.x, forager_tile.y);
-      ctx.lineTo(forager_tile.x + r_hex * Math.cos(deg_60), forager_tile.y + r_hex*Math.sin(deg_60));
+      ctx.moveTo(forager_tile.x + r_hex * Math.cos(deg_60), forager_tile.y - r_hex*Math.sin(deg_60) + forager_tile.height);
+      ctx.lineTo(forager_tile.x, forager_tile.y + forager_tile.height);
+      ctx.lineTo(forager_tile.x + r_hex * Math.cos(deg_60), forager_tile.y + r_hex*Math.sin(deg_60) + forager_tile.height);
       ctx.stroke();
-      ctx.translate(forager_tile.x + r_hex/2, forager_tile.y);
+      ctx.translate(forager_tile.x + r_hex/2, forager_tile.y + forager_tile.height);
       ctx.rotate(Math.PI/2);
       ctx.fillText("Forage", 0, 0);
       ctx.translate(0, r_hex);
@@ -491,16 +500,16 @@
       // Draw 2ndForager
       ctx.save();
       forager_tile = hex_tiles[1][3];
-      drawHex(ctx, forager_tile.x, forager_tile.y);
+      drawHex(ctx, forager_tile.x, forager_tile.y + forager_tile.height);
       ctx.fill();
       ctx.fillStyle = textFillStyle;
       ctx.lineWidth = strokeWidth;
       ctx.beginPath();
-      ctx.moveTo(forager_tile.x - r_hex * Math.cos(deg_60), forager_tile.y - r_hex*Math.sin(deg_60));
-      ctx.lineTo(forager_tile.x, forager_tile.y);
-      ctx.lineTo(forager_tile.x - r_hex * Math.cos(deg_60), forager_tile.y + r_hex*Math.sin(deg_60));
+      ctx.moveTo(forager_tile.x - r_hex * Math.cos(deg_60), forager_tile.y - r_hex*Math.sin(deg_60) + forager_tile.height);
+      ctx.lineTo(forager_tile.x, forager_tile.y + forager_tile.height);
+      ctx.lineTo(forager_tile.x - r_hex * Math.cos(deg_60), forager_tile.y + r_hex*Math.sin(deg_60) + forager_tile.height);
       ctx.stroke();
-      ctx.translate(forager_tile.x - r_hex/2, forager_tile.y);
+      ctx.translate(forager_tile.x - r_hex/2, forager_tile.y + forager_tile.height);
       ctx.rotate(-1 * Math.PI/2);
       ctx.fillText("Forage", 0, 0);
       ctx.translate(0, r_hex);
@@ -509,7 +518,7 @@
 
       // Draw ring
       let sunRadius = r_hex * 2.5;
-      ctx.translate(sentry_tile.x, sentry_tile.y - r_hex * Math.sin(deg_60));
+      ctx.translate(sentry_tile.x, sentry_tile.y - r_hex * Math.sin(deg_60) + sentry_tile.height);
       ctx.beginPath();
       ctx.arc(0,0, 2.5*r_hex, 0, 2*Math.PI);
       ctx.stroke();
@@ -835,12 +844,16 @@
         selectedValue = "hide";
       } else if (keyPressed["t"]) {
         selectedValue = "tree";
-      } else if (keyPressed["f"]) {
+      } else if (keyPressed["f"]){
+        selectedValue = "fog";
+      } else if (keyPressed["F"]) {
         selectedValue = "fire";
       } else if (keyPressed["d"]) {
         selectedValue = "darkness";
       } else if (keyPressed["W"]) {
         selectedValue = "web";
+      } else if (keyPressed["p"]) {
+        selectedValue = "poison";
       } else {
         selectedValue = "elevate";
       }
@@ -868,6 +881,22 @@
             }
           );
           break;
+        case "fog":
+          if (closest_tile.effects.has("fog")) {
+            closest_tile.effects.delete("fog");
+          } else {
+            closest_tile.effects.add("fog");
+          }
+
+          break;
+        case "poison":
+          if (closest_tile.effects.has("poison")) {
+            closest_tile.effects.delete("poison");
+          } else {
+            closest_tile.effects.add("poison");
+          }
+
+          break;
         case "fire":
 
           if (closest_tile.effects.has("fire")) {
@@ -878,7 +907,7 @@
 
           break;
         case "web":
-        if (closest_tile.effects.has("web")) {
+          if (closest_tile.effects.has("web")) {
             closest_tile.effects.delete("web");
           } else {
             closest_tile.effects.add("web");

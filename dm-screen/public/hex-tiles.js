@@ -308,23 +308,6 @@ export function HexTile(i, j, x , y) {
 
   }
 
-  this.drawFog = () => {
-    if (this.state === "hidden"){
-      return;
-    }
-    ctx.save();
-    ctx.translate(this.x, this.y);
-    ctx.fillStyle = "rgba(200,200,200, 1)";
-    ctx.shadowColor = "red";
-    ctx.shadowBlur = 100;
-
-    ctx.beginPath();
-    ctx.strokeStyle = "rgba(255,255,255,1)";
-    ctx.arc(0, 0, .9 * r_hex, 0, Math.PI, true);
-    ctx.stroke();
-    ctx.restore();
-  }
-
   this.drawAssets = () => {
     if (this.state === "hidden"){
       return;
@@ -349,11 +332,12 @@ export function HexTile(i, j, x , y) {
   }
 
   this.darknessIter = 0;
-  this.drawDarkness = () => {
+  this.drawDarkness = (color) => {
     this.darknessIter++;
 
     ctx.save();
-    ctx.fillStyle = "rgba(0,0,0,.5)";
+    ctx.filter = "blur(20px)";
+    ctx.fillStyle = color;
     ctx.shadowBlur = 20;
     ctx.shadowColor = "black";
     ctx.beginPath();
@@ -377,8 +361,14 @@ export function HexTile(i, j, x , y) {
     if (this.effects.has("fire")) {
       this.drawFire();
     }
+    if (this.effects.has("fog")){
+      this.drawDarkness("rgba(200,200,200,.5)");
+    }
+    if (this.effects.has("poison")){
+      this.drawDarkness("rgba(250,97,255,0.46)");
+    }
     if (this.effects.has("darkness")) {
-      this.drawDarkness();
+      this.drawDarkness("rgba(0,0,0,.5)");
     }
     
   }
