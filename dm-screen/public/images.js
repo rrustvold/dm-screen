@@ -89,3 +89,6 @@ treeEdgesImg.onload = () => {treeEdgesPattern = ctx.createPattern(treeEdgesImg, 
 
 export let webImg = new Image();
 webImg.src = "/web.png";
+
+export let shieldImg = new Image();
+shieldImg.src = "/shield.png";

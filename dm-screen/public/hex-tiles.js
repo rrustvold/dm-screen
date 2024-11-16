@@ -308,7 +308,7 @@ export function HexTile(i, j, x , y) {
 
   }
 
-  this.drawAssets = () => {
+  this.drawAssets = (ctx) => {
     if (this.state === "hidden"){
       return;
     }
@@ -316,11 +316,11 @@ export function HexTile(i, j, x , y) {
     ctx.shadowBlur = 0;
     this.assets.forEach(asset => {
       ctx.save();
-      let width = asset.img.width;
-      let height = asset.img.height;
-      ctx.translate(asset.x + width/2, asset.y + height/2);
-      ctx.scale(1, -1);
-      ctx.drawImage(asset.img, -width/2, -height/2);
+      let width = asset.img.naturalWidth;
+      let height = asset.img.naturalHeight;
+      ctx.translate(asset.x, asset.y + this.height);
+      ctx.rotate(Math.PI);
+      ctx.drawImage(asset.img, -width/2, -height/2 - this.height/2);
       ctx.restore();
     })
     ctx.restore();

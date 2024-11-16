@@ -238,7 +238,7 @@
 
         <ol>
             <li>Characters can be created using only the 2024 player's handbook. No material from Xanathar's guide, Tasha's Cauldron, or any other source should be used</li>
-            <li>See the section above on Religion and Deities if your character requires a deity, religion, or patron. Ignore any relgions, deities, or planes the PHB mentions</li>
+            <li>See the section above on Religion and Deities if your character requires a deity, religion, or patron. Ignore any religions, deities, or planes the PHB mentions</li>
             <li>You may make and play multiple characters. However, only one character should be played at a time during a session. If you maintain multiple characters, they should stay separate from each other. (i.e. no sharing or trading equipment between them)</li>
             <li>Characters will level up from experience points</li>
             <li>Characters start at level 1. This may change as the average character level increases.</li>
@@ -338,11 +338,11 @@
                         <p>
                             During each game session you can expect 6-10 encounters (combat or otherwise) which is what the game is designed around. Since much of your
                             adventuring will take place outdoors while traveling, a few of these encounters will happen over the course of 
-                            several game days, and the rest will likely take place inside a dungeon. Without the "gritty realsim" rule, 
+                            several game days, and the rest will likely take place inside a dungeon. Without the "gritty realism" rule,
                             we likely could not reach 6-10 encounters in a single game session. 
                         </p>
                         <p>
-                            A corrollory of this rule is that you will essentially not be able to long rest outside of Last Haven.
+                            A corollary of this rule is that you will essentially not be able to long rest outside Last Haven.
                             The odds of encountering at least one wandering monster over the course of seven days while out adventuring are essentially guaranteed.
                             This should jive really nicely with the new 2024 rules, since there are quite a lot of things that either refresh or that players can change about their characters after a long
                             rest (prepared spells, weapon masteries), and these are things best done at home and not at the game table. 
@@ -362,70 +362,147 @@
             <h2 class="display-6">Purpose</h2>
             <p>The purpose of this section is to explain how I will run the game (so that you can prepare your character appropriately), and provide you with some tips and tricks.
                 The mechanics below for wilderness adventuring are my implementation of the rules presented in the player's handbook and dungeon master's guide. 
-                There isn't anything here that I invented other than making some inferences about "how" all these rules are supposed to work together. Most of this information is spread around different sections of the two books. So I'm presenting it here in one place so that we can all see how wilderness exploration is actually supposed to work in this game. 
+                There isn't much here that I invented other than making some inferences about "how" all these rules are supposed to work together, and to actually make a game out of it. Most of this information is spread around different sections of the two books. So I'm presenting it here in one place so that we can all see how wilderness exploration is actually supposed to work in this game. Even though the mechanics below may look a little contrived, they are almost entirely the "rules as written" from the 2024 player's handbook and dungeon master's guide.
             </p>
 
-            <h2 class="display-6" id="food-and-water">Wilderness Survival <small>- as presented by Krusk the half-orc ranger of the Curators</small></h2>
-            <img src="images/image5.jpg" class="rounded float-start m-2"  style="max-width: 400px; width:100%"/>
+            <h2 class="display-6" id="food-and-water">Wilderness Exploration & Survival</h2>
+<!--            <img src="images/image5.jpg" class="rounded float-start m-2"  style="max-width: 400px; width:100%"/>-->
 
-
-            <a class="anchor" id="maps"></a>
-            <h3>Maps and Traveling</h3>
             <p>
-                A successful adventure starts with a good plan.
-                Take a look at the map here. To the south is the Killion kingdom where you came from.
-                To the north, east, and west are the unexplored wilds, overrun with monsters, ruins, dungeons, and who knows what else.
-                Hobgoblins are known to come from the northwest, and wandering bands of orcs are said to be found to the east.
-            </p>
-            <img src="images/image3.png" class="float-end rounded m-2" style="max-width: 400px; width:100%;" />
-            <p>
-                Each hexagon on this map is 6 miles wide. This means, depending on your travel pace, you should cover 3-6 tiles in a day.
-                This can depend on the terrain. Traveling across mountain peaks or murky swamps will naturally slow you down.
-            </p>
-            <p>
-                Before setting off, your party should select one or more members to act as a navigator to ensure you don't get lost.
-                If they have a map, then this gets easier, obviously.
-                You can do your future selves a big favor by having another party member with cartographers tools create maps as you travel.
-                Foragers can look for food and water.
-                And anyone else should keep their eyes and ears open for dangers ahead, or behind.
-            </p>
-            <div class="alert alert-danger" style="overflow: hidden">
-                <p>
-                    A character can only do one thing at a time, so the navigator cannot also contribute their perception to being a look-out, for example.
-                </p>
-            </div>
-             <p>
-                Of course, if you're traveling along a road, river, or coastline, then there's no chance of becoming lost.
-                 And creating useful maps requires a good set of Cartographers tools. Be sure to buy a set if you plan on mapmaking.
-            </p>
-            <div class="alert alert-danger" style="overflow: hidden">
-                <p>Traveling into an adjacent hex tile will require a character in the party to succeed on a Wisdom (survival) check to avoid becoming lost (typical DC is 5, 10, or 15 depending on terrain). If you become lost, then you spend the next 1d6 hours of your traveling day stuck in your current tile. If you are traveling through a tile that has already been mapped, then the navigator gains +5 on this check. If you move at a "slow" pace, the navigator gains a advantage on the check. A fast pace incurs disadvantage. These checks are not very difficult individually, but you will have to make quite a lot of them.</p>
-                <p>When you enter a new tile, I will reveal all the adjacent tiles to it (weather permitting) so that you can see what terrain lies ahead. If you are on top of hills, then I will reveal two tiles out, or three tiles out from the tops of mountains. This won't necessarily reveal everything that exists inside those tiles, but you will at least be able to see the terrain.</p>
-                <p>A character with cartographers tools needs to make a DC 15 wisdom check in order to contribute that hex to the map. If you fail, then you need to spend an extra hour inside the tile to try the check again.</p>
-            </div>
+                Your wilderness adventure will be played out one day at a time using the following gameplay loop. There are a few props needed including:
+                <ul>
+                    <li>The Journey Compass: This visual aid is used to determine your party roles and the direction you are traveling.</li>
+                    <li>The Map and Cartographer's Tools: Your map of the wilds and colored pencils to fill it in with. This also includes a legend which summarizes the various skill check DCs and other rules for wilderness travel.</li>
+                    <li>The Navigator's Deck: A deck of playing cards that is used to keep track of your daily traveling and set pace.</li>
+                    <li>The Forager's Freshness Tracker: A simple handout used by the forager to keep track of the party's trail rations, water, and foraged food.</li>
+    </ul>
+                <ol type="1">
+                    <li>
+                        Each morning. . .<br>
+                        <ol type="a">
+                            <li>Apply the benefits of a short rest</li>
+                            <li>Assign each of your characters to one of four roles: Navigator, Cartographer, Forager, or Scout. You will likely keep the same roles for the entire journey, but you can change roles at the beginning of each day if you'd like. The Navigator will receive a deck of playing cards (called the navigator's deck). The Cartographer will receive hexagonal graph paper, colored pencils, and a legend (collectively called Cartographer's tools), and the Forager will receive a game aid for tracking the party's rations and water. Where you locate your character on the journey compass also determines the party's marching order for encounters.</li>
+                            <li>The forager discards food and water for each character in the party. i.e. the party eats breakfast. If anyone can't eat or drink the required amounts, then see the rules for "malnutrition" and "dehydration" in the player's handbook.</li>
+                            <li>The forager then moves any raw foods one step to the right along the freshness track</li>
+                            <li>The navigator draws 12 cards face down from the navigator's deck. These 12 cards are known as the "daily travel subdeck". Each of these cards represents about 40 minutes of your 8-hour traveling day, and what things you find or encounter along the way.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Traveling. . .<br>
+                        <ol type="a">
+                            <li>The navigator chooses which direction the party will travel in, and the pace they will travel at. The navigator places one of the 12 cards they drew previously onto the journey compass matching the intended travel direction. If traveling at a fast pace, then place one more card onto an adjacent direction. If traveling at a normal or slow pace, then place a card at each adjacent direction. If traveling at a slow pace, discard a fourth card.</li>
+                            <li>The forager elects to "forage" in the current tile or not. Each forager can forage once per day. To forage, make a Wisdom (Survival) check against the DC for the current terrain type. See the section on Foraging below for more details.</li>
+                            <li>Each scout makes a Wisdom (Perception) check against the DC for the current terrain. For each success, a scout can flip and reveal one of the cards that the navigator placed. Cards that have face value less than or equal to five represent some kind of discovery, good or bad. By scouting ahead, the party is able to avoid bad things, and discover good things. The DM will narrate what discoveries are uncovered.</li>
+                            <li>The navigator confirms which direction to travel in. They can choose the original direction, or one of the alternative directions represented by the one or two other cards they placed. The navigator makes a Wisdom (Survival) check against the current terrain DC to avoid getting lost. If following the direction of a river, road or coastline, than the success is automatic and no roll is necessary. On a failure, the navigator discards 1d4 cards from the daily travel sub-deck. This represents time lost to recovering ones bearings. The navigator receives a +5 bonus on this check if the hex you are traveling into has already been mapped.</li>
+                            <li>The navigator reveals the card for the direction the party is traveling in (if it has not already been revealed by the scouts). The DM then adjudicates whatever kind of encounter it may represent.</li>
+                            <li>Once any encounter has been concluded, the party moves into the next hex. If this new hex has not been explored or mapped before, then the DM will narrate what features exist in this new hex. The DM will also inform the cartographer what the terrain types of the neighboring hex tiles are. The cartographer then makes a DC 15 Intelligence (Cartographer's Tools) check. On a failure, the navigator must discard one card from the daily travel subdeck. This represents extra time taken by the Cartographer to create an accurate addition to the map. The cartographer can then fill in the new hex onto the map using the colored pencils. Feel free to notate any other interesting features.</li>
+                            <li>If the navigator has enough cards in the daily travel subdeck to continue traveling, then repeat the travel loop. Otherwise, continue to "At the end of the day".</li>
+                        </ol>
 
-            
-            <a class="anchor" id="camping"></a>
-            <h3>Camping</h3>
-            <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/DD-party-camp.jpg" class="img-fluid rounded m-2" />
-            <p>At the end of the day, you'll need to set up camp. Hope you brought a tent.</p>
+                    </li>
+                    <li>
+                        At the End of the Day. . .<br>
+                        The party can choose to force march, or make camp
+                        <ol type="a">
+                            <li>Forced March</li>
+                            <ol type="i">
+                                <li>Play out the Traveling loop with the following changes: If the navigator has cards leftover from the daily travel subdeck, then they can use those. If more cards are needed, then they are drawn directly from the full navigator's deck.</li>
+                                <li>At the end of each loop, all characters in the party must succeed a Constitution saving throw. The DC is 8 plus one for each card that has been drawn directly from the navigator's deck this day. Each failure results in one level of exhaustion.</li>
+                            </ol>
+                            <li>Camping</li>
+                            <ol type="i">
+                                <li>Characters with Cooking Utensils can attempt to cook raw ingredients that were foraged into rations.</li>
+                                <li>Characters with an Herbalism Kit can attempt to brew Potions of Healing from herbs that have been foraged.</li>
+                                <li>Other crafting activities can be worked on, as long as it makes sense. Creating arrows with Woodcarver's Tools makes sense. Forging plate armor makes less sense.</li>
+                                <li>The DM determines if something goes bump in the night. If it does, then the party makes a group Wisdom (Perception) check to notice the encounter. Characters without darkvision roll with disadvantage. Elves (and other characters that don't sleep) roll with advantage.</li>
+                            </ol>
+                        </ol>
+                    </li>
 
-             <div class="alert alert-danger">
-                <p>If you've played this game before, you are probably familiar with this conversation:</p>
-
-                <p>"I'll take the first watch for two hours, then I'll wake up the dwarf for the next two-hour shift. By then, the elf should be finished meditating so he can take the next four hours..."</p>
-
-                <p>To avoid wasting time on this every god-damn session, here's how I'm gonna do the "camping" problem.</p>
-                <ol>
-                    <li>I will roll to see if something goes bump in the night, if it does...</li>
-                    <li>The whole party will make a group Wisdom (perception) check.</li>
-                    <li>Elves get advantage on this because they don't sleep</li>
-                    <li>Characters without darkvision roll with disadvantage cause it's dark at night</li>
-                    <li>I will then roll to see which character was keeping watch when the encounter happens.</li>
-                    <li>Depending on the nature of the encounter, the monster's stealth roll, the party's perception roll, then I will adjudicate what happens.</li>
-                    <li>Only the character that was keeping watch at the time can be wearing armor. Everyone else wakes up in their jammies.</li>
                 </ol>
-             </div>
+                <h3>Foraging</h3>
+                <p>Foragers are encouraged to also act as "quartermasters" for the party, and manage the party's food and water rations. At the start of each journey (the start of each session) the forager should place a ration token onto the "Non-perishable" section of the quartermaster sheet. They should also take and place two water tokens for each character into the Water section. (By using tokens, players won't need to update their character sheets except for at the end of the session.)</p>
+                <p>Whenever a forager successfully foragers, they will gain 1d6 + Wisdom modifier pounds of food and water. There are six kinds of things that can be foraged: Roots and tubers; mushrooms; fruits and nuts; game; shellfish; and herbs. What foods you find are determined by the DM and the terrain you are in. Some foods are only available in certain terrains, and figuring that out is all part of the game. Each pound of food is represented by a different color token.</p>
+                <p>When you first find a food, add it to the freshness tracker. Raw game begins one step ahead on the freshness tracker, and shellfish starts two steps ahead. Each morning when the party is "eating breakfast", you can feed a character food directly from the freshness tracker. If the food is old, then the character that eats that food must succeed a Constitution saving throw or be poisoned for 24 hours. The DC for the save is given by the freshness tracker. After the party has eaten for the day, move all tokens one step to the right along the tracker.</p>
+                <p>A character with Cook's Utensils can attempt to cook raw food into shelf stable trail rations. To make one ration you must combine any two different raw foods (no ability check required). You can make at most two rations per day. The freshness of the raw ingredients does not matter when crafting rations.</p>
+                <p>A character with an Herbalism Kit can craft Herbs into Potions of Healing. It takes one pound of herbs to make one potion. A character can make at most one potion per day.</p>
+                <p>Herbs cannot be eaten or cooked into rations. They are only used for making potions. Herbs never expire, and don't need to be added to the freshness tracker.</p>
+                <p>The spell "Purify Food and Drink" can be used to make raw food safe. Each casting of the spell can affect all the party's raw food. This resets all raw food to the first position on the freshness tracker. After being purified, food continues to lose freshness as normal.</p>
+                <p>At the end of the session, all raw foods are lost. Any rations can be divided back amongst the party onto everyone's character sheets. Any herbs that were not brewed into potions can be divided amongst party members. Characters with an Herbalism Kit can brew potions in between sessions using the normal rules for that given in the Player's Handbook. Herbs can also be sold in Last Haven at a rate of 25 gp per pound. Herbs cannot be purchased in Last Haven.</p>
+
+
+<!--            <a class="anchor" id="maps"></a>-->
+<!--            <h3>Maps and Traveling</h3>-->
+<!--            <p>-->
+<!--                A successful adventure starts with a good plan.-->
+<!--                Take a look at the map here. To the south is the Killion kingdom where you came from.-->
+<!--                To the north, east, and west are the unexplored wilds, overrun with monsters, ruins, dungeons, and who knows what else.-->
+<!--                Hobgoblins are known to come from the northwest, and wandering bands of orcs are said to be found to the east.-->
+<!--            </p>-->
+<!--            <img src="images/image3.png" class="float-end rounded m-2" style="max-width: 400px; width:100%;" />-->
+<!--            <p>-->
+<!--                Each hexagon on this map is 6 miles wide. This means, depending on your travel pace, you should cover 3-6 tiles in a day.-->
+<!--                This can depend on the terrain. Traveling across mountain peaks or murky swamps will naturally slow you down.-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                Before setting off, your party should select one or more members to act as a navigator to ensure you don't get lost.-->
+<!--                If they have a map, then this gets easier, obviously.-->
+<!--                You can do your future selves a big favor by having another party member with cartographers tools create maps as you travel.-->
+<!--                Foragers can look for food and water.-->
+<!--                And anyone else should keep their eyes and ears open for dangers ahead, or behind.-->
+<!--            </p>-->
+<!--            <div class="alert alert-danger" style="overflow: hidden">-->
+<!--                <p>-->
+<!--                    A character can only do one thing at a time, so the navigator cannot also contribute their perception to being a look-out, for example.-->
+<!--                </p>-->
+<!--            </div>-->
+<!--             <p>-->
+<!--                Of course, if you're traveling along a road, river, or coastline, then there's no chance of becoming lost.-->
+<!--                 And creating useful maps requires a good set of Cartographers tools. Be sure to buy a set if you plan on mapmaking.-->
+<!--            </p>-->
+<!--            <div class="alert alert-danger" style="overflow: hidden">-->
+<!--                <p>Traveling into an adjacent hex tile will require a character in the party to succeed on a Wisdom (survival) check to avoid becoming lost (typical DC is 5, 10, or 15 depending on terrain). If you become lost, then you spend the next 1d6 hours of your traveling day stuck in your current tile. If you are traveling through a tile that has already been mapped, then the navigator gains +5 on this check. If you move at a "slow" pace, the navigator gains a advantage on the check. A fast pace incurs disadvantage. These checks are not very difficult individually, but you will have to make quite a lot of them.</p>-->
+<!--                <p>When you enter a new tile, I will reveal all the adjacent tiles to it (weather permitting) so that you can see what terrain lies ahead. If you are on top of hills, then I will reveal two tiles out, or three tiles out from the tops of mountains. This won't necessarily reveal everything that exists inside those tiles, but you will at least be able to see the terrain.</p>-->
+<!--                <p>A character with cartographers tools needs to make a DC 15 wisdom check in order to contribute that hex to the map. If you fail, then you need to spend an extra hour inside the tile to try the check again.</p>-->
+<!--            </div>-->
+
+<!--            -->
+<!--            <a class="anchor" id="camping"></a>-->
+<!--            <h3>Camping</h3>-->
+<!--            <img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/DD-party-camp.jpg" class="img-fluid rounded m-2" />-->
+<!--            <p>At the end of the day, you'll need to set up camp. Hope you brought a tent.</p>-->
+
+<!--             <div class="alert alert-danger">-->
+<!--                <p>If you've played this game before, you are probably familiar with this conversation:</p>-->
+
+<!--                <p>"I'll take the first watch for two hours, then I'll wake up the dwarf for the next two-hour shift. By then, the elf should be finished meditating so he can take the next four hours..."</p>-->
+
+<!--                <p>To avoid wasting time on this every god-damn session, here's how I'm gonna do the "camping" problem.</p>-->
+<!--                <ol>-->
+<!--                    <li>I will roll to see if something goes bump in the night, if it does...</li>-->
+<!--                    <li>The whole party will make a group Wisdom (perception) check.</li>-->
+<!--                    <li>Elves get advantage on this because they don't sleep</li>-->
+<!--                    <li>Characters without darkvision roll with disadvantage cause it's dark at night</li>-->
+<!--                    <li>I will then roll to see which character was keeping watch when the encounter happens.</li>-->
+<!--                    <li>Depending on the nature of the encounter, the monster's stealth roll, the party's perception roll, then I will adjudicate what happens.</li>-->
+<!--                    <li>Only the character that was keeping watch at the time can be wearing armor. Everyone else wakes up in their jammies.</li>-->
+<!--                </ol>-->
+<!--             </div>-->
+
+        <h2 class="display-6">Combat</h2>
+        <p>Buckle up because I'm changing the grid. There's nothing in the rules that say you have to use a grid for combat, and there's nothing that says you have to use a 5-foot grid when you do. So after a major epiphany, I've discovered that the ultimate grid for combat in D&D is actually a heaxagonal grid with a 30 foot spacing. When we are in combat I will display (or perhaps project) a hexagonal grid onto the table. Each of these hexes will be 4-6 inches wide. And the in-game distance between hexes will be 30 feet. Here's how it works:</p>
+        <h3>Movement and Positioning</h3>
+        <ol>
+            <li>Multiple creatures can all fit inside the same hex</li>
+            <li>To move from one hex to an adjacent hex, you must use 30 feet of movement. So if your character has a 35 foot movement speed, then the extra five feet doesn't do much for you (but it didn't do much for you with a 5-foot grid either)</li>
+            <li>If a hex tile is difficult terrain, then you can enter it with 30 feet of movement, but you have to spend one full turn in it before you can leave it. This is a clumsy thing to keep track of, but difficult terrain doesn't come up that much, so it shouldn't be too bad.</li>
+        </ol>
+        <h3>Attacks</h3>
+        <ol>
+            <li>Creatures that are in the same hex tile are able to attack each other with melee attacks</li>
+            <li>Therefore, using a ranged weapon while in a hex with an enemy means you have disadvantage with the attack</li>
+            <li>If you leave a tile that has enemies, then you provoke attacks of opportunity from 1/2 the enemies rounded up. If enemies leave your tile, then the same thing applies. Decide amongst yourselves who gets to make the attack of opportunities if there's more than one of you.</li>
+        </ol>
             <!-- <a class="anchor" id="dungeon-delving"></a> -->
             <!-- <h2 class="display-6">Dungeon Delving - as presented by Lidda of the Scarlet Riders</h2>
             <img src="images/image4.jpg" class="rounded m-2 float-end" style="max-width: 400px; width: 100%"/>

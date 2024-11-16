@@ -119,7 +119,7 @@
     import {canvas, ctx, deg_60, hex_col_size, hex_row_size, r_hex, squareSize, bufferCanvas, bufferCtx} from "./config.js";
     import {HexTile, drawHexTiles, drawHex, drawTileEffect} from "./hex-tiles.js";
     import {drawInitiativeTrack, drawInitiativeTokens} from "./interface.js";
-    import {drawWeather} from "./weather.js";
+    import {drawWeather, drawWeatherReminder, drawWeatherSidebar} from "./weather.js";
     import * as patterns from "./images.js";
 
 
@@ -233,7 +233,7 @@
             break;
 
           case "mountains":
-            overlay.style.backgroundImage = 'url("mountains.jpg")';
+            overlay.style.backgroundImage = 'url("mountain-fantasy.jpeg")';
             break;
           case "dungeon":
             overlay.style.backgroundImage = null;
@@ -245,7 +245,10 @@
             break;
         }
 
-      let weather = opener.document.getElementById("table-weather").value;
+      let wind = opener.document.getElementById("table-wind").value;
+      let rain = opener.document.getElementById("table-rain").value;
+      let snow = opener.document.getElementById("table-snow").value;
+      let temperature = opener.document.getElementById("table-temperature").value;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       if (table_type === "battle" || fadeCounter > 0){
@@ -268,6 +271,9 @@
             opener.document.getElementById('elevation-style').value,
             opener.document.getElementById('battle-style').value
           );
+          hex_tiles.forEach(row => {
+            row.forEach(tile => tile.drawAssets(bufferCtx))
+          })
           bufferCtx.restore();
           needsRefresh = false;
         }
@@ -275,12 +281,11 @@
         drawTileEffect(hex_tiles);
         
         
-        hex_tiles.forEach(row => {
-          row.forEach(tile => tile.drawAssets())
-        })
 
-        drawWeather(weather);
 
+        // draw rain and/or snow effects
+        drawWeather(wind, rain, snow, temperature);
+        drawWeatherSidebar(wind, rain, snow);
         drawInitiativeTrack();
         drawInitiativeTokens(opener);
         drawControlPoints();
@@ -294,7 +299,8 @@
         ctx.save();
         ctx.filter = `opacity(${(fadeSteps - fadeCounter) / fadeSteps})`;
         wilderness();
-        drawWeather(weather);
+        drawWeather(wind, rain, snow, temperature);
+        drawWeatherReminder(wind, rain, snow, temperature);
         ctx.restore();
       }
       window.requestAnimationFrame(loop);
@@ -805,13 +811,13 @@
       let closest_tile = null;
       let distance = 10000;
       hex_tiles.forEach(row => row.forEach(
-              tile => {
-                let manhattan = Math.abs(tile.x - x) + Math.abs(tile.y - y);
-                if (manhattan < distance){
-                  distance = manhattan;
-                  closest_tile = tile;
-                }
-              }
+        tile => {
+          let manhattan = Math.abs(tile.x - x) + Math.abs(tile.y - y);
+          if (manhattan < distance){
+            distance = manhattan;
+            closest_tile = tile;
+          }
+        }
       ));
 
       if (keyPressed["z"]) {
@@ -824,18 +830,6 @@
         }
         return
       }
-
-
-
-      const radios = opener.document.querySelectorAll('input[name="func"]');
-      
-      // Find the selected radio button
-      // let selectedValue;
-      // radios.forEach((radio) => {
-      //   if (radio.checked) {
-      //     selectedValue = radio.id;
-      //   }
-      // });
 
       let selectedValue;
       if (keyPressed["w"]) {
@@ -854,6 +848,8 @@
         selectedValue = "web";
       } else if (keyPressed["p"]) {
         selectedValue = "poison";
+      } else if (keyPressed["s"]) {
+        selectedValue = "shield";
       } else {
         selectedValue = "elevate";
       }
@@ -872,6 +868,14 @@
             }
           );
           break;
+        case "shield":
+          closest_tile.assets.push(
+                  {
+                    img: patterns.shieldImg,
+                    x: x,
+                    y: y - closest_tile.height,
+                  }
+          )
         case "tree-stump":
           closest_tile.assets.push(
             {

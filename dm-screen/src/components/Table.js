@@ -141,6 +141,30 @@ export default function Table({tableState}) {
                     <option value={"south"}>South</option>
                     <option value={"south-west"}>South West</option>
                 </select>
+                <label>Wind</label>
+                <select className={"w3-select"} id={"table-wind"}>
+                    <option value={"none"}>None</option>
+                    <option value={"light"}>Light</option>
+                    <option value={"heavy"}>Heavy</option>
+                </select>
+                <label>Rain</label>
+                <select className={"w3-select"} id={"table-rain"}>
+                    <option value={"none"}>None</option>
+                    <option value={"light"}>Light Rain</option>
+                    <option value={"heavy"}>Heavy Rain</option>
+                </select>
+                <label>Snow</label>
+                <select className={"w3-select"} id={"table-snow"}>
+                    <option value={"none"}>None</option>
+                    <option value={"light"}>Light Snow</option>
+                    <option value={"heavy"}>Heavy Snow</option>
+                </select>
+                <label>Temperature</label>
+                <select className={"w3-select"} id={"table-temperature"}>
+                    <option value={"normal"}>Normal</option>
+                    <option value={"extreme-cold"}>Extreme Cold</option>
+                    <option value={"extreme-heat"}>Extreme Heat</option>
+                </select>
                 <input className="w3-radio" type="radio" id="hide" name="func"
                        value="hide"></input> Hide/Show
                 <input className="w3-radio" type="radio" id="elevate" name="func"

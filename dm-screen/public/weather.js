@@ -1,4 +1,4 @@
-import {ctx} from "/config.js";
+import {ctx, squareSize} from "/config.js";
 
 function Drop(vx){
     this.x = ctx.canvas.width * Math.random();
@@ -14,7 +14,7 @@ function Drop(vx){
 
         ctx.beginPath();
         ctx.moveTo(this.x, this.y);
-        ctx.lineTo(this.x + this.vx, this.y + this.vy);
+        ctx.lineTo(this.x + this.vx, this.y - this.vy);
         ctx.stroke();
         this.x += this.vx;
         this.y -= this.vy;
@@ -95,17 +95,119 @@ function snow(numFlakes, speed) {
 }
 
 
-export function drawWeather(weather) {
-    switch (weather) {
-        case "rain":
-            return rain(50, 1);
-        case "heavy-rain":
-            return rain(150, 10);
-        case "snow":
-            return snow(100, 0);
-        case "clear":
-            return
-        default:
-            return
+export function drawWeather(wind, _rain, _snow, temperature) {
+    if (wind === "heavy") {
+        if (_rain === "light") {
+            rain(50, 20);
+        } else if (_rain === "heavy") {
+            rain(150, 10);
+        }
+
+        if (_snow === "light") {
+            snow(100, 20);
+        } else if (_snow === "heavy"){
+            snow(300, 20);
+        }
+    } else if (wind === "light") {
+        if (_rain === "light") {
+            rain(50, 10);
+        } else if (_rain === "heavy") {
+            rain(150, 10);
+        }
+
+        if (_snow === "light") {
+            snow(100, 10);
+        } else if (_snow === "heavy"){
+            snow(300, 10);
+        }
+    } else {
+        if (_rain === "light") {
+            rain(50, 0);
+        } else if (_rain === "heavy") {
+            rain(150, 0);
+        }
+
+        if (_snow === "light") {
+            snow(100, 0);
+        } else if (_snow === "heavy"){
+            snow(300, 0);
+        }
+    }
+}
+
+export function drawWeatherReminder(wind, rain, snow, temperature){
+    if (
+        wind === 'heavy' ||
+        rain === 'heavy' ||
+        snow === 'heavy' ||
+        temperature !== 'normal'
+    ) {
+        ctx.save();
+        ctx.translate(1080/2, 1920/2);
+        ctx.rotate(Math.PI);
+        ctx.translate(-1080/2, -1920/2);
+        ctx.fillStyle = 'rgba(164,240,255,0.45)';
+        ctx.fillRect(0, 200, 1080 - 100, 600);
+
+        ctx.fillStyle = "white";
+        ctx.textAlign = "left";
+        let cursor = 250;
+        let lineSpace = 50;
+        let left = 50;
+        let indent = 50;
+        if (temperature === 'extreme-cold'){
+            ctx.fillText('Extreme Cold', left, cursor);
+            cursor += lineSpace*2;
+        } else if (temperature === 'extreme-heat'){
+            ctx.fillText('Extreme Heat', left, cursor);
+            cursor += lineSpace*2;
+        }
+        if (rain === 'heavy' || snow === "heavy"){
+            ctx.fillText("Heavy Precipitation", left, cursor);
+            cursor += lineSpace
+            ctx.fillText("Vision is lightly obscured.", left + indent, cursor);
+            cursor += lineSpace
+            ctx.fillText("Disadvantage on Wisdom (perception) checks.", left + indent, cursor);
+
+            cursor += lineSpace*2;
+        }
+
+        if (wind === 'heavy') {
+            ctx.fillText("Heavy Wind", left, cursor);
+            cursor += lineSpace
+            ctx.fillText("Disadvantage on ranged attack rolls", left + indent, cursor);
+            cursor += lineSpace*2;
+        }
+        ctx.restore();
+    }
+}
+
+export function drawWeatherSidebar(wind, rain, snow) {
+    if (
+        wind === 'heavy' ||
+        rain === 'heavy' ||
+        snow === 'heavy'
+    ) {
+        ctx.save();
+        ctx.translate(1080/2, 1920/2);
+        ctx.rotate(Math.PI);
+        ctx.translate(-1080/2, -1920/2);
+        ctx.font = "40px Material Symbols Outlined";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        if (rain === 'heavy' || snow === 'heavy') {
+            ctx.fillStyle = 'rgba(164,240,255,0.45)';
+            ctx.fillRect(0, 325, squareSize, squareSize);
+            ctx.fillStyle = "red";
+            ctx.fillText("rainy", squareSize/2, 325 + squareSize/2);
+        }
+        if (wind === 'heavy') {
+            ctx.fillStyle = 'rgba(164,240,255,0.45)';
+            ctx.fillRect(0, 325 + squareSize, squareSize, squareSize);
+            ctx.fillStyle = "red";
+            ctx.fillText("air", squareSize/2, 325 + squareSize + squareSize/2);
+        }
+
+        ctx.restore();
     }
 }
