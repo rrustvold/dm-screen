@@ -7,7 +7,7 @@ let treeStump = new Image();
 treeStump.src = "/pixel-art/PNG/assets/Trees_texture_shadow/Broken_tree3.png"
 
 let myGrass = new Image();
-myGrass.src = "/mygrass2.png";
+myGrass.src = "/mygrass3.png";
 export let grassPattern;
 myGrass.onload = () => {grassPattern = ctx.createPattern(myGrass, "no-repeat")};
 
@@ -92,3 +92,9 @@ webImg.src = "/web.png";
 
 export let shieldImg = new Image();
 shieldImg.src = "/shield.png";
+
+let dirtImg = new Image();
+dirtImg.src = "/dirt.png";
+export let dirtPattern;
+dirtImg.onload = () => {dirtPattern = ctx.createPattern(dirtImg, "repeat")};
+

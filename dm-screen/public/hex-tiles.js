@@ -20,6 +20,8 @@ export function get_fill_style(terrain, domTerrain){
           return patterns.arcticPattern;
         case "forest":
           return patterns.forestPattern;
+        case "dirt":
+          return patterns.dirtPattern;
         default:
           if (domTerrain === "dungeon") {
             return patterns.dungeonFloorPattern;

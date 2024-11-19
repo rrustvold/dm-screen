@@ -53,10 +53,10 @@
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Player's Guide</a>
               <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="#maps">Maps and Traveling</a></li>
-                  <li><a class="dropdown-item" href="#food">Food and Water</a></li>
+                  <li><a class="dropdown-item" href="#maps">Wilderness Exploration</a></li>
+                  <li><a class="dropdown-item" href="#food">Foraging</a></li>
 
-                  <li><a class="dropdown-item" href="#camping">Camping</a></li>
+                  <li><a class="dropdown-item" href="#combat">Combat</a></li>
                   <!-- <li><a class="dropdown-item" href="#dungeon-delving">Dungeon Delving</a></li> -->
                   <li><a class="dropdown-item" href="#keeper">The Keepers</a></li>
               </ul>
@@ -139,7 +139,7 @@
     </div>
     <div class="container p-5" id="section2">
         <h2 class="display-6">History</h2>
-        <p>One thousand years ago the civilized races lived prosperously all across the land. The kingdoms, duchies, kingdoms, and clans of humans, elves,  and dwarves existed in a golden age. They traded freely and lived in peace with each other. Monstrous races such as hobgoblins and orcs threatened travelers occasionally, but posed little threat overall. Larger monsters, fiends, and aberrations, were known to exist, but mostly as legend.</p>
+        <p>One thousand years ago the civilized races lived prosperously all across the land. The kingdoms of humans, elves,  and dwarves existed in a golden age. They traded freely and lived in peace with each other. Monstrous races such as hobgoblins and orcs threatened travelers occasionally, but posed little threat overall. Larger monsters, fiends, and aberrations, were known to exist, but mostly as legend.</p>
 
         <p>The people were united in their quests for divine knowledge and arcane power. The humans, dwarves, and elves each amassed great caches of wisdom and power in the twelve sacred temples. They sought to know God and reach him directly, and they nearly did, until the Keepers appeared.</p>
         <h2 class="display-6">The Keepers</h2>
@@ -148,7 +148,7 @@
         <p>The orcs and goblinoids began to worship and serve the giant beasts. Through their evil service, these monstrous races inherited the land. And the civilized races retreated to the far corners of the world. The humans took to the south, and have taken refuge along a peninsula for generations now. Contact with the elves and dwarves was lost. None are sure if they even exist still (although small populations of dwarves, elves, and all the other civilized races exist among the humans).</p>
         <p>
             The attacks from the Keepers were so abrupt that much knowledge of the past was lost except to legend, passed down through oral tradition. Homes, villages, and entire cities
-            were abandoned. For the last one thousand years they have either decayed into ruin, or been taken up by hobgoblins.
+            were abandoned. For the last one thousand years they have either decayed into ruin, or been taken up by hobgoblins or orcs.
         </p>
 
         <h2 class="display-6">Present Day</h2>
@@ -165,7 +165,7 @@
             Life within the kingdom is not good, and adventurers will risk journeying into the wild in search of lost riches from the ancient days.
             King Killion forbids adventurers from seeking out the 12 ancient temples.
             The given reason for this is that, since the Keepers came from the meddling in these temples, any further investigation will only anger the Keepers further.
-            Rumors have spread that the real reason is that Killion wants to retrieve the treasures within the temples for himself, and that he sends out secret crusaders known as the "Night Guard" to do so.
+            Rumors have spread that the real reason is that Killion wants to retrieve the treasures within the temples for himself, and that he sends out secret crusaders known as the "Black Guard" to do so.
         </p>
         <h2 class="display-6">Last Haven</h2>
         <p>The furthest town on the edge of the Killion kingdom is Last Haven. It  is surrounded by a twenty-foot tall bivouac to protect it from what evils might otherwise consume the fragile oasis.   From here, small parties of adventurers band together around common goals and set off into the wild in search of their quarries, whatever they may be.</p>
@@ -359,6 +359,7 @@
         <h1 class="display-1 fw-bold" style="position: absolute; bottom: 0">PLAYER'S GUIDE TO LAST HAVEN</h1>
     </div>
     <div  class="container p-5">
+            <a class="anchor" id="maps"></a>
             <h2 class="display-6">Purpose</h2>
             <p>The purpose of this section is to explain how I will run the game (so that you can prepare your character appropriately), and provide you with some tips and tricks.
                 The mechanics below for wilderness adventuring are my implementation of the rules presented in the player's handbook and dungeon master's guide. 
@@ -371,11 +372,17 @@
             <p>
                 Your wilderness adventure will be played out one day at a time using the following gameplay loop. There are a few props needed including:
                 <ul>
-                    <li>The Journey Compass: This visual aid is used to determine your party roles and the direction you are traveling.</li>
+                    <li>The Journey Compass: This visual aid is used to determine your party roles and the direction you are traveling. Pictured below.</li>
                     <li>The Map and Cartographer's Tools: Your map of the wilds and colored pencils to fill it in with. This also includes a legend which summarizes the various skill check DCs and other rules for wilderness travel.</li>
                     <li>The Navigator's Deck: A deck of playing cards that is used to keep track of your daily traveling and set pace.</li>
                     <li>The Forager's Freshness Tracker: A simple handout used by the forager to keep track of the party's trail rations, water, and foraged food.</li>
     </ul>
+                <figure class="figure">
+                    <img src="images/explore-example.jpg" class="figure-img rounded mx-auto d-block" style="max-width: 400px"/>
+                    <figcaption class="figure-caption">The Journey Compass. The party has selected their roles and the navigator has placed three of the daily navigation cards to indicate the direction, and pace, of travel.</figcaption>
+                </figure>
+
+                <p></p>
                 <ol type="1">
                     <li>
                         Each morning. . .<br>
@@ -420,15 +427,16 @@
                     </li>
 
                 </ol>
+                <a class="anchor" id="food"></a>
                 <h3>Foraging</h3>
-                <p>Foragers are encouraged to also act as "quartermasters" for the party, and manage the party's food and water rations. At the start of each journey (the start of each session) the forager should place a ration token onto the "Non-perishable" section of the quartermaster sheet. They should also take and place two water tokens for each character into the Water section. (By using tokens, players won't need to update their character sheets except for at the end of the session.)</p>
-                <p>Whenever a forager successfully foragers, they will gain 1d6 + Wisdom modifier pounds of food and water. There are six kinds of things that can be foraged: Roots and tubers; mushrooms; fruits and nuts; game; shellfish; and herbs. What foods you find are determined by the DM and the terrain you are in. Some foods are only available in certain terrains, and figuring that out is all part of the game. Each pound of food is represented by a different color token.</p>
+                <p>Foragers are encouraged to also act as "quartermasters" for the party, and manage the party's food and water rations. At the start of each journey (the start of each session) the forager should place a ration token onto the "Non-perishable" section of the quartermaster sheet for each ration the party is bringing on their journey. They should similarly place water tokens for each character into the Water section. (By using tokens, players won't need to update their character sheets except for at the end of the session.)</p>
+                <p>Whenever a forager successfully forages, they will gain 1d6 + Wisdom modifier pounds of food and water. There are six kinds of things that can be foraged: Roots and tubers; mushrooms; fruits and nuts; game; shellfish; and herbs. What foods you find are determined by the DM and the terrain you are in. Some foods are only available in certain terrains, and figuring that out is all part of the game. Each pound of food is represented by a different color token.</p>
                 <p>When you first find a food, add it to the freshness tracker. Raw game begins one step ahead on the freshness tracker, and shellfish starts two steps ahead. Each morning when the party is "eating breakfast", you can feed a character food directly from the freshness tracker. If the food is old, then the character that eats that food must succeed a Constitution saving throw or be poisoned for 24 hours. The DC for the save is given by the freshness tracker. After the party has eaten for the day, move all tokens one step to the right along the tracker.</p>
-                <p>A character with Cook's Utensils can attempt to cook raw food into shelf stable trail rations. To make one ration you must combine any two different raw foods (no ability check required). You can make at most two rations per day. The freshness of the raw ingredients does not matter when crafting rations.</p>
-                <p>A character with an Herbalism Kit can craft Herbs into Potions of Healing. It takes one pound of herbs to make one potion. A character can make at most one potion per day.</p>
-                <p>Herbs cannot be eaten or cooked into rations. They are only used for making potions. Herbs never expire, and don't need to be added to the freshness tracker.</p>
+                <p>A character with proficiency in Cook's Utensils can use them to cook raw food into shelf stable trail rations. To make one ration you must combine any two different raw foods (no ability check required). You can make at most two rations per day. The freshness of the raw ingredients does not matter when crafting rations.</p>
+                <p>A character with proficiency with an Herbalism Kit can use it to craft Herbs into Potions of Healing. It takes one pound of herbs to make one potion. A character can make at most one potion per day.</p>
+                <p>Herbs cannot be eaten as food or cooked into rations. They are only used for making potions. Herbs never expire, and don't need to be added to the freshness tracker.</p>
                 <p>The spell "Purify Food and Drink" can be used to make raw food safe. Each casting of the spell can affect all the party's raw food. This resets all raw food to the first position on the freshness tracker. After being purified, food continues to lose freshness as normal.</p>
-                <p>At the end of the session, all raw foods are lost. Any rations can be divided back amongst the party onto everyone's character sheets. Any herbs that were not brewed into potions can be divided amongst party members. Characters with an Herbalism Kit can brew potions in between sessions using the normal rules for that given in the Player's Handbook. Herbs can also be sold in Last Haven at a rate of 25 gp per pound. Herbs cannot be purchased in Last Haven.</p>
+                <p>At the end of the session, all raw foods are lost. Any rations can be divided back amongst the party and recorded onto everyone's character sheets. Any herbs that were not brewed into potions can be divided amongst party members. Characters with an Herbalism Kit can brew potions in between sessions using the normal rules for that given in the Player's Handbook. Herbs can also be sold in Last Haven at a rate of 25 gp per pound. Herbs cannot be purchased in Last Haven.</p>
 
 
 <!--            <a class="anchor" id="maps"></a>-->
@@ -490,11 +498,12 @@
 <!--             </div>-->
 
         <h2 class="display-6">Combat</h2>
-        <p>Buckle up because I'm changing the grid. There's nothing in the rules that say you have to use a grid for combat, and there's nothing that says you have to use a 5-foot grid when you do. So after a major epiphany, I've discovered that the ultimate grid for combat in D&D is actually a heaxagonal grid with a 30 foot spacing. When we are in combat I will display (or perhaps project) a hexagonal grid onto the table. Each of these hexes will be 4-6 inches wide. And the in-game distance between hexes will be 30 feet. Here's how it works:</p>
+        <a class="anchor" id="combat"></a>
+        <p>Buckle up because I'm changing the grid. There's nothing in the rules that say you have to use a grid for combat, and there's nothing that says you have to use a 5-foot grid when you do. So after a major epiphany, I've discovered that the ultimate grid for combat in D&D is actually (probably) a hexagonal grid with a 30-foot spacing. When we are in combat I will display (or perhaps project) a hexagonal grid onto the table. Each of these hexes will appear 4-6 inches wide. And the in-game distance between hexes will be 30 feet. This should provide all of the tactical details you need (can I reach them? Is my bow in range? how many can I hit?) without the fussiness of a five-foot grid (I'm tired of watching you guys solve path optimization problems every game). Here's how it works:</p>
         <h3>Movement and Positioning</h3>
         <ol>
-            <li>Multiple creatures can all fit inside the same hex</li>
-            <li>To move from one hex to an adjacent hex, you must use 30 feet of movement. So if your character has a 35 foot movement speed, then the extra five feet doesn't do much for you (but it didn't do much for you with a 5-foot grid either)</li>
+            <li>Multiple creatures can all fit inside the same hex.</li>
+            <li>To move from one hex to an adjacent hex, you must use 30 feet of movement. So if your character has a 35-foot movement speed, then the extra five feet doesn't do much for you in combat (but it didn't do much for you with a 5-foot grid either)</li>
             <li>If a hex tile is difficult terrain, then you can enter it with 30 feet of movement, but you have to spend one full turn in it before you can leave it. This is a clumsy thing to keep track of, but difficult terrain doesn't come up that much, so it shouldn't be too bad.</li>
         </ol>
         <h3>Attacks</h3>
@@ -503,6 +512,20 @@
             <li>Therefore, using a ranged weapon while in a hex with an enemy means you have disadvantage with the attack</li>
             <li>If you leave a tile that has enemies, then you provoke attacks of opportunity from 1/2 the enemies rounded up (DM's choice). If enemies leave your tile, then 1/2 of party members (rounded up) in that tile can make attacks of opportunity (party's choice).</li>
         </ol>
+        <h3>Areas of Effect</h3>
+        <ol>
+            <li>We will use the table in the Dungeon Master's Guide for adjudicating areas of effect when not using a grid, when there is ambiguity (i.e. when the size/shape does not align well with the 30-foot grid spacing). This basically says that a 15-foot cone hits two targets, a 20-foot cube hits 4, etc.. A spell like fireball (20-foot radius) will target all creatures of the hex tile it is cast into, because the area of fireball is greater than the area of the hex-tile, so there is no ambiguity about being able to hit all creatures in a single hex tile.</li>
+            <li>Persistent area spells that are smaller than a 10-foot cube (such as Grease), will not affect the entire tile. So casting Grease does not make the entire 30-foot hex tile difficult terrain. Larger areas (like Web), will make the entire hex tile difficult terrain. You can see that this is almost exactly the same thing that happens on a five-foot grid. With Grease on a five-foot grid, creatures can simply go around the grease without losing any meaningful distance. And with web on a 5-foot grid you can either go through the web slowly, because of the difficult terrain, or go around the web which slows you down because of the longer distance. The proof is left as an exercise for the reader.</li>
+            <li>If an area of effect has a 15-foot size (any shape) or smaller, then there is no risk of friendly fire. We can assume that the sorcerer is able to position themselves, and communicate with his or her allies to avoid catching them in the Burning Hands. For spells that are larger than 15-feet, then I may adjudicate a risk of friendly fire if it seems unavoidable.</li>
+        </ol>
+        <h3>Cover</h3>
+        <p>I may designate certain tiles as having discrete opportunities for cover. If a creature is inside a tile with a cover, then they can take the cover as long as no other creature is already using it. If you don't like that a bugbear is taking cover, then you'll need to push/shove/grapple/thunderwave them out of it. I think this will be a lot more interesting than the rules for cover using a 5-foot grid. Those rules are really complicated, and make it really easy to negate any cover by simply moving around to the other side of the target.</p>
+        <p>
+        <figure class="figure">
+                    <img src="images/combat-example.jpg" class="figure-img rounded mx-auto d-block" style="max-width: 400px"/>
+                    <figcaption class="figure-caption">The party has stumbled upon a pair of wolves on a bluff</figcaption>
+                </figure>
+        </p>
             <!-- <a class="anchor" id="dungeon-delving"></a> -->
             <!-- <h2 class="display-6">Dungeon Delving - as presented by Lidda of the Scarlet Riders</h2>
             <img src="images/image4.jpg" class="rounded m-2 float-end" style="max-width: 400px; width: 100%"/>
