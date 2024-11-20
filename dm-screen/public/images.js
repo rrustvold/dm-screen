@@ -1,9 +1,9 @@
 import {ctx} from "./config.js"
 
-let tree_img = new Image();
+export let tree_img = new Image();
 tree_img.src = "/pixel-art/PNG/assets/Trees_shadow/Autumn_tree1.png";
 
-let treeStump = new Image();
+export let treeStump = new Image();
 treeStump.src = "/pixel-art/PNG/assets/Trees_texture_shadow/Broken_tree3.png"
 
 let myGrass = new Image();
@@ -98,3 +98,12 @@ dirtImg.src = "/dirt.png";
 export let dirtPattern;
 dirtImg.onload = () => {dirtPattern = ctx.createPattern(dirtImg, "repeat")};
 
+let bridgeDeckImg = new Image();
+bridgeDeckImg.src = "/bridge-deck.png";
+export let bridgeDeckPattern;
+bridgeDeckImg.onload = () =>{bridgeDeckPattern = ctx.createPattern(bridgeDeckImg, "repeat")};
+
+let bivWallImg = new Image();
+bivWallImg.src = "/biv-wall.png";
+export let bivWallPattern;
+bivWallImg.onload = () => {bivWallPattern = ctx.createPattern(bivWallImg, "repeat")};
