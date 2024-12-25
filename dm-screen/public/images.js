@@ -62,6 +62,11 @@ waterImg.src = "/water.png";
 export let waterPattern;
 waterImg.onload = () => {waterPattern = ctx.createPattern(waterImg, "repeat")};
 
+let lavaImg = new Image();
+lavaImg.src = "/lava.png";
+export let lavaPattern;
+lavaImg.onload = () => {lavaPattern = ctx.createPattern(lavaImg, "repeat")};
+
 let northWallImg = new Image();
 northWallImg.src = "/north-wall.png";
 export let northWallPattern;

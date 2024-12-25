@@ -8,6 +8,9 @@ export function get_fill_style(terrain, domTerrain){
     case "water":
       return patterns.waterPattern;
 
+    case "lava":
+      return patterns.lavaPattern;
+
     default:
       switch (domTerrain) {
         case "badlands":

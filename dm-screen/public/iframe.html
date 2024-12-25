@@ -846,6 +846,8 @@
         selectedValue = "shield";
       } else if (keyPressed["Delete"]) {
         selectedValue = "delete";
+      } else if (keyPressed["l"]) {
+        selectedValue = "lava";
       } else {
         selectedValue = "elevate";
       }
@@ -926,6 +928,9 @@
           break;
         case "water":
           closest_tile.terrain = closest_tile.terrain === "water" ? "grass" : "water";
+          break;
+        case "lava":
+          closest_tile.terrain = closest_tile.terrain === "lava" ? "grass" : "lava";
           break;
         case "elevate":
           if (event.button === 2){
