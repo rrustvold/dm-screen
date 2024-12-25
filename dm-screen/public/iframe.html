@@ -850,6 +850,10 @@
         selectedValue = "poison";
       } else if (keyPressed["s"]) {
         selectedValue = "shield";
+      } else if (keyPressed["v"]) {
+        selectedValue = "vines";
+      } else if (keyPressed["i"]) {
+        selectedValue = "ice";
       } else {
         selectedValue = "elevate";
       }
@@ -917,6 +921,13 @@
             closest_tile.effects.add("web");
           }
           break;
+        case "vines":
+          if (closest_tile.effects.has("vines")) {
+            closest_tile.effects.delete("vines");
+          }  else {
+            closest_tile.effects.add("vines");
+          }
+          break;
         case "darkness":
           if (closest_tile.effects.has("darkness")){
             closest_tile.effects.delete("darkness");
@@ -927,6 +938,9 @@
         case "water":
           closest_tile.terrain = closest_tile.terrain === "water" ? "grass" : "water";
           break;
+        case "ice":
+          closest_tile.terrain = closest_tile.terrain === "ice" ? "grass" : "ice";
+          break;  
         case "elevate":
           if (event.button === 2){
             closest_tile.elevation -= 1;

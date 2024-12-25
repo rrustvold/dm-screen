@@ -62,6 +62,11 @@ waterImg.src = "/water.png";
 export let waterPattern;
 waterImg.onload = () => {waterPattern = ctx.createPattern(waterImg, "repeat")};
 
+let iceImg = new Image();
+iceImg.src = "/ice.png";
+export let icePattern;
+iceImg.onload = () => {icePattern = ctx.createPattern(iceImg, "repeat")};
+
 let northWallImg = new Image();
 northWallImg.src = "/north-wall.png";
 export let northWallPattern;
@@ -92,3 +97,6 @@ webImg.src = "/web.png";
 
 export let shieldImg = new Image();
 shieldImg.src = "/shield.png";
+
+export let vinesImg = new Image();
+vinesImg.src = "/vines.png";

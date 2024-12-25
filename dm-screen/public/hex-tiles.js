@@ -8,6 +8,9 @@ export function get_fill_style(terrain, domTerrain){
     case "water":
       return patterns.waterPattern;
 
+    case "ice":
+      return patterns.icePattern;
+
     default:
       switch (domTerrain) {
         case "badlands":
@@ -354,9 +357,20 @@ export function HexTile(i, j, x , y) {
     );
   }
 
+  this.drawVines = () => {
+    ctx.drawImage(
+      patterns.vinesImg,
+      this.x - patterns.vinesImg.naturalWidth/2, 
+      this.y - patterns.vinesImg.naturalHeight/2 + this.height,
+    )
+  }
+
   this.drawEffects = () => {
     if (this.effects.has("web")) {
       this.drawWeb();
+    }
+    if (this.effects.has("vines")) {
+      this.drawVines();
     }
     if (this.effects.has("fire")) {
       this.drawFire();
