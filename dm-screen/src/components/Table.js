@@ -107,6 +107,7 @@ export default function Table({tableState}) {
                     <option value="swamp">Swamp</option>
                     <option value="snowy-planes">Snowy Planes</option>
                     <option value="arctic">Arctic</option>
+                    <option value={"dirt"}>Dirt</option>
                 </select>
                 <label>Background</label>
                 <select className="w3-select" id="background" onChange={refresh}>

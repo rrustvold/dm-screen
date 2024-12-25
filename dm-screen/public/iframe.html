@@ -274,14 +274,20 @@
           hex_tiles.forEach(row => {
             row.forEach(tile => tile.drawAssets(bufferCtx))
           })
+
+          bridges.forEach(bridge => {
+            drawBridgeOrWall(bufferCtx, bridge, 75, patterns.bridgeDeckPattern);
+          })
+
+          outsideWalls.forEach(wall => {
+            drawBridgeOrWall(bufferCtx, wall, 75, patterns.bivWallPattern);
+          })
+
           bufferCtx.restore();
           needsRefresh = false;
         }
         ctx.drawImage(bufferCanvas, 0, 0);
         drawTileEffect(hex_tiles);
-        
-        
-
 
         // draw rain and/or snow effects
         drawWeather(wind, rain, snow, temperature);
@@ -304,6 +310,30 @@
         ctx.restore();
       }
       window.requestAnimationFrame(loop);
+    }
+
+    function drawBridgeOrWall(ctx, bridge, bridgeWidth, pattern) {
+      const bridgeCanvas = document.createElement('canvas');
+      const bridgeCtx = bridgeCanvas.getContext('2d');
+
+      let startPoint = bridge[0];
+      let endPoint = bridge[1];
+      let theta = Math.atan2((endPoint[1] - startPoint[1]), endPoint[0] - startPoint[0]);
+      let length = Math.sqrt((endPoint[1] - startPoint[1])**2 + (endPoint[0] - startPoint[0])**2);
+
+      let translateY =  Math.cos(-theta)*bridgeWidth/2;
+      let translateX = -Math.sin(-theta)*bridgeWidth/2;
+      bridgeCanvas.width = length;
+      bridgeCanvas.height = bridgeWidth;
+
+      bridgeCtx.fillStyle = pattern;
+
+      bridgeCtx.fillRect(0, 0, length, bridgeWidth);
+      ctx.save();
+      ctx.translate(startPoint[0] + translateX, startPoint[1] - translateY);
+      ctx.rotate(theta);
+      ctx.drawImage(bridgeCanvas, 0, 0);
+      ctx.restore();
     }
 
     function drawControlPoints() {
@@ -387,6 +417,8 @@
       });
 
       all_walls = [];
+      bridges = [];
+      outsideWalls = [];
       needsRefresh = true;
     }
 
@@ -602,68 +634,6 @@
       ctx.restore();
 
       ctx.restore();
-      //
-      // // get travel duration
-      // let hoursMarched = opener.document.getElementById("hoursMarched").value;
-      // // where should the sun be?
-      // let sunLocation = Math.PI - 2*Math.PI*(hoursMarched*1.5)/24 ;
-      //
-      // // where is the sun?
-      // let error = sunLocation - sun;
-      // if (error > Math.PI / 12){
-      //   error -= 2 * Math.PI;
-      // }
-      // if (Math.abs(error) <= Math.PI / 24) {
-      // error = 0;
-      // }
-      // let correction = (-1 * Math.PI * dt / 5000);
-      //
-      // if (sun + correction <= sunLocation){
-      //   sun = sunLocation;
-      // } else {
-      //   sun += correction;
-      // }
-      //
-      //
-      // let sunX = sunRadius * Math.cos(sun);
-      // let sunY = -1 * sunRadius * Math.sin(sun);
-      // // Draw the sun
-      //
-      // ctx.beginPath();
-      // ctx.arc(
-      //   sunX,
-      //   sunY,
-      //   50,
-      //   0,
-      //   Math.PI * 2
-      // );
-      // ctx.fillStyle = "white";
-      // ctx.fill();
-      //
-      // // Draw the sun dial
-      // ctx.beginPath();
-      // ctx.arc(
-      //   0,
-      //   0,
-      //   20,
-      //   0,
-      //   Math.PI * 2
-      // );
-      // ctx.fillStyle = "black";
-      // ctx.fill();
-      //
-      // // Draw the shadow
-      // ctx.beginPath();
-      // ctx.moveTo(0, 0);
-      // ctx.lineTo(-1 * sunX, -1 * sunY)
-      // ctx.lineCap = "round";
-      // ctx.lineWidth = 40;
-      // ctx.strokeStyle = "rgba(0, 0, 0, .50)";
-      // ctx.shadowBlur = 200;
-      // ctx.shadowColor = "black";
-      // ctx.stroke();
-      //
-      //
 
       ctx.restore();
     }
@@ -765,7 +735,25 @@
       all_walls.push(walls);
     }
 
+    let bridgePath = [];
+    let bridges = [];
+    function clickBridge(x, y) {
+      bridgePath.push([x, y]);
+      if (bridgePath.length === 2) {
+        bridges.push(bridgePath);
+        bridgePath = [];
+      }
+    }
 
+    let outsideWallPath = [];
+    let outsideWalls = [];
+    function clickOutsideWall(x, y) {
+      outsideWallPath.push([x, y]);
+      if (outsideWallPath.length === 2) {
+        outsideWalls.push(outsideWallPath);
+        outsideWallPath = [];
+      }
+    }
     function clickControlPoint(x, y) {
       // figure out the closest x-coord
       let dx = 10000;
@@ -805,6 +793,12 @@
 
       if (keyPressed["Control"]){
         return clickControlPoint(x, y);
+      }
+      if (keyPressed["b"]){
+        return clickBridge(x, y);
+      }
+      if (keyPressed["B"]) {
+        return clickOutsideWall(x, y);
       }
 
       // figure out which tile the click is closest to
@@ -854,6 +848,10 @@
         selectedValue = "vines";
       } else if (keyPressed["i"]) {
         selectedValue = "ice";
+      } else if (keyPressed["Delete"]) {
+        selectedValue = "delete";
+      } else if (keyPressed["l"]) {
+        selectedValue = "lava";
       } else {
         selectedValue = "elevate";
       }
@@ -863,10 +861,14 @@
           closest_tile.state = closest_tile.state === "hidden" ? "visible" : "hidden";
           break;
 
+        case "delete":
+          closest_tile.assets = [];
+          break;
+
         case "tree":
           closest_tile.assets.push(
             {
-              img: tree_img,
+              img: patterns.tree_img,
               x: x,
               y: y,
             }
@@ -883,7 +885,7 @@
         case "tree-stump":
           closest_tile.assets.push(
             {
-              img: treeStump,
+              img: patterns.treeStump,
               x: x,
               y: y,
             }
@@ -941,6 +943,9 @@
         case "ice":
           closest_tile.terrain = closest_tile.terrain === "ice" ? "grass" : "ice";
           break;  
+        case "lava":
+          closest_tile.terrain = closest_tile.terrain === "lava" ? "grass" : "lava";
+          break;
         case "elevate":
           if (event.button === 2){
             closest_tile.elevation -= 1;
@@ -1033,7 +1038,9 @@
         scaleFactor: scaleFactor,
         scale_x: scale_x,
         scale_y: scale_y,
-        all_walls: all_walls
+        all_walls: all_walls,
+        bridges: bridges,
+        outsideWalls: outsideWalls
       }
       let stateString = JSON.stringify(state);
       const blob = new Blob([stateString], { type: "application/json" });
@@ -1052,6 +1059,8 @@
       scale_x = state.scale_x;
       scale_y = state.scale_y;
       all_walls = state.all_walls;
+      bridges = state.bridges;
+      outsideWalls = state.outsideWalls;
       let new_hex_tiles = [];
       state.hex_tiles.forEach(row => {
         let new_row = [];

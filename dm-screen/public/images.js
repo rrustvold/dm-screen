@@ -1,13 +1,13 @@
 import {ctx} from "./config.js"
 
-let tree_img = new Image();
+export let tree_img = new Image();
 tree_img.src = "/pixel-art/PNG/assets/Trees_shadow/Autumn_tree1.png";
 
-let treeStump = new Image();
+export let treeStump = new Image();
 treeStump.src = "/pixel-art/PNG/assets/Trees_texture_shadow/Broken_tree3.png"
 
 let myGrass = new Image();
-myGrass.src = "/mygrass2.png";
+myGrass.src = "/mygrass3.png";
 export let grassPattern;
 myGrass.onload = () => {grassPattern = ctx.createPattern(myGrass, "no-repeat")};
 
@@ -67,6 +67,11 @@ iceImg.src = "/ice.png";
 export let icePattern;
 iceImg.onload = () => {icePattern = ctx.createPattern(iceImg, "repeat")};
 
+let lavaImg = new Image();
+lavaImg.src = "/lava.png";
+export let lavaPattern;
+lavaImg.onload = () => {lavaPattern = ctx.createPattern(lavaImg, "repeat")};
+
 let northWallImg = new Image();
 northWallImg.src = "/north-wall.png";
 export let northWallPattern;
@@ -100,3 +105,19 @@ shieldImg.src = "/shield.png";
 
 export let vinesImg = new Image();
 vinesImg.src = "/vines.png";
+
+
+let dirtImg = new Image();
+dirtImg.src = "/dirt.png";
+export let dirtPattern;
+dirtImg.onload = () => {dirtPattern = ctx.createPattern(dirtImg, "repeat")};
+
+let bridgeDeckImg = new Image();
+bridgeDeckImg.src = "/bridge-deck.png";
+export let bridgeDeckPattern;
+bridgeDeckImg.onload = () =>{bridgeDeckPattern = ctx.createPattern(bridgeDeckImg, "repeat")};
+
+let bivWallImg = new Image();
+bivWallImg.src = "/biv-wall.png";
+export let bivWallPattern;
+bivWallImg.onload = () => {bivWallPattern = ctx.createPattern(bivWallImg, "repeat")};
