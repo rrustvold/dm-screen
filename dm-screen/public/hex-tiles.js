@@ -146,7 +146,7 @@ export function HexTile(i, j, x , y) {
     this.elevation = record.elevation;
     this.elevationDirection = record.elevationDirection;
     this.assets = record.assets;
-    this.effects = record.effects;
+    this.effects = new Set();
     this.controlPoints = record.controlPoints;
   }
 

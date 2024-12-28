@@ -128,12 +128,6 @@ export default function Table({tableState}) {
                     <option value="ground-up">Ground Up</option>
                     <option value="cliff-down">Cliff Down</option>
                 </select>
-                <select className={"w3-select"} id={"table-weather"}>
-                    <option value={"clear"}>Clear</option>
-                    <option value={"rain"}>Rain</option>
-                    <option value={"heavy-rain"}>Heavy Rain</option>
-                    <option value={"snow"}>Snow</option>
-                </select>
                 <select className={"w3-select"} id={"heading"}>
                     <option value={"north"}>North</option>
                     <option value={"north-west"}>North West</option>
@@ -166,18 +160,6 @@ export default function Table({tableState}) {
                     <option value={"extreme-cold"}>Extreme Cold</option>
                     <option value={"extreme-heat"}>Extreme Heat</option>
                 </select>
-                <input className="w3-radio" type="radio" id="hide" name="func"
-                       value="hide"></input> Hide/Show
-                <input className="w3-radio" type="radio" id="elevate" name="func"
-                       value="elevate"></input> Elevate
-                <input className="w3-radio" type="radio" id="tree" name="func"
-                       value="tree"></input> Tree
-                <input className="w3-radio" type="radio" id="tree-stump" name="func"
-                       value="tree-stump"></input> Tree Stump
-                <input className="w3-radio" type="radio" id="water" name="func"
-                       value="water"></input> Water
-                <input className="w3-radio" type="radio" id="half-cover" name="func"
-                       value="half-cover"></input> Half Cover
 
             </div>
         </>
