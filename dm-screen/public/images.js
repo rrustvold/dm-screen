@@ -1,7 +1,13 @@
 import {ctx} from "./config.js"
 
 export let tree_img = new Image();
-tree_img.src = "/pixel-art/PNG/assets/Trees_shadow/Autumn_tree1.png";
+tree_img.src = "/tree1.png";
+
+export let deadTreeImg = new Image();
+deadTreeImg.src = "/dead-tree.png";
+
+export let rockImg = new Image();
+rockImg.src = "/rock.png";
 
 export let treeStump = new Image();
 treeStump.src = "/pixel-art/PNG/assets/Trees_texture_shadow/Broken_tree3.png"

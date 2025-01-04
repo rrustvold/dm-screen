@@ -74,7 +74,7 @@ export default function Table({tableState}) {
         <>
             <div className="w3-container">
                 <h1>Tabletop Screen</h1>
-                <input type="text" className="w3-text" id="hex-address"></input>
+                <p>b-bridge, B-wall, z-scale, w-water, h-hide, t-tree, T-dead tree, r-rock, f-fog, F-fire, d-darkness, W-web, p-poison, s-shield, v-vines, i-ice, l-lava, </p>
                 <input type="button" class="w3-button" value="All off"
                        onClick={() => allOff()}></input>
                 <input type="button" class="w3-button" value="Open"
@@ -122,7 +122,9 @@ export default function Table({tableState}) {
                     <option value="desert-winter">Winter Desert</option>
                     <option value="hills">Hills</option>
                     <option value="mountains">Mountains</option>
+                    <option value="fantasy-mountains">Fantasy Mountains</option>
                     <option value="dungeon">Dungeon</option>
+                    <option value="snowy-plains">Snowy Plains</option>
                 </select>
                 <select className="w3-select" id="elevation-style" onChange={refresh}>
                     <option value="ground-up">Ground Up</option>

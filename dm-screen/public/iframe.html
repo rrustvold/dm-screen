@@ -136,7 +136,7 @@
         console.log(wallPath);
         wallPath = [];
       }
-      delete keyPressed[event.key]
+      keyPressed = {};
     });
 
     canvas.addEventListener('mousedown', handleClick);
@@ -233,7 +233,13 @@
             break;
 
           case "mountains":
+            overlay.style.backgroundImage = 'url("mountains.jpg")';
+            break;
+          case "fantasy-mountains":
             overlay.style.backgroundImage = 'url("mountain-fantasy.jpeg")';
+            break;
+          case "snowy-plains":
+            overlay.style.backgroundImage = 'url("plains-winter.jpg")';
             break;
           case "dungeon":
             overlay.style.backgroundImage = null;
@@ -832,7 +838,14 @@
         selectedValue = "hide";
       } else if (keyPressed["t"]) {
         selectedValue = "tree";
-      } else if (keyPressed["f"]){
+      } else if (keyPressed["T"]) {
+          selectedValue = "deadTree";
+      } 
+      else if (keyPressed["r"]) {
+        selectedValue = "rock";
+      }
+      
+      else if (keyPressed["f"]){
         selectedValue = "fog";
       } else if (keyPressed["F"]) {
         selectedValue = "fire";
@@ -869,6 +882,24 @@
           closest_tile.assets.push(
             {
               img: patterns.tree_img,
+              x: x,
+              y: y,
+            }
+          );
+          break;
+        case "deadTree":
+          closest_tile.assets.push(
+            {
+              img: patterns.deadTreeImg,
+              x: x,
+              y: y,
+            }
+          );
+          break;
+        case "rock":
+          closest_tile.assets.push(
+            {
+              img: patterns.rockImg,
               x: x,
               y: y,
             }
@@ -1073,6 +1104,7 @@
         new_hex_tiles.push(new_row);
       })
       hex_tiles = new_hex_tiles;
+      needsRefresh = true;
     }
 
   </script>
