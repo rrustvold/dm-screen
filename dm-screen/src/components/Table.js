@@ -1,10 +1,6 @@
 export default function Table({tableState}) {
     let iframeWindow;
 
-    function allOff(){
-        iframeWindow.hide();
-    }
-
     function showAll() {
         iframeWindow.showAll();
 
@@ -70,16 +66,44 @@ export default function Table({tableState}) {
         }
     }
 
+    function music(style) {
+        let webhook = "";
+        if (style === "relaxed") {
+            webhook = "http://homeassistant.local:8123/api/webhook/last-haven-relaxed-enqueue-nBAAN1gUd0jf0eb0XJruHEGQ"
+        } else if (style === "tense") {
+            webhook = "http://homeassistant.local:8123/api/webhook/last-haven-tense-enqueue-7AjNxmoZ8zGprEjqgEYb8xq5";
+        } else if (style === "excited") {
+            webhook = "http://homeassistant.local:8123/api/webhook/last-haven-tense-enqueue-7AjNxmoZ8zGprEjqgEYb8xq5";
+        } else if (style === "fadeOut"){
+            webhook = "http://homeassistant.local:8123/api/webhook/fade-out-music-Dj00BQjcVBj8qk46wyYF_KQ8";
+        } else if (style === "fadeIn"){
+            webhook = "http://homeassistant.local:8123/api/webhook/fade-in-music-XQX4vfmK8d30WBOTt7jj4MEL";
+        }
+
+        let response = fetch(webhook).then(() => console.log("done"));
+    }
+
     return (
         <>
             <div className="w3-container">
                 <h1>Tabletop Screen</h1>
-                <p>b-bridge, B-wall, z-scale, w-water, h-hide, t-tree, T-dead tree, r-rock, f-fog, F-fire, d-darkness, W-web, p-poison, s-shield, v-vines, i-ice, l-lava, </p>
-                <input type="button" class="w3-button" value="All off"
-                       onClick={() => allOff()}></input>
-                <input type="button" class="w3-button" value="Open"
+                <input type={"button"} className={"w3-button"} value={"Relaxed"}
+                       onClick={() => music("relaxed")}/>
+                <input type={"button"} className={"w3-button"} value={"Tense"}
+                       onClick={() => music("tense")}/>
+                <input type={"button"} className={"w3-button"} value={"Excited"}
+                       onClick={() => music("excited")}/>
+                <input type={"button"} className={"w3-button"} value={"Fade Out"}
+                       onClick={() => music("fadeOut")}/>
+                <input type={"button"} className={"w3-button"} value={"Fade In"}
+                       onClick={() => music("fadeIn")}/>
+                <br/>
+                <p>b-bridge, B-wall, z-scale, w-water, h-hide, t-tree, T-dead tree,
+                    r-rock, f-fog, F-fire, d-darkness, W-web, p-poison, s-shield,
+                    v-vines, i-ice, l-lava, </p>
+                <input type="button" className="w3-button" value="Open"
                        onClick={() => battle()}></input>
-                <input type="button" class="w3-button" value="Show All"
+                <input type="button" className="w3-button" value="Show All"
                        onClick={() => showAll()}></input>
                 <input type="button" className="w3-button" value="Hide All"
                        onClick={() => hideAll()}></input>
