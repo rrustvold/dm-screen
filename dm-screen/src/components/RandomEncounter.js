@@ -142,6 +142,8 @@ export function generate(party, difficulty, monsterSelection) {
         } else if (encounter.length === 14) {
             multiplier = 4;
         }
+
+        multiplier = 1;
         if ((totalXP + monster.xp) * multiplier <= limit * 1.0) {
             totalXP += monster.xp;
             encounter.push(monster);
@@ -190,10 +192,10 @@ function RandomEncounterInput({setEncounter, party}){
                 <div class="w3-col s3">
                     <label>Difficulty</label>
                     <select name="difficulty" id="difficulty" class="w3-select">
-                        <option value="easy">Easy</option>
-                        <option value="medium">Medium</option>
-                        <option value="hard">Hard</option>
-                        <option value="deadly">Deadly</option>
+                        <option value="easy">Trivial (don't use)</option>
+                        <option value="medium">Easy</option>
+                        <option value="hard">Moderate</option>
+                        <option value="deadly">Hard</option>
                     </select>
                 </div>
                 <div class="w3-col s3">
