@@ -117,7 +117,12 @@ function load(file) {
     }
 }
 
-
+function damage(amount, rowNum) {
+    let hp_bar = document.getElementById(`hit-points-${rowNum}`);
+    let hp = Number(hp_bar.value);
+    hp -= amount;
+    hp_bar.value = hp;
+}
 
 function HordeMathInput(props) {
     let rows = [];
@@ -149,6 +154,11 @@ function HordeMathInput(props) {
                     onChange={(e) => props.setArmorClass(e.target.value)}/>
             </td>
             <td>
+                <input type="button" class="w3-button" defaultValue="-10" onClick={() => damage(10, i)}></input>
+                <input type="button" class="w3-button" defaultValue="-5" onClick={() => damage(5, i)}></input>
+                <input type="button" class="w3-button" defaultValue="-1" onClick={() => damage(1, i)}></input>
+            </td>
+            <td>
                 <input type='text' id={"hit-points-" + i} class='w3-input' defaultValue={props.hitPoints}
                     onChange={(e) => props.setHitPoints(e.target.value)}/>
             </td>
@@ -177,6 +187,7 @@ function HordeMathInput(props) {
                         <td>Attack Bonus</td>
                         <td>Attack Damage</td>
                         <td>AC</td>
+                        <td>Damage</td>
                         <td>HP</td>
                         <td>Total HP (all monsters summed)</td>
                         <td>Initiative</td>
@@ -191,6 +202,20 @@ function HordeMathInput(props) {
             
         </>
     )
+}
+
+function clearMonsters() {
+    for (let i=0; i < 3; i++){
+        document.getElementById(`monster-name-${i}`).value = "";
+        document.getElementById(`numAttackers-${i}`).value = 1;
+        document.getElementById(`attacksPerMonster-${i}`).value = 1;
+        document.getElementById(`attackBonus-${i}`).value = 0;
+        document.getElementById(`damage-${i}`).value = "";
+        document.getElementById(`armor-class-${i}`).value = 0;
+        document.getElementById(`hit-points-${i}`).value = 0;
+        document.getElementById(`hit-point-maximum-${i}`).value = 0;
+        document.getElementById(`initiative-${i}`).value = 0;
+    }
 }
 
 function HordeMath({party, tableState, setTableState, count}) {
@@ -282,6 +307,7 @@ export default function HordeMathContainer({party, tableState, setTableState}) {
                 <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={0}></HordeMath>
                 <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={1}></HordeMath>
                 <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={2}></HordeMath>
+                <input type="button" class="w3-button" defaultValue="Clear" onClick={clearMonsters} />
                 <input type="button" className="w3-button" value="save" onClick={() => save()}></input>
                 <input type="file" accept=".json" onChange={(event) => {load(event.target.files[0])}}></input>
             </div>

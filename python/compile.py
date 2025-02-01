@@ -40,7 +40,11 @@ with open(monsters_file, "w") as file:
         dex = monster[key].get("dex", 0)
         stealth = monster[key].get("stealth", 0)
         link = monster[key].get("link", f"https://www.dndbeyond.com/monsters/{key}")
+        ac = monster[key].get("ac", 0)
+        hp = monster[key].get("hp", 0)
+
         key = key.replace("-", "_")
+        
         file.writelines([
             "export const %s = {\n" % key,
             "\tkey: '%s',\n" % key,
@@ -50,6 +54,8 @@ with open(monsters_file, "w") as file:
             "\tint: %d,\n" % _int,
             "\tdex: %d,\n" % dex,
             "\tstealth: %d,\n" % stealth,
+            "\tac: %d,\n" %ac,
+            "\thp: %d,\n" %hp,
             "}\n\n"
         ])
 

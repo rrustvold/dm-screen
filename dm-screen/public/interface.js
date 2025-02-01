@@ -77,16 +77,18 @@ export function drawInitiativeTokens(opener){
 function circle(num, currentHp, maxHp, name){
     let x;
     let y;
+    let width = squareSize / 2;
+    let height = squareSize * 2;
     let radius = squareSize / 2;
     // let healthBarLength = 400;
     // let shortLength = healthBarLength - radius * 0.57735; // Gives 60 degree angle
-    let shortLength = squareSize;
+    let shortLength = height;
     let healthBarLength = shortLength + radius * 0.57735;
     if (num <= 14){
-    x = squareSize / 2 + (14 - num) * squareSize
+    x = squareSize / 2 + (14 - num) * squareSize - squareSize / 2
     y = squareSize/2;
     } else {
-    x = squareSize / 2 + (num - 15) * squareSize
+    x = squareSize / 2 + (num - 15) * squareSize + squareSize / 2
     y = 1920 - squareSize / 2;
     }
     ctx.save();
@@ -97,11 +99,11 @@ function circle(num, currentHp, maxHp, name){
 
     // Flag
     if (num < 15) {
-    ctx.moveTo(x - squareSize / 2, y - squareSize / 2);
-    ctx.lineTo(x - squareSize / 2, y - squareSize / 2 + shortLength);
+    ctx.moveTo(x - width / 2, y - squareSize / 2);
+    ctx.lineTo(x - width / 2, y - squareSize / 2 + shortLength);
     ctx.lineTo(x, y - squareSize / 2 + healthBarLength);
-    ctx.lineTo(x + squareSize / 2, y - squareSize / 2 + shortLength);
-    ctx.lineTo(x + squareSize / 2, y - squareSize / 2);
+    ctx.lineTo(x + width / 2, y - squareSize / 2 + shortLength);
+    ctx.lineTo(x + width / 2, y - squareSize / 2);
     ctx.closePath();
     ctx.stroke();
     ctx.fill();
@@ -110,7 +112,7 @@ function circle(num, currentHp, maxHp, name){
     ctx.save();
     ctx.clip();
     ctx.fillStyle = "#800f0f";
-    ctx.fillRect(x - squareSize / 2, y - squareSize / 2, squareSize, healthBarLength * currentHp / maxHp);
+    ctx.fillRect(x - width / 2, y - squareSize / 2, width, healthBarLength * currentHp / maxHp);
     ctx.restore();
 
     ctx.textAlign = 'left';
@@ -121,11 +123,11 @@ function circle(num, currentHp, maxHp, name){
 
     ctx.fillText(name, 0, 0);
     } else {
-    ctx.moveTo(x - squareSize / 2, y + squareSize / 2);
-    ctx.lineTo(x - squareSize / 2, y + squareSize / 2 - shortLength);
+    ctx.moveTo(x - width / 2, y + squareSize / 2);
+    ctx.lineTo(x - width / 2, y + squareSize / 2 - shortLength);
     ctx.lineTo(x, y + squareSize/2 - healthBarLength);
-    ctx.lineTo(x + squareSize / 2, y + squareSize / 2 - shortLength);
-    ctx.lineTo(x + squareSize / 2, y + squareSize / 2);
+    ctx.lineTo(x + width / 2, y + squareSize / 2 - shortLength);
+    ctx.lineTo(x + width / 2, y + squareSize / 2);
     ctx.closePath();
     ctx.stroke();
     ctx.fill();
@@ -134,7 +136,7 @@ function circle(num, currentHp, maxHp, name){
     ctx.save();
     ctx.clip();
     ctx.fillStyle = "#800f0f";
-    ctx.fillRect(x - squareSize / 2, y + squareSize / 2, squareSize, -1*(healthBarLength * currentHp / maxHp));
+    ctx.fillRect(x - width / 2, y + squareSize / 2, width, -1*(healthBarLength * currentHp / maxHp));
     ctx.restore();
 
     ctx.textAlign = 'left';

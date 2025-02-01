@@ -339,16 +339,18 @@ export function HexTile(i, j, x , y) {
   }
 
   this.darknessIter = 0;
-  this.drawDarkness = (color) => {
-    this.darknessIter++;
-
+  this.drawDarkness = (color, animate=true, size=1) => {
+    if (animate){
+      this.darknessIter++;
+    }
+    
     ctx.save();
     ctx.filter = "blur(20px)";
     ctx.fillStyle = color;
     ctx.shadowBlur = 20;
     ctx.shadowColor = "black";
     ctx.beginPath();
-    ctx.arc(this.x, this.y + this.height, r_hex + 10*Math.sin(this.darknessIter * 2*Math.PI / 25), 0, 2*Math.PI);
+    ctx.arc(this.x, this.y + this.height, size*r_hex + 10*Math.sin(this.darknessIter * 2*Math.PI / 25), 0, 2*Math.PI);
     ctx.fill();
     ctx.restore();
   }
@@ -381,6 +383,9 @@ export function HexTile(i, j, x , y) {
     }
     if (this.effects.has("fog")){
       this.drawDarkness("rgba(200,200,200,.5)");
+    }
+    if (this.effects.has("light")){
+      this.drawDarkness("rgba(255, 239, 58, 0.47)", false, 2);
     }
     if (this.effects.has("poison")){
       this.drawDarkness("rgba(250,97,255,0.46)");

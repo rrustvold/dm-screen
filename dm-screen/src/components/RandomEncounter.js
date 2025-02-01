@@ -176,7 +176,7 @@ export function generate(party, difficulty, monsterSelection) {
     } else {
         console.log("Deadly");
     }
-    console.log(`${totalXP * multiplier} / ${limit}; loops = ${loopCount}; mult = ${multiplier}`);
+
     return result
 
 }
@@ -230,6 +230,34 @@ function RandomEncounterInput({setEncounter, party}){
     )
 }
 
+function setEncounter2(encounter) {
+    let i =0;
+    for (const [key, value] of Object.entries(encounter.encounterDict)) {
+        let monster = value;
+        document.getElementById(`monster-name-${i}`).value = monster.name;
+        document.getElementById(`numAttackers-${i}`).value = monster.qty;
+        document.getElementById(`attacksPerMonster-${i}`).value = 0;
+        document.getElementById(`attackBonus-${i}`).value = 0;
+        document.getElementById(`damage-${i}`).value =0;
+        document.getElementById(`armor-class-${i}`).value = monster.ac;
+        document.getElementById(`hit-points-${i}`).value = monster.hp * monster.qty;
+        document.getElementById(`hit-point-maximum-${i}`).value = monster.hp * monster.qty;
+
+        let init = 6;
+        if (monster.init < 5) {
+            init = 5;
+        } else if (monster.init === 14) {
+            init = 13;
+        } else if (monster.init > 23) {
+            init = 23;
+        } else {
+            init = monster.init;
+        }
+        document.getElementById(`initiative-${i}`).value = init;
+        i++;
+    }
+}
+
 export default function RandomEncounter2({party}){
     const [encounter, setEncounter] = useState({encounterDict: {}});
 
@@ -257,6 +285,13 @@ export default function RandomEncounter2({party}){
                 <RandomEncounterInput setEncounter={setEncounter} party={party}></RandomEncounterInput>
                 <p>
                     {encounterBlock}
+                    <input type="button" defaultValue="Set" onClick={() => {
+                        try {
+                            setEncounter2(encounter)
+                        } catch (exception) {
+                            
+                        }
+                    }} class="w3-block" />
                 </p>
             </div>
         </div>

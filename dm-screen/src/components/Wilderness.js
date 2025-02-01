@@ -566,7 +566,7 @@ export default function Wilderness({party}) {
 
                 {/*</div>*/}
 
-                {/*<div className="w3-row">*/}
+                {/* <div className="w3-row">*/}
                 {/*    <div className="w3-col s3">*/}
                 {/*        <p>The march terrain is whatever terrain the characters are currently in.</p>*/}
                 {/*        <p>*/}
@@ -588,7 +588,7 @@ export default function Wilderness({party}) {
                 {/*                {randomEventBlock}*/}
                 {/*            </span>*/}
                 {/*    </div>*/}
-                {/*</div>*/}
+                {/*</div> */}
 
 
                 {/*<p>*/}

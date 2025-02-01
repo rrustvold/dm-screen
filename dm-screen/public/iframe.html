@@ -519,7 +519,7 @@
       ctx.rotate(Math.PI);
       ctx.fillText("Scout", 0, 0);
       ctx.translate(0, -r_hex);
-      ctx.fillText("Map", 0, 0);
+      ctx.fillText("Navigate", 0, 0);
       ctx.restore();
 
       // Draw Forager
@@ -865,6 +865,8 @@
         selectedValue = "delete";
       } else if (keyPressed["l"]) {
         selectedValue = "lava";
+      } else if (keyPressed["L"]) {
+        selectedValue = "light";
       } else {
         selectedValue = "elevate";
       }
@@ -928,6 +930,14 @@
             closest_tile.effects.delete("fog");
           } else {
             closest_tile.effects.add("fog");
+          }
+
+          break;
+        case "light":
+        if (closest_tile.effects.has("light")) {
+            closest_tile.effects.delete("light");
+          } else {
+            closest_tile.effects.add("light");
           }
 
           break;

@@ -6,6 +6,8 @@ export const aboleth = {
 	int: 18,
 	dex: 9,
 	stealth: 0,
+	ac: 17,
+	hp: 135,
 }
 
 export const acolyte = {
@@ -16,6 +18,8 @@ export const acolyte = {
 	int: 10,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 9,
 }
 
 export const adult_black_dragon = {
@@ -26,6 +30,8 @@ export const adult_black_dragon = {
 	int: 14,
 	dex: 14,
 	stealth: 7,
+	ac: 19,
+	hp: 195,
 }
 
 export const adult_blue_dragon = {
@@ -36,6 +42,8 @@ export const adult_blue_dragon = {
 	int: 16,
 	dex: 10,
 	stealth: 5,
+	ac: 19,
+	hp: 225,
 }
 
 export const adult_brass_dragon = {
@@ -46,6 +54,8 @@ export const adult_brass_dragon = {
 	int: 14,
 	dex: 10,
 	stealth: 5,
+	ac: 18,
+	hp: 172,
 }
 
 export const adult_bronze_dragon = {
@@ -56,6 +66,8 @@ export const adult_bronze_dragon = {
 	int: 16,
 	dex: 10,
 	stealth: 5,
+	ac: 19,
+	hp: 212,
 }
 
 export const adult_copper_dragon = {
@@ -66,6 +78,8 @@ export const adult_copper_dragon = {
 	int: 18,
 	dex: 12,
 	stealth: 6,
+	ac: 18,
+	hp: 184,
 }
 
 export const adult_gold_dragon = {
@@ -76,6 +90,8 @@ export const adult_gold_dragon = {
 	int: 16,
 	dex: 14,
 	stealth: 8,
+	ac: 19,
+	hp: 256,
 }
 
 export const adult_green_dragon = {
@@ -86,6 +102,8 @@ export const adult_green_dragon = {
 	int: 18,
 	dex: 12,
 	stealth: 6,
+	ac: 19,
+	hp: 207,
 }
 
 export const adult_red_dragon = {
@@ -96,6 +114,8 @@ export const adult_red_dragon = {
 	int: 16,
 	dex: 10,
 	stealth: 6,
+	ac: 19,
+	hp: 256,
 }
 
 export const adult_silver_dragon = {
@@ -106,6 +126,8 @@ export const adult_silver_dragon = {
 	int: 16,
 	dex: 10,
 	stealth: 5,
+	ac: 19,
+	hp: 243,
 }
 
 export const adult_white_dragon = {
@@ -116,6 +138,8 @@ export const adult_white_dragon = {
 	int: 8,
 	dex: 10,
 	stealth: 5,
+	ac: 18,
+	hp: 200,
 }
 
 export const air_elemental = {
@@ -126,6 +150,8 @@ export const air_elemental = {
 	int: 6,
 	dex: 20,
 	stealth: 0,
+	ac: 15,
+	hp: 90,
 }
 
 export const ancient_black_dragon = {
@@ -136,6 +162,8 @@ export const ancient_black_dragon = {
 	int: 16,
 	dex: 14,
 	stealth: 9,
+	ac: 22,
+	hp: 367,
 }
 
 export const ancient_blue_dragon = {
@@ -146,6 +174,8 @@ export const ancient_blue_dragon = {
 	int: 18,
 	dex: 10,
 	stealth: 7,
+	ac: 22,
+	hp: 481,
 }
 
 export const ancient_brass_dragon = {
@@ -156,6 +186,8 @@ export const ancient_brass_dragon = {
 	int: 16,
 	dex: 10,
 	stealth: 6,
+	ac: 20,
+	hp: 297,
 }
 
 export const ancient_bronze_dragon = {
@@ -166,6 +198,8 @@ export const ancient_bronze_dragon = {
 	int: 18,
 	dex: 10,
 	stealth: 7,
+	ac: 22,
+	hp: 444,
 }
 
 export const ancient_copper_dragon = {
@@ -176,6 +210,8 @@ export const ancient_copper_dragon = {
 	int: 20,
 	dex: 12,
 	stealth: 8,
+	ac: 21,
+	hp: 350,
 }
 
 export const ancient_gold_dragon = {
@@ -186,6 +222,8 @@ export const ancient_gold_dragon = {
 	int: 18,
 	dex: 14,
 	stealth: 9,
+	ac: 22,
+	hp: 546,
 }
 
 export const ancient_green_dragon = {
@@ -196,6 +234,8 @@ export const ancient_green_dragon = {
 	int: 20,
 	dex: 12,
 	stealth: 8,
+	ac: 21,
+	hp: 385,
 }
 
 export const ancient_red_dragon = {
@@ -206,6 +246,8 @@ export const ancient_red_dragon = {
 	int: 18,
 	dex: 10,
 	stealth: 7,
+	ac: 22,
+	hp: 546,
 }
 
 export const ancient_silver_dragon = {
@@ -216,6 +258,8 @@ export const ancient_silver_dragon = {
 	int: 18,
 	dex: 10,
 	stealth: 7,
+	ac: 22,
+	hp: 487,
 }
 
 export const ancient_white_dragon = {
@@ -226,6 +270,8 @@ export const ancient_white_dragon = {
 	int: 10,
 	dex: 10,
 	stealth: 6,
+	ac: 20,
+	hp: 333,
 }
 
 export const androsphinx = {
@@ -236,6 +282,8 @@ export const androsphinx = {
 	int: 16,
 	dex: 10,
 	stealth: 0,
+	ac: 17,
+	hp: 199,
 }
 
 export const animated_armor = {
@@ -246,6 +294,8 @@ export const animated_armor = {
 	int: 1,
 	dex: 11,
 	stealth: 0,
+	ac: 18,
+	hp: 33,
 }
 
 export const ankheg = {
@@ -256,6 +306,8 @@ export const ankheg = {
 	int: 1,
 	dex: 11,
 	stealth: 0,
+	ac: 14,
+	hp: 39,
 }
 
 export const ape = {
@@ -266,6 +318,8 @@ export const ape = {
 	int: 6,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 19,
 }
 
 export const archmage = {
@@ -276,6 +330,8 @@ export const archmage = {
 	int: 20,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 99,
 }
 
 export const assassin = {
@@ -286,6 +342,8 @@ export const assassin = {
 	int: 13,
 	dex: 16,
 	stealth: 9,
+	ac: 15,
+	hp: 78,
 }
 
 export const awakened_shrub = {
@@ -296,6 +354,8 @@ export const awakened_shrub = {
 	int: 10,
 	dex: 8,
 	stealth: 0,
+	ac: 9,
+	hp: 10,
 }
 
 export const awakened_tree = {
@@ -306,6 +366,8 @@ export const awakened_tree = {
 	int: 10,
 	dex: 6,
 	stealth: 0,
+	ac: 13,
+	hp: 59,
 }
 
 export const axe_beak = {
@@ -316,6 +378,8 @@ export const axe_beak = {
 	int: 2,
 	dex: 12,
 	stealth: 0,
+	ac: 11,
+	hp: 19,
 }
 
 export const azer = {
@@ -326,6 +390,8 @@ export const azer = {
 	int: 12,
 	dex: 12,
 	stealth: 0,
+	ac: 15,
+	hp: 39,
 }
 
 export const baboon = {
@@ -336,6 +402,8 @@ export const baboon = {
 	int: 4,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 3,
 }
 
 export const badger = {
@@ -346,6 +414,8 @@ export const badger = {
 	int: 2,
 	dex: 11,
 	stealth: 0,
+	ac: 10,
+	hp: 3,
 }
 
 export const balor = {
@@ -356,6 +426,8 @@ export const balor = {
 	int: 20,
 	dex: 15,
 	stealth: 0,
+	ac: 19,
+	hp: 262,
 }
 
 export const bandit = {
@@ -366,6 +438,8 @@ export const bandit = {
 	int: 10,
 	dex: 12,
 	stealth: 0,
+	ac: 12,
+	hp: 11,
 }
 
 export const bandit_captain = {
@@ -376,6 +450,8 @@ export const bandit_captain = {
 	int: 14,
 	dex: 16,
 	stealth: 0,
+	ac: 15,
+	hp: 65,
 }
 
 export const barbed_devil = {
@@ -386,6 +462,8 @@ export const barbed_devil = {
 	int: 12,
 	dex: 17,
 	stealth: 0,
+	ac: 15,
+	hp: 110,
 }
 
 export const basilisk = {
@@ -396,6 +474,8 @@ export const basilisk = {
 	int: 2,
 	dex: 8,
 	stealth: 0,
+	ac: 12,
+	hp: 52,
 }
 
 export const bat = {
@@ -406,6 +486,8 @@ export const bat = {
 	int: 2,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 1,
 }
 
 export const bearded_devil = {
@@ -416,6 +498,8 @@ export const bearded_devil = {
 	int: 9,
 	dex: 15,
 	stealth: 0,
+	ac: 13,
+	hp: 52,
 }
 
 export const behir = {
@@ -426,6 +510,8 @@ export const behir = {
 	int: 7,
 	dex: 16,
 	stealth: 7,
+	ac: 17,
+	hp: 168,
 }
 
 export const berserker = {
@@ -436,6 +522,8 @@ export const berserker = {
 	int: 9,
 	dex: 12,
 	stealth: 0,
+	ac: 13,
+	hp: 67,
 }
 
 export const black_bear = {
@@ -446,6 +534,8 @@ export const black_bear = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 11,
+	hp: 19,
 }
 
 export const black_dragon_wyrmling = {
@@ -456,6 +546,8 @@ export const black_dragon_wyrmling = {
 	int: 10,
 	dex: 14,
 	stealth: 4,
+	ac: 17,
+	hp: 33,
 }
 
 export const black_pudding = {
@@ -466,6 +558,8 @@ export const black_pudding = {
 	int: 1,
 	dex: 5,
 	stealth: 0,
+	ac: 7,
+	hp: 85,
 }
 
 export const blink_dog = {
@@ -476,6 +570,8 @@ export const blink_dog = {
 	int: 10,
 	dex: 17,
 	stealth: 5,
+	ac: 13,
+	hp: 22,
 }
 
 export const blood_hawk = {
@@ -486,6 +582,8 @@ export const blood_hawk = {
 	int: 3,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 7,
 }
 
 export const blue_dragon_wyrmling = {
@@ -496,6 +594,8 @@ export const blue_dragon_wyrmling = {
 	int: 12,
 	dex: 10,
 	stealth: 2,
+	ac: 17,
+	hp: 52,
 }
 
 export const boar = {
@@ -506,6 +606,8 @@ export const boar = {
 	int: 2,
 	dex: 11,
 	stealth: 0,
+	ac: 11,
+	hp: 11,
 }
 
 export const bone_devil = {
@@ -516,6 +618,8 @@ export const bone_devil = {
 	int: 13,
 	dex: 16,
 	stealth: 0,
+	ac: 19,
+	hp: 142,
 }
 
 export const brass_dragon_wyrmling = {
@@ -526,6 +630,8 @@ export const brass_dragon_wyrmling = {
 	int: 10,
 	dex: 10,
 	stealth: 2,
+	ac: 16,
+	hp: 16,
 }
 
 export const bronze_dragon_wyrmling = {
@@ -536,6 +642,8 @@ export const bronze_dragon_wyrmling = {
 	int: 12,
 	dex: 10,
 	stealth: 2,
+	ac: 17,
+	hp: 32,
 }
 
 export const brown_bear = {
@@ -546,6 +654,8 @@ export const brown_bear = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 11,
+	hp: 34,
 }
 
 export const bugbear = {
@@ -556,6 +666,8 @@ export const bugbear = {
 	int: 8,
 	dex: 14,
 	stealth: 6,
+	ac: 16,
+	hp: 27,
 }
 
 export const bulette = {
@@ -566,6 +678,8 @@ export const bulette = {
 	int: 2,
 	dex: 11,
 	stealth: 0,
+	ac: 17,
+	hp: 94,
 }
 
 export const camel = {
@@ -576,6 +690,8 @@ export const camel = {
 	int: 2,
 	dex: 8,
 	stealth: 0,
+	ac: 9,
+	hp: 15,
 }
 
 export const cat = {
@@ -586,6 +702,8 @@ export const cat = {
 	int: 3,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 2,
 }
 
 export const centaur = {
@@ -596,6 +714,8 @@ export const centaur = {
 	int: 9,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 45,
 }
 
 export const chain_devil = {
@@ -606,6 +726,8 @@ export const chain_devil = {
 	int: 11,
 	dex: 15,
 	stealth: 0,
+	ac: 16,
+	hp: 85,
 }
 
 export const chimera = {
@@ -616,6 +738,8 @@ export const chimera = {
 	int: 3,
 	dex: 11,
 	stealth: 0,
+	ac: 14,
+	hp: 114,
 }
 
 export const chuul = {
@@ -626,6 +750,8 @@ export const chuul = {
 	int: 5,
 	dex: 10,
 	stealth: 0,
+	ac: 16,
+	hp: 93,
 }
 
 export const clay_golem = {
@@ -636,6 +762,8 @@ export const clay_golem = {
 	int: 3,
 	dex: 9,
 	stealth: 0,
+	ac: 14,
+	hp: 133,
 }
 
 export const cloaker = {
@@ -646,6 +774,8 @@ export const cloaker = {
 	int: 13,
 	dex: 15,
 	stealth: 5,
+	ac: 14,
+	hp: 78,
 }
 
 export const cloud_giant = {
@@ -656,6 +786,8 @@ export const cloud_giant = {
 	int: 12,
 	dex: 10,
 	stealth: 0,
+	ac: 14,
+	hp: 200,
 }
 
 export const cockatrice = {
@@ -666,6 +798,8 @@ export const cockatrice = {
 	int: 2,
 	dex: 12,
 	stealth: 0,
+	ac: 11,
+	hp: 27,
 }
 
 export const commoner = {
@@ -676,6 +810,8 @@ export const commoner = {
 	int: 10,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 4,
 }
 
 export const constrictor_snake = {
@@ -686,6 +822,8 @@ export const constrictor_snake = {
 	int: 1,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 13,
 }
 
 export const copper_dragon_wyrmling = {
@@ -696,6 +834,8 @@ export const copper_dragon_wyrmling = {
 	int: 14,
 	dex: 12,
 	stealth: 3,
+	ac: 16,
+	hp: 22,
 }
 
 export const couatl = {
@@ -706,6 +846,8 @@ export const couatl = {
 	int: 18,
 	dex: 20,
 	stealth: 0,
+	ac: 19,
+	hp: 97,
 }
 
 export const crab = {
@@ -716,6 +858,8 @@ export const crab = {
 	int: 1,
 	dex: 11,
 	stealth: 2,
+	ac: 11,
+	hp: 2,
 }
 
 export const crocodile = {
@@ -726,6 +870,8 @@ export const crocodile = {
 	int: 2,
 	dex: 10,
 	stealth: 2,
+	ac: 12,
+	hp: 19,
 }
 
 export const cult_fanatic = {
@@ -736,6 +882,8 @@ export const cult_fanatic = {
 	int: 10,
 	dex: 14,
 	stealth: 0,
+	ac: 13,
+	hp: 22,
 }
 
 export const cultist = {
@@ -746,6 +894,8 @@ export const cultist = {
 	int: 10,
 	dex: 12,
 	stealth: 0,
+	ac: 12,
+	hp: 9,
 }
 
 export const darkmantle = {
@@ -756,6 +906,8 @@ export const darkmantle = {
 	int: 2,
 	dex: 12,
 	stealth: 3,
+	ac: 11,
+	hp: 22,
 }
 
 export const death_dog = {
@@ -766,6 +918,8 @@ export const death_dog = {
 	int: 3,
 	dex: 14,
 	stealth: 4,
+	ac: 12,
+	hp: 39,
 }
 
 export const deep_gnome_svirfneblin = {
@@ -776,6 +930,8 @@ export const deep_gnome_svirfneblin = {
 	int: 12,
 	dex: 14,
 	stealth: 4,
+	ac: 15,
+	hp: 16,
 }
 
 export const deer = {
@@ -786,6 +942,8 @@ export const deer = {
 	int: 2,
 	dex: 16,
 	stealth: 0,
+	ac: 13,
+	hp: 4,
 }
 
 export const deva = {
@@ -796,6 +954,8 @@ export const deva = {
 	int: 17,
 	dex: 18,
 	stealth: 0,
+	ac: 17,
+	hp: 136,
 }
 
 export const dire_wolf = {
@@ -806,6 +966,8 @@ export const dire_wolf = {
 	int: 3,
 	dex: 15,
 	stealth: 4,
+	ac: 14,
+	hp: 37,
 }
 
 export const djinni = {
@@ -816,6 +978,8 @@ export const djinni = {
 	int: 15,
 	dex: 15,
 	stealth: 0,
+	ac: 17,
+	hp: 161,
 }
 
 export const doppelganger = {
@@ -826,6 +990,8 @@ export const doppelganger = {
 	int: 11,
 	dex: 18,
 	stealth: 0,
+	ac: 14,
+	hp: 52,
 }
 
 export const draft_horse = {
@@ -836,6 +1002,8 @@ export const draft_horse = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 19,
 }
 
 export const dragon_turtle = {
@@ -846,6 +1014,8 @@ export const dragon_turtle = {
 	int: 10,
 	dex: 10,
 	stealth: 0,
+	ac: 20,
+	hp: 341,
 }
 
 export const dretch = {
@@ -856,6 +1026,8 @@ export const dretch = {
 	int: 5,
 	dex: 11,
 	stealth: 0,
+	ac: 11,
+	hp: 18,
 }
 
 export const drider = {
@@ -866,6 +1038,8 @@ export const drider = {
 	int: 13,
 	dex: 16,
 	stealth: 9,
+	ac: 19,
+	hp: 123,
 }
 
 export const drow = {
@@ -876,6 +1050,8 @@ export const drow = {
 	int: 11,
 	dex: 14,
 	stealth: 4,
+	ac: 15,
+	hp: 13,
 }
 
 export const druid = {
@@ -886,6 +1062,8 @@ export const druid = {
 	int: 12,
 	dex: 12,
 	stealth: 0,
+	ac: 11,
+	hp: 27,
 }
 
 export const dryad = {
@@ -896,6 +1074,8 @@ export const dryad = {
 	int: 14,
 	dex: 12,
 	stealth: 5,
+	ac: 11,
+	hp: 22,
 }
 
 export const duergar = {
@@ -906,6 +1086,8 @@ export const duergar = {
 	int: 11,
 	dex: 11,
 	stealth: 0,
+	ac: 16,
+	hp: 26,
 }
 
 export const dust_mephit = {
@@ -916,6 +1098,8 @@ export const dust_mephit = {
 	int: 9,
 	dex: 14,
 	stealth: 4,
+	ac: 12,
+	hp: 17,
 }
 
 export const eagle = {
@@ -926,6 +1110,8 @@ export const eagle = {
 	int: 2,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 3,
 }
 
 export const earth_elemental = {
@@ -936,6 +1122,8 @@ export const earth_elemental = {
 	int: 5,
 	dex: 8,
 	stealth: 0,
+	ac: 17,
+	hp: 126,
 }
 
 export const efreeti = {
@@ -946,6 +1134,8 @@ export const efreeti = {
 	int: 16,
 	dex: 12,
 	stealth: 0,
+	ac: 17,
+	hp: 200,
 }
 
 export const elephant = {
@@ -956,6 +1146,8 @@ export const elephant = {
 	int: 3,
 	dex: 9,
 	stealth: 0,
+	ac: 12,
+	hp: 76,
 }
 
 export const elk = {
@@ -966,6 +1158,8 @@ export const elk = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 13,
 }
 
 export const erinyes = {
@@ -976,6 +1170,8 @@ export const erinyes = {
 	int: 14,
 	dex: 16,
 	stealth: 0,
+	ac: 18,
+	hp: 153,
 }
 
 export const ettercap = {
@@ -986,6 +1182,8 @@ export const ettercap = {
 	int: 7,
 	dex: 15,
 	stealth: 4,
+	ac: 13,
+	hp: 44,
 }
 
 export const ettin = {
@@ -996,6 +1194,8 @@ export const ettin = {
 	int: 6,
 	dex: 8,
 	stealth: 0,
+	ac: 12,
+	hp: 85,
 }
 
 export const fire_elemental = {
@@ -1006,6 +1206,8 @@ export const fire_elemental = {
 	int: 6,
 	dex: 17,
 	stealth: 0,
+	ac: 13,
+	hp: 102,
 }
 
 export const fire_giant = {
@@ -1016,6 +1218,8 @@ export const fire_giant = {
 	int: 10,
 	dex: 9,
 	stealth: 0,
+	ac: 18,
+	hp: 162,
 }
 
 export const flesh_golem = {
@@ -1026,6 +1230,8 @@ export const flesh_golem = {
 	int: 6,
 	dex: 9,
 	stealth: 0,
+	ac: 9,
+	hp: 93,
 }
 
 export const flying_snake = {
@@ -1036,6 +1242,8 @@ export const flying_snake = {
 	int: 2,
 	dex: 18,
 	stealth: 0,
+	ac: 14,
+	hp: 5,
 }
 
 export const flying_sword = {
@@ -1046,6 +1254,8 @@ export const flying_sword = {
 	int: 1,
 	dex: 15,
 	stealth: 0,
+	ac: 17,
+	hp: 17,
 }
 
 export const frog = {
@@ -1056,6 +1266,8 @@ export const frog = {
 	int: 1,
 	dex: 13,
 	stealth: 3,
+	ac: 11,
+	hp: 1,
 }
 
 export const frost_giant = {
@@ -1066,6 +1278,8 @@ export const frost_giant = {
 	int: 9,
 	dex: 9,
 	stealth: 0,
+	ac: 15,
+	hp: 138,
 }
 
 export const gargoyle = {
@@ -1076,6 +1290,8 @@ export const gargoyle = {
 	int: 6,
 	dex: 11,
 	stealth: 0,
+	ac: 15,
+	hp: 52,
 }
 
 export const gelatinous_cube = {
@@ -1086,6 +1302,8 @@ export const gelatinous_cube = {
 	int: 1,
 	dex: 3,
 	stealth: 0,
+	ac: 6,
+	hp: 84,
 }
 
 export const ghast = {
@@ -1096,6 +1314,8 @@ export const ghast = {
 	int: 11,
 	dex: 17,
 	stealth: 0,
+	ac: 13,
+	hp: 36,
 }
 
 export const ghost = {
@@ -1106,6 +1326,8 @@ export const ghost = {
 	int: 10,
 	dex: 13,
 	stealth: 0,
+	ac: 11,
+	hp: 45,
 }
 
 export const ghoul = {
@@ -1116,6 +1338,8 @@ export const ghoul = {
 	int: 7,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const giant_ape = {
@@ -1126,6 +1350,8 @@ export const giant_ape = {
 	int: 7,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 157,
 }
 
 export const giant_badger = {
@@ -1136,6 +1362,8 @@ export const giant_badger = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 13,
 }
 
 export const giant_bat = {
@@ -1146,6 +1374,8 @@ export const giant_bat = {
 	int: 2,
 	dex: 16,
 	stealth: 0,
+	ac: 13,
+	hp: 22,
 }
 
 export const giant_boar = {
@@ -1156,6 +1386,8 @@ export const giant_boar = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 12,
+	hp: 42,
 }
 
 export const giant_centipede = {
@@ -1166,6 +1398,8 @@ export const giant_centipede = {
 	int: 1,
 	dex: 14,
 	stealth: 0,
+	ac: 13,
+	hp: 4,
 }
 
 export const giant_constrictor_snake = {
@@ -1176,6 +1410,8 @@ export const giant_constrictor_snake = {
 	int: 1,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 60,
 }
 
 export const giant_crab = {
@@ -1186,6 +1422,8 @@ export const giant_crab = {
 	int: 1,
 	dex: 15,
 	stealth: 4,
+	ac: 15,
+	hp: 13,
 }
 
 export const giant_crocodile = {
@@ -1196,6 +1434,8 @@ export const giant_crocodile = {
 	int: 2,
 	dex: 9,
 	stealth: 5,
+	ac: 14,
+	hp: 85,
 }
 
 export const giant_eagle = {
@@ -1206,6 +1446,8 @@ export const giant_eagle = {
 	int: 8,
 	dex: 17,
 	stealth: 0,
+	ac: 13,
+	hp: 26,
 }
 
 export const giant_elk = {
@@ -1216,6 +1458,8 @@ export const giant_elk = {
 	int: 7,
 	dex: 16,
 	stealth: 0,
+	ac: 14,
+	hp: 42,
 }
 
 export const giant_fire_beetle = {
@@ -1226,6 +1470,8 @@ export const giant_fire_beetle = {
 	int: 1,
 	dex: 10,
 	stealth: 0,
+	ac: 13,
+	hp: 4,
 }
 
 export const giant_frog = {
@@ -1236,6 +1482,8 @@ export const giant_frog = {
 	int: 2,
 	dex: 13,
 	stealth: 3,
+	ac: 11,
+	hp: 18,
 }
 
 export const giant_goat = {
@@ -1246,6 +1494,8 @@ export const giant_goat = {
 	int: 3,
 	dex: 11,
 	stealth: 0,
+	ac: 11,
+	hp: 19,
 }
 
 export const giant_hyena = {
@@ -1256,6 +1506,8 @@ export const giant_hyena = {
 	int: 2,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 45,
 }
 
 export const giant_lizard = {
@@ -1266,6 +1518,8 @@ export const giant_lizard = {
 	int: 2,
 	dex: 12,
 	stealth: 0,
+	ac: 12,
+	hp: 19,
 }
 
 export const giant_octopus = {
@@ -1276,6 +1530,8 @@ export const giant_octopus = {
 	int: 4,
 	dex: 13,
 	stealth: 5,
+	ac: 11,
+	hp: 52,
 }
 
 export const giant_owl = {
@@ -1286,6 +1542,8 @@ export const giant_owl = {
 	int: 8,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 19,
 }
 
 export const giant_poisonous_snake = {
@@ -1296,6 +1554,8 @@ export const giant_poisonous_snake = {
 	int: 2,
 	dex: 18,
 	stealth: 0,
+	ac: 14,
+	hp: 11,
 }
 
 export const giant_rat = {
@@ -1306,6 +1566,8 @@ export const giant_rat = {
 	int: 2,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 7,
 }
 
 export const giant_rat_diseased = {
@@ -1316,6 +1578,8 @@ export const giant_rat_diseased = {
 	int: 2,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 7,
 }
 
 export const giant_scorpion = {
@@ -1326,6 +1590,8 @@ export const giant_scorpion = {
 	int: 1,
 	dex: 13,
 	stealth: 0,
+	ac: 15,
+	hp: 52,
 }
 
 export const giant_sea_horse = {
@@ -1336,6 +1602,8 @@ export const giant_sea_horse = {
 	int: 2,
 	dex: 15,
 	stealth: 0,
+	ac: 13,
+	hp: 16,
 }
 
 export const giant_shark = {
@@ -1346,6 +1614,8 @@ export const giant_shark = {
 	int: 1,
 	dex: 11,
 	stealth: 0,
+	ac: 13,
+	hp: 126,
 }
 
 export const giant_spider = {
@@ -1356,6 +1626,8 @@ export const giant_spider = {
 	int: 2,
 	dex: 16,
 	stealth: 7,
+	ac: 14,
+	hp: 26,
 }
 
 export const giant_toad = {
@@ -1366,6 +1638,8 @@ export const giant_toad = {
 	int: 2,
 	dex: 13,
 	stealth: 0,
+	ac: 11,
+	hp: 39,
 }
 
 export const giant_vulture = {
@@ -1376,6 +1650,8 @@ export const giant_vulture = {
 	int: 6,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 22,
 }
 
 export const giant_wasp = {
@@ -1386,6 +1662,8 @@ export const giant_wasp = {
 	int: 1,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 13,
 }
 
 export const giant_weasel = {
@@ -1396,6 +1674,8 @@ export const giant_weasel = {
 	int: 4,
 	dex: 16,
 	stealth: 5,
+	ac: 13,
+	hp: 9,
 }
 
 export const giant_wolf_spider = {
@@ -1406,6 +1686,8 @@ export const giant_wolf_spider = {
 	int: 3,
 	dex: 16,
 	stealth: 7,
+	ac: 13,
+	hp: 11,
 }
 
 export const gibbering_mouther = {
@@ -1416,6 +1698,8 @@ export const gibbering_mouther = {
 	int: 3,
 	dex: 8,
 	stealth: 0,
+	ac: 9,
+	hp: 67,
 }
 
 export const glabrezu = {
@@ -1426,6 +1710,8 @@ export const glabrezu = {
 	int: 19,
 	dex: 15,
 	stealth: 0,
+	ac: 17,
+	hp: 157,
 }
 
 export const gladiator = {
@@ -1436,6 +1722,8 @@ export const gladiator = {
 	int: 10,
 	dex: 15,
 	stealth: 0,
+	ac: 16,
+	hp: 112,
 }
 
 export const gnoll = {
@@ -1446,6 +1734,8 @@ export const gnoll = {
 	int: 6,
 	dex: 12,
 	stealth: 0,
+	ac: 15,
+	hp: 22,
 }
 
 export const goat = {
@@ -1456,6 +1746,8 @@ export const goat = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 4,
 }
 
 export const goblin = {
@@ -1466,6 +1758,8 @@ export const goblin = {
 	int: 10,
 	dex: 14,
 	stealth: 6,
+	ac: 15,
+	hp: 7,
 }
 
 export const gold_dragon_wyrmling = {
@@ -1476,6 +1770,8 @@ export const gold_dragon_wyrmling = {
 	int: 14,
 	dex: 14,
 	stealth: 4,
+	ac: 17,
+	hp: 60,
 }
 
 export const gorgon = {
@@ -1486,6 +1782,8 @@ export const gorgon = {
 	int: 2,
 	dex: 11,
 	stealth: 0,
+	ac: 19,
+	hp: 114,
 }
 
 export const gray_ooze = {
@@ -1496,6 +1794,8 @@ export const gray_ooze = {
 	int: 1,
 	dex: 6,
 	stealth: 2,
+	ac: 8,
+	hp: 22,
 }
 
 export const green_dragon_wyrmling = {
@@ -1506,6 +1806,8 @@ export const green_dragon_wyrmling = {
 	int: 14,
 	dex: 12,
 	stealth: 3,
+	ac: 17,
+	hp: 38,
 }
 
 export const green_hag = {
@@ -1516,6 +1818,8 @@ export const green_hag = {
 	int: 13,
 	dex: 12,
 	stealth: 3,
+	ac: 17,
+	hp: 82,
 }
 
 export const grick = {
@@ -1526,6 +1830,8 @@ export const grick = {
 	int: 3,
 	dex: 14,
 	stealth: 0,
+	ac: 14,
+	hp: 27,
 }
 
 export const griffon = {
@@ -1536,6 +1842,8 @@ export const griffon = {
 	int: 2,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 59,
 }
 
 export const grimlock = {
@@ -1546,6 +1854,8 @@ export const grimlock = {
 	int: 9,
 	dex: 12,
 	stealth: 3,
+	ac: 11,
+	hp: 11,
 }
 
 export const guard = {
@@ -1556,6 +1866,8 @@ export const guard = {
 	int: 10,
 	dex: 12,
 	stealth: 0,
+	ac: 16,
+	hp: 11,
 }
 
 export const guardian_naga = {
@@ -1566,6 +1878,8 @@ export const guardian_naga = {
 	int: 16,
 	dex: 18,
 	stealth: 0,
+	ac: 18,
+	hp: 127,
 }
 
 export const gynosphinx = {
@@ -1576,6 +1890,8 @@ export const gynosphinx = {
 	int: 18,
 	dex: 15,
 	stealth: 0,
+	ac: 17,
+	hp: 136,
 }
 
 export const half_red_dragon_veteran = {
@@ -1586,6 +1902,8 @@ export const half_red_dragon_veteran = {
 	int: 10,
 	dex: 13,
 	stealth: 0,
+	ac: 18,
+	hp: 65,
 }
 
 export const harpy = {
@@ -1596,6 +1914,8 @@ export const harpy = {
 	int: 7,
 	dex: 13,
 	stealth: 0,
+	ac: 11,
+	hp: 38,
 }
 
 export const hawk = {
@@ -1606,6 +1926,8 @@ export const hawk = {
 	int: 2,
 	dex: 16,
 	stealth: 0,
+	ac: 13,
+	hp: 1,
 }
 
 export const hell_hound = {
@@ -1616,6 +1938,8 @@ export const hell_hound = {
 	int: 6,
 	dex: 12,
 	stealth: 0,
+	ac: 15,
+	hp: 45,
 }
 
 export const hezrou = {
@@ -1626,6 +1950,8 @@ export const hezrou = {
 	int: 5,
 	dex: 17,
 	stealth: 0,
+	ac: 16,
+	hp: 136,
 }
 
 export const hill_giant = {
@@ -1636,6 +1962,8 @@ export const hill_giant = {
 	int: 5,
 	dex: 8,
 	stealth: 0,
+	ac: 13,
+	hp: 105,
 }
 
 export const hippogriff = {
@@ -1646,6 +1974,8 @@ export const hippogriff = {
 	int: 2,
 	dex: 13,
 	stealth: 0,
+	ac: 11,
+	hp: 19,
 }
 
 export const hobgoblin = {
@@ -1656,6 +1986,8 @@ export const hobgoblin = {
 	int: 10,
 	dex: 12,
 	stealth: 0,
+	ac: 18,
+	hp: 11,
 }
 
 export const homunculus = {
@@ -1666,6 +1998,8 @@ export const homunculus = {
 	int: 10,
 	dex: 15,
 	stealth: 0,
+	ac: 13,
+	hp: 5,
 }
 
 export const horned_devil = {
@@ -1676,6 +2010,8 @@ export const horned_devil = {
 	int: 12,
 	dex: 17,
 	stealth: 0,
+	ac: 18,
+	hp: 178,
 }
 
 export const hunter_shark = {
@@ -1686,6 +2022,8 @@ export const hunter_shark = {
 	int: 1,
 	dex: 13,
 	stealth: 0,
+	ac: 12,
+	hp: 45,
 }
 
 export const hydra = {
@@ -1696,6 +2034,8 @@ export const hydra = {
 	int: 2,
 	dex: 12,
 	stealth: 0,
+	ac: 15,
+	hp: 172,
 }
 
 export const hyena = {
@@ -1706,6 +2046,8 @@ export const hyena = {
 	int: 2,
 	dex: 13,
 	stealth: 0,
+	ac: 11,
+	hp: 5,
 }
 
 export const ice_devil = {
@@ -1716,6 +2058,8 @@ export const ice_devil = {
 	int: 18,
 	dex: 14,
 	stealth: 0,
+	ac: 18,
+	hp: 180,
 }
 
 export const ice_mephit = {
@@ -1726,6 +2070,8 @@ export const ice_mephit = {
 	int: 9,
 	dex: 13,
 	stealth: 3,
+	ac: 11,
+	hp: 21,
 }
 
 export const imp = {
@@ -1736,6 +2082,8 @@ export const imp = {
 	int: 11,
 	dex: 17,
 	stealth: 5,
+	ac: 13,
+	hp: 10,
 }
 
 export const invisible_stalker = {
@@ -1746,6 +2094,8 @@ export const invisible_stalker = {
 	int: 10,
 	dex: 19,
 	stealth: 10,
+	ac: 14,
+	hp: 104,
 }
 
 export const iron_golem = {
@@ -1756,6 +2106,8 @@ export const iron_golem = {
 	int: 3,
 	dex: 9,
 	stealth: 0,
+	ac: 20,
+	hp: 210,
 }
 
 export const jackal = {
@@ -1766,6 +2118,8 @@ export const jackal = {
 	int: 3,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 3,
 }
 
 export const killer_whale = {
@@ -1776,6 +2130,8 @@ export const killer_whale = {
 	int: 3,
 	dex: 10,
 	stealth: 0,
+	ac: 12,
+	hp: 90,
 }
 
 export const knight = {
@@ -1786,6 +2142,8 @@ export const knight = {
 	int: 11,
 	dex: 11,
 	stealth: 0,
+	ac: 18,
+	hp: 52,
 }
 
 export const kobold = {
@@ -1796,6 +2154,8 @@ export const kobold = {
 	int: 8,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 5,
 }
 
 export const kraken = {
@@ -1806,6 +2166,8 @@ export const kraken = {
 	int: 22,
 	dex: 11,
 	stealth: 0,
+	ac: 18,
+	hp: 472,
 }
 
 export const lamia = {
@@ -1816,6 +2178,8 @@ export const lamia = {
 	int: 14,
 	dex: 13,
 	stealth: 3,
+	ac: 13,
+	hp: 97,
 }
 
 export const lemure = {
@@ -1826,6 +2190,8 @@ export const lemure = {
 	int: 1,
 	dex: 5,
 	stealth: 0,
+	ac: 7,
+	hp: 13,
 }
 
 export const lich = {
@@ -1836,6 +2202,8 @@ export const lich = {
 	int: 20,
 	dex: 16,
 	stealth: 0,
+	ac: 17,
+	hp: 135,
 }
 
 export const lion = {
@@ -1846,6 +2214,8 @@ export const lion = {
 	int: 3,
 	dex: 15,
 	stealth: 6,
+	ac: 12,
+	hp: 26,
 }
 
 export const lizard = {
@@ -1856,6 +2226,8 @@ export const lizard = {
 	int: 1,
 	dex: 11,
 	stealth: 0,
+	ac: 10,
+	hp: 2,
 }
 
 export const lizardfolk = {
@@ -1866,6 +2238,8 @@ export const lizardfolk = {
 	int: 7,
 	dex: 10,
 	stealth: 4,
+	ac: 13,
+	hp: 22,
 }
 
 export const mage = {
@@ -1876,6 +2250,8 @@ export const mage = {
 	int: 17,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 40,
 }
 
 export const magma_mephit = {
@@ -1886,6 +2262,8 @@ export const magma_mephit = {
 	int: 7,
 	dex: 12,
 	stealth: 3,
+	ac: 11,
+	hp: 22,
 }
 
 export const magmin = {
@@ -1896,6 +2274,8 @@ export const magmin = {
 	int: 8,
 	dex: 15,
 	stealth: 0,
+	ac: 14,
+	hp: 9,
 }
 
 export const mammoth = {
@@ -1906,6 +2286,8 @@ export const mammoth = {
 	int: 3,
 	dex: 9,
 	stealth: 0,
+	ac: 13,
+	hp: 126,
 }
 
 export const manticore = {
@@ -1916,6 +2298,8 @@ export const manticore = {
 	int: 7,
 	dex: 16,
 	stealth: 0,
+	ac: 14,
+	hp: 68,
 }
 
 export const marilith = {
@@ -1926,6 +2310,8 @@ export const marilith = {
 	int: 18,
 	dex: 20,
 	stealth: 0,
+	ac: 18,
+	hp: 189,
 }
 
 export const mastiff = {
@@ -1936,6 +2322,8 @@ export const mastiff = {
 	int: 3,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 5,
 }
 
 export const medusa = {
@@ -1946,6 +2334,8 @@ export const medusa = {
 	int: 12,
 	dex: 15,
 	stealth: 5,
+	ac: 15,
+	hp: 127,
 }
 
 export const merfolk = {
@@ -1956,6 +2346,8 @@ export const merfolk = {
 	int: 11,
 	dex: 13,
 	stealth: 0,
+	ac: 11,
+	hp: 11,
 }
 
 export const merrow = {
@@ -1966,6 +2358,8 @@ export const merrow = {
 	int: 8,
 	dex: 10,
 	stealth: 0,
+	ac: 13,
+	hp: 45,
 }
 
 export const mimic = {
@@ -1976,6 +2370,8 @@ export const mimic = {
 	int: 5,
 	dex: 12,
 	stealth: 5,
+	ac: 12,
+	hp: 58,
 }
 
 export const minotaur = {
@@ -1986,6 +2382,8 @@ export const minotaur = {
 	int: 6,
 	dex: 11,
 	stealth: 0,
+	ac: 14,
+	hp: 76,
 }
 
 export const minotaur_skeleton = {
@@ -1996,6 +2394,8 @@ export const minotaur_skeleton = {
 	int: 6,
 	dex: 11,
 	stealth: 0,
+	ac: 12,
+	hp: 67,
 }
 
 export const mule = {
@@ -2006,6 +2406,8 @@ export const mule = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 11,
 }
 
 export const mummy = {
@@ -2016,6 +2418,8 @@ export const mummy = {
 	int: 6,
 	dex: 8,
 	stealth: 0,
+	ac: 11,
+	hp: 58,
 }
 
 export const mummy_lord = {
@@ -2026,6 +2430,8 @@ export const mummy_lord = {
 	int: 11,
 	dex: 10,
 	stealth: 0,
+	ac: 17,
+	hp: 97,
 }
 
 export const nalfeshnee = {
@@ -2036,6 +2442,8 @@ export const nalfeshnee = {
 	int: 19,
 	dex: 10,
 	stealth: 0,
+	ac: 18,
+	hp: 184,
 }
 
 export const night_hag = {
@@ -2046,6 +2454,8 @@ export const night_hag = {
 	int: 16,
 	dex: 15,
 	stealth: 6,
+	ac: 17,
+	hp: 112,
 }
 
 export const nightmare = {
@@ -2056,6 +2466,8 @@ export const nightmare = {
 	int: 10,
 	dex: 15,
 	stealth: 0,
+	ac: 13,
+	hp: 68,
 }
 
 export const noble = {
@@ -2066,6 +2478,8 @@ export const noble = {
 	int: 12,
 	dex: 12,
 	stealth: 0,
+	ac: 15,
+	hp: 9,
 }
 
 export const ochre_jelly = {
@@ -2076,6 +2490,8 @@ export const ochre_jelly = {
 	int: 2,
 	dex: 6,
 	stealth: 0,
+	ac: 8,
+	hp: 45,
 }
 
 export const octopus = {
@@ -2086,6 +2502,8 @@ export const octopus = {
 	int: 3,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 3,
 }
 
 export const ogre = {
@@ -2096,6 +2514,8 @@ export const ogre = {
 	int: 5,
 	dex: 8,
 	stealth: 0,
+	ac: 11,
+	hp: 59,
 }
 
 export const ogre_zombie = {
@@ -2106,6 +2526,8 @@ export const ogre_zombie = {
 	int: 3,
 	dex: 6,
 	stealth: 0,
+	ac: 8,
+	hp: 85,
 }
 
 export const oni = {
@@ -2116,6 +2538,8 @@ export const oni = {
 	int: 14,
 	dex: 11,
 	stealth: 0,
+	ac: 16,
+	hp: 110,
 }
 
 export const orc = {
@@ -2126,6 +2550,8 @@ export const orc = {
 	int: 7,
 	dex: 12,
 	stealth: 0,
+	ac: 13,
+	hp: 15,
 }
 
 export const otyugh = {
@@ -2136,6 +2562,8 @@ export const otyugh = {
 	int: 6,
 	dex: 11,
 	stealth: 0,
+	ac: 14,
+	hp: 114,
 }
 
 export const owl = {
@@ -2146,6 +2574,8 @@ export const owl = {
 	int: 2,
 	dex: 13,
 	stealth: 3,
+	ac: 11,
+	hp: 1,
 }
 
 export const owlbear = {
@@ -2156,6 +2586,8 @@ export const owlbear = {
 	int: 3,
 	dex: 12,
 	stealth: 0,
+	ac: 13,
+	hp: 59,
 }
 
 export const panther = {
@@ -2166,6 +2598,8 @@ export const panther = {
 	int: 3,
 	dex: 15,
 	stealth: 6,
+	ac: 12,
+	hp: 13,
 }
 
 export const pegasus = {
@@ -2176,6 +2610,8 @@ export const pegasus = {
 	int: 10,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 59,
 }
 
 export const phase_spider = {
@@ -2186,6 +2622,8 @@ export const phase_spider = {
 	int: 6,
 	dex: 15,
 	stealth: 6,
+	ac: 13,
+	hp: 32,
 }
 
 export const pit_fiend = {
@@ -2196,6 +2634,8 @@ export const pit_fiend = {
 	int: 22,
 	dex: 14,
 	stealth: 0,
+	ac: 19,
+	hp: 300,
 }
 
 export const planetar = {
@@ -2206,6 +2646,8 @@ export const planetar = {
 	int: 19,
 	dex: 20,
 	stealth: 0,
+	ac: 19,
+	hp: 200,
 }
 
 export const plesiosaurus = {
@@ -2216,6 +2658,8 @@ export const plesiosaurus = {
 	int: 2,
 	dex: 15,
 	stealth: 4,
+	ac: 13,
+	hp: 68,
 }
 
 export const poisonous_snake = {
@@ -2226,6 +2670,8 @@ export const poisonous_snake = {
 	int: 1,
 	dex: 16,
 	stealth: 0,
+	ac: 13,
+	hp: 2,
 }
 
 export const polar_bear = {
@@ -2236,6 +2682,8 @@ export const polar_bear = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 12,
+	hp: 42,
 }
 
 export const pony = {
@@ -2246,6 +2694,8 @@ export const pony = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 11,
 }
 
 export const priest = {
@@ -2256,6 +2706,8 @@ export const priest = {
 	int: 13,
 	dex: 10,
 	stealth: 0,
+	ac: 13,
+	hp: 27,
 }
 
 export const pseudodragon = {
@@ -2266,6 +2718,8 @@ export const pseudodragon = {
 	int: 10,
 	dex: 15,
 	stealth: 4,
+	ac: 13,
+	hp: 7,
 }
 
 export const purple_worm = {
@@ -2276,6 +2730,8 @@ export const purple_worm = {
 	int: 1,
 	dex: 7,
 	stealth: 0,
+	ac: 18,
+	hp: 247,
 }
 
 export const quasit = {
@@ -2286,6 +2742,8 @@ export const quasit = {
 	int: 7,
 	dex: 17,
 	stealth: 5,
+	ac: 13,
+	hp: 7,
 }
 
 export const quipper = {
@@ -2296,6 +2754,8 @@ export const quipper = {
 	int: 1,
 	dex: 16,
 	stealth: 0,
+	ac: 13,
+	hp: 1,
 }
 
 export const rakshasa = {
@@ -2306,6 +2766,8 @@ export const rakshasa = {
 	int: 13,
 	dex: 17,
 	stealth: 0,
+	ac: 16,
+	hp: 110,
 }
 
 export const rat = {
@@ -2316,6 +2778,8 @@ export const rat = {
 	int: 2,
 	dex: 11,
 	stealth: 0,
+	ac: 10,
+	hp: 1,
 }
 
 export const raven = {
@@ -2326,6 +2790,8 @@ export const raven = {
 	int: 2,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 1,
 }
 
 export const red_dragon_wyrmling = {
@@ -2336,6 +2802,8 @@ export const red_dragon_wyrmling = {
 	int: 12,
 	dex: 10,
 	stealth: 2,
+	ac: 17,
+	hp: 75,
 }
 
 export const reef_shark = {
@@ -2346,6 +2814,8 @@ export const reef_shark = {
 	int: 1,
 	dex: 13,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const remorhaz = {
@@ -2356,6 +2826,8 @@ export const remorhaz = {
 	int: 4,
 	dex: 13,
 	stealth: 0,
+	ac: 17,
+	hp: 195,
 }
 
 export const rhinoceros = {
@@ -2366,6 +2838,8 @@ export const rhinoceros = {
 	int: 2,
 	dex: 8,
 	stealth: 0,
+	ac: 11,
+	hp: 45,
 }
 
 export const riding_horse = {
@@ -2376,6 +2850,8 @@ export const riding_horse = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 13,
 }
 
 export const roc = {
@@ -2386,6 +2862,8 @@ export const roc = {
 	int: 3,
 	dex: 10,
 	stealth: 0,
+	ac: 15,
+	hp: 248,
 }
 
 export const roper = {
@@ -2396,6 +2874,8 @@ export const roper = {
 	int: 7,
 	dex: 8,
 	stealth: 5,
+	ac: 20,
+	hp: 93,
 }
 
 export const rug_of_smothering = {
@@ -2406,6 +2886,8 @@ export const rug_of_smothering = {
 	int: 1,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 33,
 }
 
 export const rust_monster = {
@@ -2416,6 +2898,8 @@ export const rust_monster = {
 	int: 2,
 	dex: 12,
 	stealth: 0,
+	ac: 14,
+	hp: 27,
 }
 
 export const saber_toothed_tiger = {
@@ -2426,6 +2910,8 @@ export const saber_toothed_tiger = {
 	int: 3,
 	dex: 14,
 	stealth: 6,
+	ac: 12,
+	hp: 52,
 }
 
 export const sahuagin = {
@@ -2436,6 +2922,8 @@ export const sahuagin = {
 	int: 12,
 	dex: 11,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const salamander = {
@@ -2446,6 +2934,8 @@ export const salamander = {
 	int: 11,
 	dex: 14,
 	stealth: 0,
+	ac: 15,
+	hp: 90,
 }
 
 export const satyr = {
@@ -2456,6 +2946,8 @@ export const satyr = {
 	int: 12,
 	dex: 16,
 	stealth: 5,
+	ac: 14,
+	hp: 31,
 }
 
 export const scorpion = {
@@ -2466,6 +2958,8 @@ export const scorpion = {
 	int: 1,
 	dex: 11,
 	stealth: 0,
+	ac: 11,
+	hp: 1,
 }
 
 export const scout = {
@@ -2476,6 +2970,8 @@ export const scout = {
 	int: 11,
 	dex: 14,
 	stealth: 6,
+	ac: 13,
+	hp: 16,
 }
 
 export const sea_hag = {
@@ -2486,6 +2982,8 @@ export const sea_hag = {
 	int: 12,
 	dex: 13,
 	stealth: 0,
+	ac: 14,
+	hp: 52,
 }
 
 export const sea_horse = {
@@ -2496,6 +2994,8 @@ export const sea_horse = {
 	int: 1,
 	dex: 12,
 	stealth: 0,
+	ac: 11,
+	hp: 1,
 }
 
 export const shadow = {
@@ -2506,6 +3006,8 @@ export const shadow = {
 	int: 6,
 	dex: 14,
 	stealth: 4,
+	ac: 12,
+	hp: 16,
 }
 
 export const shambling_mound = {
@@ -2516,6 +3018,8 @@ export const shambling_mound = {
 	int: 5,
 	dex: 8,
 	stealth: 2,
+	ac: 15,
+	hp: 136,
 }
 
 export const shield_guardian = {
@@ -2526,6 +3030,8 @@ export const shield_guardian = {
 	int: 7,
 	dex: 8,
 	stealth: 0,
+	ac: 17,
+	hp: 142,
 }
 
 export const shrieker = {
@@ -2536,6 +3042,8 @@ export const shrieker = {
 	int: 1,
 	dex: 1,
 	stealth: 0,
+	ac: 5,
+	hp: 13,
 }
 
 export const silver_dragon_wyrmling = {
@@ -2546,6 +3054,8 @@ export const silver_dragon_wyrmling = {
 	int: 12,
 	dex: 10,
 	stealth: 2,
+	ac: 17,
+	hp: 45,
 }
 
 export const skeleton = {
@@ -2556,6 +3066,8 @@ export const skeleton = {
 	int: 6,
 	dex: 14,
 	stealth: 0,
+	ac: 13,
+	hp: 13,
 }
 
 export const solar = {
@@ -2566,6 +3078,8 @@ export const solar = {
 	int: 25,
 	dex: 22,
 	stealth: 0,
+	ac: 21,
+	hp: 243,
 }
 
 export const specter = {
@@ -2576,6 +3090,8 @@ export const specter = {
 	int: 10,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const spider = {
@@ -2586,6 +3102,8 @@ export const spider = {
 	int: 1,
 	dex: 14,
 	stealth: 4,
+	ac: 12,
+	hp: 1,
 }
 
 export const spirit_naga = {
@@ -2596,6 +3114,8 @@ export const spirit_naga = {
 	int: 16,
 	dex: 17,
 	stealth: 0,
+	ac: 15,
+	hp: 75,
 }
 
 export const sprite = {
@@ -2606,6 +3126,8 @@ export const sprite = {
 	int: 14,
 	dex: 18,
 	stealth: 8,
+	ac: 15,
+	hp: 2,
 }
 
 export const spy = {
@@ -2616,6 +3138,8 @@ export const spy = {
 	int: 12,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 27,
 }
 
 export const steam_mephit = {
@@ -2626,6 +3150,8 @@ export const steam_mephit = {
 	int: 11,
 	dex: 11,
 	stealth: 0,
+	ac: 10,
+	hp: 21,
 }
 
 export const stirge = {
@@ -2636,6 +3162,8 @@ export const stirge = {
 	int: 2,
 	dex: 16,
 	stealth: 0,
+	ac: 14,
+	hp: 2,
 }
 
 export const stone_giant = {
@@ -2646,6 +3174,8 @@ export const stone_giant = {
 	int: 10,
 	dex: 15,
 	stealth: 0,
+	ac: 17,
+	hp: 126,
 }
 
 export const stone_golem = {
@@ -2656,6 +3186,8 @@ export const stone_golem = {
 	int: 3,
 	dex: 9,
 	stealth: 0,
+	ac: 17,
+	hp: 178,
 }
 
 export const storm_giant = {
@@ -2666,6 +3198,8 @@ export const storm_giant = {
 	int: 16,
 	dex: 14,
 	stealth: 0,
+	ac: 16,
+	hp: 230,
 }
 
 export const succubus_incubus = {
@@ -2676,6 +3210,8 @@ export const succubus_incubus = {
 	int: 15,
 	dex: 17,
 	stealth: 7,
+	ac: 15,
+	hp: 66,
 }
 
 export const swarm_of_bats = {
@@ -2686,6 +3222,8 @@ export const swarm_of_bats = {
 	int: 2,
 	dex: 15,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const swarm_of_beetles = {
@@ -2696,6 +3234,8 @@ export const swarm_of_beetles = {
 	int: 1,
 	dex: 13,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const swarm_of_centipedes = {
@@ -2706,6 +3246,8 @@ export const swarm_of_centipedes = {
 	int: 1,
 	dex: 13,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const swarm_of_insects = {
@@ -2716,6 +3258,8 @@ export const swarm_of_insects = {
 	int: 1,
 	dex: 13,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const swarm_of_poisonous_snakes = {
@@ -2726,6 +3270,8 @@ export const swarm_of_poisonous_snakes = {
 	int: 1,
 	dex: 18,
 	stealth: 0,
+	ac: 14,
+	hp: 36,
 }
 
 export const swarm_of_quippers = {
@@ -2736,6 +3282,8 @@ export const swarm_of_quippers = {
 	int: 1,
 	dex: 16,
 	stealth: 0,
+	ac: 13,
+	hp: 28,
 }
 
 export const swarm_of_rats = {
@@ -2746,6 +3294,8 @@ export const swarm_of_rats = {
 	int: 2,
 	dex: 11,
 	stealth: 0,
+	ac: 10,
+	hp: 24,
 }
 
 export const swarm_of_ravens = {
@@ -2756,6 +3306,8 @@ export const swarm_of_ravens = {
 	int: 3,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 24,
 }
 
 export const swarm_of_spiders = {
@@ -2766,6 +3318,8 @@ export const swarm_of_spiders = {
 	int: 1,
 	dex: 13,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const swarm_of_wasps = {
@@ -2776,6 +3330,8 @@ export const swarm_of_wasps = {
 	int: 1,
 	dex: 13,
 	stealth: 0,
+	ac: 12,
+	hp: 22,
 }
 
 export const tarrasque = {
@@ -2786,6 +3342,8 @@ export const tarrasque = {
 	int: 3,
 	dex: 11,
 	stealth: 0,
+	ac: 25,
+	hp: 676,
 }
 
 export const thug = {
@@ -2796,6 +3354,8 @@ export const thug = {
 	int: 10,
 	dex: 11,
 	stealth: 0,
+	ac: 11,
+	hp: 32,
 }
 
 export const tiger = {
@@ -2806,6 +3366,8 @@ export const tiger = {
 	int: 3,
 	dex: 15,
 	stealth: 6,
+	ac: 12,
+	hp: 37,
 }
 
 export const treant = {
@@ -2816,6 +3378,8 @@ export const treant = {
 	int: 12,
 	dex: 8,
 	stealth: 0,
+	ac: 16,
+	hp: 138,
 }
 
 export const tribal_warrior = {
@@ -2826,6 +3390,8 @@ export const tribal_warrior = {
 	int: 8,
 	dex: 11,
 	stealth: 0,
+	ac: 12,
+	hp: 11,
 }
 
 export const triceratops = {
@@ -2836,6 +3402,8 @@ export const triceratops = {
 	int: 2,
 	dex: 9,
 	stealth: 0,
+	ac: 13,
+	hp: 95,
 }
 
 export const troll = {
@@ -2846,6 +3414,8 @@ export const troll = {
 	int: 7,
 	dex: 13,
 	stealth: 0,
+	ac: 15,
+	hp: 84,
 }
 
 export const tyrannosaurus_rex = {
@@ -2856,6 +3426,8 @@ export const tyrannosaurus_rex = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 13,
+	hp: 136,
 }
 
 export const unicorn = {
@@ -2866,6 +3438,8 @@ export const unicorn = {
 	int: 11,
 	dex: 14,
 	stealth: 0,
+	ac: 12,
+	hp: 67,
 }
 
 export const vampire_bat = {
@@ -2876,6 +3450,8 @@ export const vampire_bat = {
 	int: 17,
 	dex: 18,
 	stealth: 9,
+	ac: 16,
+	hp: 144,
 }
 
 export const vampire_mist = {
@@ -2886,6 +3462,8 @@ export const vampire_mist = {
 	int: 17,
 	dex: 18,
 	stealth: 9,
+	ac: 16,
+	hp: 144,
 }
 
 export const vampire_spawn = {
@@ -2896,6 +3474,8 @@ export const vampire_spawn = {
 	int: 11,
 	dex: 16,
 	stealth: 6,
+	ac: 15,
+	hp: 82,
 }
 
 export const vampire_vampire = {
@@ -2906,6 +3486,8 @@ export const vampire_vampire = {
 	int: 17,
 	dex: 18,
 	stealth: 9,
+	ac: 16,
+	hp: 144,
 }
 
 export const veteran = {
@@ -2916,6 +3498,8 @@ export const veteran = {
 	int: 10,
 	dex: 13,
 	stealth: 0,
+	ac: 17,
+	hp: 58,
 }
 
 export const violet_fungus = {
@@ -2926,6 +3510,8 @@ export const violet_fungus = {
 	int: 1,
 	dex: 1,
 	stealth: 0,
+	ac: 5,
+	hp: 18,
 }
 
 export const vrock = {
@@ -2936,6 +3522,8 @@ export const vrock = {
 	int: 8,
 	dex: 15,
 	stealth: 0,
+	ac: 15,
+	hp: 104,
 }
 
 export const vulture = {
@@ -2946,6 +3534,8 @@ export const vulture = {
 	int: 2,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 5,
 }
 
 export const warhorse = {
@@ -2956,6 +3546,8 @@ export const warhorse = {
 	int: 2,
 	dex: 12,
 	stealth: 0,
+	ac: 11,
+	hp: 19,
 }
 
 export const warhorse_skeleton = {
@@ -2966,6 +3558,8 @@ export const warhorse_skeleton = {
 	int: 2,
 	dex: 12,
 	stealth: 0,
+	ac: 13,
+	hp: 22,
 }
 
 export const water_elemental = {
@@ -2976,6 +3570,8 @@ export const water_elemental = {
 	int: 5,
 	dex: 14,
 	stealth: 0,
+	ac: 14,
+	hp: 114,
 }
 
 export const weasel = {
@@ -2986,6 +3582,8 @@ export const weasel = {
 	int: 2,
 	dex: 16,
 	stealth: 5,
+	ac: 13,
+	hp: 1,
 }
 
 export const werebear_bear = {
@@ -2996,6 +3594,8 @@ export const werebear_bear = {
 	int: 11,
 	dex: 10,
 	stealth: 0,
+	ac: 11,
+	hp: 135,
 }
 
 export const werebear_human = {
@@ -3006,6 +3606,8 @@ export const werebear_human = {
 	int: 11,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 135,
 }
 
 export const werebear_hybrid = {
@@ -3016,6 +3618,8 @@ export const werebear_hybrid = {
 	int: 11,
 	dex: 10,
 	stealth: 0,
+	ac: 11,
+	hp: 135,
 }
 
 export const wereboar_boar = {
@@ -3026,6 +3630,8 @@ export const wereboar_boar = {
 	int: 10,
 	dex: 10,
 	stealth: 0,
+	ac: 11,
+	hp: 78,
 }
 
 export const wereboar_human = {
@@ -3036,6 +3642,8 @@ export const wereboar_human = {
 	int: 10,
 	dex: 10,
 	stealth: 0,
+	ac: 10,
+	hp: 78,
 }
 
 export const wereboar_hybrid = {
@@ -3046,6 +3654,8 @@ export const wereboar_hybrid = {
 	int: 10,
 	dex: 10,
 	stealth: 0,
+	ac: 11,
+	hp: 78,
 }
 
 export const wererat_human = {
@@ -3056,6 +3666,8 @@ export const wererat_human = {
 	int: 11,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 33,
 }
 
 export const wererat_hybrid = {
@@ -3066,6 +3678,8 @@ export const wererat_hybrid = {
 	int: 11,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 33,
 }
 
 export const wererat_rat = {
@@ -3076,6 +3690,8 @@ export const wererat_rat = {
 	int: 11,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 33,
 }
 
 export const weretiger_human = {
@@ -3086,6 +3702,8 @@ export const weretiger_human = {
 	int: 10,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 120,
 }
 
 export const weretiger_hybrid = {
@@ -3096,6 +3714,8 @@ export const weretiger_hybrid = {
 	int: 10,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 120,
 }
 
 export const weretiger_tiger = {
@@ -3106,6 +3726,8 @@ export const weretiger_tiger = {
 	int: 10,
 	dex: 15,
 	stealth: 4,
+	ac: 12,
+	hp: 120,
 }
 
 export const werewolf_human = {
@@ -3116,6 +3738,8 @@ export const werewolf_human = {
 	int: 10,
 	dex: 13,
 	stealth: 0,
+	ac: 11,
+	hp: 58,
 }
 
 export const werewolf_hybrid = {
@@ -3126,6 +3750,8 @@ export const werewolf_hybrid = {
 	int: 10,
 	dex: 13,
 	stealth: 0,
+	ac: 12,
+	hp: 58,
 }
 
 export const werewolf_wolf = {
@@ -3136,6 +3762,8 @@ export const werewolf_wolf = {
 	int: 10,
 	dex: 13,
 	stealth: 0,
+	ac: 12,
+	hp: 58,
 }
 
 export const white_dragon_wyrmling = {
@@ -3146,6 +3774,8 @@ export const white_dragon_wyrmling = {
 	int: 5,
 	dex: 10,
 	stealth: 2,
+	ac: 16,
+	hp: 32,
 }
 
 export const wight = {
@@ -3156,6 +3786,8 @@ export const wight = {
 	int: 10,
 	dex: 14,
 	stealth: 4,
+	ac: 14,
+	hp: 45,
 }
 
 export const will_o_wisp = {
@@ -3166,6 +3798,8 @@ export const will_o_wisp = {
 	int: 13,
 	dex: 28,
 	stealth: 0,
+	ac: 19,
+	hp: 22,
 }
 
 export const winter_wolf = {
@@ -3176,6 +3810,8 @@ export const winter_wolf = {
 	int: 7,
 	dex: 13,
 	stealth: 3,
+	ac: 13,
+	hp: 75,
 }
 
 export const wolf = {
@@ -3186,6 +3822,8 @@ export const wolf = {
 	int: 3,
 	dex: 15,
 	stealth: 4,
+	ac: 13,
+	hp: 11,
 }
 
 export const worg = {
@@ -3196,6 +3834,8 @@ export const worg = {
 	int: 7,
 	dex: 13,
 	stealth: 0,
+	ac: 13,
+	hp: 26,
 }
 
 export const wraith = {
@@ -3206,6 +3846,8 @@ export const wraith = {
 	int: 12,
 	dex: 16,
 	stealth: 0,
+	ac: 13,
+	hp: 67,
 }
 
 export const wyvern = {
@@ -3216,6 +3858,8 @@ export const wyvern = {
 	int: 5,
 	dex: 10,
 	stealth: 0,
+	ac: 13,
+	hp: 110,
 }
 
 export const xorn = {
@@ -3226,6 +3870,8 @@ export const xorn = {
 	int: 11,
 	dex: 10,
 	stealth: 3,
+	ac: 19,
+	hp: 73,
 }
 
 export const young_black_dragon = {
@@ -3236,6 +3882,8 @@ export const young_black_dragon = {
 	int: 12,
 	dex: 14,
 	stealth: 5,
+	ac: 18,
+	hp: 127,
 }
 
 export const young_blue_dragon = {
@@ -3246,6 +3894,8 @@ export const young_blue_dragon = {
 	int: 14,
 	dex: 10,
 	stealth: 4,
+	ac: 18,
+	hp: 152,
 }
 
 export const young_brass_dragon = {
@@ -3256,6 +3906,8 @@ export const young_brass_dragon = {
 	int: 12,
 	dex: 10,
 	stealth: 3,
+	ac: 17,
+	hp: 110,
 }
 
 export const young_bronze_dragon = {
@@ -3266,6 +3918,8 @@ export const young_bronze_dragon = {
 	int: 14,
 	dex: 10,
 	stealth: 3,
+	ac: 18,
+	hp: 142,
 }
 
 export const young_copper_dragon = {
@@ -3276,6 +3930,8 @@ export const young_copper_dragon = {
 	int: 16,
 	dex: 12,
 	stealth: 4,
+	ac: 17,
+	hp: 119,
 }
 
 export const young_gold_dragon = {
@@ -3286,6 +3942,8 @@ export const young_gold_dragon = {
 	int: 16,
 	dex: 14,
 	stealth: 6,
+	ac: 18,
+	hp: 178,
 }
 
 export const young_green_dragon = {
@@ -3296,6 +3954,8 @@ export const young_green_dragon = {
 	int: 16,
 	dex: 12,
 	stealth: 4,
+	ac: 18,
+	hp: 136,
 }
 
 export const young_red_dragon = {
@@ -3306,6 +3966,8 @@ export const young_red_dragon = {
 	int: 14,
 	dex: 10,
 	stealth: 4,
+	ac: 18,
+	hp: 178,
 }
 
 export const young_silver_dragon = {
@@ -3316,6 +3978,8 @@ export const young_silver_dragon = {
 	int: 14,
 	dex: 10,
 	stealth: 4,
+	ac: 18,
+	hp: 168,
 }
 
 export const young_white_dragon = {
@@ -3326,6 +3990,8 @@ export const young_white_dragon = {
 	int: 6,
 	dex: 10,
 	stealth: 3,
+	ac: 17,
+	hp: 133,
 }
 
 export const zombie = {
@@ -3336,6 +4002,8 @@ export const zombie = {
 	int: 3,
 	dex: 6,
 	stealth: 0,
+	ac: 8,
+	hp: 22,
 }
 
 export const carrion_crawler = {
@@ -3346,6 +4014,8 @@ export const carrion_crawler = {
 	int: 1,
 	dex: 13,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const cyclops = {
@@ -3356,6 +4026,8 @@ export const cyclops = {
 	int: 8,
 	dex: 11,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const bugbear_chief = {
@@ -3366,6 +4038,8 @@ export const bugbear_chief = {
 	int: 11,
 	dex: 14,
 	stealth: 6,
+	ac: 0,
+	hp: 0,
 }
 
 export const gnoll_pack_lord = {
@@ -3376,6 +4050,8 @@ export const gnoll_pack_lord = {
 	int: 13,
 	dex: 14,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const gnoll_fang_of_yeenoghu = {
@@ -3386,6 +4062,8 @@ export const gnoll_fang_of_yeenoghu = {
 	int: 10,
 	dex: 15,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const goblin_boss = {
@@ -3396,6 +4074,8 @@ export const goblin_boss = {
 	int: 10,
 	dex: 14,
 	stealth: 6,
+	ac: 0,
+	hp: 0,
 }
 
 export const grick_alpha = {
@@ -3406,6 +4086,8 @@ export const grick_alpha = {
 	int: 4,
 	dex: 16,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const hobgoblin_captain = {
@@ -3416,6 +4098,8 @@ export const hobgoblin_captain = {
 	int: 12,
 	dex: 14,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const hobgoblin_warlord = {
@@ -3426,6 +4110,8 @@ export const hobgoblin_warlord = {
 	int: 14,
 	dex: 14,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const winged_kobold = {
@@ -3436,6 +4122,8 @@ export const winged_kobold = {
 	int: 8,
 	dex: 16,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const half_ogre = {
@@ -3446,6 +4134,8 @@ export const half_ogre = {
 	int: 7,
 	dex: 10,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const orc_war_chief = {
@@ -3456,6 +4146,8 @@ export const orc_war_chief = {
 	int: 11,
 	dex: 12,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const orc_eye_of_gruumsh = {
@@ -3466,6 +4158,8 @@ export const orc_eye_of_gruumsh = {
 	int: 9,
 	dex: 12,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const orog = {
@@ -3476,6 +4170,8 @@ export const orog = {
 	int: 12,
 	dex: 12,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const displacer_beast = {
@@ -3486,6 +4182,8 @@ export const displacer_beast = {
 	int: 6,
 	dex: 15,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const kuo_toa = {
@@ -3496,6 +4194,8 @@ export const kuo_toa = {
 	int: 11,
 	dex: 10,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const kuo_toa_archpriest = {
@@ -3506,6 +4206,8 @@ export const kuo_toa_archpriest = {
 	int: 13,
 	dex: 14,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const kuo_toa_whip = {
@@ -3516,6 +4218,8 @@ export const kuo_toa_whip = {
 	int: 12,
 	dex: 10,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const beholder = {
@@ -3526,6 +4230,8 @@ export const beholder = {
 	int: 17,
 	dex: 14,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const bullywug = {
@@ -3536,6 +4242,8 @@ export const bullywug = {
 	int: 7,
 	dex: 12,
 	stealth: 3,
+	ac: 0,
+	hp: 0,
 }
 
 export const bone_naga = {
@@ -3546,6 +4254,8 @@ export const bone_naga = {
 	int: 15,
 	dex: 16,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const mind_flayer = {
@@ -3556,6 +4266,8 @@ export const mind_flayer = {
 	int: 19,
 	dex: 12,
 	stealth: 4,
+	ac: 0,
+	hp: 0,
 }
 
 export const yuan_ti_abomination = {
@@ -3566,6 +4278,8 @@ export const yuan_ti_abomination = {
 	int: 17,
 	dex: 16,
 	stealth: 6,
+	ac: 0,
+	hp: 0,
 }
 
 export const yuan_ti_malison = {
@@ -3576,6 +4290,8 @@ export const yuan_ti_malison = {
 	int: 14,
 	dex: 14,
 	stealth: 4,
+	ac: 0,
+	hp: 0,
 }
 
 export const yuan_ti_pureblood = {
@@ -3586,6 +4302,8 @@ export const yuan_ti_pureblood = {
 	int: 13,
 	dex: 12,
 	stealth: 3,
+	ac: 0,
+	hp: 0,
 }
 
 export const needle_blight = {
@@ -3596,6 +4314,8 @@ export const needle_blight = {
 	int: 4,
 	dex: 12,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const twig_blight = {
@@ -3606,6 +4326,8 @@ export const twig_blight = {
 	int: 4,
 	dex: 13,
 	stealth: 3,
+	ac: 0,
+	hp: 0,
 }
 
 export const vine_blight = {
@@ -3616,6 +4338,8 @@ export const vine_blight = {
 	int: 5,
 	dex: 8,
 	stealth: 1,
+	ac: 0,
+	hp: 0,
 }
 
 export const troglodyte = {
@@ -3626,6 +4350,8 @@ export const troglodyte = {
 	int: 6,
 	dex: 10,
 	stealth: 2,
+	ac: 0,
+	hp: 0,
 }
 
 export const peryton = {
@@ -3636,6 +4362,8 @@ export const peryton = {
 	int: 9,
 	dex: 12,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const galeb_duhr = {
@@ -3646,6 +4374,8 @@ export const galeb_duhr = {
 	int: 11,
 	dex: 14,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const banshee = {
@@ -3656,6 +4386,8 @@ export const banshee = {
 	int: 12,
 	dex: 14,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const dao = {
@@ -3666,6 +4398,8 @@ export const dao = {
 	int: 12,
 	dex: 12,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const marid = {
@@ -3676,6 +4410,8 @@ export const marid = {
 	int: 18,
 	dex: 12,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const intellect_devourer = {
@@ -3686,6 +4422,8 @@ export const intellect_devourer = {
 	int: 12,
 	dex: 14,
 	stealth: 4,
+	ac: 0,
+	hp: 0,
 }
 
 export const nothic = {
@@ -3696,6 +4434,8 @@ export const nothic = {
 	int: 13,
 	dex: 16,
 	stealth: 5,
+	ac: 0,
+	hp: 0,
 }
 
 export const grell = {
@@ -3706,6 +4446,8 @@ export const grell = {
 	int: 12,
 	dex: 14,
 	stealth: 6,
+	ac: 0,
+	hp: 0,
 }
 
 export const hook_horror = {
@@ -3716,6 +4458,8 @@ export const hook_horror = {
 	int: 6,
 	dex: 10,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const water_weird = {
@@ -3726,6 +4470,8 @@ export const water_weird = {
 	int: 11,
 	dex: 16,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const flameskull = {
@@ -3736,6 +4482,8 @@ export const flameskull = {
 	int: 16,
 	dex: 17,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 
 export const umber_hulk = {
@@ -3746,5 +4494,7 @@ export const umber_hulk = {
 	int: 9,
 	dex: 13,
 	stealth: 0,
+	ac: 0,
+	hp: 0,
 }
 

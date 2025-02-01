@@ -20,6 +20,12 @@ with open("api_monsters.yaml", "w") as file:
         else:
             stealth = 0
 
+        armor_class = 0
+        for ac in result.get("armor_class", []):
+            if ac.get("value"):
+                armor_class = ac.get("value")
+                break
+
         file.writelines([
             f"- {result['index']}:\n",
             f"    name: {result['name']}\n",
@@ -34,6 +40,7 @@ with open("api_monsters.yaml", "w") as file:
             f"    wis: {result['wisdom']}\n",
             f"    cha: {result['charisma']}\n",
             f"    stealth: {stealth}\n",
-
+            f"    ac: {armor_class}\n",
+            f"    hp: {result['hit_points']}\n",
         ])
 

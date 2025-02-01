@@ -1,4 +1,8 @@
+import {useState} from "react";
+
 export default function Table({tableState}) {
+
+    // const [iframeWindow, setIframeWindow] = useState();
     let iframeWindow;
 
     function showAll() {
@@ -11,7 +15,12 @@ export default function Table({tableState}) {
     }
 
     function refresh() {
-        iframeWindow.refresh();
+        try{
+            iframeWindow.refresh();
+        }
+        catch (exc){
+
+        }
     }
 
     function wilderness() {
@@ -33,15 +42,17 @@ export default function Table({tableState}) {
     function battle() {
         if (!iframeWindow || iframeWindow.closed){
             iframeWindow = window.open(
-                `/iframe.html`, // This is the other HTML file we'll create.
+                `/iframe.html`,
                 'iframeWindow',
                 'width=800,height=600'
             );
             iframeWindow.addEventListener('load', function () {
                 iframeWindow.battle();
+                iframeWindow.showAll();
             });
         } else {
             iframeWindow.battle();
+            iframeWindow.showAll();
         }
     }
 
@@ -73,7 +84,7 @@ export default function Table({tableState}) {
         } else if (style === "tense") {
             webhook = "http://homeassistant.local:8123/api/webhook/last-haven-tense-enqueue-7AjNxmoZ8zGprEjqgEYb8xq5";
         } else if (style === "excited") {
-            webhook = "http://homeassistant.local:8123/api/webhook/last-haven-tense-enqueue-7AjNxmoZ8zGprEjqgEYb8xq5";
+            webhook = "http://homeassistant.local:8123/api/webhook/last-haven-excited-enqueue-CbYzKbx7elepBasMgvhPdKZ8";
         } else if (style === "fadeOut"){
             webhook = "http://homeassistant.local:8123/api/webhook/fade-out-music-Dj00BQjcVBj8qk46wyYF_KQ8";
         } else if (style === "fadeIn"){
@@ -100,7 +111,7 @@ export default function Table({tableState}) {
                 <br/>
                 <p>b-bridge, B-wall, z-scale, w-water, h-hide, t-tree, T-dead tree,
                     r-rock, f-fog, F-fire, d-darkness, W-web, p-poison, s-shield,
-                    v-vines, i-ice, l-lava, </p>
+                    v-vines, i-ice, l-lava, L-light</p>
                 <input type="button" className="w3-button" value="Open"
                        onClick={() => battle()}></input>
                 <input type="button" className="w3-button" value="Show All"
