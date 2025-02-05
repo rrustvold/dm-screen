@@ -561,10 +561,23 @@
             <p>I'm going to be running old-school dungeons. That means there will be dark rectangular chambers, locked doors, trapped chests, and wandering monsters. I do want your characters to proceed cautiously through a dungeon, all the while searching for traps, feeling for secret doors, listening for monsters, and all the other fun activities that happen. But, I don't want the game to slow down because you need to declare that you are searching every door for traps, and listening at every door before you open it. I also don't want you to have to roll an absurd number of perception checks inside every room. So here is how we make an actual game out of this.
             </p>
         <h3>Dungeon Cards</h3>
-        <p>Just like in outdoor exploration, we will use playing cards to help track time, and determine when wandering monsters occur. Each "dungeon card" represents roughly 5 minutes that you spend in the dungeon. You can deal yourself small decks of cards to help keep track of consumables. For example, if you light a torch (which burns for one hour), you can deal yourself 12 cards face down. Once you've "burnt" those 12 cards, then you know your torch is used up.</p>
-        <p>I will tell you when to "burn" a dungeon card. To do so, simply flip one over face up. If the revealed card's face value is less than or equal to the dungeon's "threat level" (see below), then that means a wandering monster finds you. (Unless there are no more monsters in the dungeon).</p>
-        <h3>Dungeon Threat Level</h3>
-        <p>The dungeon's threat level represents how likely a wandering monster is. The threat level starts at one, meaning only an ace triggers a wandering monster. If you are noisy in the dungeon, like from bashing down doors, then the "threat level" of the dungeon will increase. </p>
+        <p>Just like in outdoor exploration, we will use playing cards to help track time, and determine when wandering monsters occur. Each "dungeon card" represents roughly 5 minutes that you spend in the dungeon. You can deal yourself small decks of cards to help keep track of consumables. For example, if you light a torch (which burns for one hour), you can deal yourself 12 cards face down. Once you've "burnt" through those 12 cards, then you know your torch is used up. I will remove the aces and jokers from the deck so that the deck is divisible by 12.</p>
+        <p>I will tell you when to "burn" a dungeon card. To do so, simply flip one over face up into a discard pile a.k.a. "dungeon pool". The cards in the dungeon pool represent not just the passage of time, but also the tension you feel while in the dungeon.</p>
+        <h3>Wandering Monsters</h3>
+        <p>If the party ever does something reckless, then I will roll against the dungeon pool.</p>
+        <p>Examples of reckless actions include:
+            <ul>
+                <li>Breaking down a door</li>
+                <li>Smashing open a chest</li>
+                <li>Making loud noises</li>
+                <li>Casting noisy spells such as "knock"</li>
+                <li><b>Having prolonged discussions</b></li>
+                <li>Abandoning torches (see below)</li>
+            </ul>
+        </p>
+        <p>When the DM rolls against the dungeon pool, I will roll 2d6. If the number I roll matches the value of any card in the dungeon pool, then a wandering monster appears. Face cards have a value of 10. Since there will be no aces in the deck, this means that when I roll against the pool, there is always a chance of triggering a monster, but it is never guaranteed.</p>
+        <p>When a 12th card is added to the dungeon pool, I will roll against the pool.</p>
+        <p>If a 13th card would be added to the pool, empty the pool then add one card.</p>
         <h3>Dungeon Exploring Loop</h3>
         <p>When you enter a new room, we will use the following loop.</p>
         <p><ol>
@@ -576,7 +589,6 @@
                     <li>Searching a piece of art or furniture for secrets and clues</li>
                     <li>Trying to understand how a puzzle or trap works</li>
                     <li>Attempting to disable a trap</li>
-                    <li>Attempting to pick open a lock</li>
                     <li>Driving spikes to keep a door open or closed</li>
                     <li>Keeping watch while your companions explore the room</li>
                 </ul>
@@ -595,13 +607,22 @@
         <h3>How to open a door</h3>
         <p>There are three ways to open a door. If you can think of a fourth way, I will add it to the list. Spending time to "explore" a door will inform you if the door is stuck or locked. You might also hear any monsters on the other side.
             <ol>
-                <li>Break it down: Any monsters on the other side will likely be surprised. If the door is locked or stuck, then the PC attempting to break it down must succeed on the break DC (see your PHB for tools that make this easier). If the attempt to break the door fails, then any monsters on the other side will become aware of you. No matter what happens, the threat level of the dungeon will increase if you attempt to break down a door.</li>
+                <li>Break it down: Any monsters on the other side will likely be surprised. If the door is locked or stuck, then the PC attempting to break it down must succeed on the break DC (see your PHB for tools that make this easier). If the attempt to break the door fails, then any monsters on the other side will become aware of you. No matter what happens, you must roll against the dungeon pool if you attempt to break down a door.</li>
                 <li>Open it normally: Any monsters on the other side will not be surprised. If the door turns out to be stuck or locked, then any monsters on the other side may become aware of the party. The monsters may "hide" to ambush when the PCs do come through.</li>
                 <li>Open it stealthily: You must have "explored" the door before you can open it stealthily (you need to know if it's stuck or locked, and have listened to it, and have peered under it, etc.). You must extinguish all light sources to open a door stealthily. Or, if using a hooded lantern, the hood must be lowered. If the door is stuck or locked, then the door cannot be opened this way. PCs that are entering the next chamber can take the Hide action before entering the room. Other characters can hang back while the sneaky ones go ahead.</li>
             </ol>
         </p>
+        <h3>Picking Locks</h3>
+        <p>To summarize the rules, to pick a lock you:
+            <ul>
+                <li>need to use thieve's tools</li>
+                <li>don't need to be proficient with thieve's tools</li>
+                <li>Must succeed on a Dexterity (Sleight of Hand, Thieve's Tools) check.</li>
+    </ul>
+        The DC for the check typically varies from 10-20. If you have proficiency in both sleight of hand and thieve's tools, then you get advantage on the check. The time it takes to pick a lock depends on the complexity. For simple locks, it only takes one action. And for complex locks, picking takes one minute. Since picking a simple lock is so quick, it will not burn a dungeon card. Attempting to pick a complex lock will burn a dungeon card (I'm rounding up). As such, if you fail to pick a complex lock, then you may be able to retry by "taking 20" just like retrying any other "exploration" task. For any lock (but particularly for simple locks), you may find that failing to pick the lock breaks it, rendering the door "stuck". I will not allow another character to "help" with lock picking actions (too many cooks in the kitchen).
+        </p>
         <h3>Torches and Lanterns</h3>
-        <p>To extinguish a torch, you must explain how you do that (water, smotherinig). If you extinguish a torch, it cannot be re-ignited; it is consumed. The PHB doesn't say this explicitly, but it is implied, because lanterns do explain that they can be turned on and off. You can abandon a lit torch and come back for it (so that you can enter a room stealthiliy, for example). Extinguishing or abandoning a torch will increase the threat level of the dungeon due to the smoke of extinguishing, or just from leaving such an obvious clue behind you. Lighting or extinguishing a torch or lantern requires an action.</p>
+        <p>To extinguish a torch, you must explain how you do that (water, smothering). If you extinguish a torch, it cannot be re-ignited; it is consumed. The PHB doesn't say this explicitly, but it is implied, because lanterns (technically the oil) <i>do</i> state that they can be turned on and off. You can abandon a lit torch and come back for it (so that you can enter a room stealthiliy, for example). Extinguishing or abandoning a torch will require rolling against the dungeon pool due to the smoke of extinguishing, or just from leaving such an obvious clue behind you. Lighting or extinguishing a torch or lantern requires an action.</p>
         <p></p>
         <h3>Keeping Watch</h3>
         <p>Characters can "keep watch" while the others are exploring. If a wandering monsters occurs while exploring, then the characters keeping watch might hear the monster coming before it gets there. If the monster is not being stealthy, then the PCs keeping watch automatically succeed at noticing the monster. Only if the monster is being sneaky should the PC roll a perception check vs the monster's stealth check. When a PC that is keeping watch notices a monster coming, this gives each PC one round to prepare before initiative is rolled. This means PCs can hide, cast a spell, drink a potion, etc. </p>
