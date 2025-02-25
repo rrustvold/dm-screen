@@ -182,15 +182,15 @@ function HordeMathInput(props) {
                 <thead>
                     <tr>
                         <td>Name</td>
-                        <td>Number of Monsters</td>
-                        <td>Attacks per Monster</td>
-                        <td>Attack Bonus</td>
-                        <td>Attack Damage</td>
+                        <td>Num. Mons</td>
+                        <td>Atks per Mon</td>
+                        <td>Atk Bonus</td>
+                        <td>Atk dmg</td>
                         <td>AC</td>
-                        <td>Damage</td>
-                        <td>HP</td>
-                        <td>Total HP (all monsters summed)</td>
-                        <td>Initiative</td>
+                        <td>Dmg</td>
+                        <td>Current HP</td>
+                        <td>Max Total HP</td>
+                        <td>Init</td>
                     </tr>
                 </thead>
                 <tbody>

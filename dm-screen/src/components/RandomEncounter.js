@@ -4,7 +4,8 @@ import {
     allEnvirons,
     changeEnviron, getFamily, randomFamily
 } from "./randomEncounter/Environs";
-import Roll, { hideShow } from "../utils";
+import Roll, { hideShow, getRandomThingFromList } from "../utils";
+import { getListFromEnviron } from "./Wilderness";
 
 
 function getModifierFromScore(score) {
@@ -293,6 +294,16 @@ export default function RandomEncounter2({party}){
                         }
                     }} class="w3-block" />
                 </p>
+            </div>
+            <div class="w3-container">
+                <input type="button" defaultValue="Dressing" onClick={
+                    () => {
+                        let dressing = document.getElementById("random-setting");
+                        let environ = document.getElementById("encounter-environ").value.toLowerCase();
+                        dressing.innerText = getRandomThingFromList(getListFromEnviron(environ));
+                    }
+                }/>
+                <p id="random-setting"></p>
             </div>
         </div>
     )

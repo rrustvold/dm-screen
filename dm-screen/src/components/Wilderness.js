@@ -52,27 +52,27 @@ function roll(sides, numDice=1) {
 }
 
 
-function getListFromEnviron(environ){
-    switch (environ) {
-        case "Grassland":
+export function getListFromEnviron(environ){
+    switch (environ.toLowerCase()) {
+        case "grassland":
             return grassland
-        case "Forest":
+        case "forest":
             return forest
-        case "Hills":
+        case "hills":
             return hills
-        case "Mountains":
+        case "mountains":
             return monuntains
-        case "Swamp":
+        case "swamp":
             return swamp
-        case "Farmland":
+        case "farmland":
             return grassland
-        case "Arctic":
+        case "arctic":
             return []
-        case "Desert":
+        case "desert":
             return desert
-        case "Underworld":
+        case "underworld":
             return []
-        case "Coast":
+        case "coast":
             return []
     }
 }
@@ -455,7 +455,7 @@ export default function Wilderness({party}) {
                 </div>
 
 
-                {/*<p>*/}
+                {/* <p>*/}
                 {/*    <label htmlFor="daysMarched">Days Marched: </label>*/}
                 {/*    <input type="text" id="daysMarched" className="w3-input"*/}
                 {/*           defaultValue="0"/><br/>*/}
@@ -517,7 +517,7 @@ export default function Wilderness({party}) {
                 {/*                (stealth)) </label>*/}
                 {/*        </p>*/}
                 {/*    </div>*/}
-                {/*</div>*/}
+                {/*</div> */}
 
                 <div id="weather" className="w3-panel w3-blue-gray">
                     <div className="w3-row-padded">
