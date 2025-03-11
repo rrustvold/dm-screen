@@ -5,7 +5,7 @@ import {
     changeEnviron, getFamily, randomFamily
 } from "./randomEncounter/Environs";
 import Roll, { hideShow, getRandomThingFromList } from "../utils";
-import { getListFromEnviron } from "./Wilderness";
+import {getListFromEnviron, getRandomEncounterDistance} from "./Wilderness";
 
 
 function getModifierFromScore(score) {
@@ -264,6 +264,9 @@ export default function RandomEncounter2({party}){
 
     let xp_values = [];
     let encounterBlock = [];
+
+
+
     encounterBlock.push(
         <>Monster Stealth: {encounter.minStealth}<br/></>
     )
@@ -280,22 +283,23 @@ export default function RandomEncounter2({party}){
         document.getElementById("monster-xp").value = xp_values.join(",");
     }
     return (
-        <div class="w3-container">
+        <div className="w3-container">
             <h1 onClick={() => hideShow("randomencounter")}>Random Encounter</h1>
-            <div class="w3-container w3-show" id="randomencounter">
-                <RandomEncounterInput setEncounter={setEncounter} party={party}></RandomEncounterInput>
+            <div className="w3-container w3-show" id="randomencounter">
+                <RandomEncounterInput setEncounter={setEncounter}
+                                      party={party}></RandomEncounterInput>
                 <p>
                     {encounterBlock}
                     <input type="button" defaultValue="Set" onClick={() => {
                         try {
                             setEncounter2(encounter)
                         } catch (exception) {
-                            
+
                         }
-                    }} class="w3-block" />
+                    }} class="w3-block"/>
                 </p>
             </div>
-            <div class="w3-container">
+            <div className="w3-container">
                 <input type="button" defaultValue="Dressing" onClick={
                     () => {
                         let dressing = document.getElementById("random-setting");
@@ -304,6 +308,16 @@ export default function RandomEncounter2({party}){
                     }
                 }/>
                 <p id="random-setting"></p>
+            </div>
+            <div className="w3-container">
+                <input type="button" defaultValue="Encounter Distance" onClick={
+                    () => {
+                        let encounterDistance = document.getElementById("encounter-distance");
+                        let environ = document.getElementById("encounter-environ").value.toLowerCase();
+                        encounterDistance.innerText = getRandomEncounterDistance(environ);
+                    }
+                }/>
+                <p id="encounter-distance"></p>
             </div>
         </div>
     )

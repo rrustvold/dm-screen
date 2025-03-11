@@ -77,6 +77,19 @@ export function getListFromEnviron(environ){
     }
 }
 
+export function getRandomEncounterDistance(environment){
+    console.log(environment);
+    if (["arctic", "desert", "farmland", "grassland", "badlands", "coast"].includes(environment)){
+        return roll(6, 6) * 10
+    } else if (["forest", "swamp", "underworld"].includes(environment)){
+        return roll(8, 2) * 10
+    } else if (["hills"].includes(environment)) {
+        return roll(10, 2) * 10
+    } else if (["mountains"].includes(environment)) {
+        return roll(10, 4) * 10
+    }
+}
+
 export default function Wilderness({party}) {
     let days = 0;
     let hours = 0;
@@ -260,17 +273,7 @@ export default function Wilderness({party}) {
 
     }
 
-    function getRandomEncounterDistance(environment){
-        if (["Arctic", "Desert", "Farmland", "Grassland", "Badlands", "Coast"].includes(environment)){
-            return roll(6, 6) * 10
-        } else if (["Forest", "Swamp", "Underworld"].includes(environment)){
-            return roll(8, 2) * 10
-        } else if (["Hills"].includes(environment)) {
-            return roll(10, 2) * 10
-        } else if (["Mountains"].includes(environment)) {
-            return roll(10, 4) * 10
-        }
-    }
+
 
     function changeEnviron(newEnviron) {
         setEnviron(newEnviron);
