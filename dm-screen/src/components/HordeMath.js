@@ -305,8 +305,8 @@ export default function HordeMathContainer({party, tableState, setTableState}) {
             <h1 onClick={() => hideShow("hordemath")}>Monster Math</h1>
             <div class="w3-container w3-show" id="hordemath">
                 <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={0}></HordeMath>
-                <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={1}></HordeMath>
-                <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={2}></HordeMath>
+                {/*<HordeMath party={party} tableState={tableState} setTableState={setTableState} count={1}></HordeMath>*/}
+                {/*<HordeMath party={party} tableState={tableState} setTableState={setTableState} count={2}></HordeMath>*/}
                 <input type="button" class="w3-button" defaultValue="Clear" onClick={clearMonsters} />
                 <input type="button" className="w3-button" value="save" onClick={() => save()}></input>
                 <input type="file" accept=".json" onChange={(event) => {load(event.target.files[0])}}></input>

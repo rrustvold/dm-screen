@@ -174,7 +174,6 @@
     - vultures
     - snakes
     - bugs
-    - hyena
     - gnolls
     - goblins
     - kobolds
@@ -261,7 +260,6 @@
     - hydra
 
 - underworld:
-    - giant-fire-beetle
     - bugs
     - spiders
     - kobolds

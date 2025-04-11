@@ -102,6 +102,7 @@ export function generate(party, difficulty, monsterSelection) {
                 randomNum = draws[Math.floor(Math.random() * drawLimit)];
             }
             monster = monsterList[randomNum];
+
             if (!maxInt || monster.int > maxInt) {
                 maxInt = monster.int;
             }

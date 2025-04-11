@@ -21,7 +21,7 @@ function App() {
         <Wilderness party={party}></Wilderness>
           <Party partySize={partySize} setPartySize={setPartySize} party={party} setParty={setParty}></Party>
           <HordeMathContainer party={party} tableState={tableState} setTableState={setTableState}></HordeMathContainer>
-          <Table tableState={tableState}></Table>
+          {/*<Table tableState={tableState}></Table>*/}
         
           <RandomEncounter2 party={party}></RandomEncounter2>
           <RandomTreasure party={party}></RandomTreasure>

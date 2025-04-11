@@ -41,7 +41,6 @@
     - swarm-of-spiders
 
 - vultures:
-    - vulture
     - giant-vulture
     - swarm-of-ravens
     - harpy
@@ -61,7 +60,6 @@
   - gnoll
   - gnoll-pack-lord
   - gnoll_fang_of_yeenoghu
-  - hyena
   - worg
 
 - snakes:
@@ -143,7 +141,6 @@
     - horned-devil
     - ice-devil
     - imp
-    - lemure
     - marilith
     - nalfeshnee
     - night-hag
@@ -160,7 +157,6 @@
     - gray-ooze
     - ochre-jelly
 - bats:
-  - bat
   - swarm-of-bats
   - giant-bat
 - golems:
@@ -200,11 +196,9 @@
     - yuan-ti-malison
 
 - bugs:
-    - scorpion
     - giant-scorpion
     - swarm-of-insects
     - giant-centipede
-    - giant-fire-beetle
 
 - blights:
     - needle-blight

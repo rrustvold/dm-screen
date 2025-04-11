@@ -5,7 +5,6 @@ const desertSolos = {
 	name: 'Other desert',
 	type: 'solo',
 	list: [
-		monsters.hyena, 
 		monsters.dust_mephit, 
 		monsters.air_elemental, 
 		monsters.cyclops, 

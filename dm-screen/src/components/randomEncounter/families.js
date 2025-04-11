@@ -38,7 +38,7 @@ export const spiders = {
 export const vultures = {
 	name: 'Vultures',
 	list: [
-		monsters.vulture, monsters.giant_vulture, monsters.swarm_of_ravens, monsters.harpy, monsters.vrock, 
+		monsters.giant_vulture, monsters.swarm_of_ravens, monsters.harpy, monsters.vrock, 
 	]
 }
 
@@ -59,7 +59,7 @@ export const gricks = {
 export const gnolls = {
 	name: 'Gnolls',
 	list: [
-		monsters.gnoll, monsters.gnoll_pack_lord, monsters.gnoll_fang_of_yeenoghu, monsters.hyena, monsters.worg, 
+		monsters.gnoll, monsters.gnoll_pack_lord, monsters.gnoll_fang_of_yeenoghu, monsters.worg, 
 	]
 }
 
@@ -129,7 +129,7 @@ export const wolves = {
 export const fiends = {
 	name: 'Fiends',
 	list: [
-		monsters.balor, monsters.barbed_devil, monsters.bearded_devil, monsters.bone_devil, monsters.chain_devil, monsters.dretch, monsters.erinyes, monsters.glabrezu, monsters.hezrou, monsters.hell_hound, monsters.horned_devil, monsters.ice_devil, monsters.imp, monsters.lemure, monsters.marilith, monsters.nalfeshnee, monsters.night_hag, monsters.nightmare, monsters.pit_fiend, monsters.quasit, monsters.rakshasa, monsters.succubus_incubus, monsters.vrock, 
+		monsters.balor, monsters.barbed_devil, monsters.bearded_devil, monsters.bone_devil, monsters.chain_devil, monsters.dretch, monsters.erinyes, monsters.glabrezu, monsters.hezrou, monsters.hell_hound, monsters.horned_devil, monsters.ice_devil, monsters.imp, monsters.marilith, monsters.nalfeshnee, monsters.night_hag, monsters.nightmare, monsters.pit_fiend, monsters.quasit, monsters.rakshasa, monsters.succubus_incubus, monsters.vrock, 
 	]
 }
 
@@ -143,7 +143,7 @@ export const oozes = {
 export const bats = {
 	name: 'Bats',
 	list: [
-		monsters.bat, monsters.swarm_of_bats, monsters.giant_bat, 
+		monsters.swarm_of_bats, monsters.giant_bat, 
 	]
 }
 
@@ -199,7 +199,7 @@ export const yuan_tis = {
 export const bugs = {
 	name: 'Bugs',
 	list: [
-		monsters.scorpion, monsters.giant_scorpion, monsters.swarm_of_insects, monsters.giant_centipede, monsters.giant_fire_beetle, 
+		monsters.giant_scorpion, monsters.swarm_of_insects, monsters.giant_centipede, 
 	]
 }
 

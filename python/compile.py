@@ -36,6 +36,9 @@ with open(monsters_file, "w") as file:
             name = key.capitalize()
 
         xp = monster[key]["xp"]
+        if xp < 25:
+            # Don't include CR 0 monsters
+            continue
         _int = monster[key].get("int", 0)
         dex = monster[key].get("dex", 0)
         stealth = monster[key].get("stealth", 0)

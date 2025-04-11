@@ -346,18 +346,6 @@ export const assassin = {
 	hp: 78,
 }
 
-export const awakened_shrub = {
-	key: 'awakened_shrub',
-	name: 'Awakened Shrub',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/awakened-shrub',
-	int: 10,
-	dex: 8,
-	stealth: 0,
-	ac: 9,
-	hp: 10,
-}
-
 export const awakened_tree = {
 	key: 'awakened_tree',
 	name: 'Awakened Tree',
@@ -392,30 +380,6 @@ export const azer = {
 	stealth: 0,
 	ac: 15,
 	hp: 39,
-}
-
-export const baboon = {
-	key: 'baboon',
-	name: 'Baboon',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/baboon',
-	int: 4,
-	dex: 14,
-	stealth: 0,
-	ac: 12,
-	hp: 3,
-}
-
-export const badger = {
-	key: 'badger',
-	name: 'Badger',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/badger',
-	int: 2,
-	dex: 11,
-	stealth: 0,
-	ac: 10,
-	hp: 3,
 }
 
 export const balor = {
@@ -476,18 +440,6 @@ export const basilisk = {
 	stealth: 0,
 	ac: 12,
 	hp: 52,
-}
-
-export const bat = {
-	key: 'bat',
-	name: 'Bat',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/bat',
-	int: 2,
-	dex: 15,
-	stealth: 0,
-	ac: 12,
-	hp: 1,
 }
 
 export const bearded_devil = {
@@ -694,18 +646,6 @@ export const camel = {
 	hp: 15,
 }
 
-export const cat = {
-	key: 'cat',
-	name: 'Cat',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/cat',
-	int: 3,
-	dex: 15,
-	stealth: 4,
-	ac: 12,
-	hp: 2,
-}
-
 export const centaur = {
 	key: 'centaur',
 	name: 'Centaur',
@@ -802,18 +742,6 @@ export const cockatrice = {
 	hp: 27,
 }
 
-export const commoner = {
-	key: 'commoner',
-	name: 'Commoner',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/commoner',
-	int: 10,
-	dex: 10,
-	stealth: 0,
-	ac: 10,
-	hp: 4,
-}
-
 export const constrictor_snake = {
 	key: 'constrictor_snake',
 	name: 'Constrictor Snake',
@@ -848,18 +776,6 @@ export const couatl = {
 	stealth: 0,
 	ac: 19,
 	hp: 97,
-}
-
-export const crab = {
-	key: 'crab',
-	name: 'Crab',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/crab',
-	int: 1,
-	dex: 11,
-	stealth: 2,
-	ac: 11,
-	hp: 2,
 }
 
 export const crocodile = {
@@ -932,18 +848,6 @@ export const deep_gnome_svirfneblin = {
 	stealth: 4,
 	ac: 15,
 	hp: 16,
-}
-
-export const deer = {
-	key: 'deer',
-	name: 'Deer',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/deer',
-	int: 2,
-	dex: 16,
-	stealth: 0,
-	ac: 13,
-	hp: 4,
 }
 
 export const deva = {
@@ -1102,18 +1006,6 @@ export const dust_mephit = {
 	hp: 17,
 }
 
-export const eagle = {
-	key: 'eagle',
-	name: 'Eagle',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/eagle',
-	int: 2,
-	dex: 15,
-	stealth: 0,
-	ac: 12,
-	hp: 3,
-}
-
 export const earth_elemental = {
 	key: 'earth_elemental',
 	name: 'Earth Elemental',
@@ -1256,18 +1148,6 @@ export const flying_sword = {
 	stealth: 0,
 	ac: 17,
 	hp: 17,
-}
-
-export const frog = {
-	key: 'frog',
-	name: 'Frog',
-	xp: 0,
-	link: 'https://www.dndbeyond.com/monsters/frog',
-	int: 1,
-	dex: 13,
-	stealth: 3,
-	ac: 11,
-	hp: 1,
 }
 
 export const frost_giant = {
@@ -1460,18 +1340,6 @@ export const giant_elk = {
 	stealth: 0,
 	ac: 14,
 	hp: 42,
-}
-
-export const giant_fire_beetle = {
-	key: 'giant_fire_beetle',
-	name: 'Giant Fire Beetle',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/giant-fire-beetle',
-	int: 1,
-	dex: 10,
-	stealth: 0,
-	ac: 13,
-	hp: 4,
 }
 
 export const giant_frog = {
@@ -1738,18 +1606,6 @@ export const gnoll = {
 	hp: 22,
 }
 
-export const goat = {
-	key: 'goat',
-	name: 'Goat',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/goat',
-	int: 2,
-	dex: 10,
-	stealth: 0,
-	ac: 10,
-	hp: 4,
-}
-
 export const goblin = {
 	key: 'goblin',
 	name: 'Goblin',
@@ -1918,18 +1774,6 @@ export const harpy = {
 	hp: 38,
 }
 
-export const hawk = {
-	key: 'hawk',
-	name: 'Hawk',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/hawk',
-	int: 2,
-	dex: 16,
-	stealth: 0,
-	ac: 13,
-	hp: 1,
-}
-
 export const hell_hound = {
 	key: 'hell_hound',
 	name: 'Hell Hound',
@@ -1990,18 +1834,6 @@ export const hobgoblin = {
 	hp: 11,
 }
 
-export const homunculus = {
-	key: 'homunculus',
-	name: 'Homunculus',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/homunculus',
-	int: 10,
-	dex: 15,
-	stealth: 0,
-	ac: 13,
-	hp: 5,
-}
-
 export const horned_devil = {
 	key: 'horned_devil',
 	name: 'Horned Devil',
@@ -2036,18 +1868,6 @@ export const hydra = {
 	stealth: 0,
 	ac: 15,
 	hp: 172,
-}
-
-export const hyena = {
-	key: 'hyena',
-	name: 'Hyena',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/hyena',
-	int: 2,
-	dex: 13,
-	stealth: 0,
-	ac: 11,
-	hp: 5,
 }
 
 export const ice_devil = {
@@ -2110,18 +1930,6 @@ export const iron_golem = {
 	hp: 210,
 }
 
-export const jackal = {
-	key: 'jackal',
-	name: 'Jackal',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/jackal',
-	int: 3,
-	dex: 15,
-	stealth: 0,
-	ac: 12,
-	hp: 3,
-}
-
 export const killer_whale = {
 	key: 'killer_whale',
 	name: 'Killer Whale',
@@ -2182,18 +1990,6 @@ export const lamia = {
 	hp: 97,
 }
 
-export const lemure = {
-	key: 'lemure',
-	name: 'Lemure',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/lemure',
-	int: 1,
-	dex: 5,
-	stealth: 0,
-	ac: 7,
-	hp: 13,
-}
-
 export const lich = {
 	key: 'lich',
 	name: 'Lich',
@@ -2216,18 +2012,6 @@ export const lion = {
 	stealth: 6,
 	ac: 12,
 	hp: 26,
-}
-
-export const lizard = {
-	key: 'lizard',
-	name: 'Lizard',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/lizard',
-	int: 1,
-	dex: 11,
-	stealth: 0,
-	ac: 10,
-	hp: 2,
 }
 
 export const lizardfolk = {
@@ -2494,18 +2278,6 @@ export const ochre_jelly = {
 	hp: 45,
 }
 
-export const octopus = {
-	key: 'octopus',
-	name: 'Octopus',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/octopus',
-	int: 3,
-	dex: 15,
-	stealth: 4,
-	ac: 12,
-	hp: 3,
-}
-
 export const ogre = {
 	key: 'ogre',
 	name: 'Ogre',
@@ -2564,18 +2336,6 @@ export const otyugh = {
 	stealth: 0,
 	ac: 14,
 	hp: 114,
-}
-
-export const owl = {
-	key: 'owl',
-	name: 'Owl',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/owl',
-	int: 2,
-	dex: 13,
-	stealth: 3,
-	ac: 11,
-	hp: 1,
 }
 
 export const owlbear = {
@@ -2746,18 +2506,6 @@ export const quasit = {
 	hp: 7,
 }
 
-export const quipper = {
-	key: 'quipper',
-	name: 'Quipper',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/quipper',
-	int: 1,
-	dex: 16,
-	stealth: 0,
-	ac: 13,
-	hp: 1,
-}
-
 export const rakshasa = {
 	key: 'rakshasa',
 	name: 'Rakshasa',
@@ -2768,30 +2516,6 @@ export const rakshasa = {
 	stealth: 0,
 	ac: 16,
 	hp: 110,
-}
-
-export const rat = {
-	key: 'rat',
-	name: 'Rat',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/rat',
-	int: 2,
-	dex: 11,
-	stealth: 0,
-	ac: 10,
-	hp: 1,
-}
-
-export const raven = {
-	key: 'raven',
-	name: 'Raven',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/raven',
-	int: 2,
-	dex: 14,
-	stealth: 0,
-	ac: 12,
-	hp: 1,
 }
 
 export const red_dragon_wyrmling = {
@@ -2950,18 +2674,6 @@ export const satyr = {
 	hp: 31,
 }
 
-export const scorpion = {
-	key: 'scorpion',
-	name: 'Scorpion',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/scorpion',
-	int: 1,
-	dex: 11,
-	stealth: 0,
-	ac: 11,
-	hp: 1,
-}
-
 export const scout = {
 	key: 'scout',
 	name: 'Scout',
@@ -2984,18 +2696,6 @@ export const sea_hag = {
 	stealth: 0,
 	ac: 14,
 	hp: 52,
-}
-
-export const sea_horse = {
-	key: 'sea_horse',
-	name: 'Sea Horse',
-	xp: 0,
-	link: 'https://www.dndbeyond.com/monsters/sea-horse',
-	int: 1,
-	dex: 12,
-	stealth: 0,
-	ac: 11,
-	hp: 1,
 }
 
 export const shadow = {
@@ -3032,18 +2732,6 @@ export const shield_guardian = {
 	stealth: 0,
 	ac: 17,
 	hp: 142,
-}
-
-export const shrieker = {
-	key: 'shrieker',
-	name: 'Shrieker',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/shrieker',
-	int: 1,
-	dex: 1,
-	stealth: 0,
-	ac: 5,
-	hp: 13,
 }
 
 export const silver_dragon_wyrmling = {
@@ -3092,18 +2780,6 @@ export const specter = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
-}
-
-export const spider = {
-	key: 'spider',
-	name: 'Spider',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/spider',
-	int: 1,
-	dex: 14,
-	stealth: 4,
-	ac: 12,
-	hp: 1,
 }
 
 export const spirit_naga = {
@@ -3526,18 +3202,6 @@ export const vrock = {
 	hp: 104,
 }
 
-export const vulture = {
-	key: 'vulture',
-	name: 'Vulture',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/vulture',
-	int: 2,
-	dex: 10,
-	stealth: 0,
-	ac: 10,
-	hp: 5,
-}
-
 export const warhorse = {
 	key: 'warhorse',
 	name: 'Warhorse',
@@ -3572,18 +3236,6 @@ export const water_elemental = {
 	stealth: 0,
 	ac: 14,
 	hp: 114,
-}
-
-export const weasel = {
-	key: 'weasel',
-	name: 'Weasel',
-	xp: 10,
-	link: 'https://www.dndbeyond.com/monsters/weasel',
-	int: 2,
-	dex: 16,
-	stealth: 5,
-	ac: 13,
-	hp: 1,
 }
 
 export const werebear_bear = {

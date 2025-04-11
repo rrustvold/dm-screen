@@ -5,7 +5,6 @@ const underworldSolos = {
 	name: 'Other underworld',
 	type: 'solo',
 	list: [
-		monsters.giant_fire_beetle, 
 		monsters.troglodyte, 
 		monsters.darkmantle, 
 		monsters.magma_mephit, 
