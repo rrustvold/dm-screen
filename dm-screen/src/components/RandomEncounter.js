@@ -36,6 +36,9 @@ function getPartyLimits(party){
     let limits = [0, 0, 0, 0];
     for (let i=0; i < party.length; i++) {
         let pc = party[i];
+        if (pc.level === null || pc.level === ""){
+            continue
+        }
         for (let j=0; j < 4; j++) {
             limits[j] += encounter_difficulty[Number(pc.level) - 1][j];
         }
