@@ -46,27 +46,32 @@
         <p class="h1" style="background-color: rgba(164, 37, 37, 0.5);">Venture into the wilds to defeat the gargantuan Keepers, raid the twelve forbidden temples, and steal their ancient secrets </p>
     </div>
 </div>
-<nav class="navbar navbar-expand navbar-dark sticky-top" style="background: rgba(164, 37, 37, .9)">
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background: rgba(164, 37, 37, .9)">
     <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#intro">Campaign Concepts</a></li>
-        <li class="nav-item"><a class="nav-link" href="#campaign-background">Campaign Background</a></li>
-          <li class="nav-item dropdown"><a class="nav-link" href="#character-creation">Character Management</a></li>
-                
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Player's Guide</a>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="#maps">Wilderness Exploration</a></li>
-                  <li><a class="dropdown-item" href="#food">Foraging</a></li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#intro">Campaign Concepts</a></li>
+            <li class="nav-item"><a class="nav-link" href="#campaign-background">Campaign Background</a></li>
+              <li class="nav-item dropdown"><a class="nav-link" href="#character-creation">Character Management</a></li>
+<!--              <li class="nav-item dropdown"><a class="nav-link" href="#maps">Wilderness Exploration</a></li>-->
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Player's Guide</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item" href="#maps">Wilderness Exploration</a></li>
+                      <li><a class="dropdown-item" href="#food">Foraging</a></li>
 
-                  <li><a class="dropdown-item" href="#combat">Combat</a></li>
-                  <li><a class="dropdown-item" href="#dungeon">Dungeon Delving</a></li>
-                  <li><a class="dropdown-item" href="#downtime">Downtime</a></li>
-                  <li><a class="dropdown-item" href="#bastions">Bastions</a></li>
-              </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1zYdwbik9tyRS4rOM7D6j9VWznc8y6XiU/view?usp=sharing" target="_blank">Last Haven Map</a></li>
-      </ul>
+                      <li><a class="dropdown-item" href="#combat">Combat</a></li>
+                      <li><a class="dropdown-item" href="#dungeon">Dungeon Delving</a></li>
+                      <li><a class="dropdown-item" href="#downtime">Downtime</a></li>
+                      <li><a class="dropdown-item" href="#bastions">Bastions</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="https://drive.google.com/file/d/1zYdwbik9tyRS4rOM7D6j9VWznc8y6XiU/view?usp=sharing" target="_blank">Last Haven Map</a></li>
+          </ul>
+        </div>
     </div>
 </nav>
 <div id="intro">
@@ -412,7 +417,7 @@
         <p>Supposedly the game stays "balanced" as long as the difference between the highest and lowest level characters in a party is no more than 2 levels. And so I will declare this a rule. This means all players need to bring characters that are within two levels of each other. If you don't have a character that satisfies this requirement, then you may need to create a new first level character; this might require some negotiation between you and the other players to work out a party that satisfies this constraint.</p>
     </div>
 </div>
-
+</div>
 <div id="players-guide">
     <div class="bgimage-1" style="background-image: url('https://wallpapercave.com/wp/wp3660706.jpg'); background-position: center center;">
         <h1 class="display-1 fw-bold" style="position: absolute; bottom: 0">PLAYER'S GUIDE TO LAST HAVEN</h1>
@@ -744,7 +749,7 @@ If the creature lacks a climb speed, or has insufficient climb speed to cover th
 <h2 id="discounts-and-bonuses-from-renown">Discounts and Bonuses from Renown</h2>
 Depending on your renown with a faction, you can realize discounts and bonuses with that faction. The amount of the discount or bonus is determined by the Renown score you have with that faction per the table below.
 
-<div class="container pt-5 pb-5">
+<div class="table-responsive fixed-table-body mt-5 mb-5">
 <table class="table">
 <thead>
 <tr>
@@ -797,7 +802,7 @@ Depending on your renown with a faction, you can realize discounts and bonuses w
         <p>Here&#39;s how we&#39;re gonna do bastions.  Establishing a bastion is optional. If you want to keep the game simpler, then ignore all this. If you want to increase the complexity of the game, then read on. To truly follow along with all this, you are going to need a DMG to understand the normal rules for bastions. I am heavily extending the rules for bastions from what is presented in the DMG. But even still, you will need access to those rules. The intent behind my modifications is to turn 5E bastions into something that resembles the old-school &quot;domain&quot; play.</p>
         <p>The rules I propose below are much more expansive than I usually try to be. But since the default rules for bastions are not included in the player&#39;s handbook, I feel no obligation to play them RAW.</p>
         <h2 id="who-can-establish-a-bastion">Who can establish a bastion</h2>
-        <p>All classes except for barbarians may establish bastions. Bastions include the physical building of course, but also the hiring of various followers and skilled hirelings. A bastion will also grow a population around it. And I just don&#39;t see barbarians settling down like that. Rogue characters may establish bastions, however, theirs are very different than other classes.</p>
+        <p>All classes except for barbarians may establish bastions. Bastions include the physical building of course, but also the hiring of various followers and skilled hirelings. A bastion will also grow a population around it. And I just don&#39;t see barbarians settling down like that (but I'm open to suggestions on this). Rogue characters may establish bastions, however, theirs are very different than other classes.</p>
         <h2 id="when-can-a-character-establish-a-bastion">When can a character establish a bastion</h2>
         <p>A character can establish a bastion any time after attaining 5th level. Each character can only have one. Contrary to the DMG, we will not just ret-con a bastion into existence when you hit 5th level. You will need to construct one from scratch, or claim an existing structure to be your bastion.</p>
         <h2 id="what-does-a-bastion-do">What does a bastion do</h2>
@@ -809,16 +814,17 @@ Depending on your renown with a faction, you can realize discounts and bonuses w
         <h5 id="normal-population-change">Normal population change</h5>
         <p>Each bastion turn, I will roll some dice to determine how your bastion population changes. For any given turn, the population will likely change around +/- 15% (not sure, haven&#39;t figured out the math yet).</p>
         <h5 id="art-">Art!</h5>
-        <p>If you return art to your bastion, then your population will grow. For every 5 gp of value in art you return to your bastion, your population will increase by one. So if you return a &quot;bronze crown&quot; worth 1000 gp from an adventure, you can grow your bastion population by 500. Or you can sell it like treasure as normal. But you can&#39;t do both. Once you give the art to your people, it&#39;s &quot;gone&quot; or spent.</p>
+        <p>If you return art to your bastion, then your population will grow. For every 5 gp of value in art you return to your bastion, your population will increase by one. So if you return a &quot;bronze crown&quot; worth 1000 gp from an adventure, you can grow your bastion population by 200. Or you can sell it like treasure as normal. But you can&#39;t do both. Once you give the art to your people, it&#39;s &quot;gone&quot; or spent.</p>
         <h5 id="attacks">Attacks</h5>
         <p>If your bastion is attacked, and you have no defenders, then your population will suffer heavily. Or, if you are attacked and lose all defenders, your population will suffer.</p>
         <h3 id="alternative-starting-locations-i-e-fast-travel-">Alternative Starting Locations (i.e. fast travel)</h3>
         <p>When you begin a game session, instead of starting from Last Haven, you can begin your adventure from any bastion. To do so, you must pay a toll to each bastion that you travel through (including the final bastion). A PC does not need to pay a toll to his or her own bastion. The owner of a bastion can also issue letters of passage to other PCs or NPCs. (These letters could also be forged). The amount that a bastion charges in tolls is determined by its population.</p>
         <p>The bastion owner collects all tolls that go through their bastion. I will keep record of how many PCs and NPCs go through your bastion, and issue funds to your character.</p>
         <h3 id="services">Services</h3>
-        <p>The village, town, or city that surrounds your bastion can be used to purchase equipment or spellcasting services from. The maximum value of anything that can be purchased is given in the table below.</p>
+        <p>The village, town, or city that surrounds your bastion can be used to purchase equipment or spellcasting services. The maximum value of anything that can be purchased is given in the table below. (Last Haven is considered a Town).</p>
         <p>Initially the populace around your bastion is a &quot;village&quot;. As such, you can hire spellcasters from your village to cast level 3 or lower spells for you or another PC (see the rules for spellcasting services in the player&#39;s handbook). As lord or lady of your bastion, you realize a 25% discount on all spellcasting services, and equipment purchased, from your bastion. You may not extend your discount to other player characters; only the bastion owner can realize it. As your followers grow in numbers, the village will upgrade to a town, and then a city, further expanding your access to additional spellcasting services, and equipment.</p>
-        <table class="table">
+        <div class="table-responsive fixed-table-body">
+        <table class="table responsive">
         <thead>
         <tr>
         <th></th>
@@ -852,6 +858,7 @@ Depending on your renown with a faction, you can realize discounts and bonuses w
         </tr>
         </tbody>
         </table>
+        </div>
         <h3 id="effects-on-lifestyle-and-renown">Effects on Lifestyle and Renown</h3>
         <p>Once a character establishes their bastion, that character no longer pays lifestyle expenses. The character will retain its renown with the factions of Last Haven, however, they can no longer be increased by paying lifestyle expenses. You might be able to improve your renown in other ways however (undertaking quests on their behalf).</p>
         <h2 id="how-can-a-bastion-be-established">How can a bastion be established</h2>
@@ -863,7 +870,7 @@ Depending on your renown with a faction, you can realize discounts and bonuses w
         <h3 id="roads">Roads</h3>
         <p>Your bastion must be connected to at least one other bastion or Last Haven by a road. The road is constructed by the Curator&#39;s guild. It takes one week per hex to construct a road, but this can be accelerated with good renown with the curator&#39;s guild. The road&#39;s construction happens in parallel with any bastion construction. A bastion cannot be used as a starting location until the road is finished.</p>
         <h2 id="where-can-a-bastion-be-established">Where can a bastion be established</h2>
-        <p>Where a bastion can be established is dependent on the radius of the new bastion, which is determined by your class. A new bastion must be established within &quot;reach&quot; of another bastion or Last Haven. When completed, there should exist a safe path that can be traveled from Last Haven to the new Bastion. For example, if a fighter is to establish a bastion, then he or she must establish it within 8 tiles of Last Haven or another friendly Bastion.</p>
+        <p>Where a bastion can be established is dependent on the radius of the new bastion, which is determined by your class, and presented in the table below. A new bastion must be established no further than its radius from another bastion or Last Haven. When completed, there should exist a safe path that can be traveled from Last Haven to the new Bastion. For example, if a fighter is to establish a bastion, then he or she must establish it within 8 tiles of Last Haven or another friendly Bastion.</p>
         <table class="table">
         <thead>
         <tr>
@@ -929,7 +936,7 @@ Depending on your renown with a faction, you can realize discounts and bonuses w
         <p>At the start of each session I will ask you to take a bastion turn. This essentially asks, &quot;what has your bastion facilities been doing&quot;. If you know you are going to issue bastion orders, you can probably resolve them beforehand on your own without taking up much table time. Or you can default to the &quot;maintain &quot; order in which case we may need to roll some dice at the table.</p>
         <p>Whenever a PC takes a bastion turn, I will also resolve bastion turns for all other bastions in the campaign, even if the player is not present. If the player is not present to issue orders, then the &quot;maintain&quot; order is assumed. When absent players return, I will fill them in on what happened while they were gone.</p>
         <h2 id="rogues">Rogues</h2>
-        <p>Rather than constructing castles or towers, rogues establish bastions by running thieve&#39;s guilds amongst other character bastions. When a rogue establishes a bastion, it must be in another character&#39;s existing bastion (hence the radius of 0). Rogues do not need to make a pilgrimage to establish their bastions. The thieves appear like normal commoners to the host bastion owner. Rogues do not need permission to set up these guilds (in fact they should keep it secret). Whenever the host bastion collects tolls, the thieves will steal a percentage of the total tolls. </p>
+        <p>Rather than constructing castles or towers, rogues establish bastions by running thieve&#39;s guilds amongst other character bastions. When a rogue establishes a bastion, it must be in another character&#39;s existing bastion (hence the radius of 0). Rogues do not need to make a pilgrimage to establish their bastions. The thieves appear like normal commoners to the host bastion owner. Rogues do not need permission to set up these guilds (in fact they should keep it secret). Whenever the host bastion collects tolls, the thieves will steal a percentage of the total tolls. The owner of a rogue bastion will also be informed of any PC and NPC movement through the bastion.</p>
         
     </div>
 </div>
