@@ -8,7 +8,10 @@ import {useState} from "react";
 import HordeMathContainer from "./components/HordeMath";
 import RandomDungeon from './components/randomDungeon/RandomDungeon';
 import RandomEncounter2 from "./components/RandomEncounter";
-import {RandomTreasure} from "./components/randomDungeon/RandomTreasure";
+import {
+    RandomTreasure,
+    RandomTreasureHorde
+} from "./components/randomDungeon/RandomTreasure";
 import Table from "./components/Table";
 
 function App() {
@@ -25,6 +28,7 @@ function App() {
         
           <RandomEncounter2 party={party}></RandomEncounter2>
           <RandomTreasure party={party}></RandomTreasure>
+          <RandomTreasureHorde></RandomTreasureHorde>
         <RandomDungeon></RandomDungeon>
         
           <DamageSeverity></DamageSeverity>

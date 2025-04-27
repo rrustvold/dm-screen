@@ -14,6 +14,76 @@ class Treasure{
   }
 }
 
+function randomGemCollection(targetValue) {
+  let value = 0;
+  let gems = [];
+  let gemValues = [10, 50, 100, 500, 1000, 5000];
+
+  while (value < targetValue) {
+    let i = Roll(6) - 1;
+    let testGem = gemValues[i];
+    if (value + testGem <= targetValue + gemValues[0]) {
+      gems.push(testGem);
+      value += testGem;
+    }
+  }
+  return gems
+}
+
+
+function randomArtCollection(targetValue) {
+  let value = 0;
+  let art = [];
+  let artValues = [25, 250, 750, 2500, 7500];
+
+  while (value < targetValue) {
+    let i = Roll(5) - 1;
+    let testArt = artValues[i];
+    if (value + testArt <= targetValue + artValues[0]) {
+      art.push(testArt);
+      value += testArt;
+    }
+  }
+  return art
+}
+
+function randomCoinCollection(targetValue) {
+  let cp = targetValue * .2 * 100;
+  let sp = targetValue * .4 * 10;
+  let ep = targetValue * .1 * 2;
+  let gp = targetValue * .25;
+  let pp = targetValue * .05 * .1;
+  return [cp, sp, ep, gp, pp]
+}
+
+function randomTreasureHorde(tier, set){
+  let grossValue;
+  let numMagicItems;
+  console.log("tier" + tier);
+  if (tier === 1){
+    grossValue = Roll(4, 2) * 100;
+    numMagicItems = Roll(4, 1) - 1;
+  } else if (tier === 2) {
+    grossValue = Roll(10, 8) * 100;
+    numMagicItems = Roll(3, 1);
+  } else if (tier === 3) {
+    grossValue = Roll(8, 8) * 10000;
+    numMagicItems = Roll(4, 1);
+  } else if (tier === 4) {
+    grossValue = Roll(10, 6) * 10000;
+    numMagicItems = Roll(6, 1);
+  }
+  console.log("Gross value is " + grossValue);
+  let coinValue = .3 * grossValue;
+  let treasure = randomCoinCollection(coinValue);
+  let gemValue = .2 * grossValue;
+  treasure.push(randomGemCollection(gemValue));
+  let artValue = .5 * grossValue;
+  treasure.push(randomArtCollection(artValue));
+  console.log("treasure = " + treasure);
+  set(new Treasure(...treasure));
+}
+
 function randomMonsterTreasure(treasure, xp) {
 
     let roll = Math.floor(Math.random() * 100) + 1;
@@ -127,5 +197,54 @@ export function RandomTreasure({party}){
          
       </div>
     </div>
+  )
+}
+
+
+export function RandomTreasureHorde() {
+  const [treasureHorde, setTreasureHorde] = useState(new Treasure(0, 0, 0, 0, 0, [], [], []));
+
+  return (
+      <div className="w3-container">
+        <h1 onClick={() => hideShow("randomtreasurehorde")}>Random Treasure Horde</h1>
+        <div className="w3-container w3-show" id="randomtreasurehorde">
+          <label htmlFor="adventure-tier">Adventure Tier: </label>
+          <select id="adventure-tier" className="w3-input" namd="adventure-tier">
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+          </select>
+
+          <input type="button" defaultValue="Treasure" className="w3-bar"
+                 onClick={() => randomTreasureHorde(Number(document.getElementById("adventure-tier").value), setTreasureHorde)}/><br/>
+          <div className="w3-row-padding">
+            <div className="w3-col m2">
+              CP: {treasureHorde.cp}
+            </div>
+            <div className="w3-col m2">
+              SP: {treasureHorde.sp}
+            </div>
+            <div className="w3-col m2">
+              EP: {treasureHorde.ep}
+            </div>
+            <div className="w3-col m2">
+              GP: {treasureHorde.gp}
+            </div>
+            <div className="w3-col m2">
+              PP: {treasureHorde.pp}
+            </div>
+            <div className="w3-col m2">
+              Gems: {treasureHorde.gems.join(",")}
+            </div>
+            <div className="w3-col m2">
+              Art: {treasureHorde.art.join(",")}
+            </div>
+            <div className="w3-col m2"></div>
+
+          </div>
+
+        </div>
+      </div>
   )
 }
