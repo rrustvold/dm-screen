@@ -274,7 +274,7 @@ function HordeMath({party, tableState, setTableState, count}) {
 
 
     return (
-            <div class="w3-container">
+            <div class="w3-responsive">
                 <HordeMathInput
                     numAttackers={numAttackers}
                     setNumAttackers={setNumAttackers}

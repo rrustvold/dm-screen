@@ -16,14 +16,21 @@ class Treasure{
 
 function randomGemCollection(targetValue) {
   let value = 0;
-  let gems = [];
   let gemValues = [10, 50, 100, 500, 1000, 5000];
+  let gems = {
+    10: 0,
+    50: 0,
+    100: 0,
+    500: 0,
+    1000: 0,
+    5000: 0,
+  }
 
   while (value < targetValue) {
     let i = Roll(6) - 1;
     let testGem = gemValues[i];
     if (value + testGem <= targetValue + gemValues[0]) {
-      gems.push(testGem);
+      gems[testGem] += 1
       value += testGem;
     }
   }
@@ -33,14 +40,20 @@ function randomGemCollection(targetValue) {
 
 function randomArtCollection(targetValue) {
   let value = 0;
-  let art = [];
   let artValues = [25, 250, 750, 2500, 7500];
+  let art = {
+    25: 0,
+    250: 0,
+    750: 0,
+    2500: 0,
+    7500: 0,
+  }
 
   while (value < targetValue) {
     let i = Roll(5) - 1;
     let testArt = artValues[i];
     if (value + testArt <= targetValue + artValues[0]) {
-      art.push(testArt);
+      art[testArt] += 1;
       value += testArt;
     }
   }
@@ -56,6 +69,106 @@ function randomCoinCollection(targetValue) {
   return [cp, sp, ep, gp, pp]
 }
 
+function randomMagicItemCollection(tier) {
+  function subCollection() {
+    return {
+      "Arcana": 0,
+      "Armaments": 0,
+      "Implements": 0,
+      "Relics": 0,
+    }
+  }
+
+  function randomType() {
+    let typeRoll = Roll(4);
+    let type;
+    if (typeRoll === 1) {
+      type = "Arcana";
+    } else if (typeRoll === 2) {
+      type = "Armaments";
+    } else if (typeRoll === 3) {
+      type = "Implements";
+    } else {
+      type = "Relics";
+    }
+
+    return type
+  }
+
+  let collection = {
+    "Common": subCollection(),
+    "Uncommon": subCollection(),
+    "Rare": subCollection(),
+    "Very Rare": subCollection(),
+    "Legendary": subCollection(),
+  }
+
+  if (tier === 1) {
+    let numObjects = Roll(4) - 1;
+    for (let i = 0; i < numObjects; i++) {
+      let rarityRoll = Roll(100);
+      let rarity;
+      if (rarityRoll <= 54) {
+        rarity = "Common";
+      } else if (rarityRoll <= 91) {
+        rarity = "Uncommon";
+      } else {
+        rarity = "Rare";
+      }
+      collection[rarity][randomType()] += 1
+    }
+  } else if (tier === 2) {
+    let numObjects = Roll(3);
+    for (let i = 0; i < numObjects; i++) {
+      let rarityRoll = Roll(100);
+      let rarity;
+      if (rarityRoll <= 30) {
+        rarity = "Common";
+      } else if (rarityRoll <= 81) {
+        rarity = "Uncommon";
+      } else if (rarityRoll <= 98) {
+        rarity = "Rare";
+      } else if (rarityRoll <= 100) {
+        rarity = "Very Rare";
+      }
+      collection[rarity][randomType()] += 1
+    }
+  } else if (tier === 3) {
+    let numObjects = Roll(4);
+    for (let i = 0; i < numObjects; i++) {
+      let rarityRoll = Roll(100);
+      let rarity;
+      if (rarityRoll <= 11) {
+        rarity = "Common";
+      } else if (rarityRoll <= 34) {
+        rarity = "Uncommon";
+      } else if (rarityRoll <= 70) {
+        rarity = "Rare";
+      } else if (rarityRoll <= 93) {
+        rarity = "Very Rare";
+      } else {
+        rarity = "Legendary";
+      }
+      collection[rarity][randomType()] += 1
+    }
+  } else if (tier === 4) {
+    let numObjects = Roll(6);
+    for (let i = 0; i < numObjects; i++) {
+      let rarityRoll = Roll(100);
+      let rarity;
+      if (rarityRoll <= 20) {
+        rarity = "Rare";
+      } else if (rarityRoll <= 64) {
+        rarity = "Very Rare";
+      } else {
+        rarity = "Legendary";
+      }
+      collection[rarity][randomType()] += 1
+    }
+  }
+
+  return collection
+}
 function randomTreasureHorde(tier, set){
   let grossValue;
   let numMagicItems;
@@ -67,7 +180,7 @@ function randomTreasureHorde(tier, set){
     grossValue = Roll(10, 8) * 100;
     numMagicItems = Roll(3, 1);
   } else if (tier === 3) {
-    grossValue = Roll(8, 8) * 10000;
+    grossValue = Roll(8, 8) * 1000;
     numMagicItems = Roll(4, 1);
   } else if (tier === 4) {
     grossValue = Roll(10, 6) * 10000;
@@ -80,6 +193,9 @@ function randomTreasureHorde(tier, set){
   treasure.push(randomGemCollection(gemValue));
   let artValue = .5 * grossValue;
   treasure.push(randomArtCollection(artValue));
+
+  treasure.push(randomMagicItemCollection(tier));
+
   console.log("treasure = " + treasure);
   set(new Treasure(...treasure));
 }
@@ -191,7 +307,6 @@ export function RandomTreasure({party}){
           <div class="w3-col m2">
             PP: {treasure.pp}
           </div>
-          <div class="w3-col m2"></div>
 
         </div>
          
@@ -203,6 +318,81 @@ export function RandomTreasure({party}){
 
 export function RandomTreasureHorde() {
   const [treasureHorde, setTreasureHorde] = useState(new Treasure(0, 0, 0, 0, 0, [], [], []));
+
+  function dataToTable(data) {
+    let keys = Object.keys(data);
+
+    return (
+        <table class="w3-table">
+          {keys.map((entry) => (
+              <tr>
+                <th>{entry} GP</th>
+                <td>{data[entry]}</td>
+              </tr>
+          ))}
+
+        </table>
+    )
+  }
+
+  function magicItemDataToTable(data) {
+    let keys = Object.keys(data);
+    console.log("Magiv items");
+    console.log(data);
+    try {
+      return (
+          <div class="w3-responsive">
+            <table class="w3-table">
+              <tr>
+                <td></td>
+                <td>Arcana</td>
+                <td>Armaments</td>
+                <td>Implements</td>
+                <td>Relics</td>
+              </tr>
+              <tr>
+                <td>Common</td>
+                <td>{data["Common"]["Arcana"]}</td>
+                <td>{data["Common"]["Armaments"]}</td>
+                <td>{data["Common"]["Implements"]}</td>
+                <td>{data["Common"]["Relics"]}</td>
+              </tr>
+              <tr>
+                <td>Uncommon</td>
+                <td>{data["Uncommon"]["Arcana"]}</td>
+                <td>{data["Uncommon"]["Armaments"]}</td>
+                <td>{data["Uncommon"]["Implements"]}</td>
+                <td>{data["Uncommon"]["Relics"]}</td>
+              </tr>
+              <tr>
+                <td>Rare</td>
+                <td>{data["Rare"]["Arcana"]}</td>
+                <td>{data["Rare"]["Armaments"]}</td>
+                <td>{data["Rare"]["Implements"]}</td>
+                <td>{data["Rare"]["Relics"]}</td>
+              </tr>
+              <tr>
+                <td>Very Rare</td>
+                <td>{data["Very Rare"]["Arcana"]}</td>
+                <td>{data["Very Rare"]["Armaments"]}</td>
+                <td>{data["Very Rare"]["Implements"]}</td>
+                <td>{data["Very Rare"]["Relics"]}</td>
+              </tr>
+              <tr>
+                <td>Legendary</td>
+                <td>{data["Legendary"]["Arcana"]}</td>
+                <td>{data["Legendary"]["Armaments"]}</td>
+                <td>{data["Legendary"]["Implements"]}</td>
+                <td>{data["Legendary"]["Relics"]}</td>
+              </tr>
+            </table>
+          </div>
+      )
+    } catch (e) {
+
+    }
+
+  }
 
   return (
       <div className="w3-container">
@@ -219,28 +409,30 @@ export function RandomTreasureHorde() {
           <input type="button" defaultValue="Treasure" className="w3-bar"
                  onClick={() => randomTreasureHorde(Number(document.getElementById("adventure-tier").value), setTreasureHorde)}/><br/>
           <div className="w3-row-padding">
-            <div className="w3-col m2">
-              CP: {treasureHorde.cp}
+            <div className="w3-col m1">
+              CP: {Math.round(treasureHorde.cp)}
             </div>
-            <div className="w3-col m2">
-              SP: {treasureHorde.sp}
+            <div className="w3-col m1">
+              SP: {Math.round(treasureHorde.sp)}
             </div>
-            <div className="w3-col m2">
-              EP: {treasureHorde.ep}
+            <div className="w3-col m1">
+              EP: {Math.round(treasureHorde.ep)}
             </div>
-            <div className="w3-col m2">
-              GP: {treasureHorde.gp}
+            <div className="w3-col m1">
+              GP: {Math.round(treasureHorde.gp)}
             </div>
-            <div className="w3-col m2">
-              PP: {treasureHorde.pp}
+            <div className="w3-col m1">
+              PP: {Math.round(treasureHorde.pp)}
             </div>
-            <div className="w3-col m2">
-              Gems: {treasureHorde.gems.join(",")}
+            <div className="w3-col m1">
+              Gems: {dataToTable(treasureHorde.gems)}
             </div>
-            <div className="w3-col m2">
-              Art: {treasureHorde.art.join(",")}
+            <div className="w3-col m1">
+              Art: {dataToTable(treasureHorde.art)}
             </div>
-            <div className="w3-col m2"></div>
+            <div className="w3-col m5">
+              Magic Items: {magicItemDataToTable(treasureHorde.magicItems)}
+            </div>
 
           </div>
 

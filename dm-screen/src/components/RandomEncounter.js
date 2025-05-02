@@ -194,7 +194,7 @@ function RandomEncounterInput({setEncounter, party}){
     return (
         <div class="w3-container">
             <div class="w3-row-padding">
-                <div class="w3-col s3">
+                <div class="w3-col m3">
                     <label>Difficulty</label>
                     <select name="difficulty" id="difficulty" class="w3-select">
                         <option value="easy">Trivial (don't use)</option>
@@ -203,7 +203,7 @@ function RandomEncounterInput({setEncounter, party}){
                         <option value="deadly">Hard</option>
                     </select>
                 </div>
-                <div class="w3-col s3">
+                <div class="w3-col m3">
                     <label>Environment</label>
                     <select
                         name="environ"
@@ -217,13 +217,13 @@ function RandomEncounterInput({setEncounter, party}){
                         {allEnvirons}
                     </select>
                 </div>
-                <div class="w3-col s3">
+                <div class="w3-col m3">
                     <label>Monster Type</label>
                     <select name="monster-type" id="monster-type"  class="w3-select">
                         {monsterTypeOptions}
                     </select>
                 </div>
-                <div class="w3-col s3">
+                <div class="w3-col m3">
                     <label>Max different creatures</label>
                     <input type="text" defaultValue="3" id="maxDiffMonsters" class="w3-input"/>
                 </div>

@@ -28,7 +28,7 @@ function PartyInput({partySize, party, setParty}) {
             <>
                 <tr>
                     <td>
-                        <input class="w3-input" type="text" id={level_id} onChange={(e) => change(e.target.value)} />
+                        <input class="w3-input" type="number" id={level_id} onChange={(e) => change(e.target.value)} />
                     </td>
                     <td>
                         <input class="w3-input" type="text" id={name_id} onChange={(e) => change(e.target.value)}/>
@@ -59,7 +59,7 @@ function PartyInput({partySize, party, setParty}) {
 
     return (
         <div class="w3-responsive">
-            <table class="w3-table w3-bordered w3-border">
+            <table class="w3-table w3-bordered w3-border w3-xlarge">
                 <thead>
                 <tr>
                     <td>Level</td>
