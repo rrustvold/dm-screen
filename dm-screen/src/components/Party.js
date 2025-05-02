@@ -25,38 +25,26 @@ function PartyInput({partySize, party, setParty}) {
         let level_id = `level_${i}`;
         // Other pc properties are not used elsewhere yet, but if they do get referenced, then change events can be added
         rows.push(
-            <>
-                <tr>
-                    <td>
-                        <input class="w3-input" type="number" id={level_id} onChange={(e) => change(e.target.value)} />
-                    </td>
-                    <td>
-                        <input class="w3-input" type="text" id={name_id} onChange={(e) => change(e.target.value)}/>
-                    </td>
-                    <td>
-                        <input class="w3-input" type="text" id={ac_id} onChange={(e) => change(e.target.value)} />
-                    </td>
-                    <td>
-                        <input class="w3-input" type="text"/>
-                    </td>
-                    <td>
-                        <input class="w3-input" type="text"/>
-                    </td>
-                    <td>
-                        <input class="w3-input" type="text"/>
-                    </td>
-                    <td>
-                        <input class="w3-input" type="text"/>
-                    </td>
-                    <td>
-                        <input class="w3-input" type="text"/>
-                    </td>
-                    
-                </tr>
-            </>
+            <div class="w3-quarter w3-margin-bottom">
+            <div class="w3-card-4">
+                <label>Level</label>
+                <input className="w3-input" type="number" id={level_id}
+                       onChange={(e) => change(e.target.value)}/>
+                <label>Name</label>
+                <input className="w3-input" type="text" id={name_id}
+                       onChange={(e) => change(e.target.value)}/>
+                <label>AC</label>
+                <input className="w3-input" type="number" id={ac_id}
+                       onChange={(e) => change(e.target.value)}/>
+                <label>HP</label>
+                <input className="w3-input" type="number"/>
+                <label>Initiative</label>
+                <input className="w3-input" type="number"/>
+            </div>
+            </div>
         )
     }
-
+    return <div class="w3-row-padding">{rows}</div>
     return (
         <div class="w3-responsive">
             <table class="w3-table w3-bordered w3-border w3-xlarge">
@@ -105,7 +93,7 @@ class PC {
 export default function Party({partySize, setPartySize, party, setParty}){
     return (
         <div class="w3-container">
-            <h1>Party <button class="w3-btn w3-round w3-tiny" onClick={() => hideShow("party")}><i class="bi bi-arrow-down-up"></i></button></h1>
+            <h1>Party</h1>
             <div class="w3-container w3-show" id="party">
                 <PartySize setPartySize={setPartySize}></PartySize>
                 {/* <div class="w3-container">

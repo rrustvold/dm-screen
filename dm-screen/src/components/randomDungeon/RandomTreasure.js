@@ -337,57 +337,22 @@ export function RandomTreasureHorde() {
 
   function magicItemDataToTable(data) {
     let keys = Object.keys(data);
-    console.log("Magiv items");
-    console.log(data);
+
     try {
+      let results = [];
+      keys.forEach(key => {
+        let typeKeys = Object.keys(data[key]);
+        typeKeys.forEach((typeKey) => {
+          if (data[key][typeKey] > 0) {
+            results.push(`${data[key][typeKey]} ${key} ${typeKey}`);
+          }
+        })
+      })
+
       return (
-          <div class="w3-responsive">
-            <table class="w3-table">
-              <tr>
-                <td></td>
-                <td>Arcana</td>
-                <td>Armaments</td>
-                <td>Implements</td>
-                <td>Relics</td>
-              </tr>
-              <tr>
-                <td>Common</td>
-                <td>{data["Common"]["Arcana"]}</td>
-                <td>{data["Common"]["Armaments"]}</td>
-                <td>{data["Common"]["Implements"]}</td>
-                <td>{data["Common"]["Relics"]}</td>
-              </tr>
-              <tr>
-                <td>Uncommon</td>
-                <td>{data["Uncommon"]["Arcana"]}</td>
-                <td>{data["Uncommon"]["Armaments"]}</td>
-                <td>{data["Uncommon"]["Implements"]}</td>
-                <td>{data["Uncommon"]["Relics"]}</td>
-              </tr>
-              <tr>
-                <td>Rare</td>
-                <td>{data["Rare"]["Arcana"]}</td>
-                <td>{data["Rare"]["Armaments"]}</td>
-                <td>{data["Rare"]["Implements"]}</td>
-                <td>{data["Rare"]["Relics"]}</td>
-              </tr>
-              <tr>
-                <td>Very Rare</td>
-                <td>{data["Very Rare"]["Arcana"]}</td>
-                <td>{data["Very Rare"]["Armaments"]}</td>
-                <td>{data["Very Rare"]["Implements"]}</td>
-                <td>{data["Very Rare"]["Relics"]}</td>
-              </tr>
-              <tr>
-                <td>Legendary</td>
-                <td>{data["Legendary"]["Arcana"]}</td>
-                <td>{data["Legendary"]["Armaments"]}</td>
-                <td>{data["Legendary"]["Implements"]}</td>
-                <td>{data["Legendary"]["Relics"]}</td>
-              </tr>
-            </table>
-          </div>
+          results.join(", ")
       )
+
     } catch (e) {
 
     }

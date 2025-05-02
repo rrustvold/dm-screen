@@ -128,53 +128,118 @@ function HordeMathInput(props) {
     let rows = [];
     let numRows = 1;
     let i = props.count;
+
     rows.push(
-        <tr>
-            <td>
-                <input type="text" class="w3-input" id={"monster-name-" + i}></input>
-            </td>
-            <td>
-                <input type="text" id={"numAttackers-" + i} class="w3-input" value={props.numAttackers}
-                    onChange={(e) => props.setNumAttackers(Number(e.target.value))}/>
-            </td>
-            <td>
-                <input type="text" id={"attacksPerMonster-" + i} class="w3-input" value={props.attacksPerMonster}
-                    onChange={(e) => props.setAttacksPerMonster(Number(e.target.value))}/>
-            </td>
-            <td>
-                <input type="text" id={"attackBonus-" + i} class="w3-input" value={props.attackBonus}
-                    onChange={(e) => props.setAttackBonus(Number(e.target.value))}/>
-            </td>
-            <td>
-                <input type="text" id={"damage-" + i} class="w3-input" defaultValue={props.damage}
-                    onChange={(e) => props.setDamage(e.target.value)}/>
-            </td>
-            <td>
-                <input type='text' id={'armor-class-' + i} class='w3-input' defaultValue={props.armorClass}
-                    onChange={(e) => props.setArmorClass(e.target.value)}/>
-            </td>
-            <td>
-                <input type="button" class="w3-button" defaultValue="-10" onClick={() => damage(10, i)}></input>
-                <input type="button" class="w3-button" defaultValue="-5" onClick={() => damage(5, i)}></input>
-                <input type="button" class="w3-button" defaultValue="-1" onClick={() => damage(1, i)}></input>
-            </td>
-            <td>
-                <input type='text' id={"hit-points-" + i} class='w3-input' defaultValue={props.hitPoints}
-                    onChange={(e) => props.setHitPoints(e.target.value)}/>
-            </td>
-            <td>
-                <input type='text' id={"hit-point-maximum-" + i} class='w3-input' defaultValue={props.hitPointMaximum}
-                    onChange={(e) => props.setHitPointMaximum(e.target.value)}/>
-            </td>
-            <td>
-                <input type='text' id={"initiative-" + i} class='w3-input' defaultValue={props.initiative}
-                    onChange={(e) => {
-                        props.setInitiative(e.target.value);
-                        props.setTableState(e.target.value);
-                    }}/>
-            </td>
-        </tr>
-    )
+        <div class="w3-card padding-bottom">
+            Name
+            <input type="text" className="w3-input" id={"monster-name-" + i}></input>
+            Number
+            <input type="number" id={"numAttackers-" + i} className="w3-input"
+                   value={props.numAttackers}
+                   onChange={(e) => props.setNumAttackers(Number(e.target.value))}/>
+            Attacks per Monster
+            <input type="number" id={"attacksPerMonster-" + i} className="w3-input"
+                   value={props.attacksPerMonster}
+                   onChange={(e) => props.setAttacksPerMonster(Number(e.target.value))}/>
+            Attack bonus
+            <input type="number" id={"attackBonus-" + i} className="w3-input"
+                   value={props.attackBonus}
+                   onChange={(e) => props.setAttackBonus(Number(e.target.value))}/>
+            Damage per Attack
+            <input type="text" id={"damage-" + i} className="w3-input"
+                   defaultValue={props.damage}
+                   onChange={(e) => props.setDamage(e.target.value)}/>
+            AC
+            <input type='number' id={'armor-class-' + i} className='w3-input'
+                   defaultValue={props.armorClass}
+                   onChange={(e) => props.setArmorClass(e.target.value)}/>
+            Damage
+            <div>
+                <input type="button" className="w3-button" defaultValue="-10"
+                       onClick={() => damage(10, i)}></input>
+                <input type="button" className="w3-button" defaultValue="-5"
+                       onClick={() => damage(5, i)}></input>
+                <input type="button" className="w3-button" defaultValue="-1"
+                       onClick={() => damage(1, i)}></input>
+                <input type="button" className="w3-button" defaultValue="+1"
+                       onClick={() => damage(-1, i)}></input>
+                <input type="button" className="w3-button" defaultValue="+5"
+                       onClick={() => damage(-5, i)}></input>
+                <input type="button" className="w3-button" defaultValue="+10"
+                       onClick={() => damage(-10, i)}></input>
+            </div>
+            Current Hit points
+            <input type='number' id={"hit-points-" + i} className='w3-input'
+                   defaultValue={props.hitPoints}
+                   onChange={(e) => props.setHitPoints(e.target.value)}/>
+
+            Maximum HP
+            <input type='number' id={"hit-point-maximum-" + i} className='w3-input'
+                   defaultValue={props.hitPointMaximum}
+                   onChange={(e) => props.setHitPointMaximum(e.target.value)}/>
+
+            Initiative
+            <input type='number' id={"initiative-" + i} className='w3-input'
+                   defaultValue={props.initiative}
+                   onChange={(e) => {
+                       props.setInitiative(e.target.value);
+                       props.setTableState(e.target.value);
+                   }}/>
+        </div>
+
+    );
+
+    return <div class="w3-row-padding">{rows}</div>
+
+
+    // rows.push(
+    //     <tr>
+    //         <td>
+    //             <input type="text" class="w3-input" id={"monster-name-" + i}></input>
+    //         </td>
+    //         <td>
+    //             <input type="text" id={"numAttackers-" + i} class="w3-input"
+    //                    value={props.numAttackers}
+    //                    onChange={(e) => props.setNumAttackers(Number(e.target.value))}/>
+    //         </td>
+    //         <td>
+    //             <input type="text" id={"attacksPerMonster-" + i} class="w3-input" value={props.attacksPerMonster}
+    //                 onChange={(e) => props.setAttacksPerMonster(Number(e.target.value))}/>
+    //         </td>
+    //         <td>
+    //             <input type="text" id={"attackBonus-" + i} class="w3-input" value={props.attackBonus}
+    //                 onChange={(e) => props.setAttackBonus(Number(e.target.value))}/>
+    //         </td>
+    //         <td>
+    //             <input type="text" id={"damage-" + i} class="w3-input" defaultValue={props.damage}
+    //                 onChange={(e) => props.setDamage(e.target.value)}/>
+    //         </td>
+    //         <td>
+    //             <input type='text' id={'armor-class-' + i} class='w3-input' defaultValue={props.armorClass}
+    //                 onChange={(e) => props.setArmorClass(e.target.value)}/>
+    //         </td>
+    //         <td>
+    //             <input type="button" class="w3-button" defaultValue="-10" onClick={() => damage(10, i)}></input>
+    //             <input type="button" class="w3-button" defaultValue="-5" onClick={() => damage(5, i)}></input>
+    //             <input type="button" class="w3-button" defaultValue="-1" onClick={() => damage(1, i)}></input>
+    //         </td>
+    //         <td>
+    //             <input type='text' id={"hit-points-" + i} class='w3-input' defaultValue={props.hitPoints}
+    //                 onChange={(e) => props.setHitPoints(e.target.value)}/>
+    //         </td>
+    //         <td>
+    //             <input type='text' id={"hit-point-maximum-" + i} class='w3-input' defaultValue={props.hitPointMaximum}
+    //                 onChange={(e) => props.setHitPointMaximum(e.target.value)}/>
+    //         </td>
+    //         <td>
+    //             <input type='text' id={"initiative-" + i} class='w3-input' defaultValue={props.initiative}
+    //                 onChange={(e) => {
+    //                     props.setInitiative(e.target.value);
+    //                     props.setTableState(e.target.value);
+    //                 }}/>
+    //         </td>
+    //     </tr>
+    // )
 
     return (
         <>
@@ -304,9 +369,18 @@ export default function HordeMathContainer({party, tableState, setTableState}) {
         <div class="w3-container">
             <h1 onClick={() => hideShow("hordemath")}>Monster Math</h1>
             <div class="w3-container w3-show" id="hordemath">
-                <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={0}></HordeMath>
-                {/*<HordeMath party={party} tableState={tableState} setTableState={setTableState} count={1}></HordeMath>*/}
-                {/*<HordeMath party={party} tableState={tableState} setTableState={setTableState} count={2}></HordeMath>*/}
+                <div class="w3-row-padding">
+                    <div class="w3-quarter w3-margin-bottom">
+                    <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={0}></HordeMath>
+                    </div>
+                    <div class="w3-quarter w3-margin-bottom">
+                <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={1}></HordeMath>
+                    </div>
+                    <div class="w3-quarter w3-margin-bottom">
+                <HordeMath party={party} tableState={tableState} setTableState={setTableState} count={2}></HordeMath>
+                    </div>
+                </div>
+
                 <input type="button" class="w3-button" defaultValue="Clear" onClick={clearMonsters} />
                 <input type="button" className="w3-button" value="save" onClick={() => save()}></input>
                 <input type="file" accept=".json" onChange={(event) => {load(event.target.files[0])}}></input>

@@ -18,21 +18,60 @@ function App() {
     const [partySize, setPartySize] = useState(2);
     const [party, setParty] = useState([]);
     const [tableState, setTableState] = useState(1);
-
+    const [activeTab, setActiveTab] = useState('home');
   return (
       <div class="w3-container">
-        <Wilderness party={party}></Wilderness>
-          <Party partySize={partySize} setPartySize={setPartySize} party={party} setParty={setParty}></Party>
-          <HordeMathContainer party={party} tableState={tableState} setTableState={setTableState}></HordeMathContainer>
+          <div className="flex gap-4 border-b mb-4">
+              <button onClick={() => setActiveTab('wilderness')}
+                      className={activeTab === 'wilderness' ? 'font-bold border-b-2' : ''}>Wilderness
+              </button>
+              <button onClick={() => setActiveTab('party')}
+                      className={activeTab === 'party' ? 'font-bold border-b-2' : ''}>Party
+              </button>
+              <button onClick={() => setActiveTab('monster-math')}
+                      className={activeTab === 'monster-math' ? 'font-bold border-b-2' : ''}>Monster
+                  Math
+              </button>
+              <button onClick={() => setActiveTab('random-encounter')}
+                      className={activeTab === 'random-encounter' ? 'font-bold border-b-2' : ''}>Random
+                  Encounter
+              </button>
+              <button onClick={() => setActiveTab('random-treasure')}
+                      className={activeTab === 'random-treasure' ? 'font-bold border-b-2' : ''}>Random
+                  Treasure
+              </button>
+              <button onClick={() => setActiveTab('random-dungeon')}
+                      className={activeTab === 'random-dungeon' ? 'font-bold border-b-2' : ''}>Random
+                  Dungeon
+              </button>
+          </div>
+
+          <div style={{display: activeTab === 'wilderness' ? 'block' : 'none'}}>
+              <Wilderness party={party}></Wilderness>
+          </div>
+          <div style={{display: activeTab === 'party' ? 'block' : 'none'}}>
+              <Party partySize={partySize} setPartySize={setPartySize} party={party}
+                 setParty={setParty}></Party>
+          </div>
+          <div style={{display: activeTab === 'monster-math' ? 'block' : 'none'}}>
+              <HordeMathContainer party={party} tableState={tableState}
+                              setTableState={setTableState}></HordeMathContainer>
+          </div>
+
           {/*<Table tableState={tableState}></Table>*/}
-        
-          <RandomEncounter2 party={party}></RandomEncounter2>
-          <RandomTreasure party={party}></RandomTreasure>
-          <RandomTreasureHorde></RandomTreasureHorde>
-        <RandomDungeon></RandomDungeon>
-        
-          <DamageSeverity></DamageSeverity>
-          
+          <div style={{display: activeTab === 'random-encounter' ? 'block' : 'none'}}>
+              <RandomEncounter2 party={party}></RandomEncounter2>
+          </div>
+          <div style={{display: activeTab === 'random-treasure' ? 'block' : 'none'}}>
+              <RandomTreasure party={party}></RandomTreasure>
+              <RandomTreasureHorde></RandomTreasureHorde>
+          </div>
+          <div style={{display: activeTab === 'random-dungeon' ? 'block' : 'none'}}>
+              <RandomDungeon></RandomDungeon>
+             <DamageSeverity></DamageSeverity>
+          </div>
+
+
       </div>
   );
 }
