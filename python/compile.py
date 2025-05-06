@@ -9,7 +9,10 @@ with open("api_monsters.yaml", "r") as file:
 with open("my_monsters.yaml", "r") as file:
     my_monsters = yaml.safe_load(file)
 
-for monster in monsters + my_monsters:
+with open("sf_monsters.yaml", "r") as file:
+    sf_monsters = yaml.safe_load(file)
+
+for monster in monsters + my_monsters + sf_monsters:
     key = list(monster.keys())[0]
     monster_keys.add(key)
     monster_keys.add(key.replace("-", "_"))
