@@ -8,6 +8,7 @@ export const aboleth = {
 	stealth: 0,
 	ac: 17,
 	hp: 135,
+	source: '5.1 SRD',
 }
 
 export const acolyte = {
@@ -20,6 +21,7 @@ export const acolyte = {
 	stealth: 0,
 	ac: 10,
 	hp: 9,
+	source: '5.1 SRD',
 }
 
 export const adult_black_dragon = {
@@ -32,6 +34,7 @@ export const adult_black_dragon = {
 	stealth: 7,
 	ac: 19,
 	hp: 195,
+	source: '5.1 SRD',
 }
 
 export const adult_blue_dragon = {
@@ -44,6 +47,7 @@ export const adult_blue_dragon = {
 	stealth: 5,
 	ac: 19,
 	hp: 225,
+	source: '5.1 SRD',
 }
 
 export const adult_brass_dragon = {
@@ -56,6 +60,7 @@ export const adult_brass_dragon = {
 	stealth: 5,
 	ac: 18,
 	hp: 172,
+	source: '5.1 SRD',
 }
 
 export const adult_bronze_dragon = {
@@ -68,6 +73,7 @@ export const adult_bronze_dragon = {
 	stealth: 5,
 	ac: 19,
 	hp: 212,
+	source: '5.1 SRD',
 }
 
 export const adult_copper_dragon = {
@@ -80,6 +86,7 @@ export const adult_copper_dragon = {
 	stealth: 6,
 	ac: 18,
 	hp: 184,
+	source: '5.1 SRD',
 }
 
 export const adult_gold_dragon = {
@@ -92,6 +99,7 @@ export const adult_gold_dragon = {
 	stealth: 8,
 	ac: 19,
 	hp: 256,
+	source: '5.1 SRD',
 }
 
 export const adult_green_dragon = {
@@ -104,6 +112,7 @@ export const adult_green_dragon = {
 	stealth: 6,
 	ac: 19,
 	hp: 207,
+	source: '5.1 SRD',
 }
 
 export const adult_red_dragon = {
@@ -116,6 +125,7 @@ export const adult_red_dragon = {
 	stealth: 6,
 	ac: 19,
 	hp: 256,
+	source: '5.1 SRD',
 }
 
 export const adult_silver_dragon = {
@@ -128,6 +138,7 @@ export const adult_silver_dragon = {
 	stealth: 5,
 	ac: 19,
 	hp: 243,
+	source: '5.1 SRD',
 }
 
 export const adult_white_dragon = {
@@ -140,6 +151,7 @@ export const adult_white_dragon = {
 	stealth: 5,
 	ac: 18,
 	hp: 200,
+	source: '5.1 SRD',
 }
 
 export const air_elemental = {
@@ -152,6 +164,7 @@ export const air_elemental = {
 	stealth: 0,
 	ac: 15,
 	hp: 90,
+	source: '5.1 SRD',
 }
 
 export const ancient_black_dragon = {
@@ -164,6 +177,7 @@ export const ancient_black_dragon = {
 	stealth: 9,
 	ac: 22,
 	hp: 367,
+	source: '5.1 SRD',
 }
 
 export const ancient_blue_dragon = {
@@ -176,6 +190,7 @@ export const ancient_blue_dragon = {
 	stealth: 7,
 	ac: 22,
 	hp: 481,
+	source: '5.1 SRD',
 }
 
 export const ancient_brass_dragon = {
@@ -188,6 +203,7 @@ export const ancient_brass_dragon = {
 	stealth: 6,
 	ac: 20,
 	hp: 297,
+	source: '5.1 SRD',
 }
 
 export const ancient_bronze_dragon = {
@@ -200,6 +216,7 @@ export const ancient_bronze_dragon = {
 	stealth: 7,
 	ac: 22,
 	hp: 444,
+	source: '5.1 SRD',
 }
 
 export const ancient_copper_dragon = {
@@ -212,6 +229,7 @@ export const ancient_copper_dragon = {
 	stealth: 8,
 	ac: 21,
 	hp: 350,
+	source: '5.1 SRD',
 }
 
 export const ancient_gold_dragon = {
@@ -224,6 +242,7 @@ export const ancient_gold_dragon = {
 	stealth: 9,
 	ac: 22,
 	hp: 546,
+	source: '5.1 SRD',
 }
 
 export const ancient_green_dragon = {
@@ -236,6 +255,7 @@ export const ancient_green_dragon = {
 	stealth: 8,
 	ac: 21,
 	hp: 385,
+	source: '5.1 SRD',
 }
 
 export const ancient_red_dragon = {
@@ -248,6 +268,7 @@ export const ancient_red_dragon = {
 	stealth: 7,
 	ac: 22,
 	hp: 546,
+	source: '5.1 SRD',
 }
 
 export const ancient_silver_dragon = {
@@ -260,6 +281,7 @@ export const ancient_silver_dragon = {
 	stealth: 7,
 	ac: 22,
 	hp: 487,
+	source: '5.1 SRD',
 }
 
 export const ancient_white_dragon = {
@@ -272,6 +294,7 @@ export const ancient_white_dragon = {
 	stealth: 6,
 	ac: 20,
 	hp: 333,
+	source: '5.1 SRD',
 }
 
 export const androsphinx = {
@@ -284,6 +307,7 @@ export const androsphinx = {
 	stealth: 0,
 	ac: 17,
 	hp: 199,
+	source: '5.1 SRD',
 }
 
 export const animated_armor = {
@@ -296,6 +320,7 @@ export const animated_armor = {
 	stealth: 0,
 	ac: 18,
 	hp: 33,
+	source: '5.1 SRD',
 }
 
 export const ankheg = {
@@ -308,6 +333,7 @@ export const ankheg = {
 	stealth: 0,
 	ac: 14,
 	hp: 39,
+	source: '5.1 SRD',
 }
 
 export const ape = {
@@ -320,6 +346,7 @@ export const ape = {
 	stealth: 0,
 	ac: 12,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const archmage = {
@@ -332,6 +359,7 @@ export const archmage = {
 	stealth: 0,
 	ac: 12,
 	hp: 99,
+	source: '5.1 SRD',
 }
 
 export const assassin = {
@@ -344,6 +372,7 @@ export const assassin = {
 	stealth: 9,
 	ac: 15,
 	hp: 78,
+	source: '5.1 SRD',
 }
 
 export const awakened_tree = {
@@ -356,6 +385,7 @@ export const awakened_tree = {
 	stealth: 0,
 	ac: 13,
 	hp: 59,
+	source: '5.1 SRD',
 }
 
 export const axe_beak = {
@@ -368,6 +398,7 @@ export const axe_beak = {
 	stealth: 0,
 	ac: 11,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const azer = {
@@ -380,6 +411,7 @@ export const azer = {
 	stealth: 0,
 	ac: 15,
 	hp: 39,
+	source: '5.1 SRD',
 }
 
 export const balor = {
@@ -392,6 +424,7 @@ export const balor = {
 	stealth: 0,
 	ac: 19,
 	hp: 262,
+	source: '5.1 SRD',
 }
 
 export const bandit = {
@@ -404,6 +437,7 @@ export const bandit = {
 	stealth: 0,
 	ac: 12,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const bandit_captain = {
@@ -416,6 +450,7 @@ export const bandit_captain = {
 	stealth: 0,
 	ac: 15,
 	hp: 65,
+	source: '5.1 SRD',
 }
 
 export const barbed_devil = {
@@ -428,6 +463,7 @@ export const barbed_devil = {
 	stealth: 0,
 	ac: 15,
 	hp: 110,
+	source: '5.1 SRD',
 }
 
 export const basilisk = {
@@ -440,6 +476,7 @@ export const basilisk = {
 	stealth: 0,
 	ac: 12,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const bearded_devil = {
@@ -452,6 +489,7 @@ export const bearded_devil = {
 	stealth: 0,
 	ac: 13,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const behir = {
@@ -464,6 +502,7 @@ export const behir = {
 	stealth: 7,
 	ac: 17,
 	hp: 168,
+	source: '5.1 SRD',
 }
 
 export const berserker = {
@@ -476,6 +515,7 @@ export const berserker = {
 	stealth: 0,
 	ac: 13,
 	hp: 67,
+	source: '5.1 SRD',
 }
 
 export const black_bear = {
@@ -488,6 +528,7 @@ export const black_bear = {
 	stealth: 0,
 	ac: 11,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const black_dragon_wyrmling = {
@@ -500,6 +541,7 @@ export const black_dragon_wyrmling = {
 	stealth: 4,
 	ac: 17,
 	hp: 33,
+	source: '5.1 SRD',
 }
 
 export const black_pudding = {
@@ -512,6 +554,7 @@ export const black_pudding = {
 	stealth: 0,
 	ac: 7,
 	hp: 85,
+	source: '5.1 SRD',
 }
 
 export const blink_dog = {
@@ -524,6 +567,7 @@ export const blink_dog = {
 	stealth: 5,
 	ac: 13,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const blood_hawk = {
@@ -536,6 +580,7 @@ export const blood_hawk = {
 	stealth: 0,
 	ac: 12,
 	hp: 7,
+	source: '5.1 SRD',
 }
 
 export const blue_dragon_wyrmling = {
@@ -548,6 +593,7 @@ export const blue_dragon_wyrmling = {
 	stealth: 2,
 	ac: 17,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const boar = {
@@ -560,6 +606,7 @@ export const boar = {
 	stealth: 0,
 	ac: 11,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const bone_devil = {
@@ -572,6 +619,7 @@ export const bone_devil = {
 	stealth: 0,
 	ac: 19,
 	hp: 142,
+	source: '5.1 SRD',
 }
 
 export const brass_dragon_wyrmling = {
@@ -584,6 +632,7 @@ export const brass_dragon_wyrmling = {
 	stealth: 2,
 	ac: 16,
 	hp: 16,
+	source: '5.1 SRD',
 }
 
 export const bronze_dragon_wyrmling = {
@@ -596,6 +645,7 @@ export const bronze_dragon_wyrmling = {
 	stealth: 2,
 	ac: 17,
 	hp: 32,
+	source: '5.1 SRD',
 }
 
 export const brown_bear = {
@@ -608,6 +658,7 @@ export const brown_bear = {
 	stealth: 0,
 	ac: 11,
 	hp: 34,
+	source: '5.1 SRD',
 }
 
 export const bugbear = {
@@ -620,6 +671,7 @@ export const bugbear = {
 	stealth: 6,
 	ac: 16,
 	hp: 27,
+	source: '5.1 SRD',
 }
 
 export const bulette = {
@@ -632,6 +684,7 @@ export const bulette = {
 	stealth: 0,
 	ac: 17,
 	hp: 94,
+	source: '5.1 SRD',
 }
 
 export const camel = {
@@ -644,6 +697,7 @@ export const camel = {
 	stealth: 0,
 	ac: 9,
 	hp: 15,
+	source: '5.1 SRD',
 }
 
 export const centaur = {
@@ -656,6 +710,7 @@ export const centaur = {
 	stealth: 0,
 	ac: 12,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const chain_devil = {
@@ -668,6 +723,7 @@ export const chain_devil = {
 	stealth: 0,
 	ac: 16,
 	hp: 85,
+	source: '5.1 SRD',
 }
 
 export const chimera = {
@@ -680,6 +736,7 @@ export const chimera = {
 	stealth: 0,
 	ac: 14,
 	hp: 114,
+	source: '5.1 SRD',
 }
 
 export const chuul = {
@@ -692,6 +749,7 @@ export const chuul = {
 	stealth: 0,
 	ac: 16,
 	hp: 93,
+	source: '5.1 SRD',
 }
 
 export const clay_golem = {
@@ -704,6 +762,7 @@ export const clay_golem = {
 	stealth: 0,
 	ac: 14,
 	hp: 133,
+	source: '5.1 SRD',
 }
 
 export const cloaker = {
@@ -716,6 +775,7 @@ export const cloaker = {
 	stealth: 5,
 	ac: 14,
 	hp: 78,
+	source: '5.1 SRD',
 }
 
 export const cloud_giant = {
@@ -728,6 +788,7 @@ export const cloud_giant = {
 	stealth: 0,
 	ac: 14,
 	hp: 200,
+	source: '5.1 SRD',
 }
 
 export const cockatrice = {
@@ -740,6 +801,7 @@ export const cockatrice = {
 	stealth: 0,
 	ac: 11,
 	hp: 27,
+	source: '5.1 SRD',
 }
 
 export const constrictor_snake = {
@@ -752,6 +814,7 @@ export const constrictor_snake = {
 	stealth: 0,
 	ac: 12,
 	hp: 13,
+	source: '5.1 SRD',
 }
 
 export const copper_dragon_wyrmling = {
@@ -764,6 +827,7 @@ export const copper_dragon_wyrmling = {
 	stealth: 3,
 	ac: 16,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const couatl = {
@@ -776,6 +840,7 @@ export const couatl = {
 	stealth: 0,
 	ac: 19,
 	hp: 97,
+	source: '5.1 SRD',
 }
 
 export const crocodile = {
@@ -788,6 +853,7 @@ export const crocodile = {
 	stealth: 2,
 	ac: 12,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const cult_fanatic = {
@@ -800,6 +866,7 @@ export const cult_fanatic = {
 	stealth: 0,
 	ac: 13,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const cultist = {
@@ -812,6 +879,7 @@ export const cultist = {
 	stealth: 0,
 	ac: 12,
 	hp: 9,
+	source: '5.1 SRD',
 }
 
 export const darkmantle = {
@@ -824,6 +892,7 @@ export const darkmantle = {
 	stealth: 3,
 	ac: 11,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const death_dog = {
@@ -836,6 +905,7 @@ export const death_dog = {
 	stealth: 4,
 	ac: 12,
 	hp: 39,
+	source: '5.1 SRD',
 }
 
 export const deep_gnome_svirfneblin = {
@@ -848,6 +918,7 @@ export const deep_gnome_svirfneblin = {
 	stealth: 4,
 	ac: 15,
 	hp: 16,
+	source: '5.1 SRD',
 }
 
 export const deva = {
@@ -860,6 +931,7 @@ export const deva = {
 	stealth: 0,
 	ac: 17,
 	hp: 136,
+	source: '5.1 SRD',
 }
 
 export const dire_wolf = {
@@ -872,6 +944,7 @@ export const dire_wolf = {
 	stealth: 4,
 	ac: 14,
 	hp: 37,
+	source: '5.1 SRD',
 }
 
 export const djinni = {
@@ -884,6 +957,7 @@ export const djinni = {
 	stealth: 0,
 	ac: 17,
 	hp: 161,
+	source: '5.1 SRD',
 }
 
 export const doppelganger = {
@@ -896,6 +970,7 @@ export const doppelganger = {
 	stealth: 0,
 	ac: 14,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const draft_horse = {
@@ -908,6 +983,7 @@ export const draft_horse = {
 	stealth: 0,
 	ac: 10,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const dragon_turtle = {
@@ -920,6 +996,7 @@ export const dragon_turtle = {
 	stealth: 0,
 	ac: 20,
 	hp: 341,
+	source: '5.1 SRD',
 }
 
 export const dretch = {
@@ -932,6 +1009,7 @@ export const dretch = {
 	stealth: 0,
 	ac: 11,
 	hp: 18,
+	source: '5.1 SRD',
 }
 
 export const drider = {
@@ -944,6 +1022,7 @@ export const drider = {
 	stealth: 9,
 	ac: 19,
 	hp: 123,
+	source: '5.1 SRD',
 }
 
 export const drow = {
@@ -956,6 +1035,7 @@ export const drow = {
 	stealth: 4,
 	ac: 15,
 	hp: 13,
+	source: '5.1 SRD',
 }
 
 export const druid = {
@@ -968,6 +1048,7 @@ export const druid = {
 	stealth: 0,
 	ac: 11,
 	hp: 27,
+	source: '5.1 SRD',
 }
 
 export const dryad = {
@@ -980,6 +1061,7 @@ export const dryad = {
 	stealth: 5,
 	ac: 11,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const duergar = {
@@ -992,6 +1074,7 @@ export const duergar = {
 	stealth: 0,
 	ac: 16,
 	hp: 26,
+	source: '5.1 SRD',
 }
 
 export const dust_mephit = {
@@ -1004,6 +1087,7 @@ export const dust_mephit = {
 	stealth: 4,
 	ac: 12,
 	hp: 17,
+	source: '5.1 SRD',
 }
 
 export const earth_elemental = {
@@ -1016,6 +1100,7 @@ export const earth_elemental = {
 	stealth: 0,
 	ac: 17,
 	hp: 126,
+	source: '5.1 SRD',
 }
 
 export const efreeti = {
@@ -1028,6 +1113,7 @@ export const efreeti = {
 	stealth: 0,
 	ac: 17,
 	hp: 200,
+	source: '5.1 SRD',
 }
 
 export const elephant = {
@@ -1040,6 +1126,7 @@ export const elephant = {
 	stealth: 0,
 	ac: 12,
 	hp: 76,
+	source: '5.1 SRD',
 }
 
 export const elk = {
@@ -1052,6 +1139,7 @@ export const elk = {
 	stealth: 0,
 	ac: 10,
 	hp: 13,
+	source: '5.1 SRD',
 }
 
 export const erinyes = {
@@ -1064,6 +1152,7 @@ export const erinyes = {
 	stealth: 0,
 	ac: 18,
 	hp: 153,
+	source: '5.1 SRD',
 }
 
 export const ettercap = {
@@ -1076,6 +1165,7 @@ export const ettercap = {
 	stealth: 4,
 	ac: 13,
 	hp: 44,
+	source: '5.1 SRD',
 }
 
 export const ettin = {
@@ -1088,6 +1178,7 @@ export const ettin = {
 	stealth: 0,
 	ac: 12,
 	hp: 85,
+	source: '5.1 SRD',
 }
 
 export const fire_elemental = {
@@ -1100,6 +1191,7 @@ export const fire_elemental = {
 	stealth: 0,
 	ac: 13,
 	hp: 102,
+	source: '5.1 SRD',
 }
 
 export const fire_giant = {
@@ -1112,6 +1204,7 @@ export const fire_giant = {
 	stealth: 0,
 	ac: 18,
 	hp: 162,
+	source: '5.1 SRD',
 }
 
 export const flesh_golem = {
@@ -1124,6 +1217,7 @@ export const flesh_golem = {
 	stealth: 0,
 	ac: 9,
 	hp: 93,
+	source: '5.1 SRD',
 }
 
 export const flying_snake = {
@@ -1136,6 +1230,7 @@ export const flying_snake = {
 	stealth: 0,
 	ac: 14,
 	hp: 5,
+	source: '5.1 SRD',
 }
 
 export const flying_sword = {
@@ -1148,6 +1243,7 @@ export const flying_sword = {
 	stealth: 0,
 	ac: 17,
 	hp: 17,
+	source: '5.1 SRD',
 }
 
 export const frost_giant = {
@@ -1160,6 +1256,7 @@ export const frost_giant = {
 	stealth: 0,
 	ac: 15,
 	hp: 138,
+	source: '5.1 SRD',
 }
 
 export const gargoyle = {
@@ -1172,6 +1269,7 @@ export const gargoyle = {
 	stealth: 0,
 	ac: 15,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const gelatinous_cube = {
@@ -1184,6 +1282,7 @@ export const gelatinous_cube = {
 	stealth: 0,
 	ac: 6,
 	hp: 84,
+	source: '5.1 SRD',
 }
 
 export const ghast = {
@@ -1196,6 +1295,7 @@ export const ghast = {
 	stealth: 0,
 	ac: 13,
 	hp: 36,
+	source: '5.1 SRD',
 }
 
 export const ghost = {
@@ -1208,6 +1308,7 @@ export const ghost = {
 	stealth: 0,
 	ac: 11,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const ghoul = {
@@ -1220,6 +1321,7 @@ export const ghoul = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const giant_ape = {
@@ -1232,6 +1334,7 @@ export const giant_ape = {
 	stealth: 0,
 	ac: 12,
 	hp: 157,
+	source: '5.1 SRD',
 }
 
 export const giant_badger = {
@@ -1244,6 +1347,7 @@ export const giant_badger = {
 	stealth: 0,
 	ac: 10,
 	hp: 13,
+	source: '5.1 SRD',
 }
 
 export const giant_bat = {
@@ -1256,6 +1360,7 @@ export const giant_bat = {
 	stealth: 0,
 	ac: 13,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const giant_boar = {
@@ -1268,6 +1373,7 @@ export const giant_boar = {
 	stealth: 0,
 	ac: 12,
 	hp: 42,
+	source: '5.1 SRD',
 }
 
 export const giant_centipede = {
@@ -1280,6 +1386,7 @@ export const giant_centipede = {
 	stealth: 0,
 	ac: 13,
 	hp: 4,
+	source: '5.1 SRD',
 }
 
 export const giant_constrictor_snake = {
@@ -1292,6 +1399,7 @@ export const giant_constrictor_snake = {
 	stealth: 0,
 	ac: 12,
 	hp: 60,
+	source: '5.1 SRD',
 }
 
 export const giant_crab = {
@@ -1304,6 +1412,7 @@ export const giant_crab = {
 	stealth: 4,
 	ac: 15,
 	hp: 13,
+	source: '5.1 SRD',
 }
 
 export const giant_crocodile = {
@@ -1316,6 +1425,7 @@ export const giant_crocodile = {
 	stealth: 5,
 	ac: 14,
 	hp: 85,
+	source: '5.1 SRD',
 }
 
 export const giant_eagle = {
@@ -1328,6 +1438,7 @@ export const giant_eagle = {
 	stealth: 0,
 	ac: 13,
 	hp: 26,
+	source: '5.1 SRD',
 }
 
 export const giant_elk = {
@@ -1340,6 +1451,7 @@ export const giant_elk = {
 	stealth: 0,
 	ac: 14,
 	hp: 42,
+	source: '5.1 SRD',
 }
 
 export const giant_frog = {
@@ -1352,6 +1464,7 @@ export const giant_frog = {
 	stealth: 3,
 	ac: 11,
 	hp: 18,
+	source: '5.1 SRD',
 }
 
 export const giant_goat = {
@@ -1364,6 +1477,7 @@ export const giant_goat = {
 	stealth: 0,
 	ac: 11,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const giant_hyena = {
@@ -1376,6 +1490,7 @@ export const giant_hyena = {
 	stealth: 0,
 	ac: 12,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const giant_lizard = {
@@ -1388,6 +1503,7 @@ export const giant_lizard = {
 	stealth: 0,
 	ac: 12,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const giant_octopus = {
@@ -1400,6 +1516,7 @@ export const giant_octopus = {
 	stealth: 5,
 	ac: 11,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const giant_owl = {
@@ -1412,6 +1529,7 @@ export const giant_owl = {
 	stealth: 4,
 	ac: 12,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const giant_poisonous_snake = {
@@ -1424,6 +1542,7 @@ export const giant_poisonous_snake = {
 	stealth: 0,
 	ac: 14,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const giant_rat = {
@@ -1436,6 +1555,7 @@ export const giant_rat = {
 	stealth: 0,
 	ac: 12,
 	hp: 7,
+	source: '5.1 SRD',
 }
 
 export const giant_rat_diseased = {
@@ -1448,6 +1568,7 @@ export const giant_rat_diseased = {
 	stealth: 0,
 	ac: 12,
 	hp: 7,
+	source: '5.1 SRD',
 }
 
 export const giant_scorpion = {
@@ -1460,6 +1581,7 @@ export const giant_scorpion = {
 	stealth: 0,
 	ac: 15,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const giant_sea_horse = {
@@ -1472,6 +1594,7 @@ export const giant_sea_horse = {
 	stealth: 0,
 	ac: 13,
 	hp: 16,
+	source: '5.1 SRD',
 }
 
 export const giant_shark = {
@@ -1484,6 +1607,7 @@ export const giant_shark = {
 	stealth: 0,
 	ac: 13,
 	hp: 126,
+	source: '5.1 SRD',
 }
 
 export const giant_spider = {
@@ -1496,6 +1620,7 @@ export const giant_spider = {
 	stealth: 7,
 	ac: 14,
 	hp: 26,
+	source: '5.1 SRD',
 }
 
 export const giant_toad = {
@@ -1508,6 +1633,7 @@ export const giant_toad = {
 	stealth: 0,
 	ac: 11,
 	hp: 39,
+	source: '5.1 SRD',
 }
 
 export const giant_vulture = {
@@ -1520,6 +1646,7 @@ export const giant_vulture = {
 	stealth: 0,
 	ac: 10,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const giant_wasp = {
@@ -1532,6 +1659,7 @@ export const giant_wasp = {
 	stealth: 0,
 	ac: 12,
 	hp: 13,
+	source: '5.1 SRD',
 }
 
 export const giant_weasel = {
@@ -1544,6 +1672,7 @@ export const giant_weasel = {
 	stealth: 5,
 	ac: 13,
 	hp: 9,
+	source: '5.1 SRD',
 }
 
 export const giant_wolf_spider = {
@@ -1556,6 +1685,7 @@ export const giant_wolf_spider = {
 	stealth: 7,
 	ac: 13,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const gibbering_mouther = {
@@ -1568,6 +1698,7 @@ export const gibbering_mouther = {
 	stealth: 0,
 	ac: 9,
 	hp: 67,
+	source: '5.1 SRD',
 }
 
 export const glabrezu = {
@@ -1580,6 +1711,7 @@ export const glabrezu = {
 	stealth: 0,
 	ac: 17,
 	hp: 157,
+	source: '5.1 SRD',
 }
 
 export const gladiator = {
@@ -1592,6 +1724,7 @@ export const gladiator = {
 	stealth: 0,
 	ac: 16,
 	hp: 112,
+	source: '5.1 SRD',
 }
 
 export const gnoll = {
@@ -1604,6 +1737,7 @@ export const gnoll = {
 	stealth: 0,
 	ac: 15,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const goblin = {
@@ -1616,6 +1750,7 @@ export const goblin = {
 	stealth: 6,
 	ac: 15,
 	hp: 7,
+	source: '5.1 SRD',
 }
 
 export const gold_dragon_wyrmling = {
@@ -1628,6 +1763,7 @@ export const gold_dragon_wyrmling = {
 	stealth: 4,
 	ac: 17,
 	hp: 60,
+	source: '5.1 SRD',
 }
 
 export const gorgon = {
@@ -1640,6 +1776,7 @@ export const gorgon = {
 	stealth: 0,
 	ac: 19,
 	hp: 114,
+	source: '5.1 SRD',
 }
 
 export const gray_ooze = {
@@ -1652,6 +1789,7 @@ export const gray_ooze = {
 	stealth: 2,
 	ac: 8,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const green_dragon_wyrmling = {
@@ -1664,6 +1802,7 @@ export const green_dragon_wyrmling = {
 	stealth: 3,
 	ac: 17,
 	hp: 38,
+	source: '5.1 SRD',
 }
 
 export const green_hag = {
@@ -1676,6 +1815,7 @@ export const green_hag = {
 	stealth: 3,
 	ac: 17,
 	hp: 82,
+	source: '5.1 SRD',
 }
 
 export const grick = {
@@ -1688,6 +1828,7 @@ export const grick = {
 	stealth: 0,
 	ac: 14,
 	hp: 27,
+	source: '5.1 SRD',
 }
 
 export const griffon = {
@@ -1700,6 +1841,7 @@ export const griffon = {
 	stealth: 0,
 	ac: 12,
 	hp: 59,
+	source: '5.1 SRD',
 }
 
 export const grimlock = {
@@ -1712,6 +1854,7 @@ export const grimlock = {
 	stealth: 3,
 	ac: 11,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const guard = {
@@ -1724,6 +1867,7 @@ export const guard = {
 	stealth: 0,
 	ac: 16,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const guardian_naga = {
@@ -1736,6 +1880,7 @@ export const guardian_naga = {
 	stealth: 0,
 	ac: 18,
 	hp: 127,
+	source: '5.1 SRD',
 }
 
 export const gynosphinx = {
@@ -1748,6 +1893,7 @@ export const gynosphinx = {
 	stealth: 0,
 	ac: 17,
 	hp: 136,
+	source: '5.1 SRD',
 }
 
 export const half_red_dragon_veteran = {
@@ -1760,6 +1906,7 @@ export const half_red_dragon_veteran = {
 	stealth: 0,
 	ac: 18,
 	hp: 65,
+	source: '5.1 SRD',
 }
 
 export const harpy = {
@@ -1772,6 +1919,7 @@ export const harpy = {
 	stealth: 0,
 	ac: 11,
 	hp: 38,
+	source: '5.1 SRD',
 }
 
 export const hell_hound = {
@@ -1784,6 +1932,7 @@ export const hell_hound = {
 	stealth: 0,
 	ac: 15,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const hezrou = {
@@ -1796,6 +1945,7 @@ export const hezrou = {
 	stealth: 0,
 	ac: 16,
 	hp: 136,
+	source: '5.1 SRD',
 }
 
 export const hill_giant = {
@@ -1808,6 +1958,7 @@ export const hill_giant = {
 	stealth: 0,
 	ac: 13,
 	hp: 105,
+	source: '5.1 SRD',
 }
 
 export const hippogriff = {
@@ -1820,6 +1971,7 @@ export const hippogriff = {
 	stealth: 0,
 	ac: 11,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const hobgoblin = {
@@ -1832,6 +1984,7 @@ export const hobgoblin = {
 	stealth: 0,
 	ac: 18,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const horned_devil = {
@@ -1844,6 +1997,7 @@ export const horned_devil = {
 	stealth: 0,
 	ac: 18,
 	hp: 178,
+	source: '5.1 SRD',
 }
 
 export const hunter_shark = {
@@ -1856,6 +2010,7 @@ export const hunter_shark = {
 	stealth: 0,
 	ac: 12,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const hydra = {
@@ -1868,6 +2023,7 @@ export const hydra = {
 	stealth: 0,
 	ac: 15,
 	hp: 172,
+	source: '5.1 SRD',
 }
 
 export const ice_devil = {
@@ -1880,6 +2036,7 @@ export const ice_devil = {
 	stealth: 0,
 	ac: 18,
 	hp: 180,
+	source: '5.1 SRD',
 }
 
 export const ice_mephit = {
@@ -1892,6 +2049,7 @@ export const ice_mephit = {
 	stealth: 3,
 	ac: 11,
 	hp: 21,
+	source: '5.1 SRD',
 }
 
 export const imp = {
@@ -1904,6 +2062,7 @@ export const imp = {
 	stealth: 5,
 	ac: 13,
 	hp: 10,
+	source: '5.1 SRD',
 }
 
 export const invisible_stalker = {
@@ -1916,6 +2075,7 @@ export const invisible_stalker = {
 	stealth: 10,
 	ac: 14,
 	hp: 104,
+	source: '5.1 SRD',
 }
 
 export const iron_golem = {
@@ -1928,6 +2088,7 @@ export const iron_golem = {
 	stealth: 0,
 	ac: 20,
 	hp: 210,
+	source: '5.1 SRD',
 }
 
 export const killer_whale = {
@@ -1940,6 +2101,7 @@ export const killer_whale = {
 	stealth: 0,
 	ac: 12,
 	hp: 90,
+	source: '5.1 SRD',
 }
 
 export const knight = {
@@ -1952,6 +2114,7 @@ export const knight = {
 	stealth: 0,
 	ac: 18,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const kobold = {
@@ -1964,6 +2127,7 @@ export const kobold = {
 	stealth: 0,
 	ac: 12,
 	hp: 5,
+	source: '5.1 SRD',
 }
 
 export const kraken = {
@@ -1976,6 +2140,7 @@ export const kraken = {
 	stealth: 0,
 	ac: 18,
 	hp: 472,
+	source: '5.1 SRD',
 }
 
 export const lamia = {
@@ -1988,6 +2153,7 @@ export const lamia = {
 	stealth: 3,
 	ac: 13,
 	hp: 97,
+	source: '5.1 SRD',
 }
 
 export const lich = {
@@ -2000,6 +2166,7 @@ export const lich = {
 	stealth: 0,
 	ac: 17,
 	hp: 135,
+	source: '5.1 SRD',
 }
 
 export const lion = {
@@ -2012,6 +2179,7 @@ export const lion = {
 	stealth: 6,
 	ac: 12,
 	hp: 26,
+	source: '5.1 SRD',
 }
 
 export const lizardfolk = {
@@ -2024,6 +2192,7 @@ export const lizardfolk = {
 	stealth: 4,
 	ac: 13,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const mage = {
@@ -2036,6 +2205,7 @@ export const mage = {
 	stealth: 0,
 	ac: 12,
 	hp: 40,
+	source: '5.1 SRD',
 }
 
 export const magma_mephit = {
@@ -2048,6 +2218,7 @@ export const magma_mephit = {
 	stealth: 3,
 	ac: 11,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const magmin = {
@@ -2060,6 +2231,7 @@ export const magmin = {
 	stealth: 0,
 	ac: 14,
 	hp: 9,
+	source: '5.1 SRD',
 }
 
 export const mammoth = {
@@ -2072,6 +2244,7 @@ export const mammoth = {
 	stealth: 0,
 	ac: 13,
 	hp: 126,
+	source: '5.1 SRD',
 }
 
 export const manticore = {
@@ -2084,6 +2257,7 @@ export const manticore = {
 	stealth: 0,
 	ac: 14,
 	hp: 68,
+	source: '5.1 SRD',
 }
 
 export const marilith = {
@@ -2096,6 +2270,7 @@ export const marilith = {
 	stealth: 0,
 	ac: 18,
 	hp: 189,
+	source: '5.1 SRD',
 }
 
 export const mastiff = {
@@ -2108,6 +2283,7 @@ export const mastiff = {
 	stealth: 0,
 	ac: 12,
 	hp: 5,
+	source: '5.1 SRD',
 }
 
 export const medusa = {
@@ -2120,6 +2296,7 @@ export const medusa = {
 	stealth: 5,
 	ac: 15,
 	hp: 127,
+	source: '5.1 SRD',
 }
 
 export const merfolk = {
@@ -2132,6 +2309,7 @@ export const merfolk = {
 	stealth: 0,
 	ac: 11,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const merrow = {
@@ -2144,6 +2322,7 @@ export const merrow = {
 	stealth: 0,
 	ac: 13,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const mimic = {
@@ -2156,6 +2335,7 @@ export const mimic = {
 	stealth: 5,
 	ac: 12,
 	hp: 58,
+	source: '5.1 SRD',
 }
 
 export const minotaur = {
@@ -2168,6 +2348,7 @@ export const minotaur = {
 	stealth: 0,
 	ac: 14,
 	hp: 76,
+	source: '5.1 SRD',
 }
 
 export const minotaur_skeleton = {
@@ -2180,6 +2361,7 @@ export const minotaur_skeleton = {
 	stealth: 0,
 	ac: 12,
 	hp: 67,
+	source: '5.1 SRD',
 }
 
 export const mule = {
@@ -2192,6 +2374,7 @@ export const mule = {
 	stealth: 0,
 	ac: 10,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const mummy = {
@@ -2204,6 +2387,7 @@ export const mummy = {
 	stealth: 0,
 	ac: 11,
 	hp: 58,
+	source: '5.1 SRD',
 }
 
 export const mummy_lord = {
@@ -2216,6 +2400,7 @@ export const mummy_lord = {
 	stealth: 0,
 	ac: 17,
 	hp: 97,
+	source: '5.1 SRD',
 }
 
 export const nalfeshnee = {
@@ -2228,6 +2413,7 @@ export const nalfeshnee = {
 	stealth: 0,
 	ac: 18,
 	hp: 184,
+	source: '5.1 SRD',
 }
 
 export const night_hag = {
@@ -2240,6 +2426,7 @@ export const night_hag = {
 	stealth: 6,
 	ac: 17,
 	hp: 112,
+	source: '5.1 SRD',
 }
 
 export const nightmare = {
@@ -2252,6 +2439,7 @@ export const nightmare = {
 	stealth: 0,
 	ac: 13,
 	hp: 68,
+	source: '5.1 SRD',
 }
 
 export const noble = {
@@ -2264,6 +2452,7 @@ export const noble = {
 	stealth: 0,
 	ac: 15,
 	hp: 9,
+	source: '5.1 SRD',
 }
 
 export const ochre_jelly = {
@@ -2276,6 +2465,7 @@ export const ochre_jelly = {
 	stealth: 0,
 	ac: 8,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const ogre = {
@@ -2288,6 +2478,7 @@ export const ogre = {
 	stealth: 0,
 	ac: 11,
 	hp: 59,
+	source: '5.1 SRD',
 }
 
 export const ogre_zombie = {
@@ -2300,6 +2491,7 @@ export const ogre_zombie = {
 	stealth: 0,
 	ac: 8,
 	hp: 85,
+	source: '5.1 SRD',
 }
 
 export const oni = {
@@ -2312,6 +2504,7 @@ export const oni = {
 	stealth: 0,
 	ac: 16,
 	hp: 110,
+	source: '5.1 SRD',
 }
 
 export const orc = {
@@ -2324,6 +2517,7 @@ export const orc = {
 	stealth: 0,
 	ac: 13,
 	hp: 15,
+	source: '5.1 SRD',
 }
 
 export const otyugh = {
@@ -2336,6 +2530,7 @@ export const otyugh = {
 	stealth: 0,
 	ac: 14,
 	hp: 114,
+	source: '5.1 SRD',
 }
 
 export const owlbear = {
@@ -2348,6 +2543,7 @@ export const owlbear = {
 	stealth: 0,
 	ac: 13,
 	hp: 59,
+	source: '5.1 SRD',
 }
 
 export const panther = {
@@ -2360,6 +2556,7 @@ export const panther = {
 	stealth: 6,
 	ac: 12,
 	hp: 13,
+	source: '5.1 SRD',
 }
 
 export const pegasus = {
@@ -2372,6 +2569,7 @@ export const pegasus = {
 	stealth: 0,
 	ac: 12,
 	hp: 59,
+	source: '5.1 SRD',
 }
 
 export const phase_spider = {
@@ -2384,6 +2582,7 @@ export const phase_spider = {
 	stealth: 6,
 	ac: 13,
 	hp: 32,
+	source: '5.1 SRD',
 }
 
 export const pit_fiend = {
@@ -2396,6 +2595,7 @@ export const pit_fiend = {
 	stealth: 0,
 	ac: 19,
 	hp: 300,
+	source: '5.1 SRD',
 }
 
 export const planetar = {
@@ -2408,6 +2608,7 @@ export const planetar = {
 	stealth: 0,
 	ac: 19,
 	hp: 200,
+	source: '5.1 SRD',
 }
 
 export const plesiosaurus = {
@@ -2420,6 +2621,7 @@ export const plesiosaurus = {
 	stealth: 4,
 	ac: 13,
 	hp: 68,
+	source: '5.1 SRD',
 }
 
 export const poisonous_snake = {
@@ -2432,6 +2634,7 @@ export const poisonous_snake = {
 	stealth: 0,
 	ac: 13,
 	hp: 2,
+	source: '5.1 SRD',
 }
 
 export const polar_bear = {
@@ -2444,6 +2647,7 @@ export const polar_bear = {
 	stealth: 0,
 	ac: 12,
 	hp: 42,
+	source: '5.1 SRD',
 }
 
 export const pony = {
@@ -2456,6 +2660,7 @@ export const pony = {
 	stealth: 0,
 	ac: 10,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const priest = {
@@ -2468,6 +2673,7 @@ export const priest = {
 	stealth: 0,
 	ac: 13,
 	hp: 27,
+	source: '5.1 SRD',
 }
 
 export const pseudodragon = {
@@ -2480,6 +2686,7 @@ export const pseudodragon = {
 	stealth: 4,
 	ac: 13,
 	hp: 7,
+	source: '5.1 SRD',
 }
 
 export const purple_worm = {
@@ -2492,6 +2699,7 @@ export const purple_worm = {
 	stealth: 0,
 	ac: 18,
 	hp: 247,
+	source: '5.1 SRD',
 }
 
 export const quasit = {
@@ -2504,6 +2712,7 @@ export const quasit = {
 	stealth: 5,
 	ac: 13,
 	hp: 7,
+	source: '5.1 SRD',
 }
 
 export const rakshasa = {
@@ -2516,6 +2725,7 @@ export const rakshasa = {
 	stealth: 0,
 	ac: 16,
 	hp: 110,
+	source: '5.1 SRD',
 }
 
 export const red_dragon_wyrmling = {
@@ -2528,6 +2738,7 @@ export const red_dragon_wyrmling = {
 	stealth: 2,
 	ac: 17,
 	hp: 75,
+	source: '5.1 SRD',
 }
 
 export const reef_shark = {
@@ -2540,6 +2751,7 @@ export const reef_shark = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const remorhaz = {
@@ -2552,6 +2764,7 @@ export const remorhaz = {
 	stealth: 0,
 	ac: 17,
 	hp: 195,
+	source: '5.1 SRD',
 }
 
 export const rhinoceros = {
@@ -2564,6 +2777,7 @@ export const rhinoceros = {
 	stealth: 0,
 	ac: 11,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const riding_horse = {
@@ -2576,6 +2790,7 @@ export const riding_horse = {
 	stealth: 0,
 	ac: 10,
 	hp: 13,
+	source: '5.1 SRD',
 }
 
 export const roc = {
@@ -2588,6 +2803,7 @@ export const roc = {
 	stealth: 0,
 	ac: 15,
 	hp: 248,
+	source: '5.1 SRD',
 }
 
 export const roper = {
@@ -2600,6 +2816,7 @@ export const roper = {
 	stealth: 5,
 	ac: 20,
 	hp: 93,
+	source: '5.1 SRD',
 }
 
 export const rug_of_smothering = {
@@ -2612,6 +2829,7 @@ export const rug_of_smothering = {
 	stealth: 0,
 	ac: 12,
 	hp: 33,
+	source: '5.1 SRD',
 }
 
 export const rust_monster = {
@@ -2624,6 +2842,7 @@ export const rust_monster = {
 	stealth: 0,
 	ac: 14,
 	hp: 27,
+	source: '5.1 SRD',
 }
 
 export const saber_toothed_tiger = {
@@ -2636,6 +2855,7 @@ export const saber_toothed_tiger = {
 	stealth: 6,
 	ac: 12,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const sahuagin = {
@@ -2648,6 +2868,7 @@ export const sahuagin = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const salamander = {
@@ -2660,6 +2881,7 @@ export const salamander = {
 	stealth: 0,
 	ac: 15,
 	hp: 90,
+	source: '5.1 SRD',
 }
 
 export const satyr = {
@@ -2672,6 +2894,7 @@ export const satyr = {
 	stealth: 5,
 	ac: 14,
 	hp: 31,
+	source: '5.1 SRD',
 }
 
 export const scout = {
@@ -2684,6 +2907,7 @@ export const scout = {
 	stealth: 6,
 	ac: 13,
 	hp: 16,
+	source: '5.1 SRD',
 }
 
 export const sea_hag = {
@@ -2696,6 +2920,7 @@ export const sea_hag = {
 	stealth: 0,
 	ac: 14,
 	hp: 52,
+	source: '5.1 SRD',
 }
 
 export const shadow = {
@@ -2708,6 +2933,7 @@ export const shadow = {
 	stealth: 4,
 	ac: 12,
 	hp: 16,
+	source: '5.1 SRD',
 }
 
 export const shambling_mound = {
@@ -2720,6 +2946,7 @@ export const shambling_mound = {
 	stealth: 2,
 	ac: 15,
 	hp: 136,
+	source: '5.1 SRD',
 }
 
 export const shield_guardian = {
@@ -2732,6 +2959,7 @@ export const shield_guardian = {
 	stealth: 0,
 	ac: 17,
 	hp: 142,
+	source: '5.1 SRD',
 }
 
 export const silver_dragon_wyrmling = {
@@ -2744,6 +2972,7 @@ export const silver_dragon_wyrmling = {
 	stealth: 2,
 	ac: 17,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const skeleton = {
@@ -2756,6 +2985,7 @@ export const skeleton = {
 	stealth: 0,
 	ac: 13,
 	hp: 13,
+	source: '5.1 SRD',
 }
 
 export const solar = {
@@ -2768,6 +2998,7 @@ export const solar = {
 	stealth: 0,
 	ac: 21,
 	hp: 243,
+	source: '5.1 SRD',
 }
 
 export const specter = {
@@ -2780,6 +3011,7 @@ export const specter = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const spirit_naga = {
@@ -2792,6 +3024,7 @@ export const spirit_naga = {
 	stealth: 0,
 	ac: 15,
 	hp: 75,
+	source: '5.1 SRD',
 }
 
 export const sprite = {
@@ -2804,6 +3037,7 @@ export const sprite = {
 	stealth: 8,
 	ac: 15,
 	hp: 2,
+	source: '5.1 SRD',
 }
 
 export const spy = {
@@ -2816,6 +3050,7 @@ export const spy = {
 	stealth: 4,
 	ac: 12,
 	hp: 27,
+	source: '5.1 SRD',
 }
 
 export const steam_mephit = {
@@ -2828,6 +3063,7 @@ export const steam_mephit = {
 	stealth: 0,
 	ac: 10,
 	hp: 21,
+	source: '5.1 SRD',
 }
 
 export const stirge = {
@@ -2840,6 +3076,7 @@ export const stirge = {
 	stealth: 0,
 	ac: 14,
 	hp: 2,
+	source: '5.1 SRD',
 }
 
 export const stone_giant = {
@@ -2852,6 +3089,7 @@ export const stone_giant = {
 	stealth: 0,
 	ac: 17,
 	hp: 126,
+	source: '5.1 SRD',
 }
 
 export const stone_golem = {
@@ -2864,6 +3102,7 @@ export const stone_golem = {
 	stealth: 0,
 	ac: 17,
 	hp: 178,
+	source: '5.1 SRD',
 }
 
 export const storm_giant = {
@@ -2876,6 +3115,7 @@ export const storm_giant = {
 	stealth: 0,
 	ac: 16,
 	hp: 230,
+	source: '5.1 SRD',
 }
 
 export const succubus_incubus = {
@@ -2888,6 +3128,7 @@ export const succubus_incubus = {
 	stealth: 7,
 	ac: 15,
 	hp: 66,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_bats = {
@@ -2900,6 +3141,7 @@ export const swarm_of_bats = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_beetles = {
@@ -2912,6 +3154,7 @@ export const swarm_of_beetles = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_centipedes = {
@@ -2924,6 +3167,7 @@ export const swarm_of_centipedes = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_insects = {
@@ -2936,6 +3180,7 @@ export const swarm_of_insects = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_poisonous_snakes = {
@@ -2948,6 +3193,7 @@ export const swarm_of_poisonous_snakes = {
 	stealth: 0,
 	ac: 14,
 	hp: 36,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_quippers = {
@@ -2960,6 +3206,7 @@ export const swarm_of_quippers = {
 	stealth: 0,
 	ac: 13,
 	hp: 28,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_rats = {
@@ -2972,6 +3219,7 @@ export const swarm_of_rats = {
 	stealth: 0,
 	ac: 10,
 	hp: 24,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_ravens = {
@@ -2984,6 +3232,7 @@ export const swarm_of_ravens = {
 	stealth: 0,
 	ac: 12,
 	hp: 24,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_spiders = {
@@ -2996,6 +3245,7 @@ export const swarm_of_spiders = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const swarm_of_wasps = {
@@ -3008,6 +3258,7 @@ export const swarm_of_wasps = {
 	stealth: 0,
 	ac: 12,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const tarrasque = {
@@ -3020,6 +3271,7 @@ export const tarrasque = {
 	stealth: 0,
 	ac: 25,
 	hp: 676,
+	source: '5.1 SRD',
 }
 
 export const thug = {
@@ -3032,6 +3284,7 @@ export const thug = {
 	stealth: 0,
 	ac: 11,
 	hp: 32,
+	source: '5.1 SRD',
 }
 
 export const tiger = {
@@ -3044,6 +3297,7 @@ export const tiger = {
 	stealth: 6,
 	ac: 12,
 	hp: 37,
+	source: '5.1 SRD',
 }
 
 export const treant = {
@@ -3056,6 +3310,7 @@ export const treant = {
 	stealth: 0,
 	ac: 16,
 	hp: 138,
+	source: '5.1 SRD',
 }
 
 export const tribal_warrior = {
@@ -3068,6 +3323,7 @@ export const tribal_warrior = {
 	stealth: 0,
 	ac: 12,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const triceratops = {
@@ -3080,6 +3336,7 @@ export const triceratops = {
 	stealth: 0,
 	ac: 13,
 	hp: 95,
+	source: '5.1 SRD',
 }
 
 export const troll = {
@@ -3092,6 +3349,7 @@ export const troll = {
 	stealth: 0,
 	ac: 15,
 	hp: 84,
+	source: '5.1 SRD',
 }
 
 export const tyrannosaurus_rex = {
@@ -3104,6 +3362,7 @@ export const tyrannosaurus_rex = {
 	stealth: 0,
 	ac: 13,
 	hp: 136,
+	source: '5.1 SRD',
 }
 
 export const unicorn = {
@@ -3116,6 +3375,7 @@ export const unicorn = {
 	stealth: 0,
 	ac: 12,
 	hp: 67,
+	source: '5.1 SRD',
 }
 
 export const vampire_bat = {
@@ -3128,6 +3388,7 @@ export const vampire_bat = {
 	stealth: 9,
 	ac: 16,
 	hp: 144,
+	source: '5.1 SRD',
 }
 
 export const vampire_mist = {
@@ -3140,6 +3401,7 @@ export const vampire_mist = {
 	stealth: 9,
 	ac: 16,
 	hp: 144,
+	source: '5.1 SRD',
 }
 
 export const vampire_spawn = {
@@ -3152,6 +3414,7 @@ export const vampire_spawn = {
 	stealth: 6,
 	ac: 15,
 	hp: 82,
+	source: '5.1 SRD',
 }
 
 export const vampire_vampire = {
@@ -3164,6 +3427,7 @@ export const vampire_vampire = {
 	stealth: 9,
 	ac: 16,
 	hp: 144,
+	source: '5.1 SRD',
 }
 
 export const veteran = {
@@ -3176,6 +3440,7 @@ export const veteran = {
 	stealth: 0,
 	ac: 17,
 	hp: 58,
+	source: '5.1 SRD',
 }
 
 export const violet_fungus = {
@@ -3188,6 +3453,7 @@ export const violet_fungus = {
 	stealth: 0,
 	ac: 5,
 	hp: 18,
+	source: '5.1 SRD',
 }
 
 export const vrock = {
@@ -3200,6 +3466,7 @@ export const vrock = {
 	stealth: 0,
 	ac: 15,
 	hp: 104,
+	source: '5.1 SRD',
 }
 
 export const warhorse = {
@@ -3212,6 +3479,7 @@ export const warhorse = {
 	stealth: 0,
 	ac: 11,
 	hp: 19,
+	source: '5.1 SRD',
 }
 
 export const warhorse_skeleton = {
@@ -3224,6 +3492,7 @@ export const warhorse_skeleton = {
 	stealth: 0,
 	ac: 13,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const water_elemental = {
@@ -3236,6 +3505,7 @@ export const water_elemental = {
 	stealth: 0,
 	ac: 14,
 	hp: 114,
+	source: '5.1 SRD',
 }
 
 export const werebear_bear = {
@@ -3248,6 +3518,7 @@ export const werebear_bear = {
 	stealth: 0,
 	ac: 11,
 	hp: 135,
+	source: '5.1 SRD',
 }
 
 export const werebear_human = {
@@ -3260,6 +3531,7 @@ export const werebear_human = {
 	stealth: 0,
 	ac: 10,
 	hp: 135,
+	source: '5.1 SRD',
 }
 
 export const werebear_hybrid = {
@@ -3272,6 +3544,7 @@ export const werebear_hybrid = {
 	stealth: 0,
 	ac: 11,
 	hp: 135,
+	source: '5.1 SRD',
 }
 
 export const wereboar_boar = {
@@ -3284,6 +3557,7 @@ export const wereboar_boar = {
 	stealth: 0,
 	ac: 11,
 	hp: 78,
+	source: '5.1 SRD',
 }
 
 export const wereboar_human = {
@@ -3296,6 +3570,7 @@ export const wereboar_human = {
 	stealth: 0,
 	ac: 10,
 	hp: 78,
+	source: '5.1 SRD',
 }
 
 export const wereboar_hybrid = {
@@ -3308,6 +3583,7 @@ export const wereboar_hybrid = {
 	stealth: 0,
 	ac: 11,
 	hp: 78,
+	source: '5.1 SRD',
 }
 
 export const wererat_human = {
@@ -3320,6 +3596,7 @@ export const wererat_human = {
 	stealth: 4,
 	ac: 12,
 	hp: 33,
+	source: '5.1 SRD',
 }
 
 export const wererat_hybrid = {
@@ -3332,6 +3609,7 @@ export const wererat_hybrid = {
 	stealth: 4,
 	ac: 12,
 	hp: 33,
+	source: '5.1 SRD',
 }
 
 export const wererat_rat = {
@@ -3344,6 +3622,7 @@ export const wererat_rat = {
 	stealth: 4,
 	ac: 12,
 	hp: 33,
+	source: '5.1 SRD',
 }
 
 export const weretiger_human = {
@@ -3356,6 +3635,7 @@ export const weretiger_human = {
 	stealth: 4,
 	ac: 12,
 	hp: 120,
+	source: '5.1 SRD',
 }
 
 export const weretiger_hybrid = {
@@ -3368,6 +3648,7 @@ export const weretiger_hybrid = {
 	stealth: 4,
 	ac: 12,
 	hp: 120,
+	source: '5.1 SRD',
 }
 
 export const weretiger_tiger = {
@@ -3380,6 +3661,7 @@ export const weretiger_tiger = {
 	stealth: 4,
 	ac: 12,
 	hp: 120,
+	source: '5.1 SRD',
 }
 
 export const werewolf_human = {
@@ -3392,6 +3674,7 @@ export const werewolf_human = {
 	stealth: 0,
 	ac: 11,
 	hp: 58,
+	source: '5.1 SRD',
 }
 
 export const werewolf_hybrid = {
@@ -3404,6 +3687,7 @@ export const werewolf_hybrid = {
 	stealth: 0,
 	ac: 12,
 	hp: 58,
+	source: '5.1 SRD',
 }
 
 export const werewolf_wolf = {
@@ -3416,6 +3700,7 @@ export const werewolf_wolf = {
 	stealth: 0,
 	ac: 12,
 	hp: 58,
+	source: '5.1 SRD',
 }
 
 export const white_dragon_wyrmling = {
@@ -3428,6 +3713,7 @@ export const white_dragon_wyrmling = {
 	stealth: 2,
 	ac: 16,
 	hp: 32,
+	source: '5.1 SRD',
 }
 
 export const wight = {
@@ -3440,11 +3726,12 @@ export const wight = {
 	stealth: 4,
 	ac: 14,
 	hp: 45,
+	source: '5.1 SRD',
 }
 
 export const will_o_wisp = {
 	key: 'will_o_wisp',
-	name: 'Will-o-Wisp',
+	name: 'Will-o\'-Wisp',
 	xp: 450,
 	link: 'https://www.dndbeyond.com/monsters/will-o-wisp',
 	int: 13,
@@ -3452,6 +3739,7 @@ export const will_o_wisp = {
 	stealth: 0,
 	ac: 19,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const winter_wolf = {
@@ -3464,6 +3752,7 @@ export const winter_wolf = {
 	stealth: 3,
 	ac: 13,
 	hp: 75,
+	source: '5.1 SRD',
 }
 
 export const wolf = {
@@ -3476,6 +3765,7 @@ export const wolf = {
 	stealth: 4,
 	ac: 13,
 	hp: 11,
+	source: '5.1 SRD',
 }
 
 export const worg = {
@@ -3488,6 +3778,7 @@ export const worg = {
 	stealth: 0,
 	ac: 13,
 	hp: 26,
+	source: '5.1 SRD',
 }
 
 export const wraith = {
@@ -3500,6 +3791,7 @@ export const wraith = {
 	stealth: 0,
 	ac: 13,
 	hp: 67,
+	source: '5.1 SRD',
 }
 
 export const wyvern = {
@@ -3512,6 +3804,7 @@ export const wyvern = {
 	stealth: 0,
 	ac: 13,
 	hp: 110,
+	source: '5.1 SRD',
 }
 
 export const xorn = {
@@ -3524,6 +3817,7 @@ export const xorn = {
 	stealth: 3,
 	ac: 19,
 	hp: 73,
+	source: '5.1 SRD',
 }
 
 export const young_black_dragon = {
@@ -3536,6 +3830,7 @@ export const young_black_dragon = {
 	stealth: 5,
 	ac: 18,
 	hp: 127,
+	source: '5.1 SRD',
 }
 
 export const young_blue_dragon = {
@@ -3548,6 +3843,7 @@ export const young_blue_dragon = {
 	stealth: 4,
 	ac: 18,
 	hp: 152,
+	source: '5.1 SRD',
 }
 
 export const young_brass_dragon = {
@@ -3560,6 +3856,7 @@ export const young_brass_dragon = {
 	stealth: 3,
 	ac: 17,
 	hp: 110,
+	source: '5.1 SRD',
 }
 
 export const young_bronze_dragon = {
@@ -3572,6 +3869,7 @@ export const young_bronze_dragon = {
 	stealth: 3,
 	ac: 18,
 	hp: 142,
+	source: '5.1 SRD',
 }
 
 export const young_copper_dragon = {
@@ -3584,6 +3882,7 @@ export const young_copper_dragon = {
 	stealth: 4,
 	ac: 17,
 	hp: 119,
+	source: '5.1 SRD',
 }
 
 export const young_gold_dragon = {
@@ -3596,6 +3895,7 @@ export const young_gold_dragon = {
 	stealth: 6,
 	ac: 18,
 	hp: 178,
+	source: '5.1 SRD',
 }
 
 export const young_green_dragon = {
@@ -3608,6 +3908,7 @@ export const young_green_dragon = {
 	stealth: 4,
 	ac: 18,
 	hp: 136,
+	source: '5.1 SRD',
 }
 
 export const young_red_dragon = {
@@ -3620,6 +3921,7 @@ export const young_red_dragon = {
 	stealth: 4,
 	ac: 18,
 	hp: 178,
+	source: '5.1 SRD',
 }
 
 export const young_silver_dragon = {
@@ -3632,6 +3934,7 @@ export const young_silver_dragon = {
 	stealth: 4,
 	ac: 18,
 	hp: 168,
+	source: '5.1 SRD',
 }
 
 export const young_white_dragon = {
@@ -3644,6 +3947,7 @@ export const young_white_dragon = {
 	stealth: 3,
 	ac: 17,
 	hp: 133,
+	source: '5.1 SRD',
 }
 
 export const zombie = {
@@ -3656,6 +3960,7 @@ export const zombie = {
 	stealth: 0,
 	ac: 8,
 	hp: 22,
+	source: '5.1 SRD',
 }
 
 export const carrion_crawler = {
@@ -3668,6 +3973,7 @@ export const carrion_crawler = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const cyclops = {
@@ -3680,6 +3986,7 @@ export const cyclops = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const bugbear_chief = {
@@ -3692,6 +3999,7 @@ export const bugbear_chief = {
 	stealth: 6,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const gnoll_pack_lord = {
@@ -3704,6 +4012,7 @@ export const gnoll_pack_lord = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const gnoll_fang_of_yeenoghu = {
@@ -3716,6 +4025,7 @@ export const gnoll_fang_of_yeenoghu = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const goblin_boss = {
@@ -3728,6 +4038,7 @@ export const goblin_boss = {
 	stealth: 6,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const grick_alpha = {
@@ -3740,6 +4051,7 @@ export const grick_alpha = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const hobgoblin_captain = {
@@ -3752,6 +4064,7 @@ export const hobgoblin_captain = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const hobgoblin_warlord = {
@@ -3764,6 +4077,7 @@ export const hobgoblin_warlord = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const winged_kobold = {
@@ -3776,6 +4090,7 @@ export const winged_kobold = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const half_ogre = {
@@ -3788,6 +4103,7 @@ export const half_ogre = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const orc_war_chief = {
@@ -3800,6 +4116,7 @@ export const orc_war_chief = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const orc_eye_of_gruumsh = {
@@ -3812,6 +4129,7 @@ export const orc_eye_of_gruumsh = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const orog = {
@@ -3824,6 +4142,7 @@ export const orog = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const displacer_beast = {
@@ -3836,6 +4155,7 @@ export const displacer_beast = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const kuo_toa = {
@@ -3848,6 +4168,7 @@ export const kuo_toa = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const kuo_toa_archpriest = {
@@ -3860,6 +4181,7 @@ export const kuo_toa_archpriest = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const kuo_toa_whip = {
@@ -3872,6 +4194,7 @@ export const kuo_toa_whip = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const beholder = {
@@ -3884,6 +4207,7 @@ export const beholder = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const bullywug = {
@@ -3896,6 +4220,7 @@ export const bullywug = {
 	stealth: 3,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const bone_naga = {
@@ -3908,6 +4233,7 @@ export const bone_naga = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const mind_flayer = {
@@ -3920,6 +4246,7 @@ export const mind_flayer = {
 	stealth: 4,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const yuan_ti_abomination = {
@@ -3932,6 +4259,7 @@ export const yuan_ti_abomination = {
 	stealth: 6,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const yuan_ti_malison = {
@@ -3944,6 +4272,7 @@ export const yuan_ti_malison = {
 	stealth: 4,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const yuan_ti_pureblood = {
@@ -3956,6 +4285,7 @@ export const yuan_ti_pureblood = {
 	stealth: 3,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const needle_blight = {
@@ -3968,6 +4298,7 @@ export const needle_blight = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const twig_blight = {
@@ -3980,6 +4311,7 @@ export const twig_blight = {
 	stealth: 3,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const vine_blight = {
@@ -3992,6 +4324,7 @@ export const vine_blight = {
 	stealth: 1,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const troglodyte = {
@@ -4004,6 +4337,7 @@ export const troglodyte = {
 	stealth: 2,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const peryton = {
@@ -4016,6 +4350,7 @@ export const peryton = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const galeb_duhr = {
@@ -4028,6 +4363,7 @@ export const galeb_duhr = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const banshee = {
@@ -4040,6 +4376,7 @@ export const banshee = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const dao = {
@@ -4052,6 +4389,7 @@ export const dao = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const marid = {
@@ -4064,6 +4402,7 @@ export const marid = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const intellect_devourer = {
@@ -4076,6 +4415,7 @@ export const intellect_devourer = {
 	stealth: 4,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const nothic = {
@@ -4088,6 +4428,7 @@ export const nothic = {
 	stealth: 5,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const grell = {
@@ -4100,11 +4441,12 @@ export const grell = {
 	stealth: 6,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const hook_horror = {
 	key: 'hook_horror',
-	name: 'Hook Horrer',
+	name: 'Hook Horror',
 	xp: 700,
 	link: 'https://www.dndbeyond.com/monsters/17162-hook-horror',
 	int: 6,
@@ -4112,6 +4454,7 @@ export const hook_horror = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const water_weird = {
@@ -4124,6 +4467,7 @@ export const water_weird = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const flameskull = {
@@ -4136,6 +4480,7 @@ export const flameskull = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
 }
 
 export const umber_hulk = {
@@ -4148,5 +4493,3919 @@ export const umber_hulk = {
 	stealth: 0,
 	ac: 0,
 	hp: 0,
+	source: '2014 MM',
+}
+
+export const adult_white_dragon_mm_2024 = {
+	key: 'adult_white_dragon_mm_2024',
+	name: 'Adult White Dragon',
+	xp: 10000,
+	link: '/monsters_html/adult_white_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const goblin_warrior_mm_2024 = {
+	key: 'goblin_warrior_mm_2024',
+	name: 'Goblin Warrior',
+	xp: 50,
+	link: '/monsters_html/goblin_warrior_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const tarrasque_mm_2024 = {
+	key: 'tarrasque_mm_2024',
+	name: 'Tarrasque',
+	xp: 155000,
+	link: '/monsters_html/tarrasque_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const knight_mm_2024 = {
+	key: 'knight_mm_2024',
+	name: 'Knight',
+	xp: 700,
+	link: '/monsters_html/knight_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const warhorse_skeleton_mm_2024 = {
+	key: 'warhorse_skeleton_mm_2024',
+	name: 'Warhorse Skeleton',
+	xp: 100,
+	link: '/monsters_html/warhorse_skeleton_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const solar_mm_2024 = {
+	key: 'solar_mm_2024',
+	name: 'Solar',
+	xp: 33000,
+	link: '/monsters_html/solar_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const vrock_mm_2024 = {
+	key: 'vrock_mm_2024',
+	name: 'Vrock',
+	xp: 2300,
+	link: '/monsters_html/vrock_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_lizard_mm_2024 = {
+	key: 'giant_lizard_mm_2024',
+	name: 'Giant Lizard',
+	xp: 50,
+	link: '/monsters_html/giant_lizard_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const sphinx_of_valor_mm_2024 = {
+	key: 'sphinx_of_valor_mm_2024',
+	name: 'Sphinx of Valor',
+	xp: 18000,
+	link: '/monsters_html/sphinx_of_valor_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const sea_hag_mm_2024 = {
+	key: 'sea_hag_mm_2024',
+	name: 'Sea Hag',
+	xp: 450,
+	link: '/monsters_html/sea_hag_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const sahuagin_warrior_mm_2024 = {
+	key: 'sahuagin_warrior_mm_2024',
+	name: 'Sahuagin Warrior',
+	xp: 100,
+	link: '/monsters_html/sahuagin_warrior_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_owl_mm_2024 = {
+	key: 'giant_owl_mm_2024',
+	name: 'Giant Owl',
+	xp: 50,
+	link: '/monsters_html/giant_owl_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const werebear_mm_2024 = {
+	key: 'werebear_mm_2024',
+	name: 'Werebear',
+	xp: 1800,
+	link: '/monsters_html/werebear_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const flying_snake_mm_2024 = {
+	key: 'flying_snake_mm_2024',
+	name: 'Flying Snake',
+	xp: 25,
+	link: '/monsters_html/flying_snake_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const invisible_stalker_mm_2024 = {
+	key: 'invisible_stalker_mm_2024',
+	name: 'Invisible Stalker',
+	xp: 2300,
+	link: '/monsters_html/invisible_stalker_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ochre_jelly_mm_2024 = {
+	key: 'ochre_jelly_mm_2024',
+	name: 'Ochre Jelly',
+	xp: 450,
+	link: '/monsters_html/ochre_jelly_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const mule_mm_2024 = {
+	key: 'mule_mm_2024',
+	name: 'Mule',
+	xp: 25,
+	link: '/monsters_html/mule_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const dire_wolf_mm_2024 = {
+	key: 'dire_wolf_mm_2024',
+	name: 'Dire Wolf',
+	xp: 200,
+	link: '/monsters_html/dire_wolf_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const swarm_of_ravens_mm_2024 = {
+	key: 'swarm_of_ravens_mm_2024',
+	name: 'Swarm of Ravens',
+	xp: 50,
+	link: '/monsters_html/swarm_of_ravens_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const druid_mm_2024 = {
+	key: 'druid_mm_2024',
+	name: 'Druid',
+	xp: 450,
+	link: '/monsters_html/druid_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_red_dragon_mm_2024 = {
+	key: 'young_red_dragon_mm_2024',
+	name: 'Young Red Dragon',
+	xp: 5900,
+	link: '/monsters_html/young_red_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const guard_mm_2024 = {
+	key: 'guard_mm_2024',
+	name: 'Guard',
+	xp: 25,
+	link: '/monsters_html/guard_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const reef_shark_mm_2024 = {
+	key: 'reef_shark_mm_2024',
+	name: 'Reef Shark',
+	xp: 100,
+	link: '/monsters_html/reef_shark_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_gold_dragon_mm_2024 = {
+	key: 'young_gold_dragon_mm_2024',
+	name: 'Young Gold Dragon',
+	xp: 5900,
+	link: '/monsters_html/young_gold_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const bugbear_warrior_mm_2024 = {
+	key: 'bugbear_warrior_mm_2024',
+	name: 'Bugbear Warrior',
+	xp: 200,
+	link: '/monsters_html/bugbear_warrior_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const drider_mm_2024 = {
+	key: 'drider_mm_2024',
+	name: 'Drider',
+	xp: 2300,
+	link: '/monsters_html/drider_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const black_pudding_mm_2024 = {
+	key: 'black_pudding_mm_2024',
+	name: 'Black Pudding',
+	xp: 1100,
+	link: '/monsters_html/black_pudding_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const green_dragon_wyrmling_mm_2024 = {
+	key: 'green_dragon_wyrmling_mm_2024',
+	name: 'Green Dragon Wyrmling',
+	xp: 450,
+	link: '/monsters_html/green_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_scorpion_mm_2024 = {
+	key: 'giant_scorpion_mm_2024',
+	name: 'Giant Scorpion',
+	xp: 700,
+	link: '/monsters_html/giant_scorpion_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_gold_dragon_mm_2024 = {
+	key: 'ancient_gold_dragon_mm_2024',
+	name: 'Ancient Gold Dragon',
+	xp: 62000,
+	link: '/monsters_html/ancient_gold_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const vampire_spawn_mm_2024 = {
+	key: 'vampire_spawn_mm_2024',
+	name: 'Vampire Spawn',
+	xp: 1800,
+	link: '/monsters_html/vampire_spawn_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const basilisk_mm_2024 = {
+	key: 'basilisk_mm_2024',
+	name: 'Basilisk',
+	xp: 700,
+	link: '/monsters_html/basilisk_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const mastiff_mm_2024 = {
+	key: 'mastiff_mm_2024',
+	name: 'Mastiff',
+	xp: 25,
+	link: '/monsters_html/mastiff_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ankylosaurus_mm_2024 = {
+	key: 'ankylosaurus_mm_2024',
+	name: 'Ankylosaurus',
+	xp: 700,
+	link: '/monsters_html/ankylosaurus_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_brass_dragon_mm_2024 = {
+	key: 'young_brass_dragon_mm_2024',
+	name: 'Young Brass Dragon',
+	xp: 2300,
+	link: '/monsters_html/young_brass_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const roper_mm_2024 = {
+	key: 'roper_mm_2024',
+	name: 'Roper',
+	xp: 1800,
+	link: '/monsters_html/roper_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const chimera_mm_2024 = {
+	key: 'chimera_mm_2024',
+	name: 'Chimera',
+	xp: 2300,
+	link: '/monsters_html/chimera_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const gold_dragon_wyrmling_mm_2024 = {
+	key: 'gold_dragon_wyrmling_mm_2024',
+	name: 'Gold Dragon Wyrmling',
+	xp: 700,
+	link: '/monsters_html/gold_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const grimlock_mm_2024 = {
+	key: 'grimlock_mm_2024',
+	name: 'Grimlock',
+	xp: 50,
+	link: '/monsters_html/grimlock_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const blood_hawk_mm_2024 = {
+	key: 'blood_hawk_mm_2024',
+	name: 'Blood Hawk',
+	xp: 25,
+	link: '/monsters_html/blood_hawk_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const troll_mm_2024 = {
+	key: 'troll_mm_2024',
+	name: 'Troll',
+	xp: 1800,
+	link: '/monsters_html/troll_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const sprite_mm_2024 = {
+	key: 'sprite_mm_2024',
+	name: 'Sprite',
+	xp: 50,
+	link: '/monsters_html/sprite_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const tough_mm_2024 = {
+	key: 'tough_mm_2024',
+	name: 'Tough',
+	xp: 100,
+	link: '/monsters_html/tough_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_bat_mm_2024 = {
+	key: 'giant_bat_mm_2024',
+	name: 'Giant Bat',
+	xp: 50,
+	link: '/monsters_html/giant_bat_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const satyr_mm_2024 = {
+	key: 'satyr_mm_2024',
+	name: 'Satyr',
+	xp: 100,
+	link: '/monsters_html/satyr_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const efreeti_mm_2024 = {
+	key: 'efreeti_mm_2024',
+	name: 'Efreeti',
+	xp: 7200,
+	link: '/monsters_html/efreeti_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const kobold_warrior_mm_2024 = {
+	key: 'kobold_warrior_mm_2024',
+	name: 'Kobold Warrior',
+	xp: 25,
+	link: '/monsters_html/kobold_warrior_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const adult_black_dragon_mm_2024 = {
+	key: 'adult_black_dragon_mm_2024',
+	name: 'Adult Black Dragon',
+	xp: 11500,
+	link: '/monsters_html/adult_black_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const owlbear_mm_2024 = {
+	key: 'owlbear_mm_2024',
+	name: 'Owlbear',
+	xp: 700,
+	link: '/monsters_html/owlbear_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const tyrannosaurus_rex_mm_2024 = {
+	key: 'tyrannosaurus_rex_mm_2024',
+	name: 'Tyrannosaurus Rex',
+	xp: 3900,
+	link: '/monsters_html/tyrannosaurus_rex_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const mimic_mm_2024 = {
+	key: 'mimic_mm_2024',
+	name: 'Mimic',
+	xp: 450,
+	link: '/monsters_html/mimic_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const animated_flying_sword_mm_2024 = {
+	key: 'animated_flying_sword_mm_2024',
+	name: 'Animated Flying Sword',
+	xp: 50,
+	link: '/monsters_html/animated_flying_sword_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const cockatrice_mm_2024 = {
+	key: 'cockatrice_mm_2024',
+	name: 'Cockatrice',
+	xp: 100,
+	link: '/monsters_html/cockatrice_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const berserker_mm_2024 = {
+	key: 'berserker_mm_2024',
+	name: 'Berserker',
+	xp: 450,
+	link: '/monsters_html/berserker_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const animated_rug_of_smothering_mm_2024 = {
+	key: 'animated_rug_of_smothering_mm_2024',
+	name: 'Animated Rug of Smothering',
+	xp: 450,
+	link: '/monsters_html/animated_rug_of_smothering_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ettercap_mm_2024 = {
+	key: 'ettercap_mm_2024',
+	name: 'Ettercap',
+	xp: 450,
+	link: '/monsters_html/ettercap_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const purple_worm_mm_2024 = {
+	key: 'purple_worm_mm_2024',
+	name: 'Purple Worm',
+	xp: 13000,
+	link: '/monsters_html/purple_worm_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const fire_giant_mm_2024 = {
+	key: 'fire_giant_mm_2024',
+	name: 'Fire Giant',
+	xp: 5000,
+	link: '/monsters_html/fire_giant_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const archelon_mm_2024 = {
+	key: 'archelon_mm_2024',
+	name: 'Archelon',
+	xp: 1100,
+	link: '/monsters_html/archelon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const wight_mm_2024 = {
+	key: 'wight_mm_2024',
+	name: 'Wight',
+	xp: 700,
+	link: '/monsters_html/wight_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const bandit_mm_2024 = {
+	key: 'bandit_mm_2024',
+	name: 'Bandit',
+	xp: 25,
+	link: '/monsters_html/bandit_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_boar_mm_2024 = {
+	key: 'giant_boar_mm_2024',
+	name: 'Giant Boar',
+	xp: 450,
+	link: '/monsters_html/giant_boar_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const specter_mm_2024 = {
+	key: 'specter_mm_2024',
+	name: 'Specter',
+	xp: 200,
+	link: '/monsters_html/specter_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const silver_dragon_wyrmling_mm_2024 = {
+	key: 'silver_dragon_wyrmling_mm_2024',
+	name: 'Silver Dragon Wyrmling',
+	xp: 450,
+	link: '/monsters_html/silver_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const animated_armor_mm_2024 = {
+	key: 'animated_armor_mm_2024',
+	name: 'Animated Armor',
+	xp: 200,
+	link: '/monsters_html/animated_armor_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const red_dragon_wyrmling_mm_2024 = {
+	key: 'red_dragon_wyrmling_mm_2024',
+	name: 'Red Dragon Wyrmling',
+	xp: 1100,
+	link: '/monsters_html/red_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const oni_mm_2024 = {
+	key: 'oni_mm_2024',
+	name: 'Oni',
+	xp: 2900,
+	link: '/monsters_html/oni_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const tough_boss_mm_2024 = {
+	key: 'tough_boss_mm_2024',
+	name: 'Tough Boss',
+	xp: 1100,
+	link: '/monsters_html/tough_boss_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const sphinx_of_lore_mm_2024 = {
+	key: 'sphinx_of_lore_mm_2024',
+	name: 'Sphinx of Lore',
+	xp: 7200,
+	link: '/monsters_html/sphinx_of_lore_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ankheg_mm_2024 = {
+	key: 'ankheg_mm_2024',
+	name: 'Ankheg',
+	xp: 450,
+	link: '/monsters_html/ankheg_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const sabertoothed_tiger_mm_2024 = {
+	key: 'sabertoothed_tiger_mm_2024',
+	name: 'Saber-Toothed Tiger',
+	xp: 450,
+	link: '/monsters_html/sabertoothed_tiger_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_brass_dragon_mm_2024 = {
+	key: 'ancient_brass_dragon_mm_2024',
+	name: 'Ancient Brass Dragon',
+	xp: 25000,
+	link: '/monsters_html/ancient_brass_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const spirit_naga_mm_2024 = {
+	key: 'spirit_naga_mm_2024',
+	name: 'Spirit Naga',
+	xp: 3900,
+	link: '/monsters_html/spirit_naga_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_silver_dragon_mm_2024 = {
+	key: 'ancient_silver_dragon_mm_2024',
+	name: 'Ancient Silver Dragon',
+	xp: 50000,
+	link: '/monsters_html/ancient_silver_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const adult_green_dragon_mm_2024 = {
+	key: 'adult_green_dragon_mm_2024',
+	name: 'Adult Green Dragon',
+	xp: 13000,
+	link: '/monsters_html/adult_green_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const brown_bear_mm_2024 = {
+	key: 'brown_bear_mm_2024',
+	name: 'Brown Bear',
+	xp: 200,
+	link: '/monsters_html/brown_bear_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_centipede_mm_2024 = {
+	key: 'giant_centipede_mm_2024',
+	name: 'Giant Centipede',
+	xp: 50,
+	link: '/monsters_html/giant_centipede_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const hill_giant_mm_2024 = {
+	key: 'hill_giant_mm_2024',
+	name: 'Hill Giant',
+	xp: 1800,
+	link: '/monsters_html/hill_giant_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const black_bear_mm_2024 = {
+	key: 'black_bear_mm_2024',
+	name: 'Black Bear',
+	xp: 100,
+	link: '/monsters_html/black_bear_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_octopus_mm_2024 = {
+	key: 'giant_octopus_mm_2024',
+	name: 'Giant Octopus',
+	xp: 200,
+	link: '/monsters_html/giant_octopus_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const hezrou_mm_2024 = {
+	key: 'hezrou_mm_2024',
+	name: 'Hezrou',
+	xp: 3900,
+	link: '/monsters_html/hezrou_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const imp_mm_2024 = {
+	key: 'imp_mm_2024',
+	name: 'Imp',
+	xp: 200,
+	link: '/monsters_html/imp_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const pit_fiend_mm_2024 = {
+	key: 'pit_fiend_mm_2024',
+	name: 'Pit Fiend',
+	xp: 25000,
+	link: '/monsters_html/pit_fiend_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const wereboar_mm_2024 = {
+	key: 'wereboar_mm_2024',
+	name: 'Wereboar',
+	xp: 1100,
+	link: '/monsters_html/wereboar_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const azer_sentinel_mm_2024 = {
+	key: 'azer_sentinel_mm_2024',
+	name: 'Azer Sentinel',
+	xp: 450,
+	link: '/monsters_html/azer_sentinel_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const swarm_of_bats_mm_2024 = {
+	key: 'swarm_of_bats_mm_2024',
+	name: 'Swarm of Bats',
+	xp: 50,
+	link: '/monsters_html/swarm_of_bats_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const gnoll_warrior_mm_2024 = {
+	key: 'gnoll_warrior_mm_2024',
+	name: 'Gnoll Warrior',
+	xp: 100,
+	link: '/monsters_html/gnoll_warrior_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const goblin_boss_mm_2024 = {
+	key: 'goblin_boss_mm_2024',
+	name: 'Goblin Boss',
+	xp: 200,
+	link: '/monsters_html/goblin_boss_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_elk_mm_2024 = {
+	key: 'giant_elk_mm_2024',
+	name: 'Giant Elk',
+	xp: 450,
+	link: '/monsters_html/giant_elk_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const storm_giant_mm_2024 = {
+	key: 'storm_giant_mm_2024',
+	name: 'Storm Giant',
+	xp: 10000,
+	link: '/monsters_html/storm_giant_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const phase_spider_mm_2024 = {
+	key: 'phase_spider_mm_2024',
+	name: 'Phase Spider',
+	xp: 700,
+	link: '/monsters_html/phase_spider_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const camel_mm_2024 = {
+	key: 'camel_mm_2024',
+	name: 'Camel',
+	xp: 25,
+	link: '/monsters_html/camel_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const constrictor_snake_mm_2024 = {
+	key: 'constrictor_snake_mm_2024',
+	name: 'Constrictor Snake',
+	xp: 50,
+	link: '/monsters_html/constrictor_snake_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const troll_limb_mm_2024 = {
+	key: 'troll_limb_mm_2024',
+	name: 'Troll Limb',
+	xp: 100,
+	link: '/monsters_html/troll_limb_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const couatl_mm_2024 = {
+	key: 'couatl_mm_2024',
+	name: 'Couatl',
+	xp: 1100,
+	link: '/monsters_html/couatl_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const planetar_mm_2024 = {
+	key: 'planetar_mm_2024',
+	name: 'Planetar',
+	xp: 15000,
+	link: '/monsters_html/planetar_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const weretiger_mm_2024 = {
+	key: 'weretiger_mm_2024',
+	name: 'Weretiger',
+	xp: 1100,
+	link: '/monsters_html/weretiger_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ghoul_mm_2024 = {
+	key: 'ghoul_mm_2024',
+	name: 'Ghoul',
+	xp: 200,
+	link: '/monsters_html/ghoul_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_copper_dragon_mm_2024 = {
+	key: 'young_copper_dragon_mm_2024',
+	name: 'Young Copper Dragon',
+	xp: 2900,
+	link: '/monsters_html/young_copper_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const iron_golem_mm_2024 = {
+	key: 'iron_golem_mm_2024',
+	name: 'Iron Golem',
+	xp: 15000,
+	link: '/monsters_html/iron_golem_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const violet_fungus_mm_2024 = {
+	key: 'violet_fungus_mm_2024',
+	name: 'Violet Fungus',
+	xp: 50,
+	link: '/monsters_html/violet_fungus_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const green_hag_mm_2024 = {
+	key: 'green_hag_mm_2024',
+	name: 'Green Hag',
+	xp: 700,
+	link: '/monsters_html/green_hag_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const stone_giant_mm_2024 = {
+	key: 'stone_giant_mm_2024',
+	name: 'Stone Giant',
+	xp: 2900,
+	link: '/monsters_html/stone_giant_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const goblin_minion_mm_2024 = {
+	key: 'goblin_minion_mm_2024',
+	name: 'Goblin Minion',
+	xp: 25,
+	link: '/monsters_html/goblin_minion_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const wolf_mm_2024 = {
+	key: 'wolf_mm_2024',
+	name: 'Wolf',
+	xp: 50,
+	link: '/monsters_html/wolf_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const night_hag_mm_2024 = {
+	key: 'night_hag_mm_2024',
+	name: 'Night Hag',
+	xp: 1800,
+	link: '/monsters_html/night_hag_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const adult_gold_dragon_mm_2024 = {
+	key: 'adult_gold_dragon_mm_2024',
+	name: 'Adult Gold Dragon',
+	xp: 18000,
+	link: '/monsters_html/adult_gold_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const swarm_of_crawling_claws_mm_2024 = {
+	key: 'swarm_of_crawling_claws_mm_2024',
+	name: 'Swarm of Crawling Claws',
+	xp: 700,
+	link: '/monsters_html/swarm_of_crawling_claws_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const shambling_mound_mm_2024 = {
+	key: 'shambling_mound_mm_2024',
+	name: 'Shambling Mound',
+	xp: 1800,
+	link: '/monsters_html/shambling_mound_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_bronze_dragon_mm_2024 = {
+	key: 'young_bronze_dragon_mm_2024',
+	name: 'Young Bronze Dragon',
+	xp: 3900,
+	link: '/monsters_html/young_bronze_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const blink_dog_mm_2024 = {
+	key: 'blink_dog_mm_2024',
+	name: 'Blink Dog',
+	xp: 50,
+	link: '/monsters_html/blink_dog_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_ape_mm_2024 = {
+	key: 'giant_ape_mm_2024',
+	name: 'Giant Ape',
+	xp: 2900,
+	link: '/monsters_html/giant_ape_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const axe_beak_mm_2024 = {
+	key: 'axe_beak_mm_2024',
+	name: 'Axe Beak',
+	xp: 50,
+	link: '/monsters_html/axe_beak_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const elephant_mm_2024 = {
+	key: 'elephant_mm_2024',
+	name: 'Elephant',
+	xp: 1100,
+	link: '/monsters_html/elephant_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const sphinx_of_wonder_mm_2024 = {
+	key: 'sphinx_of_wonder_mm_2024',
+	name: 'Sphinx of Wonder',
+	xp: 200,
+	link: '/monsters_html/sphinx_of_wonder_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const fire_elemental_mm_2024 = {
+	key: 'fire_elemental_mm_2024',
+	name: 'Fire Elemental',
+	xp: 1800,
+	link: '/monsters_html/fire_elemental_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const triceratops_mm_2024 = {
+	key: 'triceratops_mm_2024',
+	name: 'Triceratops',
+	xp: 1800,
+	link: '/monsters_html/triceratops_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const salamander_mm_2024 = {
+	key: 'salamander_mm_2024',
+	name: 'Salamander',
+	xp: 1800,
+	link: '/monsters_html/salamander_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const wyvern_mm_2024 = {
+	key: 'wyvern_mm_2024',
+	name: 'Wyvern',
+	xp: 2300,
+	link: '/monsters_html/wyvern_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const archmage_mm_2024 = {
+	key: 'archmage_mm_2024',
+	name: 'Archmage',
+	xp: 8400,
+	link: '/monsters_html/archmage_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const harpy_mm_2024 = {
+	key: 'harpy_mm_2024',
+	name: 'Harpy',
+	xp: 200,
+	link: '/monsters_html/harpy_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const venomous_snake_mm_2024 = {
+	key: 'venomous_snake_mm_2024',
+	name: 'Venomous Snake',
+	xp: 25,
+	link: '/monsters_html/venomous_snake_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const aboleth_mm_2024 = {
+	key: 'aboleth_mm_2024',
+	name: 'Aboleth',
+	xp: 5900,
+	link: '/monsters_html/aboleth_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const mammoth_mm_2024 = {
+	key: 'mammoth_mm_2024',
+	name: 'Mammoth',
+	xp: 2300,
+	link: '/monsters_html/mammoth_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const djinni_mm_2024 = {
+	key: 'djinni_mm_2024',
+	name: 'Djinni',
+	xp: 7200,
+	link: '/monsters_html/djinni_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const pirate_mm_2024 = {
+	key: 'pirate_mm_2024',
+	name: 'Pirate',
+	xp: 200,
+	link: '/monsters_html/pirate_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const zombie_mm_2024 = {
+	key: 'zombie_mm_2024',
+	name: 'Zombie',
+	xp: 50,
+	link: '/monsters_html/zombie_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const bone_devil_mm_2024 = {
+	key: 'bone_devil_mm_2024',
+	name: 'Bone Devil',
+	xp: 5000,
+	link: '/monsters_html/bone_devil_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const vampire_mm_2024 = {
+	key: 'vampire_mm_2024',
+	name: 'Vampire',
+	xp: 10000,
+	link: '/monsters_html/vampire_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const adult_copper_dragon_mm_2024 = {
+	key: 'adult_copper_dragon_mm_2024',
+	name: 'Adult Copper Dragon',
+	xp: 11500,
+	link: '/monsters_html/adult_copper_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const clay_golem_mm_2024 = {
+	key: 'clay_golem_mm_2024',
+	name: 'Clay Golem',
+	xp: 5000,
+	link: '/monsters_html/clay_golem_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const cultist_mm_2024 = {
+	key: 'cultist_mm_2024',
+	name: 'Cultist',
+	xp: 25,
+	link: '/monsters_html/cultist_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const succubus_mm_2024 = {
+	key: 'succubus_mm_2024',
+	name: 'Succubus',
+	xp: 1100,
+	link: '/monsters_html/succubus_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const frost_giant_mm_2024 = {
+	key: 'frost_giant_mm_2024',
+	name: 'Frost Giant',
+	xp: 3900,
+	link: '/monsters_html/frost_giant_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const behir_mm_2024 = {
+	key: 'behir_mm_2024',
+	name: 'Behir',
+	xp: 7200,
+	link: '/monsters_html/behir_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_venomous_snake_mm_2024 = {
+	key: 'giant_venomous_snake_mm_2024',
+	name: 'Giant Venomous Snake',
+	xp: 50,
+	link: '/monsters_html/giant_venomous_snake_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const warhorse_mm_2024 = {
+	key: 'warhorse_mm_2024',
+	name: 'Warhorse',
+	xp: 100,
+	link: '/monsters_html/warhorse_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const magmin_mm_2024 = {
+	key: 'magmin_mm_2024',
+	name: 'Magmin',
+	xp: 100,
+	link: '/monsters_html/magmin_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const bearded_devil_mm_2024 = {
+	key: 'bearded_devil_mm_2024',
+	name: 'Bearded Devil',
+	xp: 700,
+	link: '/monsters_html/bearded_devil_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const polar_bear_mm_2024 = {
+	key: 'polar_bear_mm_2024',
+	name: 'Polar Bear',
+	xp: 450,
+	link: '/monsters_html/polar_bear_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_crab_mm_2024 = {
+	key: 'giant_crab_mm_2024',
+	name: 'Giant Crab',
+	xp: 25,
+	link: '/monsters_html/giant_crab_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const cultist_fanatic_mm_2024 = {
+	key: 'cultist_fanatic_mm_2024',
+	name: 'Cultist Fanatic',
+	xp: 450,
+	link: '/monsters_html/cultist_fanatic_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const magma_mephit_mm_2024 = {
+	key: 'magma_mephit_mm_2024',
+	name: 'Magma Mephit',
+	xp: 100,
+	link: '/monsters_html/magma_mephit_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const swarm_of_venomous_snakes_mm_2024 = {
+	key: 'swarm_of_venomous_snakes_mm_2024',
+	name: 'Swarm of Venomous Snakes',
+	xp: 450,
+	link: '/monsters_html/swarm_of_venomous_snakes_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const dragon_turtle_mm_2024 = {
+	key: 'dragon_turtle_mm_2024',
+	name: 'Dragon Turtle',
+	xp: 18000,
+	link: '/monsters_html/dragon_turtle_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const shadow_mm_2024 = {
+	key: 'shadow_mm_2024',
+	name: 'Shadow',
+	xp: 100,
+	link: '/monsters_html/shadow_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const hippogriff_mm_2024 = {
+	key: 'hippogriff_mm_2024',
+	name: 'Hippogriff',
+	xp: 200,
+	link: '/monsters_html/hippogriff_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_weasel_mm_2024 = {
+	key: 'giant_weasel_mm_2024',
+	name: 'Giant Weasel',
+	xp: 25,
+	link: '/monsters_html/giant_weasel_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const rust_monster_mm_2024 = {
+	key: 'rust_monster_mm_2024',
+	name: 'Rust Monster',
+	xp: 100,
+	link: '/monsters_html/rust_monster_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const adult_bronze_dragon_mm_2024 = {
+	key: 'adult_bronze_dragon_mm_2024',
+	name: 'Adult Bronze Dragon',
+	xp: 13000,
+	link: '/monsters_html/adult_bronze_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ghost_mm_2024 = {
+	key: 'ghost_mm_2024',
+	name: 'Ghost',
+	xp: 1100,
+	link: '/monsters_html/ghost_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const hobgoblin_captain_mm_2024 = {
+	key: 'hobgoblin_captain_mm_2024',
+	name: 'Hobgoblin Captain',
+	xp: 700,
+	link: '/monsters_html/hobgoblin_captain_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const erinyes_mm_2024 = {
+	key: 'erinyes_mm_2024',
+	name: 'Erinyes',
+	xp: 8400,
+	link: '/monsters_html/erinyes_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const marilith_mm_2024 = {
+	key: 'marilith_mm_2024',
+	name: 'Marilith',
+	xp: 15000,
+	link: '/monsters_html/marilith_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const bugbear_stalker_mm_2024 = {
+	key: 'bugbear_stalker_mm_2024',
+	name: 'Bugbear Stalker',
+	xp: 700,
+	link: '/monsters_html/bugbear_stalker_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const awakened_tree_mm_2024 = {
+	key: 'awakened_tree_mm_2024',
+	name: 'Awakened Tree',
+	xp: 450,
+	link: '/monsters_html/awakened_tree_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const lion_mm_2024 = {
+	key: 'lion_mm_2024',
+	name: 'Lion',
+	xp: 200,
+	link: '/monsters_html/lion_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const plesiosaurus_mm_2024 = {
+	key: 'plesiosaurus_mm_2024',
+	name: 'Plesiosaurus',
+	xp: 450,
+	link: '/monsters_html/plesiosaurus_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_constrictor_snake_mm_2024 = {
+	key: 'giant_constrictor_snake_mm_2024',
+	name: 'Giant Constrictor Snake',
+	xp: 450,
+	link: '/monsters_html/giant_constrictor_snake_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const gargoyle_mm_2024 = {
+	key: 'gargoyle_mm_2024',
+	name: 'Gargoyle',
+	xp: 450,
+	link: '/monsters_html/gargoyle_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_badger_mm_2024 = {
+	key: 'giant_badger_mm_2024',
+	name: 'Giant Badger',
+	xp: 50,
+	link: '/monsters_html/giant_badger_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_green_dragon_mm_2024 = {
+	key: 'ancient_green_dragon_mm_2024',
+	name: 'Ancient Green Dragon',
+	xp: 41000,
+	link: '/monsters_html/ancient_green_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const death_dog_mm_2024 = {
+	key: 'death_dog_mm_2024',
+	name: 'Death Dog',
+	xp: 200,
+	link: '/monsters_html/death_dog_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const minotaur_skeleton_mm_2024 = {
+	key: 'minotaur_skeleton_mm_2024',
+	name: 'Minotaur Skeleton',
+	xp: 450,
+	link: '/monsters_html/minotaur_skeleton_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const nightmare_mm_2024 = {
+	key: 'nightmare_mm_2024',
+	name: 'Nightmare',
+	xp: 700,
+	link: '/monsters_html/nightmare_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const gorgon_mm_2024 = {
+	key: 'gorgon_mm_2024',
+	name: 'Gorgon',
+	xp: 1800,
+	link: '/monsters_html/gorgon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_seahorse_mm_2024 = {
+	key: 'giant_seahorse_mm_2024',
+	name: 'Giant Seahorse',
+	xp: 100,
+	link: '/monsters_html/giant_seahorse_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_wolf_spider_mm_2024 = {
+	key: 'giant_wolf_spider_mm_2024',
+	name: 'Giant Wolf Spider',
+	xp: 50,
+	link: '/monsters_html/giant_wolf_spider_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_rat_mm_2024 = {
+	key: 'giant_rat_mm_2024',
+	name: 'Giant Rat',
+	xp: 25,
+	link: '/monsters_html/giant_rat_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const guard_captain_mm_2024 = {
+	key: 'guard_captain_mm_2024',
+	name: 'Guard Captain',
+	xp: 1100,
+	link: '/monsters_html/guard_captain_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const air_elemental_mm_2024 = {
+	key: 'air_elemental_mm_2024',
+	name: 'Air Elemental',
+	xp: 1800,
+	link: '/monsters_html/air_elemental_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const hunter_shark_mm_2024 = {
+	key: 'hunter_shark_mm_2024',
+	name: 'Hunter Shark',
+	xp: 450,
+	link: '/monsters_html/hunter_shark_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const killer_whale_mm_2024 = {
+	key: 'killer_whale_mm_2024',
+	name: 'Killer Whale',
+	xp: 700,
+	link: '/monsters_html/killer_whale_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_crocodile_mm_2024 = {
+	key: 'giant_crocodile_mm_2024',
+	name: 'Giant Crocodile',
+	xp: 1800,
+	link: '/monsters_html/giant_crocodile_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const black_dragon_wyrmling_mm_2024 = {
+	key: 'black_dragon_wyrmling_mm_2024',
+	name: 'Black Dragon Wyrmling',
+	xp: 450,
+	link: '/monsters_html/black_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const kraken_mm_2024 = {
+	key: 'kraken_mm_2024',
+	name: 'Kraken',
+	xp: 50000,
+	link: '/monsters_html/kraken_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_vulture_mm_2024 = {
+	key: 'giant_vulture_mm_2024',
+	name: 'Giant Vulture',
+	xp: 200,
+	link: '/monsters_html/giant_vulture_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const guardian_naga_mm_2024 = {
+	key: 'guardian_naga_mm_2024',
+	name: 'Guardian Naga',
+	xp: 5900,
+	link: '/monsters_html/guardian_naga_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const adult_silver_dragon_mm_2024 = {
+	key: 'adult_silver_dragon_mm_2024',
+	name: 'Adult Silver Dragon',
+	xp: 15000,
+	link: '/monsters_html/adult_silver_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ice_devil_mm_2024 = {
+	key: 'ice_devil_mm_2024',
+	name: 'Ice Devil',
+	xp: 11500,
+	link: '/monsters_html/ice_devil_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_goat_mm_2024 = {
+	key: 'giant_goat_mm_2024',
+	name: 'Giant Goat',
+	xp: 100,
+	link: '/monsters_html/giant_goat_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const chain_devil_mm_2024 = {
+	key: 'chain_devil_mm_2024',
+	name: 'Chain Devil',
+	xp: 3900,
+	link: '/monsters_html/chain_devil_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const pseudodragon_mm_2024 = {
+	key: 'pseudodragon_mm_2024',
+	name: 'Pseudodragon',
+	xp: 50,
+	link: '/monsters_html/pseudodragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const riding_horse_mm_2024 = {
+	key: 'riding_horse_mm_2024',
+	name: 'Riding Horse',
+	xp: 50,
+	link: '/monsters_html/riding_horse_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const blue_dragon_wyrmling_mm_2024 = {
+	key: 'blue_dragon_wyrmling_mm_2024',
+	name: 'Blue Dragon Wyrmling',
+	xp: 700,
+	link: '/monsters_html/blue_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const swarm_of_piranhas_mm_2024 = {
+	key: 'swarm_of_piranhas_mm_2024',
+	name: 'Swarm of Piranhas',
+	xp: 200,
+	link: '/monsters_html/swarm_of_piranhas_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const mummy_lord_mm_2024 = {
+	key: 'mummy_lord_mm_2024',
+	name: 'Mummy Lord',
+	xp: 13000,
+	link: '/monsters_html/mummy_lord_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const lamia_mm_2024 = {
+	key: 'lamia_mm_2024',
+	name: 'Lamia',
+	xp: 1100,
+	link: '/monsters_html/lamia_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_bronze_dragon_mm_2024 = {
+	key: 'ancient_bronze_dragon_mm_2024',
+	name: 'Ancient Bronze Dragon',
+	xp: 41000,
+	link: '/monsters_html/ancient_bronze_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_green_dragon_mm_2024 = {
+	key: 'young_green_dragon_mm_2024',
+	name: 'Young Green Dragon',
+	xp: 3900,
+	link: '/monsters_html/young_green_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ape_mm_2024 = {
+	key: 'ape_mm_2024',
+	name: 'Ape',
+	xp: 100,
+	link: '/monsters_html/ape_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const centaur_trooper_mm_2024 = {
+	key: 'centaur_trooper_mm_2024',
+	name: 'Centaur Trooper',
+	xp: 450,
+	link: '/monsters_html/centaur_trooper_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ghast_mm_2024 = {
+	key: 'ghast_mm_2024',
+	name: 'Ghast',
+	xp: 450,
+	link: '/monsters_html/ghast_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const tiger_mm_2024 = {
+	key: 'tiger_mm_2024',
+	name: 'Tiger',
+	xp: 200,
+	link: '/monsters_html/tiger_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const glabrezu_mm_2024 = {
+	key: 'glabrezu_mm_2024',
+	name: 'Glabrezu',
+	xp: 5000,
+	link: '/monsters_html/glabrezu_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_shark_mm_2024 = {
+	key: 'giant_shark_mm_2024',
+	name: 'Giant Shark',
+	xp: 1800,
+	link: '/monsters_html/giant_shark_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const stirge_mm_2024 = {
+	key: 'stirge_mm_2024',
+	name: 'Stirge',
+	xp: 25,
+	link: '/monsters_html/stirge_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const worg_mm_2024 = {
+	key: 'worg_mm_2024',
+	name: 'Worg',
+	xp: 100,
+	link: '/monsters_html/worg_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const treant_mm_2024 = {
+	key: 'treant_mm_2024',
+	name: 'Treant',
+	xp: 5000,
+	link: '/monsters_html/treant_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const grick_mm_2024 = {
+	key: 'grick_mm_2024',
+	name: 'Grick',
+	xp: 450,
+	link: '/monsters_html/grick_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_copper_dragon_mm_2024 = {
+	key: 'ancient_copper_dragon_mm_2024',
+	name: 'Ancient Copper Dragon',
+	xp: 33000,
+	link: '/monsters_html/ancient_copper_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const wraith_mm_2024 = {
+	key: 'wraith_mm_2024',
+	name: 'Wraith',
+	xp: 1800,
+	link: '/monsters_html/wraith_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const merrow_mm_2024 = {
+	key: 'merrow_mm_2024',
+	name: 'Merrow',
+	xp: 450,
+	link: '/monsters_html/merrow_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const bulette_mm_2024 = {
+	key: 'bulette_mm_2024',
+	name: 'Bulette',
+	xp: 1800,
+	link: '/monsters_html/bulette_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const gelatinous_cube_mm_2024 = {
+	key: 'gelatinous_cube_mm_2024',
+	name: 'Gelatinous Cube',
+	xp: 450,
+	link: '/monsters_html/gelatinous_cube_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const white_dragon_wyrmling_mm_2024 = {
+	key: 'white_dragon_wyrmling_mm_2024',
+	name: 'White Dragon Wyrmling',
+	xp: 450,
+	link: '/monsters_html/white_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ogre_mm_2024 = {
+	key: 'ogre_mm_2024',
+	name: 'Ogre',
+	xp: 450,
+	link: '/monsters_html/ogre_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const allosaurus_mm_2024 = {
+	key: 'allosaurus_mm_2024',
+	name: 'Allosaurus',
+	xp: 450,
+	link: '/monsters_html/allosaurus_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const lich_mm_2024 = {
+	key: 'lich_mm_2024',
+	name: 'Lich',
+	xp: 33000,
+	link: '/monsters_html/lich_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const xorn_mm_2024 = {
+	key: 'xorn_mm_2024',
+	name: 'Xorn',
+	xp: 1800,
+	link: '/monsters_html/xorn_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const noble_mm_2024 = {
+	key: 'noble_mm_2024',
+	name: 'Noble',
+	xp: 25,
+	link: '/monsters_html/noble_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const elk_mm_2024 = {
+	key: 'elk_mm_2024',
+	name: 'Elk',
+	xp: 50,
+	link: '/monsters_html/elk_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const shield_guardian_mm_2024 = {
+	key: 'shield_guardian_mm_2024',
+	name: 'Shield Guardian',
+	xp: 2900,
+	link: '/monsters_html/shield_guardian_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const brass_dragon_wyrmling_mm_2024 = {
+	key: 'brass_dragon_wyrmling_mm_2024',
+	name: 'Brass Dragon Wyrmling',
+	xp: 200,
+	link: '/monsters_html/brass_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const nalfeshnee_mm_2024 = {
+	key: 'nalfeshnee_mm_2024',
+	name: 'Nalfeshnee',
+	xp: 10000,
+	link: '/monsters_html/nalfeshnee_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_silver_dragon_mm_2024 = {
+	key: 'young_silver_dragon_mm_2024',
+	name: 'Young Silver Dragon',
+	xp: 5000,
+	link: '/monsters_html/young_silver_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const dretch_mm_2024 = {
+	key: 'dretch_mm_2024',
+	name: 'Dretch',
+	xp: 50,
+	link: '/monsters_html/dretch_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const steam_mephit_mm_2024 = {
+	key: 'steam_mephit_mm_2024',
+	name: 'Steam Mephit',
+	xp: 50,
+	link: '/monsters_html/steam_mephit_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const griffon_mm_2024 = {
+	key: 'griffon_mm_2024',
+	name: 'Griffon',
+	xp: 450,
+	link: '/monsters_html/griffon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_blue_dragon_mm_2024 = {
+	key: 'ancient_blue_dragon_mm_2024',
+	name: 'Ancient Blue Dragon',
+	xp: 50000,
+	link: '/monsters_html/ancient_blue_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const barbed_devil_mm_2024 = {
+	key: 'barbed_devil_mm_2024',
+	name: 'Barbed Devil',
+	xp: 1800,
+	link: '/monsters_html/barbed_devil_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const incubus_mm_2024 = {
+	key: 'incubus_mm_2024',
+	name: 'Incubus',
+	xp: 1100,
+	link: '/monsters_html/incubus_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_blue_dragon_mm_2024 = {
+	key: 'young_blue_dragon_mm_2024',
+	name: 'Young Blue Dragon',
+	xp: 5000,
+	link: '/monsters_html/young_blue_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const rhinoceros_mm_2024 = {
+	key: 'rhinoceros_mm_2024',
+	name: 'Rhinoceros',
+	xp: 450,
+	link: '/monsters_html/rhinoceros_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const mummy_mm_2024 = {
+	key: 'mummy_mm_2024',
+	name: 'Mummy',
+	xp: 700,
+	link: '/monsters_html/mummy_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const vampire_familiar_mm_2024 = {
+	key: 'vampire_familiar_mm_2024',
+	name: 'Vampire Familiar',
+	xp: 700,
+	link: '/monsters_html/vampire_familiar_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const earth_elemental_mm_2024 = {
+	key: 'earth_elemental_mm_2024',
+	name: 'Earth Elemental',
+	xp: 1800,
+	link: '/monsters_html/earth_elemental_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const stone_golem_mm_2024 = {
+	key: 'stone_golem_mm_2024',
+	name: 'Stone Golem',
+	xp: 5900,
+	link: '/monsters_html/stone_golem_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const boar_mm_2024 = {
+	key: 'boar_mm_2024',
+	name: 'Boar',
+	xp: 50,
+	link: '/monsters_html/boar_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const remorhaz_mm_2024 = {
+	key: 'remorhaz_mm_2024',
+	name: 'Remorhaz',
+	xp: 7200,
+	link: '/monsters_html/remorhaz_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const hydra_mm_2024 = {
+	key: 'hydra_mm_2024',
+	name: 'Hydra',
+	xp: 3900,
+	link: '/monsters_html/hydra_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const dust_mephit_mm_2024 = {
+	key: 'dust_mephit_mm_2024',
+	name: 'Dust Mephit',
+	xp: 100,
+	link: '/monsters_html/dust_mephit_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_toad_mm_2024 = {
+	key: 'giant_toad_mm_2024',
+	name: 'Giant Toad',
+	xp: 200,
+	link: '/monsters_html/giant_toad_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_white_dragon_mm_2024 = {
+	key: 'ancient_white_dragon_mm_2024',
+	name: 'Ancient White Dragon',
+	xp: 25000,
+	link: '/monsters_html/ancient_white_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const horned_devil_mm_2024 = {
+	key: 'horned_devil_mm_2024',
+	name: 'Horned Devil',
+	xp: 7200,
+	link: '/monsters_html/horned_devil_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const pony_mm_2024 = {
+	key: 'pony_mm_2024',
+	name: 'Pony',
+	xp: 25,
+	link: '/monsters_html/pony_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const swarm_of_rats_mm_2024 = {
+	key: 'swarm_of_rats_mm_2024',
+	name: 'Swarm of Rats',
+	xp: 50,
+	link: '/monsters_html/swarm_of_rats_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const warrior_infantry_mm_2024 = {
+	key: 'warrior_infantry_mm_2024',
+	name: 'Warrior Infantry',
+	xp: 25,
+	link: '/monsters_html/warrior_infantry_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ettin_mm_2024 = {
+	key: 'ettin_mm_2024',
+	name: 'Ettin',
+	xp: 1100,
+	link: '/monsters_html/ettin_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const flesh_golem_mm_2024 = {
+	key: 'flesh_golem_mm_2024',
+	name: 'Flesh Golem',
+	xp: 1800,
+	link: '/monsters_html/flesh_golem_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_black_dragon_mm_2024 = {
+	key: 'young_black_dragon_mm_2024',
+	name: 'Young Black Dragon',
+	xp: 2900,
+	link: '/monsters_html/young_black_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const draft_horse_mm_2024 = {
+	key: 'draft_horse_mm_2024',
+	name: 'Draft Horse',
+	xp: 50,
+	link: '/monsters_html/draft_horse_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_eagle_mm_2024 = {
+	key: 'giant_eagle_mm_2024',
+	name: 'Giant Eagle',
+	xp: 200,
+	link: '/monsters_html/giant_eagle_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const wererat_mm_2024 = {
+	key: 'wererat_mm_2024',
+	name: 'Wererat',
+	xp: 450,
+	link: '/monsters_html/wererat_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const gray_ooze_mm_2024 = {
+	key: 'gray_ooze_mm_2024',
+	name: 'Gray Ooze',
+	xp: 100,
+	link: '/monsters_html/gray_ooze_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const panther_mm_2024 = {
+	key: 'panther_mm_2024',
+	name: 'Panther',
+	xp: 50,
+	link: '/monsters_html/panther_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const priest_mm_2024 = {
+	key: 'priest_mm_2024',
+	name: 'Priest',
+	xp: 450,
+	link: '/monsters_html/priest_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const dryad_mm_2024 = {
+	key: 'dryad_mm_2024',
+	name: 'Dryad',
+	xp: 200,
+	link: '/monsters_html/dryad_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const chuul_mm_2024 = {
+	key: 'chuul_mm_2024',
+	name: 'Chuul',
+	xp: 1100,
+	link: '/monsters_html/chuul_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const hell_hound_mm_2024 = {
+	key: 'hell_hound_mm_2024',
+	name: 'Hell Hound',
+	xp: 700,
+	link: '/monsters_html/hell_hound_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const halfdragon_mm_2024 = {
+	key: 'halfdragon_mm_2024',
+	name: 'Half-Dragon',
+	xp: 1800,
+	link: '/monsters_html/halfdragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const winter_wolf_mm_2024 = {
+	key: 'winter_wolf_mm_2024',
+	name: 'Winter Wolf',
+	xp: 700,
+	link: '/monsters_html/winter_wolf_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const swarm_of_insects_mm_2024 = {
+	key: 'swarm_of_insects_mm_2024',
+	name: 'Swarm of Insects',
+	xp: 100,
+	link: '/monsters_html/swarm_of_insects_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const water_elemental_mm_2024 = {
+	key: 'water_elemental_mm_2024',
+	name: 'Water Elemental',
+	xp: 1800,
+	link: '/monsters_html/water_elemental_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const cloaker_mm_2024 = {
+	key: 'cloaker_mm_2024',
+	name: 'Cloaker',
+	xp: 3900,
+	link: '/monsters_html/cloaker_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const merfolk_skirmisher_mm_2024 = {
+	key: 'merfolk_skirmisher_mm_2024',
+	name: 'Merfolk Skirmisher',
+	xp: 25,
+	link: '/monsters_html/merfolk_skirmisher_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_frog_mm_2024 = {
+	key: 'giant_frog_mm_2024',
+	name: 'Giant Frog',
+	xp: 50,
+	link: '/monsters_html/giant_frog_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const bronze_dragon_wyrmling_mm_2024 = {
+	key: 'bronze_dragon_wyrmling_mm_2024',
+	name: 'Bronze Dragon Wyrmling',
+	xp: 450,
+	link: '/monsters_html/bronze_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const gibbering_mouther_mm_2024 = {
+	key: 'gibbering_mouther_mm_2024',
+	name: 'Gibbering Mouther',
+	xp: 450,
+	link: '/monsters_html/gibbering_mouther_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const priest_acolyte_mm_2024 = {
+	key: 'priest_acolyte_mm_2024',
+	name: 'Priest Acolyte',
+	xp: 50,
+	link: '/monsters_html/priest_acolyte_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_hyena_mm_2024 = {
+	key: 'giant_hyena_mm_2024',
+	name: 'Giant Hyena',
+	xp: 200,
+	link: '/monsters_html/giant_hyena_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const gladiator_mm_2024 = {
+	key: 'gladiator_mm_2024',
+	name: 'Gladiator',
+	xp: 1800,
+	link: '/monsters_html/gladiator_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const pegasus_mm_2024 = {
+	key: 'pegasus_mm_2024',
+	name: 'Pegasus',
+	xp: 450,
+	link: '/monsters_html/pegasus_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const scout_mm_2024 = {
+	key: 'scout_mm_2024',
+	name: 'Scout',
+	xp: 100,
+	link: '/monsters_html/scout_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const adult_red_dragon_mm_2024 = {
+	key: 'adult_red_dragon_mm_2024',
+	name: 'Adult Red Dragon',
+	xp: 18000,
+	link: '/monsters_html/adult_red_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const spy_mm_2024 = {
+	key: 'spy_mm_2024',
+	name: 'Spy',
+	xp: 200,
+	link: '/monsters_html/spy_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const deva_mm_2024 = {
+	key: 'deva_mm_2024',
+	name: 'Deva',
+	xp: 5900,
+	link: '/monsters_html/deva_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const copper_dragon_wyrmling_mm_2024 = {
+	key: 'copper_dragon_wyrmling_mm_2024',
+	name: 'Copper Dragon Wyrmling',
+	xp: 200,
+	link: '/monsters_html/copper_dragon_wyrmling_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const werewolf_mm_2024 = {
+	key: 'werewolf_mm_2024',
+	name: 'Werewolf',
+	xp: 700,
+	link: '/monsters_html/werewolf_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const hippopotamus_mm_2024 = {
+	key: 'hippopotamus_mm_2024',
+	name: 'Hippopotamus',
+	xp: 1100,
+	link: '/monsters_html/hippopotamus_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const darkmantle_mm_2024 = {
+	key: 'darkmantle_mm_2024',
+	name: 'Darkmantle',
+	xp: 100,
+	link: '/monsters_html/darkmantle_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const otyugh_mm_2024 = {
+	key: 'otyugh_mm_2024',
+	name: 'Otyugh',
+	xp: 1800,
+	link: '/monsters_html/otyugh_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const mage_mm_2024 = {
+	key: 'mage_mm_2024',
+	name: 'Mage',
+	xp: 2300,
+	link: '/monsters_html/mage_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const young_white_dragon_mm_2024 = {
+	key: 'young_white_dragon_mm_2024',
+	name: 'Young White Dragon',
+	xp: 2300,
+	link: '/monsters_html/young_white_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const rakshasa_mm_2024 = {
+	key: 'rakshasa_mm_2024',
+	name: 'Rakshasa',
+	xp: 10000,
+	link: '/monsters_html/rakshasa_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const pirate_captain_mm_2024 = {
+	key: 'pirate_captain_mm_2024',
+	name: 'Pirate Captain',
+	xp: 2300,
+	link: '/monsters_html/pirate_captain_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const willowisp_mm_2024 = {
+	key: 'willowisp_mm_2024',
+	name: 'Will-o\'-Wisp',
+	xp: 450,
+	link: '/monsters_html/willowisp_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const quasit_mm_2024 = {
+	key: 'quasit_mm_2024',
+	name: 'Quasit',
+	xp: 200,
+	link: '/monsters_html/quasit_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const unicorn_mm_2024 = {
+	key: 'unicorn_mm_2024',
+	name: 'Unicorn',
+	xp: 1800,
+	link: '/monsters_html/unicorn_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const medusa_mm_2024 = {
+	key: 'medusa_mm_2024',
+	name: 'Medusa',
+	xp: 2300,
+	link: '/monsters_html/medusa_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_wasp_mm_2024 = {
+	key: 'giant_wasp_mm_2024',
+	name: 'Giant Wasp',
+	xp: 100,
+	link: '/monsters_html/giant_wasp_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const giant_spider_mm_2024 = {
+	key: 'giant_spider_mm_2024',
+	name: 'Giant Spider',
+	xp: 200,
+	link: '/monsters_html/giant_spider_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const skeleton_mm_2024 = {
+	key: 'skeleton_mm_2024',
+	name: 'Skeleton',
+	xp: 50,
+	link: '/monsters_html/skeleton_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_red_dragon_mm_2024 = {
+	key: 'ancient_red_dragon_mm_2024',
+	name: 'Ancient Red Dragon',
+	xp: 62000,
+	link: '/monsters_html/ancient_red_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const manticore_mm_2024 = {
+	key: 'manticore_mm_2024',
+	name: 'Manticore',
+	xp: 700,
+	link: '/monsters_html/manticore_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const crocodile_mm_2024 = {
+	key: 'crocodile_mm_2024',
+	name: 'Crocodile',
+	xp: 100,
+	link: '/monsters_html/crocodile_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ancient_black_dragon_mm_2024 = {
+	key: 'ancient_black_dragon_mm_2024',
+	name: 'Ancient Black Dragon',
+	xp: 33000,
+	link: '/monsters_html/ancient_black_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const roc_mm_2024 = {
+	key: 'roc_mm_2024',
+	name: 'Roc',
+	xp: 7200,
+	link: '/monsters_html/roc_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const bandit_captain_mm_2024 = {
+	key: 'bandit_captain_mm_2024',
+	name: 'Bandit Captain',
+	xp: 450,
+	link: '/monsters_html/bandit_captain_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const minotaur_of_baphomet_mm_2024 = {
+	key: 'minotaur_of_baphomet_mm_2024',
+	name: 'Minotaur of Baphomet',
+	xp: 700,
+	link: '/monsters_html/minotaur_of_baphomet_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const hobgoblin_warrior_mm_2024 = {
+	key: 'hobgoblin_warrior_mm_2024',
+	name: 'Hobgoblin Warrior',
+	xp: 100,
+	link: '/monsters_html/hobgoblin_warrior_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const doppelganger_mm_2024 = {
+	key: 'doppelganger_mm_2024',
+	name: 'Doppelganger',
+	xp: 700,
+	link: '/monsters_html/doppelganger_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const cloud_giant_mm_2024 = {
+	key: 'cloud_giant_mm_2024',
+	name: 'Cloud Giant',
+	xp: 5000,
+	link: '/monsters_html/cloud_giant_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const adult_blue_dragon_mm_2024 = {
+	key: 'adult_blue_dragon_mm_2024',
+	name: 'Adult Blue Dragon',
+	xp: 15000,
+	link: '/monsters_html/adult_blue_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ice_mephit_mm_2024 = {
+	key: 'ice_mephit_mm_2024',
+	name: 'Ice Mephit',
+	xp: 100,
+	link: '/monsters_html/ice_mephit_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const balor_mm_2024 = {
+	key: 'balor_mm_2024',
+	name: 'Balor',
+	xp: 22000,
+	link: '/monsters_html/balor_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const adult_brass_dragon_mm_2024 = {
+	key: 'adult_brass_dragon_mm_2024',
+	name: 'Adult Brass Dragon',
+	xp: 10000,
+	link: '/monsters_html/adult_brass_dragon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const assassin_mm_2024 = {
+	key: 'assassin_mm_2024',
+	name: 'Assassin',
+	xp: 3900,
+	link: '/monsters_html/assassin_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const warrior_veteran_mm_2024 = {
+	key: 'warrior_veteran_mm_2024',
+	name: 'Warrior Veteran',
+	xp: 700,
+	link: '/monsters_html/warrior_veteran_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const pteranodon_mm_2024 = {
+	key: 'pteranodon_mm_2024',
+	name: 'Pteranodon',
+	xp: 50,
+	link: '/monsters_html/pteranodon_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
+}
+
+export const ogre_zombie_mm_2024 = {
+	key: 'ogre_zombie_mm_2024',
+	name: 'Ogre Zombie',
+	xp: 450,
+	link: '/monsters_html/ogre_zombie_mm_2024.html',
+	int: 0,
+	dex: 0,
+	stealth: 0,
+	ac: 0,
+	hp: 0,
+	source: '5.2 SRD (2025 MM)',
 }
 

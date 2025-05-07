@@ -76,6 +76,9 @@ export function generate(party, difficulty, monsterSelection) {
     
     let monsterFamily = getFamily(monsterSelection);
     let monsterList = monsterFamily.list;
+    // TODO: ffilter out monsters by source
+
+
     let totalXP = 0;
     let encounter = [];
     let encounterDict = {};
@@ -84,6 +87,8 @@ export function generate(party, difficulty, monsterSelection) {
     let draws = [];
     let drawLimit = Number(document.getElementById("maxDiffMonsters").value);
     let monster = monsterList[randomNum];
+
+
     let maxInt = monster.int;
 
     let minStealth = 0;
@@ -279,7 +284,7 @@ export default function RandomEncounter2({party}){
             xp_values.push(value.xp);
         }
         encounterBlock.push(
-            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name} - Init: {value.init}</a><br/></>
+            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name} - Init: {value.init} {value.source}</a><br/></>
         )
     }
 
@@ -288,7 +293,7 @@ export default function RandomEncounter2({party}){
     }
     return (
         <div className="w3-container">
-            <h1 onClick={() => hideShow("randomencounter")}>Random Encounter</h1>
+            <h1>Random Encounter</h1>
             <div className="w3-container w3-show" id="randomencounter">
                 <RandomEncounterInput setEncounter={setEncounter}
                                       party={party}></RandomEncounterInput>

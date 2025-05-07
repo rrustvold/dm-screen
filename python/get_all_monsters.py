@@ -88,7 +88,9 @@ with open("sf_monsters.yaml", "w") as file:
     with open("../5e_monsters/monsters.json", "r") as monsters_json:
         monsters = json.load(monsters_json)
         for result in monsters:
-            challenge_rating = int(result.get("challenge_rating", 0))
+            if result["document__title"] != "5.2 SRD (2025 MM)":
+                continue
+            challenge_rating = float(result.get("challenge_rating", 0))
 
             file.writelines([
                 f"- {result['slug']}:\n",
@@ -98,14 +100,14 @@ with open("sf_monsters.yaml", "w") as file:
                 f"    xp: {challenge_to_xp[challenge_rating]}\n",
                 f"    api_url: sf\n",
                 f"    alignment: {result.get('alignment')}\n"
-                f"    str: {result.get('strength')}\n",
-                f"    dex: {result.get('dexterity')}\n",
-                f"    con: {result.get('constitution')}\n",
-                f"    int: {result.get('intelligence')}\n",
-                f"    wis: {result.get('wisdom')}\n",
-                f"    cha: {result.get('charisma')}\n",
+                f"    str: {result.get('strength', 0)}\n",
+                f"    dex: {result.get('dexterity', 0)}\n",
+                f"    con: {result.get('constitution', 0)}\n",
+                f"    int: {result.get('intelligence', 0)}\n",
+                f"    wis: {result.get('wisdom', 0)}\n",
+                f"    cha: {result.get('charisma', 0)}\n",
                 # f"    stealth: {stealth}\n",
-                f"    ac: {result.get('armor_class')}\n",
-                f"    hp: {result.get('hit_points')}\n",
+                f"    ac: {result.get('armor_class', 0)}\n",
+                f"    hp: {result.get('hit_points', 0)}\n",
             ])
 

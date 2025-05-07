@@ -24,7 +24,7 @@ export const orcs = {
 export const kobolds = {
 	name: 'Kobolds',
 	list: [
-		monsters.kobold, monsters.winged_kobold, 
+		monsters.kobold, monsters.winged_kobold, monsters.kobold_warrior_mm_2024, 
 	]
 }
 

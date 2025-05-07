@@ -31,29 +31,43 @@ file_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.dirname(file_dir)
 monsters_file = os.path.join(src_dir, *"/dm-screen/src/components/randomEncounter/monsters.js".split("/"))
 with open(monsters_file, "w") as file:
-    for monster in monsters + my_monsters:
+    for monster in monsters + my_monsters + sf_monsters:
         key = list(monster.keys())[0]
         try:
             name = monster[key]["name"]
         except KeyError:
             name = key.capitalize()
 
+        # Escape apostrophes
+        name = name.replace("'", r"\'")
         xp = monster[key]["xp"]
         if xp < 25:
             # Don't include CR 0 monsters
             continue
+
+
+
         _int = monster[key].get("int", 0)
         dex = monster[key].get("dex", 0)
         stealth = monster[key].get("stealth", 0)
-        link = monster[key].get("link", f"https://www.dndbeyond.com/monsters/{key}")
+        if monster[key].get("api_url") == "sf":
+            link = f"/monsters_html/{key.replace("'", r"%27")}.html"
+        else:
+            link = monster[key].get("link", f"https://www.dndbeyond.com/monsters/{key}")
         ac = monster[key].get("ac", 0)
         hp = monster[key].get("hp", 0)
 
+        if not (source := monster[key].get("source")):
+            if monster in monsters:
+                source = "5.1 SRD"
+            else:
+                source = "2014 MM"
+
         key = key.replace("-", "_")
-        
+
         file.writelines([
-            "export const %s = {\n" % key,
-            "\tkey: '%s',\n" % key,
+            "export const %s = {\n" % key.replace("'", ""),
+            "\tkey: '%s',\n" % key.replace("'", r"\'"),
             "\tname: '%s',\n" % name,
             "\txp: %d,\n" % xp,
             "\tlink: '%s',\n" % link,
@@ -62,6 +76,7 @@ with open(monsters_file, "w") as file:
             "\tstealth: %d,\n" % stealth,
             "\tac: %d,\n" %ac,
             "\thp: %d,\n" %hp,
+            "\tsource: '%s',\n" %source,
             "}\n\n"
         ])
 

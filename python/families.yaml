@@ -32,6 +32,28 @@
 - kobolds:
   - kobold
   - winged-kobold
+  - wizard-kobold
+  - kobold-a5e
+  - kobold-broodguard-a5e
+  - kobold-broodguard-dragon-servitor-a5e
+  - kobold-dragon-servitor-a5e
+  - kobold-sorcerer-a5e
+  - kobold-sorcerer-dragon-servitor-a5e
+  - kobold-spellclerk
+  - kobold-war-machine
+  - kobold_bf
+  - kobold_swiftblade_bf
+  - kobold_witch_bf
+  - kobold_warrior_mm_2024
+  - ettin-kobold
+  - kobold-drake-rider
+  - kobold-empyrean
+  - kobold-ghost-hunter
+  - kobold-leviathan-hunter
+  - kobold-planes-hunter
+  - kobold-sapper
+  - elite-kobold
+  - king-kobold
 
 - spiders:
     - giant-spider
