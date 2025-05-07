@@ -5,17 +5,17 @@ const arcticSolos = {
 	name: 'Other arctic',
 	type: 'solo',
 	list: [
-		monsters.giant_owl, 
-		monsters.ice_mephit, 
-		monsters.brown_bear, 
-		monsters.griffon, 
-		monsters.polar_bear, 
-		monsters.manticore, 
-		monsters.troll, 
+		monsters.giant_owl_mm_2024, 
+		monsters.ice_mephit_mm_2024, 
+		monsters.brown_bear_mm_2024, 
+		monsters.griffon_mm_2024, 
+		monsters.polar_bear_mm_2024, 
+		monsters.manticore_mm_2024, 
+		monsters.troll_mm_2024, 
 		monsters.werebear_hybrid, 
-		monsters.remorhaz, 
-		monsters.mammoth, 
-		monsters.frost_giant, 
+		monsters.remorhaz_mm_2024, 
+		monsters.mammoth_mm_2024, 
+		monsters.frost_giant_mm_2024, 
 	]
 }
 export const arctic = {

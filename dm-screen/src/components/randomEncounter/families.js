@@ -3,21 +3,21 @@ import * as monsters from './monsters.js';
 export const goblins = {
 	name: 'Goblins',
 	list: [
-		monsters.goblin, monsters.goblin_boss, monsters.hobgoblin, monsters.hobgoblin_captain, monsters.hobgoblin_warlord, monsters.bugbear, monsters.bugbear_chief, monsters.worg, monsters.gnoll, monsters.gnoll_pack_lord, monsters.gnoll_fang_of_yeenoghu, 
+		monsters.goblin, monsters.goblin_boss_mm_2024, monsters.hobgoblin, monsters.hobgoblin_captain_mm_2024, monsters.hobgoblin_warlord, monsters.bugbear, monsters.bugbear_chief, monsters.worg_mm_2024, monsters.gnoll, monsters.gnoll_pack_lord, monsters.gnoll_fang_of_yeenoghu, 
 	]
 }
 
 export const lesser_goblins = {
 	name: 'Lesser-goblins',
 	list: [
-		monsters.goblin, monsters.goblin_boss, monsters.worg, 
+		monsters.goblin, monsters.goblin_boss_mm_2024, monsters.worg_mm_2024, 
 	]
 }
 
 export const orcs = {
 	name: 'Orcs',
 	list: [
-		monsters.orc, monsters.orc_eye_of_gruumsh, monsters.orc_war_chief, monsters.orog, monsters.wolf, monsters.winter_wolf, monsters.dire_wolf, monsters.worg, monsters.ogre, monsters.half_ogre, monsters.oni, 
+		monsters.orc, monsters.orc_eye_of_gruumsh, monsters.orc_war_chief, monsters.orog, monsters.wolf_mm_2024, monsters.winter_wolf_mm_2024, monsters.dire_wolf_mm_2024, monsters.worg_mm_2024, monsters.ogre_mm_2024, monsters.half_ogre, monsters.oni_mm_2024, 
 	]
 }
 
@@ -31,63 +31,63 @@ export const kobolds = {
 export const spiders = {
 	name: 'Spiders',
 	list: [
-		monsters.giant_spider, monsters.giant_wolf_spider, monsters.phase_spider, monsters.drider, monsters.swarm_of_spiders, 
+		monsters.giant_spider_mm_2024, monsters.giant_wolf_spider_mm_2024, monsters.phase_spider_mm_2024, monsters.drider_mm_2024, monsters.swarm_of_spiders, 
 	]
 }
 
 export const vultures = {
 	name: 'Vultures',
 	list: [
-		monsters.giant_vulture, monsters.swarm_of_ravens, monsters.harpy, monsters.vrock, 
+		monsters.giant_vulture_mm_2024, monsters.swarm_of_ravens_mm_2024, monsters.harpy_mm_2024, monsters.vrock_mm_2024, 
 	]
 }
 
 export const coastal_coven = {
 	name: 'Coastal-coven',
 	list: [
-		monsters.harpy, monsters.vrock, monsters.sea_hag, monsters.swarm_of_ravens, 
+		monsters.harpy_mm_2024, monsters.vrock_mm_2024, monsters.sea_hag_mm_2024, monsters.swarm_of_ravens_mm_2024, 
 	]
 }
 
 export const gricks = {
 	name: 'Gricks',
 	list: [
-		monsters.grick, monsters.grick_alpha, 
+		monsters.grick_mm_2024, monsters.grick_alpha, 
 	]
 }
 
 export const gnolls = {
 	name: 'Gnolls',
 	list: [
-		monsters.gnoll, monsters.gnoll_pack_lord, monsters.gnoll_fang_of_yeenoghu, monsters.worg, 
+		monsters.gnoll, monsters.gnoll_pack_lord, monsters.gnoll_fang_of_yeenoghu, monsters.worg_mm_2024, 
 	]
 }
 
 export const snakes = {
 	name: 'Snakes',
 	list: [
-		monsters.swarm_of_poisonous_snakes, monsters.constrictor_snake, monsters.flying_snake, monsters.giant_constrictor_snake, monsters.giant_poisonous_snake, monsters.poisonous_snake, 
+		monsters.swarm_of_poisonous_snakes, monsters.constrictor_snake_mm_2024, monsters.flying_snake_mm_2024, monsters.giant_constrictor_snake_mm_2024, monsters.giant_poisonous_snake, monsters.poisonous_snake, 
 	]
 }
 
 export const dryads = {
 	name: 'Dryads',
 	list: [
-		monsters.dryad, monsters.treant, 
+		monsters.dryad_mm_2024, monsters.treant_mm_2024, 
 	]
 }
 
 export const driders = {
 	name: 'Driders',
 	list: [
-		monsters.drider, monsters.giant_spider, monsters.giant_wolf_spider, monsters.phase_spider, monsters.drider, monsters.swarm_of_spiders, 
+		monsters.drider_mm_2024, monsters.giant_spider_mm_2024, monsters.giant_wolf_spider_mm_2024, monsters.phase_spider_mm_2024, monsters.drider_mm_2024, monsters.swarm_of_spiders, 
 	]
 }
 
 export const rats = {
 	name: 'Rats',
 	list: [
-		monsters.giant_rat, monsters.giant_rat_diseased, monsters.swarm_of_rats, 
+		monsters.giant_rat_mm_2024, monsters.giant_rat_diseased, monsters.swarm_of_rats_mm_2024, 
 	]
 }
 
@@ -108,77 +108,77 @@ export const drows = {
 export const ogres = {
 	name: 'Ogres',
 	list: [
-		monsters.ogre, monsters.half_ogre, monsters.oni, 
+		monsters.ogre_mm_2024, monsters.half_ogre, monsters.oni_mm_2024, 
 	]
 }
 
 export const undead = {
 	name: 'Undead',
 	list: [
-		monsters.ghast, monsters.ghost, monsters.ghoul, monsters.lich, monsters.minotaur_skeleton, monsters.mummy, monsters.mummy_lord, monsters.ogre_zombie, monsters.zombie, monsters.skeleton, monsters.specter, monsters.vampire_bat, monsters.vampire_mist, monsters.vampire_spawn, monsters.vampire_vampire, monsters.warhorse_skeleton, monsters.wight, monsters.wraith, monsters.will_o_wisp, monsters.banshee, 
+		monsters.ghast_mm_2024, monsters.ghost_mm_2024, monsters.ghoul_mm_2024, monsters.lich_mm_2024, monsters.minotaur_skeleton_mm_2024, monsters.mummy_mm_2024, monsters.mummy_lord_mm_2024, monsters.ogre_zombie_mm_2024, monsters.zombie_mm_2024, monsters.skeleton_mm_2024, monsters.specter_mm_2024, monsters.vampire_bat, monsters.vampire_mist, monsters.vampire_spawn_mm_2024, monsters.vampire_vampire, monsters.warhorse_skeleton_mm_2024, monsters.wight_mm_2024, monsters.wraith_mm_2024, monsters.will_o_wisp, monsters.banshee, 
 	]
 }
 
 export const wolves = {
 	name: 'Wolves',
 	list: [
-		monsters.wolf, monsters.dire_wolf, monsters.winter_wolf, monsters.hell_hound, monsters.worg, 
+		monsters.wolf_mm_2024, monsters.dire_wolf_mm_2024, monsters.winter_wolf_mm_2024, monsters.hell_hound_mm_2024, monsters.worg_mm_2024, 
 	]
 }
 
 export const fiends = {
 	name: 'Fiends',
 	list: [
-		monsters.balor, monsters.barbed_devil, monsters.bearded_devil, monsters.bone_devil, monsters.chain_devil, monsters.dretch, monsters.erinyes, monsters.glabrezu, monsters.hezrou, monsters.hell_hound, monsters.horned_devil, monsters.ice_devil, monsters.imp, monsters.marilith, monsters.nalfeshnee, monsters.night_hag, monsters.nightmare, monsters.pit_fiend, monsters.quasit, monsters.rakshasa, monsters.succubus_incubus, monsters.vrock, 
+		monsters.balor_mm_2024, monsters.barbed_devil_mm_2024, monsters.bearded_devil_mm_2024, monsters.bone_devil_mm_2024, monsters.chain_devil_mm_2024, monsters.dretch_mm_2024, monsters.erinyes_mm_2024, monsters.glabrezu_mm_2024, monsters.hezrou_mm_2024, monsters.hell_hound_mm_2024, monsters.horned_devil_mm_2024, monsters.ice_devil_mm_2024, monsters.imp_mm_2024, monsters.marilith_mm_2024, monsters.nalfeshnee_mm_2024, monsters.night_hag_mm_2024, monsters.nightmare_mm_2024, monsters.pit_fiend_mm_2024, monsters.quasit_mm_2024, monsters.rakshasa_mm_2024, monsters.succubus_incubus, monsters.vrock_mm_2024, 
 	]
 }
 
 export const oozes = {
 	name: 'Oozes',
 	list: [
-		monsters.black_pudding, monsters.gelatinous_cube, monsters.gray_ooze, monsters.ochre_jelly, 
+		monsters.black_pudding_mm_2024, monsters.gelatinous_cube_mm_2024, monsters.gray_ooze_mm_2024, monsters.ochre_jelly_mm_2024, 
 	]
 }
 
 export const bats = {
 	name: 'Bats',
 	list: [
-		monsters.swarm_of_bats, monsters.giant_bat, 
+		monsters.swarm_of_bats_mm_2024, monsters.giant_bat_mm_2024, 
 	]
 }
 
 export const golems = {
 	name: 'Golems',
 	list: [
-		monsters.clay_golem, monsters.flesh_golem, monsters.iron_golem, monsters.stone_golem, 
+		monsters.clay_golem_mm_2024, monsters.flesh_golem_mm_2024, monsters.iron_golem_mm_2024, monsters.stone_golem_mm_2024, 
 	]
 }
 
 export const mephits = {
 	name: 'Mephits',
 	list: [
-		monsters.dust_mephit, monsters.ice_mephit, monsters.magma_mephit, monsters.steam_mephit, 
+		monsters.dust_mephit_mm_2024, monsters.ice_mephit_mm_2024, monsters.magma_mephit_mm_2024, monsters.steam_mephit_mm_2024, 
 	]
 }
 
 export const animated_objects = {
 	name: 'Animated-objects',
 	list: [
-		monsters.animated_armor, monsters.flying_sword, monsters.rug_of_smothering, 
+		monsters.animated_armor_mm_2024, monsters.flying_sword, monsters.rug_of_smothering, 
 	]
 }
 
 export const hags = {
 	name: 'Hags',
 	list: [
-		monsters.green_hag, monsters.night_hag, monsters.sea_hag, 
+		monsters.green_hag_mm_2024, monsters.night_hag_mm_2024, monsters.sea_hag_mm_2024, 
 	]
 }
 
 export const nagas = {
 	name: 'Nagas',
 	list: [
-		monsters.bone_naga, monsters.guardian_naga, monsters.spirit_naga, 
+		monsters.bone_naga, monsters.guardian_naga_mm_2024, monsters.spirit_naga_mm_2024, 
 	]
 }
 
@@ -199,7 +199,7 @@ export const yuan_tis = {
 export const bugs = {
 	name: 'Bugs',
 	list: [
-		monsters.giant_scorpion, monsters.swarm_of_insects, monsters.giant_centipede, 
+		monsters.giant_scorpion_mm_2024, monsters.swarm_of_insects_mm_2024, monsters.giant_centipede_mm_2024, 
 	]
 }
 

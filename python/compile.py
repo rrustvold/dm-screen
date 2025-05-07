@@ -12,6 +12,11 @@ with open("my_monsters.yaml", "r") as file:
 with open("sf_monsters.yaml", "r") as file:
     sf_monsters = yaml.safe_load(file)
 
+sf_monster_cache = {}
+for monster in sf_monsters:
+    key = list(monster.keys())[0]
+    sf_monster_cache[key] = monster[key]
+
 for monster in monsters + my_monsters + sf_monsters:
     key = list(monster.keys())[0]
     monster_keys.add(key)
@@ -30,9 +35,20 @@ with open("environs.yaml", "r") as file:
 file_dir = os.path.dirname(os.path.abspath(__file__))
 src_dir = os.path.dirname(file_dir)
 monsters_file = os.path.join(src_dir, *"/dm-screen/src/components/randomEncounter/monsters.js".split("/"))
+added = set()
 with open(monsters_file, "w") as file:
     for monster in monsters + my_monsters + sf_monsters:
         key = list(monster.keys())[0]
+        if f"{key.replace("-", "_")}_mm_2024" in sf_monster_cache:
+            key = f"{key.replace("-", "_")}_mm_2024"
+            monster = {
+                key: sf_monster_cache[key]
+            }
+
+        if key in added:
+            continue
+
+        added.add(key)
         try:
             name = monster[key]["name"]
         except KeyError:
@@ -44,8 +60,6 @@ with open(monsters_file, "w") as file:
         if xp < 25:
             # Don't include CR 0 monsters
             continue
-
-
 
         _int = monster[key].get("int", 0)
         dex = monster[key].get("dex", 0)
@@ -96,6 +110,8 @@ with open(families_file, "w") as file:
         ])
         for value in family[key]:
             if value in monster_keys:
+                if f"{value.replace("-", "_")}_mm_2024" in sf_monster_cache:
+                    value = f"{value.replace("-", "_")}_mm_2024"
                 file.write(f"monsters.{value.replace("-", "_")}, ")
             else:
                 print(f"Warning: {value} not in monsters")
@@ -124,6 +140,8 @@ for environ in environs:
         for value in values:
             if value not in family_keys:
                 if value in monster_keys:
+                    if f"{value.replace("-", "_")}_mm_2024" in sf_monster_cache:
+                        value = f"{value.replace("-", "_")}_mm_2024"
                     file.write(f"\t\tmonsters.{value.replace("-", "_")}, \n")
                 else:
                     print(f"Warning: {value} not in monsters")
@@ -251,5 +269,4 @@ with open(environs_file, "w") as file:
     file.write("\t}\n")
     file.write("return monsterFamily\n")
     file.write("}\n")
-
 

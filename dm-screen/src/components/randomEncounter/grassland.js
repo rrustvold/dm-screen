@@ -5,15 +5,15 @@ const grasslandSolos = {
 	name: 'Other grassland',
 	type: 'solo',
 	list: [
-		monsters.manticore, 
+		monsters.manticore_mm_2024, 
 		monsters.carrion_crawler, 
-		monsters.ankheg, 
-		monsters.chimera, 
-		monsters.cockatrice, 
-		monsters.bulette, 
-		monsters.brown_bear, 
+		monsters.ankheg_mm_2024, 
+		monsters.chimera_mm_2024, 
+		monsters.cockatrice_mm_2024, 
+		monsters.bulette_mm_2024, 
+		monsters.brown_bear_mm_2024, 
 		monsters.cyclops, 
-		monsters.gorgon, 
+		monsters.gorgon_mm_2024, 
 	]
 }
 export const grassland = {

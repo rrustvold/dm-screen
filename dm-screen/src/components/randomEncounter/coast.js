@@ -7,18 +7,18 @@ const coastSolos = {
 	list: [
 		monsters.merfolk, 
 		monsters.sahuagin, 
-		monsters.stirge, 
-		monsters.sea_hag, 
-		monsters.harpy, 
-		monsters.manticore, 
-		monsters.water_elemental, 
+		monsters.stirge_mm_2024, 
+		monsters.sea_hag_mm_2024, 
+		monsters.harpy_mm_2024, 
+		monsters.manticore_mm_2024, 
+		monsters.water_elemental_mm_2024, 
 		monsters.cyclops, 
 		monsters.banshee, 
 		monsters.marid, 
-		monsters.storm_giant, 
-		monsters.giant_eagle, 
+		monsters.storm_giant_mm_2024, 
+		monsters.giant_eagle_mm_2024, 
 		monsters.carrion_crawler, 
-		monsters.hydra, 
+		monsters.hydra_mm_2024, 
 	]
 }
 export const coast = {

@@ -5,17 +5,17 @@ const forestSolos = {
 	name: 'Other forest',
 	type: 'solo',
 	list: [
-		monsters.brown_bear, 
+		monsters.brown_bear_mm_2024, 
 		monsters.carrion_crawler, 
-		monsters.green_hag, 
-		monsters.owlbear, 
-		monsters.troll, 
-		monsters.shambling_mound, 
-		monsters.ankheg, 
+		monsters.green_hag_mm_2024, 
+		monsters.owlbear_mm_2024, 
+		monsters.troll_mm_2024, 
+		monsters.shambling_mound_mm_2024, 
+		monsters.ankheg_mm_2024, 
 		monsters.displacer_beast, 
 		monsters.displacer_beast, 
-		monsters.gorgon, 
-		monsters.treant, 
+		monsters.gorgon_mm_2024, 
+		monsters.treant_mm_2024, 
 	]
 }
 export const forest = {
