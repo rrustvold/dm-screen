@@ -45,28 +45,6 @@ function PartyInput({partySize, party, setParty}) {
         )
     }
     return <div class="w3-row-padding">{rows}</div>
-    return (
-        <div class="w3-responsive">
-            <table class="w3-table w3-bordered w3-border w3-xlarge">
-                <thead>
-                <tr>
-                    <td>Level</td>
-                    <td>Name</td>
-                    <td>AC</td>
-                    <td>HP</td>
-                    <td>Passive Perception</td>
-                    <td>Passive Insight</td>
-                    <td>Passive Investigation</td>
-                    <td>Initiative Bonus</td>
-                    
-                </tr>
-                </thead>
-                <tbody>
-                {rows}
-                </tbody>
-            </table>
-        </div>
-    )
 }
 
 function PartySize({setPartySize}){
@@ -74,7 +52,7 @@ function PartySize({setPartySize}){
         <div class="w3-container">
             <p>
                 <label for="partySize">Party Size </label> 
-                <input type="text" id="partySize" onChange={(e) => setPartySize(e.target.value)} defaultValue="2" />
+                <input type="number" id="partySize" onChange={(e) => setPartySize(e.target.value)} defaultValue="2" />
             </p>
         </div>
     )
