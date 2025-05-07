@@ -75,9 +75,32 @@ export function generate(party, difficulty, monsterSelection) {
     }
     
     let monsterFamily = getFamily(monsterSelection);
-    let monsterList = monsterFamily.list;
-    // TODO: ffilter out monsters by source
-
+    let fullMonsterList = monsterFamily.list;
+    // filter out monsters by source
+    let validSources = [];
+    if (document.getElementById("srd5.1").checked) {
+        validSources.push("5.1 SRD");
+    }
+    if (document.getElementById("2014 MM").checked) {
+        validSources.push("2014 MM");
+    }
+    if (document.getElementById("srd5.2").checked) {
+        validSources.push("5.2 SRD (2025 MM)");
+    }
+    let monsterList = [];
+    for (let i= 0; i < fullMonsterList.length; i++){
+        let monster = fullMonsterList[i];
+        if (validSources.includes(monster.source)) {
+            monsterList.push(monster);
+        }
+    }
+    if (monsterList.length === 0){
+        return {
+            encounterDict: {},
+            maxInt: 0,
+            minStealth: 0,
+        }
+    }
 
     let totalXP = 0;
     let encounter = [];
@@ -87,9 +110,11 @@ export function generate(party, difficulty, monsterSelection) {
     let draws = [];
     let drawLimit = Number(document.getElementById("maxDiffMonsters").value);
     let monster = monsterList[randomNum];
+    let maxInt = 0;
+    try {
+        maxInt = monster.int;
+    } catch {}
 
-
-    let maxInt = monster.int;
 
     let minStealth = 0;
     if (monster.stealth){
@@ -153,8 +178,12 @@ export function generate(party, difficulty, monsterSelection) {
             multiplier = 4;
         }
 
-        multiplier = 1;
-        if ((totalXP + monster.xp) * multiplier <= limit * 1.0) {
+        // TODO
+        if (!document.getElementById("use-multiplier").checked){
+            console.log("Not using a multiplier");
+            multiplier = 1;
+        }
+        if ((totalXP + monster.xp) * multiplier <= limit) {
             totalXP += monster.xp;
             encounter.push(monster);
             if (monster.key in encounterDict) {
@@ -195,17 +224,21 @@ function RandomEncounterInput({setEncounter, party}){
     const [monsterTypeOptions, setMonsterTypeOptions] = useState(
         []
     );
-
+    let limits = getPartyLimits(party);
     return (
         <div class="w3-container">
             <div class="w3-row-padding">
+                <div class="w3-col m1">
+                    <label>Use mulitiplier? </label>
+                    <input class="w3-check" type="checkbox" id="use-multiplier"/>
+                </div>
                 <div class="w3-col m3">
                     <label>Difficulty</label>
                     <select name="difficulty" id="difficulty" class="w3-select">
-                        <option value="easy">Trivial (don't use)</option>
-                        <option value="medium">Easy</option>
-                        <option value="hard">Moderate</option>
-                        <option value="deadly">Hard</option>
+                        <option value="easy">Trivial (don't use) {limits[0]}+</option>
+                        <option value="medium">Easy {limits[1]}+</option>
+                        <option value="hard">Moderate {limits[2]}+</option>
+                        <option value="deadly">Hard {limits[3]}+</option>
                     </select>
                 </div>
                 <div class="w3-col m3">
@@ -228,16 +261,54 @@ function RandomEncounterInput({setEncounter, party}){
                         {monsterTypeOptions}
                     </select>
                 </div>
-                <div class="w3-col m3">
+                <div class="w3-col m2">
                     <label>Max different creatures</label>
-                    <input type="text" defaultValue="3" id="maxDiffMonsters" class="w3-input"/>
+                    <input type="number" defaultValue="2" id="maxDiffMonsters" class="w3-input"/>
+                </div>
+                <div class="w3-col m3">
+                    <label>SRD 5.1 (2014)</label>
+                    <input type="checkbox" id="srd5.1"/>
+                    <label>2014 MM</label>
+                    <input type="checkbox" id="2014 MM"/>
+                    <label>SRD 5.2 (2025)</label>
+                    <input type="checkbox" id="srd5.2"/>
                 </div>
             </div>
             <p>
-            <input type="button" defaultValue="Generate" onClick={() => setEncounter(generate(party))} class="w3-block" />
+                <input type="button" defaultValue="Generate" onClick={() => setEncounter(generate(party))} class="w3-block" />
             </p>
         </div>
     )
+}
+
+function MonsterFamilyList({ selectedFamily }) {
+    if (!selectedFamily) return null;
+
+    const monsterFamily = getFamily(selectedFamily);
+    if (!monsterFamily?.list) return null;
+
+    let sortedMonsters = monsterFamily.list;
+
+    sortedMonsters.sort(function(a, b) {
+        return a.xp - b.xp;
+    });
+
+    return (
+        <div className="w3-container">
+            <h4>Monsters in Family:</h4>
+            <ul className="w3-ul">
+                {sortedMonsters.map((monster, index) => (
+                    <li key={index}>
+                        <a href={monster.link || `https://www.dndbeyond.com/monsters/${monster.key}`}
+                           target="_blank"
+                           rel="noopener noreferrer">
+                             {monster.xp} - {monster.name} {monster.source}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 function setEncounter2(encounter) {
@@ -273,7 +344,7 @@ export default function RandomEncounter2({party}){
 
     let xp_values = [];
     let encounterBlock = [];
-
+    let totalXP = 0;
 
 
     encounterBlock.push(
@@ -282,15 +353,20 @@ export default function RandomEncounter2({party}){
     for (const [key, value] of Object.entries(encounter.encounterDict)) {
         for (let i=0; i < value.qty; i++) {
             xp_values.push(value.xp);
+            totalXP += value.xp;
         }
         encounterBlock.push(
-            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name} - Init: {value.init} {value.source}</a><br/></>
+            <>{value.qty} <a href={value.link ? value.link : `https://www.dndbeyond.com/monsters/${value.key}`} target="_blank">{value.name} @ {value.xp} - Init: {value.init} {value.source}</a><br/></>
         )
     }
+    encounterBlock.push(<>XP: {totalXP}</>)
 
     if (document.getElementById("monster-xp")) {
         document.getElementById("monster-xp").value = xp_values.join(",");
     }
+
+    let selectedFamily = document.getElementById("monster-type")?.value;
+
     return (
         <div className="w3-container">
             <h1>Random Encounter</h1>
@@ -319,15 +395,16 @@ export default function RandomEncounter2({party}){
                 <p id="random-setting"></p>
             </div>
             <div className="w3-container">
-                <input type="button" defaultValue="Encounter Distance" onClick={
+                <input type="button" id="encounter-distance-button" defaultValue="Encounter Distance: " onClick={
                     () => {
-                        let encounterDistance = document.getElementById("encounter-distance");
+                        let encounterDistance = document.getElementById("encounter-distance-button");
                         let environ = document.getElementById("encounter-environ").value.toLowerCase();
-                        encounterDistance.innerText = getRandomEncounterDistance(environ);
+
+                        encounterDistance.value = `Encounter distance: ${getRandomEncounterDistance(environ)}`;
                     }
                 }/>
-                <p id="encounter-distance"></p>
             </div>
+            <MonsterFamilyList selectedFamily={selectedFamily} />
         </div>
     )
 }
