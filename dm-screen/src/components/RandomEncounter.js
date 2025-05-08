@@ -341,6 +341,65 @@ function setEncounter2(encounter) {
 
 export default function RandomEncounter2({party}){
     const [encounter, setEncounter] = useState({encounterDict: {}});
+    const [monsterCards, setMonsterCards] = useState([]);
+    const [remainingMonsters, setRemainingMonsters] = useState({});
+
+    // Function to handle quantity changes - only updates display state
+    const updateQuantity = (monsterId, change) => {
+        setRemainingMonsters(prev => {
+            const newQuantities = { ...prev };
+            const currentQty = newQuantities[monsterId] || 0;
+            const newQty = Math.max(0, currentQty + change);
+            newQuantities[monsterId] = newQty;
+            return newQuantities;
+        });
+    };
+
+    function createMonsterCards(encounterDict) {
+        const cards = [];
+        // Set initial remaining quantities to match the encounter
+        const initialQuantities = {};
+        
+        for (const [key, value] of Object.entries(encounterDict)) {
+            // Set initial quantity for this monster
+            initialQuantities[key] = value.qty;
+            
+            cards.push(
+                <div key={key} className="w3-col l3 m3 s12" style={{padding: '8px'}}>
+                    <div className="w3-card-4 w3-black">
+                        <header className="w3-container w3-red" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                            <h3 style={{margin: '8px 0'}}>{value.name} - {remainingMonsters[key] ?? value.qty}</h3>
+                            <div>
+                                <button 
+                                    className="w3-button w3-black" 
+                                    onClick={() => updateQuantity(key, -1)}
+                                    style={{padding: '4px 8px', marginRight: '4px'}}
+                                >
+                                    -
+                                </button>
+                                <button 
+                                    className="w3-button w3-black" 
+                                    onClick={() => updateQuantity(key, 1)}
+                                    style={{padding: '4px 8px'}}
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </header>
+                        <div className="w3-container" style={{padding: 0, height: '600px'}}>
+                            <iframe 
+                                src={`/monster-wrapper.html?monster=${key}.html`}
+                                style={{width: '100%', height: '100%', border: 'none'}}
+                                title={value.name}
+                            />
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+        setMonsterCards(cards);
+        setRemainingMonsters(initialQuantities);
+    }
 
     let xp_values = [];
     let encounterBlock = [];
@@ -377,13 +436,19 @@ export default function RandomEncounter2({party}){
                     {encounterBlock}
                     <input type="button" defaultValue="Set" onClick={() => {
                         try {
-                            setEncounter2(encounter)
+                            createMonsterCards(encounter.encounterDict);
                         } catch (exception) {
-
+                            console.error('Error creating monster cards:', exception);
                         }
-                    }} class="w3-block"/>
+                    }} className="w3-block w3-button w3-red"/>
                 </p>
             </div>
+            
+            {/* Monster Cards Container */}
+            <div className="w3-row-padding">
+                {monsterCards}
+            </div>
+
             <div className="w3-container">
                 <input type="button" defaultValue="Dressing" onClick={
                     () => {

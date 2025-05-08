@@ -182,8 +182,8 @@
         }
 
         function rollDice(diceStr) {
-            // Parse dice string like "1d6" or "1d4+4"
-            const match = diceStr.match(/(\d+)d(\d+)(?:[+-](\d+))?/);
+            // Parse dice string like "1d6" or "1d4 + 4" or "1d4- 2"
+            const match = diceStr.match(/(\d+)d(\d+)(?:\s*[+-]\s*(\d+))?/);
             if (!match) return null;
             
             const numDice = parseInt(match[1]);
@@ -317,74 +317,68 @@
                         }
                     }
 
-                    // Add attack and damage roll functionality
-                    const actionElements = content.querySelectorAll('li');
+                    // Add attack and damage roll functionality with updated patterns
+                    const actionElements = content.querySelectorAll('li, p'); // Also check p elements for actions
                     actionElements.forEach(el => {
                         const text = el.innerHTML;
+                        let newHtml = text;
+
+                        // Look for the attack pattern in the raw HTML
+                        const attackMatches = text.match(/<em>(?:Melee|Ranged)(?: or (?:Melee|Ranged))? Attack Roll:<\/em> ([+-]\d+)/);
+                        if (attackMatches) {
+                            const attackBonus = attackMatches[1]; // Keep the + or - sign
+                            const attackType = text.match(/<em>((?:Melee|Ranged)(?: or (?:Melee|Ranged))?) Attack/)[1];
+                            const buttonHtml = `<button class="attack-button" title="Click to roll d20${attackBonus}">${attackType} ${attackBonus}</button>`;
+                            newHtml = text.replace(attackMatches[1], buttonHtml);
+                        }
+
+                        // Look for damage patterns with variations
+                        const damageRegex = /(\d+) \(([^)]+)\)(?: (\w+)(?= damage| |,|\.))/g;
+                        const conditionalDamageRegex = /plus (\d+) \(([^)]+)\) (\w+)(?: damage)?/g;
                         
-                        // Look for attack bonus patterns like "+2 to hit"
-                        const attackBonusMatch = text.match(/([+-]\d+) to hit/);
+                        // Replace main damage expressions with buttons
+                        newHtml = newHtml.replace(damageRegex, (match, avg, dice, type) => {
+                            return `<button class="damage-button" title="Click to roll ${dice}" data-dice="${dice}" data-type="${type}">${avg} (${dice})</button> ${type}`;
+                        });
+
+                        // Replace conditional damage expressions with buttons
+                        newHtml = newHtml.replace(conditionalDamageRegex, (match, avg, dice, type) => {
+                            return `plus <button class="damage-button" title="Click to roll ${dice}" data-dice="${dice}" data-type="${type}">${avg} (${dice})</button> ${type}`;
+                        });
                         
-                        // Look for damage patterns like "3 (1d6)" or "6 (1d4+4)"
-                        const damageMatches = text.matchAll(/(\d+) \(([^)]+)\)(?: (?:plus|and) (\d+) \(([^)]+)\))? (\w+)(?: or (\w+))? damage/g);
-                        
-                        if (attackBonusMatch || Array.from(damageMatches).length > 0) {
-                            let newHtml = text;
-                            
-                            // Replace attack bonus with button
-                            if (attackBonusMatch) {
-                                const attackBonus = parseInt(attackBonusMatch[1]);
-                                newHtml = newHtml.replace(
-                                    attackBonusMatch[0],
-                                    `<button class="attack-button" title="Click to roll d20${attackBonusMatch[1]}">${attackBonusMatch[0]}</button>`
-                                );
-                            }
-                            
-                            // Replace damage expressions with buttons
-                            for (const match of text.matchAll(/(\d+) \(([^)]+)\)(?: (?:plus|and) (\d+) \(([^)]+)\))? (\w+)(?: or (\w+))? damage/g)) {
-                                const [fullMatch, avg1, dice1, avg2, dice2, dmgType1, dmgType2] = match;
-                                const buttonHtml = `<button class="damage-button" title="Click to roll ${dice1}" data-dice="${dice1}" data-type="${dmgType1}${dmgType2 ? ' or ' + dmgType2 : ''}">${avg1} (${dice1})</button>`;
-                                newHtml = newHtml.replace(`${avg1} (${dice1})`, buttonHtml);
-                                
-                                if (avg2 && dice2) {
-                                    const button2Html = `<button class="damage-button" title="Click to roll ${dice2}" data-dice="${dice2}" data-type="${dmgType1}${dmgType2 ? ' or ' + dmgType2 : ''}">${avg2} (${dice2})</button>`;
-                                    newHtml = newHtml.replace(`${avg2} (${dice2})`, button2Html);
-                                }
-                            }
-                            
+                        if (newHtml !== text) {
                             el.innerHTML = newHtml;
-                            
+
                             // Add click handlers for attack rolls
                             const attackButton = el.querySelector('.attack-button');
                             if (attackButton) {
                                 attackButton.addEventListener('click', function(e) {
                                     e.preventDefault();
                                     
-                                    // Remove any existing attack roll results
                                     const existingResult = el.querySelector('.dice-result:not(.damage)');
                                     if (existingResult) {
                                         existingResult.remove();
                                     }
 
-                                    const attackBonus = parseInt(attackBonusMatch[1]);
+                                    // Parse the attack bonus preserving the sign
+                                    const attackBonus = parseInt(attackButton.textContent.match(/[+-]\d+/)[0]);
                                     const { roll, total } = rollD20(attackBonus);
                                     const resultSpan = document.createElement('span');
                                     resultSpan.className = 'dice-result';
-                                    resultSpan.textContent = `[${roll} + ${attackBonus} = ${total}]`;
+                                    resultSpan.textContent = `[${roll} ${attackBonus >= 0 ? '+' : ''}${attackBonus} = ${total}]`;
                                     
                                     attackButton.insertAdjacentElement('afterend', resultSpan);
                                     void resultSpan.offsetWidth;
                                     resultSpan.classList.add('animate');
                                 });
                             }
-                            
+
                             // Add click handlers for damage rolls
                             const damageButtons = el.querySelectorAll('.damage-button');
                             damageButtons.forEach(button => {
                                 button.addEventListener('click', function(e) {
                                     e.preventDefault();
                                     
-                                    // Remove previous damage roll result for this button
                                     const nextSibling = button.nextSibling;
                                     if (nextSibling && nextSibling.classList && nextSibling.classList.contains('dice-result')) {
                                         nextSibling.remove();
