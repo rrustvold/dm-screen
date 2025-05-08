@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Stats</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .monster-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* Dark theme styles to be injected into iframe */
+    </style>
+</head>
+<body class="w3-black">
+    <iframe id="monsterFrame" class="monster-frame"></iframe>
+
+    <script>
+        // Define styles that will be injected into the iframe
+        const injectedStyles = `
+            /* Base dark theme */
+            body {
+                background-color: #1a1a1a;
+                color: #e0e0e0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            }
+            
+            /* Tables */
+            table {
+                border-collapse: collapse;
+                background-color: #2d2d2d;
+            }
+            th, td {
+                border: 1px solid #404040;
+                padding: 8px;
+                color: #e0e0e0;
+            }
+            th {
+                background-color: #333333;
+            }
+            
+            /* Links */
+            a {
+                color: #F44336;
+            }
+            a:hover {
+                color: #D32F2F;
+            }
+            
+            /* HP tracking */
+            .current-hp-input {
+                width: 60px;
+                margin-left: 5px;
+                display: inline-block;
+                background-color: #2d2d2d;
+                color: #e0e0e0;
+                border: 1px solid #404040;
+                padding: 4px;
+                border-radius: 4px;
+            }
+            .current-hp-label {
+                margin-left: 10px;
+                display: inline-block;
+            }
+            
+            /* Buttons */
+            .attack-button, .damage-button, .hp-adjust-button {
+                display: inline-block;
+                padding: 4px 12px;
+                margin: 0 4px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-family: inherit;
+                font-size: 0.9em;
+                transition: background-color 0.2s;
+            }
+            
+            .attack-button {
+                background-color: #2196F3;
+                color: white;
+            }
+            .attack-button:hover {
+                background-color: #1976D2;
+            }
+            
+            .damage-button {
+                background-color: #F44336;
+                color: white;
+            }
+            .damage-button:hover {
+                background-color: #D32F2F;
+            }
+            
+            .hp-adjust-button {
+                min-width: 35px;
+                margin: 0 2px;
+            }
+            
+            .hp-damage-button {
+                background-color: #F44336;
+                color: white;
+            }
+            .hp-damage-button:hover {
+                background-color: #D32F2F;
+            }
+            
+            .hp-heal-button {
+                background-color: #F44336;
+                color: white;
+            }
+            .hp-heal-button:hover {
+                background-color: #D32F2F;
+            }
+            
+            /* Results display */
+            .dice-result {
+                display: inline-block;
+                margin-left: 10px;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-family: monospace;
+                background-color: #2d2d2d;
+                border: 1px solid #404040;
+            }
+            .dice-result.damage {
+                background-color: #331111;
+                border-color: #522;
+            }
+            
+            /* Container styling */
+            .hp-buttons-container {
+                display: inline-block;
+                margin-left: 10px;
+            }
+            
+            /* Animation */
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            .dice-result.animate {
+                animation: fadeIn 0.3s;
+            }
+            
+            /* Headers */
+            h1, h2, h3, h4, h5, h6 {
+                color: #F44336;
+            }
+            
+            /* Monster stat block sections */
+            ul {
+                background-color: #2d2d2d;
+                padding: 15px 25px;
+                border-radius: 4px;
+                margin: 10px 0;
+            }
+            
+            /* Emphasis and strong text */
+            em {
+                color: #888;
+            }
+            strong {
+                color: #F44336;
+            }
+        `;
+
+        function rollD20(bonus) {
+            const roll = Math.floor(Math.random() * 20) + 1;
+            const total = roll + bonus;
+            return { roll, total };
+        }
+
+        function rollDice(diceStr) {
+            // Parse dice string like "1d6" or "1d4+4"
+            const match = diceStr.match(/(\d+)d(\d+)(?:[+-](\d+))?/);
+            if (!match) return null;
+            
+            const numDice = parseInt(match[1]);
+            const diceSize = parseInt(match[2]);
+            const modifier = match[3] ? parseInt(match[3]) : 0;
+            
+            let rolls = [];
+            let total = 0;
+            for (let i = 0; i < numDice; i++) {
+                const roll = Math.floor(Math.random() * diceSize) + 1;
+                rolls.push(roll);
+                total += roll;
+            }
+            total += modifier;
+            
+            return {
+                rolls,
+                modifier,
+                total
+            };
+        }
+
+        function applyHPChange(input, change) {
+            const currentHP = parseInt(input.value) || 0;
+            input.value = Math.max(0, currentHP + change);
+            // Trigger the change event to save the new value
+            const event = new Event('change');
+            input.dispatchEvent(event);
+        }
+
+        // Get the monster page URL from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const monsterPage = urlParams.get('monster');
+        
+        if (monsterPage) {
+            const frame = document.getElementById('monsterFrame');
+            // Update path to be relative to public directory
+            frame.src = `/monsters_html/${monsterPage}`;
+
+            // Once the iframe loads, inject the HP tracker and attack roll functionality
+            frame.onload = function() {
+                try {
+                    const content = frame.contentDocument;
+                    
+                    // Inject our styles into the iframe
+                    const styleElement = content.createElement('style');
+                    styleElement.textContent = injectedStyles;
+                    content.head.appendChild(styleElement);
+                    
+                    // Add HP tracking
+                    const hpElements = content.querySelectorAll('li');
+                    for (const el of hpElements) {
+                        if (el.textContent.includes('Hit Points')) {
+                            // Create the current HP elements
+                            const currentHpLabel = document.createElement('span');
+                            currentHpLabel.className = 'current-hp-label';
+                            currentHpLabel.textContent = '(Current: ';
+                            
+                            const currentHpInput = document.createElement('input');
+                            currentHpInput.type = 'number';
+                            currentHpInput.className = 'current-hp-input';
+                            currentHpInput.id = 'currentHp';
+                            
+                            const closingSpan = document.createElement('span');
+                            closingSpan.textContent = ')';
+
+                            // Create HP adjustment buttons container
+                            const buttonsContainer = document.createElement('div');
+                            buttonsContainer.className = 'hp-buttons-container';
+
+                            // Define the buttons configuration
+                            const buttons = [
+                                { value: -10, text: '-10', class: 'hp-damage-button' },
+                                { value: -5, text: '-5', class: 'hp-damage-button' },
+                                { value: -1, text: '-1', class: 'hp-damage-button' },
+                                { value: 1, text: '+1', class: 'hp-heal-button' },
+                                { value: 5, text: '+5', class: 'hp-heal-button' },
+                                { value: 10, text: '+10', class: 'hp-heal-button' }
+                            ];
+
+                            // Create and add the buttons
+                            buttons.forEach(btn => {
+                                const button = content.createElement('button');
+                                button.textContent = btn.text;
+                                button.className = `hp-adjust-button ${btn.class}`;
+                                button.addEventListener('click', () => applyHPChange(currentHpInput, btn.value));
+                                buttonsContainer.appendChild(button);
+                            });
+                            
+                            // Extract max HP value
+                            const hpMatch = el.textContent.match(/(\d+)/);
+                            if (hpMatch) {
+                                const maxHp = parseInt(hpMatch[1]);
+                                
+                                // Check for saved HP first
+                                const savedHp = localStorage.getItem(`hp_${monsterPage}`);
+                                // Only use maxHp if there's no saved value
+                                if (savedHp === null) {
+                                    currentHpInput.value = maxHp;
+                                    // Save the initial max HP value
+                                    localStorage.setItem(`hp_${monsterPage}`, maxHp);
+                                } else {
+                                    currentHpInput.value = savedHp;
+                                }
+                                
+                                // Save HP changes to localStorage
+                                currentHpInput.addEventListener('change', function(e) {
+                                    localStorage.setItem(`hp_${monsterPage}`, e.target.value);
+                                });
+                                
+                                // Add a "Reset" link to set HP back to max
+                                const resetLink = document.createElement('a');
+                                resetLink.href = '#';
+                                resetLink.textContent = ' (reset)';
+                                resetLink.style.fontSize = '0.8em';
+                                resetLink.style.marginLeft = '5px';
+                                resetLink.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    currentHpInput.value = maxHp;
+                                    localStorage.setItem(`hp_${monsterPage}`, maxHp);
+                                });
+                                
+                                // Inject the elements into the monster stat block
+                                el.appendChild(currentHpLabel);
+                                el.appendChild(currentHpInput);
+                                el.appendChild(closingSpan);
+                                el.appendChild(resetLink);
+                                el.appendChild(buttonsContainer);
+                            }
+                            break;
+                        }
+                    }
+
+                    // Add attack and damage roll functionality
+                    const actionElements = content.querySelectorAll('li');
+                    actionElements.forEach(el => {
+                        const text = el.innerHTML;
+                        
+                        // Look for attack bonus patterns like "+2 to hit"
+                        const attackBonusMatch = text.match(/([+-]\d+) to hit/);
+                        
+                        // Look for damage patterns like "3 (1d6)" or "6 (1d4+4)"
+                        const damageMatches = text.matchAll(/(\d+) \(([^)]+)\)(?: (?:plus|and) (\d+) \(([^)]+)\))? (\w+)(?: or (\w+))? damage/g);
+                        
+                        if (attackBonusMatch || Array.from(damageMatches).length > 0) {
+                            let newHtml = text;
+                            
+                            // Replace attack bonus with button
+                            if (attackBonusMatch) {
+                                const attackBonus = parseInt(attackBonusMatch[1]);
+                                newHtml = newHtml.replace(
+                                    attackBonusMatch[0],
+                                    `<button class="attack-button" title="Click to roll d20${attackBonusMatch[1]}">${attackBonusMatch[0]}</button>`
+                                );
+                            }
+                            
+                            // Replace damage expressions with buttons
+                            for (const match of text.matchAll(/(\d+) \(([^)]+)\)(?: (?:plus|and) (\d+) \(([^)]+)\))? (\w+)(?: or (\w+))? damage/g)) {
+                                const [fullMatch, avg1, dice1, avg2, dice2, dmgType1, dmgType2] = match;
+                                const buttonHtml = `<button class="damage-button" title="Click to roll ${dice1}" data-dice="${dice1}" data-type="${dmgType1}${dmgType2 ? ' or ' + dmgType2 : ''}">${avg1} (${dice1})</button>`;
+                                newHtml = newHtml.replace(`${avg1} (${dice1})`, buttonHtml);
+                                
+                                if (avg2 && dice2) {
+                                    const button2Html = `<button class="damage-button" title="Click to roll ${dice2}" data-dice="${dice2}" data-type="${dmgType1}${dmgType2 ? ' or ' + dmgType2 : ''}">${avg2} (${dice2})</button>`;
+                                    newHtml = newHtml.replace(`${avg2} (${dice2})`, button2Html);
+                                }
+                            }
+                            
+                            el.innerHTML = newHtml;
+                            
+                            // Add click handlers for attack rolls
+                            const attackButton = el.querySelector('.attack-button');
+                            if (attackButton) {
+                                attackButton.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    
+                                    // Remove any existing attack roll results
+                                    const existingResult = el.querySelector('.dice-result:not(.damage)');
+                                    if (existingResult) {
+                                        existingResult.remove();
+                                    }
+
+                                    const attackBonus = parseInt(attackBonusMatch[1]);
+                                    const { roll, total } = rollD20(attackBonus);
+                                    const resultSpan = document.createElement('span');
+                                    resultSpan.className = 'dice-result';
+                                    resultSpan.textContent = `[${roll} + ${attackBonus} = ${total}]`;
+                                    
+                                    attackButton.insertAdjacentElement('afterend', resultSpan);
+                                    void resultSpan.offsetWidth;
+                                    resultSpan.classList.add('animate');
+                                });
+                            }
+                            
+                            // Add click handlers for damage rolls
+                            const damageButtons = el.querySelectorAll('.damage-button');
+                            damageButtons.forEach(button => {
+                                button.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    
+                                    // Remove previous damage roll result for this button
+                                    const nextSibling = button.nextSibling;
+                                    if (nextSibling && nextSibling.classList && nextSibling.classList.contains('dice-result')) {
+                                        nextSibling.remove();
+                                    }
+
+                                    const diceStr = button.dataset.dice;
+                                    const damageType = button.dataset.type;
+                                    const result = rollDice(diceStr);
+                                    
+                                    if (result) {
+                                        const resultSpan = document.createElement('span');
+                                        resultSpan.className = 'dice-result damage';
+                                        const rollsText = result.rolls.join(' + ');
+                                        const modifierText = result.modifier ? ` + ${result.modifier}` : '';
+                                        resultSpan.textContent = `[${rollsText}${modifierText} = ${result.total}]`;
+                                        
+                                        button.insertAdjacentElement('afterend', resultSpan);
+                                        void resultSpan.offsetWidth;
+                                        resultSpan.classList.add('animate');
+                                    }
+                                });
+                            });
+                        }
+                    });
+
+                } catch (e) {
+                    console.error('Could not access iframe content:', e);
+                }
+            };
+        }
+    </script>
+</body>
+</html>
