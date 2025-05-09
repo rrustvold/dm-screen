@@ -38,7 +38,7 @@ const all_environs = [forest, hills, grassland, dungeon, caves, swamp, desert, m
         			<option value="forest">Forest</option>,
 			<option value="hills">Hills</option>,
 			<option value="grassland">Grassland</option>,
-			<option value="dungeon">Dungeon</option>,
+			<option value="dungeon" selected="selected">Dungeon</option>,
 			<option value="caves">Caves</option>,
 			<option value="swamp">Swamp</option>,
 			<option value="desert">Desert</option>,
@@ -85,6 +85,10 @@ const all_environs = [forest, hills, grassland, dungeon, caves, swamp, desert, m
         }
         
         export function getFamily(monsterSelection) {
+            if (monsterSelection === ""){
+                monsterSelection = "anyDungeon";
+                document.getElementById("monster-type").value = "anyDungeon";
+            }
             let monsterFamily = allLists()[monsterSelection];
             if (monsterSelection === "anyForest") {
                 monsterFamily = randomFamily(forest);

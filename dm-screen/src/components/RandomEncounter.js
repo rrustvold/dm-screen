@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import {
     allEnvirons,
@@ -178,7 +178,6 @@ export function generate(party, difficulty, monsterSelection) {
             multiplier = 4;
         }
 
-        // TODO
         if (!document.getElementById("use-multiplier").checked){
             console.log("Not using a multiplier");
             multiplier = 1;
@@ -224,6 +223,9 @@ function RandomEncounterInput({setEncounter, party}){
     const [monsterTypeOptions, setMonsterTypeOptions] = useState(
         []
     );
+    useEffect(() => {
+        changeEnviron("dungeon", setMonsterTypeOptions)
+    }, []);
     let limits = getPartyLimits(party);
     return (
         <div class="w3-container">
@@ -237,7 +239,7 @@ function RandomEncounterInput({setEncounter, party}){
                     <select name="difficulty" id="difficulty" class="w3-select">
                         <option value="easy">Trivial (don't use) {limits[0]}+</option>
                         <option value="medium">Easy {limits[1]}+</option>
-                        <option value="hard">Moderate {limits[2]}+</option>
+                        <option value="hard" selected="selected">Moderate {limits[2]}+</option>
                         <option value="deadly">Hard {limits[3]}+</option>
                     </select>
                 </div>
@@ -250,6 +252,7 @@ function RandomEncounterInput({setEncounter, party}){
                         (e) =>
                             changeEnviron(e.target.value, setMonsterTypeOptions)
                         }
+
                         class="w3-select"
                     >
                         {allEnvirons}
@@ -271,7 +274,7 @@ function RandomEncounterInput({setEncounter, party}){
                     <label>2014 MM</label>
                     <input type="checkbox" id="2014 MM"/>
                     <label>SRD 5.2 (2025)</label>
-                    <input type="checkbox" id="srd5.2"/>
+                    <input type="checkbox" id="srd5.2" checked/>
                 </div>
             </div>
             <p>
@@ -389,7 +392,7 @@ export default function RandomEncounter2({party}){
                 <div className="w3-container" style={{padding: 0, height: '600px'}}>
                     <iframe 
                         src={`/monster-wrapper.html?monster=${key}.html`}
-                        style={{width: '100%', height: '100%', border: 'none'}}
+                        style={{width: '100%', height: '100%', border: 'none', scrollbarWidth: 'none'}}
                         title={value.name}
                     />
                 </div>

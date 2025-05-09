@@ -1,4 +1,3 @@
-import { hideShow } from "../utils";
 
 function PartyInput({partySize, party, setParty}) {
 
@@ -29,7 +28,7 @@ function PartyInput({partySize, party, setParty}) {
             <div class="w3-card-4">
                 <label>Level</label>
                 <input className="w3-input" type="number" id={level_id}
-                       onChange={(e) => change(e.target.value)}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={5}/>
                 <label>Name</label>
                 <input className="w3-input" type="text" id={name_id}
                        onChange={(e) => change(e.target.value)}/>
@@ -52,13 +51,13 @@ function PartySize({setPartySize}){
         <div class="w3-container">
             <p>
                 <label for="partySize">Party Size </label> 
-                <input type="number" id="partySize" onChange={(e) => setPartySize(e.target.value)} defaultValue="2" />
+                <input type="number" id="partySize" onChange={(e) => setPartySize(e.target.value)} defaultValue="1" />
             </p>
         </div>
     )
 }
 
-class PC {
+export class PC {
     constructor(player, name, level, ac, hp) {
         this.player = player;
         this.name = name;
@@ -68,7 +67,7 @@ class PC {
     }
 }
 
-export default function Party({partySize, setPartySize, party, setParty}){
+export function Party({partySize, setPartySize, party, setParty}){
     return (
         <div class="w3-container">
             <h1>Party</h1>

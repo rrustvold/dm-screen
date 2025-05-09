@@ -3,7 +3,7 @@ import './App.css';
 import DamageSeverity from './components/DamageSeverity'
 import Wilderness from "./components/Wilderness";
 import RandomEncounter from "./components/Encounter";
-import Party from "./components/Party";
+import {Party, PC} from "./components/Party";
 import {useState} from "react";
 import HordeMathContainer from "./components/HordeMath";
 import RandomDungeon from './components/randomDungeon/RandomDungeon';
@@ -16,7 +16,18 @@ import Table from "./components/Table";
 
 function App() {
     const [partySize, setPartySize] = useState(2);
-    const [party, setParty] = useState([]);
+    const [party, setParty] = useState([new PC(
+                    "",
+                    "",
+                    5,
+                    10,
+                ),
+    new PC(
+                    "",
+                    "",
+                    5,
+                    10,
+                )]);
     const [tableState, setTableState] = useState(1);
     const [activeTab, setActiveTab] = useState('home');
   return (
