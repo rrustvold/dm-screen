@@ -357,15 +357,6 @@ export default function RandomEncounter2({party}){
         });
     };
 
-    // Function to initialize remaining monsters when encounter changes
-    const initializeRemainingMonsters = (encounterDict) => {
-        const initialQuantities = {};
-        for (const [key, value] of Object.entries(encounterDict)) {
-            initialQuantities[key] = value.qty;
-        }
-        setRemainingMonsters(initialQuantities);
-    };
-
     // Create the monster cards directly from encounter and remainingMonsters state
     const monsterCards = Object.entries(encounter.encounterDict).map(([key, value]) => (
         <div key={key} className="w3-col l3 m3 s12" style={{padding: '8px'}}>
@@ -433,9 +424,17 @@ export default function RandomEncounter2({party}){
                                       party={party}></RandomEncounterInput>
                 <p>
                     {encounterBlock}
-                    <input type="button" defaultValue="Set" onClick={() => {
+                    <input type="button" defaultValue="Set" onClick={(e) => {
+                        e.target.disabled = true;
                         try {
-                            initializeRemainingMonsters(encounter.encounterDict);
+                            window.parent.postMessage({
+                                type: 'setEncounter',
+                                encounter: encounter.encounterDict
+                            }, '*'); // Specify exact target origin for security
+
+                            setTimeout(() => {
+                                e.target.disabled = false;
+                            }, 1000);
                         } catch (exception) {
                             console.error('Error creating monster cards:', exception);
                         }
