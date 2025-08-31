@@ -223,27 +223,34 @@ function RandomEncounterInput({setEncounter, party}){
     const [monsterTypeOptions, setMonsterTypeOptions] = useState(
         []
     );
+    const [limits, setLimits] = useState([0, 0, 0, 0]);
+    
     useEffect(() => {
         changeEnviron("dungeon", setMonsterTypeOptions)
     }, []);
-    let limits = getPartyLimits(party);
+    
+    // Update limits whenever party changes
+    useEffect(() => {
+        const newLimits = getPartyLimits(party);
+        setLimits(newLimits);
+    }, [party]);
     return (
-        <div class="w3-container">
-            <div class="w3-row-padding">
-                <div class="w3-col m1">
+        <div className="w3-container">
+            <div className="w3-row-padding">
+                <div className="w3-col m1">
                     <label>Use mulitiplier? </label>
-                    <input class="w3-check" type="checkbox" id="use-multiplier"/>
+                    <input className="w3-check" type="checkbox" id="use-multiplier"/>
                 </div>
-                <div class="w3-col m3">
+                <div className="w3-col m3">
                     <label>Difficulty</label>
-                    <select name="difficulty" id="difficulty" class="w3-select">
-                        <option value="easy">Trivial (don't use) {limits[0]}+</option>
-                        <option value="medium">Easy {limits[1]}+</option>
-                        <option value="hard" selected="selected">Moderate {limits[2]}+</option>
-                        <option value="deadly">Hard {limits[3]}+</option>
+                    <select name="difficulty" id="difficulty" className="w3-select">
+                        <option value="easy">Trivial (don't use) &lt; {limits[0]}</option>
+                        <option value="medium">Easy &lt; {limits[1]}</option>
+                        <option value="hard" selected="selected">Moderate &lt; {limits[2]}</option>
+                        <option value="deadly">Hard &lt; {limits[3]}</option>
                     </select>
                 </div>
-                <div class="w3-col m3">
+                <div className="w3-col m3">
                     <label>Environment</label>
                     <select
                         name="environ"
@@ -253,22 +260,22 @@ function RandomEncounterInput({setEncounter, party}){
                             changeEnviron(e.target.value, setMonsterTypeOptions)
                         }
 
-                        class="w3-select"
+                        className="w3-select"
                     >
                         {allEnvirons}
                     </select>
                 </div>
-                <div class="w3-col m3">
+                <div className="w3-col m3">
                     <label>Monster Type</label>
-                    <select name="monster-type" id="monster-type"  class="w3-select">
+                    <select name="monster-type" id="monster-type"  className="w3-select">
                         {monsterTypeOptions}
                     </select>
                 </div>
-                <div class="w3-col m2">
+                <div className="w3-col m2">
                     <label>Max different creatures</label>
-                    <input type="number" defaultValue="2" id="maxDiffMonsters" class="w3-input"/>
+                    <input type="number" defaultValue="2" id="maxDiffMonsters" className="w3-input"/>
                 </div>
-                <div class="w3-col m3">
+                <div className="w3-col m3">
                     <label>SRD 5.1 (2014)</label>
                     <input type="checkbox" id="srd5.1"/>
                     <label>2014 MM</label>
@@ -277,8 +284,18 @@ function RandomEncounterInput({setEncounter, party}){
                     <input type="checkbox" id="srd5.2" checked/>
                 </div>
             </div>
+            <div className="w3-container">
+                <input type="button" className="w3-block" defaultValue="Dressing" onClick={
+                    () => {
+                        let dressing = document.getElementById("random-setting");
+                        let environ = document.getElementById("encounter-environ").value.toLowerCase();
+                        dressing.innerText = getRandomThingFromList(getListFromEnviron(environ));
+                    }
+                }/>
+                <p className="w3-panel w3-pale-yellow w3-padding-large w3-border w3-border-red w3-round-xxlarge" id="random-setting"></p>
+            </div>
             <p>
-                <input type="button" defaultValue="Generate" onClick={() => setEncounter(generate(party))} class="w3-block" />
+                <input type="button" defaultValue="Generate" onClick={() => setEncounter(generate(party))} className="w3-block" />
             </p>
         </div>
     )
@@ -297,7 +314,7 @@ function MonsterFamilyList({ selectedFamily }) {
     });
 
     return (
-        <div className="w3-container">
+        <div className="w3-container ">
             <h4>Monsters in Family:</h4>
             <ul className="w3-ul">
                 {sortedMonsters.map((monster, index) => (
@@ -447,16 +464,6 @@ export default function RandomEncounter2({party}){
                 {monsterCards}
             </div>
 
-            <div className="w3-container">
-                <input type="button" defaultValue="Dressing" onClick={
-                    () => {
-                        let dressing = document.getElementById("random-setting");
-                        let environ = document.getElementById("encounter-environ").value.toLowerCase();
-                        dressing.innerText = getRandomThingFromList(getListFromEnviron(environ));
-                    }
-                }/>
-                <p id="random-setting"></p>
-            </div>
             <div className="w3-container">
                 <input type="button" id="encounter-distance-button" defaultValue="Encounter Distance: " onClick={
                     () => {
