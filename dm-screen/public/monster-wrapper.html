@@ -6,175 +6,144 @@
     <title>Monster Stats</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
-        body, html {
+        body {
             margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
+            padding: 20px;
             background-color: #1a1a1a;
             color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
-        .monster-frame {
+
+        /* Headers */
+        h1, h2, h3, h4, h5, h6 {
+            color: #F44336;
+            margin-top: 0;
+        }
+
+        /* Monster stat block sections */
+        ul {
+            background-color: #2d2d2d;
+            padding: 15px 25px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        /* Links */
+        a {
+            color: #F44336;
+        }
+        a:hover {
+            color: #D32F2F;
+        }
+
+        /* Tables */
+        table {
+            border-collapse: collapse;
+            background-color: #2d2d2d;
             width: 100%;
-            height: 100%;
-            border: none;
+            margin: 10px 0;
         }
-        /* Dark theme styles to be injected into iframe */
+        th, td {
+            border: 1px solid #404040;
+            padding: 8px;
+            color: #e0e0e0;
+            text-align: left;
+        }
+        th {
+            background-color: #333333;
+        }
+
+        /* Results display */
+        .dice-result {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            background-color: #2d2d2d;
+            border: 1px solid #404040;
+        }
+        .dice-result.damage {
+            background-color: #331111;
+            border-color: #522;
+        }
+
+        /* Buttons */
+        .attack-button, .damage-button {
+            display: inline-block;
+            padding: 4px 12px;
+            margin: 0 4px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9em;
+            transition: background-color 0.2s;
+        }
+        
+        .attack-button {
+            background-color: #2196F3;
+            color: white;
+        }
+        .attack-button:hover {
+            background-color: #1976D2;
+        }
+        
+        .damage-button {
+            background-color: #F44336;
+            color: white;
+        }
+        .damage-button:hover {
+            background-color: #D32F2F;
+        }
+
+        /* HP tracking */
+        .current-hp-input {
+            width: 60px;
+            margin-left: 5px;
+            display: inline-block;
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+            border: 1px solid #404040;
+            padding: 4px;
+            border-radius: 4px;
+        }
+        .current-hp-label {
+            margin-left: 10px;
+            display: inline-block;
+        }
+        .hp-buttons-container {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .hp-adjust-button {
+            min-width: 35px;
+            margin: 0 2px;
+            background-color: #F44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+        .hp-adjust-button:hover {
+            background-color: #D32F2F;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .dice-result.animate {
+            animation: fadeIn 0.3s;
+        }
     </style>
 </head>
-<body class="w3-black">
-    <iframe id="monsterFrame" class="monster-frame"></iframe>
+<body>
+    <div id="monsterContent"></div>
 
     <script>
-        // Define styles that will be injected into the iframe
-        const injectedStyles = `
-            /* Base dark theme */
-            body {
-                background-color: #1a1a1a;
-                color: #e0e0e0;
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-            }
-            
-            /* Tables */
-            table {
-                border-collapse: collapse;
-                background-color: #2d2d2d;
-            }
-            th, td {
-                border: 1px solid #404040;
-                padding: 8px;
-                color: #e0e0e0;
-            }
-            th {
-                background-color: #333333;
-            }
-            
-            /* Links */
-            a {
-                color: #F44336;
-            }
-            a:hover {
-                color: #D32F2F;
-            }
-            
-            /* HP tracking */
-            .current-hp-input {
-                width: 60px;
-                margin-left: 5px;
-                display: inline-block;
-                background-color: #2d2d2d;
-                color: #e0e0e0;
-                border: 1px solid #404040;
-                padding: 4px;
-                border-radius: 4px;
-            }
-            .current-hp-label {
-                margin-left: 10px;
-                display: inline-block;
-            }
-            
-            /* Buttons */
-            .attack-button, .damage-button, .hp-adjust-button {
-                display: inline-block;
-                padding: 4px 12px;
-                margin: 0 4px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-family: inherit;
-                font-size: 0.9em;
-                transition: background-color 0.2s;
-            }
-            
-            .attack-button {
-                background-color: #2196F3;
-                color: white;
-            }
-            .attack-button:hover {
-                background-color: #1976D2;
-            }
-            
-            .damage-button {
-                background-color: #F44336;
-                color: white;
-            }
-            .damage-button:hover {
-                background-color: #D32F2F;
-            }
-            
-            .hp-adjust-button {
-                min-width: 35px;
-                margin: 0 2px;
-            }
-            
-            .hp-damage-button {
-                background-color: #F44336;
-                color: white;
-            }
-            .hp-damage-button:hover {
-                background-color: #D32F2F;
-            }
-            
-            .hp-heal-button {
-                background-color: #F44336;
-                color: white;
-            }
-            .hp-heal-button:hover {
-                background-color: #D32F2F;
-            }
-            
-            /* Results display */
-            .dice-result {
-                display: inline-block;
-                margin-left: 10px;
-                padding: 4px 8px;
-                border-radius: 4px;
-                font-family: monospace;
-                background-color: #2d2d2d;
-                border: 1px solid #404040;
-            }
-            .dice-result.damage {
-                background-color: #331111;
-                border-color: #522;
-            }
-            
-            /* Container styling */
-            .hp-buttons-container {
-                display: inline-block;
-                margin-left: 10px;
-            }
-            
-            /* Animation */
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            .dice-result.animate {
-                animation: fadeIn 0.3s;
-            }
-            
-            /* Headers */
-            h1, h2, h3, h4, h5, h6 {
-                color: #F44336;
-            }
-            
-            /* Monster stat block sections */
-            ul {
-                background-color: #2d2d2d;
-                padding: 15px 25px;
-                border-radius: 4px;
-                margin: 10px 0;
-            }
-            
-            /* Emphasis and strong text */
-            em {
-                color: #888;
-            }
-            strong {
-                color: #F44336;
-            }
-        `;
-
         function rollD20(bonus) {
             const roll = Math.floor(Math.random() * 20) + 1;
             const total = roll + bonus;
@@ -209,206 +178,225 @@
         function applyHPChange(input, change) {
             const currentHP = parseInt(input.value) || 0;
             input.value = Math.max(0, currentHP + change);
-            // Trigger the change event to save the new value
-            const event = new Event('change');
-            input.dispatchEvent(event);
+            // Save the HP value
+            const monsterPage = new URLSearchParams(window.location.search).get('monster');
+            localStorage.setItem(`hp_${monsterPage}`, input.value);
         }
 
-        // Get the monster page URL from the query parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const monsterPage = urlParams.get('monster');
-        
-        if (monsterPage) {
-            const frame = document.getElementById('monsterFrame');
-            // Update path to be relative to public directory
-            frame.src = `/monsters_html/${monsterPage}`;
+        function addHPTracking(el) {
+            if (el.textContent.includes('Hit Points')) {
+                // Create the current HP elements
+                const currentHpLabel = document.createElement('span');
+                currentHpLabel.className = 'current-hp-label';
+                currentHpLabel.textContent = '(Current: ';
+                
+                const currentHpInput = document.createElement('input');
+                currentHpInput.type = 'number';
+                currentHpInput.className = 'current-hp-input';
+                currentHpInput.id = 'currentHp';
+                
+                const closingSpan = document.createElement('span');
+                closingSpan.textContent = ')';
 
-            // Once the iframe loads, inject the HP tracker and attack roll functionality
-            frame.onload = function() {
-                try {
-                    const content = frame.contentDocument;
+                // Create HP adjustment buttons container
+                const buttonsContainer = document.createElement('div');
+                buttonsContainer.className = 'hp-buttons-container';
+
+                // Define the buttons configuration
+                const buttons = [
+                    { value: -10, text: '-10' },
+                    { value: -5, text: '-5' },
+                    { value: -1, text: '-1' },
+                    { value: 1, text: '+1' },
+                    { value: 5, text: '+5' },
+                    { value: 10, text: '+10' }
+                ];
+
+                // Create and add the buttons
+                buttons.forEach(btn => {
+                    const button = document.createElement('button');
+                    button.textContent = btn.text;
+                    button.className = 'hp-adjust-button';
+                    button.addEventListener('click', () => applyHPChange(currentHpInput, btn.value));
+                    buttonsContainer.appendChild(button);
+                });
+                
+                // Extract max HP value
+                const hpMatch = el.textContent.match(/(\d+)/);
+                if (hpMatch) {
+                    const maxHp = parseInt(hpMatch[1]);
+                    const monsterPage = new URLSearchParams(window.location.search).get('monster');
                     
-                    // Inject our styles into the iframe
-                    const styleElement = content.createElement('style');
-                    styleElement.textContent = injectedStyles;
-                    content.head.appendChild(styleElement);
+                    // Check for saved HP first
+                    const savedHp = localStorage.getItem(`hp_${monsterPage}`);
+                    currentHpInput.value = savedHp !== null ? savedHp : maxHp;
                     
-                    // Add HP tracking
-                    const hpElements = content.querySelectorAll('li');
-                    for (const el of hpElements) {
-                        if (el.textContent.includes('Hit Points')) {
-                            // Create the current HP elements
-                            const currentHpLabel = document.createElement('span');
-                            currentHpLabel.className = 'current-hp-label';
-                            currentHpLabel.textContent = '(Current: ';
-                            
-                            const currentHpInput = document.createElement('input');
-                            currentHpInput.type = 'number';
-                            currentHpInput.className = 'current-hp-input';
-                            currentHpInput.id = 'currentHp';
-                            
-                            const closingSpan = document.createElement('span');
-                            closingSpan.textContent = ')';
+                    // Add a "Reset" link
+                    const resetLink = document.createElement('a');
+                    resetLink.href = '#';
+                    resetLink.textContent = ' (reset)';
+                    resetLink.style.fontSize = '0.8em';
+                    resetLink.style.marginLeft = '5px';
+                    resetLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        currentHpInput.value = maxHp;
+                        localStorage.setItem(`hp_${monsterPage}`, maxHp);
+                    });
+                    
+                    // Add all elements
+                    el.appendChild(currentHpLabel);
+                    el.appendChild(currentHpInput);
+                    el.appendChild(closingSpan);
+                    el.appendChild(resetLink);
+                    el.appendChild(buttonsContainer);
+                }
+            }
+        }
 
-                            // Create HP adjustment buttons container
-                            const buttonsContainer = document.createElement('div');
-                            buttonsContainer.className = 'hp-buttons-container';
+        function addAttackAndDamageButtons(el) {
+            const text = el.innerHTML;
+            let newHtml = text;
 
-                            // Define the buttons configuration
-                            const buttons = [
-                                { value: -10, text: '-10', class: 'hp-damage-button' },
-                                { value: -5, text: '-5', class: 'hp-damage-button' },
-                                { value: -1, text: '-1', class: 'hp-damage-button' },
-                                { value: 1, text: '+1', class: 'hp-heal-button' },
-                                { value: 5, text: '+5', class: 'hp-heal-button' },
-                                { value: 10, text: '+10', class: 'hp-heal-button' }
-                            ];
+            // Look for attack rolls
+            const attackMatches = text.match(/<em>(?:Melee|Ranged)(?: or (?:Melee|Ranged))? Attack Roll:<\/em> ([+-]\d+)/);
+            if (attackMatches) {
+                const attackBonus = attackMatches[1];
+                const attackType = text.match(/<em>((?:Melee|Ranged)(?: or (?:Melee|Ranged))?) Attack/)[1];
+                const buttonHtml = `<button class="attack-button" title="Click to roll d20${attackBonus}">${attackType} ${attackBonus}</button>`;
+                newHtml = newHtml.replace(attackMatches[1], buttonHtml);
+            }
 
-                            // Create and add the buttons
-                            buttons.forEach(btn => {
-                                const button = content.createElement('button');
-                                button.textContent = btn.text;
-                                button.className = `hp-adjust-button ${btn.class}`;
-                                button.addEventListener('click', () => applyHPChange(currentHpInput, btn.value));
-                                buttonsContainer.appendChild(button);
-                            });
-                            
-                            // Extract max HP value
-                            const hpMatch = el.textContent.match(/(\d+)/);
-                            if (hpMatch) {
-                                const maxHp = parseInt(hpMatch[1]);
-                                
-                                // Check for saved HP first
-                                const savedHp = localStorage.getItem(`hp_${monsterPage}`);
-                                // Only use maxHp if there's no saved value
-                                if (savedHp === null) {
-                                    currentHpInput.value = maxHp;
-                                    // Save the initial max HP value
-                                    localStorage.setItem(`hp_${monsterPage}`, maxHp);
-                                } else {
-                                    currentHpInput.value = savedHp;
-                                }
-                                
-                                // Save HP changes to localStorage
-                                currentHpInput.addEventListener('change', function(e) {
-                                    localStorage.setItem(`hp_${monsterPage}`, e.target.value);
-                                });
-                                
-                                // Add a "Reset" link to set HP back to max
-                                const resetLink = document.createElement('a');
-                                resetLink.href = '#';
-                                resetLink.textContent = ' (reset)';
-                                resetLink.style.fontSize = '0.8em';
-                                resetLink.style.marginLeft = '5px';
-                                resetLink.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    currentHpInput.value = maxHp;
-                                    localStorage.setItem(`hp_${monsterPage}`, maxHp);
-                                });
-                                
-                                // Inject the elements into the monster stat block
-                                el.appendChild(currentHpLabel);
-                                el.appendChild(currentHpInput);
-                                el.appendChild(closingSpan);
-                                el.appendChild(resetLink);
-                                el.appendChild(buttonsContainer);
-                            }
-                            break;
-                        }
-                    }
+            // Look for damage rolls
+            const damageRegex = /(\d+) \(([^)]+)\)(?: (\w+)(?= damage| |,|\.))/g;
+            const conditionalDamageRegex = /plus (\d+) \(([^)]+)\) (\w+)(?: damage)?/g;
+            
+            // Replace main damage expressions with buttons
+            newHtml = newHtml.replace(damageRegex, (match, avg, dice, type) => {
+                return `<button class="damage-button" title="Click to roll ${dice}" data-dice="${dice}" data-type="${type}">${avg} (${dice})</button> ${type}`;
+            });
 
-                    // Add attack and damage roll functionality with updated patterns
-                    const actionElements = content.querySelectorAll('li, p'); // Also check p elements for actions
-                    actionElements.forEach(el => {
-                        const text = el.innerHTML;
-                        let newHtml = text;
+            // Replace conditional damage expressions with buttons
+            newHtml = newHtml.replace(conditionalDamageRegex, (match, avg, dice, type) => {
+                return `plus <button class="damage-button" title="Click to roll ${dice}" data-dice="${dice}" data-type="${type}">${avg} (${dice})</button> ${type}`;
+            });
 
-                        // Look for the attack pattern in the raw HTML
-                        const attackMatches = text.match(/<em>(?:Melee|Ranged)(?: or (?:Melee|Ranged))? Attack Roll:<\/em> ([+-]\d+)/);
-                        if (attackMatches) {
-                            const attackBonus = attackMatches[1]; // Keep the + or - sign
-                            const attackType = text.match(/<em>((?:Melee|Ranged)(?: or (?:Melee|Ranged))?) Attack/)[1];
-                            const buttonHtml = `<button class="attack-button" title="Click to roll d20${attackBonus}">${attackType} ${attackBonus}</button>`;
-                            newHtml = text.replace(attackMatches[1], buttonHtml);
+            if (newHtml !== text) {
+                el.innerHTML = newHtml;
+
+                // Add click handlers for attack rolls
+                const attackButton = el.querySelector('.attack-button');
+                if (attackButton) {
+                    attackButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const existingResult = el.querySelector('.dice-result:not(.damage)');
+                        if (existingResult) {
+                            existingResult.remove();
                         }
 
-                        // Look for damage patterns with variations
-                        const damageRegex = /(\d+) \(([^)]+)\)(?: (\w+)(?= damage| |,|\.))/g;
-                        const conditionalDamageRegex = /plus (\d+) \(([^)]+)\) (\w+)(?: damage)?/g;
+                        const attackBonus = parseInt(attackButton.textContent.match(/[+-]\d+/)[0]);
+                        const { roll, total } = rollD20(attackBonus);
+                        const resultSpan = document.createElement('span');
+                        resultSpan.className = 'dice-result';
+                        resultSpan.textContent = `[${roll} ${attackBonus >= 0 ? '+' : ''}${attackBonus} = ${total}]`;
                         
-                        // Replace main damage expressions with buttons
-                        newHtml = newHtml.replace(damageRegex, (match, avg, dice, type) => {
-                            return `<button class="damage-button" title="Click to roll ${dice}" data-dice="${dice}" data-type="${type}">${avg} (${dice})</button> ${type}`;
-                        });
+                        attackButton.insertAdjacentElement('afterend', resultSpan);
+                        void resultSpan.offsetWidth;
+                        resultSpan.classList.add('animate');
+                    });
+                }
 
-                        // Replace conditional damage expressions with buttons
-                        newHtml = newHtml.replace(conditionalDamageRegex, (match, avg, dice, type) => {
-                            return `plus <button class="damage-button" title="Click to roll ${dice}" data-dice="${dice}" data-type="${type}">${avg} (${dice})</button> ${type}`;
-                        });
+                // Add click handlers for damage rolls
+                const damageButtons = el.querySelectorAll('.damage-button');
+                damageButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
                         
-                        if (newHtml !== text) {
-                            el.innerHTML = newHtml;
+                        const nextSibling = button.nextSibling;
+                        if (nextSibling && nextSibling.classList && nextSibling.classList.contains('dice-result')) {
+                            nextSibling.remove();
+                        }
 
-                            // Add click handlers for attack rolls
-                            const attackButton = el.querySelector('.attack-button');
-                            if (attackButton) {
-                                attackButton.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    
-                                    const existingResult = el.querySelector('.dice-result:not(.damage)');
-                                    if (existingResult) {
-                                        existingResult.remove();
-                                    }
-
-                                    // Parse the attack bonus preserving the sign
-                                    const attackBonus = parseInt(attackButton.textContent.match(/[+-]\d+/)[0]);
-                                    const { roll, total } = rollD20(attackBonus);
-                                    const resultSpan = document.createElement('span');
-                                    resultSpan.className = 'dice-result';
-                                    resultSpan.textContent = `[${roll} ${attackBonus >= 0 ? '+' : ''}${attackBonus} = ${total}]`;
-                                    
-                                    attackButton.insertAdjacentElement('afterend', resultSpan);
-                                    void resultSpan.offsetWidth;
-                                    resultSpan.classList.add('animate');
-                                });
-                            }
-
-                            // Add click handlers for damage rolls
-                            const damageButtons = el.querySelectorAll('.damage-button');
-                            damageButtons.forEach(button => {
-                                button.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    
-                                    const nextSibling = button.nextSibling;
-                                    if (nextSibling && nextSibling.classList && nextSibling.classList.contains('dice-result')) {
-                                        nextSibling.remove();
-                                    }
-
-                                    const diceStr = button.dataset.dice;
-                                    const damageType = button.dataset.type;
-                                    const result = rollDice(diceStr);
-                                    
-                                    if (result) {
-                                        const resultSpan = document.createElement('span');
-                                        resultSpan.className = 'dice-result damage';
-                                        const rollsText = result.rolls.join(' + ');
-                                        const modifierText = result.modifier ? ` + ${result.modifier}` : '';
-                                        resultSpan.textContent = `[${rollsText}${modifierText} = ${result.total}]`;
-                                        
-                                        button.insertAdjacentElement('afterend', resultSpan);
-                                        void resultSpan.offsetWidth;
-                                        resultSpan.classList.add('animate');
-                                    }
-                                });
-                            });
+                        const diceStr = button.dataset.dice;
+                        const damageType = button.dataset.type;
+                        const result = rollDice(diceStr);
+                        
+                        if (result) {
+                            const resultSpan = document.createElement('span');
+                            resultSpan.className = 'dice-result damage';
+                            const rollsText = result.rolls.join(' + ');
+                            const modifierText = result.modifier ? ` + ${result.modifier}` : '';
+                            resultSpan.textContent = `[${rollsText}${modifierText} = ${result.total}]`;
+                            
+                            button.insertAdjacentElement('afterend', resultSpan);
+                            void resultSpan.offsetWidth;
+                            resultSpan.classList.add('animate');
                         }
                     });
-
-                } catch (e) {
-                    console.error('Could not access iframe content:', e);
-                }
-            };
+                });
+            }
         }
+
+        async function loadMonsterContent() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const monsterPage = urlParams.get('monster');
+            
+            if (monsterPage) {
+                try {
+                    // Fetch the monster HTML file
+                    const response = await fetch(`/monsters_html/${monsterPage}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const html = await response.text();
+                    
+                    // Create a temporary container to parse the HTML
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    
+                    // Remove unwanted elements (like existing styles and scripts)
+                    const unwantedElements = doc.querySelectorAll('style, script, link[rel="stylesheet"]');
+                    unwantedElements.forEach(el => el.remove());
+                    
+                    // Extract the monster content
+                    const monsterContent = doc.body;
+                    
+                    // Remove the "Monster DB Index" link and its containing paragraph
+                    const indexLink = monsterContent.querySelector('p > a[href*="index.html"]');
+                    if (indexLink && indexLink.parentElement) {
+                        indexLink.parentElement.remove();
+                    }
+
+                    // Remove the footer links
+                    const footerLinks = monsterContent.querySelector('p > a[href*="slyflourish.com"]');
+                    if (footerLinks && footerLinks.parentElement) {
+                        footerLinks.parentElement.remove();
+                    }
+                    
+                    // Insert the content into our page
+                    const container = document.getElementById('monsterContent');
+                    container.innerHTML = monsterContent.innerHTML;
+                    
+                    // Process stat blocks to add HP tracking and attack/damage buttons
+                    const elements = container.querySelectorAll('li, p');
+                    elements.forEach(el => {
+                        addHPTracking(el);
+                        addAttackAndDamageButtons(el);
+                    });
+                    
+                } catch (error) {
+                    console.error('Error loading monster content:', error);
+                    document.getElementById('monsterContent').innerHTML = 
+                        `<div class="w3-panel w3-red">
+                            <h3>Error!</h3>
+                            <p>Could not load monster content. Please try again later.</p>
+                        </div>`;
+                }
+            }
+        }
+
+        // Load the monster content when the page loads
+        loadMonsterContent();
     </script>
 </body>
 </html>
