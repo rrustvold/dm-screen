@@ -1,0 +1,21 @@
+[
+  {
+    "name": "skills",
+    "title": "Skill Proficiencies Ranked",
+    "date": "2025-02-1",
+    "description": "All 5E Skill proficiencies ranked by usefulness"
+  },
+  {
+    "name": "equipment_state_machine",
+    "title": "The 5E Equipment State Machine",
+    "date": "2025-09-12",
+    "description": "I take a way too detailed look at the algebra of equipment in 5E to prove that the handaxe is the best weapon in the game."
+  },
+  {
+    "name": "fighting-stances",
+    "title": "Fighting Stances",
+    "date": "2025-09-13",
+    "description": "What if weapons were just flavor? A variation on 5E combat."
+  }
+  
+]
