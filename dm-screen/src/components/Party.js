@@ -12,6 +12,9 @@ function PartyInput({partySize, party, setParty}) {
                     document.getElementById(`name_${i}`).value,
                     document.getElementById(`level_${i}`).value,
                     document.getElementById(`ac_${i}`).value,
+                    document.getElementById(`hp_${i}`).value,
+                    document.getElementById(`initiative_${i}`).value,
+                    document.getElementById(`avg_damage_${i}`).value
                 )
             )
         }
@@ -29,6 +32,9 @@ function PartyInput({partySize, party, setParty}) {
         let name_id = `name_${i}`;
         let ac_id = `ac_${i}`;
         let level_id = `level_${i}`;
+        let hp_id = `hp_${i}`;
+        let initiative_id = `initiative_${i}`;
+        let avg_damage_id = `avg_damage_${i}`;
         // Other pc properties are not used elsewhere yet, but if they do get referenced, then change events can be added
         rows.push(
             <div class="w3-quarter w3-margin-bottom">
@@ -38,14 +44,19 @@ function PartyInput({partySize, party, setParty}) {
                        onChange={(e) => change(e.target.value)} defaultValue={3}/>
                 <label>Name</label>
                 <input className="w3-input" type="text" id={name_id}
-                       onChange={(e) => change(e.target.value)}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={`Player ${i + 1}`}/>
                 <label>AC</label>
                 <input className="w3-input" type="number" id={ac_id}
-                       onChange={(e) => change(e.target.value)}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={15}/>
                 <label>HP</label>
-                <input className="w3-input" type="number"/>
+                <input className="w3-input" type="number" id={hp_id}
+                       onChange={(e) => change(e.target.value)} defaultValue={30}/>
                 <label>Initiative</label>
-                <input className="w3-input" type="number"/>
+                <input className="w3-input" type="number" id={initiative_id}
+                       onChange={(e) => change(e.target.value)} defaultValue={2}/>
+                <label>Average Damage</label>
+                <input className="w3-input" type="number" id={avg_damage_id}
+                       onChange={(e) => change(e.target.value)} defaultValue={10}/>
             </div>
             </div>
         )
@@ -65,12 +76,14 @@ function PartySize({setPartySize}){
 }
 
 export class PC {
-    constructor(player, name, level, ac, hp) {
+    constructor(player, name, level, ac, hp, initiative, avgDamage) {
         this.player = player;
         this.name = name;
         this.level = level;
         this.ac = ac;
         this.hp = hp;
+        this.initiative = initiative;
+        this.avgDamage = avgDamage;
     }
 }
 

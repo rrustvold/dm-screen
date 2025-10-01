@@ -6,6 +6,7 @@ import RandomEncounter from "./components/Encounter";
 import {Party, PC} from "./components/Party";
 import {useState} from "react";
 import HordeMathContainer from "./components/HordeMath";
+import Lanchester from "./components/Lanchester";
 import RandomDungeon from './components/randomDungeon/RandomDungeon';
 import RandomEncounter2 from "./components/RandomEncounter";
 import {
@@ -30,6 +31,7 @@ function App() {
                 )]);
     const [tableState, setTableState] = useState(1);
     const [activeTab, setActiveTab] = useState('home');
+    const [monsters, setMonsters] = useState([]);
   return (
       <div class="w3-container">
           <div className="flex gap-4 border-b mb-4">
@@ -42,6 +44,9 @@ function App() {
               <button onClick={() => setActiveTab('monster-math')}
                       className={activeTab === 'monster-math' ? 'font-bold border-b-2' : ''}>Monster
                   Math
+              </button>
+              <button onClick={() => setActiveTab('lanchester')}
+                      className={activeTab === 'lanchester' ? 'font-bold border-b-2' : ''}>Lanchester
               </button>
               <button onClick={() => setActiveTab('random-encounter')}
                       className={activeTab === 'random-encounter' ? 'font-bold border-b-2' : ''}>Random
@@ -66,7 +71,10 @@ function App() {
           </div>
           <div style={{display: activeTab === 'monster-math' ? 'block' : 'none'}}>
               <HordeMathContainer party={party} tableState={tableState}
-                              setTableState={setTableState}></HordeMathContainer>
+                              setTableState={setTableState} monsters={monsters} setMonsters={setMonsters}></HordeMathContainer>
+          </div>
+          <div style={{display: activeTab === 'lanchester' ? 'block' : 'none'}}>
+              <Lanchester party={party} monsters={monsters}></Lanchester>
           </div>
 
           {/*<Table tableState={tableState}></Table>*/}
