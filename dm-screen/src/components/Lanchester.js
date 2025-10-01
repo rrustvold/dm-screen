@@ -194,8 +194,8 @@ function calculateLanchesterSimulation(party, monsters, maxTurns = 20, confidenc
 }
 
 export default function Lanchester({ party = [], monsters = [] }) {
-    const [maxTurns, setMaxTurns] = useState(5);
-    const [confidenceLevel, setConfidenceLevel] = useState(1); // Number of standard deviations
+    const maxTurns = 100; // Fixed at 100 turns
+    const [confidenceLevel, setConfidenceLevel] = useState(3); // Number of standard deviations
     const [simulationData, setSimulationData] = useState(null);
 
     useEffect(() => {
@@ -203,7 +203,7 @@ export default function Lanchester({ party = [], monsters = [] }) {
             const data = calculateLanchesterSimulation(party, monsters, maxTurns, confidenceLevel);
             setSimulationData(data);
         }
-    }, [party, monsters, maxTurns, confidenceLevel]);
+    }, [party, monsters, confidenceLevel]);
 
     const chartData = simulationData ? {
         labels: simulationData.turns,
@@ -330,17 +330,6 @@ export default function Lanchester({ party = [], monsters = [] }) {
             <div class="w3-container w3-show">
                 <div class="w3-row-padding">
                     <div class="w3-quarter">
-                        <label>Max Turns</label>
-                        <input 
-                            type="number" 
-                            className="w3-input" 
-                            value={maxTurns}
-                            onChange={(e) => setMaxTurns(parseInt(e.target.value) || 20)}
-                            min="1"
-                            max="100"
-                        />
-                    </div>
-                    <div class="w3-quarter">
                         <label>Confidence Level (σ)</label>
                         <input 
                             type="number" 
@@ -348,7 +337,7 @@ export default function Lanchester({ party = [], monsters = [] }) {
                             value={confidenceLevel}
                             onChange={(e) => setConfidenceLevel(parseFloat(e.target.value) || 1)}
                             min="0.1"
-                            max="3"
+                            max="4"
                             step="0.1"
                         />
                         <small>Standard deviations for confidence interval</small>

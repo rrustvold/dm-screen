@@ -174,22 +174,22 @@ function MonsterInput({monsterCount, monsters, setMonsters}) {
                 <div class="w3-card-4">
                     <label>Name</label>
                     <input type="text" className="w3-input" id={`monster-name-${i}`}
-                           onChange={() => change()}/>
+                           onChange={() => change()} defaultValue={i === 0 ? "Kobolds" : ""}/>
                     <label>Number of monsters in Horde</label>
                     <input type="number" id={`numAttackers-${i}`} className="w3-input"
-                           onChange={() => change()} defaultValue={1}/>
+                           onChange={() => change()} defaultValue={i === 0 ? 6 : 1}/>
                     <label>Attacks per Monster</label>
                     <input type="number" id={`attacksPerMonster-${i}`} className="w3-input"
                            onChange={() => change()} defaultValue={1}/>
                     <label>Attack Bonus</label>
                     <input type="number" id={`attackBonus-${i}`} className="w3-input"
-                           onChange={() => change()} defaultValue={0}/>
+                           onChange={() => change()} defaultValue={i === 0 ? 4 : 0}/>
                     <label>Damage per Attack</label>
                     <input type="text" id={`damage-${i}`} className="w3-input"
-                           onChange={() => change()} defaultValue="1d6"/>
+                           onChange={() => change()} defaultValue={i === 0 ? "1d4+2" : "1d6"}/>
                     <label>AC</label>
                     <input type='number' id={`armor-class-${i}`} className='w3-input'
-                           onChange={() => change()} defaultValue={10}/>
+                           onChange={() => change()} defaultValue={i === 0 ? 14 : 10}/>
                     <label>Damage</label>
                     <div>
                         <input type="button" className="w3-button" defaultValue="-10"
@@ -207,13 +207,13 @@ function MonsterInput({monsterCount, monsters, setMonsters}) {
                     </div>
                     <label>Current Hit Points (of single monster)</label>
                     <input type='number' id={`hit-points-${i}`} className='w3-input'
-                           onChange={() => change()} defaultValue={10}/>
+                           onChange={() => change()} defaultValue={i === 0 ? 7 : 10}/>
                     <label>Maximum HP (of single monster)</label>
                     <input type='number' id={`hit-point-maximum-${i}`} className='w3-input'
-                           onChange={() => change()} defaultValue={10}/>
+                           onChange={() => change()} defaultValue={i === 0 ? 7 : 10}/>
                     <label>Initiative</label>
                     <input type='number' id={`initiative-${i}`} className='w3-input'
-                           onChange={() => change()} defaultValue={10}/>
+                           onChange={() => change()} defaultValue={i === 0 ? 12 : 10}/>
                 </div>
             </div>
         )
@@ -241,7 +241,7 @@ function MonsterCount({setMonsterCount}){
         <div class="w3-container">
             <p>
                 <label for="monsterCount">Number of Monster Types </label> 
-                <input type="number" id="monsterCount" onChange={(e) => setMonsterCount(e.target.value)} defaultValue="3" />
+                <input type="number" id="monsterCount" onChange={(e) => setMonsterCount(e.target.value)} defaultValue="1" />
             </p>
         </div>
     )
@@ -303,7 +303,7 @@ function HordeMathOutput({monsters, party}) {
 }
 
 export default function HordeMathContainer({party, tableState, setTableState, monsters, setMonsters}) {
-    const [monsterCount, setMonsterCount] = useState(3);
+    const [monsterCount, setMonsterCount] = useState(1);
 
     return (
         <div class="w3-container">
