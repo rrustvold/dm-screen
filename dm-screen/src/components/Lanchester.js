@@ -230,58 +230,70 @@ export default function Lanchester({ party = [], monsters = [] }) {
             {
                 label: 'Player HP (Upper)',
                 data: simulationData.playerHPUpper,
-                borderColor: 'rgba(75, 192, 192, 0.3)',
-                backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                borderColor: 'rgba(59, 130, 246, 0.4)',
+                backgroundColor: 'rgba(59, 130, 246, 0.1)',
                 tension: 0,
                 fill: '+1',
                 pointRadius: 0,
-                borderWidth: 1
+                borderWidth: 2,
+                hoverRadius: 0,
+                hoverBorderWidth: 0
             },
             {
                 label: 'Player HP',
                 data: simulationData.playerHP,
-                borderColor: 'rgb(75, 192, 192)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgb(59, 130, 246)',
+                backgroundColor: 'rgba(59, 130, 246, 0.2)',
                 tension: 0,
-                fill: false
+                fill: false,
+                borderWidth: 3,
+                pointRadius: 2
             },
             {
                 label: 'Player HP (Lower)',
                 data: simulationData.playerHPLower,
-                borderColor: 'rgba(75, 192, 192, 0.3)',
-                backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                borderColor: 'rgba(59, 130, 246, 0.4)',
+                backgroundColor: 'rgba(59, 130, 246, 0.1)',
                 tension: 0,
                 fill: false,
                 pointRadius: 0,
-                borderWidth: 1
+                borderWidth: 2,
+                hoverRadius: 0,
+                hoverBorderWidth: 0
             },
             {
                 label: 'Monster HP (Upper)',
                 data: simulationData.monsterHPUpper,
-                borderColor: 'rgba(255, 99, 132, 0.3)',
-                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                borderColor: 'rgba(239, 68, 68, 0.4)',
+                backgroundColor: 'rgba(239, 68, 68, 0.1)',
                 tension: 0,
                 fill: '+1',
                 pointRadius: 0,
-                borderWidth: 1
+                borderWidth: 2,
+                hoverRadius: 0,
+                hoverBorderWidth: 0
             },
             {
                 label: 'Monster HP',
                 data: simulationData.monsterHP,
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgb(239, 68, 68)',
+                backgroundColor: 'rgba(239, 68, 68, 0.2)',
                 tension: 0,
-                fill: false
+                fill: false,
+                borderWidth: 3,
+                pointRadius: 2
             },
             {
                 label: 'Monster HP (Lower)',
                 data: simulationData.monsterHPLower,
-                borderColor: 'rgba(255, 99, 132, 0.3)',
-                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                borderColor: 'rgba(239, 68, 68, 0.4)',
+                backgroundColor: 'rgba(239, 68, 68, 0.1)',
                 tension: 0,
                 fill: false,
                 pointRadius: 0,
-                borderWidth: 1
+                borderWidth: 2,
+                hoverRadius: 0,
+                hoverBorderWidth: 0
             }
         ]
     } : null;
@@ -295,18 +307,27 @@ export default function Lanchester({ party = [], monsters = [] }) {
                 labels: {
                     boxWidth: 12,
                     font: {
-                        size: 12
-                    }
+                        size: 12,
+                        color: '#ffffff'
+                    },
+                    color: '#ffffff'
                 }
             },
             title: {
                 display: true,
                 text: 'Lanchester\'s Laws Combat Simulation',
                 font: {
-                    size: 14
-                }
+                    size: 14,
+                    color: '#ffffff'
+                },
+                color: '#ffffff'
             },
             tooltip: {
+                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                titleColor: '#ffffff',
+                bodyColor: '#ffffff',
+                borderColor: '#ffffff',
+                borderWidth: 1,
                 callbacks: {
                     afterLabel: function(context) {
                         const turnIndex = context.dataIndex;
@@ -315,8 +336,8 @@ export default function Lanchester({ party = [], monsters = [] }) {
                         const monsterHP = simulationData.monsterHP[turnIndex];
                         
                         // Calculate effective combatants for this turn
-                        const effectivePlayers = Math.floor(playerHP / simulationData.avgPlayerHP);
-                        const effectiveMonsters = Math.floor(monsterHP / simulationData.avgMonsterHP);
+                        const effectivePlayers = Math.ceil(playerHP / simulationData.avgPlayerHP);
+                        const effectiveMonsters = Math.ceil(monsterHP / simulationData.avgMonsterHP);
                         
                         // Calculate expected damage for this turn
                         const basePlayerDamage = simulationData.basePlayerDamagePerTurn || 0;
@@ -342,13 +363,20 @@ export default function Lanchester({ party = [], monsters = [] }) {
                     display: true,
                     text: 'Turn Number',
                     font: {
-                        size: 12
-                    }
+                        size: 12,
+                        color: '#ffffff'
+                    },
+                    color: '#ffffff'
                 },
                 ticks: {
                     font: {
-                        size: 10
-                    }
+                        size: 10,
+                        color: '#ffffff'
+                    },
+                    color: '#ffffff'
+                },
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.2)'
                 }
             },
             y: {
@@ -356,13 +384,20 @@ export default function Lanchester({ party = [], monsters = [] }) {
                     display: true,
                     text: 'Hit Points',
                     font: {
-                        size: 12
-                    }
+                        size: 12,
+                        color: '#ffffff'
+                    },
+                    color: '#ffffff'
                 },
                 ticks: {
                     font: {
-                        size: 10
-                    }
+                        size: 10,
+                        color: '#ffffff'
+                    },
+                    color: '#ffffff'
+                },
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.2)'
                 },
                 beginAtZero: true
             }
