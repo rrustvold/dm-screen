@@ -2,6 +2,34 @@
 import React from 'react';
 import { hideShow } from '../utils';
 
+function parseDamage(damage_str){
+    damage_str = damage_str.trim().toLowerCase();
+    let diceBonus = damage_str.split("+");
+    let dice = diceBonus[0];
+    let bonus = "0";
+    if (diceBonus.length === 2){
+        bonus = diceBonus[1];
+    }
+    dice = dice.trim();
+    bonus = Number(bonus.trim());
+    let numDice;
+    let sides;
+    [numDice, sides] = dice.split("d");
+    numDice = Number(numDice);
+    sides = Number(sides);
+
+    let mean = numDice * (sides + 1) / 2 + bonus;
+    let std = (numDice * (sides**2 - 1) / 12) ** .5;
+
+    return {
+        numDice: numDice,
+        sides: sides,
+        bonus: bonus,
+        mean: mean,
+        std: std,
+    }
+}
+
 function PartyInput({partySize, party, setParty}) {
 
     function change() {
@@ -58,8 +86,8 @@ function PartyInput({partySize, party, setParty}) {
                 <input className="w3-input" type="number" id={initiative_id}
                        onChange={(e) => change(e.target.value)} defaultValue={2}/>
                 <label>Average Damage</label>
-                <input className="w3-input" type="number" id={avg_damage_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={10}/>
+                <input className="w3-input" type="text" id={avg_damage_id}
+                       onChange={(e) => change(e.target.value)} defaultValue="1d8+2" placeholder="e.g., 1d8+2, 2d6+3"/>
                 <label>Attack Bonus</label>
                 <input className="w3-input" type="number" id={attack_bonus_id}
                        onChange={(e) => change(e.target.value)} defaultValue={5}/>
@@ -91,6 +119,17 @@ export class PC {
         this.initiative = initiative;
         this.avgDamage = avgDamage;
         this.attackBonus = attackBonus;
+        
+        // Parse damage string to get mean and std
+        try {
+            const parsedDamage = parseDamage(avgDamage);
+            this.damageMean = parsedDamage.mean;
+            this.damageStd = parsedDamage.std;
+        } catch (error) {
+            // Fallback to numeric value if parsing fails
+            this.damageMean = parseFloat(avgDamage) || 0;
+            this.damageStd = 0;
+        }
     }
 }
 

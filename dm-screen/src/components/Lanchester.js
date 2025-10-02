@@ -79,7 +79,7 @@ function calculateLanchesterSimulation(party, monsters, maxTurns = 20, confidenc
     let basePlayerDamageStd = 0;
     for (let playerIndex = 0; playerIndex < party.length; playerIndex++) {
         let player = party[playerIndex];
-        let avgDamage = parseInt(player.avgDamage) || 10;
+        let avgDamage = player.damageMean || 10;
         let attackBonus = parseInt(player.attackBonus) || 0;
         
         // Calculate average damage per player to all monsters
@@ -97,8 +97,9 @@ function calculateLanchesterSimulation(party, monsters, maxTurns = 20, confidenc
                 0
             );
             playerDamagePerPlayer += avgDamage * oddsToHit * numAttackers;
-            // Assume damage has 20% coefficient of variation (std = 0.2 * mean)
-            playerDamageStdPerPlayer += (avgDamage * 0.2 * oddsToHit * numAttackers) ** 2;
+            // Use parsed damage standard deviation
+            let damageStd = player.damageStd || (avgDamage * 0.2);
+            playerDamageStdPerPlayer += (damageStd * oddsToHit * numAttackers) ** 2;
         }
         basePlayerDamagePerTurn += playerDamagePerPlayer / Math.max(totalMonsterCount, 1);
         basePlayerDamageStd += (Math.sqrt(playerDamageStdPerPlayer) / Math.max(totalMonsterCount, 1)) ** 2;
