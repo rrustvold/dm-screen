@@ -65,11 +65,11 @@ function App() {
           <div style={{display: activeTab === 'wilderness' ? 'block' : 'none'}}>
               <Wilderness party={party}></Wilderness>
           </div>
-          <div style={{display: activeTab === 'party' ? 'block' : 'none'}}>
+          <div style={{display: (activeTab === 'party' || activeTab === 'lanchester') ? 'block' : 'none'}}>
               <Party partySize={partySize} setPartySize={setPartySize} party={party}
                  setParty={setParty}></Party>
           </div>
-          <div style={{display: activeTab === 'monster-math' ? 'block' : 'none'}}>
+          <div style={{display: (activeTab === 'monster-math' || activeTab === 'lanchester') ? 'block' : 'none'}}>
               <HordeMathContainer party={party} tableState={tableState}
                               setTableState={setTableState} monsters={monsters} setMonsters={setMonsters}></HordeMathContainer>
           </div>
