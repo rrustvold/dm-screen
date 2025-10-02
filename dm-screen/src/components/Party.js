@@ -14,7 +14,8 @@ function PartyInput({partySize, party, setParty}) {
                     document.getElementById(`ac_${i}`).value,
                     document.getElementById(`hp_${i}`).value,
                     document.getElementById(`initiative_${i}`).value,
-                    document.getElementById(`avg_damage_${i}`).value
+                    document.getElementById(`avg_damage_${i}`).value,
+                    document.getElementById(`attack_bonus_${i}`).value
                 )
             )
         }
@@ -35,6 +36,7 @@ function PartyInput({partySize, party, setParty}) {
         let hp_id = `hp_${i}`;
         let initiative_id = `initiative_${i}`;
         let avg_damage_id = `avg_damage_${i}`;
+        let attack_bonus_id = `attack_bonus_${i}`;
         // Other pc properties are not used elsewhere yet, but if they do get referenced, then change events can be added
         rows.push(
             <div class="w3-quarter w3-margin-bottom">
@@ -57,6 +59,9 @@ function PartyInput({partySize, party, setParty}) {
                 <label>Average Damage</label>
                 <input className="w3-input" type="number" id={avg_damage_id}
                        onChange={(e) => change(e.target.value)} defaultValue={10}/>
+                <label>Attack Bonus</label>
+                <input className="w3-input" type="number" id={attack_bonus_id}
+                       onChange={(e) => change(e.target.value)} defaultValue={5}/>
             </div>
             </div>
         )
@@ -76,7 +81,7 @@ function PartySize({setPartySize}){
 }
 
 export class PC {
-    constructor(player, name, level, ac, hp, initiative, avgDamage) {
+    constructor(player, name, level, ac, hp, initiative, avgDamage, attackBonus) {
         this.player = player;
         this.name = name;
         this.level = level;
@@ -84,6 +89,7 @@ export class PC {
         this.hp = hp;
         this.initiative = initiative;
         this.avgDamage = avgDamage;
+        this.attackBonus = attackBonus;
     }
 }
 

@@ -296,7 +296,7 @@ function HordeMathOutput({monsters, party}) {
 
     return (
         <div class="w3-container">
-            <h3>Damage Output</h3>
+            <h3>Horde Damage Output</h3>
             {results.length > 0 ? results : <p>Enter monster data to see damage calculations</p>}
         </div>
     )
