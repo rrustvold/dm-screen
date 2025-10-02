@@ -288,13 +288,23 @@ export default function Lanchester({ party = [], monsters = [] }) {
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'top',
+                labels: {
+                    boxWidth: 12,
+                    font: {
+                        size: 12
+                    }
+                }
             },
             title: {
                 display: true,
-                text: 'Lanchester\'s Laws Combat Simulation'
+                text: 'Lanchester\'s Laws Combat Simulation',
+                font: {
+                    size: 14
+                }
             },
             tooltip: {
                 callbacks: {
@@ -330,13 +340,29 @@ export default function Lanchester({ party = [], monsters = [] }) {
             x: {
                 title: {
                     display: true,
-                    text: 'Turn Number'
+                    text: 'Turn Number',
+                    font: {
+                        size: 12
+                    }
+                },
+                ticks: {
+                    font: {
+                        size: 10
+                    }
                 }
             },
             y: {
                 title: {
                     display: true,
-                    text: 'Hit Points'
+                    text: 'Hit Points',
+                    font: {
+                        size: 12
+                    }
+                },
+                ticks: {
+                    font: {
+                        size: 10
+                    }
                 },
                 beginAtZero: true
             }
@@ -362,30 +388,13 @@ export default function Lanchester({ party = [], monsters = [] }) {
                         <small>Standard deviations for confidence interval</small>
                     </div>
                 </div>
-                
-                {simulationData && (
-                    <div class="w3-row-padding w3-margin-top">
-                        <div class="w3-half">
-                            <h3>Initial Conditions</h3>
-                            <p><strong>Player HP:</strong> {simulationData.initialPlayerHP}</p>
-                            <p><strong>Monster HP:</strong> {simulationData.initialMonsterHP}</p>
-                            <p><strong>Avg Player HP:</strong> {Math.round(simulationData.avgPlayerHP)}</p>
-                            <p><strong>Avg Monster HP:</strong> {Math.round(simulationData.avgMonsterHP)}</p>
-                        </div>
-                        <div class="w3-half">
-                            <h3>Combat Results</h3>
-                            <p><strong>Final Player HP:</strong> {simulationData.playerHP[simulationData.playerHP.length - 1]}</p>
-                            <p><strong>Final Monster HP:</strong> {simulationData.monsterHP[simulationData.monsterHP.length - 1]}</p>
-                            <p><strong>Effective Players Remaining:</strong> {Math.floor(simulationData.playerHP[simulationData.playerHP.length - 1] / simulationData.avgPlayerHP)}</p>
-                            <p><strong>Effective Monsters Remaining:</strong> {Math.floor(simulationData.monsterHP[simulationData.monsterHP.length - 1] / simulationData.avgMonsterHP)}</p>
-                            <p><strong>Combat Duration:</strong> {simulationData.turns.length} turns</p>
-                        </div>
-                    </div>
-                )}
+            
 
                 {chartData && (
                     <div class="w3-container w3-margin-top">
-                        <Line data={chartData} options={options} />
+                        <div style={{ position: 'relative', height: '400px', width: '100%' }}>
+                            <Line data={chartData} options={options} />
+                        </div>
                     </div>
                 )}
 

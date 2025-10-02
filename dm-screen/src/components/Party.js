@@ -40,7 +40,7 @@ function PartyInput({partySize, party, setParty}) {
         // Other pc properties are not used elsewhere yet, but if they do get referenced, then change events can be added
         rows.push(
             <div class="w3-quarter w3-margin-bottom">
-            <div class="w3-card-4">
+            <div class="w3-card-4" style={{border: '3px solid #2196F3', borderRadius: '8px', padding: '15px'}}>
                 <label>Level</label>
                 <input className="w3-input" type="number" id={level_id}
                        onChange={(e) => change(e.target.value)} defaultValue={3}/>

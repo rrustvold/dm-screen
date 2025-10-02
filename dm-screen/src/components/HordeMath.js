@@ -170,7 +170,7 @@ function MonsterInput({monsterCount, monsters, setMonsters}) {
     let rows = [];
     for (let i=0; i < monsterCount; i++){
         rows.push(
-            <div class="w3-quarter w3-margin-bottom">
+            <div class="w3-quarter w3-margin-bottom" style={{border: '3px solid #2196F3', borderRadius: '8px', padding: '15px'}}>
                 <div class="w3-card-4">
                     <label>Name</label>
                     <input type="text" className="w3-input" id={`monster-name-${i}`}
