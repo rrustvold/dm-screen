@@ -30,12 +30,13 @@ function parseDamage(damage_str){
     }
 }
 
-function PartyInput({partySize, party, setParty}) {
+function PartyInput({party, setParty}) {
+    const [isInitialized, setIsInitialized] = React.useState(false);
 
     function change() {
-        let party = []
-        for (let i=0; i < partySize; i++){
-            party.push(
+        let updatedParty = []
+        for (let i=0; i < party.length; i++){
+            updatedParty.push(
                 new PC(
                     document.getElementById(`name_${i}`).value,
                     document.getElementById(`name_${i}`).value,
@@ -48,17 +49,26 @@ function PartyInput({partySize, party, setParty}) {
                 )
             )
         }
-        setParty(party);
+        setParty(updatedParty);
     }
 
-    // Update party when party size changes
+    const removePlayer = (index) => {
+        const updatedParty = party.filter((_, i) => i !== index);
+        setParty(updatedParty);
+    };
+
+    // Update party when party changes, but only after initial load
     React.useEffect(() => {
-        change();
-    }, [partySize]);
+        if (isInitialized) {
+            change();
+        } else {
+            setIsInitialized(true);
+        }
+    }, [party.length]);
 
 
     let rows = [];
-    for (let i=0; i < partySize; i++){
+    for (let i=0; i < party.length; i++){
         let name_id = `name_${i}`;
         let ac_id = `ac_${i}`;
         let level_id = `level_${i}`;
@@ -67,30 +77,55 @@ function PartyInput({partySize, party, setParty}) {
         let avg_damage_id = `avg_damage_${i}`;
         let attack_bonus_id = `attack_bonus_${i}`;
         // Other pc properties are not used elsewhere yet, but if they do get referenced, then change events can be added
+        // Get saved party data for this player, or use defaults
+        const savedPlayer = party[i] || {};
+        const defaultValues = {
+            level: savedPlayer.level || 3,
+            name: savedPlayer.name || `Player ${i + 1}`,
+            ac: savedPlayer.ac || 15,
+            hp: savedPlayer.hp || 24,
+            initiative: savedPlayer.initiative || 2,
+            avgDamage: savedPlayer.avgDamage || "2d6+3",
+            attackBonus: savedPlayer.attackBonus || 5
+        };
+
         rows.push(
-            <div class="w3-quarter w3-margin-bottom">
-            <div class="w3-card-4" style={{border: '3px solid #2196F3', borderRadius: '8px', padding: '15px'}}>
+            <div key={i} class="w3-quarter w3-margin-bottom">
+            <div class="w3-card-4" style={{border: '3px solid #2196F3', borderRadius: '8px', padding: '15px', position: 'relative'}}>
+                <button 
+                    className="w3-button w3-red w3-small" 
+                    onClick={() => removePlayer(i)}
+                    style={{
+                        position: 'absolute',
+                        top: '5px',
+                        right: '5px',
+                        padding: '2px 6px',
+                        fontSize: '12px'
+                    }}
+                >
+                    ×
+                </button>
                 <label>Level</label>
                 <input className="w3-input" type="number" id={level_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={3}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.level}/>
                 <label>Name</label>
                 <input className="w3-input" type="text" id={name_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={`Player ${i + 1}`}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.name}/>
                 <label>AC</label>
                 <input className="w3-input" type="number" id={ac_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={15}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.ac}/>
                 <label>HP</label>
                 <input className="w3-input" type="number" id={hp_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={24}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.hp}/>
                 <label>Initiative</label>
                 <input className="w3-input" type="number" id={initiative_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={2}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.initiative}/>
                 <label>Average Damage</label>
                 <input className="w3-input" type="text" id={avg_damage_id}
-                       onChange={(e) => change(e.target.value)} defaultValue="2d6+3" placeholder="e.g., 1d8+2, 2d6+3"/>
+                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.avgDamage} placeholder="e.g., 1d8+2, 2d6+3"/>
                 <label>Attack Bonus</label>
                 <input className="w3-input" type="number" id={attack_bonus_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={5}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.attackBonus}/>
             </div>
             </div>
         )
@@ -98,16 +133,6 @@ function PartyInput({partySize, party, setParty}) {
     return <div class="w3-row-padding">{rows}</div>
 }
 
-function PartySize({setPartySize}){
-    return (
-        <div class="w3-container">
-            <p>
-                <label for="partySize">Party Size </label> 
-                <input type="number" id="partySize" onChange={(e) => setPartySize(e.target.value)} defaultValue="2" />
-            </p>
-        </div>
-    )
-}
 
 export class PC {
     constructor(player, name, level, ac, hp, initiative, avgDamage, attackBonus) {
@@ -133,7 +158,12 @@ export class PC {
     }
 }
 
-export function Party({partySize, setPartySize, party, setParty}){
+export function Party({party, setParty}){
+    const addPlayer = () => {
+        const newPlayer = new PC("", `Player ${party.length + 1}`, 3, 15, 24, 2, "2d6+3", 5);
+        setParty([...party, newPlayer]);
+    };
+
     return (
         <div class="w3-container">
             <h1 onClick={() => hideShow("party")} style={{cursor: 'pointer'}}>
@@ -143,14 +173,17 @@ export function Party({partySize, setPartySize, party, setParty}){
                 Party
             </h1>
             <div class="w3-container w3-show" id="party">
-                <PartySize setPartySize={setPartySize}></PartySize>
-                {/* <div class="w3-container">
-                    <p>
-                        Languages Known: <input type="text" class="w3-input"></input>
-                    </p>
-                </div> */}
+                <div class="w3-container w3-margin-bottom">
+                    <button 
+                        className="w3-button w3-blue" 
+                        onClick={addPlayer}
+                        style={{marginBottom: '10px'}}
+                    >
+                        + Add Player
+                    </button>
+                </div>
                 
-                <PartyInput partySize={partySize} party={party} setParty={setParty}></PartyInput>
+                <PartyInput party={party} setParty={setParty}></PartyInput>
             </div>
         </div>
     )

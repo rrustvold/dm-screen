@@ -111,31 +111,11 @@ function damage(amount, rowNum, monsters, setMonsters) {
     ));
 }
 
-function MonsterInput({monsterCount, monsters, setMonsters}) {
-    // Initialize monsters when count changes
-    useEffect(() => {
-        if (monsterCount > monsters.length) {
-            // Add new monsters
-            const newMonsters = [...monsters];
-            for (let i = monsters.length; i < monsterCount; i++) {
-                newMonsters.push({
-                    name: i === 0 ? "Kobolds" : "",
-                    numAttackers: i === 0 ? 6 : 1,
-                    attacksPerMonster: 1,
-                    attackBonus: i === 0 ? 4 : 0,
-                    damage: i === 0 ? "1d4+2" : "1d6",
-                    armorClass: i === 0 ? 14 : 10,
-                    hitPoints: i === 0 ? 7 : 10,
-                    hitPointMaximum: i === 0 ? 7 : 10,
-                    initiative: i === 0 ? 12 : 10
-                });
-            }
-            setMonsters(newMonsters);
-        } else if (monsterCount < monsters.length) {
-            // Remove excess monsters
-            setMonsters(monsters.slice(0, monsterCount));
-        }
-    }, [monsterCount]);
+function MonsterInput({monsters, setMonsters}) {
+    const removeMonster = (index) => {
+        const updatedMonsters = monsters.filter((_, i) => i !== index);
+        setMonsters(updatedMonsters);
+    };
 
     const updateMonster = (index, field, value) => {
         setMonsters(prev => prev.map((monster, i) => 
@@ -160,11 +140,24 @@ function MonsterInput({monsterCount, monsters, setMonsters}) {
     };
 
     let rows = [];
-    for (let i = 0; i < monsterCount; i++) {
+    for (let i = 0; i < monsters.length; i++) {
         const monster = monsters[i] || {};
         rows.push(
             <div key={i} className="w3-quarter w3-margin-bottom" style={{border: '3px solid #2196F3', borderRadius: '8px', padding: '15px'}}>
-                <div className="w3-card-4">
+                <div className="w3-card-4" style={{position: 'relative'}}>
+                    <button 
+                        className="w3-button w3-red w3-small" 
+                        onClick={() => removeMonster(i)}
+                        style={{
+                            position: 'absolute',
+                            top: '5px',
+                            right: '5px',
+                            padding: '2px 6px',
+                            fontSize: '12px'
+                        }}
+                    >
+                        ×
+                    </button>
                     <label>Name</label>
                     <input 
                         type="text" 
@@ -299,16 +292,6 @@ function clearMonsters(monsterCount, setMonsters) {
 }
 
 
-function MonsterCount({setMonsterCount}){
-    return (
-        <div className="w3-container">
-            <p>
-                <label htmlFor="monsterCount">Number of Monster Types </label> 
-                <input type="number" id="monsterCount" onChange={(e) => setMonsterCount(parseInt(e.target.value) || 1)} defaultValue="1" />
-            </p>
-        </div>
-    )
-}
 
 function HordeMathOutput({monsters, party}) {
     if (!monsters || monsters.length === 0) {
@@ -366,14 +349,20 @@ function HordeMathOutput({monsters, party}) {
 }
 
 export default function HordeMathContainer({party, tableState, setTableState, monsters, setMonsters}) {
-    const [monsterCount, setMonsterCount] = useState(1);
-
-    // Update monster count when monsters are set externally
-    useEffect(() => {
-        if (monsters && monsters.length > 0) {
-            setMonsterCount(monsters.length);
-        }
-    }, [monsters]);
+    const addMonster = () => {
+        const newMonster = {
+            name: "",
+            numAttackers: 1,
+            attacksPerMonster: 1,
+            attackBonus: 0,
+            damage: "1d6",
+            armorClass: 10,
+            hitPoints: 10,
+            hitPointMaximum: 10,
+            initiative: 10
+        };
+        setMonsters([...monsters, newMonster]);
+    };
 
     return (
         <div className="w3-container">
@@ -384,12 +373,20 @@ export default function HordeMathContainer({party, tableState, setTableState, mo
                 Monster Math
             </h1>
             <div className="w3-container w3-show" id="hordemath">
-                <MonsterCount setMonsterCount={setMonsterCount}></MonsterCount>
-                <MonsterInput monsterCount={monsterCount} monsters={monsters} setMonsters={setMonsters}></MonsterInput>
+                <div className="w3-container w3-margin-bottom">
+                    <button 
+                        className="w3-button w3-blue" 
+                        onClick={addMonster}
+                        style={{marginBottom: '10px'}}
+                    >
+                        + Add Monster Type
+                    </button>
+                </div>
+                <MonsterInput monsters={monsters} setMonsters={setMonsters}></MonsterInput>
                 
                 <HordeMathOutput monsters={monsters} party={party}></HordeMathOutput>
 
-                <button type="button" className="w3-button" onClick={() => clearMonsters(monsterCount, setMonsters)}>
+                <button type="button" className="w3-button" onClick={() => clearMonsters(monsters.length, setMonsters)}>
                     Clear
                 </button>
                 <button type="button" className="w3-button" onClick={() => save(monsters)}>

@@ -4,7 +4,7 @@ import DamageSeverity from './components/DamageSeverity'
 import Wilderness from "./components/Wilderness";
 import RandomEncounter from "./components/Encounter";
 import {Party, PC} from "./components/Party";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import HordeMathContainer from "./components/HordeMath";
 import Lanchester from "./components/Lanchester";
 import RandomDungeon from './components/randomDungeon/RandomDungeon';
@@ -14,24 +14,34 @@ import {
     RandomTreasureHorde
 } from "./components/randomDungeon/RandomTreasure";
 import Table from "./components/Table";
+import { saveToLocalStorage, loadFromLocalStorage } from "./utils";
 
 function App() {
-    const [partySize, setPartySize] = useState(2);
-    const [party, setParty] = useState([new PC(
-                    "",
-                    "",
-                    5,
-                    10,
-                ),
-    new PC(
-                    "",
-                    "",
-                    5,
-                    10,
-                )]);
+    const [party, setParty] = useState(() => {
+        const saved = loadFromLocalStorage('dm-screen-party', null);
+        if (saved && Array.isArray(saved) && saved.length > 0) {
+            return saved.map(pc => new PC(pc.name, pc.name, pc.level, pc.ac, pc.hp, pc.initiative, pc.avgDamage, pc.attackBonus));
+        }
+        return [new PC("", "Player 1", 3, 15, 24, 2, "2d6+3", 5), new PC("", "Player 2", 3, 15, 24, 2, "2d6+3", 5)];
+    });
+    
     const [tableState, setTableState] = useState(1);
     const [activeTab, setActiveTab] = useState('home');
-    const [monsters, setMonsters] = useState([]);
+    
+    const [monsters, setMonsters] = useState(() => {
+        const saved = loadFromLocalStorage('dm-screen-monsters', []);
+        return saved;
+    });
+
+    // Save party data to localStorage whenever it changes
+    useEffect(() => {
+        saveToLocalStorage('dm-screen-party', party);
+    }, [party]);
+
+    // Save monster data to localStorage whenever it changes
+    useEffect(() => {
+        saveToLocalStorage('dm-screen-monsters', monsters);
+    }, [monsters]);
   return (
       <div class="w3-container">
           <div className="flex gap-4 border-b mb-4">
@@ -66,8 +76,7 @@ function App() {
               <Wilderness party={party}></Wilderness>
           </div>
           <div style={{display: (activeTab === 'party' || activeTab === 'lanchester') ? 'block' : 'none'}}>
-              <Party partySize={partySize} setPartySize={setPartySize} party={party}
-                 setParty={setParty}></Party>
+              <Party party={party} setParty={setParty}></Party>
           </div>
           <div style={{display: (activeTab === 'monster-math' || activeTab === 'lanchester') ? 'block' : 'none'}}>
               <HordeMathContainer party={party} tableState={tableState}
