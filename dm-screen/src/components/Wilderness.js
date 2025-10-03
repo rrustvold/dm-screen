@@ -389,7 +389,6 @@ export default function Wilderness({party}) {
     
     let xp_values = [];
     let randomEventBlock = [];
-    console.log(randomEvent);
     randomEventBlock.push(
         <>Monster Stealth: {randomEvent.minStealth}<br/></>
     )

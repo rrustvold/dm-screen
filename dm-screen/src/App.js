@@ -79,7 +79,7 @@ function App() {
 
           {/*<Table tableState={tableState}></Table>*/}
           <div style={{display: activeTab === 'random-encounter' ? 'block' : 'none'}}>
-              <RandomEncounter2 party={party}></RandomEncounter2>
+              <RandomEncounter2 party={party} setMonsters={setMonsters}></RandomEncounter2>
           </div>
           <div style={{display: activeTab === 'random-treasure' ? 'block' : 'none'}}>
               <RandomTreasure party={party}></RandomTreasure>

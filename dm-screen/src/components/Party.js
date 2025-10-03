@@ -81,13 +81,13 @@ function PartyInput({partySize, party, setParty}) {
                        onChange={(e) => change(e.target.value)} defaultValue={15}/>
                 <label>HP</label>
                 <input className="w3-input" type="number" id={hp_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={30}/>
+                       onChange={(e) => change(e.target.value)} defaultValue={24}/>
                 <label>Initiative</label>
                 <input className="w3-input" type="number" id={initiative_id}
                        onChange={(e) => change(e.target.value)} defaultValue={2}/>
                 <label>Average Damage</label>
                 <input className="w3-input" type="text" id={avg_damage_id}
-                       onChange={(e) => change(e.target.value)} defaultValue="1d8+2" placeholder="e.g., 1d8+2, 2d6+3"/>
+                       onChange={(e) => change(e.target.value)} defaultValue="2d6+3" placeholder="e.g., 1d8+2, 2d6+3"/>
                 <label>Attack Bonus</label>
                 <input className="w3-input" type="number" id={attack_bonus_id}
                        onChange={(e) => change(e.target.value)} defaultValue={5}/>

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import { hideShow } from "../utils";
 
 export class Monster {
@@ -79,23 +79,7 @@ function roundToNearestDie(num) {
     }
 }
 
-function save(monsterCount) {
-    let monsters = [];
-    for (let i=0; i < monsterCount; i++) {
-        let monster = {
-            name: document.getElementById(`monster-name-${i}`).value,
-            numAttackers: document.getElementById(`numAttackers-${i}`).value,
-            attacksPerMonster: document.getElementById(`attacksPerMonster-${i}`).value,
-            attackBonus: document.getElementById(`attackBonus-${i}`).value,
-            damage: document.getElementById(`damage-${i}`).value,
-            armorClass: document.getElementById(`armor-class-${i}`).value,
-            hitPoints: document.getElementById(`hit-points-${i}`).value,
-            hitPointMaximum: document.getElementById(`hit-point-maximum-${i}`).value,
-            initiative: document.getElementById(`initiative-${i}`).value,
-        };
-        monsters.push(monster);
-    }
-
+function save(monsters) {
     let state = JSON.stringify(monsters);
     const blob = new Blob([state], { type: "application/json" });
     const link = document.createElement("a");
@@ -108,140 +92,219 @@ function save(monsterCount) {
     URL.revokeObjectURL(link.href);
 }
 
-function load(file, setMonsterCount) {
-
+function load(file, setMonsters) {
     if (file){
         const reader = new FileReader();
         reader.onload = (e) => {
             const monsters = JSON.parse(e.target.result);
-            
-            // Set the monster count to match loaded data
-            setMonsterCount(monsters.length);
-
-            for (let i=0; i < monsters.length; i++){
-                document.getElementById(`monster-name-${i}`).value = monsters[i].name;
-                document.getElementById(`numAttackers-${i}`).value = monsters[i].numAttackers;
-                document.getElementById(`attacksPerMonster-${i}`).value = monsters[i].attacksPerMonster;
-                document.getElementById(`attackBonus-${i}`).value = monsters[i].attackBonus;
-                document.getElementById(`damage-${i}`).value = monsters[i].damage;
-                document.getElementById(`armor-class-${i}`).value = monsters[i].armorClass;
-                document.getElementById(`hit-points-${i}`).value = monsters[i].hitPoints;
-                document.getElementById(`hit-point-maximum-${i}`).value = monsters[i].hitPointMaximum;
-                document.getElementById(`initiative-${i}`).value = monsters[i].initiative;
-            }
+            setMonsters(monsters);
         };
         reader.readAsText(file);
     }
 }
 
-function damage(amount, rowNum) {
-    let hp_bar = document.getElementById(`hit-points-${rowNum}`);
-    let hp = Number(hp_bar.value);
-    hp -= amount;
-    hp_bar.value = hp;
+function damage(amount, rowNum, monsters, setMonsters) {
+    setMonsters(prev => prev.map((monster, index) => 
+        index === rowNum 
+            ? { ...monster, hitPoints: Math.max(0, Number(monster.hitPoints) - amount) }
+            : monster
+    ));
 }
 
 function MonsterInput({monsterCount, monsters, setMonsters}) {
-    function change() {
-        let monsters = []
-        for (let i=0; i < monsterCount; i++){
-            monsters.push(
-                new Monster(
-                    document.getElementById(`monster-name-${i}`).value,
-                    document.getElementById(`numAttackers-${i}`).value,
-                    document.getElementById(`attacksPerMonster-${i}`).value,
-                    document.getElementById(`attackBonus-${i}`).value,
-                    document.getElementById(`damage-${i}`).value,
-                    document.getElementById(`armor-class-${i}`).value,
-                    document.getElementById(`hit-points-${i}`).value,
-                    document.getElementById(`hit-point-maximum-${i}`).value,
-                    document.getElementById(`initiative-${i}`).value
-                )
-            )
+    // Initialize monsters when count changes
+    useEffect(() => {
+        if (monsterCount > monsters.length) {
+            // Add new monsters
+            const newMonsters = [...monsters];
+            for (let i = monsters.length; i < monsterCount; i++) {
+                newMonsters.push({
+                    name: i === 0 ? "Kobolds" : "",
+                    numAttackers: i === 0 ? 6 : 1,
+                    attacksPerMonster: 1,
+                    attackBonus: i === 0 ? 4 : 0,
+                    damage: i === 0 ? "1d4+2" : "1d6",
+                    armorClass: i === 0 ? 14 : 10,
+                    hitPoints: i === 0 ? 7 : 10,
+                    hitPointMaximum: i === 0 ? 7 : 10,
+                    initiative: i === 0 ? 12 : 10
+                });
+            }
+            setMonsters(newMonsters);
+        } else if (monsterCount < monsters.length) {
+            // Remove excess monsters
+            setMonsters(monsters.slice(0, monsterCount));
         }
-        setMonsters(monsters);
-    }
-
-    // Update monsters when monster count changes
-    React.useEffect(() => {
-        change();
     }, [monsterCount]);
 
+    const updateMonster = (index, field, value) => {
+        setMonsters(prev => prev.map((monster, i) => 
+            i === index ? { ...monster, [field]: value } : monster
+        ));
+    };
+
+    const clearMonster = (index) => {
+        setMonsters(prev => prev.map((monster, i) => 
+            i === index ? {
+                name: "",
+                numAttackers: 1,
+                attacksPerMonster: 1,
+                attackBonus: 0,
+                damage: "",
+                armorClass: 0,
+                hitPoints: 0,
+                hitPointMaximum: 0,
+                initiative: 0
+            } : monster
+        ));
+    };
+
     let rows = [];
-    for (let i=0; i < monsterCount; i++){
+    for (let i = 0; i < monsterCount; i++) {
+        const monster = monsters[i] || {};
         rows.push(
-            <div class="w3-quarter w3-margin-bottom" style={{border: '3px solid #2196F3', borderRadius: '8px', padding: '15px'}}>
-                <div class="w3-card-4">
+            <div key={i} className="w3-quarter w3-margin-bottom" style={{border: '3px solid #2196F3', borderRadius: '8px', padding: '15px'}}>
+                <div className="w3-card-4">
                     <label>Name</label>
-                    <input type="text" className="w3-input" id={`monster-name-${i}`}
-                           onChange={() => change()} defaultValue={i === 0 ? "Kobolds" : ""}/>
+                    <input 
+                        type="text" 
+                        className="w3-input" 
+                        value={monster.name || ""}
+                        onChange={(e) => updateMonster(i, 'name', e.target.value)}
+                    />
                     <label>Number of monsters in Horde</label>
-                    <input type="number" id={`numAttackers-${i}`} className="w3-input"
-                           onChange={() => change()} defaultValue={i === 0 ? 6 : 1}/>
+                    <input 
+                        type="number" 
+                        className="w3-input"
+                        value={monster.numAttackers || ""}
+                        onChange={(e) => updateMonster(i, 'numAttackers', e.target.value)}
+                    />
                     <label>Attacks per Monster</label>
-                    <input type="number" id={`attacksPerMonster-${i}`} className="w3-input"
-                           onChange={() => change()} defaultValue={1}/>
+                    <input 
+                        type="number" 
+                        className="w3-input"
+                        value={monster.attacksPerMonster || ""}
+                        onChange={(e) => updateMonster(i, 'attacksPerMonster', e.target.value)}
+                    />
                     <label>Attack Bonus</label>
-                    <input type="number" id={`attackBonus-${i}`} className="w3-input"
-                           onChange={() => change()} defaultValue={i === 0 ? 4 : 0}/>
+                    <input 
+                        type="number" 
+                        className="w3-input"
+                        value={monster.attackBonus || ""}
+                        onChange={(e) => updateMonster(i, 'attackBonus', e.target.value)}
+                    />
                     <label>Damage per Attack</label>
-                    <input type="text" id={`damage-${i}`} className="w3-input"
-                           onChange={() => change()} defaultValue={i === 0 ? "1d4+2" : "1d6"}/>
+                    <input 
+                        type="text" 
+                        className="w3-input"
+                        value={monster.damage || ""}
+                        onChange={(e) => updateMonster(i, 'damage', e.target.value)}
+                    />
                     <label>AC</label>
-                    <input type='number' id={`armor-class-${i}`} className='w3-input'
-                           onChange={() => change()} defaultValue={i === 0 ? 14 : 10}/>
+                    <input 
+                        type='number' 
+                        className='w3-input'
+                        value={monster.armorClass || ""}
+                        onChange={(e) => updateMonster(i, 'armorClass', e.target.value)}
+                    />
                     <label>Damage</label>
                     <div>
-                        <input type="button" className="w3-button" defaultValue="-10"
-                               onClick={() => damage(10, i)}></input>
-                        <input type="button" className="w3-button" defaultValue="-5"
-                               onClick={() => damage(5, i)}></input>
-                        <input type="button" className="w3-button" defaultValue="-1"
-                               onClick={() => damage(1, i)}></input>
-                        <input type="button" className="w3-button" defaultValue="+1"
-                               onClick={() => damage(-1, i)}></input>
-                        <input type="button" className="w3-button" defaultValue="+5"
-                               onClick={() => damage(-5, i)}></input>
-                        <input type="button" className="w3-button" defaultValue="+10"
-                               onClick={() => damage(-10, i)}></input>
+                        <button 
+                            type="button" 
+                            className="w3-button" 
+                            onClick={() => damage(10, i, monsters, setMonsters)}
+                        >
+                            -10
+                        </button>
+                        <button 
+                            type="button" 
+                            className="w3-button" 
+                            onClick={() => damage(5, i, monsters, setMonsters)}
+                        >
+                            -5
+                        </button>
+                        <button 
+                            type="button" 
+                            className="w3-button" 
+                            onClick={() => damage(1, i, monsters, setMonsters)}
+                        >
+                            -1
+                        </button>
+                        <button 
+                            type="button" 
+                            className="w3-button" 
+                            onClick={() => damage(-1, i, monsters, setMonsters)}
+                        >
+                            +1
+                        </button>
+                        <button 
+                            type="button" 
+                            className="w3-button" 
+                            onClick={() => damage(-5, i, monsters, setMonsters)}
+                        >
+                            +5
+                        </button>
+                        <button 
+                            type="button" 
+                            className="w3-button" 
+                            onClick={() => damage(-10, i, monsters, setMonsters)}
+                        >
+                            +10
+                        </button>
                     </div>
                     <label>Current Hit Points (of single monster)</label>
-                    <input type='number' id={`hit-points-${i}`} className='w3-input'
-                           onChange={() => change()} defaultValue={i === 0 ? 7 : 10}/>
+                    <input 
+                        type='number' 
+                        className='w3-input'
+                        value={monster.hitPoints || ""}
+                        onChange={(e) => updateMonster(i, 'hitPoints', e.target.value)}
+                    />
                     <label>Maximum HP (of single monster)</label>
-                    <input type='number' id={`hit-point-maximum-${i}`} className='w3-input'
-                           onChange={() => change()} defaultValue={i === 0 ? 7 : 10}/>
+                    <input 
+                        type='number' 
+                        className='w3-input'
+                        value={monster.hitPointMaximum || ""}
+                        onChange={(e) => updateMonster(i, 'hitPointMaximum', e.target.value)}
+                    />
                     <label>Initiative</label>
-                    <input type='number' id={`initiative-${i}`} className='w3-input'
-                           onChange={() => change()} defaultValue={i === 0 ? 12 : 10}/>
+                    <input 
+                        type='number' 
+                        className='w3-input'
+                        value={monster.initiative || ""}
+                        onChange={(e) => updateMonster(i, 'initiative', e.target.value)}
+                    />
                 </div>
             </div>
         )
     }
-    return <div class="w3-row-padding">{rows}</div>
+    return <div className="w3-row-padding">{rows}</div>
 }
 
-function clearMonsters(monsterCount) {
-    for (let i=0; i < monsterCount; i++){
-        document.getElementById(`monster-name-${i}`).value = "";
-        document.getElementById(`numAttackers-${i}`).value = 1;
-        document.getElementById(`attacksPerMonster-${i}`).value = 1;
-        document.getElementById(`attackBonus-${i}`).value = 0;
-        document.getElementById(`damage-${i}`).value = "";
-        document.getElementById(`armor-class-${i}`).value = 0;
-        document.getElementById(`hit-points-${i}`).value = 0;
-        document.getElementById(`hit-point-maximum-${i}`).value = 0;
-        document.getElementById(`initiative-${i}`).value = 0;
+function clearMonsters(monsterCount, setMonsters) {
+    const clearedMonsters = [];
+    for (let i = 0; i < monsterCount; i++) {
+        clearedMonsters.push({
+            name: "",
+            numAttackers: 1,
+            attacksPerMonster: 1,
+            attackBonus: 0,
+            damage: "",
+            armorClass: 0,
+            hitPoints: 0,
+            hitPointMaximum: 0,
+            initiative: 0
+        });
     }
+    setMonsters(clearedMonsters);
 }
 
 
 function MonsterCount({setMonsterCount}){
     return (
-        <div class="w3-container">
+        <div className="w3-container">
             <p>
-                <label for="monsterCount">Number of Monster Types </label> 
-                <input type="number" id="monsterCount" onChange={(e) => setMonsterCount(e.target.value)} defaultValue="1" />
+                <label htmlFor="monsterCount">Number of Monster Types </label> 
+                <input type="number" id="monsterCount" onChange={(e) => setMonsterCount(parseInt(e.target.value) || 1)} defaultValue="1" />
             </p>
         </div>
     )
@@ -295,7 +358,7 @@ function HordeMathOutput({monsters, party}) {
     }
 
     return (
-        <div class="w3-container">
+        <div className="w3-container">
             <h3>Horde Damage Output</h3>
             {results.length > 0 ? results : <p>Enter monster data to see damage calculations</p>}
         </div>
@@ -305,23 +368,34 @@ function HordeMathOutput({monsters, party}) {
 export default function HordeMathContainer({party, tableState, setTableState, monsters, setMonsters}) {
     const [monsterCount, setMonsterCount] = useState(1);
 
+    // Update monster count when monsters are set externally
+    useEffect(() => {
+        if (monsters && monsters.length > 0) {
+            setMonsterCount(monsters.length);
+        }
+    }, [monsters]);
+
     return (
-        <div class="w3-container">
+        <div className="w3-container">
             <h1 onClick={() => hideShow("hordemath")} style={{cursor: 'pointer'}}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrows-collapse" viewBox="0 0 16 16" style={{verticalAlign: 'middle', marginRight: '8px'}}>
                     <path fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8m7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0m-.5 11.707-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0z"/>
                 </svg>
                 Monster Math
             </h1>
-            <div class="w3-container w3-show" id="hordemath">
+            <div className="w3-container w3-show" id="hordemath">
                 <MonsterCount setMonsterCount={setMonsterCount}></MonsterCount>
                 <MonsterInput monsterCount={monsterCount} monsters={monsters} setMonsters={setMonsters}></MonsterInput>
                 
                 <HordeMathOutput monsters={monsters} party={party}></HordeMathOutput>
 
-                <input type="button" class="w3-button" defaultValue="Clear" onClick={() => clearMonsters(monsterCount)} />
-                <input type="button" className="w3-button" value="save" onClick={() => save(monsterCount)}></input>
-                <input type="file" accept=".json" onChange={(event) => {load(event.target.files[0], setMonsterCount)}}></input>
+                <button type="button" className="w3-button" onClick={() => clearMonsters(monsterCount, setMonsters)}>
+                    Clear
+                </button>
+                <button type="button" className="w3-button" onClick={() => save(monsters)}>
+                    Save
+                </button>
+                <input type="file" accept=".json" onChange={(event) => {load(event.target.files[0], setMonsters)}}></input>
             </div>
             
         </div>

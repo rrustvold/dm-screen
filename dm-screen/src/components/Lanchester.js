@@ -216,6 +216,7 @@ function calculateLanchesterSimulation(party, monsters, maxTurns = 20, confidenc
 export default function Lanchester({ party = [], monsters = [] }) {
     const maxTurns = 100; // Fixed at 100 turns
     const [confidenceLevel, setConfidenceLevel] = useState(3); // Number of standard deviations
+    const [normalize, setNormalize] = useState(false); // Normalize HP to percentages
     const [simulationData, setSimulationData] = useState(null);
 
     useEffect(() => {
@@ -225,12 +226,18 @@ export default function Lanchester({ party = [], monsters = [] }) {
         }
     }, [party, monsters, confidenceLevel]);
 
+    // Function to normalize HP data to percentages
+    const normalizeHPData = (data, initialHP) => {
+        if (!normalize || initialHP === 0) return data;
+        return data.map(hp => (hp / initialHP) * 100);
+    };
+
     const chartData = simulationData ? {
         labels: simulationData.turns,
         datasets: [
             {
                 label: 'Player HP (Upper)',
-                data: simulationData.playerHPUpper,
+                data: normalizeHPData(simulationData.playerHPUpper, simulationData.initialPlayerHP),
                 borderColor: 'rgba(59, 130, 246, 0.4)',
                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
                 tension: 0,
@@ -242,7 +249,7 @@ export default function Lanchester({ party = [], monsters = [] }) {
             },
             {
                 label: 'Player HP',
-                data: simulationData.playerHP,
+                data: normalizeHPData(simulationData.playerHP, simulationData.initialPlayerHP),
                 borderColor: 'rgb(59, 130, 246)',
                 backgroundColor: 'rgba(59, 130, 246, 0.2)',
                 tension: 0,
@@ -252,7 +259,7 @@ export default function Lanchester({ party = [], monsters = [] }) {
             },
             {
                 label: 'Player HP (Lower)',
-                data: simulationData.playerHPLower,
+                data: normalizeHPData(simulationData.playerHPLower, simulationData.initialPlayerHP),
                 borderColor: 'rgba(59, 130, 246, 0.4)',
                 backgroundColor: 'rgba(59, 130, 246, 0.1)',
                 tension: 0,
@@ -264,7 +271,7 @@ export default function Lanchester({ party = [], monsters = [] }) {
             },
             {
                 label: 'Monster HP (Upper)',
-                data: simulationData.monsterHPUpper,
+                data: normalizeHPData(simulationData.monsterHPUpper, simulationData.initialMonsterHP),
                 borderColor: 'rgba(239, 68, 68, 0.4)',
                 backgroundColor: 'rgba(239, 68, 68, 0.1)',
                 tension: 0,
@@ -272,11 +279,13 @@ export default function Lanchester({ party = [], monsters = [] }) {
                 pointRadius: 0,
                 borderWidth: 2,
                 hoverRadius: 0,
-                hoverBorderWidth: 0
+                hoverBorderWidth: 0,
+                hoverBackgroundColor: 'transparent',
+                hoverBorderColor: 'transparent'
             },
             {
                 label: 'Monster HP',
-                data: simulationData.monsterHP,
+                data: normalizeHPData(simulationData.monsterHP, simulationData.initialMonsterHP),
                 borderColor: 'rgb(239, 68, 68)',
                 backgroundColor: 'rgba(239, 68, 68, 0.2)',
                 tension: 0,
@@ -286,7 +295,7 @@ export default function Lanchester({ party = [], monsters = [] }) {
             },
             {
                 label: 'Monster HP (Lower)',
-                data: simulationData.monsterHPLower,
+                data: normalizeHPData(simulationData.monsterHPLower, simulationData.initialMonsterHP),
                 borderColor: 'rgba(239, 68, 68, 0.4)',
                 backgroundColor: 'rgba(239, 68, 68, 0.1)',
                 tension: 0,
@@ -294,7 +303,9 @@ export default function Lanchester({ party = [], monsters = [] }) {
                 pointRadius: 0,
                 borderWidth: 2,
                 hoverRadius: 0,
-                hoverBorderWidth: 0
+                hoverBorderWidth: 0,
+                hoverBackgroundColor: 'transparent',
+                hoverBorderColor: 'transparent'
             }
         ]
     } : null;
@@ -346,8 +357,18 @@ export default function Lanchester({ party = [], monsters = [] }) {
                         const expectedPlayerDamage = basePlayerDamage * effectivePlayers;
                         const expectedMonsterDamage = baseMonsterDamage * effectiveMonsters;
                         
+                        // Format HP values based on normalize setting
+                        const playerHPDisplay = normalize ? 
+                            `${Math.round((playerHP / simulationData.initialPlayerHP) * 100)}%` : 
+                            Math.round(playerHP);
+                        const monsterHPDisplay = normalize ? 
+                            `${Math.round((monsterHP / simulationData.initialMonsterHP) * 100)}%` : 
+                            Math.round(monsterHP);
+                        
                         return [
                             `Turn ${turn}:`,
+                            `Player HP: ${playerHPDisplay}`,
+                            `Monster HP: ${monsterHPDisplay}`,
                             `Effective Players: ${effectivePlayers}`,
                             `Effective Monsters: ${effectiveMonsters}`,
                             `Expected Player Damage: ${Math.round(expectedPlayerDamage)}`,
@@ -383,7 +404,7 @@ export default function Lanchester({ party = [], monsters = [] }) {
             y: {
                 title: {
                     display: true,
-                    text: 'Hit Points',
+                    text: normalize ? 'Hit Points (%)' : 'Hit Points',
                     font: {
                         size: 12,
                         color: '#ffffff'
@@ -422,6 +443,18 @@ export default function Lanchester({ party = [], monsters = [] }) {
                             step="0.1"
                         />
                         <small>Standard deviations for confidence interval</small>
+                    </div>
+                    <div class="w3-quarter">
+                        <label>
+                            <input 
+                                type="checkbox" 
+                                checked={normalize}
+                                onChange={(e) => setNormalize(e.target.checked)}
+                                className="w3-check"
+                            />
+                            Normalize HP to 0-100%
+                        </label>
+                        <small>Display HP as percentages instead of absolute values</small>
                     </div>
                 </div>
             

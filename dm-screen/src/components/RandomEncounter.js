@@ -359,9 +359,180 @@ function setEncounter2(encounter) {
     }
 }
 
-export default function RandomEncounter2({party}){
+// Function to parse attack data from monster HTML using the same logic as monster-wrapper.html
+async function parseMonsterHTML(monsterKey) {
+    try {
+        const response = await fetch(`/monsters_html/${monsterKey}.html`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const html = await response.text();
+        
+        // Parse attack information using the same regex patterns as monster-wrapper.html
+        const attackMatches = html.match(/<em>(?:Melee|Ranged)(?: or (?:Melee|Ranged))? Attack Roll:<\/em> ([+-]\d+)/);
+        const damageRegex = /(\d+) \(([^)]+)\)(?: (\w+)(?= damage| |,|\.))/g;
+        
+        // Parse HP and AC from the stat block
+        const hpMatch = html.match(/<li><strong>Hit Points:<\/strong>\s*(\d+)/);
+        const acMatch = html.match(/<li><strong>Armor Class:<\/strong>\s*(\d+)/);
+        
+        let attacks = [];
+        let damage = "1d6"; // Default
+        let hp = 10; // Default
+        let ac = 10; // Default
+        
+        if (attackMatches) {
+            const attackBonus = parseInt(attackMatches[1]);
+            attacks.push({
+                attackBonus: attackBonus,
+                attackType: "Melee Attack"
+            });
+        }
+        
+        // Extract HP
+        if (hpMatch) {
+            hp = parseInt(hpMatch[1]);
+        }
+        
+        // Extract AC
+        if (acMatch) {
+            ac = parseInt(acMatch[1]);
+        }
+        
+        // Find damage information - look for the first damage that's not conditional
+        const damageMatches = [...html.matchAll(damageRegex)];
+        if (damageMatches.length > 0) {
+            // Use the first damage found that looks like a primary attack
+            for (const match of damageMatches) {
+                const damageText = match[0];
+                // Skip conditional damage (like "plus X damage")
+                if (!damageText.includes('plus') && !damageText.includes('additional')) {
+                    damage = match[2]; // The dice string like "1d4+2"
+                    break;
+                }
+            }
+            // If no primary damage found, use the first one
+            if (damage === "1d6" && damageMatches.length > 0) {
+                damage = damageMatches[0][2];
+            }
+        }
+        
+        return {
+            attacks: attacks,
+            damage: damage,
+            attacksPerMonster: attacks.length || 1,
+            hp: hp,
+            ac: ac
+        };
+    } catch (error) {
+        console.log('Could not parse monster HTML:', error);
+    }
+    return null;
+}
+
+// Function to convert encounter data to HordeMath format using actual monster HTML parsing
+async function convertEncounterToHordeMath(encounterDict) {
+    const monsters = [];
+    
+    console.log('Converting encounter data:', encounterDict);
+    
+    for (const [key, monster] of Object.entries(encounterDict)) {
+        console.log('Processing monster:', monster);
+        
+        // Try to parse the actual monster HTML file for accurate data
+        let parsedData = null;
+        try {
+            parsedData = await parseMonsterHTML(key);
+            console.log('Parsed monster data:', parsedData);
+        } catch (error) {
+            console.log('Could not parse monster HTML, using fallback:', error);
+        }
+        
+        // Use parsed data if available, otherwise fall back to estimation
+        let attackBonus = 2; // Default
+        let damage = "1d6"; // Default
+        let attacksPerMonster = 1; // Default
+        let hp = monster.hp || 10; // Use encounter data as fallback
+        let ac = monster.ac || 10; // Use encounter data as fallback
+        
+        if (parsedData && parsedData.attacks.length > 0) {
+            // Use the first attack's bonus
+            attackBonus = parsedData.attacks[0].attackBonus;
+            damage = parsedData.damage;
+            attacksPerMonster = parsedData.attacksPerMonster;
+            // Use parsed HP and AC if available
+            if (parsedData.hp) hp = parsedData.hp;
+            if (parsedData.ac) ac = parsedData.ac;
+        } else {
+            // Fallback to estimation based on ability scores
+            if (monster.str !== undefined && monster.dex !== undefined) {
+                const strMod = Math.floor((monster.str - 10) / 2);
+                const dexMod = Math.floor((monster.dex - 10) / 2);
+                attackBonus = Math.max(strMod, dexMod) + 2;
+            } else if (monster.str !== undefined) {
+                attackBonus = Math.floor((monster.str - 10) / 2) + 2;
+            } else if (monster.dex !== undefined) {
+                attackBonus = Math.floor((monster.dex - 10) / 2) + 2;
+            }
+            
+            // Estimate damage based on CR
+            const cr = monster.cr || 1;
+            const strMod = monster.str ? Math.floor((monster.str - 10) / 2) : 0;
+            
+            if (cr <= 1) {
+                damage = strMod > 0 ? "1d4+1" : "1d4";
+            } else if (cr <= 2) {
+                damage = strMod > 1 ? "1d6+2" : "1d6+1";
+            } else if (cr <= 3) {
+                damage = strMod > 2 ? "1d8+3" : "1d6+2";
+            } else if (cr <= 5) {
+                damage = strMod > 3 ? "2d6+4" : "1d8+3";
+            } else if (cr <= 7) {
+                damage = strMod > 4 ? "2d8+5" : "2d6+4";
+            } else if (cr <= 10) {
+                damage = strMod > 5 ? "3d6+6" : "2d8+5";
+            } else {
+                damage = strMod > 6 ? "4d6+7" : "3d6+6";
+            }
+            
+            // Estimate attacks per monster based on CR
+            if (cr <= 2) {
+                attacksPerMonster = 1;
+            } else if (cr <= 5) {
+                attacksPerMonster = 2;
+            } else if (cr <= 10) {
+                attacksPerMonster = 3;
+            } else {
+                attacksPerMonster = 4;
+            }
+        }
+        
+        const convertedMonster = {
+            name: monster.name || "Unknown Monster",
+            numAttackers: monster.qty || 1, // This is the quantity of this monster type in the encounter
+            attacksPerMonster: attacksPerMonster,
+            attackBonus: attackBonus,
+            damage: damage,
+            armorClass: ac,
+            hitPoints: hp,
+            hitPointMaximum: hp,
+            initiative: monster.init || 10
+        };
+        
+        console.log('Converted monster:', convertedMonster);
+        monsters.push(convertedMonster);
+    }
+    
+    console.log('Final converted monsters:', monsters);
+    console.log(`Converted ${monsters.length} different monster types with quantities:`, 
+        monsters.map(m => `${m.name} (x${m.numAttackers})`));
+    return monsters;
+}
+
+export default function RandomEncounter2({party, setMonsters}){
     const [encounter, setEncounter] = useState({encounterDict: {}});
     const [remainingMonsters, setRemainingMonsters] = useState({});
+    const [setSuccess, setSetSuccess] = useState(false);
 
     // Function to handle quantity changes - only updates display state
     const updateQuantity = (monsterId, change) => {
@@ -441,21 +612,35 @@ export default function RandomEncounter2({party}){
                                       party={party}></RandomEncounterInput>
                 <p>
                     {encounterBlock}
-                    <input type="button" defaultValue="Set" onClick={(e) => {
+                    <input type="button" defaultValue="Set" onClick={async (e) => {
                         e.target.disabled = true;
+                        setSetSuccess(false);
                         try {
-                            window.parent.postMessage({
-                                type: 'setEncounter',
-                                encounter: encounter.encounterDict
-                            }, '*'); // Specify exact target origin for security
-
+                            // Convert encounter data to HordeMath format using actual HTML parsing
+                            const hordeMathMonsters = await convertEncounterToHordeMath(encounter.encounterDict);
+                            
+                            // Update the monsters state in HordeMath
+                            setMonsters(hordeMathMonsters);
+                            
+                            // Show success message
+                            console.log('Encounter data set to HordeMath:', hordeMathMonsters);
+                            setSetSuccess(true);
+                            
                             setTimeout(() => {
                                 e.target.disabled = false;
-                            }, 1000);
+                                setSetSuccess(false);
+                            }, 2000);
                         } catch (exception) {
-                            console.error('Error creating monster cards:', exception);
+                            console.error('Error setting encounter to HordeMath:', exception);
+                            e.target.disabled = false;
                         }
                     }} className="w3-block w3-button w3-red"/>
+                    {setSuccess && (
+                        <div className="w3-panel w3-green w3-padding">
+                            <p>Encounter set</p>
+                            <p><small>Note: This feature is prone to errors. Be sure to check that all fields have been transferred correctly.</small></p>
+                        </div>
+                    )}
                 </p>
             </div>
             
