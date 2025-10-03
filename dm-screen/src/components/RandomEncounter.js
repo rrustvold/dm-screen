@@ -47,6 +47,7 @@ function getPartyLimits(party){
 }
 
 export function generate(party, difficulty, monsterSelection) {
+    const multiplierType = document.querySelector('input[name="multiplier-type"]:checked')?.value || 'none';
     if (!difficulty){
         difficulty = document.getElementById("difficulty").value;
     }
@@ -63,12 +64,19 @@ export function generate(party, difficulty, monsterSelection) {
         limit = limits[3];
     }
 
+    if (multiplierType === 'lanchester') {
+        limit = limit * party.length / 4;
 
-    let multiplier = 1;
-    if (party.length < 3) {
-        multiplier = 1.5;
     }
 
+    let multiplier = 1;
+    if (multiplierType === 'standard'){
+        if (party.length < 3) {
+            multiplier = 1.5;
+        }
+    }
+    
+    console.log("XP limit: ", limit);
     if (!monsterSelection){
         console.log("There is no selection");
         monsterSelection = document.getElementById("monster-type").value;
@@ -154,34 +162,40 @@ export function generate(party, difficulty, monsterSelection) {
             solo = monster.solo;
         }
 
-        if (encounter.length === 1){
-            multiplier = 1.5;
-            if (party.length < 3) {
+        if (multiplierType === 'standard') {
+            if (encounter.length === 1){
+                multiplier = 1.5;
+                if (party.length < 3) {
+                    multiplier = 2.0;
+                }
+            } else if (encounter.length === 2){
                 multiplier = 2.0;
-            }
-        } else if (encounter.length === 2){
-            multiplier = 2.0;
-            if (party.length < 3){
+                if (party.length < 3){
+                    multiplier = 2.5;
+                }
+            } else if (encounter.length === 6) {
                 multiplier = 2.5;
-            }
-        } else if (encounter.length === 6) {
-            multiplier = 2.5;
-            if (party.length < 3){
-                multiplier = 3
-            }
-        } else if (encounter.length === 10){
-            multiplier = 3;
-            if (party.length < 3){
+                if (party.length < 3){
+                    multiplier = 3
+                }
+            } else if (encounter.length === 10){
+                multiplier = 3;
+                if (party.length < 3){
+                    multiplier = 4;
+                }
+            } else if (encounter.length === 14) {
                 multiplier = 4;
             }
-        } else if (encounter.length === 14) {
-            multiplier = 4;
-        }
-
-        if (!document.getElementById("use-multiplier").checked){
+        } else if (multiplierType === 'lanchester') {
+            // assume nominal is 2 monsters
+            let numMonsters = encounter.length + 1;
+            multiplier = (numMonsters / 4);
+            console.log("multiplier lanchester", multiplier);
+        } else if (multiplierType === 'none'){
             console.log("Not using a multiplier");
             multiplier = 1;
         }
+        
         if ((totalXP + monster.xp) * multiplier <= limit) {
             totalXP += monster.xp;
             encounter.push(monster);
@@ -237,9 +251,20 @@ function RandomEncounterInput({setEncounter, party}){
     return (
         <div className="w3-container">
             <div className="w3-row-padding">
-                <div className="w3-col m1">
-                    <label>Use mulitiplier? </label>
-                    <input className="w3-check" type="checkbox" id="use-multiplier"/>
+                <div className="w3-col m3">
+                    <label>Multiplier Type</label>
+                    <div>
+                        <input className="w3-radio" type="radio" name="multiplier-type" id="no-multiplier" value="none" defaultChecked/>
+                        <label htmlFor="no-multiplier">No Multiplier</label>
+                    </div>
+                    <div>
+                        <input className="w3-radio" type="radio" name="multiplier-type" id="standard-multiplier" value="standard"/>
+                        <label htmlFor="standard-multiplier">Standard Multiplier</label>
+                    </div>
+                    <div>
+                        <input className="w3-radio" type="radio" name="multiplier-type" id="lanchester-multiplier" value="lanchester"/>
+                        <label htmlFor="lanchester-multiplier">Lanchester Multiplier</label>
+                    </div>
                 </div>
                 <div className="w3-col m3">
                     <label>Difficulty</label>
