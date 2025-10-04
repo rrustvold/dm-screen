@@ -16,6 +16,12 @@
     "title": "Fighting Stances",
     "date": "2025-09-13",
     "description": "What if weapons were just flavor? A variation on 5E combat."
+  },
+  {
+    "name": "lanchester",
+    "title": "Designing Combat Encounters with Lanchester",
+    "date": "2025-10-04",
+    "description": "Solving the problem of encounter design once and for all using differential equations"
   }
   
 ]
