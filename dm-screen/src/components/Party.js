@@ -31,40 +31,31 @@ function parseDamage(damage_str){
 }
 
 function PartyInput({party, setParty}) {
-    const [isInitialized, setIsInitialized] = React.useState(false);
-
-    function change() {
-        let updatedParty = []
-        for (let i=0; i < party.length; i++){
-            updatedParty.push(
-                new PC(
-                    document.getElementById(`name_${i}`).value,
-                    document.getElementById(`name_${i}`).value,
-                    document.getElementById(`level_${i}`).value,
-                    document.getElementById(`ac_${i}`).value,
-                    document.getElementById(`hp_${i}`).value,
-                    document.getElementById(`initiative_${i}`).value,
-                    document.getElementById(`avg_damage_${i}`).value,
-                    document.getElementById(`attack_bonus_${i}`).value
-                )
-            )
-        }
+    const updatePlayer = (index, field, value) => {
+        const updatedParty = party.map((player, i) => {
+            if (i === index) {
+                const updatedPlayer = { ...player, [field]: value };
+                // Recreate PC object with updated values
+                return new PC(
+                    updatedPlayer.name,
+                    updatedPlayer.name,
+                    updatedPlayer.level,
+                    updatedPlayer.ac,
+                    updatedPlayer.hp,
+                    updatedPlayer.initiative,
+                    updatedPlayer.avgDamage,
+                    updatedPlayer.attackBonus
+                );
+            }
+            return player;
+        });
         setParty(updatedParty);
-    }
+    };
 
     const removePlayer = (index) => {
         const updatedParty = party.filter((_, i) => i !== index);
         setParty(updatedParty);
     };
-
-    // Update party when party changes, but only after initial load
-    React.useEffect(() => {
-        if (isInitialized) {
-            change();
-        } else {
-            setIsInitialized(true);
-        }
-    }, [party.length]);
 
 
     let rows = [];
@@ -107,25 +98,32 @@ function PartyInput({party, setParty}) {
                 </button>
                 <label>Level</label>
                 <input className="w3-input" type="number" id={level_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.level}/>
+                       value={savedPlayer.level || defaultValues.level}
+                       onChange={(e) => updatePlayer(i, 'level', e.target.value)}/>
                 <label>Name</label>
                 <input className="w3-input" type="text" id={name_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.name}/>
+                       value={savedPlayer.name || defaultValues.name}
+                       onChange={(e) => updatePlayer(i, 'name', e.target.value)}/>
                 <label>AC</label>
                 <input className="w3-input" type="number" id={ac_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.ac}/>
+                       value={savedPlayer.ac || defaultValues.ac}
+                       onChange={(e) => updatePlayer(i, 'ac', e.target.value)}/>
                 <label>HP</label>
                 <input className="w3-input" type="number" id={hp_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.hp}/>
+                       value={savedPlayer.hp || defaultValues.hp}
+                       onChange={(e) => updatePlayer(i, 'hp', e.target.value)}/>
                 <label>Initiative</label>
                 <input className="w3-input" type="number" id={initiative_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.initiative}/>
+                       value={savedPlayer.initiative || defaultValues.initiative}
+                       onChange={(e) => updatePlayer(i, 'initiative', e.target.value)}/>
                 <label>Average Damage</label>
                 <input className="w3-input" type="text" id={avg_damage_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.avgDamage} placeholder="e.g., 1d8+2, 2d6+3"/>
+                       value={savedPlayer.avgDamage || defaultValues.avgDamage}
+                       onChange={(e) => updatePlayer(i, 'avgDamage', e.target.value)} placeholder="e.g., 1d8+2, 2d6+3"/>
                 <label>Attack Bonus</label>
                 <input className="w3-input" type="number" id={attack_bonus_id}
-                       onChange={(e) => change(e.target.value)} defaultValue={defaultValues.attackBonus}/>
+                       value={savedPlayer.attackBonus || defaultValues.attackBonus}
+                       onChange={(e) => updatePlayer(i, 'attackBonus', e.target.value)}/>
             </div>
             </div>
         )
@@ -158,9 +156,36 @@ export class PC {
     }
 }
 
+// Default values for each level
+const LEVEL_DEFAULTS = {
+    1: { level: 1,   ac: 15, hp: 10,  initiative: 2, avgDamage: "2d6+3", attackBonus:  5 },
+    2: { level: 2,   ac: 15, hp: 17,  initiative: 2, avgDamage: "2d6+3", attackBonus:  5 },
+    3: { level: 3,   ac: 15, hp: 24,  initiative: 2, avgDamage: "2d6+3", attackBonus:  5 },
+    4: { level: 4,   ac: 15, hp: 31,  initiative: 3, avgDamage: "2d6+4", attackBonus:  6 },
+    5: { level: 5,   ac: 15, hp: 38,  initiative: 3, avgDamage: "3d6+4", attackBonus:  7 },
+    6: { level: 6,   ac: 15, hp: 45,  initiative: 3, avgDamage: "3d6+4", attackBonus:  7 },
+    7: { level: 7,   ac: 15, hp: 52,  initiative: 4, avgDamage: "3d6+4", attackBonus:  7 },
+    8: { level: 8,   ac: 15, hp: 59,  initiative: 4, avgDamage: "3d6+5", attackBonus:  8 },
+    9: { level: 9,   ac: 15, hp: 66,  initiative: 4, avgDamage: "3d6+5", attackBonus:  9 },
+    10: { level: 10, ac: 15, hp: 73,  initiative: 5, avgDamage: "3d6+5", attackBonus:  9 },
+    11: { level: 11, ac: 15, hp: 80,  initiative: 5, avgDamage: "4d6+5", attackBonus:  9 },
+    12: { level: 12, ac: 15, hp: 87,  initiative: 5, avgDamage: "4d6+5", attackBonus:  9 },
+    13: { level: 13, ac: 15, hp: 94, initiative: 6, avgDamage:  "4d6+5", attackBonus:  10},
+    14: { level: 14, ac: 15, hp: 101, initiative: 6, avgDamage: "4d6+5", attackBonus:  10},
+    15: { level: 15, ac: 15, hp: 108, initiative: 6, avgDamage: "4d6+5", attackBonus:  10 },
+    16: { level: 16, ac: 15, hp: 115, initiative: 7, avgDamage: "5d6+5", attackBonus: 10 },
+    17: { level: 17, ac: 15, hp: 122, initiative: 7, avgDamage: "5d6+5", attackBonus: 11 },
+    18: { level: 18, ac: 15, hp: 129, initiative: 7, avgDamage: "5d6+5", attackBonus: 11 },
+    19: { level: 19, ac: 15, hp: 136, initiative: 8, avgDamage: "5d6+5", attackBonus: 11 },
+    20: { level: 20, ac: 15, hp: 143, initiative: 8, avgDamage: "5d6+5", attackBonus: 11 }
+};
+
 export function Party({party, setParty}){
+    const [selectedLevel, setSelectedLevel] = React.useState(3);
+    
     const addPlayer = () => {
-        const newPlayer = new PC("", `Player ${party.length + 1}`, 3, 15, 24, 2, "2d6+3", 5);
+        const defaults = LEVEL_DEFAULTS[selectedLevel];
+        const newPlayer = new PC("", `Player ${party.length + 1}`, defaults.level, defaults.ac, defaults.hp, defaults.initiative, defaults.avgDamage, defaults.attackBonus);
         setParty([...party, newPlayer]);
     };
 
@@ -174,13 +199,30 @@ export function Party({party, setParty}){
             </h1>
             <div class="w3-container w3-show" id="party">
                 <div class="w3-container w3-margin-bottom">
-                    <button 
-                        className="w3-button w3-blue" 
-                        onClick={addPlayer}
-                        style={{marginBottom: '10px'}}
-                    >
-                        + Add Player
-                    </button>
+                    <div className="w3-row-padding">
+                        <div className="w3-col m3">
+                            <label>Level for New Player</label>
+                            <select 
+                                className="w3-select" 
+                                value={selectedLevel} 
+                                onChange={(e) => setSelectedLevel(parseInt(e.target.value))}
+                                style={{marginBottom: '10px'}}
+                            >
+                                {Object.keys(LEVEL_DEFAULTS).map(level => (
+                                    <option key={level} value={level}>Level {level}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="w3-col m3">
+                            <button 
+                                className="w3-button w3-blue" 
+                                onClick={addPlayer}
+                                style={{marginTop: '25px'}}
+                            >
+                                + Add Player
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 <PartyInput party={party} setParty={setParty}></PartyInput>
