@@ -21,7 +21,7 @@ In dnd speak, this means that 8 PCs can handle 4x as much combat as a party of 4
 Or to combine them at the same time, it means if you have a good healthy encounter for a group of 4, then to make it appropriate for a group of 8 you need to double the monsters in the encounter. Doubling the monsters doubles the number of HP that the monsters have, and it doubles the number of attacks and damage.
 
 # A better way
-But this is no way to do things, so I made a calculator to predict the outcome of dnd battle. It can be found at https://dm-screen.lasthaven.quest 
+But this is no way to do things, so I made a calculator to predict the outcome of dnd battle. It can be found at http://dm-screen.lasthaven.quest 
 
 ## How to use it
 Loading the website might take a minute, because it's running on a heroku eco dyno, but once it's booted up you should be good. Note that I made this website for myself, so it is designed to make sense to me. I'm not a UI/UX or front end designer, and I'm not going to baby you or me by making my tools "intuitive". 
